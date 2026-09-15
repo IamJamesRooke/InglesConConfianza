@@ -1,6 +1,15 @@
-/* Sentence/vocab-table editing (SentenceEditor) and resting presentation
-   (SentencePresentation) — pieces/pairs, language fields, hint pill/input,
-   the optional instruction prompt, and add-pair/add-row actions. */
+/* Owner: sentence-editor.tsx — sentence/vocab-table slide editing: the
+   instruction prompt, pieces/pairs, language fields, hint pill (input
+   variant) / hint-on-demand affordance, given-tag, and add-pair/add-row
+   actions. The read-only resting view (composed sentence, vocabulary
+   table) is sentence-presentation.css; `.lesson-document-hint-pill`
+   (no-input display variant) is shared with that file.
+
+   Every selector below is declared once; values are the winning result of
+   the old file's three sequential layers ("word-flow" pass, "card"
+   redesign pass, and the "C"/"D"/E8 dated blocks), verified against a
+   pixel diff. */
+
 .lesson-document-prompt {
   display: block;
   width: min(100%, 620px);
@@ -35,56 +44,6 @@
   background: var(--surface-writing);
   box-shadow: 0 0 0 3px color-mix(in oklch, var(--primary) 22%, transparent);
 }
-.lesson-document-pieces {
-  display: flex;
-  flex: 1;
-  min-width: 0;
-  flex-wrap: wrap;
-  align-items: flex-start;
-  gap: 4px 18px;
-}
-/* One flex-wrap item per pair, so a pair and its own hint annotation wrap
-   together as a unit — the hint stays visually with its pair instead of
-   collecting in one strip disconnected from which pair it belongs to. */
-.lesson-document-pair {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 3px;
-  max-width: 100%;
-}
-.lesson-document-piece {
-  position: relative;
-  display: grid;
-  min-width: 145px;
-  grid-template-columns: minmax(120px, auto);
-  padding: 2px 4px 4px;
-  border-radius: 5px;
-}
-.lesson-document-piece.active {
-  background: var(--muted);
-}
-/* Quiet via the placeholder's own muted-foreground color (already applied
-   by .lesson-document-language-field > textarea::placeholder), not via
-   opacity — opacity on the whole piece multiplies through onto that
-   already-muted text and can drop it below the WCAG contrast minimum
-   depending on what's behind it. */
-.lesson-document-piece.trailing > span {
-  color: var(--muted-foreground);
-  font-size: 11px;
-}
-.lesson-document-sentence.vocab-table .lesson-document-pieces {
-  display: grid;
-  max-width: 580px;
-  grid-template-columns: 1fr;
-  gap: 0;
-}
-.lesson-document-sentence.vocab-table .lesson-document-piece {
-  grid-template-columns: minmax(160px, 1fr) minmax(160px, 1fr);
-  gap: 20px;
-  border-bottom: 1px solid var(--border);
-}
 
 .lesson-document-sentence {
   padding-block: 0;
@@ -103,41 +62,86 @@
   display: none;
 }
 
-/* Sentence pieces flow like words — each sized to its own content and wrapping
-   to the next line when the row is full. */
+/* Sentence pieces flow like words — each sized to its own content and
+   wrapping to the next line when the row is full. Modest, consistent gap —
+   column gap between pairs on the same row, row gap between wrapped rows.
+   No justify-content here, so pairs never distribute/stretch to fill the
+   row like table columns; each one is exactly as wide as its own longest
+   field (width: max-content on .lesson-document-piece) and sits
+   left-aligned next to the last. */
 .lesson-document-pieces {
   display: flex;
+  flex: 1;
+  min-width: 0;
   flex-wrap: wrap;
   align-items: flex-start;
-  gap: 2px 15px;
+  gap: 3px 10px;
 }
+/* One flex-wrap item per pair, so a pair and its own hint annotation wrap
+   together as a unit — the hint stays visually with its pair instead of
+   collecting in one strip disconnected from which pair it belongs to. */
+.lesson-document-pair {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 3px;
+  max-width: 100%;
+}
+/* Resting: no card box at all — just the Spanish/English text, aligned by
+   spacing (padding/gap), not a bordered container. Right padding still
+   reserves a gutter for the delete icon so it never sits on top of typed
+   text, even though there's no border to visually anchor it to. Caps
+   overall card growth to roughly the language field's own cap (min(24rem,
+   100%)) plus this padding — needed here, not just on the field/textarea
+   below: a field-sizing:content textarea's contribution to an ancestor's
+   own width:max-content sizing isn't reliably clamped by the textarea's or
+   its wrapper's own max-width, so the card needs its own explicit ceiling. */
 .lesson-document-piece {
+  position: relative;
+  display: grid;
   min-width: 0;
   width: max-content;
-  /* Caps overall card growth to roughly the language field's own cap
-     (min(24rem, 100%)) plus this padding. Needed here, not just on the
-     field/textarea below: a field-sizing:content textarea's contribution to
-     an ancestor's own width:max-content sizing isn't reliably clamped by
-     the textarea's or its wrapper's own max-width (verified directly —
-     both stayed clamped individually while this card kept growing past
-     them), so the card needs its own explicit ceiling. */
   max-width: min(25rem, 100%);
   grid-template-columns: auto;
-  padding: 0 4px;
+  padding: 1px 5px;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  background: transparent;
+}
+/* Active is the one state that gets a visible card — a clear, accessible
+   focus treatment plus the contextual tools (hint/delete), rather than
+   every resting pair carrying box chrome it doesn't need. */
+.lesson-document-piece.active {
+  border-color: var(--primary);
+  background: color-mix(in oklch, var(--primary) 7%, var(--surface-writing));
+}
+/* Quiet via the placeholder's own muted-foreground color (already applied
+   by .lesson-document-language-field > textarea::placeholder), not via
+   opacity — opacity on the whole piece multiplies through onto that
+   already-muted text and can drop it below the WCAG contrast minimum
+   depending on what's behind it. */
+.lesson-document-piece.trailing > span {
+  color: var(--muted-foreground);
+  font-size: 11px;
+}
+.lesson-document-piece.trailing > textarea {
+  color: var(--foreground);
+  font-weight: 750;
 }
 .lesson-document-piece > textarea {
   width: auto;
   min-width: 2.5ch;
   max-width: min(24rem, 100%);
   min-height: 1lh;
-  padding: 0 2px;
+  padding: 0 4px;
   border: 0;
   border-radius: 3px;
   background: transparent;
   outline: none;
   font: inherit;
-  font-size: 12px;
-  line-height: 1.3;
+  font-size: 14px;
+  line-height: 1.45;
   resize: none;
   overflow: hidden;
   white-space: pre-wrap;
@@ -145,27 +149,26 @@
   field-sizing: content;
 }
 .lesson-document-piece > textarea:first-of-type {
-  color: var(--foreground);
+  color: var(--lesson-hl-es);
   font-weight: 750;
 }
 .lesson-document-piece > textarea:nth-of-type(2) {
-  color: var(--muted-foreground);
+  color: var(--lesson-hl-en);
   margin-top: -1px;
 }
 .lesson-document-piece > textarea:focus {
-  background: var(--card);
-  box-shadow: 0 1px 0 var(--border);
+  background: var(--surface-writing);
+  box-shadow: 0 0 0 3px color-mix(in oklch, var(--primary) 24%, transparent);
 }
-.lesson-document-piece.trailing > textarea {
-  color: var(--foreground);
-  font-weight: 750;
-}
-/* The vocabulary table is one modest-width aligned structure — content-sized,
-   with faint neutral row separators, not a bordered/rounded card. */
+
+/* The vocabulary table is one modest-width aligned structure — content-
+   sized, with faint neutral row separators, not a bordered/rounded card. */
 .lesson-document-sentence.vocab-table .lesson-document-pieces {
+  display: grid;
   width: max-content;
   max-width: min(460px, 100%);
-  gap: 0;
+  grid-template-columns: 1fr;
+  gap: 6px 0;
 }
 .lesson-document-sentence.vocab-table .lesson-document-piece {
   position: relative;
@@ -194,113 +197,29 @@
   max-width: 100%;
   margin-top: 0;
 }
-
-.lesson-sentence-presentation {
-  padding: 0 5px;
-}
-.lesson-sentence-presentation-instruction {
-  margin-bottom: 1px;
-  color: var(--muted-foreground);
-  font-size: 12px;
-}
-.lesson-sentence-presentation-empty {
-  color: var(--muted-foreground);
-  font-size: 13px;
-  font-style: italic;
-}
-.lesson-sentence-composed {
-  margin: 0;
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 1.2;
-  overflow-wrap: anywhere;
-}
-.lesson-sentence-composed[lang="es"] {
-  color: var(--lesson-hl-es);
-  font-weight: 600;
-}
-.lesson-sentence-composed[lang="en"] {
-  color: var(--lesson-hl-en);
-  font-weight: 400;
-}
-
-/* C: resting pair typography — the owner-decided calm treatment (was 1b's
-   A/B trial, now folded in as the settled rule). Only the *resting*
-   presentation (this slide not active) reads this way; editing fields
-   (above) and explanation marks keep the red/blue language ink. */
-.lesson-document-sentence.resting .lesson-sentence-presentation {
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
-}
-.lesson-document-sentence.resting .lesson-sentence-composed[lang="es"] {
+/* Vocabulary-table rows never get the `.resting` class (the table has no
+   separate resting/editing presentation), so their unfocused ("not this
+   row") typography matches the resting sentence rule in
+   sentence-presentation.css instead of leaving them on the always-on
+   red/blue ink. The active row keeps that ink — only rest state changes. */
+.lesson-document-sentence.vocab-table
+  .lesson-document-piece:not(.active)
+  .lesson-document-language-field[data-language="es"]
+  > textarea {
   color: var(--foreground);
   font-weight: 600;
   font-size: 16px;
 }
-.lesson-document-sentence.resting .lesson-sentence-composed[lang="en"] {
+.lesson-document-sentence.vocab-table
+  .lesson-document-piece:not(.active)
+  .lesson-document-language-field[data-language="en"]
+  > textarea {
   color: var(--muted-foreground);
   font-style: italic;
   font-weight: 400;
   font-size: 15px;
 }
-/* E8 "given" piece at rest: normal weight (not italic, like the rest of
-   the English line) with a subtle dotted underline — shown to the student,
-   never tested, so it must read as calmer than an actual answer. */
-.lesson-document-sentence.resting .lesson-sentence-composed[lang="en"] span[data-given="true"] {
-  font-style: normal;
-  text-decoration: underline dotted;
-  text-underline-offset: 2px;
-  text-decoration-color: color-mix(in oklch, var(--muted-foreground) 55%, transparent);
-}
-.lesson-sentence-phrase {
-  white-space: normal;
-}
 
-/* Vocabulary table at rest: a compact two-column grid, not one composed
-   sentence and not a loose sentence-pair list — see SentencePresentation's
-   table branch (sentence-presentation.tsx). The Spanish/English columns
-   share one grid across all rows (via `subgrid`) so both line up under
-   each other regardless of per-row text length; each row is its own
-   subgrid so a row without a hint simply leaves that row's third column
-   empty, instead of a reserved/blank cell disturbing the row below it.
-   Left-aligned to the document's own text column — `width: fit-content`,
-   no `margin: auto` — visibly distinct from sentence pairs, which keep
-   their stacked Spanish-over-English look. */
-.lesson-sentence-presentation-table {
-  display: grid;
-  grid-template-columns: max-content 1fr auto;
-  column-gap: 24px;
-  width: fit-content;
-  max-width: 100%;
-}
-.lesson-sentence-presentation-row {
-  display: grid;
-  grid-column: 1 / -1;
-  grid-template-columns: subgrid;
-  align-items: baseline;
-  padding: 4px 0;
-  border-bottom: 1px solid var(--border);
-  font-size: 15px;
-}
-.lesson-sentence-presentation-row:last-child {
-  border-bottom: 0;
-}
-.lesson-sentence-presentation-row span[lang="es"] {
-  color: var(--foreground);
-  font-weight: 600;
-}
-.lesson-sentence-presentation-row span[lang="en"] {
-  color: var(--muted-foreground);
-  font-style: italic;
-}
-/* A row's authored hint reuses the same read-only pill sentence pairs use
-   at rest (`.lesson-document-hint-pill`) — it lands in the row's own third
-   subgrid column, at the end of the row, without affecting rows that don't
-   have one. */
-.lesson-sentence-presentation-row .lesson-document-hint-pill {
-  justify-self: start;
-}
 .lesson-document-active-tools {
   display: flex;
   min-height: 22px;
@@ -327,47 +246,6 @@
 }
 .lesson-document-active-tools .danger:hover {
   color: var(--destructive);
-}
-.lesson-document-pieces {
-  /* Modest, consistent gap — column gap between pairs on the same row, row
-     gap between wrapped rows. No justify-content here, so pairs never
-     distribute/stretch to fill the row like table columns; each one is
-     exactly as wide as its own longest field (width: max-content on
-     .lesson-document-piece) and sits left-aligned next to the last. */
-  gap: 3px 10px;
-}
-.lesson-document-piece {
-  /* Resting: no card box at all — just the Spanish/English text, aligned
-     by spacing (padding/gap), not a bordered container. Right padding
-     still reserves a gutter for the delete icon so it never sits on top of
-     typed text, even though there's no border to visually anchor it to. */
-  padding: 1px 5px;
-  border: 1px solid transparent;
-  border-radius: 8px;
-  background: transparent;
-}
-/* Active is the one state that gets a visible card — a clear, accessible
-   focus treatment plus the contextual tools (hint/delete), rather than
-   every resting pair carrying box chrome it doesn't need. */
-.lesson-document-piece.active {
-  border-color: var(--primary);
-  background: color-mix(in oklch, var(--primary) 7%, var(--surface-writing));
-}
-.lesson-document-piece > textarea {
-  min-height: 1lh;
-  padding-inline: 4px;
-  font-size: 14px;
-  line-height: 1.45;
-}
-.lesson-document-piece > textarea:first-of-type {
-  color: var(--lesson-hl-es);
-}
-.lesson-document-piece > textarea:nth-of-type(2) {
-  color: var(--lesson-hl-en);
-}
-.lesson-document-piece > textarea:focus {
-  background: var(--surface-writing);
-  box-shadow: 0 0 0 3px color-mix(in oklch, var(--primary) 24%, transparent);
 }
 
 /* No visible "Spanish / English" column key — the cards' own red/blue ink
@@ -400,12 +278,7 @@
   width: auto;
   min-width: 3ch;
   max-width: min(24rem, 100%);
-  /* Exactly one line tall at rest, not 1.55× — that extra 0.55 of a line
-     was reserving visible dead space above/below the text. Also tightened
-     line-height itself (was 1.45): with two of these stacked, Spanish
-     directly above English, generous leading on each line reads as a gap
-     between them, not just roomy text — field-sizing: content still grows
-     both properly for real multi-line content. */
+  /* Exactly one line tall at rest, not 1.55x. */
   min-height: 1lh;
   margin: 0;
   padding: 0 4px;
@@ -440,9 +313,9 @@
   opacity: 1;
 }
 /* A single focus signal, not two nested ones: the card itself already gets
-   a clear .active border + background shift (see .lesson-document-piece),
-   so this field only needs a background lift, not its own box-shadow ring
-   pressed close against the card's own border a few px away. */
+   a clear .active border + background shift, so this field only needs a
+   background lift, not its own box-shadow ring pressed close against the
+   card's own border a few px away. */
 .lesson-document-language-field > textarea:focus {
   background: var(--surface-writing);
 }
@@ -457,34 +330,20 @@
 /* A hint renders in its own annotation region directly under its pair — a
    sibling of .lesson-document-piece inside .lesson-document-pair, not a
    child of the card, so it never contributes to the card's own shrink-wrap
-   width. At rest it's plain authored text (the existing
-   --hint/--hint-foreground theme tokens), no visible label prefix, no
+   width. At rest it's plain authored text, no visible label prefix, no
    floating remove control; a long hint truncates rather than stretching
    this pair's own footprint — clicking or activating it by keyboard swaps
    it into an editable input, where the full text is reachable by
-   scrolling/selecting even past the visual truncation width. */
-.lesson-document-hint-pill {
-  display: block;
-  max-width: 240px;
-  padding: 2px 10px;
-  border: 0;
-  border-radius: 999px;
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  color: var(--hint-foreground);
-  background: var(--state-help-soft);
-  font-size: 11px;
-  font-weight: 700;
-  text-align: left;
-}
-/* `width: auto` here (not a fixed ch value) is load-bearing: an explicit
-   width defeats `field-sizing: content`'s intrinsic sizing, which is what
-   was clipping longer authored hints. min-width keeps a sane click target
-   for an empty/short hint; max-width caps growth so a long hint never
-   stretches into the Spanish/English columns, with a responsive ceiling
-   for narrow viewports. */
+   scrolling/selecting even past the visual truncation width. See
+   sentence-presentation.css for the shared `.lesson-document-hint-pill`
+   read-only pill this input variant swaps into on blur. */
 .lesson-document-hint-pill-input {
+  /* `width: auto` here (not a fixed ch value) is load-bearing: an explicit
+     width defeats `field-sizing: content`'s intrinsic sizing, which is what
+     was clipping longer authored hints. min-width keeps a sane click target
+     for an empty/short hint; max-width caps growth so a long hint never
+     stretches into the Spanish/English columns, with a responsive ceiling
+     for narrow viewports. */
   width: auto;
   min-width: 8ch;
   max-width: min(220px, 60vw);
@@ -507,9 +366,9 @@
   background: color-mix(in oklch, var(--hint) 16%, var(--state-help-soft));
 }
 
-/* E8 "given" tag — same pill family as the hint pill above, but muted
-   (neutral, not the hint's amber) since it's informational, not an
-   authoring affordance: this pair is shown to the student, never tested. */
+/* E8 "given" tag — same pill family as the hint pill, but muted (neutral,
+   not the hint's amber) since it's informational, not an authoring
+   affordance: this pair is shown to the student, never tested. */
 .lesson-document-given-tag {
   display: inline-block;
   padding: 2px 10px;
@@ -521,12 +380,12 @@
   white-space: nowrap;
 }
 /* Hint-on-demand (§1g): a quiet 18px circular affordance beside the active
-   pair only, shown instead of an unrequested empty hint field. Same footprint
-   whether resting or hovered so it never shifts neighboring layout. */
+   pair only, shown instead of an unrequested empty hint field. Same
+   footprint whether resting or hovered so it never shifts neighboring
+   layout. */
 .lesson-document-hint-add {
   display: grid;
-  /* Item 7: >=24x24 hit area via padding, not a bigger glyph — the
-     lightbulb icon itself stays whatever size it's rendered at in JSX. */
+  /* Item 7: >=24x24 hit area via padding, not a bigger glyph. */
   min-width: 24px;
   min-height: 24px;
   place-items: center;
@@ -535,12 +394,13 @@
   color: var(--muted-foreground);
   background: transparent;
 }
-.lesson-document-hint-add:hover,
-.lesson-document-hint-add:focus-visible {
+.lesson-document-hint-add:hover {
   color: var(--hint-foreground);
   background: var(--state-help-soft);
 }
 .lesson-document-hint-add:focus-visible {
+  color: var(--hint-foreground);
+  background: var(--state-help-soft);
   outline: 2px solid var(--hint);
   outline-offset: 1px;
 }
@@ -568,12 +428,12 @@
   opacity: 0;
 }
 .lesson-document-pair:hover > .lesson-document-pair-delete,
-.lesson-document-pair:focus-within > .lesson-document-pair-delete,
-.lesson-document-pair-delete:focus-visible {
+.lesson-document-pair:focus-within > .lesson-document-pair-delete {
   opacity: 1;
 }
 .lesson-document-pair-delete:hover,
 .lesson-document-pair-delete:focus-visible {
+  opacity: 1;
   box-shadow: none;
   outline: 2px solid var(--destructive);
   outline-offset: 1px;
@@ -606,6 +466,7 @@
     transform: none;
   }
 }
+
 /* A short, quiet text action — no dashed box, no verbose label — that sits
    beside the last pair as a flex item alongside the cards (not a block
    sibling below them), so it drops to its own line only when there's
@@ -635,10 +496,9 @@
   opacity: 0.6;
 }
 /* The vocabulary-table equivalent lives below the table's own box, as a
-   plain footer action rather than a boxed row inside it. */
+   plain footer action rather than a boxed row inside it. Centered as one
+   group with the table above it, not left-hung under a centered box. */
 .lesson-document-add-row {
-  /* Centered as one group with the table above it, not left-hung under a
-     centered box. */
   display: flex;
   width: fit-content;
   align-items: center;
@@ -662,30 +522,4 @@
 .lesson-document-add-row:disabled {
   color: var(--muted-foreground);
   opacity: 0.6;
-}
-
-/* C: vocabulary-table rows never get the `.resting` class (the table has
-   no separate resting/editing presentation), so bring their own unfocused
-   ("not this row") typography in line with the resting sentence rule above
-   instead of leaving them on the always-on red/blue ink. The active row
-   keeps that ink — only rest state changes. */
-.lesson-document-sentence.vocab-table .lesson-document-pieces {
-  gap: 6px 0;
-}
-.lesson-document-sentence.vocab-table
-  .lesson-document-piece:not(.active)
-  .lesson-document-language-field[data-language="es"]
-  > textarea {
-  color: var(--foreground);
-  font-weight: 600;
-  font-size: 16px;
-}
-.lesson-document-sentence.vocab-table
-  .lesson-document-piece:not(.active)
-  .lesson-document-language-field[data-language="en"]
-  > textarea {
-  color: var(--muted-foreground);
-  font-style: italic;
-  font-weight: 400;
-  font-size: 15px;
 }

@@ -106,20 +106,47 @@ E3 pair proposals, E4 script mode (parser + serializer over the block model, rou
 tested), E5 curriculum autocomplete + auto-Covers, E7 templates. See the Ergonomics
 section. Model: Sonnet; Fable writes the script grammar.
 
-### Phase 3 — components own their styles and geometry
-- One stylesheet per component, imported by the component; one declaration per
-  selector; state only via `data-state`/`data-*` attributes the component itself sets.
-  All "delimited revert blocks" (F, N, 6, 1b) resolved into the base rules.
+### Phase 3a — one stylesheet per component, geometry cleanup — DONE 2026-09-15
+- The old `library.css`, `document.css`, `explanation.css`, `sentence.css`,
+  `insert.css`, `script.css`, `concepts.css`, `hud.css`, `module-navigation.css`
+  are deleted; replaced by one file per component, imported from `layout.tsx` in the
+  same cascade order: `lesson-library.css`, `lesson-row.css`, `module-navigator.css`,
+  `lesson-document.css`, `explanation-editor.css`, `sentence-editor.css`,
+  `sentence-presentation.css`, `slide-insert-control.css`, `lesson-script-view.css`,
+  `lesson-concepts-field.css`, `keyboard-help.css`, `editing-hud.css`, `print.css`.
+  All "delimited revert blocks" (F, N, 6, 1b) resolved into one declaration per
+  top-level selector per file — folded to the winning computed result of the old
+  cascade, verified against a pixel diff, not just read off the last block.
+- Corner fix (diagnostic §2, root cause 3): `.lesson-library-module-meta`'s
+  border-bottom radius now matches `.lesson-library-module`'s own 14px exactly, and
+  `.lesson-library-row:last-child > .lesson-document` gets a matching
+  `border-radius: 0 0 14px 14px`. Fixed via matching radius on each flush child's own
+  box, **not** by adding `overflow: hidden` to the card — `.lesson-library-module`
+  keeps `overflow: visible`, so nothing that must escape it (the concept typeahead
+  popover, the editing HUD, the selection toolbar) is put at risk of being clipped.
+- `scripts/lint-css.mjs` (`npm run lint:css`, wired into `npm run lint`) fails the
+  build on a duplicate top-level selector in one file, `!important` outside
+  `print.css`, or a `styles/lesson-builder/*.css` file nothing imports; warns
+  (doesn't fail) on a lesson-builder TSX class with no matching rule anywhere in
+  `styles/lesson-builder/` — noisy by design, since some of those classes are styled
+  in `globals.css` instead (`.concept-suggestion`, `.lesson-document-tail` is simply
+  unstyled by design).
+- Verified: 273/273 unit tests, `tsc --noEmit` clean, `npm run lint` clean (CSS lint
+  included), `npm run build` clean, `npm run ux:check` green (one pre-existing,
+  unrelated failure carried over from before this pass — the "Edit as script" `</>`
+  icon button is 15×21, under the 24×24 click-target floor; reproduces at HEAD
+  `7a51dcc7`, not a Phase 3a regression, flagged for a follow-up task not this one).
+- Model: Sonnet for the model, Haiku for the mechanical moves.
+
+### Phase 3b — behaviour-first tests, remaining geometry review — pending owner
+- Replace geometry assertions in `tests/ux` with behaviour assertions; keep one visual
+  regression screenshot per surface at 760 and 1280 as a diff, not as px assertions.
 - Owner-reported 2026-09-15: the drag/duplicate/delete cluster sits on top of the grey
   explanation card (white icon box over grey). Resolved by construction: the
   explanation is no longer a card, and block chrome lives in the gutter outside the
   text column, never over content.
-- Geometry rules: only a card's outermost element has `border-radius` and it clips
-  (`overflow: hidden`) unless something must escape — then that something is portalled.
-  A lint script fails the build on duplicate top-level selectors and on `!important`
-  outside `print.css`.
-- Replace geometry assertions in `tests/ux` with behaviour assertions; keep one visual
-  regression screenshot per surface at 760 and 1280 as a diff, not as px assertions.
+- Follow-up carried from 3a: the "Edit as script" `</>` icon button fails the 24×24
+  click-target floor (currently 15×21) — `tests/ux/accessibility.spec.ts:118`.
 - Model: Sonnet for the model, Haiku for the mechanical moves.
 
 ### Phase 4 — process

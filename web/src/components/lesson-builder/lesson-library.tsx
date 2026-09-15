@@ -12,7 +12,6 @@ import {
 } from "react";
 
 import { ModuleNavigator } from "@/components/lesson-builder/module-navigator";
-import "@/styles/module-navigation.css";
 import { EditingHud } from "@/components/lesson-builder/editing-hud";
 import { KeyboardHelpDialog } from "@/components/lesson-builder/keyboard-help";
 import { LessonRow } from "@/components/lesson-builder/lesson-library-row";

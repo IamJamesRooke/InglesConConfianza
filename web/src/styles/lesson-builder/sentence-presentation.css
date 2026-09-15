@@ -1,0 +1,133 @@
+/* Owner: sentence-presentation.tsx — the resting (read-only) view of a
+   sentence/vocab-table slide: the composed sentence, the instruction line,
+   the vocabulary table's own display grid, and the shared read-only hint
+   pill. Editing-mode styling (pieces/pairs/fields/hint input) is
+   sentence-editor.css; the ancestor modifier classes referenced below
+   (`.lesson-document-sentence.resting`, `.vocab-table`) are set by
+   sentence-editor.tsx's wrapper, which mounts this component.
+
+   Every selector below is declared once. */
+
+.lesson-sentence-presentation {
+  padding: 0 5px;
+}
+.lesson-sentence-presentation-instruction {
+  margin-bottom: 1px;
+  color: var(--muted-foreground);
+  font-size: 12px;
+}
+.lesson-sentence-presentation-empty {
+  color: var(--muted-foreground);
+  font-size: 13px;
+  font-style: italic;
+}
+.lesson-sentence-composed {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.2;
+  overflow-wrap: anywhere;
+}
+.lesson-sentence-composed[lang="es"] {
+  color: var(--lesson-hl-es);
+  font-weight: 600;
+}
+.lesson-sentence-composed[lang="en"] {
+  color: var(--lesson-hl-en);
+  font-weight: 400;
+}
+.lesson-sentence-phrase {
+  white-space: normal;
+}
+
+/* Resting pair typography — the owner-decided calm treatment. Only the
+   *resting* presentation (this slide not active) reads this way; editing
+   fields and explanation marks keep the red/blue language ink. */
+.lesson-document-sentence.resting .lesson-sentence-presentation {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.lesson-document-sentence.resting .lesson-sentence-composed[lang="es"] {
+  color: var(--foreground);
+  font-weight: 600;
+  font-size: 16px;
+}
+.lesson-document-sentence.resting .lesson-sentence-composed[lang="en"] {
+  color: var(--muted-foreground);
+  font-style: italic;
+  font-weight: 400;
+  font-size: 15px;
+}
+/* E8 "given" piece at rest: normal weight (not italic, like the rest of
+   the English line) with a subtle dotted underline — shown to the student,
+   never tested, so it must read as calmer than an actual answer. */
+.lesson-document-sentence.resting .lesson-sentence-composed[lang="en"] span[data-given="true"] {
+  font-style: normal;
+  text-decoration: underline dotted;
+  text-underline-offset: 2px;
+  text-decoration-color: color-mix(in oklch, var(--muted-foreground) 55%, transparent);
+}
+
+/* Vocabulary table at rest: a compact two-column grid, not one composed
+   sentence and not a loose sentence-pair list. The Spanish/English columns
+   share one grid across all rows (via `subgrid`) so both line up under
+   each other regardless of per-row text length; each row is its own
+   subgrid so a row without a hint simply leaves that row's third column
+   empty, instead of a reserved/blank cell disturbing the row below it.
+   Left-aligned to the document's own text column — `width: fit-content`,
+   no `margin: auto` — visibly distinct from sentence pairs, which keep
+   their stacked Spanish-over-English look. */
+.lesson-sentence-presentation-table {
+  display: grid;
+  grid-template-columns: max-content 1fr auto;
+  column-gap: 24px;
+  width: fit-content;
+  max-width: 100%;
+}
+.lesson-sentence-presentation-row {
+  display: grid;
+  grid-column: 1 / -1;
+  grid-template-columns: subgrid;
+  align-items: baseline;
+  padding: 4px 0;
+  border-bottom: 1px solid var(--border);
+  font-size: 15px;
+}
+.lesson-sentence-presentation-row:last-child {
+  border-bottom: 0;
+}
+.lesson-sentence-presentation-row span[lang="es"] {
+  color: var(--foreground);
+  font-weight: 600;
+}
+.lesson-sentence-presentation-row span[lang="en"] {
+  color: var(--muted-foreground);
+  font-style: italic;
+}
+/* A row's authored hint reuses the read-only pill sentence pairs use at
+   rest — it lands in the row's own third subgrid column, at the end of the
+   row, without affecting rows that don't have one. */
+.lesson-sentence-presentation-row .lesson-document-hint-pill {
+  justify-self: start;
+}
+
+/* Shared read-only hint pill — rendered here at rest, and by
+   sentence-editor.tsx (via SentenceEditor) for a completed hint that isn't
+   currently being edited (see .lesson-document-hint-pill-input in
+   sentence-editor.css for the editing variant it swaps into). */
+.lesson-document-hint-pill {
+  display: block;
+  max-width: 240px;
+  padding: 2px 10px;
+  border: 0;
+  border-radius: 999px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  color: var(--hint-foreground);
+  background: var(--state-help-soft);
+  font-size: 11px;
+  font-weight: 700;
+  text-align: left;
+}

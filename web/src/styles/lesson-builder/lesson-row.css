@@ -1,0 +1,270 @@
+/* Owner: lesson-library-row.tsx — one lesson row inside a module's list:
+   the row shell, its head (drag/collapse/number, title input, try/preview,
+   icon cluster), and the insert-a-lesson seam. The drag-handle badge itself
+   (.lesson-document-drag / .lesson-library-number) is rendered by
+   `LessonDragHandle`, exported from lesson-document.tsx but only ever used
+   here — kept in this file because that's where it visually lives. The
+   editor surface a row opens (.lesson-document) is lesson-document.css.
+
+   Every selector below is declared once; values are the winning result of
+   the old file's "compact document" + theme-slice + "6: compact rail"
+   layers, verified against a pixel diff. */
+
+.lesson-library-list {
+  border-top: 0;
+}
+.lesson-library-row {
+  position: relative;
+  display: block;
+  border-bottom: 1px solid var(--border);
+}
+.lesson-library-row:last-child {
+  border-bottom: 0;
+}
+.lesson-library-row.dragging {
+  opacity: 0.45;
+}
+
+/* Thin seam between lesson rows (and before the first one) — click the "+"
+   to insert a new lesson at that exact position, instead of always
+   appending at the end and dragging it up into place. At rest, a 20px
+   circle "+" button is visible with reduced opacity; on hover/focus, full
+   opacity and the text label appears. On touch, always fully visible. */
+.lesson-library-insert {
+  position: relative;
+  height: 1px;
+  opacity: 0;
+  transition: opacity 0.12s;
+}
+.lesson-library-insert:hover,
+.lesson-library-insert:focus-within {
+  opacity: 1;
+}
+.lesson-library-insert > button {
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  z-index: 4;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  width: 20px;
+  height: 20px;
+  padding: 0;
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  background: var(--card);
+  color: var(--muted-foreground);
+  transform: translateX(-50%);
+  opacity: 0.45;
+  transition: opacity 0.12s ease;
+}
+.lesson-library-insert:hover > button,
+.lesson-library-insert:focus-within > button,
+.lesson-library-insert > button:focus-visible {
+  opacity: 1;
+}
+.lesson-library-insert > button:hover {
+  background: var(--muted);
+  color: var(--foreground);
+}
+/* Hide label at rest; show on hover/focus. Use display instead of max-width
+   to avoid reserving any layout space. */
+.lesson-library-insert-label {
+  display: none;
+  font-size: 10px;
+  font-weight: 650;
+  white-space: nowrap;
+}
+.lesson-library-insert:hover .lesson-library-insert-label,
+.lesson-library-insert:focus-within .lesson-library-insert-label,
+.lesson-library-insert > button:focus-visible .lesson-library-insert-label {
+  display: inline;
+}
+@media (hover: none), (pointer: coarse) {
+  .lesson-library-insert {
+    opacity: 1;
+  }
+  .lesson-library-insert > button {
+    opacity: 1;
+  }
+}
+
+.lesson-library-row-head {
+  display: flex;
+  min-height: 44px;
+  align-items: center;
+  padding: 5px 14px 5px 28px;
+  gap: 3px;
+  background: color-mix(in oklch, var(--background) 48%, var(--surface-writing));
+}
+.lesson-library-row:focus-within > .lesson-library-row-head {
+  background: color-mix(in oklch, var(--primary) 8%, var(--surface-writing));
+}
+
+.lesson-library-title-input {
+  min-width: 0;
+  flex: 1;
+  margin-left: 4px;
+  padding-inline: 7px;
+  border-radius: 5px;
+  background: transparent;
+  color: var(--foreground);
+  font-size: 14px;
+  font-weight: 720;
+  outline: none;
+}
+.lesson-library-title-input:hover {
+  background: color-mix(in oklch, var(--muted) 48%, transparent);
+}
+.lesson-library-title-input:focus {
+  background: var(--surface-writing);
+  box-shadow: 0 0 0 3px color-mix(in oklch, var(--primary) 28%, transparent);
+}
+
+.lesson-library-try {
+  padding: 6px 8px;
+  border-radius: 6px;
+  color: var(--muted-foreground);
+  font-size: 11px;
+  font-weight: 700;
+}
+.lesson-library-try:hover {
+  background: var(--muted);
+  color: var(--foreground);
+}
+
+/* LessonDragHandle (lesson-document.tsx) — the row's own drag handle,
+   doubling as the row-number badge via .lesson-library-number. Not the
+   slide drag handle inside the open document (that one has no shared
+   class with this). */
+.lesson-document-drag {
+  display: grid;
+  width: 32px;
+  height: 32px;
+  cursor: grab;
+  place-items: center;
+}
+.lesson-document-drag:hover,
+.lesson-document-drag:focus-visible {
+  background: var(--muted);
+  color: var(--foreground);
+}
+.lesson-library-number {
+  display: grid;
+  width: 24px;
+  height: 28px;
+  place-items: center;
+  padding: 0;
+  border-radius: 5px;
+  background: transparent;
+  color: color-mix(in oklch, var(--muted-foreground) 55%, transparent);
+  cursor: grab;
+  font-size: 12px;
+  font-weight: 750;
+}
+.lesson-library-number:hover {
+  background: var(--muted);
+  color: var(--foreground);
+}
+.lesson-library-number:active {
+  cursor: grabbing;
+}
+
+.lesson-library-collapse {
+  display: grid;
+  width: 24px;
+  height: 28px;
+  place-items: center;
+  border-radius: 5px;
+  color: var(--muted-foreground);
+}
+.lesson-library-collapse:hover {
+  background: var(--muted);
+  color: var(--foreground);
+}
+
+/* Quiet row chrome — the drag/duplicate/delete/preview cluster is noise on
+   a collapsed row when nothing is being acted on. Opacity only (not
+   visibility), so Tab still reaches every control; the row's own :hover/
+   :focus-within brings it to full opacity, same pattern as the slide-level
+   .lesson-document-block-actions cluster in lesson-document.css. Always
+   visible on touch, where there's no hover to reveal it. */
+.lesson-library-row-icons {
+  display: inline-flex;
+  align-items: center;
+  gap: 1px;
+  margin-left: 4px;
+  opacity: 0;
+  transition: opacity 0.12s ease;
+}
+.lesson-library-row:hover .lesson-library-row-icons,
+.lesson-library-row:focus-within .lesson-library-row-icons {
+  opacity: 1;
+}
+@media (hover: none), (pointer: coarse) {
+  .lesson-library-row-icons {
+    opacity: 1;
+  }
+}
+.lesson-library-row-icons > .lesson-library-try {
+  display: grid;
+  width: 28px;
+  height: 28px;
+  place-items: center;
+  color: var(--primary);
+  background: transparent;
+}
+/* Ghost preview button — icon-only in primary blue, filled only on
+   hover/focus, not a permanently-filled pill. */
+.lesson-library-row-icons > .lesson-library-try:hover,
+.lesson-library-row-icons > .lesson-library-try:focus-visible {
+  color: var(--primary-foreground);
+  background: var(--primary);
+}
+.lesson-library-row-icons.lesson-inline-confirm {
+  gap: 5px;
+  font-size: 11px;
+  color: var(--muted-foreground);
+}
+.lesson-library-row-icons.lesson-inline-confirm > button {
+  display: inline-flex;
+  width: auto;
+  height: 26px;
+  align-items: center;
+  padding: 0 8px;
+  border-radius: 5px;
+  font-size: 11px;
+  font-weight: 650;
+}
+.lesson-library-row-icons.lesson-inline-confirm > button:hover {
+  background: var(--muted);
+  color: var(--foreground);
+}
+.lesson-library-row-icons.lesson-inline-confirm > button.danger {
+  color: var(--destructive);
+}
+.lesson-library-row-icons > button {
+  display: grid;
+  width: 28px;
+  height: 28px;
+  place-items: center;
+  border-radius: 5px;
+  color: var(--muted-foreground);
+}
+.lesson-library-row-icons > button:hover {
+  background: var(--muted);
+  color: var(--foreground);
+}
+.lesson-library-row-icons > button.danger:hover {
+  background: color-mix(in oklch, var(--destructive) 12%, transparent);
+  color: var(--destructive);
+}
+
+@media (max-width: 900px) {
+  .lesson-library-row-head {
+    min-height: 32px;
+    padding: 2px 10px 2px 22px;
+  }
+}

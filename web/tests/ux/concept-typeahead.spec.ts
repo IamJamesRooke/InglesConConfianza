@@ -1,7 +1,7 @@
 import { expect, test } from "./fixtures";
 
 // The "Covers" concept typeahead (LessonConceptsField): readable, non-alarming
-// popover styling (see src/styles/lesson-builder/concepts.css) and correct
+// popover styling (see src/styles/lesson-builder/lesson-concepts-field.css) and correct
 // keyboard behavior. Also covers the search route's ranking (see
 // src/lib/lesson-builder/concept-search-rank.ts): an exact match on the typed
 // text sorts first.

@@ -1,0 +1,283 @@
+/* Owner: lesson-library.tsx — the page frame around the module list: page
+   background, the modules grid, the module card itself (header bar +
+   controls), "add lesson"/"add module" affordances, and the empty
+   first-lesson state. Lesson-row-level rules (the row head, title input,
+   drag/collapse handles, per-row icon cluster) live in lesson-row.css;
+   the module navigator sidebar lives in module-navigator.css; the editor
+   surface that opens inside a row is lesson-document.css.
+
+   Phase 3a note: every selector below is declared exactly once. Where the
+   old file re-declared a selector across sequential dated comment blocks
+   ("compact document", theme slice, "6: compact rail"), the values here are
+   the winning computed result of that whole cascade — verified against a
+   pixel diff, not just read off the last block. */
+
+.lesson-builder-page {
+  background: var(--muted);
+}
+
+.lesson-library {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 12px;
+  padding-bottom: 16px;
+}
+/* Escape on a block fully deselects (editing.ts: selection -> "none") and
+   parks focus here so keyboard navigation has somewhere sane to resume from
+   — deliberately invisible, since "nothing selected" has no chrome. */
+.lesson-library:focus {
+  outline: none;
+}
+.lesson-library-modules {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 12px;
+}
+
+.lesson-library-module {
+  overflow: visible;
+  border: 1px solid color-mix(in oklch, var(--primary) 30%, var(--border));
+  border-radius: 14px;
+  background: var(--surface-writing);
+  box-shadow: 0 1px 3px color-mix(in oklch, var(--foreground) 8%, transparent);
+}
+.lesson-library-module.dragging {
+  opacity: 0.45;
+}
+
+.lesson-library-module-meta {
+  display: grid;
+  gap: 5px;
+  padding: 8px 16px;
+  border-bottom: 0;
+  /* Corner fix (diagnostic root cause 3): matches .lesson-library-module's
+     own 14px radius exactly. This used to read 13px here, one px short of
+     the card's own curve — the visible seam this task's ONE allowed visual
+     change corrects. Geometry ownership: this header's own background is
+     clipped to its own radius, same rule the .lesson-document fix below
+     uses; no ancestor overflow:hidden is introduced, so nothing that must
+     escape the card (typeahead popover, quick-edit modal, HUD) is at risk. */
+  border-radius: 14px 14px 0 0;
+  background: var(--brand-primary-hover);
+}
+.lesson-library-module-line {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+.lesson-library-module-line > span {
+  color: color-mix(in oklch, var(--primary-foreground) 82%, transparent);
+  font-size: 10px;
+  white-space: nowrap;
+}
+.lesson-library-module-title {
+  min-width: 150px;
+  max-width: 430px;
+  flex: 1;
+  padding: 2px 3px;
+  border: 0;
+  border-radius: 4px;
+  background: transparent;
+  color: var(--primary-foreground);
+  font-size: 20px;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  outline: none;
+}
+.lesson-library-module-title:focus {
+  color: var(--ink-deep);
+  background: var(--surface-writing);
+  box-shadow: 0 0 0 4px color-mix(in oklch, var(--primary) 42%, transparent);
+}
+.lesson-library-module-delete {
+  display: grid;
+  place-items: center;
+  width: 26px;
+  height: 26px;
+  margin-left: 4px;
+  border-radius: 5px;
+  color: var(--muted-foreground);
+}
+.lesson-library-module-meta .lesson-library-module-delete {
+  color: #ffd9df;
+}
+.lesson-library-module-delete:hover:not(:disabled) {
+  background: color-mix(in oklch, var(--destructive) 12%, transparent);
+  color: var(--destructive);
+}
+.lesson-library-module-meta .lesson-library-module-delete:hover:not(:disabled) {
+  color: var(--destructive-foreground);
+  background: var(--destructive);
+}
+.lesson-library-module-delete:disabled {
+  opacity: 0.28;
+}
+.lesson-library-module-controls {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  margin-left: auto;
+}
+.lesson-library-module-controls button {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 6px;
+  border-radius: 4px;
+  color: color-mix(in oklch, var(--primary-foreground) 82%, transparent);
+  font-size: 10px;
+  font-weight: 650;
+}
+.lesson-library-module-controls button:hover:not(:disabled) {
+  color: var(--primary-foreground);
+  background: color-mix(in oklch, var(--primary-foreground) 17%, transparent);
+}
+.lesson-library-module-controls button:disabled {
+  opacity: 0.28;
+}
+.lesson-library-module-controls .danger,
+.lesson-inline-confirm .danger {
+  color: var(--destructive);
+}
+.lesson-library-module-meta .lesson-library-module-controls .danger {
+  color: #ffd9df;
+}
+.lesson-library-module-meta .lesson-library-module-controls .danger:hover:not(:disabled) {
+  color: var(--destructive-foreground);
+  background: var(--destructive);
+}
+.lesson-library-module-meta > div:last-child {
+  min-height: 22px;
+}
+.lesson-library-module-meta > div:last-child > span:first-child {
+  font-size: 9px;
+  letter-spacing: 0.1em;
+}
+
+/* Shared inline-confirm affordance ("Delete? Yes / No") — base rule here,
+   contextual sizing for the module header below and for the row's own
+   icon cluster in lesson-row.css. */
+.lesson-inline-confirm {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  color: var(--muted-foreground);
+  font-size: 10px;
+}
+.lesson-inline-confirm button {
+  padding: 3px 5px;
+  border-radius: 4px;
+  font-weight: 750;
+}
+.lesson-library-module-controls.lesson-inline-confirm {
+  gap: 6px;
+  font-size: 11px;
+  color: var(--muted-foreground);
+}
+.lesson-library-module-controls.lesson-inline-confirm > button {
+  padding: 4px 8px;
+  border-radius: 5px;
+  font-weight: 650;
+}
+.lesson-library-module-controls.lesson-inline-confirm > button:hover {
+  background: var(--muted);
+  color: var(--foreground);
+}
+
+.lesson-library-add-lesson {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  width: fit-content;
+  margin: 12px 0 0;
+  padding: 8px 16px;
+  border-radius: 999px;
+  background: var(--primary);
+  color: var(--primary-foreground);
+  font-size: 13px;
+  font-weight: 650;
+}
+.lesson-library-add-lesson:hover {
+  background: var(--brand-primary-hover, var(--primary));
+  color: var(--primary-foreground);
+}
+.lesson-library-add-lesson:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+/* Adds a whole new module card — a dashed placeholder the width of the
+   column, filled in solid primary once the theme slice landed. */
+.lesson-library-add-module {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  min-height: 46px;
+  margin-top: 10px;
+  border: 2px solid var(--primary);
+  border-radius: 10px;
+  color: var(--primary-foreground);
+  background: var(--primary);
+  font-size: 13px;
+  font-weight: 750;
+}
+.lesson-library-add-module:hover {
+  border-color: var(--brand-primary-hover);
+  color: var(--primary-foreground);
+  background: var(--brand-primary-hover);
+}
+
+.lesson-library-first-lesson {
+  display: grid;
+  place-items: center;
+  align-content: center;
+  gap: 8px;
+  padding: 26px 22px;
+  text-align: center;
+}
+.lesson-library-first-lesson > button {
+  display: inline-flex;
+  min-height: 32px;
+  align-items: center;
+  gap: 7px;
+  padding: 0 14px;
+  border-radius: 6px;
+  background: var(--primary);
+  color: var(--primary-foreground);
+  font-size: 12px;
+  font-weight: 700;
+}
+.lesson-library-first-lesson > span {
+  color: var(--muted-foreground);
+  font-size: 10px;
+}
+.lesson-library-first-lesson kbd,
+.lesson-library-add-lesson kbd {
+  padding: 1px 5px;
+  border-radius: 4px;
+  background: color-mix(in oklch, currentColor 16%, transparent);
+  font:
+    650 9px ui-monospace,
+    monospace;
+}
+.lesson-library-first-lesson > button kbd {
+  background: color-mix(in oklch, var(--primary-foreground) 22%, transparent);
+  color: inherit;
+}
+
+@media (max-width: 850px) {
+  .lesson-library-module-controls {
+    flex-shrink: 0;
+  }
+}
+
+/* Compact rail under 900px — trims the module header's own padding/type
+   scale; the matching lesson-row-head trim lives in lesson-row.css. */
+@media (max-width: 900px) {
+  .lesson-library-module-meta {
+    padding: 3px 12px;
+    gap: 2px;
+  }
+  .lesson-library-module-title {
+    font-size: 16px;
+  }
+}

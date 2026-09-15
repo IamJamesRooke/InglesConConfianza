@@ -45,7 +45,7 @@ interaction decision below is in service of those three goals, not of
   `toggleGiven`); the editing view shows a small muted "given" pill next to
   the pair, and the resting composed view renders the pair's English in
   normal weight with a dotted underline (`lesson-sentence-presentation.tsx`,
-  `sentence.css`). The learner's `SentencePracticeCard` renders a given
+  `sentence-presentation.css`). The learner's `SentencePracticeCard` renders a given
   piece as static Spanish/English text with no input, excluded from
   Tab/Enter progression and from completion (`isComplete`).
 - **Hint** (`callout`) — an optional small pill of extra context attached to
@@ -278,8 +278,9 @@ auto-marking is an editor input rule, not a parser behaviour.
 
 ## 5. Visual rules (current)
 
-Pulled from `web/src/styles/lesson-library-document.css` as it stands today,
-not from any proposal doc's aspirations.
+Pulled from `web/src/styles/lesson-builder/*.css` (one stylesheet per
+component since Phase 3a — see §9 item 0b) as it stands today, not from any
+proposal doc's aspirations.
 
 - **Lesson focus**: strict single-open — at most one lesson is expanded
   across the whole builder at a time (`lesson-library.tsx`'s `openLessonId`
@@ -349,7 +350,7 @@ not from any proposal doc's aspirations.
   absolutely positioned at the active block's own bottom-right — which
   overlapped the following slide's content (its `kbd` badges sat half
   covered by the next card). It's now `.lesson-document-insert-cue`
-  (`slide-insert-control.tsx`/`insert.css`), rendered *inside* the one seam
+  (`slide-insert-control.tsx`/`slide-insert-control.css`), rendered *inside* the one seam
   that already shows the "+" signpost at rest — the seam immediately after
   the active slide (`data-after-active="true"`, §5 item A). That seam grows
   to `18px` at rest (up from the bare signpost's `4px`) to hold the text,
@@ -441,18 +442,20 @@ not from any proposal doc's aspirations.
   `canRedo`/`onUndo`/`onRedo`/`onRetrySave` through as props; it no longer
   renders any of this itself.
 - **Quiet module header** (round 2, item F, behind `/* F: quiet module
-  header */ … /* end F */` in `library.css`, placed after the older
-  "theme slice" section so it wins on cascade order at equal specificity):
-  no fill, `var(--foreground)` on a plain/transparent background, the
-  title input at 20px/700 with a 1px `var(--border)` bottom hairline
-  instead of the filled primary-blue bar the theme-slice section still
-  defines underneath it. The delete-module icon is a ghost icon (muted,
-  destructive fill only on hover) at the right. Reversible: comment out
-  the `F` block to fall back to the filled-blue header.
+  header */ … /* end F */` in the old, now-retired `library.css`; folded
+  into the single `.lesson-library-module-meta` rule in
+  `lesson-library.css` as of Phase 3a): no fill, `var(--foreground)` on a
+  plain/transparent background, the title input at 20px/700 with a 1px
+  `var(--border)` bottom hairline instead of the filled primary-blue bar
+  the old theme-slice section used to define underneath it. The
+  delete-module icon is a ghost icon (muted, destructive fill only on
+  hover) at the right. No longer reversible via a comment toggle — the
+  filled-blue header variant was deleted, not retained, when the F block
+  was folded in.
 - **Freehand "Covers" concepts render dashed** (§9 item R5): a concept chip
   with no `conceptId` (typed and accepted but not matched to anything in the
   curriculum database) gets `border-style: dashed` — `.lesson-concept-chip.is-freehand`
-  in `concepts.css`, the same visual language as the module Key Concepts
+  in `lesson-concepts-field.css`, the same visual language as the module Key Concepts
   field's `is-uncovered` state — plus `title="Not in the curriculum —
   coverage won't count it"` on the chip. Nothing else about it changes: no
   color shift, no icon, and it still isn't clickable (no `ConceptQuickEdit`,
@@ -463,7 +466,7 @@ not from any proposal doc's aspirations.
   own left edge — 4px inside the cue text's old `margin-left: 2px`, visually
   swallowing the leading "n" of "next slide". Fixed with a `margin-left:
   10px` override on `.lesson-document-insert-cue` in the same `max-width:
-  850px` block in `insert.css`. The cue still hides entirely under 700px
+  850px` block in `slide-insert-control.css`. The cue still hides entirely under 700px
   (unchanged).
 - **Disabled module-delete explains itself** (§9 item R7): when
   `modules.length === 1`, the trash icon's `title`/`aria-label` read "Can't
@@ -475,8 +478,10 @@ not from any proposal doc's aspirations.
   that already owns `Ctrl Alt L`) focuses and selects it. Removes the old
   8-`Shift Tab` walk as the only keyboard path.
 - **Compact rail under 900px** (§9 item R7, behind `/* 6: compact rail under
-  900px */ … /* end 6 */` in `module-navigation.css`, `lesson-builder/library.css`,
-  and `lesson-builder/document.css`): below 900px `ModuleNavigator` renders an
+  900px */ … /* end 6 */` in the old, now-retired `module-navigation.css`,
+  `library.css`, and `document.css`; folded into the base rules of
+  `module-navigator.css`, `lesson-library.css`/`lesson-row.css`, and
+  `lesson-document.css` as of Phase 3a): below 900px `ModuleNavigator` renders an
   always-present "Modules ▾ <active module name>" disclosure button
   (`.module-navigator-disclosure`, hidden above 900px via `display: none`);
   the search box, module list, "Add module", and save/undo footer move into
@@ -519,7 +524,7 @@ without a fresh, explicit ask:
   removed in `5972306e` and wrongly recorded here as an owner decision; the
   owner asked for it back. It is now `EditingHud`
   (`web/src/components/lesson-builder/editing-hud.tsx`,
-  `web/src/styles/lesson-builder/hud.css`), generated from `KEYMAP`/`scopeOf`
+  `web/src/styles/lesson-builder/editing-hud.css`), generated from `KEYMAP`/`scopeOf`
   so it can't drift from the dispatcher: it mirrors the dispatcher's own
   scope-shadowing precedence to compute the chords live for the current
   selection, then orders them via a hand-owned `SCOPE_PRIORITY` (which chords
@@ -643,7 +648,7 @@ statically or spin up their own isolated server against a throwaway file.
 | # | Item | Model | Status |
 |---|---|---|---|
 | 0a | Consolidate design docs into this file | Sonnet | done |
-| 0b | Split `lesson-library-document.css` into per-component files, prune unused selectors and `!important`s, drop process comments | Sonnet | todo |
+| 0b | Split `lesson-library-document.css` into per-component files, prune unused selectors and `!important`s, drop process comments | Sonnet | done (Phase 3a, 2026-09-15) |
 | 0c | `LessonBuilderContext` to replace the LessonLibrary→LessonDocument→SentenceEditor prop chain | Sonnet | done |
 | 0d | Sweep process/history comments ("Track E", "S3", "/tmp/…", "owned by lesson-ux") from lesson-builder code | Haiku | done |
 | 0e | AGENTS.md "Lesson builder task protocol" section | Sonnet | done |

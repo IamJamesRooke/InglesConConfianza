@@ -1,5 +1,5 @@
-/* Concept chips (LessonConceptsField) — one consistent pill for concept
-   chips, the "add concept" field, and the priority-role/coverage variants. */
+/* Owner: lesson-concepts-field.tsx — concept chips (add/remove/role/coverage
+   variants), the add-concept field, and the concept typeahead popover. */
 .lesson-concepts-row {
   display: flex;
   flex-wrap: wrap;

@@ -3,11 +3,11 @@ import { readFileSync } from "node:fs";
 import path from "node:path";
 import test from "node:test";
 
-// lesson-library.tsx has a top-level `import "@/styles/module-navigation.css"`
-// side-effect import, which plain node:test/tsx can't resolve outside
-// Next.js's webpack pipeline — there is no CSS-import stub set up for this
-// test runner (module-navigation.test.ts only renders ModuleNavigator, which
-// has no CSS import, so it doesn't hit this). Rather than add a module
+// lesson-library.tsx pulls in module-navigator.tsx, which (like most
+// lesson-builder components) is only ever rendered inside a page whose
+// stylesheets are wired up by src/app/layout.tsx — plain node:test/tsx
+// can't resolve that outside Next.js's webpack pipeline, and there is no
+// CSS-import stub set up for this test runner. Rather than add a module
 // loader/mock just for this file, these are SOURCE-level checks against the
 // component's own source text, not rendered-DOM checks. They verify the same
 // structural facts a render would, at lower fidelity.

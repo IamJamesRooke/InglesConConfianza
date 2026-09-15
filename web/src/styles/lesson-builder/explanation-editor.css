@@ -1,0 +1,95 @@
+/* Owner: explanation-editor.tsx — the EditablePracticeMarkdown document
+   variant used inside a lesson block, plus its ES/EN mark colors.
+
+   Phase 3a removed this file's ten `!important` flags (the diagnostic's
+   only live ones outside print.css). They are not load-bearing: Tailwind
+   here ships via `@import "tailwindcss"` in globals.css, which puts every
+   utility class inside `@layer utilities` — unlayered CSS (this file)
+   always outranks layered CSS regardless of specificity or source order,
+   per the CSS Cascade Layers spec, so a plain rule already wins against
+   practice-markdown.tsx's inline Tailwind classes (its "document"-variant
+   headings/lists) without help. `practice-responsive-overrides.css`,
+   imported later in layout.tsx, never touches these same properties
+   (font-size/weight/line-height/margin/text-align) — it only styles
+   `mark` colors — so there was no unlayered opponent either. Verified
+   empirically: with `!important` removed, a live paragraph's computed
+   font-size/weight/line-height were unchanged (16px/400/1.5, `className`
+   empty — this "document" variant never puts a Tailwind class on a plain
+   paragraph in the first place). No heading/list markdown exists in the
+   owner's current lessons.json to spot-check that branch the same way;
+   the layering argument applies identically to it, but flag this to the
+   owner as the one part of this change verified by reasoning rather than
+   a screenshot. */
+.lesson-document-explanation {
+  min-height: 0;
+  margin-block: 2px;
+  padding: 6px 9px;
+  border: 0;
+  border-radius: 6px;
+  background: var(--muted);
+  font-size: 14px;
+  line-height: 1.45;
+}
+.lesson-document-explanation .authoring-wysiwyg-shell {
+  width: 100%;
+}
+.lesson-document-explanation .authoring-wysiwyg {
+  min-height: 20px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  text-align: left;
+  outline: none;
+}
+.lesson-document-explanation .authoring-wysiwyg:focus,
+.lesson-document-explanation .authoring-wysiwyg:focus-visible {
+  outline: none;
+  box-shadow: none;
+}
+.lesson-document-explanation .practice-markdown-content {
+  text-align: left;
+}
+.lesson-document-explanation .practice-markdown-content > * {
+  margin-block: 0 3px;
+}
+.lesson-document-explanation .practice-markdown-content :is(p, li) {
+  color: var(--foreground);
+  letter-spacing: 0;
+}
+.lesson-document-explanation .practice-markdown-content :is(ol, ul) {
+  text-align: left;
+}
+.lesson-document-explanation mark[data-language="es"] {
+  padding: 0;
+  background: transparent;
+  color: var(--lesson-hl-es);
+  font-weight: 600;
+}
+.lesson-document-explanation mark[data-language="en"] {
+  padding: 0;
+  background: transparent;
+  color: var(--lesson-hl-en);
+  font-weight: 400;
+}
+/* Same type scale as the sentence/vocabulary fields (14px / 1.45) — this
+   used to force 16px/1.65, so an explanation slide and the sentence slide
+   right next to it read at two different sizes for no real reason. */
+.lesson-document-explanation .authoring-wysiwyg-shell[data-empty="true"]::before {
+  text-align: left;
+  font-style: normal;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+}
+.lesson-document-explanation .practice-markdown-content :is(p, li, ol, ul) {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+}
+/* Modestly heavier than body text, not the bold weight this used to share
+   with paragraphs — headings still read as headings inside an explanation. */
+.lesson-document-explanation .practice-markdown-content :is(h1, h2, h3) {
+  font-size: 16px;
+  font-weight: 650;
+  line-height: 1.5;
+}

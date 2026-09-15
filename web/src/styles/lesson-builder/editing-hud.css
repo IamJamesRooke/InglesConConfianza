@@ -1,7 +1,7 @@
-/* Editing HUD — the bottom-bar keyboard cheat sheet generated from KEYMAP
-   (see src/components/lesson-builder/editing-hud.tsx). Owned exclusively by
-   that component; do not duplicate its rules elsewhere. It is a hint, not a
-   control surface: aria-hidden, no focusable children, no animation.
+/* Owner: editing-hud.tsx — the bottom-bar keyboard cheat sheet generated
+   from KEYMAP. Owned exclusively by that component; do not duplicate its
+   rules elsewhere. It is a hint, not a control surface: aria-hidden, no
+   focusable children, no animation.
 
    Palette restored from the pre-5972306e HUD the owner missed (dark ink
    bar, yellow keycaps) rather than the neutral --card/--border pairing —

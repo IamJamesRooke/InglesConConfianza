@@ -1,0 +1,181 @@
+/* Owner: lesson-document.tsx — the editor surface that opens inside a
+   lesson row: the block frame, its hover-revealed chrome cluster
+   (drag/duplicate/delete), drag-and-drop state, and the tail (tags,
+   undo-deletion). Slide content itself lives in explanation-editor.css /
+   sentence-editor.css / sentence-presentation.css; the insert-a-slide
+   control is slide-insert-control.css.
+
+   Every selector below is declared once; values are the winning result of
+   the old file's "compact document" + "6: compact rail" + theme-slice
+   layers, verified against a pixel diff. */
+
+.lesson-document {
+  padding: 9px 40px 13px 52px;
+  padding-block: 16px 20px;
+  border-top: 1px solid var(--border);
+  background: var(--surface-writing);
+}
+.lesson-document-body {
+  position: relative;
+  max-width: 880px;
+}
+/* "Covers" sits at the very end of the document, after the last slide and
+   its tail insertion control. */
+.lesson-document-tags {
+  margin: 4px 0 0;
+}
+.lesson-document > div:first-child > div > span:first-child {
+  font-size: 9px;
+  letter-spacing: 0.1em;
+}
+.lesson-document-undo {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 5px;
+  border-radius: 5px;
+  color: var(--muted-foreground);
+  font-size: 10px;
+  font-weight: 650;
+}
+.lesson-document-undo:hover {
+  background: var(--muted);
+  color: var(--foreground);
+}
+
+.lesson-document-block {
+  position: relative;
+  /* The insert-slide control above this block is a normal-flow "+ Add
+     slide" text button, not a floating circle that used to sit flush
+     against this padding's edge, so padding stays minimal here. Right side
+     keeps a permanent horizontal gutter for the slide-action icons below —
+     reserved space, but width only, never height, so content never runs
+     underneath them regardless of hover/focus state. */
+  padding: 0 54px 0 8px;
+  border-radius: 6px;
+  outline: none;
+  transition:
+    transform 0.12s ease,
+    box-shadow 0.12s ease;
+}
+@media (prefers-reduced-motion: reduce) {
+  .lesson-document-block {
+    transition: none;
+  }
+}
+/* No hairline "thread" between blocks — the insert control sitting right
+   there already marks the boundary. Only the active slide paints this bar
+   (see [data-state="editing"]::after below) — `data-state` comes straight
+   from the shared EditingSelection (editing.ts), not DOM focus, so it can
+   never light up on a slide the teacher has actually left. */
+.lesson-document-block::after {
+  content: "";
+  position: absolute;
+  left: -14px;
+  top: 6px;
+  bottom: 6px;
+  width: 2px;
+  border-radius: 2px;
+  background: transparent;
+  transition: background 0.1s;
+}
+.lesson-document-block[data-state="resting"]:hover,
+.lesson-document-block[data-state="editing"] {
+  transform: none;
+  box-shadow: none;
+  background: transparent;
+}
+.lesson-document-block[data-state="editing"]::after {
+  width: 4px;
+  background: var(--primary);
+}
+.lesson-document-block.dragging {
+  opacity: 0.4;
+}
+.lesson-document-block.drop-before {
+  box-shadow: inset 0 2px 0 var(--primary);
+}
+.lesson-document-block.drop-after {
+  box-shadow: inset 0 -2px 0 var(--primary);
+}
+
+.lesson-document-block-actions {
+  position: absolute;
+  top: 2px;
+  right: 4px;
+  z-index: 3;
+  display: flex;
+  gap: 4px;
+  opacity: 0;
+}
+.lesson-document-block:hover > .lesson-document-block-actions,
+.lesson-document-block[data-state="editing"] > .lesson-document-block-actions {
+  opacity: 1;
+}
+.lesson-document-block-actions button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  /* Item 7: >=24x24 hit area via padding, not a bigger glyph. */
+  min-width: 24px;
+  min-height: 24px;
+  border-radius: 5px;
+  color: var(--muted-foreground);
+  background: var(--surface-writing);
+}
+.lesson-document-block-actions button:hover,
+.lesson-document-block-actions button:focus-visible {
+  color: var(--foreground);
+  background: var(--muted);
+  outline: none;
+}
+.lesson-document-block-actions button.danger:hover,
+.lesson-document-block-actions button.danger:focus-visible {
+  color: var(--destructive);
+}
+@media (hover: none), (pointer: coarse) {
+  .lesson-document-block-actions {
+    opacity: 1;
+  }
+}
+
+@media (max-width: 850px) {
+  .lesson-document {
+    padding-left: 20px;
+    padding-right: 12px;
+  }
+  .lesson-document-block {
+    padding-right: 26px;
+  }
+}
+
+/* Compact rail under 900px — shaves the document's own top padding, part
+   of the fixed overhead above the first slide measured in first-run
+   friction #6. */
+@media (max-width: 900px) {
+  .lesson-document {
+    padding-top: 2px;
+  }
+}
+
+/* Inline next-action cue: lives on the after-active seam itself — see
+   .lesson-document-insert-cue in slide-insert-control.css. It used to live
+   here, absolutely positioned off the active block's own bottom edge, but
+   that overlapped the following slide's content (the kbd badges sat
+   half-covered by the next explanation card). */
+
+/* Corner fix (diagnostic root cause 3, the ONE deliberate visual change in
+   this pass): when this document belongs to the last row in its module's
+   list and is open, its own flush background sits exactly at
+   .lesson-library-module's rounded bottom edge (lesson-library.css) and
+   used to draw square corners across it. Scoped to :last-child so a
+   document that isn't at the card's true bottom edge (more rows follow it)
+   is unaffected — this rule is inert there since nothing ever paints past
+   that bottom edge for it to clip. Fixed via a matching radius on this
+   element's own box, not by clipping the module ancestor, so nothing that
+   must escape the card (the concept typeahead popover, the editing HUD,
+   the format toolbar) is put at risk of being cut off. */
+.lesson-library-row:last-child > .lesson-document {
+  border-radius: 0 0 14px 14px;
+}
+

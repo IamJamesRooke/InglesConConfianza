@@ -1,5 +1,6 @@
-/* SlideInsertControl: the hover-revealed seam between slides (and after the
-   last one) used to insert an Explanation/Sentence/Table block.
+/* Owner: slide-insert-control.tsx — the hover-revealed seam between slides
+   (and after the last one) used to insert an Explanation/Sentence/Table
+   block.
 
    At rest: a 4px gap with zero reserved layout space, and no "+" signpost
    at all — a ten-slide lesson used to show an unbroken ladder of eleven
