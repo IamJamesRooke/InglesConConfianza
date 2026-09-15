@@ -97,9 +97,9 @@ test("keyboard writing preserves alternatives and hints and prunes abandoned pai
   await expect(rest).toBeVisible();
   await expect(rest.locator('[lang="en"]')).toHaveText("I'm hungry.");
   await expect(rest).not.toContainText("Estoy hambriento");
-  // Resting typography (§5, item C): Spanish 16px/600, English 15px/400
-  // italic — not a matched pair of sizes.
-  await expect(rest.locator('[lang="es"]')).toHaveCSS("font-size", "16px");
+  // Resting typography (§5, item C; Phase 3b bumped the scale to 17/15):
+  // Spanish 17px/600, English 15px/400 italic — not a matched pair of sizes.
+  await expect(rest.locator('[lang="es"]')).toHaveCSS("font-size", "17px");
   await expect(rest.locator('[lang="es"]')).toHaveCSS("font-weight", "600");
   await expect(rest.locator('[lang="en"]')).toHaveCSS("font-size", "15px");
   await expect(rest.locator('[lang="en"]')).toHaveCSS("font-style", "italic");
@@ -137,7 +137,7 @@ test("keyboard writing preserves alternatives and hints and prunes abandoned pai
   await page.screenshot({ path: testInfo.outputPath("sentence-edit.png"), fullPage: true });
 });
 
-test("table presentation stays centered and compact through hint editing", async ({ page }, testInfo) => {
+test("table presentation stays left-aligned and compact through hint editing", async ({ page }, testInfo) => {
   await page.goto("/admin/lesson-builder");
   await page.getByRole("button", { name: /^(Add|Create) lesson$/ }).first().click();
   const title = page.locator("[data-lesson-title]").last();
@@ -205,10 +205,13 @@ test("table presentation stays centered and compact through hint editing", async
   await expect(spanish.first()).toBeFocused();
   await expect(spanish).toHaveCount(4);
   await expect(table.getByRole("button", { name: "Add row" })).toBeVisible();
+  // §1 (Phase 3b): tables are left-aligned to the document's text column,
+  // not centred — the rows' own left edge should line up with the table
+  // section's left edge, not its midpoint.
   const content = table.locator(".lesson-document-pieces");
   const bounds = await content.boundingBox();
   const tableBounds = await table.boundingBox();
-  expect(Math.abs(bounds!.x + bounds!.width / 2 - tableBounds!.x - tableBounds!.width / 2)).toBeLessThan(2);
+  expect(Math.abs(bounds!.x - tableBounds!.x)).toBeLessThan(2);
   const englishStarts = await english.evaluateAll((fields) => fields.map((field) => field.getBoundingClientRect().x));
   expect(Math.max(...englishStarts) - Math.min(...englishStarts)).toBeLessThan(1);
   const tags = await row.locator(".lesson-document-tags").boundingBox();

@@ -37,6 +37,9 @@ async function openLessonWithPairs(
     if (index === pairs.length - 1) await englishField.blur();
   }
 
+  // Covers (Phase 3b) is a quiet line at rest — the suggestion chips only
+  // mount once it's expanded (click/focus), same as the tagged chips.
+  await row.locator("[data-covers-summary]").click();
   const coversInput = row.locator("[data-covers-for]");
   return { row, coversInput };
 }
@@ -108,6 +111,9 @@ test("dismissing a suggestion sticks for the rest of the session, not for the le
   await expect(suggestions).toHaveCount(before - 1);
 
   await page.reload();
+  // Covers (Phase 3b) collapses to its quiet line again on reload — expand
+  // it before checking suggestions.
+  await row.locator("[data-covers-summary]").click();
   const suggestionsAfterReload = row.locator(".is-pair-suggestion");
   await expect(suggestionsAfterReload).not.toHaveCount(0, { timeout: 5000 });
   const labelsAfterReload = await suggestionsAfterReload.allTextContents();
