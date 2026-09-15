@@ -343,3 +343,27 @@ test("copying a marked run into another explanation keeps its marks", async ({ p
   expect(blocks[1]?.contentMarkdown).toBe("[[es:**hola**]] mundo");
   await expectNoRawMarkup(page);
 });
+
+// Regression: title `Enter` opens the lesson and moves the selection to a
+// fresh explanation slide, but that slide's ProseMirror editor mounts
+// asynchronously — a beat that can still be open when a fast typist's next
+// keystrokes arrive. Before the fix (focus.ts's
+// `lockTitleDuringFocusTransfer`), those keystrokes could land back in the
+// title input instead of disappearing or reaching the explanation. Typing
+// with zero inter-key delay, immediately after Enter with no intervening
+// wait, exercises the worst case.
+test("typing immediately after title Enter never lands in the title", async ({ page }) => {
+  const name = "UX: title Enter race";
+  await page.goto("/admin/lesson-builder");
+  await page.getByRole("button", { name: /^(Add|Create) lesson$/ }).first().click();
+  const title = page.locator("[data-lesson-title]").last();
+  await title.fill(name);
+  await page.keyboard.press("Enter");
+  // No wait for the explanation to be focused — type right away.
+  await page.keyboard.type("1234567890", { delay: 0 });
+
+  await expect(title).toHaveValue(name);
+  const row = page.locator("[data-lesson-row]").last();
+  const explanation = row.getByRole("textbox", { name: "Explanation 1" });
+  await expect(explanation).toContainText("1234567890", { timeout: 5000 });
+});

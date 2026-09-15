@@ -180,6 +180,7 @@ export function SentenceEditor(props: Props) {
                     dataField="spanish"
                     value={piece.spanish}
                     otherValue={englishDraft[piece.id] ?? formatAnswerEntry(piece.acceptedAnswers)}
+                    isSelected={pieceActive && selectedField?.field === "spanish"}
                     onFocus={() => selectField("spanish", piece.id)}
                     onChange={(value) => actions.updateSpanish(lessonId, block.id, piece.id, value)}
                     onAcceptConcept={(spanishText, englishTextIfEmpty) =>
@@ -193,6 +194,7 @@ export function SentenceEditor(props: Props) {
                     dataField="english"
                     value={englishDraft[piece.id] ?? formatAnswerEntry(piece.acceptedAnswers)}
                     otherValue={piece.spanish}
+                    isSelected={pieceActive && selectedField?.field === "english"}
                     onFocus={() => selectField("english", piece.id)}
                     onChange={(value) => setEnglishDraft((prev) => ({ ...prev, [piece.id]: value }))}
                     onBlur={(value) => commitEnglishDraft(piece, value)}

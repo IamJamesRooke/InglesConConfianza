@@ -66,6 +66,53 @@ export function restoreRememberedFocus(): void {
   requestAnimationFrame(() => target.focus());
 }
 
+// A selection transition sometimes names a target (a fresh explanation's
+// ProseMirror editor, a just-created block/piece) whose real DOM node does
+// not exist yet — `focusSelection` below can only call `.focus()` on it once
+// React has actually mounted it, which for a ProseMirror editor can be more
+// than one animation frame away. Until then, real browser focus is still
+// sitting on whatever was focused *before* the transition — the lesson
+// title after title `Enter`, or the previous pair's field after a chord that
+// inserts a new block/piece (E3b's chain-extend) — so a fast typist's next
+// keystrokes land there instead of disappearing into a field that doesn't
+// exist yet. For a plain field that is silent data loss into the wrong
+// place; for a sentence pair it is worse — the keystrokes are appended to
+// that *other* pair's text (observed: a chained pair's "hacer" landing in
+// the previous pair's Spanish, "quieres o tú quieres" -> "...quiereshacer",
+// while the new pair it was meant for stays blank and later gets pruned as
+// empty). `readOnly` is the browser's own mechanism for "focusable, but
+// typing does nothing": cheaper and more robust than intercepting/replaying
+// keydowns ourselves, and it self-corrects the moment real focus actually
+// moves, via a capture-phase `focusin` listener, or after a bounded 500ms if
+// focus never arrives (e.g. the insert failed) so the field never gets stuck
+// unusable.
+function lockElementDuringFocusTransfer(el: HTMLElement): void {
+  if (!(el instanceof HTMLInputElement || el instanceof HTMLTextAreaElement)) return;
+  if (el.readOnly) return; // already locked by an earlier, still-pending transfer
+  el.readOnly = true;
+  let settled = false;
+  const unlock = () => {
+    if (settled) return;
+    settled = true;
+    el.readOnly = false;
+    document.removeEventListener("focusin", onFocusIn, true);
+  };
+  const onFocusIn = (event: FocusEvent) => {
+    if (event.target !== el) unlock();
+  };
+  document.addEventListener("focusin", onFocusIn, true);
+  window.setTimeout(unlock, 500);
+}
+
+// Title `Enter` (`enterFromTitle` in keymap.ts): lock the title input itself
+// the moment Enter is handled, so even the very first keystroke typed before
+// the target field mounts is dropped rather than landing in the title.
+export function lockTitleDuringFocusTransfer(lessonId: string): void {
+  if (typeof document === "undefined") return;
+  const title = document.querySelector<HTMLElement>(`[data-lesson-title="${lessonId}"]`);
+  if (title) lockElementDuringFocusTransfer(title);
+}
+
 export function focusSelection(selection: EditingSelection): void {
   if (typeof document === "undefined") return;
 
@@ -116,6 +163,13 @@ export function focusSelection(selection: EditingSelection): void {
   // presentation to its editing fields, or a brand-new block/piece).
   const settled = trySettleFocus(selection);
   if (!settled) {
+    // The real target doesn't exist yet — lock whatever is currently
+    // focused (if it's a text field at all) so keystrokes typed in this gap
+    // are dropped instead of corrupting it. See the block comment on
+    // `lockElementDuringFocusTransfer` above.
+    if (document.activeElement instanceof HTMLElement) {
+      lockElementDuringFocusTransfer(document.activeElement);
+    }
     requestAnimationFrame(() => {
       if (!trySettleFocus(selection)) {
         const slide = document.querySelector<HTMLElement>(

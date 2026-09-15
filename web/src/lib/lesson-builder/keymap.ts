@@ -11,7 +11,11 @@ import {
   setExplanationLanguage,
   toggleExplanationMark,
 } from "@/lib/lesson-builder/explanation-commands";
-import { focusModuleName, rememberFocus } from "@/lib/lesson-builder/focus";
+import {
+  focusModuleName,
+  lockTitleDuringFocusTransfer,
+  rememberFocus,
+} from "@/lib/lesson-builder/focus";
 import type { LessonBuilderActions } from "@/lib/lesson-builder/builder-context";
 import { proposedPairsForBlock, type ProposedPair } from "@/lib/lesson-builder/pair-proposals";
 import type { Lesson, LessonBlock } from "@/lib/lesson-builder/types";
@@ -190,6 +194,11 @@ function enterFromTitle(ctx: CommandContext): boolean {
   const { lessonId } = ctx.selection;
   const lesson = findLesson(ctx.lessons, lessonId);
   if (!lesson) return false;
+  // The target field's real DOM node — especially a fresh explanation's
+  // ProseMirror editor — can still be a beat away from existing. Lock the
+  // title read-only for that gap so a fast typist's next keystrokes are
+  // dropped rather than landing back in the title. See focus.ts.
+  lockTitleDuringFocusTransfer(lessonId);
   ctx.editing.setOpenLesson(lessonId);
   const first = lesson.blocks[0];
   if (first) {
