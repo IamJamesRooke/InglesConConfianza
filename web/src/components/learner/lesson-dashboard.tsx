@@ -197,12 +197,17 @@ export function LessonDashboard({
                           Pronto
                         </span>
                       ) : (
-                        <span
-                          className="journey-toc-rule"
-                          style={{ "--target": `${pct}%` } as CSSProperties}
-                        >
-                          <span />
-                        </span>
+                        <>
+                          <span
+                            className="journey-toc-rule"
+                            style={{ "--target": `${pct}%` } as CSSProperties}
+                          >
+                            <span />
+                          </span>
+                          <span className="journey-toc-count">
+                            {done} de {ready.length}
+                          </span>
+                        </>
                       )}
                     </a>
                   );
