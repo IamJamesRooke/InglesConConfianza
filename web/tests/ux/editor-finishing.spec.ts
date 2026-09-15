@@ -143,6 +143,12 @@ test("direct seam actions insert at exact boundaries without overlay", async ({ 
   // tabbing/clicking into a specific choice.
   await middle.hover();
   await middleTable.focus();
+  // The hover above re-triggers the seam's 0.1s height transition (4px ->
+  // 26px), which shifts the following block's layout box as it runs. Wait
+  // for the seam to reach its expanded end state before reading anyone's
+  // boundingBox(), or these reads can land mid-transition and the boundary
+  // checks below flake.
+  await expect.poll(async () => (await middle.boundingBox())?.height).toBe(26);
   const previousBox = await row.locator("[data-document-block]").nth(0).boundingBox();
   const paletteBox = await middle.locator(".lesson-document-insert-actions").boundingBox();
   const nextBox = await row.locator("[data-document-block]").nth(1).boundingBox();

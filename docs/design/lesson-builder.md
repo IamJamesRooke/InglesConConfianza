@@ -400,11 +400,6 @@ statically or spin up their own isolated server against a throwaway file.
   documented pre-existing timing flake around the concept-search box
   (`getByPlaceholder("Search lessons, phrases, or concepts…")`) — a rerun
   clearing it without code changes is not a regression signal.
-- **Known flake**: `web/tests/ux/editor-finishing.spec.ts`'s seam-boundary
-  pixel check (`direct seam actions insert at exact boundaries without
-  overlay`) failed once during R5 verification on a pixel-rounding race,
-  then passed cleanly on its own in isolation and in a full clean rerun —
-  unrelated to R5's changes (none of which touch seam layout).
 
 ## 8. Known gaps
 
