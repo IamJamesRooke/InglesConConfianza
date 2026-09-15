@@ -15,6 +15,42 @@
   white-space: nowrap;
 }
 
+/* Covers as one quiet line (§5): the lesson's Covers field collapses to
+   this summary at rest — full chips/typeahead only mount once it's
+   focused or clicked (lesson-concepts-field.tsx). Padding matches
+   .lesson-concept-add's own so the two don't visibly jump when the field
+   expands in place. */
+.lesson-covers-summary {
+  display: inline-flex;
+  align-items: baseline;
+  min-height: 24px;
+  padding: 0 4px;
+  border: 0;
+  border-radius: 5px;
+  background: transparent;
+  color: var(--muted-foreground);
+  font-size: 13px;
+}
+.lesson-covers-summary:hover,
+.lesson-covers-summary:focus-visible {
+  color: var(--foreground);
+  background: var(--muted);
+  outline: none;
+}
+.lesson-covers-summary-label {
+  font-weight: 700;
+}
+.lesson-covers-summary-term,
+.lesson-covers-summary-more {
+  white-space: nowrap;
+}
+
+/* Priority dots (§5) only render when the lesson's concepts don't all share
+   one curriculum role — set by lesson-concepts-field.tsx's `rolesUniform`. */
+.lesson-concepts-row[data-roles-uniform="true"] .lesson-concept-chip[class*="role-"]::before {
+  display: none;
+}
+
 .lesson-concept-chip {
   display: inline-flex;
   align-items: center;

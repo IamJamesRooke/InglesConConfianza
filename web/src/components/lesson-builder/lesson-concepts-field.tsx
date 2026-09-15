@@ -1,7 +1,15 @@
 "use client";
 
 import { Plus, Snowflake, X } from "lucide-react";
-import { useEffect, useId, useLayoutEffect, useRef, useState, type Ref } from "react";
+import {
+  useEffect,
+  useId,
+  useLayoutEffect,
+  useRef,
+  useState,
+  type FocusEvent,
+  type Ref,
+} from "react";
 
 import { ConceptQuickEdit, type ConceptDraft } from "@/components/lesson-builder/concept-quick-edit";
 import { curriculumRoles } from "@/components/curriculum/curriculum-row-editor";
@@ -152,6 +160,31 @@ export function LessonConceptsField({
     setDismissedFor(coversFor);
     setDismissed(coversFor ? readDismissed(coversFor) : new Set());
   }
+
+  // Covers as one quiet line (§5): the lesson's own "Covers" field (compact
+  // variant + coversFor) collapses to a summary line at rest — the full
+  // chips/typeahead/suggestions only mount once that line is focused or
+  // clicked. Never applies to the module Key Concepts field (no coversFor)
+  // or the block/inline variants, which stay expanded as before.
+  const collapsible = variant === "compact" && Boolean(coversFor);
+  const [expanded, setExpanded] = useState(false);
+  const coversWrapRef = useRef<HTMLDivElement | null>(null);
+
+  function openCovers() {
+    setExpanded(true);
+  }
+
+  function collapseIfFocusLeft(event: FocusEvent<HTMLDivElement>) {
+    if (!collapsible) return;
+    const next = event.relatedTarget as Node | null;
+    if (next && event.currentTarget.contains(next)) return;
+    setExpanded(false);
+  }
+
+  useEffect(() => {
+    if (!collapsible || !expanded) return;
+    coversWrapRef.current?.querySelector<HTMLInputElement>("input[data-covers-for]")?.focus();
+  }, [collapsible, expanded]);
 
   // Recompute auto-Covers suggestions 800ms after the lesson's pairs change,
   // and once on open (a teacher who opens straight into an already-filled
@@ -341,8 +374,53 @@ export function LessonConceptsField({
     pairSuggestions.forEach(acceptPairMatch);
   }
 
+  // Priority dots (§5): only shown when the lesson's own concepts don't all
+  // share one curriculum role — six identical dots say nothing.
+  const conceptRoles = concepts
+    .map((concept) =>
+      concept.conceptId
+        ? localDisplays[concept.conceptId]?.role ?? conceptDisplays[concept.conceptId]?.role ?? "Unranked"
+        : null,
+    )
+    .filter((role): role is string => role !== null);
+  const rolesUniform = new Set(conceptRoles).size <= 1;
+
+  if (collapsible && !expanded) {
+    const terms = concepts.map((concept) => {
+      const display = concept.conceptId
+        ? localDisplays[concept.conceptId] ?? conceptDisplays[concept.conceptId]
+        : undefined;
+      return display?.english ?? concept.label;
+    });
+    const shown = terms.slice(0, 3);
+    const extra = terms.length - shown.length;
+    return (
+      <div ref={coversWrapRef} onBlur={collapseIfFocusLeft}>
+        <button
+          type="button"
+          data-covers-summary
+          className="lesson-covers-summary"
+          onClick={openCovers}
+          onFocus={openCovers}
+          aria-label="Covers — click or press Enter to edit"
+        >
+          <span className="lesson-covers-summary-label">Covers</span>
+          {shown.map((term, index) => (
+            <span key={index} className="lesson-covers-summary-term">
+              {" "}
+              · {term}
+            </span>
+          ))}
+          {extra > 0 && <span className="lesson-covers-summary-more"> · +{extra}</span>}
+        </button>
+      </div>
+    );
+  }
+
   return (
     <div
+      ref={collapsible ? coversWrapRef : undefined}
+      onBlur={collapsible ? collapseIfFocusLeft : undefined}
       className={
         variant === "inline" || variant === "compact"
           ? ""
@@ -380,7 +458,10 @@ export function LessonConceptsField({
           </div>
         </div>
       )}
-      <div className={variant === "compact" ? "lesson-concepts-row" : "flex flex-wrap items-center gap-1.5"}>
+      <div
+        className={variant === "compact" ? "lesson-concepts-row" : "flex flex-wrap items-center gap-1.5"}
+        data-roles-uniform={rolesUniform ? "true" : undefined}
+      >
         {label && (
           <span className={variant === "compact" ? "lesson-concepts-label" : "text-[11px] font-semibold uppercase tracking-[0.12em] text-muted-foreground"}>
             {label}
