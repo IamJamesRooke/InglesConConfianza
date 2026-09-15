@@ -1,6 +1,6 @@
 "use client";
 
-import { Copy, GripVertical, Trash2, Undo2 } from "lucide-react";
+import { Code, Copy, GripVertical, Trash2, Undo2 } from "lucide-react";
 import { Fragment, useEffect, useState, type DragEvent } from "react";
 
 import { LessonConceptsField } from "@/components/lesson-builder/lesson-concepts-field";
@@ -156,8 +156,10 @@ export function LessonDocument(props: Props) {
         type="button"
         className="lesson-document-script-toggle"
         onClick={() => editing.setScriptView(lessonId)}
+        aria-label="Edit as script"
+        title="Edit as script (Ctrl Alt T)"
       >
-        Script ⌥
+        <Code size={15} aria-hidden="true" />
       </button>
       <div className="lesson-document-body">
         {props.lesson.blocks.map((block, index) => (
