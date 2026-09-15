@@ -40,6 +40,31 @@ export const curriculumRoles: CurriculumRole[] = [
   "Trash",
 ];
 
+export type CurriculumLevel = 1 | 2 | 3 | 4 | 5;
+
+const LEVEL_ROLES: Record<CurriculumLevel, CurriculumRole> = {
+  1: "P1",
+  2: "P2",
+  3: "P3",
+  4: "P4",
+  5: "P5",
+};
+
+// The set of roles that count as "level <= n": P1..Pn, in priority order.
+export function rolesUpToLevel(maxLevel: CurriculumLevel): CurriculumRole[] {
+  return curriculumRoles.filter(
+    (role) => role.startsWith("P") && Number(role.slice(1)) <= maxLevel,
+  );
+}
+
+export function levelLabel(role: CurriculumRole): string {
+  return role.startsWith("P") ? `Level ${role.slice(1)}` : role;
+}
+
+export function roleForLevel(level: CurriculumLevel): CurriculumRole {
+  return LEVEL_ROLES[level];
+}
+
 export type CurriculumFile = {
   version: 1;
   concepts: CurriculumConcept[];

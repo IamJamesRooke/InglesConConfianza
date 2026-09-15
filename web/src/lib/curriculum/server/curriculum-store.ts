@@ -1,7 +1,12 @@
 import "server-only";
 
 import type { Prisma } from "@/generated/prisma/client";
-import type { CurriculumConcept, CurriculumRole } from "@/lib/curriculum/types";
+import type {
+  CurriculumConcept,
+  CurriculumLevel,
+  CurriculumRole,
+} from "@/lib/curriculum/types";
+import { curriculumRoleWhere } from "@/lib/curriculum/role-filter";
 import type { CurriculumNavigationFamily } from "@/lib/curriculum/navigation";
 import type { TopicBaseExclusion } from "@/lib/curriculum/scope";
 import { isCurriculumConcept } from "@/lib/curriculum/validation";
@@ -44,7 +49,13 @@ export type CurriculumPageFilters = {
   collection: string;
   role: CurriculumRole | "all";
   sort: CurriculumSort;
+  // A ceiling on curriculumRole (P1..P<maxLevel>). Only applies when `role` is
+  // "all" — an explicit single-role filter always wins, so `role=Unranked` or
+  // `role=Trash` still finds those rows regardless of maxLevel.
+  maxLevel?: CurriculumLevel;
 };
+
+export { curriculumRoleWhere };
 
 const SORT_ORDER_BY: Record<
   CurriculumSort,
@@ -120,6 +131,7 @@ export async function readCurriculumPage({
   collection,
   role,
   sort,
+  maxLevel,
   requireCollections = [],
   anyCollections = [],
   excludeAnyCollections = [],
@@ -175,7 +187,7 @@ export async function readCurriculumPage({
           },
         }
       : {}),
-    ...(role === "all" ? {} : { curriculumRole: role }),
+    ...curriculumRoleWhere(role, maxLevel),
   } satisfies Prisma.CurriculumConceptWhereInput;
 
   const totalConcepts = await prisma.curriculumConcept.count({ where });
@@ -198,6 +210,7 @@ export async function readCurriculumPage({
     collection,
     role,
     sort,
+    maxLevel,
   };
 }
 
@@ -208,6 +221,7 @@ export async function readCurriculumNavigationCounts({
   search,
   collection,
   role,
+  maxLevel,
   idFilter,
 }: {
   baseCollection: string;
@@ -216,6 +230,7 @@ export async function readCurriculumNavigationCounts({
   search: string;
   collection: string;
   role: CurriculumRole | "all";
+  maxLevel?: CurriculumLevel;
   idFilter?: { in: string[] } | { notIn: string[] };
 }) {
   const navigationCollections = [
@@ -243,7 +258,7 @@ export async function readCurriculumNavigationCounts({
         }
       : {}),
     ...(conceptAndClauses.length > 0 ? { AND: conceptAndClauses } : {}),
-    ...(role === "all" ? {} : { curriculumRole: role }),
+    ...curriculumRoleWhere(role, maxLevel),
   } satisfies Prisma.CurriculumConceptWhereInput;
   const [memberships, topicConcepts] = await Promise.all([
     navigationCollections.length > 0
@@ -363,4 +378,24 @@ export async function deleteCurriculumConcept(conceptId: string) {
     await removeUnusedCollections(transaction);
     return conceptId;
   });
+}
+
+// A narrower sibling of updateCurriculumConcept for the "set level in place"
+// keyboard shortcut: it only ever changes curriculumRole, so it doesn't need
+// the caller to hand back the full concept (spanish/english/example/
+// collections untouched).
+export async function setCurriculumRole(
+  conceptId: string,
+  curriculumRole: CurriculumRole,
+): Promise<CurriculumConcept> {
+  try {
+    const updated = await prisma.curriculumConcept.update({
+      where: { id: conceptId },
+      data: { curriculumRole },
+      include: conceptRelations,
+    });
+    return toCurriculumConcept(updated);
+  } catch {
+    throw new CurriculumConceptNotFoundError();
+  }
 }
