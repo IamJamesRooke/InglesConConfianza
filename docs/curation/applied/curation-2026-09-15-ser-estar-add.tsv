@@ -1,0 +1,3 @@
+# spanish	english	exampleSpanish	exampleEnglish	role	collections (|-separated)
+ser	to be	Quiero ser profesor.	I want to be a teacher.	P1	pos:verb|es:ser|en:be|topic:verb-system|topic:verb-ser-idioms|topic:phr-be|topic:map-ser|topic:enmap-be|topic:multi-sense|topic:en-multi-sense
+estar	to be	Quiero estar aquí.	I want to be here.	P1	pos:verb|es:estar|en:be|topic:verb-system|topic:verb-estar-idioms|topic:phr-be|topic:map-estar|topic:enmap-be|topic:multi-sense|topic:en-multi-sense

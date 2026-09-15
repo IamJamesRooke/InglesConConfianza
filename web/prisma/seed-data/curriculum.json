@@ -14126,7 +14126,7 @@
     },
     {
       "id": "0zuw37lnfv",
-      "spanish": "poder [hacer algo] (capacidad)",
+      "spanish": "puede [hacer algo, capacidad]",
       "english": "can [do something]",
       "example": {
         "spanish": "Puedo ayudar.",
@@ -76670,7 +76670,7 @@
         "topic:verb-feelings-love-like",
         "topic:map-querer"
       ],
-      "curriculumRole": "P1"
+      "curriculumRole": "Trash"
     },
     {
       "id": "dy3hauy404",
@@ -76695,7 +76695,7 @@
         "topic:verb-feelings-love-like",
         "topic:map-querer"
       ],
-      "curriculumRole": "Unranked"
+      "curriculumRole": "Trash"
     },
     {
       "id": "v7y40xtgb3",
@@ -77329,7 +77329,7 @@
         "topic:verb-feelings-love-like",
         "topic:map-querer"
       ],
-      "curriculumRole": "Unranked"
+      "curriculumRole": "Trash"
     },
     {
       "id": "mfqqgurgok",
@@ -95542,10 +95542,9 @@
         "es:ser",
         "es:estar",
         "en:be",
-        "topic:rule",
-        "grammar:rule"
+        "topic:rule"
       ],
-      "curriculumRole": "P1"
+      "curriculumRole": "Trash"
     },
     {
       "id": "x21yo1k86v",
@@ -95557,10 +95556,9 @@
       },
       "collections": [
         "pos:connector",
-        "topic:rule",
-        "grammar:rule"
+        "topic:rule"
       ],
-      "curriculumRole": "P1"
+      "curriculumRole": "Trash"
     },
     {
       "id": "bxb7bp9zku",
@@ -95572,10 +95570,9 @@
       },
       "collections": [
         "pos:verb",
-        "topic:rule",
-        "grammar:rule"
+        "topic:rule"
       ],
-      "curriculumRole": "P1"
+      "curriculumRole": "Trash"
     },
     {
       "id": "jgjvsgjoka",
@@ -95587,10 +95584,9 @@
       },
       "collections": [
         "pos:verb",
-        "topic:rule",
-        "grammar:rule"
+        "topic:rule"
       ],
-      "curriculumRole": "P1"
+      "curriculumRole": "Trash"
     },
     {
       "id": "qy1koesxvg",
@@ -95602,8 +95598,51 @@
       },
       "collections": [
         "pos:pronoun",
-        "topic:rule",
-        "grammar:rule"
+        "topic:rule"
+      ],
+      "curriculumRole": "Trash"
+    },
+    {
+      "id": "e923e43ero",
+      "spanish": "ser",
+      "english": "to be",
+      "example": {
+        "spanish": "Quiero ser profesor.",
+        "english": "I want to be a teacher."
+      },
+      "collections": [
+        "pos:verb",
+        "es:ser",
+        "en:be",
+        "topic:verb-system",
+        "topic:verb-ser-idioms",
+        "topic:phr-be",
+        "topic:map-ser",
+        "topic:enmap-be",
+        "topic:multi-sense",
+        "topic:en-multi-sense"
+      ],
+      "curriculumRole": "P1"
+    },
+    {
+      "id": "k2de4sfdxf",
+      "spanish": "estar",
+      "english": "to be",
+      "example": {
+        "spanish": "Quiero estar aquí.",
+        "english": "I want to be here."
+      },
+      "collections": [
+        "pos:verb",
+        "es:estar",
+        "en:be",
+        "topic:verb-system",
+        "topic:verb-estar-idioms",
+        "topic:phr-be",
+        "topic:map-estar",
+        "topic:enmap-be",
+        "topic:multi-sense",
+        "topic:en-multi-sense"
       ],
       "curriculumRole": "P1"
     }

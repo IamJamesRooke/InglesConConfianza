@@ -24,6 +24,7 @@ The database is a Spanish-to-English map. Only Spanish belongs in Spanish fields
 - Preserve one target per concept. Split bundled alternatives when they have different meanings or teaching behavior.
 - Store transformations as one normalized relationship on each side using ` ==> `, for example `el poder ==> ser poderoso/a` and `the power ==> to be powerful`.
 - Keep English `be` forms independently searchable when their surface form matters, via `en:` and `grammar:` collections, without changing the Spanish-first record direction.
+- One Spanish per concept. If the English is built from existing pieces (*querer saber si* = querer + saber + si) it is not a concept; only non-compositional phrases (*tener ganas de → to feel like*) get their own row.
 
 ## Collections
 
