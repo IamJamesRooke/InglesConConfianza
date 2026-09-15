@@ -14,7 +14,8 @@ import {
 import { useLessonBuilder } from "@/lib/lesson-builder/builder-context";
 import { extractLessonPairTerms } from "@/lib/lesson-builder/concept-suggestions";
 import { activeBlockId, blockDataState, useLessonEditing } from "@/lib/lesson-builder/editing";
-import { fieldSelectionForBlock, selectionForNewBlock } from "@/lib/lesson-builder/keymap";
+import { fieldSelectionForBlock, selectionForInsertion } from "@/lib/lesson-builder/keymap";
+import { proposedPairsForBlock } from "@/lib/lesson-builder/pair-proposals";
 import { useDragReorder } from "@/lib/lesson-builder/use-drag-reorder";
 import type { Lesson, LessonBlock } from "@/lib/lesson-builder/types";
 
@@ -96,9 +97,12 @@ export function LessonDocument(props: Props) {
   }, [insertAt]);
 
   function add(type: DocumentBlockType, index: number) {
-    const blockId = actions.addBlock(lessonId, type, index);
+    // E3: the mouse chooser proposes pairs from the preceding explanation
+    // the same way the keyboard path (Ctrl+Alt+Enter) does.
+    const pairs = proposedPairsForBlock(props.lesson.blocks[index - 1], type);
+    const { blockId, firstPieceId } = actions.addBlock(lessonId, type, index, pairs);
     closeInsert();
-    const sel = selectionForNewBlock(lessonId, blockId, type);
+    const sel = selectionForInsertion(lessonId, blockId, type, pairs, firstPieceId);
     editing.setSelection(sel, { reason: "insert" });
     editing.focusSelection(sel);
     recordNextSlideUse();

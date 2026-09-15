@@ -20,6 +20,9 @@ async function authorOneExplanationAndPair(page: import("@playwright/test").Page
   await title.fill("HUD check");
   await page.keyboard.press("Enter");
   await waitForFocusedField(page, "explanation");
+  // Not auto-marked by E1: "Hello" isn't in the classifier's small English
+  // function-word list (explanation-classifier.ts), so this stays plain
+  // text and E3 proposes nothing — focus lands on the usual empty Spanish.
   await page.keyboard.type("Hola es Hello.");
   await page.keyboard.press("Control+Alt+Enter");
   await waitForFocusedField(page, "spanish");

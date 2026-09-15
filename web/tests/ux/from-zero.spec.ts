@@ -59,13 +59,12 @@ test.describe("from-zero: the owner's literal flow, keyboard only", () => {
     await page.keyboard.type("Quiero es I want.");
 
     // Predicted type after an explanation is a sentence — one press, no
-    // chooser to pick from.
+    // chooser to pick from. E3: the explanation's own "[[es:Quiero]] es
+    // [[en:I want]]" mark (E1 auto-marked it on the "." above) is proposed
+    // as the slide's first pair, already filled, focus on its English
+    // field.
     await page.keyboard.press("Control+Alt+Enter");
-    await waitForFocusedField(page, "spanish");
-    await page.keyboard.type("Quiero");
-    await page.keyboard.press("Tab");
     await waitForFocusedField(page, "english");
-    await page.keyboard.type("I want");
     await page.keyboard.press("Tab");
     await waitForFocusedField(page, "spanish");
     await page.keyboard.type("hacerlo");
@@ -121,12 +120,10 @@ async function authorTwoCompletePairs(page: import("@playwright/test").Page, tit
   await page.keyboard.press("Enter");
   await waitForFocusedField(page, "explanation");
   await page.keyboard.type("Quiero es I want.");
+  // E3: the marked "Quiero es I want" is proposed as the first pair,
+  // already filled, focus on its English field.
   await page.keyboard.press("Control+Alt+Enter");
-  await waitForFocusedField(page, "spanish");
-  await page.keyboard.type("Quiero");
-  await page.keyboard.press("Tab");
   await waitForFocusedField(page, "english");
-  await page.keyboard.type("I want");
   await page.keyboard.press("Tab");
   await waitForFocusedField(page, "spanish");
   await page.keyboard.type("hacerlo");
@@ -202,7 +199,7 @@ test("(f) a second Ctrl+Alt+Enter cycles the empty just-inserted block's type", 
   await title.fill("From-zero: cycle type");
   await page.keyboard.press("Enter");
   await waitForFocusedField(page, "explanation");
-  await page.keyboard.type("Comer es to eat.");
+  await page.keyboard.type("Vamos a repasar comida.");
 
   const row = page.locator("[data-lesson-row]").last();
 
@@ -281,7 +278,7 @@ test("(h) Ctrl+Alt+Enter then Escape twice on the still-empty new sentence delet
   await title.fill("From-zero: empty sentence deleted");
   await page.keyboard.press("Enter");
   await waitForFocusedField(page, "explanation");
-  await page.keyboard.type("Comer es to eat.");
+  await page.keyboard.type("Vamos a repasar comida.");
 
   await page.keyboard.press("Control+Alt+Enter");
   await waitForFocusedField(page, "spanish");
@@ -303,7 +300,7 @@ test("(h) Ctrl+Alt+Enter then Escape twice on the still-empty new sentence delet
   expect(created!.blocks.length).toBe(1);
   expect(created!.blocks[0]).toMatchObject({
     type: "explanation",
-    contentMarkdown: "[[es:Comer]] es [[en:to eat]].",
+    contentMarkdown: "Vamos a repasar comida.",
   });
   expect(created!.blocks.some((block) => block.type === "sentence")).toBe(false);
 });
@@ -358,7 +355,7 @@ async function newEmptySentenceSlide(page: import("@playwright/test").Page, titl
   await titleField.fill(title);
   await page.keyboard.press("Enter");
   await waitForFocusedField(page, "explanation");
-  await page.keyboard.type("Comer es to eat.");
+  await page.keyboard.type("Vamos a repasar comida.");
   await page.keyboard.press("Control+Alt+Enter");
   await waitForFocusedField(page, "spanish");
   return page.locator("[data-lesson-row]").last();

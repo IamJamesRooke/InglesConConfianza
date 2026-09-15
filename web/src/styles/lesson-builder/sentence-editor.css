@@ -273,6 +273,10 @@
   gap: 0;
   width: max-content;
   max-width: 100%;
+  /* Positioning root for E5b's autocomplete popover (.concept-typeahead-
+     popover, reused from lesson-concepts-field.css), so it sits directly
+     under this field rather than the whole pair/card. */
+  position: relative;
 }
 .lesson-document-language-field > textarea {
   width: auto;

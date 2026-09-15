@@ -3,6 +3,7 @@
 import { Lightbulb, Plus, X } from "lucide-react";
 import { useState } from "react";
 
+import { PairLanguageField } from "@/components/lesson-builder/pair-field-autocomplete";
 import { SentencePresentation } from "@/components/lesson-builder/sentence-presentation";
 import { formatAnswerEntry } from "@/lib/lesson-builder/answer-entry";
 import { useLessonBuilder } from "@/lib/lesson-builder/builder-context";
@@ -70,6 +71,26 @@ export function SentenceEditor(props: Props) {
 
   function selectField(field: "spanish" | "english" | "instruction", pieceId?: string) {
     editing.setSelection({ kind: "field", lessonId, blockId: block.id, field, pieceId });
+  }
+
+  // E5b — accepting a pair-field autocomplete completion. Fills this
+  // field's own text, fills the other field too when it was empty, then
+  // moves the shared selection (and real DOM focus, through the one
+  // `focusSelection` helper — see editing-model.md §1) to the other field.
+  function acceptConceptForSpanish(piece: Piece, spanishText: string, englishTextIfEmpty: string | null) {
+    actions.updateSpanish(lessonId, block.id, piece.id, spanishText);
+    if (englishTextIfEmpty !== null) commitEnglishDraft(piece, englishTextIfEmpty);
+    const sel = { kind: "field" as const, lessonId, blockId: block.id, field: "english" as const, pieceId: piece.id };
+    editing.setSelection(sel);
+    editing.focusSelection(sel);
+  }
+
+  function acceptConceptForEnglish(piece: Piece, englishText: string, spanishTextIfEmpty: string | null) {
+    commitEnglishDraft(piece, englishText);
+    if (spanishTextIfEmpty !== null) actions.updateSpanish(lessonId, block.id, piece.id, spanishTextIfEmpty);
+    const sel = { kind: "field" as const, lessonId, blockId: block.id, field: "spanish" as const, pieceId: piece.id };
+    editing.setSelection(sel);
+    editing.focusSelection(sel);
   }
 
   function addPair() {
@@ -154,33 +175,33 @@ export function SentenceEditor(props: Props) {
             return (
               <div key={piece.id} className="lesson-document-pair" data-piece={piece.id}>
                 <div className={`lesson-document-piece ${pieceActive ? "active" : ""}`}>
-                  <div className="lesson-document-language-field" data-language="es">
-                    <textarea
-                      rows={1}
-                      data-field="spanish"
-                      value={piece.spanish}
-                      onFocus={() => selectField("spanish", piece.id)}
-                      onChange={(event) => actions.updateSpanish(lessonId, block.id, piece.id, event.target.value)}
-                      placeholder="Type in Spanish"
-                      lang="es"
-                      aria-label={`${isTable ? "Row" : "Sentence piece"} ${index + 1} Spanish`}
-                    />
-                  </div>
-                  <div className="lesson-document-language-field" data-language="en">
-                    <textarea
-                      rows={1}
-                      data-field="english"
-                      value={englishDraft[piece.id] ?? formatAnswerEntry(piece.acceptedAnswers)}
-                      onFocus={() => selectField("english", piece.id)}
-                      onChange={(event) =>
-                        setEnglishDraft((prev) => ({ ...prev, [piece.id]: event.target.value }))
-                      }
-                      onBlur={(event) => commitEnglishDraft(piece, event.currentTarget.value)}
-                      placeholder="Write in English"
-                      lang="en"
-                      aria-label={`${isTable ? "Row" : "Sentence piece"} ${index + 1} English. Separate alternatives with a slash, or use a backslash before one to type it literally.`}
-                    />
-                  </div>
+                  <PairLanguageField
+                    lang="es"
+                    dataField="spanish"
+                    value={piece.spanish}
+                    otherValue={englishDraft[piece.id] ?? formatAnswerEntry(piece.acceptedAnswers)}
+                    onFocus={() => selectField("spanish", piece.id)}
+                    onChange={(value) => actions.updateSpanish(lessonId, block.id, piece.id, value)}
+                    onAcceptConcept={(spanishText, englishTextIfEmpty) =>
+                      acceptConceptForSpanish(piece, spanishText, englishTextIfEmpty)
+                    }
+                    placeholder="Type in Spanish"
+                    ariaLabel={`${isTable ? "Row" : "Sentence piece"} ${index + 1} Spanish`}
+                  />
+                  <PairLanguageField
+                    lang="en"
+                    dataField="english"
+                    value={englishDraft[piece.id] ?? formatAnswerEntry(piece.acceptedAnswers)}
+                    otherValue={piece.spanish}
+                    onFocus={() => selectField("english", piece.id)}
+                    onChange={(value) => setEnglishDraft((prev) => ({ ...prev, [piece.id]: value }))}
+                    onBlur={(value) => commitEnglishDraft(piece, value)}
+                    onAcceptConcept={(englishText, spanishTextIfEmpty) =>
+                      acceptConceptForEnglish(piece, englishText, spanishTextIfEmpty)
+                    }
+                    placeholder="Write in English"
+                    ariaLabel={`${isTable ? "Row" : "Sentence piece"} ${index + 1} English. Separate alternatives with a slash, or use a backslash before one to type it literally.`}
+                  />
                 </div>
                 <button
                   type="button"

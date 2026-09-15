@@ -69,6 +69,9 @@ test("keyboard writing preserves alternatives and hints and prunes abandoned pai
   const sentence = row.locator(".lesson-document-sentence").last();
   const spanish = sentence.locator('textarea[data-field="spanish"]');
   const english = sentence.locator('textarea[data-field="english"]');
+  // Not auto-marked by E1: "hungry"/"I'm" don't clear the classifier's
+  // isEnglish threshold (explanation-classifier.ts), so this stays plain
+  // text and E3 proposes nothing — the new pair starts empty, focus Spanish.
   await expect(spanish.first()).toBeFocused();
   await page.keyboard.type("Tengo hambre.");
   await page.keyboard.press("Tab");
@@ -143,7 +146,11 @@ test("table presentation stays centered and compact through hint editing", async
   await title.press("Enter");
   const row = page.locator(`[data-lesson-row="${id}"]`);
   const explanation = row.getByRole("textbox", { name: "Explanation 1" });
-  await explanation.fill("Comer es to eat.");
+  // Deliberately no "<Spanish> es <English>." pattern here (E1 would mark
+  // it, and E3 would then propose that pair into the sentence the first
+  // Ctrl+Alt+Enter below inserts — real content the type-cycle refuses to
+  // discard, so the second press wouldn't cycle it at all).
+  await explanation.fill("Vamos a repasar vocabulario de comida.");
   // E6: no chooser on the keyboard path any more. The predicted type after
   // an explanation is a sentence, not a table — a second Ctrl+Alt+Enter
   // within 1.5s cycles the still-empty just-inserted block's type

@@ -18,7 +18,11 @@ for (const width of [1280, 760]) {
     await title.press("Enter");
     const row = page.locator(`[data-lesson-row="${id}"]`);
     const explanation = row.getByRole("textbox", { name: "Explanation 1" });
-    await explanation.fill("Comer es to eat.");
+    // No "<Spanish> es <English>." pattern (see builder-integration.spec.ts
+    // for why: E1 would mark it and E3 would propose it into the sentence
+    // the first Ctrl+Alt+Enter inserts, which then refuses to cycle away
+    // real content on the second press).
+    await explanation.fill("Vamos a repasar vocabulario de comida.");
     // Cycle the just-inserted, still-empty block's predicted type
     // (explanation -> sentence -> vocabulary) with two presses within 1.5s.
     await page.keyboard.press("Control+Alt+Enter");

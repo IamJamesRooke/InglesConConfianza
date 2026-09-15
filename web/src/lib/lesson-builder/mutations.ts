@@ -277,6 +277,11 @@ export function addExplanationBlock(
   }));
 }
 
+// E3: `proposedPairs`, when given (a new slide landing right after an
+// explanation with adjacent `[[es:X]]`/`[[en:Y]]` marks — see
+// pair-proposals.ts), pre-fills the slide's pairs instead of the usual
+// single empty one. Ids are passed in, not generated here, same as every
+// other id this file's callers must be able to focus afterwards.
 export function addSentenceBlock(
   lessons: Lesson[],
   lessonId: string,
@@ -284,7 +289,17 @@ export function addSentenceBlock(
   blockId: string,
   languageBlockId: string,
   layout: "sentence" | "vocabulary_table" = "sentence",
+  proposedPairs?: { id: string; spanish: string; english: string }[],
 ): Lesson[] {
+  const languageBlocks: LanguageBlock[] =
+    proposedPairs && proposedPairs.length > 0
+      ? proposedPairs.map((pair) => ({
+          id: pair.id,
+          spanish: pair.spanish,
+          callout: null,
+          acceptedAnswers: [pair.english],
+        }))
+      : [emptyLanguageBlock(languageBlockId)];
   const block: SentenceBlock = {
     id: blockId,
     type: "sentence",
@@ -293,7 +308,7 @@ export function addSentenceBlock(
     promptText: "",
     helperText: "",
     answerFeedback: null,
-    languageBlocks: [emptyLanguageBlock(languageBlockId)],
+    languageBlocks,
   };
   return mapLesson(lessons, lessonId, (lesson) => ({
     ...lesson,

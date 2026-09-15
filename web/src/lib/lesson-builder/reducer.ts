@@ -63,6 +63,9 @@ export type LessonsAction =
       blockId: string;
       languageBlockId: string;
       layout?: "sentence" | "vocabulary_table";
+      // E3: pre-filled (Spanish, English) pairs proposed from the preceding
+      // explanation's marks — see pair-proposals.ts.
+      proposedPairs?: { id: string; spanish: string; english: string }[];
     }
   | { type: "DELETE_CONTENT_BLOCK"; lessonId: string; blockId: string }
   | {
@@ -231,6 +234,7 @@ export function lessonsReducer(
         action.blockId,
         action.languageBlockId,
         action.layout,
+        action.proposedPairs,
       );
     case "DELETE_CONTENT_BLOCK":
       return mutations.deleteContentBlock(

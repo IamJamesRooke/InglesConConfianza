@@ -73,7 +73,7 @@ function fakeActions(): LessonBuilderActions & {
     deletePiece: (_lessonId: string, _blockId: string, pieceId: string) => {
       deleted.push(pieceId);
     },
-    addBlock: () => "new-block",
+    addBlock: () => ({ blockId: "new-block" }),
     deleteBlock: (_lessonId: string, blockId: string) => {
       deletedBlocks.push(blockId);
     },

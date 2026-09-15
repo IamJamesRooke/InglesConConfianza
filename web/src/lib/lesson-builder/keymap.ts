@@ -13,6 +13,7 @@ import {
 } from "@/lib/lesson-builder/explanation-commands";
 import { focusModuleName, rememberFocus } from "@/lib/lesson-builder/focus";
 import type { LessonBuilderActions } from "@/lib/lesson-builder/builder-context";
+import { proposedPairsForBlock, type ProposedPair } from "@/lib/lesson-builder/pair-proposals";
 import type { Lesson, LessonBlock } from "@/lib/lesson-builder/types";
 
 export type Chord = string;
@@ -128,6 +129,22 @@ export function selectionForNewBlock(lessonId: string, blockId: string, type: Do
     : { kind: "field", lessonId, blockId, field: "spanish" };
 }
 
+// E3: when pairs were proposed from the preceding explanation, selection
+// lands on the first pair's English field (Enter/Tab then walks through
+// accepting each one) instead of the usual empty-pair Spanish field.
+export function selectionForInsertion(
+  lessonId: string,
+  blockId: string,
+  type: DocumentBlockType,
+  proposedPairs: ProposedPair[],
+  firstPieceId: string | undefined,
+): EditingSelection {
+  if (proposedPairs.length > 0 && firstPieceId) {
+    return { kind: "field", lessonId, blockId, field: "english", pieceId: firstPieceId };
+  }
+  return selectionForNewBlock(lessonId, blockId, type);
+}
+
 function insertAfterBlock(ctx: CommandContext, lessonId: string, block: LessonBlock | undefined): boolean {
   const lesson = findLesson(ctx.lessons, lessonId);
   if (!lesson) return false;
@@ -142,19 +159,22 @@ function insertAfterBlock(ctx: CommandContext, lessonId: string, block: LessonBl
     const index = CYCLE_ORDER.indexOf(pendingInsert.type);
     const nextType = CYCLE_ORDER[(index + 1) % CYCLE_ORDER.length];
     const position = lesson.blocks.findIndex((candidate) => candidate.id === block.id);
+    const precedingBlock = position > 0 ? lesson.blocks[position - 1] : undefined;
     ctx.actions.deleteBlock(lessonId, block.id);
-    const newBlockId = ctx.actions.addBlock(lessonId, nextType, position);
+    const pairs = proposedPairsForBlock(precedingBlock, nextType);
+    const { blockId: newBlockId, firstPieceId } = ctx.actions.addBlock(lessonId, nextType, position, pairs);
     pendingInsert = { lessonId, blockId: newBlockId, type: nextType, at: now };
-    const sel = selectionForNewBlock(lessonId, newBlockId, nextType);
+    const sel = selectionForInsertion(lessonId, newBlockId, nextType, pairs, firstPieceId);
     ctx.editing.setSelection(sel, { reason: "insert" });
     ctx.editing.focusSelection(sel);
     return true;
   }
   const index = block ? lesson.blocks.findIndex((candidate) => candidate.id === block.id) + 1 : 0;
   const type = predictedType(block);
-  const newBlockId = ctx.actions.addBlock(lessonId, type, index);
+  const pairs = proposedPairsForBlock(block, type);
+  const { blockId: newBlockId, firstPieceId } = ctx.actions.addBlock(lessonId, type, index, pairs);
   pendingInsert = { lessonId, blockId: newBlockId, type, at: now };
-  const sel = selectionForNewBlock(lessonId, newBlockId, type);
+  const sel = selectionForInsertion(lessonId, newBlockId, type, pairs, firstPieceId);
   ctx.editing.setOpenLesson(lessonId);
   ctx.editing.setSelection(sel, { reason: "insert" });
   ctx.editing.focusSelection(sel);
@@ -178,7 +198,7 @@ function enterFromTitle(ctx: CommandContext): boolean {
     ctx.editing.focusSelection(sel);
     return true;
   }
-  const blockId = ctx.actions.addBlock(lessonId, "explanation", 0);
+  const { blockId } = ctx.actions.addBlock(lessonId, "explanation", 0);
   const sel: EditingSelection = { kind: "field", lessonId, blockId, field: "explanation" };
   ctx.editing.setSelection(sel, { reason: "insert" });
   ctx.editing.focusSelection(sel);

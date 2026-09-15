@@ -82,7 +82,7 @@ function fakeActions(overrides: Partial<LessonBuilderActions> = {}): LessonBuild
     addPiece: record("addPiece", () => "new-piece"),
     deletePiece: record("deletePiece"),
     toggleGiven: record("toggleGiven"),
-    addBlock: record("addBlock", () => "new-block"),
+    addBlock: record("addBlock", () => ({ blockId: "new-block" })),
     extendLastSentence: record("extendLastSentence", () => ({
       blockId: "new-extend-block",
       languageBlockId: "new-extend-piece",
@@ -228,7 +228,7 @@ test("Ctrl+Alt+Enter on the title inserts an explanation at index 0", () => {
     event: fakeEvent({ ctrlKey: true, altKey: true }),
   });
   assert.equal(handled, true);
-  assert.deepEqual(actions.calls.addBlock, [["lesson-1", "explanation", 0]]);
+  assert.deepEqual(actions.calls.addBlock, [["lesson-1", "explanation", 0, []]]);
 });
 
 test("Ctrl+Alt+Enter after an explanation predicts sentence; after a sentence predicts explanation", () => {
@@ -243,7 +243,7 @@ test("Ctrl+Alt+Enter after an explanation predicts sentence; after a sentence pr
     editing: editing1,
     event: fakeEvent({ ctrlKey: true, altKey: true }),
   });
-  assert.deepEqual(actions1.calls.addBlock, [["lesson-1", "sentence", 1]]);
+  assert.deepEqual(actions1.calls.addBlock, [["lesson-1", "sentence", 1, []]]);
 
   const actions2 = fakeActions();
   const editing2 = fakeEditing({ kind: "block", lessonId: "lesson-1", blockId: "s1" });
@@ -254,7 +254,7 @@ test("Ctrl+Alt+Enter after an explanation predicts sentence; after a sentence pr
     editing: editing2,
     event: fakeEvent({ ctrlKey: true, altKey: true }),
   });
-  assert.deepEqual(actions2.calls.addBlock, [["lesson-1", "explanation", 2]]);
+  assert.deepEqual(actions2.calls.addBlock, [["lesson-1", "explanation", 2, []]]);
 });
 
 test("Ctrl+Alt+Shift+Enter on the title extends with afterBlockId null and focuses the new empty pair", () => {

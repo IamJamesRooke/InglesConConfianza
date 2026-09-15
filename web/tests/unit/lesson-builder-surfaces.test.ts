@@ -117,7 +117,7 @@ const stubBuilderActions: LessonBuilderActions = {
   addPiece: noopPiece,
   deletePiece: noop,
   toggleGiven: noop,
-  addBlock: () => "",
+  addBlock: () => ({ blockId: "" }),
   extendLastSentence: () => ({ blockId: "", languageBlockId: "" }),
   deleteBlock: noop,
   replaceLessonBlocks: noop,

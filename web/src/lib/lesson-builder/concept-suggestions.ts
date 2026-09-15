@@ -131,10 +131,18 @@ function foldAccents(text: string): string {
   return text.normalize("NFD").replace(/[̀-ͯ]/g, "");
 }
 
+// Drops the bracketed placeholder half of a concept label ("querer [algo]"
+// -> "querer") and collapses whitespace, preserving case and accents — used
+// wherever a concept's own text is written into a field rather than
+// compared (E5b's pair-field autocomplete: `concept-search-popover.tsx`).
+export function stripConceptPlaceholder(text: string): string {
+  return text.replace(/\[.*?\]/g, "").replace(/\s+/g, " ").trim();
+}
+
 // Same normalization the concept typeahead uses: drop the bracketed
 // placeholder half of a label, fold accents, lowercase.
 export function normalizeConceptText(text: string): string {
-  return foldAccents(text.replace(/\[.*?\]/g, "")).toLowerCase().trim();
+  return foldAccents(stripConceptPlaceholder(text)).toLowerCase();
 }
 
 export type PairMatchCandidate = SuggestionConceptDisplay & { id: string };
