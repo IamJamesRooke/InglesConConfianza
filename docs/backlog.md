@@ -70,3 +70,7 @@ This scaffold is demo content, not a claim that Module 1 has passed learner vali
 - Perfecting all curriculum classifications before authoring Module 1.
 - Encoding course sequence or learner mastery inside the immutable source archive.
 - Expanding beyond Spanish-speaking adults learning English before the first learning experience has evidence behind it.
+
+## Curriculum gaps noticed while authoring (batch into one curation pass)
+
+- 2026-09-15 — no bare concept for **con / with** (only phrasal entries: "trabajar con [alguien]", "traer [algo] consigo"…). Owner hit it tagging "I want to do something with you."
