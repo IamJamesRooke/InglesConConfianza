@@ -131,6 +131,9 @@
   --state-danger: #861331;
   --state-danger-soft: #fce8ec;
   --canvas-warm: #f7f7f4;
+  /* A touch warmer/lighter than --canvas-warm — the home page's editorial
+     hero ground, so it reads as one continuous sheet rather than a card. */
+  --paper: #fbfaf6;
   --surface-writing: #ffffff;
   --surface-subtle: #eef0f4;
   --ink-deep: #17213a;

@@ -28,6 +28,9 @@ const geist = Geist({
 // family covers both quiet body-adjacent moments and the large display type.
 const fraunces = Fraunces({
   subsets: ["latin"],
+  // Home hero's second line ("Vas a poder decir…") is set in italic — the
+  // practice stage only ever needed roman weights, so italic wasn't loaded.
+  style: ["normal", "italic"],
   axes: ["opsz", "SOFT", "WONK"],
   variable: "--font-display",
 });
