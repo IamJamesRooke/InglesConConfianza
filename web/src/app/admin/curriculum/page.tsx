@@ -6,6 +6,7 @@ import {
   type CurriculumNavigationFamilyWithCounts,
 } from "@/lib/curriculum/navigation";
 import { readConceptCoverage } from "@/lib/curriculum/server/coverage";
+import { readModuleSyllabusUsage } from "@/lib/curriculum/server/module-usage";
 import {
   curriculumPageSize,
   readCurriculumNavigationCounts,
@@ -72,12 +73,14 @@ export default async function CurriculumPage({ searchParams }: PageProps) {
   // "all levels" option (a literal "all" would be stripped from the URL by
   // useCurriculumNavigation, which treats "all" as "clear this param").
   const requestedMaxLevel = first(parameters.maxLevel);
+  // No default ceiling any more: levels are retired (commit c298024d reset
+  // every row to Unranked), so a default of "Level ≤ 1" silently hid nearly
+  // everything, including results from the new module-usage filter below —
+  // see docs/design/module-syllabus.md §7.
   const maxLevel: CurriculumLevel | undefined =
     requestedMaxLevel && /^[1-5]$/.test(requestedMaxLevel)
       ? (Number(requestedMaxLevel) as CurriculumLevel)
-      : requestedMaxLevel === undefined && parameters.role === undefined
-        ? 1
-        : undefined;
+      : undefined;
   const sortParam = first(parameters.sort);
   const sort =
     sortParam === "spanish" ||
@@ -92,17 +95,35 @@ export default async function CurriculumPage({ searchParams }: PageProps) {
     coverageParam === "taught" || coverageParam === "untaught"
       ? coverageParam
       : "all";
+  // "Used in a module / never used" — see docs/design/module-syllabus.md §7.
+  // Levels are retired, so this replaces the old Level ≤ N ceiling as the
+  // curriculum page's "what's actually required" signal.
+  const usageParam = first(parameters.usage);
+  const usageFilter: "all" | "used" | "never" =
+    usageParam === "used" || usageParam === "never" ? usageParam : "all";
   const search = (first(parameters.search) ?? "").trim();
   const collection = (first(parameters.collection) ?? "").trim();
 
-  const coverage = await readConceptCoverage();
+  const [coverage, moduleUsage] = await Promise.all([
+    readConceptCoverage(),
+    readModuleSyllabusUsage(),
+  ]);
   const coveredIds = [...coverage.keys()];
+  const usedInModuleIds = [...moduleUsage.keys()];
+  // `usage` takes priority over `taught`/`untaught` when both are somehow
+  // present — they're two different questions (incidentally covered by a
+  // lesson vs. deliberately required by a module) surfaced through the same
+  // control slot, per docs/design/module-syllabus.md §7.
   const idFilter =
-    coverageFilter === "taught"
-      ? ({ in: coveredIds } as const)
-      : coverageFilter === "untaught"
-        ? ({ notIn: coveredIds } as const)
-        : undefined;
+    usageFilter === "used"
+      ? ({ in: usedInModuleIds } as const)
+      : usageFilter === "never"
+        ? ({ notIn: usedInModuleIds } as const)
+        : coverageFilter === "taught"
+          ? ({ in: coveredIds } as const)
+          : coverageFilter === "untaught"
+            ? ({ notIn: coveredIds } as const)
+            : undefined;
   const requiredCollections = [
     ...(topic ? [topic.baseCollection] : []),
     ...(browse?.leaf ? [browse.leaf.collection] : []),
@@ -194,6 +215,16 @@ export default async function CurriculumPage({ searchParams }: PageProps) {
     }
   }
 
+  const visibleModuleUsage: Record<
+    string,
+    { moduleId: string; moduleName: string | null; list: "main" | "review" }[]
+  > = {};
+  for (const concept of curriculum.concepts) {
+    const hit = moduleUsage.get(concept.id);
+    if (hit) visibleModuleUsage[concept.id] = hit;
+  }
+  const usageSummary = usageFilter !== "all" ? { used: usedInModuleIds.length } : null;
+
   const displayTopic = topic
     ? (topicTitles[topic.slug] ?? topic.title)
     : "All curriculum";
@@ -213,6 +244,9 @@ export default async function CurriculumPage({ searchParams }: PageProps) {
           coverage={visibleCoverage}
           coverageFilter={coverageFilter}
           levelChecklist={levelChecklist}
+          moduleUsage={visibleModuleUsage}
+          usageFilter={usageFilter}
+          usageSummary={usageSummary}
           filters={{
             search: curriculum.search,
             collection: curriculum.collection,
@@ -250,6 +284,7 @@ export default async function CurriculumPage({ searchParams }: PageProps) {
             role,
             maxLevel ?? "",
             coverageFilter,
+            usageFilter,
             search,
             sort,
             curriculum.page,

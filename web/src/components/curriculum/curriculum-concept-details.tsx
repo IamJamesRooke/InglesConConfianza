@@ -58,11 +58,20 @@ type Coverage = Record<
   { lessonId: string; lessonNumber: number; lessonName: string | null }
 >;
 
+type ModuleUsage = Record<
+  string,
+  { moduleId: string; moduleName: string | null; list: "main" | "review" }[]
+>;
+
 type CurriculumConceptDetailsProps = {
   concept: CurriculumConcept;
   conceptIndex: number;
   conceptCount: number;
   coverage: Coverage;
+  // Read-only "Required by: Module I" line — see
+  // docs/design/module-syllabus.md §7. Optional: pages that don't pass it
+  // (none currently) simply show nothing.
+  moduleUsage?: ModuleUsage;
   detailPanelRef: RefObject<HTMLElement | null>;
   pendingConceptId: string | null;
   saveFeedback: {
@@ -90,6 +99,7 @@ export function CurriculumConceptDetails({
   conceptIndex,
   conceptCount,
   coverage,
+  moduleUsage = {},
   detailPanelRef,
   pendingConceptId,
   saveFeedback,
@@ -318,6 +328,15 @@ export function CurriculumConceptDetails({
                 Open Lesson {coverage[concept.id].lessonNumber}
               </a>
             )}
+            {(moduleUsage[concept.id] ?? []).map((entry) => (
+              <span
+                key={`${entry.moduleId}-${entry.list}`}
+                className="rounded-md bg-muted px-3 py-2 text-xs font-semibold text-muted-foreground"
+              >
+                {entry.list === "main" ? "Main point of " : "Reviewed in "}
+                {entry.moduleName?.trim() || "an untitled module"}
+              </span>
+            ))}
             {concept.curriculumRole === "Trash" ? (
               <button
                 type="button"

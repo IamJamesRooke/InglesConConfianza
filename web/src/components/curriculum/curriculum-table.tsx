@@ -53,6 +53,9 @@ export function CurriculumTable({
   coverage = {},
   coverageFilter = "all",
   levelChecklist = null,
+  moduleUsage = {},
+  usageFilter = "all",
+  usageSummary = null,
   filters,
   macrotags = [],
   activeTopic = null,
@@ -75,6 +78,14 @@ export function CurriculumTable({
   >;
   coverageFilter?: "all" | "taught" | "untaught";
   levelChecklist?: LevelChecklistSummary | null;
+  // "Required by" — see docs/design/module-syllabus.md §7. Levels are
+  // retired; a module's syllabus is the new "must-teach" source of truth.
+  moduleUsage?: Record<
+    string,
+    { moduleId: string; moduleName: string | null; list: "main" | "review" }[]
+  >;
+  usageFilter?: "all" | "used" | "never";
+  usageSummary?: { used: number } | null;
   filters: {
     search: string;
     collection: string;
@@ -624,6 +635,16 @@ export function CurriculumTable({
         </div>
       )}
 
+      {usageSummary && (
+        <div className="mb-3 rounded-lg border border-border bg-card px-3 py-2 shadow-sm">
+          <p className="text-xs font-medium text-muted-foreground">
+            {usageFilter === "used" ? "Used in a module" : "Never used"} — {usageSummary.used}{" "}
+            {usageSummary.used === 1 ? "concept is" : "concepts are"} required by some module&rsquo;s
+            syllabus
+          </p>
+        </div>
+      )}
+
       <form
         aria-busy={isNavigating}
         className="lg:sticky lg:top-[57px] z-30 mb-3 grid gap-2 rounded-xl border border-border bg-card/95 p-3 shadow-sm backdrop-blur sm:grid-cols-2 xl:grid-cols-[minmax(0,1fr)_auto_auto]"
@@ -703,6 +724,22 @@ export function CurriculumTable({
             <option value="all">Show all</option>
             <option value="taught">Taught</option>
             <option value="untaught">Not yet taught</option>
+          </select>
+        </label>
+        <label className="grid gap-1 text-[11px] font-semibold uppercase tracking-wide text-muted-foreground">
+          Module usage
+          <select
+            value={usageFilter}
+            onChange={(event) =>
+              navigate({
+                usage: event.target.value === "all" ? null : event.target.value,
+              })
+            }
+            className="h-10 min-w-32 rounded-lg border border-input bg-background px-3 text-sm font-medium normal-case tracking-normal text-foreground outline-none focus:border-ring focus:ring-3 focus:ring-ring/20"
+          >
+            <option value="all">Show all</option>
+            <option value="used">Used in a module</option>
+            <option value="never">Never used</option>
           </select>
         </label>
       </form>
@@ -1171,6 +1208,7 @@ export function CurriculumTable({
           conceptIndex={detailConceptIndex}
           conceptCount={concepts.length}
           coverage={coverage}
+          moduleUsage={moduleUsage}
           detailPanelRef={detailPanelRef}
           pendingConceptId={pendingConceptId}
           saveFeedback={saveFeedback}
