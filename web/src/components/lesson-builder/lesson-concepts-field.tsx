@@ -5,6 +5,7 @@ import { useEffect, useId, useLayoutEffect, useRef, useState, type Ref } from "r
 
 import { ConceptQuickEdit, type ConceptDraft } from "@/components/lesson-builder/concept-quick-edit";
 import { conceptKey } from "@/lib/lesson-builder/lesson-file";
+import type { SyllabusMarkers } from "@/lib/lesson-builder/builder-context";
 import {
   conceptPriority,
   type LessonConceptSuggestion,
@@ -75,6 +76,7 @@ export function LessonConceptsField({
   onAdvance,
   pairTerms,
   missingConceptKeys,
+  syllabusMarkers,
 }: {
   concepts: LessonConcept[];
   onAdd: (concept: LessonConcept) => void;
@@ -101,6 +103,11 @@ export function LessonConceptsField({
   // empty field to move on to the lesson body.
   coversFor?: string;
   onAdvance?: () => void;
+  // Module-syllabus hints (E: module syllabus) for the search popover only —
+  // a "in syllabus" marker on results this lesson's module still needs, and
+  // a soft "not introduced yet" dot on results outside the known set. Never
+  // affects already-tagged chips.
+  syllabusMarkers?: SyllabusMarkers;
   // Auto-Covers (E5): terms already named by this lesson's own pairs
   // (extractLessonPairTerms). When given (with `coversFor` as the lesson id),
   // the field looks up matching curriculum concepts and offers them as
@@ -578,6 +585,10 @@ export function LessonConceptsField({
                   .toLowerCase()
                   .indexOf(query.trim().toLowerCase());
                 const hasMatch = query.trim().length > 0 && matchIndex !== -1;
+                const inSyllabus = syllabusMarkers?.inSyllabusUncovered.has(result.id) ?? false;
+                const notIntroducedYet = syllabusMarkers
+                  ? !syllabusMarkers.known.has(result.id) && !syllabusMarkers.mainOfModule.has(result.id)
+                  : false;
                 return (
                   // A plain div, not a button: keyboard selection is driven entirely
                   // by the input's arrow keys / Enter (see onKeyDown below), and
@@ -619,11 +630,28 @@ export function LessonConceptsField({
                           {result.spanish}
                         </span>
                       </span>
-                      <span
-                        className={`concept-typeahead-option-role role-${roleToken || "Unranked"}`}
-                        title={result.curriculumRole}
-                        aria-hidden="true"
-                      />
+                      <span className="concept-typeahead-option-meta">
+                        {inSyllabus && (
+                          <span
+                            className="concept-typeahead-option-syllabus"
+                            title="In this module's syllabus — not yet covered"
+                          >
+                            in syllabus
+                          </span>
+                        )}
+                        {!inSyllabus && notIntroducedYet && (
+                          <span
+                            className="concept-typeahead-option-not-introduced"
+                            title="Not introduced yet in the course"
+                            aria-hidden="true"
+                          />
+                        )}
+                        <span
+                          className={`concept-typeahead-option-role role-${roleToken || "Unranked"}`}
+                          title={result.curriculumRole}
+                          aria-hidden="true"
+                        />
+                      </span>
                     </div>
                   </li>
                 );

@@ -25,9 +25,17 @@ import type {
   LessonModule,
 } from "@/lib/lesson-builder/types";
 import { duplicateLessonStructure as duplicateLessonStructureMutation } from "@/lib/lesson-builder/mutations";
+import {
+  buildCourseTimeline,
+  coverageOfItem,
+  knownSetAtLesson,
+  moduleStartLesson,
+  syllabusOf,
+} from "@/lib/lesson-builder/syllabus";
 import { useLessonPersistence } from "@/lib/lesson-builder/use-lesson-persistence";
 import { useLessonPreview } from "@/lib/lesson-builder/use-lesson-preview";
 import { createId } from "@/lib/lesson-builder/utils";
+import type { SyllabusMarkers } from "@/lib/lesson-builder/builder-context";
 
 type Deletion =
   | { kind: "slide"; lessonId: string; block: LessonBlock; index: number }
@@ -55,6 +63,50 @@ export default function LessonBuilderPage() {
     lessonsRef.current = lessons;
   }, [lessons]);
   const [modules, setModules] = useState<LessonModule[]>([]);
+  // Read by getSyllabusMarkers below, the same "stable identity, live data"
+  // pattern as lessonsRef — the Covers picker's "in syllabus" / "not
+  // introduced yet" markers need the whole course, but must not force every
+  // closed lesson row to re-render on every keystroke in the open one.
+  const modulesRef = useRef(modules);
+  useEffect(() => {
+    modulesRef.current = modules;
+  }, [modules]);
+  const getSyllabusMarkers = useCallback((lessonId: string): SyllabusMarkers => {
+    const empty: SyllabusMarkers = {
+      known: new Set(),
+      mainOfModule: new Set(),
+      inSyllabusUncovered: new Set(),
+    };
+    const currentModules = modulesRef.current;
+    const currentLessons = lessonsRef.current;
+    const moduleIndex = currentModules.findIndex((module) =>
+      module.lessonIds.includes(lessonId),
+    );
+    if (moduleIndex < 0) return empty;
+    const courseModule = currentModules[moduleIndex];
+    const syllabus = syllabusOf(courseModule);
+    const lessonById = new Map(currentLessons.map((lesson) => [lesson.id, lesson]));
+    const moduleLessons = courseModule.lessonIds
+      .map((id) => lessonById.get(id))
+      .filter((lesson): lesson is (typeof currentLessons)[number] => Boolean(lesson));
+    const timeline = buildCourseTimeline(currentModules, currentLessons);
+    const lessonPosition = courseModule.lessonIds.indexOf(lessonId);
+    const lessonNumber = moduleStartLesson(timeline, moduleIndex) + Math.max(lessonPosition, 0);
+    const known = new Set(
+      [...knownSetAtLesson(timeline, lessonNumber)]
+        .map((key) => timeline.labels.get(key)?.conceptId)
+        .filter((id): id is string => Boolean(id)),
+    );
+    const mainOfModule = new Set(
+      syllabus.main.map((item) => item.conceptId).filter((id): id is string => Boolean(id)),
+    );
+    const inSyllabusUncovered = new Set(
+      [...syllabus.main, ...syllabus.review]
+        .filter((item) => item.conceptId && !coverageOfItem(item, moduleLessons).covered)
+        .map((item) => item.conceptId!),
+    );
+    return { known, mainOfModule, inSyllabusUncovered };
+  }, []);
   const [deletionUndo, setDeletionUndo] = useState<{
     lessonId: string;
     label: string;
@@ -552,6 +604,7 @@ export default function LessonBuilderPage() {
   const builderActions: LessonBuilderActions = useMemo(
     () => ({
       conceptDisplays,
+      getSyllabusMarkers,
       deletionUndo,
       newLesson: createLesson,
       previewLesson: previewLessonWithFlush,
@@ -664,6 +717,7 @@ export default function LessonBuilderPage() {
     }),
     [
       conceptDisplays,
+      getSyllabusMarkers,
       deletionUndo,
       createLesson,
       previewLessonWithFlush,

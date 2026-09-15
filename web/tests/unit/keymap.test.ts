@@ -59,6 +59,7 @@ function fakeActions(overrides: Partial<LessonBuilderActions> = {}): LessonBuild
   }
   const base: LessonBuilderActions = {
     conceptDisplays: {},
+    getSyllabusMarkers: () => ({ known: new Set(), mainOfModule: new Set(), inSyllabusUncovered: new Set() }),
     deletionUndo: null,
     newLesson: record("newLesson", () => "new-lesson"),
     previewLesson: record("previewLesson"),

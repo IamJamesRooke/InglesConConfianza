@@ -5,12 +5,28 @@ import { createContext, useContext, type ReactNode } from "react";
 import type { DocumentBlockType } from "@/components/lesson-builder/slide-insert-control";
 import type { ConceptDisplayLookup, LessonBlock, LessonConcept } from "@/lib/lesson-builder/types";
 
+// The Covers picker's module-syllabus markers for one lesson — see
+// syllabus-panel.tsx's spec item 4. `known`/`mainOfModule`/
+// `inSyllabusUncovered` hold curriculum concept ids (not lesson-concept
+// ids), matching what the search results from
+// /api/admin/curriculum/concepts/search carry.
+export type SyllabusMarkers = {
+  known: Set<string>;
+  mainOfModule: Set<string>;
+  inSyllabusUncovered: Set<string>;
+};
+
 // The single set of lesson-content actions shared by LessonLibrary,
 // LessonDocument, and SentenceEditor. Signatures match what page.tsx already
 // exposes (lessonId-first); each consumer binds lesson.id/block.id itself
 // rather than having them pre-bound and drilled down through props.
 export type LessonBuilderActions = {
   conceptDisplays: ConceptDisplayLookup;
+  // A stable-identity function (reads live modules/lessons via refs in
+  // page.tsx) rather than precomputed data, so adding it here never forces
+  // every closed lesson row to re-render when unrelated content changes —
+  // see the comment on `getSyllabusMarkers` in page.tsx.
+  getSyllabusMarkers: (lessonId: string) => SyllabusMarkers;
   deletionUndo: { lessonId: string; label: string } | null;
   newLesson: (moduleId: string, insertionIndex?: number) => string;
   previewLesson: (lessonId: string) => void;

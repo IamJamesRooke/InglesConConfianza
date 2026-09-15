@@ -276,6 +276,7 @@ export function LessonDocument(props: Props) {
             conceptDisplays={actions.conceptDisplays}
             coversFor={lessonId}
             pairTerms={extractLessonPairTerms(props.lesson)}
+            syllabusMarkers={actions.getSyllabusMarkers(lessonId)}
             onAdd={(concept) => actions.addLessonConcept(lessonId, concept)}
             onRemove={(id) => actions.removeLessonConcept(lessonId, id)}
             onRelabel={(id, label) => actions.relabelLessonConcept(lessonId, id, label)}
