@@ -24,6 +24,7 @@ import type {
   LessonBlock,
   LessonModule,
 } from "@/lib/lesson-builder/types";
+import { duplicateLessonStructure as duplicateLessonStructureMutation } from "@/lib/lesson-builder/mutations";
 import { useLessonPersistence } from "@/lib/lesson-builder/use-lesson-persistence";
 import { useLessonPreview } from "@/lib/lesson-builder/use-lesson-preview";
 import { createId } from "@/lib/lesson-builder/utils";
@@ -199,6 +200,25 @@ export default function LessonBuilderPage() {
               };
         }),
       );
+    },
+    [modules, updateModules],
+  );
+
+  // E7 "New lesson like this one": bypasses the lessons reducer's own
+  // action union (owned elsewhere mid-refactor) by computing the whole
+  // result — lessons *and* modules — from the pure mutation up front, then
+  // applying each half the way it's normally applied (`SET_LESSONS`,
+  // `updateModules`). One undoable history step, same as `DUPLICATE_LESSON`.
+  const duplicateLessonStructure = useCallback(
+    (lessonId: string) => {
+      const result = duplicateLessonStructureMutation(
+        lessonsRef.current,
+        modules,
+        lessonId,
+      );
+      dispatch({ type: "SET_LESSONS", lessons: result.lessons });
+      updateModules(result.modules);
+      return result.newLessonId;
     },
     [modules, updateModules],
   );
@@ -387,6 +407,22 @@ export default function LessonBuilderPage() {
     [],
   );
 
+  const replaceLessonBlocks = useCallback(
+    (
+      lessonId: string,
+      result: { blocks: LessonBlock[]; title?: string; concepts?: string[] },
+    ) => {
+      dispatch({
+        type: "REPLACE_LESSON_BLOCKS",
+        lessonId,
+        blocks: result.blocks,
+        title: result.title,
+        concepts: result.concepts,
+      });
+    },
+    [],
+  );
+
   const deleteBlock = useCallback((lessonId: string, blockId: string) => {
     const lesson = lessonsRef.current.find(
       (candidate) => candidate.id === lessonId,
@@ -508,6 +544,7 @@ export default function LessonBuilderPage() {
       newLesson: createLesson,
       previewLesson: previewLessonWithFlush,
       duplicateLesson,
+      duplicateLessonStructure,
       deleteLesson: (lessonId) => void deleteLesson(lessonId),
       renameLesson: (lessonId, name) =>
         dispatch({ type: "RENAME_LESSON", lessonId, name }),
@@ -589,6 +626,7 @@ export default function LessonBuilderPage() {
       addBlock,
       extendLastSentence,
       deleteBlock,
+      replaceLessonBlocks,
       duplicateBlock: (lessonId, blockId) =>
         dispatch({ type: "DUPLICATE_CONTENT_BLOCK", lessonId, blockId }),
       moveBlock,
@@ -618,6 +656,7 @@ export default function LessonBuilderPage() {
       createLesson,
       previewLessonWithFlush,
       duplicateLesson,
+      duplicateLessonStructure,
       deleteLesson,
       addPiece,
       deletePiece,
@@ -625,6 +664,7 @@ export default function LessonBuilderPage() {
       addBlock,
       extendLastSentence,
       deleteBlock,
+      replaceLessonBlocks,
       moveBlock,
       moveLessonKeyboard,
       newLessonAfter,

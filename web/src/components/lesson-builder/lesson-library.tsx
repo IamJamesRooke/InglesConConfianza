@@ -257,6 +257,20 @@ function LessonLibraryInner(props: Props) {
     [props.builder, openLesson, editing],
   );
 
+  // E7 "New lesson like this one": open the new skeleton and focus its
+  // title, same as `startLesson` above — the teacher lands somewhere ready
+  // to type immediately, not on a collapsed row they have to find.
+  const duplicateStructure = useCallback(
+    (lessonId: string) => {
+      const newLessonId = props.builder.duplicateLessonStructure(lessonId);
+      openLesson(newLessonId);
+      const sel: EditingSelection = { kind: "title", lessonId: newLessonId };
+      editing.setSelection(sel);
+      editing.focusSelection(sel);
+    },
+    [props.builder, openLesson, editing],
+  );
+
   function toggleKeyboardHelp() {
     if (!editing.helpOpen) rememberFocus();
     editing.setHelpOpen(!editing.helpOpen);
@@ -504,6 +518,7 @@ function LessonLibraryInner(props: Props) {
                           onDragEnd={endDrag}
                           onDrop={drop}
                           onStartLessonAt={startLesson}
+                          onDuplicateStructure={duplicateStructure}
                           onRequestDeleteConfirm={(key) => editing.requestDeleteConfirm(key)}
                           onCancelDeleteConfirm={() => editing.requestDeleteConfirm(null)}
                         />

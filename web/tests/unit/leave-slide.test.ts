@@ -56,6 +56,7 @@ function fakeActions(): LessonBuilderActions & {
     newLesson: noop,
     previewLesson: noop,
     duplicateLesson: noop,
+    duplicateLessonStructure: noop,
     deleteLesson: noop,
     renameLesson: noop,
     addLessonConcept: noop,

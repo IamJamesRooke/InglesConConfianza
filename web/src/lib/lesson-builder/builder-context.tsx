@@ -3,7 +3,7 @@
 import { createContext, useContext, type ReactNode } from "react";
 
 import type { DocumentBlockType } from "@/components/lesson-builder/slide-insert-control";
-import type { ConceptDisplayLookup, LessonConcept } from "@/lib/lesson-builder/types";
+import type { ConceptDisplayLookup, LessonBlock, LessonConcept } from "@/lib/lesson-builder/types";
 
 // The single set of lesson-content actions shared by LessonLibrary,
 // LessonDocument, and SentenceEditor. Signatures match what page.tsx already
@@ -15,6 +15,10 @@ export type LessonBuilderActions = {
   newLesson: (moduleId: string, insertionIndex?: number) => string;
   previewLesson: (lessonId: string) => void;
   duplicateLesson: (lessonId: string) => void;
+  // E7 "New lesson like this one": a fresh lesson right after `lessonId`
+  // with the same slide-type sequence, every slide emptied. Returns the
+  // new lesson's id so the caller can open and focus it.
+  duplicateLessonStructure: (lessonId: string) => string;
   deleteLesson: (lessonId: string) => void;
   renameLesson: (lessonId: string, name: string) => void;
   addLessonConcept: (lessonId: string, concept: LessonConcept) => void;
@@ -80,6 +84,13 @@ export type LessonBuilderActions = {
     afterBlockId: string | null,
   ) => { blockId: string; languageBlockId: string };
   deleteBlock: (lessonId: string, blockId: string) => void;
+  // E4 script mode: leaving the script view on a successful parse replaces
+  // the lesson's whole block list (and title/concepts, when the script
+  // supplied them) in one call/undo step. See lib/lesson-builder/script.ts.
+  replaceLessonBlocks: (
+    lessonId: string,
+    result: { blocks: LessonBlock[]; title?: string; concepts?: string[] },
+  ) => void;
   duplicateBlock: (lessonId: string, blockId: string) => void;
   moveBlock: (lessonId: string, blockId: string, direction: -1 | 1) => void;
   reorderBlock: (

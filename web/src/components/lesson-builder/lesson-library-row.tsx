@@ -36,6 +36,7 @@ type Props = {
     usePointer?: boolean,
   ) => void;
   onStartLessonAt: (moduleId: string, insertionIndex?: number) => void;
+  onDuplicateStructure: (lessonId: string) => void;
   onRequestDeleteConfirm: (key: string) => void;
   onCancelDeleteConfirm: () => void;
 };
@@ -58,6 +59,7 @@ function LessonRowImpl({
   onDragEnd,
   onDrop,
   onStartLessonAt,
+  onDuplicateStructure,
   onRequestDeleteConfirm,
   onCancelDeleteConfirm,
 }: Props) {
@@ -181,6 +183,7 @@ function LessonRowImpl({
                 lessonId={lesson.id}
                 lessonName={lesson.name?.trim() || "Untitled lesson"}
                 onDuplicate={() => builder.duplicateLesson(lesson.id)}
+                onDuplicateStructure={() => onDuplicateStructure(lesson.id)}
                 onRequestDelete={() => onRequestDeleteConfirm(lessonDeleteKey)}
               />
             </span>
