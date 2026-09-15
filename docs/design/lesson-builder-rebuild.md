@@ -53,7 +53,33 @@ No autonomous "improvement rounds" outside these phases.
   empty course.
 - Model: Fable designs the store + keymap signatures (≤ 150 lines); Sonnet implements.
 
-### Phase 2 — explanation editor on a real engine
+### Phase 2 — explanation editor on a real engine — **DONE 2026-09-15**
+Shipped: `lib/lesson-builder/explanation-schema.ts` (doc/paragraph/text/hardBreak +
+bold/italic/`lang`, plus a five-line history extension over `@tiptap/pm/history` — v3
+renamed Tiptap's own History package, which is not in the approved dependency list),
+`explanation-markdown.ts` (the spike's parser/serializer, property-tested in
+`tests/unit/explanation-markdown.test.ts` with a deterministic generator instead of
+fast-check), `explanation-commands.ts` (the editor registry the keymap's
+`explanation`-scope commands resolve by blockId), `explanation-e1.ts` +
+`explanation-classifier.ts` (E1, shipped ON), and a rewritten
+`components/lesson-builder/explanation-editor.tsx`. `serialize-explanation.ts`,
+`normalizeEditorDom` and every `execCommand`/`Range` call are gone (~640 lines).
+`markdown.ts` stays: it is the learner renderer's parser, not the old editor's.
+
+E1's classifier (`isEnglish`) is deliberately conservative, since a wrong auto-mark
+costs more than a missed one: the right-hand side must contain at least one word from a
+small built-in English function-word list, and at least 60 % of its words must be
+English-ish (in the English list, or in neither list — an unknown content word doesn't
+veto, a known Spanish word does). So "Quiero es I want." marks, "El libro es rojo."
+stays neutral, and "hacer es to do, dos palabras" is a deliberate false negative. E2
+replaces the lists with the curriculum word sets.
+
+Two contract notes for Phase 3: the dispatcher now calls `stopPropagation()` on handled
+chords (spike finding), and an explanation whose editor is focused ignores incoming
+`contentMarkdown` props — inside an explanation the text history is ProseMirror's, so
+the reducer has nothing legitimate to push into a focused editor, and re-setting content
+on a lagging prop drops keystrokes.
+
 - Tiptap (ProseMirror) with a five-node schema: paragraph, bold, italic, `es` mark,
   `en` mark; hard break; no lists unless the owner wants them. A Markdown serializer
   with **round-trip property tests** (parse → serialize → parse is identity).

@@ -88,7 +88,9 @@ test.describe("from-zero: the owner's literal flow, keyboard only", () => {
     expect(created.name).toBe("I want to do something.");
     expect(created.blocks[0]).toMatchObject({
       type: "explanation",
-      contentMarkdown: "Quiero es I want.",
+      // E1 (Phase 2, shipped ON): typing the terminator marks the two halves
+      // of "<Spanish> es <English>." for the teacher.
+      contentMarkdown: "[[es:Quiero]] es [[en:I want]].",
     });
     const sentence = created.blocks[1];
     if (sentence.type !== "sentence") throw new Error("expected a sentence block at index 1");
@@ -301,7 +303,7 @@ test("(h) Ctrl+Alt+Enter then Escape twice on the still-empty new sentence delet
   expect(created!.blocks.length).toBe(1);
   expect(created!.blocks[0]).toMatchObject({
     type: "explanation",
-    contentMarkdown: "Comer es to eat.",
+    contentMarkdown: "[[es:Comer]] es [[en:to eat]].",
   });
   expect(created!.blocks.some((block) => block.type === "sentence")).toBe(false);
 });

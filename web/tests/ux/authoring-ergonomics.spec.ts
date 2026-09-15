@@ -43,6 +43,10 @@ test("explanation toolbar preserves editing context and sentence pairs stay disc
   const toolbar = page.getByRole("toolbar", {
     name: "Format explanation text",
   });
+  // Phase 2: the toolbar appears only with a real (non-empty) selection —
+  // there is nothing for Spanish/English/Normal/B/I to act on without one.
+  await page.keyboard.type("hola");
+  await page.keyboard.press("Control+a");
   await expect(toolbar).toBeVisible();
   await expect(
     toolbar.getByRole("button", { name: /Spanish/ }),
@@ -60,20 +64,26 @@ test("explanation toolbar preserves editing context and sentence pairs stay disc
   await expect(editor).toBeFocused();
 
   await page.keyboard.type("hola");
-  await page.keyboard.press("Home");
-  for (let index = 0; index < 4; index += 1)
-    await page.keyboard.press("Shift+ArrowRight");
+  // Select-all rather than Shift+Arrow: this is the editor's own command, so
+  // it can't race the browser's (asynchronous) caret movement the way a run
+  // of synthetic arrow keys can.
+  await page.keyboard.press("Control+a");
+  await expect(toolbar).toBeVisible();
   await toolbar.getByRole("button", { name: /Spanish/ }).click();
   await expect(editor.locator('mark[data-language="es"]')).toHaveText("hola");
 
-  // Collapsed-caret formatting remains active after a toolbar click.
+  // Collapsed-caret formatting is the chords' job from Phase 2 on: with
+  // nothing selected the toolbar is deliberately not shown (it would have
+  // nothing to act on), so arming bold for what comes next is Ctrl+B.
   await page.keyboard.press("End");
   await page.keyboard.type(" ");
-  await toolbar.getByRole("button", { name: /Bold/ }).click();
+  await expect(toolbar).toHaveCount(0);
+  await page.keyboard.press("Control+b");
   await page.keyboard.type("fuerte");
-  await toolbar.getByRole("button", { name: /Bold/ }).click();
-  await toolbar.getByRole("button", { name: /Normal/ }).click();
+  await page.keyboard.press("Control+b");
+  await page.keyboard.press("Control+Alt+n");
   await page.keyboard.type(" normal");
+  await expect(editor.locator("strong")).toHaveText("fuerte");
 
   // E6: Ctrl+Alt+Enter inserts the predicted type (sentence, after an
   // explanation) directly and focuses it — no chooser on the keyboard path.
@@ -142,6 +152,7 @@ test("explanation toolbar preserves editing context and sentence pairs stay disc
     .fill("to do it");
 
   await editor.focus();
+  await page.keyboard.press("Control+a");
   await expect(toolbar).toBeVisible();
   const accessibility = await new AxeBuilder({ page })
     .include("main")
@@ -223,6 +234,7 @@ test("explanation toolbar preserves editing context and sentence pairs stay disc
   ).toHaveValue("Translate the two parts.");
 
   await reloadedEditor.focus();
+  await page.keyboard.press("Control+a");
   await expect(toolbar).toBeVisible();
   await page.screenshot({
     path: "/tmp/lesson-builder-authoring-after.png",
@@ -926,15 +938,11 @@ test("Ctrl Alt P previews the lesson, and closing it returns focus to the field 
   const explanation = row.getByRole("textbox", { name: "Explanation 1" });
   await explanation.fill("Hola mundo");
   await explanation.click();
-  await explanation.evaluate((el) => {
-    const content = el.querySelector(".practice-markdown-content") ?? el;
-    const range = document.createRange();
-    range.setStart(content.firstChild ?? content, 3);
-    range.collapse(true);
-    const selection = window.getSelection();
-    selection?.removeAllRanges();
-    selection?.addRange(range);
-  });
+  // Park the caret a few characters in, by keyboard — the editor is a
+  // ProseMirror document now, so reaching into its DOM with a Range is both
+  // wrong and unnecessary.
+  await page.keyboard.press("Home");
+  for (let i = 0; i < 3; i += 1) await page.keyboard.press("ArrowRight");
 
   await page.keyboard.press("Control+Alt+p");
   const previewDialog = page.getByRole("dialog");

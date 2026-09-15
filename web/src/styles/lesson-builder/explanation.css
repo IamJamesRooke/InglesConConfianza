@@ -31,8 +31,7 @@
   outline: none;
   box-shadow: none;
 }
-.lesson-document-explanation
-  .authoring-wysiwyg-explanation:has(.practice-markdown-content:empty)::before {
+.lesson-document-explanation .authoring-wysiwyg-shell[data-empty="true"]::before {
   text-align: left;
   font-style: normal;
 }
@@ -77,8 +76,7 @@
 /* Same type scale as the sentence/vocabulary fields (14px / 1.45) — this
    used to force 16px/1.65, so an explanation slide and the sentence slide
    right next to it read at two different sizes for no real reason. */
-.lesson-document-explanation
-  .authoring-wysiwyg-explanation:has(.practice-markdown-content:empty)::before,
+.lesson-document-explanation .authoring-wysiwyg-shell[data-empty="true"]::before,
 .lesson-document-explanation .practice-markdown-content :is(p, li, ol, ul) {
   font-size: 16px !important;
   font-weight: 400 !important;

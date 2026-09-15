@@ -6,6 +6,11 @@ import type { DocumentBlockType } from "@/components/lesson-builder/slide-insert
 import { parseAnswerEntry } from "@/lib/lesson-builder/answer-entry";
 import { commitAnswerDraft } from "@/lib/lesson-builder/editing";
 import type { EditingActions, EditingSelection } from "@/lib/lesson-builder/editing";
+import {
+  getExplanationEditor,
+  setExplanationLanguage,
+  toggleExplanationMark,
+} from "@/lib/lesson-builder/explanation-commands";
 import { focusModuleName, rememberFocus } from "@/lib/lesson-builder/focus";
 import type { LessonBuilderActions } from "@/lib/lesson-builder/builder-context";
 import type { Lesson, LessonBlock } from "@/lib/lesson-builder/types";
@@ -335,6 +340,27 @@ function leaveHint(ctx: CommandContext): boolean {
   return true;
 }
 
+// Ctrl+Alt+S / Ctrl+Alt+E / Ctrl+Alt+N inside an explanation. The editor is
+// found by blockId rather than by reaching into the DOM or the event target,
+// so the chord means the same thing however focus got there.
+function languageCommand(language: "es" | "en" | null): Command {
+  return (ctx) => {
+    if (ctx.selection.kind !== "field" || ctx.selection.field !== "explanation") return false;
+    const editor = getExplanationEditor(ctx.selection.blockId);
+    if (!editor) return false;
+    return setExplanationLanguage(editor, language);
+  };
+}
+
+function markCommand(mark: "bold" | "italic"): Command {
+  return (ctx) => {
+    if (ctx.selection.kind !== "field" || ctx.selection.field !== "explanation") return false;
+    const editor = getExplanationEditor(ctx.selection.blockId);
+    if (!editor) return false;
+    return toggleExplanationMark(editor, mark);
+  };
+}
+
 function blockNewlineOnly(): Command {
   return () => true; // consume Enter, insert nothing — single-line fields
 }
@@ -497,7 +523,21 @@ export const KEYMAP: Record<Scope, Partial<Record<Chord, Command>>> = {
     "Ctrl+Alt+Backspace": deleteLessonConfirm,
   },
   explanation: {
-    // Enter/marks/Ctrl+B/I stay inside explanation-editor.tsx (Phase 2).
+    // Language marking (Phase 2). The commands reach the mounted Tiptap
+    // editor through the registry, keyed by the selection's blockId.
+    "Ctrl+Alt+S": languageCommand("es"),
+    "Ctrl+Alt+E": languageCommand("en"),
+    "Ctrl+Alt+N": languageCommand(null),
+    // Bold/italic go through this table too, rather than being left to
+    // Tiptap's own `Mod-b`/`Mod-i`: the dispatcher sees the key first, and
+    // only this path flushes the pending DOM selection before reading it
+    // (ProseMirror learns about a Shift+Arrow selection asynchronously, so a
+    // chord fired immediately after one would format a stale range).
+    "Ctrl+B": markCommand("bold"),
+    "Ctrl+I": markCommand("italic"),
+    // Enter (paragraph), Shift+Enter (hard break), arrows and Backspace are
+    // text-editing semantics and are not in this table at all, so they fall
+    // through to Tiptap untouched.
   },
   instruction: {
     Enter: blockNewlineOnly(),
@@ -568,7 +608,17 @@ export function dispatchKeymap(
     const command = KEYMAP[scope]?.[chord];
     if (!command) continue;
     const handled = command({ ...ctx, event });
-    if (handled) event.preventDefault();
+    if (handled) {
+      event.preventDefault();
+      // `preventDefault` alone does not stop the event travelling on to the
+      // element it landed on — and inside an explanation that element is
+      // ProseMirror's contenteditable, whose own keydown handler would then
+      // *also* act on the chord (Phase 2 spike finding). A chord this table
+      // has handled is finished.
+      // Duck-typed like the target helpers above: the unit tests dispatch
+      // plain object events with no DOM methods on them.
+      if (typeof event.stopPropagation === "function") event.stopPropagation();
+    }
     return;
   }
 }

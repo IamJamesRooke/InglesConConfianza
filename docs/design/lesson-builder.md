@@ -70,7 +70,12 @@ Enter/Shift+Enter/arrows/Backspace and `Ctrl/⌘+B`/`I` are ProseMirror's own
 keymap, never this table's). A handled chord is both `preventDefault`ed and
 `stopPropagation`ed, so ProseMirror's keydown never sees it twice. See
 `docs/design/lesson-builder-editing-model.md` for the full contract
-(selection shape, `leaveSlide`, the focus helper).
+(selection shape, `leaveSlide`, the focus helper). `leaveSlide` (2026-09-15)
+now deletes the slide outright — one undoable step, the usual "Slide
+deleted — Undo" toast — when it's left entirely empty on any `LeaveReason`;
+a click on one of the slide's own controls (Add instruction, hint lightbulb,
+Add pair/row, pair ×) never counts as leaving, even when the click briefly
+unmounts the clicked control itself.
 
 Modifier scheme unchanged: chords use **Ctrl+Alt** (not plain Alt, not plain
 Ctrl) — plain Alt+letter is commonly eaten by Linux window managers before
@@ -452,9 +457,21 @@ without a fresh, explicit ask:
 
 - **Zen mode retired.** An earlier full-screen single-slide editing mode was
   removed; editing happens inline, in the document flow, at all times.
-- **HUD bar is wanted.** The bottom shortcut bar was removed in `5972306e` and
-  wrongly recorded here as an owner decision; the owner asked for it back
-  (2026-09-15). It is restored as a context-sensitive bar generated from `KEYMAP`.
+- **HUD bar is wanted — restored 2026-09-15.** The bottom shortcut bar was
+  removed in `5972306e` and wrongly recorded here as an owner decision; the
+  owner asked for it back. It is now `EditingHud`
+  (`web/src/components/lesson-builder/editing-hud.tsx`,
+  `web/src/styles/lesson-builder/hud.css`), generated from `KEYMAP`/`scopeOf`
+  so it can't drift from the dispatcher: it mirrors the dispatcher's own
+  scope-shadowing precedence to compute the chords live for the current
+  selection, then orders them via a hand-owned `SCOPE_PRIORITY` (which chords
+  are most useful first — cosmetic only, never hides a real chord) and labels
+  them via a hand-owned `HUD_LABELS` (falls back to a humanised command name
+  if a chord is missing a label). Hidden when `selection.kind === "none"` or
+  when focus sits inside anything carrying `[data-keymap-ignore]` (tracked via
+  a `focusin` listener, not polling). Mounted as the last child of
+  `.lesson-library-modules` (`lesson-library.tsx`), `position: sticky; bottom:
+  0`, so it spans the document column, not the module rail.
 - **Lessons collapse to rows.** Only the active module's lessons render
   expanded; a lesson can be individually collapsed/expanded
   (`ChevronDown`/`ChevronRight`), and "Finish this lesson" (`Ctrl Alt D`)
@@ -573,3 +590,4 @@ statically or spin up their own isolated server against a throwaway file.
 | R6 | Explanation editor fixes (data loss, paste, lists, mark switching, undo routing) | Sonnet | done |
 | R7 | First-run + 760px fixes | Sonnet | done |
 | P2 | Phase 2: explanation editor on Tiptap/ProseMirror — schema + markdown round-trip, mark commands via an editor registry, floating toolbar, E1 auto-marking, mark-preserving copy/paste; `serialize-explanation.ts` and all `execCommand`/`Range` code deleted | Opus | done |
+| CT1 | "Covers" concept typeahead popover: fixed overlapping/clipped option rows, restyled the active row from a saturated `--accent` fill (read as danger) to a soft primary tint + left rule, added viewport flip and `data-keymap-ignore`, and ranked the search route's results (exact → prefix → word-boundary → substring, ties by priority then length) so e.g. "with" surfaces the standalone preposition before "to work with [somebody]" | Sonnet | done |

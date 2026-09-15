@@ -66,6 +66,8 @@ test("sentence rest composition, hint tools, Escape, and explanation tools stay 
   await page.mouse.move(0, 0);
 
   await explanation.focus();
+  // Phase 2: the toolbar needs a real selection to act on before it appears.
+  await page.keyboard.press("Control+a");
   const formatTools = row.getByRole("toolbar", { name: "Format explanation text" });
   const toolsBox = await formatTools.boundingBox();
   const sentenceBox = await row.locator("[data-document-block]").nth(1).boundingBox();

@@ -149,7 +149,8 @@ export function KeyboardHelpDialog({ onClose }: { onClose: () => void }) {
               </dt>
               <dd>
                 In an explanation: mark as Spanish · English · neutral. With
-                text selected, marks it.
+                text selected, marks the selection; with just a caret, the
+                word around it.
               </dd>
             </div>
             <div>

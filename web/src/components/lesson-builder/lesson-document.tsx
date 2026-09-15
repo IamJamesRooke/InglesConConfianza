@@ -182,6 +182,7 @@ export function LessonDocument(props: Props) {
             {block.type === "explanation" ? (
               <section className="lesson-document-explanation" aria-label={`Explanation ${index + 1}`}>
                 <EditablePracticeMarkdown
+                  blockId={block.id}
                   markdown={block.contentMarkdown}
                   placeholder="Write your explanation…"
                   ariaLabel={`Explanation ${index + 1}`}
@@ -190,9 +191,7 @@ export function LessonDocument(props: Props) {
                   onFocus={() =>
                     editing.setSelection({ kind: "field", lessonId, blockId: block.id, field: "explanation" })
                   }
-                  onChange={(markdown, options) => actions.updateExplanation(lessonId, block.id, markdown, options)}
-                  onUndo={() => actions.editorUndo(lessonId, block.id)}
-                  onRedo={() => actions.editorRedo(lessonId, block.id)}
+                  onChange={(markdown) => actions.updateExplanation(lessonId, block.id, markdown)}
                 />
               </section>
             ) : (

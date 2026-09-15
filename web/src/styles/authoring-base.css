@@ -123,42 +123,17 @@
 .authoring-wysiwyg:focus {
   outline: none;
 }
-.authoring-wysiwyg:has(.practice-markdown-content:empty)::before {
-  display: block;
+/* Placeholder for an empty editor. The shell carries `data-empty` (written
+   by the component from the editor's own `isEmpty`) and `data-placeholder`,
+   so the text never lives inside the editable document itself. */
+.authoring-wysiwyg-shell[data-empty="true"]::before {
+  position: absolute;
+  inset-inline: 0;
+  top: 0;
+  pointer-events: none;
   color: var(--muted-foreground);
   font-style: italic;
   content: attr(data-placeholder);
-}
-.authoring-wysiwyg:has(.practice-markdown-content:empty)
-  .practice-markdown-content {
-  min-height: 1lh;
-}
-/* Caret escaped into the root: don't let the empty block reserve a blank line. */
-.authoring-wysiwyg:not(:has(.practice-markdown-content:only-child))
-  .practice-markdown-content:empty {
-  min-height: 0;
-}
-.authoring-wysiwyg:not(:has(.practice-markdown-content:only-child))::before {
-  display: none;
-}
-.authoring-wysiwyg-explanation:has(.practice-markdown-content:empty)::before {
-  text-align: center;
-  font-size: 30px;
-  font-weight: 600;
-  line-height: 1.35;
-}
-.authoring-wysiwyg-eyebrow:has(.practice-markdown-content:empty)::before {
-  text-align: center;
-  font-size: 14px;
-  font-weight: 600;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-}
-.authoring-wysiwyg-prompt:has(.practice-markdown-content:empty)::before {
-  text-align: center;
-  font-size: 24px;
-  font-weight: 600;
-  line-height: 1.25;
 }
 .authoring-source-input {
   width: 100%;
