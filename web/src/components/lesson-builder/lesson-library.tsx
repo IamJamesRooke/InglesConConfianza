@@ -13,13 +13,19 @@ import {
 
 import { ModuleNavigator } from "@/components/lesson-builder/module-navigator";
 import "@/styles/module-navigation.css";
+import { EditingHud } from "@/components/lesson-builder/editing-hud";
 import { KeyboardHelpDialog } from "@/components/lesson-builder/keyboard-help";
 import { LessonRow } from "@/components/lesson-builder/lesson-library-row";
 import {
   LessonBuilderProvider,
   type LessonBuilderActions,
 } from "@/lib/lesson-builder/builder-context";
-import { EditingProvider, useLessonEditing, type EditingSelection } from "@/lib/lesson-builder/editing";
+import {
+  EditingProvider,
+  isRealBlurAway,
+  useLessonEditing,
+  type EditingSelection,
+} from "@/lib/lesson-builder/editing";
 import { dispatchKeymap, fieldSelectionForBlock } from "@/lib/lesson-builder/keymap";
 import { rememberFocus, restoreRememberedFocus } from "@/lib/lesson-builder/focus";
 import type { Lesson, LessonModule } from "@/lib/lesson-builder/types";
@@ -314,6 +320,22 @@ function LessonLibraryInner(props: Props) {
       if (!(event.target instanceof Node) || !root!.contains(event.target)) return;
       const next = event.relatedTarget;
       if (next instanceof Node && root!.contains(next)) return;
+      // `relatedTarget` didn't land us safely back inside the root — but a
+      // control that unmounts itself as a direct result of its own click
+      // (Add instruction, hint lightbulb, Add pair/row, pair ×, the
+      // block's drag/duplicate/delete chrome) can report this same
+      // unresolved blur even though focus is about to return to that same
+      // slide (via its own explicit `focusSelection` call, one render
+      // later). Only collapse to "none" — and therefore run `leaveSlide`
+      // — when the blurred target didn't belong to the slide the
+      // selection already points at. See `isRealBlurAway`.
+      const selection = dispatchDepsRef.current.editing.selection;
+      const selectionBlockId =
+        selection.kind === "block" || selection.kind === "field" ? selection.blockId : null;
+      const targetBlock =
+        event.target instanceof HTMLElement ? event.target.closest("[data-document-block]") : null;
+      const targetBlockId = targetBlock?.getAttribute("data-document-block") ?? null;
+      if (!isRealBlurAway(targetBlockId, selectionBlockId)) return;
       dispatchDepsRef.current.editing.setSelection({ kind: "none" }, { reason: "blur" });
     }
     document.addEventListener("focusout", onFocusOut);
@@ -477,6 +499,7 @@ function LessonLibraryInner(props: Props) {
                 </Fragment>
               );
             })}
+          <EditingHud />
         </div>
       </div>
 
