@@ -153,6 +153,14 @@ an instruction line ("Veamos la diferencia.") — script syntax: a line ending i
 or `:` before `|` rows becomes the instruction. Every explanation in the lesson is
 `[[es:X]] es [[en:Y]]` + optional Spanish comment — E1 covers 100 % of them.
 
+### E8. "Given" pieces — shown, not tested (owner ask 2026-09-15)
+Some pieces of a sentence (an ellipsis "…", a name, a number) must be visible to the
+student but never asked for. Add `LanguageBlock.given?: true`: the learner renders it as
+plain text (Spanish and English both shown) and skips it in progression/completion; the
+builder toggles it with `Ctrl Alt G` on the pair (and a small "given" tag in the
+resting view); script syntax `> =… / …`. Back-compat: absent = tested. Lives in Phase
+2.5 with chain building (same files: model, learner card, script grammar).
+
 ### E4. Script mode — type the whole lesson as text
 The fastest authoring surface is a plain text stream with a tiny syntax, losslessly
 convertible to and from the block model:
