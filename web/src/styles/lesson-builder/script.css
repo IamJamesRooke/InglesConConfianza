@@ -1,0 +1,62 @@
+/* E4 script mode: the per-lesson plain-text drafting surface. See
+   docs/design/lesson-script-grammar.md and lesson-script-view.tsx. */
+
+.lesson-document-script-toggle {
+  color: var(--muted-foreground);
+  font-size: 11px;
+  font-weight: 600;
+  background: none;
+  border: none;
+  padding: 2px 0 4px;
+  cursor: pointer;
+}
+.lesson-document-script-toggle:hover {
+  color: var(--foreground);
+}
+
+.lesson-document-script-paste {
+  color: var(--muted-foreground);
+  font-size: 12px;
+  background: none;
+  border: none;
+  padding: 4px 8px;
+  cursor: pointer;
+}
+.lesson-document-script-paste:hover {
+  color: var(--foreground);
+}
+
+.lesson-script-view {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 10px 0 16px;
+}
+
+.lesson-script-view-textarea {
+  width: 100%;
+  min-height: 12rem;
+  field-sizing: content;
+  font-family: var(--font-mono, ui-monospace, "SF Mono", Menlo, Consolas, monospace);
+  font-size: 15px;
+  line-height: 1.5;
+  padding: 10px 12px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: var(--background);
+  color: var(--foreground);
+  resize: vertical;
+}
+
+.lesson-script-view-errors {
+  margin: 0;
+  padding: 8px 12px;
+  list-style: none;
+  border: 1px solid var(--destructive, #c0392b);
+  border-radius: 6px;
+  color: var(--destructive, #c0392b);
+  font-size: 12px;
+}
+.lesson-script-view-errors li + li {
+  margin-top: 2px;
+}

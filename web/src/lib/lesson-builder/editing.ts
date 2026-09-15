@@ -52,6 +52,10 @@ export type EditingState = {
   selection: EditingSelection;
   openLessonId: string | null;
   insertAfter: { lessonId: string; index: number } | null;
+  // E4 script mode: which lesson (if any) is showing its script textarea
+  // instead of the block view. At most one lesson at a time, like
+  // `openLessonId`. See lesson-script-view.tsx.
+  scriptViewLessonId: string | null;
 };
 
 // -----------------------------------------------------------------------
@@ -216,6 +220,7 @@ const initialState: StoreState = {
   selection: { kind: "none" },
   openLessonId: null,
   insertAfter: null,
+  scriptViewLessonId: null,
   activeModuleId: null,
   confirmDeleteKey: null,
   helpOpen: false,
@@ -225,6 +230,7 @@ type StoreAction =
   | { type: "SET_SELECTION"; selection: EditingSelection }
   | { type: "SET_OPEN_LESSON"; lessonId: string | null }
   | { type: "SET_INSERT_AFTER"; target: { lessonId: string; index: number } | null }
+  | { type: "SET_SCRIPT_VIEW"; lessonId: string | null }
   | { type: "SET_ACTIVE_MODULE"; moduleId: string | null }
   | { type: "REQUEST_DELETE_CONFIRM"; key: string | null }
   | { type: "SET_HELP_OPEN"; open: boolean };
@@ -237,6 +243,8 @@ function reducer(state: StoreState, action: StoreAction): StoreState {
       return { ...state, openLessonId: action.lessonId };
     case "SET_INSERT_AFTER":
       return { ...state, insertAfter: action.target };
+    case "SET_SCRIPT_VIEW":
+      return { ...state, scriptViewLessonId: action.lessonId };
     case "SET_ACTIVE_MODULE":
       return { ...state, activeModuleId: action.moduleId };
     case "REQUEST_DELETE_CONFIRM":
@@ -300,6 +308,7 @@ export type EditingActions = StoreState & {
   setSelection: (selection: EditingSelection, opts?: { reason?: LeaveReason }) => void;
   setOpenLesson: (lessonId: string | null) => void;
   setInsertAfter: (target: { lessonId: string; index: number } | null) => void;
+  setScriptView: (lessonId: string | null) => void;
   setActiveModule: (moduleId: string | null) => void;
   requestDeleteConfirm: (key: string | null) => void;
   setHelpOpen: (open: boolean) => void;
@@ -361,6 +370,10 @@ export function EditingProvider({
       dispatch({ type: "SET_INSERT_AFTER", target }),
     [],
   );
+  const setScriptView = useCallback(
+    (lessonId: string | null) => dispatch({ type: "SET_SCRIPT_VIEW", lessonId }),
+    [],
+  );
   const setActiveModule = useCallback(
     (moduleId: string | null) => dispatch({ type: "SET_ACTIVE_MODULE", moduleId }),
     [],
@@ -380,12 +393,22 @@ export function EditingProvider({
       setSelection,
       setOpenLesson,
       setInsertAfter,
+      setScriptView,
       setActiveModule,
       requestDeleteConfirm,
       setHelpOpen,
       focusSelection: focusSelectionDom,
     }),
-    [state, setSelection, setOpenLesson, setInsertAfter, setActiveModule, requestDeleteConfirm, setHelpOpen],
+    [
+      state,
+      setSelection,
+      setOpenLesson,
+      setInsertAfter,
+      setScriptView,
+      setActiveModule,
+      requestDeleteConfirm,
+      setHelpOpen,
+    ],
   );
 
   return createElement(EditingContext.Provider, { value }, children);

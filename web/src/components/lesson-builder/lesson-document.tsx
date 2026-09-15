@@ -5,6 +5,7 @@ import { Fragment, useEffect, useState, type DragEvent } from "react";
 
 import { LessonConceptsField } from "@/components/lesson-builder/lesson-concepts-field";
 import { EditablePracticeMarkdown } from "@/components/lesson-builder/explanation-editor";
+import { LessonScriptView } from "@/components/lesson-builder/lesson-script-view";
 import { SentenceEditor } from "@/components/lesson-builder/sentence-editor";
 import {
   SlideInsertControl,
@@ -139,8 +140,25 @@ export function LessonDocument(props: Props) {
     );
   }
 
+  const scriptOpen = editing.scriptViewLessonId === lessonId;
+
+  if (scriptOpen) {
+    return (
+      <div className="lesson-document">
+        <LessonScriptView lesson={props.lesson} onClose={() => editing.setScriptView(null)} />
+      </div>
+    );
+  }
+
   return (
     <div className="lesson-document">
+      <button
+        type="button"
+        className="lesson-document-script-toggle"
+        onClick={() => editing.setScriptView(lessonId)}
+      >
+        Script ⌥
+      </button>
       <div className="lesson-document-body">
         {props.lesson.blocks.map((block, index) => (
           <Fragment key={block.id}>
@@ -233,6 +251,15 @@ export function LessonDocument(props: Props) {
             onExtend={() => extend(props.lesson.blocks.at(-1)?.id ?? null)}
             onClose={closeInsert}
           />
+          {props.lesson.blocks.length === 0 && (
+            <button
+              type="button"
+              className="lesson-document-script-paste"
+              onClick={() => editing.setScriptView(lessonId)}
+            >
+              Paste a script…
+            </button>
+          )}
         </div>
 
         <div className="lesson-document-tags">

@@ -6,6 +6,7 @@ import type {
   SentenceBlock,
 } from "@/lib/lesson-builder/types";
 import * as mutations from "@/lib/lesson-builder/mutations";
+import { applyScriptReplacement } from "@/lib/lesson-builder/script";
 
 // The lesson builder's document state is `Lesson[]`. Every editing action is a
 // pure transform in mutations.ts; this reducer is the thin dispatch layer over
@@ -157,6 +158,16 @@ export type LessonsAction =
       afterBlockId: string | null;
       blockId: string;
       languageBlockId: string;
+    }
+  | {
+      // E4 script mode: leaving the script view on a successful parse
+      // replaces the whole lesson's blocks (and title/concepts, when the
+      // script provided them) as one undoable step.
+      type: "REPLACE_LESSON_BLOCKS";
+      lessonId: string;
+      blocks: LessonBlock[];
+      title?: string;
+      concepts?: string[];
     };
 
 export function lessonsReducer(
@@ -340,6 +351,12 @@ export function lessonsReducer(
         action.blockId,
         action.languageBlockId,
       );
+    case "REPLACE_LESSON_BLOCKS":
+      return applyScriptReplacement(lessons, action.lessonId, {
+        blocks: action.blocks,
+        title: action.title,
+        concepts: action.concepts,
+      });
     default: {
       const exhaustiveCheck: never = action;
       return exhaustiveCheck;

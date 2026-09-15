@@ -12,6 +12,7 @@ import "../styles/lesson-builder/document.css";
 import "../styles/lesson-builder/explanation.css";
 import "../styles/lesson-builder/sentence.css";
 import "../styles/lesson-builder/insert.css";
+import "../styles/lesson-builder/script.css";
 import "../styles/lesson-builder/concepts.css";
 import "../styles/lesson-builder/keyboard-help.css";
 import "../styles/lesson-builder/hud.css";

@@ -210,7 +210,17 @@ builder toggles it with `Ctrl Alt G` on the pair (and a small "given" tag in the
 resting view); script syntax `> =… / …`. Back-compat: absent = tested. Lives in Phase
 2.5 with chain building (same files: model, learner card, script grammar).
 
-### E4. Script mode — type the whole lesson as text
+### E4. Script mode — type the whole lesson as text — done 2026-09-15
+Shipped: `lib/lesson-builder/script.ts` (`parseScript`/`printScript`,
+property-tested against 500 generated lessons and the owner's two real
+lessons), `components/lesson-builder/lesson-script-view.tsx`, the
+`REPLACE_LESSON_BLOCKS` reducer action, `editing.ts`'s
+`scriptViewLessonId`/`setScriptView`, and the `Ctrl+Alt+T` `lesson`-scope
+keymap entry. See `docs/design/lesson-builder.md`'s "Script mode"
+subsection for the surface and `lesson-script-grammar.md` for the grammar
+itself (unchanged by this pass). Auto-marking (E1) deliberately does not
+run on parse — explanation text round-trips verbatim, marked or not.
+
 The fastest authoring surface is a plain text stream with a tiny syntax, losslessly
 convertible to and from the block model:
 
@@ -254,9 +264,14 @@ leave the slide (no junk pair — the Phase-1 `leaveSlide` prunes). `Ctrl Alt En
 inserts the *predicted* type immediately (explanation → sentence → explanation…);
 `Ctrl Alt Enter` twice cycles the type. The chooser remains for the mouse.
 
-### E7. Templates and reuse
+### E7. Templates and reuse — DONE 2026-09-15
 "New lesson like this one": duplicate the structure (explanation, sentence, table…)
 with empty content. Most lessons in this method share one skeleton.
+
+`duplicateLessonStructure` (`mutations.ts`) + a second `LessonHeaderActions` icon
+(`LayoutTemplate`, `aria-label="Duplicate structure"`). See `lesson-builder.md` §6
+and §9 (E7 row) for the shipped shape, the module-bookkeeping mirror of
+`duplicateLesson`, and why the emptied placeholder slides survive `leaveSlide`.
 
 ### Aesthetics (inside the blue theme, sans-serif)
 The screenshot shows four different left edges (card, pair, table, chips) and four

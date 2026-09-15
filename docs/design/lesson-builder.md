@@ -239,6 +239,7 @@ reading the table.
 | `Ctrl Alt M` | Rename the active module — focuses its name field. |
 | `Alt ↓` | On a sentence pair: open its hint. |
 | `Ctrl Alt Backspace` | On a sentence pair: delete the pair. On a lesson's title: delete the lesson (confirm still required). |
+| `Ctrl Alt T` | Toggle the lesson's script view (plain-text drafting surface) — see "Script mode" below. |
 
 This table is authoritative for what the teacher is told. `Ctrl/⌘ S` (save
 now) and `Ctrl/⌘ .` (this dialog) exist in code but are deliberately not
@@ -249,6 +250,31 @@ field, are covered inline where they're used rather than in this dialog.
 `Ctrl Alt Q` / `W` (old Spanish/neutral marks), `Ctrl Alt 1`/`2`/`3` (direct
 add), and `Ctrl Alt Shift L` (page-level new lesson) were retired in the
 1d shortcut diet — see §9.
+
+### Script mode
+
+`Ctrl Alt T` (any field/block/title in a lesson) or the quiet "Script ⌥"
+button at the top of the open lesson toggles a monospace `<textarea>`
+showing the whole lesson as plain text — the grammar is
+`docs/design/lesson-script-grammar.md`, implemented in
+`lib/lesson-builder/script.ts` (`parseScript`/`printScript`). An empty
+lesson's tail insert row also offers a third quiet "Paste a script…"
+action that opens the view blank, for pasting a whole lesson from notes.
+
+Leaving the view — the same chord again, `Escape`, or blurring to
+somewhere outside the textarea — parses the text. A clean parse dispatches
+`REPLACE_LESSON_BLOCKS` (title/concepts too, when the script provided
+them) as one undoable step and closes the view; a parse error shows every
+offending line, with its line number, in a list under the textarea and
+keeps the view open until fixed. The textarea carries
+`data-keymap-ignore`, so the builder's global chord dispatcher never sees
+keys typed inside it — `Ctrl Alt T` and `Escape` are handled by the
+textarea itself instead.
+
+Not covered by E4: pair-field autocomplete while typing inside the block
+view (E5's other half) and auto-marking explanation text on parse — script
+mode carries marked/unmarked text through verbatim, since E1's "X es Y"
+auto-marking is an editor input rule, not a parser behaviour.
 
 ## 5. Visual rules (current)
 
@@ -525,6 +551,20 @@ without a fresh, explicit ask:
   own grey.
 - **Desktop is the authoring target.** Narrow/mobile authoring is
   explicitly out of scope for now (see Known gaps).
+- **"New lesson like this one" (E7) skeletons are legitimately-empty
+  placeholders, not a special "template" mode.** `duplicateLessonStructure`
+  produces a lesson whose slides are genuinely empty (`contentMarkdown: ""`,
+  one blank pair), same as any slide a teacher inserts and hasn't typed into
+  yet — there is no `templateFresh`/protected flag on the lesson or its
+  slides. `leaveSlide`'s empty-slide deletion (§3) only runs when a slide is
+  *entered and then left* still empty; a slide the teacher never enters at
+  all is never evaluated, so it survives indefinitely. Verified directly:
+  entering the new lesson's title and pressing Enter opens slide 1 (the
+  first explanation) and focuses it; typing into it and finishing
+  (`Ctrl Alt D`) keeps that content, while the sentence/table placeholders
+  after it — never entered — are untouched on save. The rule in one line:
+  **an untouched placeholder you skip stays; one you enter and leave empty
+  goes.** Covered by `tests/ux/duplicate-structure.spec.ts`.
 
 ## 7. Verification protocol
 
@@ -626,3 +666,5 @@ statically or spin up their own isolated server against a throwaway file.
 | M1 | Merge-integration pass reconciling Phase 1, empty-slide deletion, the HUD restore, typeahead, and Phase 2 landing on top of each other same-day: fixed `lesson-library.tsx`'s `onFocusOut` treating a *resolvable* out-of-root `relatedTarget` (e.g. focus landing in the lesson-preview overlay, a sibling of the builder root) the same as an unresolved one, which wrongly kept the origin slide "active" through Preview and stopped its origin field from ever going stale enough to fall back to the title; updated four tests whose assumptions predated today's changes (a dead-end blur no longer force-exits editing — Phase 1 dropped the rAF/`activeElement` polling that used to do that and has no replacement signal; leaving a still-blank slide via any path, insert included, now deletes it, so tests that created blank sentence/table/explanation slides via the mouse and moved on need to fill them first; the restored `EditingHud` correctly shows whenever `selection.kind !== "none"`, including right after a mouse click back into a resting slide — a pre-HUD assertion of `.editing-hud` count 0 was stale, not a real check) | Sonnet | done |
 | E5a | Auto-Covers: suggest "Covers" chips from a lesson's own pairs (`extractLessonPairTerms`/`matchPairTermsToConcepts` in `concept-suggestions.ts`, `POST /api/admin/curriculum/concepts/suggest`, dashed `.is-pair-suggestion` pills in `LessonConceptsField`, `Ctrl+Enter` accepts all, session-only dismissal). Pair-field autocomplete half of E5 (inline Spanish/English suggestion while typing) is still open. | Sonnet | done |
 | E3b/E8 | Chain building (`extendLastSentence`, `Ctrl+Alt+Shift+Enter`, the seam palette's "Extend" choice) and "given" pieces (`LanguageBlock.given?`, `Ctrl+Alt+G`, resting dotted-underline treatment, learner static rendering excluded from progression/completion). Found and fixed live: `lesson-file.ts`'s `normalizeLessonForFile` (every GET read) rebuilt each language block field-by-field and silently dropped `given` — a "given" pair round-tripped fine on disk but reverted to a normal tested blank on reload. Script syntax (`> +`, `> =`) stays open per `lesson-script-grammar.md`. | Sonnet | done |
+| E7 | "New lesson like this one": a second header icon, `LessonHeaderActions`' `LayoutTemplate` button (`aria-label="Duplicate structure"`), next to "Duplicate lesson". `duplicateLessonStructure` (`mutations.ts`) inserts a new lesson right after the source — same module bookkeeping as `duplicateLesson` — with the same sequence of slide *types* (a vocabulary table keeps `layout`) but every slide emptied: explanations to `""`, sentence/table slides down to one blank pair (`emptyLanguageBlock`), title reset to `null`. Wired as one `LessonBuilderActions.duplicateLessonStructure(lessonId): string` action (`page.tsx` computes the whole `{lessons, modules, newLessonId}` result from the pure mutation up front, then applies it via the existing `SET_LESSONS`/`updateModules` — no new reducer action, so this shipped without touching `reducer.ts`'s action union). `lesson-library.tsx`'s `duplicateStructure` opens the new lesson and focuses its title, mirroring `startLesson`. See §6 for why the empty skeleton survives `leaveSlide`. | Sonnet | done |
+| E4 | Script mode: `parseScript`/`printScript` (`lib/lesson-builder/script.ts`) over the block model per `lesson-script-grammar.md`, property-tested (500 generated lessons + the owner's two real lessons, ids ignored). `Ctrl+Alt+T` (new `lesson`-scope keymap entry) and a quiet "Script ⌥" button (`lesson-document.tsx`) toggle a per-lesson `<textarea>` (`lesson-script-view.tsx`, `editing.ts`'s new `scriptViewLessonId`/`setScriptView`). Leaving the view parses; success dispatches the new `REPLACE_LESSON_BLOCKS` reducer action (one undoable step, since it isn't in `history.ts`'s coalescing set) and closes; errors show inline with line numbers and the view stays open. An empty lesson's tail gains a third quiet "Paste a script…" action that opens the view blank. Does **not** auto-mark explanation text on parse (E1 stays editor-only) — see the note at the top of `script.ts`. | Sonnet | done |
