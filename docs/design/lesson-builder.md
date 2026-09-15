@@ -380,9 +380,25 @@ proposal doc's aspirations.
   `localStorage["lesson-builder:next-slide-uses"]`; once that reaches 5 the
   cue stops rendering for good (storage access wrapped in try/catch) —
   unchanged from before, just relocated.
-- **Explanation slide**: a grey card — `background: var(--muted)`, `border:
-  0`, `border-radius: 6px`, no min-height, padding-driven sizing. No focus
-  glow of its own; the slide-level blue bar carries the focus signal.
+- **One text column, one left edge** (Phase 3b): `.lesson-document-body`'s
+  measure is `40rem`; explanation, sentence pairs, vocabulary rows, the
+  instruction line and Covers all start 13px in from the document body's
+  own left edge (`.lesson-document-block`'s 8px padding + the 5px the
+  sentence/table pieces already used) — `.lesson-document-tags` carries its
+  own `padding-left: 13px` to match, since it sits outside the block
+  wrapper. Block chrome (drag/duplicate/delete, the seam "+") stays in the
+  gutter created by `.lesson-document`'s own left padding, never over the
+  text column. Vocabulary tables are left-aligned, not centred
+  (`.lesson-document-sentence-body.vocab-table` is `align-items:
+  flex-start`, not `center`).
+- **Explanation slide**: no longer a grey card — a 2px `var(--primary)` left
+  rule (`border-left`), `background: transparent`, `border-radius: 0`.
+  Blocks are separated by rhythm, not boxes: `.lesson-document-block` carries
+  `padding-block: 12px` (24px total between adjacent slides), which replaced
+  the explanation's own `margin-block`. No focus glow of its own; the
+  slide-level blue bar carries the focus signal. The editing state may add a
+  faint wash for the toolbar to sit on — `.lesson-document-explanation:
+  focus-within` gets a 55%-mixed `var(--muted)` background, never a border.
 - **Sentence/Vocabulary pieces**: resting pairs carry no visible box
   (`border: 1px solid transparent; background: transparent`); only the
   `.active` pair gets a visible card (`border-color: var(--primary)`,
@@ -399,9 +415,10 @@ proposal doc's aspirations.
   presentation and vocabulary-table rows use a different, settled palette
   (below).
 - **Resting pair typography** (round 2, item C — owner-decided, no longer an
-  A/B): Spanish `color: var(--foreground); font-weight: 600; font-size:
-  16px`, English `color: var(--muted-foreground); font-style: italic;
-  font-weight: 400; font-size: 15px`, with 6px between pairs and 2px
+  A/B; sizes bumped to the Phase 3b type scale — 17px body / 15px secondary,
+  from 16/15): Spanish `color: var(--foreground); font-weight: 600;
+  font-size: 17px`, English `color: var(--muted-foreground); font-style:
+  italic; font-weight: 400; font-size: 15px`, with 6px between pairs and 2px
   between a pair's own two lines. Applies to `.lesson-document-sentence
   .resting .lesson-sentence-composed[lang="es"|"en"]` and, for consistency,
   to a vocabulary table's own unfocused rows — vocabulary tables never get
@@ -464,6 +481,29 @@ proposal doc's aspirations.
   hover) at the right. No longer reversible via a comment toggle — the
   filled-blue header variant was deleted, not retained, when the F block
   was folded in.
+- **Instruction line as an eyebrow** (Phase 3b): the resting instruction
+  (`.lesson-sentence-presentation-instruction`) and the editing prompt field
+  (`.lesson-document-prompt`) both render 12px, `font-weight: 700`,
+  `letter-spacing: 0.08em`, `text-transform: uppercase`, `var(--muted-
+  foreground)` — the `text-transform` is CSS-only, so the stored
+  `promptText` itself keeps whatever case the teacher typed.
+- **Covers is one quiet line at rest, expanding on focus/click** (Phase 3b):
+  `LessonConceptsField`'s compact variant, only when it's the lesson's own
+  Covers field (`coversFor` set — the module Key Concepts field, and every
+  other `variant`, are unaffected), collapses to a summary button
+  (`data-covers-summary`) reading `Covers · <english> · <english> · +N` for
+  concepts past the first three. Clicking it, focusing it, or tabbing to it
+  expands the field in place (React state, `lesson-concepts-field.tsx`) —
+  the chips, the add-input, the typeahead popover, and the pair-suggestion
+  pills all mount only once expanded. Focus leaving the whole field
+  (`onBlur` checking `relatedTarget` against the container) collapses it
+  back to the summary line; expanding refocuses the add-input automatically,
+  so a keyboard user can type immediately. Priority dots
+  (`.lesson-concept-chip[class*="role-"]::before`) only render when the
+  lesson's own concepts don't all share one curriculum role —
+  `.lesson-concepts-row[data-roles-uniform="true"]` (set from the tagged
+  concepts' resolved roles) hides them when every chip would show the same
+  dot.
 - **Freehand "Covers" concepts render dashed** (§9 item R5): a concept chip
   with no `conceptId` (typed and accepted but not matched to anything in the
   curriculum database) gets `border-style: dashed` — `.lesson-concept-chip.is-freehand`

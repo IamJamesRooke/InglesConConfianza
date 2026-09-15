@@ -138,15 +138,39 @@ section. Model: Sonnet; Fable writes the script grammar.
   `7a51dcc7`, not a Phase 3a regression, flagged for a follow-up task not this one).
 - Model: Sonnet for the model, Haiku for the mechanical moves.
 
-### Phase 3b — behaviour-first tests, remaining geometry review — pending owner
+### Phase 3b — aesthetics/geometry pass — on branch (`design/phase-3b`), awaiting owner
+Implemented against the "Aesthetics" rules above: one 40rem column/one left edge
+(explanation, pairs, tables, instruction, Covers all start 13px in; vocab tables
+left-aligned, not centred); the explanation's grey card replaced by a 2px primary
+left rule with block-level 24px rhythm instead of box padding (a faint wash may
+still show on `:focus-within` for the toolbar, never a border); the instruction line
+as a 12px caps eyebrow (both resting and the editing prompt field); Covers collapsed
+to a quiet summary line (`Covers · to want · to do · +N`) that expands to the full
+chips/typeahead/suggestions on focus/click (`Enter`-reachable, keyboard-focusable,
+refocuses the add-input on expand), with priority dots suppressed when every tagged
+concept shares one role; type scale bumped to 17px body / 15px secondary throughout
+sentence/vocab/explanation text. `tests/ux/concept-typeahead.spec.ts`,
+`concept-suggestions.spec.ts`, `lesson-authoring.spec.ts`, and `accessibility.spec.ts`
+updated to expand the new Covers summary (`[data-covers-summary]`) before reaching for
+the add-input/chips they already asserted on — same intent, new entry point.
+Not done: the spec's "pairs as an aligned two-column grid" is only applied to
+vocabulary tables (which already used that grid) and the two-line resting composed
+sentence (Spanish line / English line, already the same typography as a table row);
+converting the *editing* word-flow sentence pieces — where pieces flow left-to-right
+to compose a sentence, e.g. for `extendLastSentence`/chain building — into a literal
+multi-row two-column grid was judged too high-risk to do unreviewed, since that flow
+is a load-bearing affordance for building sentences piece-by-piece, not just a
+display choice. Flagged for the owner rather than done silently.
 - Replace geometry assertions in `tests/ux` with behaviour assertions; keep one visual
-  regression screenshot per surface at 760 and 1280 as a diff, not as px assertions.
+  regression screenshot per surface at 760 and 1280 as a diff, not as px assertions —
+  not done this pass (scope was the aesthetics rules themselves); still open.
 - Owner-reported 2026-09-15: the drag/duplicate/delete cluster sits on top of the grey
   explanation card (white icon box over grey). Resolved by construction: the
   explanation is no longer a card, and block chrome lives in the gutter outside the
   text column, never over content.
 - Follow-up carried from 3a: the "Edit as script" `</>` icon button fails the 24×24
-  click-target floor (currently 15×21) — `tests/ux/accessibility.spec.ts:118`.
+  click-target floor (currently 15×21) — `tests/ux/accessibility.spec.ts:118`. Still
+  open, not touched this pass.
 - Model: Sonnet for the model, Haiku for the mechanical moves.
 
 ### Phase 4 — process
