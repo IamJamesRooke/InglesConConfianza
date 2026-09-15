@@ -101,6 +101,14 @@
   .lesson-document-insert::after {
     left: -14px;
   }
+  /* At this narrower left offset the circle's right edge lands at 6px from
+     the container's own left edge (-14px + 20px width) — the cue's
+     wider-viewport 2px margin overlapped it, clipping the leading "n" of
+     "next slide" (round: first-run friction #3). Push the cue clear of the
+     circle at every width down to 700px, where it's hidden entirely. */
+  .lesson-document-insert-cue {
+    margin-left: 10px;
+  }
 }
 .lesson-document-insert-actions {
   position: relative;

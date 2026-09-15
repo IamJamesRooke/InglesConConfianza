@@ -96,10 +96,11 @@ test("(source) keyboard reorder lives on the existing drag-handle button, uses o
   // No new icon import for the reorder feature itself (e.g. ArrowUp/
   // ArrowDown/ChevronUp) — same GripVertical handle, no new visible arrow
   // buttons. Redo2/Undo2 are present for the unrelated save-status footer
-  // row (round 2, item E), not for reordering.
+  // row (round 2, item E), not for reordering. ChevronDown is present for
+  // the also-unrelated compact-rail disclosure (first-run friction #6).
   assert.match(
     source,
-    /^import \{ ChevronRight, GripVertical, Plus, Redo2, Search, Undo2 \} from "lucide-react";/m,
+    /^import \{ ChevronDown, ChevronRight, GripVertical, Plus, Redo2, Search, Undo2 \} from "lucide-react";/m,
   );
 });
 

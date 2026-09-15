@@ -387,6 +387,13 @@ export function LessonLibrary(props: Props) {
   useEffect(() => {
     addLessonFromAnywhereRef.current = addLessonFromAnywhere;
   });
+  // Item 5 (Ctrl Alt M) needs the current active module id inside the same
+  // once-subscribed document keydown effect below — same ref-bridge pattern
+  // as addLessonFromAnywhereRef just above.
+  const activeModuleIdRef = useRef(activeModuleId);
+  useEffect(() => {
+    activeModuleIdRef.current = activeModuleId;
+  });
 
   useEffect(() => {
     const onKey = (event: KeyboardEvent) => {
@@ -406,6 +413,27 @@ export function LessonLibrary(props: Props) {
       ) {
         event.preventDefault();
         addLessonFromAnywhereRef.current();
+        return;
+      }
+      // Item 5: Ctrl Alt M focuses the active module's name input — the
+      // only keyboard path to renaming a module used to be 8 Shift+Tab
+      // presses back from inside the open lesson (first-run friction #5).
+      if (
+        event.code === "KeyM" &&
+        event.ctrlKey &&
+        event.altKey &&
+        !event.metaKey &&
+        !event.shiftKey
+      ) {
+        const currentModuleId = activeModuleIdRef.current;
+        if (!currentModuleId) return;
+        const field = document.querySelector<HTMLInputElement>(
+          `[data-module-name="${currentModuleId}"]`,
+        );
+        if (!field) return;
+        event.preventDefault();
+        field.focus();
+        field.select();
         return;
       }
       if (
@@ -485,6 +513,7 @@ export function LessonLibrary(props: Props) {
                       <div className="lesson-library-module-line">
                         <input
                           className="lesson-library-module-title"
+                          data-module-name={module.id}
                           value={module.name ?? ""}
                           onChange={(event) =>
                             props.onChangeModule(module.id, {
@@ -520,9 +549,18 @@ export function LessonLibrary(props: Props) {
                               type="button"
                               className="danger lesson-library-module-delete"
                               disabled={props.modules.length === 1}
+                              aria-disabled={props.modules.length === 1}
                               onClick={() => setConfirmDelete(moduleDeleteKey)}
-                              aria-label="Delete module"
-                              title="Delete module"
+                              aria-label={
+                                props.modules.length === 1
+                                  ? "Can't delete the only module"
+                                  : "Delete module"
+                              }
+                              title={
+                                props.modules.length === 1
+                                  ? "Can't delete the only module"
+                                  : "Delete module"
+                              }
                             >
                               <Trash2 size={15} aria-hidden="true" />
                             </button>

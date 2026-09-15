@@ -457,8 +457,10 @@
    whether resting or hovered so it never shifts neighboring layout. */
 .lesson-document-hint-add {
   display: grid;
-  width: 18px;
-  height: 18px;
+  /* Item 7: >=24x24 hit area via padding, not a bigger glyph — the
+     lightbulb icon itself stays whatever size it's rendered at in JSX. */
+  min-width: 24px;
+  min-height: 24px;
   place-items: center;
   border: 0;
   border-radius: 999px;
@@ -480,12 +482,16 @@
    touch/coarse pointers where there's no hover to reveal it. */
 .lesson-document-pair-delete {
   position: absolute;
-  top: -7px;
-  right: -7px;
+  /* Item 7: grown from 16x16 to a >=24x24 hit area via padding, not a
+     bigger glyph (still `<X size={11}/>`) — the offset is pulled out by
+     half the size increase (4px) each side so the visible circle stays
+     anchored at roughly the same corner instead of creeping inward. */
+  top: -11px;
+  right: -11px;
   z-index: 2;
   display: grid;
-  width: 16px;
-  height: 16px;
+  min-width: 24px;
+  min-height: 24px;
   place-items: center;
   border-radius: 999px;
   box-shadow: 0 0 0 1px var(--border);

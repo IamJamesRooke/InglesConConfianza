@@ -106,6 +106,80 @@ test("icon-only controls meet a minimum click-target size", async ({ page }) => 
   // Reported, not enforced — icon-button sizing is a design-pass decision.
 });
 
+// First-run friction #7: every icon-only control inside the Lesson
+// Library/Document/module-navigator surface (drag/duplicate/delete, the
+// seam "+" trigger, hint lightbulb, pair delete "x", undo/redo, module
+// delete/drag, …) must have a >=24x24 hit area — via padding/min-width/
+// min-height, not by growing the icon glyphs themselves. Scoped to
+// `.lesson-library` (which contains the module navigator too) and to
+// buttons/links with no visible text, so labelled buttons like the insert
+// chooser's "Explanation"/"Sentence"/"Table" aren't flagged. Asserted, not
+// just reported — this is the one this friction pass was asked to enforce.
+test("lesson library icon-only controls meet the 24x24 click-target floor", async ({
+  page,
+}) => {
+  await page.goto("/admin/lesson-builder");
+  await page.getByText("All changes saved").waitFor({ timeout: 10_000 }).catch(() => {});
+
+  // Add a second module first (so module delete/drag render meaningfully)
+  // and a lesson with a sentence pair — but focus the pair LAST: leaving it
+  // active is what keeps its editing DOM (pair delete "x", hint lightbulb)
+  // mounted for the scan below, and any later focus change (e.g. clicking
+  // "Add module" after this point) would collapse it back to its static
+  // resting presentation, which renders no controls at all.
+  await page.getByRole("button", { name: "Add module" }).click();
+  await page.waitForTimeout(150);
+
+  await page.getByRole("button", { name: /^(Add|Create) lesson$/ }).first().click();
+  const title = page.locator("[data-lesson-title]").last();
+  await title.fill("ux-check: tap targets");
+  await title.press("Enter");
+  await page.waitForTimeout(150);
+
+  const explanation = page.locator('[contenteditable="true"]').last();
+  await explanation.click();
+  await page.keyboard.down("Control");
+  await page.keyboard.down("Alt");
+  await page.keyboard.press("Enter");
+  await page.keyboard.up("Alt");
+  await page.keyboard.up("Control");
+  await page.waitForTimeout(150);
+  await page.keyboard.press("s");
+  await page.waitForTimeout(150);
+
+  const spanish = page.locator('.lesson-document-piece textarea[data-field="spanish"]').last();
+  await spanish.click();
+  await spanish.fill("Hola");
+  await page.waitForTimeout(100);
+
+  const tiny = await page.evaluate(() => {
+    const MIN = 24;
+    const findings: string[] = [];
+    const scope = document.querySelector(".lesson-library");
+    scope?.querySelectorAll<HTMLElement>("button, a[href]").forEach((el) => {
+      const hasVisibleText = (el.textContent ?? "").trim().length > 0;
+      if (hasVisibleText) return; // icon-only controls only
+      const rect = el.getBoundingClientRect();
+      if (rect.width === 0 || rect.height === 0) return; // not visible/mounted
+      if (rect.width < MIN || rect.height < MIN) {
+        findings.push(
+          `${el.tagName.toLowerCase()}[aria-label="${el.getAttribute("aria-label") ?? ""}"] ${Math.round(rect.width)}x${Math.round(rect.height)}`,
+        );
+      }
+    });
+    return findings;
+  });
+
+  // Clean up the seed lesson and second module regardless of outcome.
+  const row = page.locator("[data-lesson-row]").last();
+  await row.locator("[data-lesson-delete-trigger]").click();
+  await row.getByRole("button", { name: "Delete", exact: true }).click();
+  await page.keyboard.press("Control+s");
+  await page.getByText("All changes saved").waitFor({ timeout: 5000 }).catch(() => {});
+
+  expect(tiny, tiny.join("\n")).toEqual([]);
+});
+
 test("practice page has no serious/moderate accessibility violations on phone", async ({
   page,
   request,

@@ -45,6 +45,18 @@
      be clipped at the rounded corners. */
 }
 
+/* Base layout for the rail's collapsible body (header, list, add-module,
+   status row) — a plain flex column matching what these were as direct
+   children of `.module-navigator` before item 6 wrapped them in this div.
+   Always flex/visible here; the under-900px media query in the delimited
+   "6: compact rail" block below is the only place that ever hides it. */
+.module-navigator-collapsible {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-height: 0;
+}
+
 .module-navigator-header {
   display: flex;
   flex-direction: column;
@@ -126,7 +138,11 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 18px;
+  /* Item 7: >=24x24 hit area via padding, not a bigger glyph — the icon
+     stays 13px, only the transparent hit area around it grows. A small
+     negative margin keeps the row's own footprint close to what it was. */
+  min-width: 24px;
+  min-height: 24px;
   color: var(--muted-foreground);
   cursor: grab;
 }
@@ -315,6 +331,10 @@
   .lesson-library-with-navigator {
     flex-direction: column;
     align-items: stretch;
+    /* This 18px gap was meant for the wide two-column layout; stacked at
+       this width it adds straight to the fixed overhead above the first
+       slide (first-run friction #6), so it's trimmed here too. */
+    gap: 6px;
   }
   .module-navigator {
     position: static;
@@ -326,3 +346,79 @@
     width: 100%;
   }
 }
+
+/* 6: compact rail under 900px */
+/* First-run friction #6: at 760x900 the rail (search/module list/"Add
+   module"/save+undo row) plus the module header card consumed 408px
+   (45.3%) of the viewport before the first slide was visible, and there
+   was no way to collapse it. Below 900px the rail becomes a sticky,
+   one-row "Modules ▾" disclosure showing the active module's name; the
+   full rail (search, module list, add-module, save/undo) renders
+   underneath only while that disclosure is open. Above 900px both new
+   elements are inert: the disclosure button is hidden and the collapsible
+   body is always shown, `data-open` or not. */
+@media (min-width: 901px) {
+  .module-navigator-disclosure {
+    display: none;
+  }
+}
+@media (max-width: 900px) {
+  .module-navigator {
+    /* `.admin-header` (site-header.tsx, out of this file's scope) is
+       itself `position: sticky; top: 0` at `z-index: 40` and is 64px tall
+       at this width — stick right under it, not at top:0, or this rail
+       would sit behind the header once scrolled past. */
+    position: sticky;
+    top: 64px;
+    z-index: 5;
+    gap: 4px;
+    max-height: none;
+    padding: 6px 12px;
+    background: var(--card);
+  }
+  .module-navigator-disclosure {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    width: 100%;
+    padding: 6px 4px;
+    border: 0;
+    background: none;
+    color: var(--foreground);
+    font-size: 13px;
+    font-weight: 700;
+    text-align: left;
+  }
+  .module-navigator-disclosure-label {
+    display: flex;
+    min-width: 0;
+    align-items: baseline;
+    gap: 6px;
+    overflow: hidden;
+  }
+  .module-navigator-disclosure-active {
+    overflow: hidden;
+    color: var(--muted-foreground);
+    font-weight: 600;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+  .module-navigator-disclosure-chevron {
+    flex-shrink: 0;
+    transition: transform 0.12s ease;
+  }
+  .module-navigator-disclosure-chevron.open {
+    transform: rotate(180deg);
+  }
+  .module-navigator-collapsible {
+    display: none;
+    max-height: min(320px, calc(100vh - 100px));
+    overflow-y: auto;
+    padding-bottom: 8px;
+  }
+  .module-navigator-collapsible[data-open="true"] {
+    display: flex;
+  }
+}
+/* end 6 */

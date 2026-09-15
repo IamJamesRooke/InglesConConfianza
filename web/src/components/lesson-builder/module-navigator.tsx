@@ -1,7 +1,7 @@
 "use client";
 
-import { ChevronRight, GripVertical, Plus, Redo2, Search, Undo2 } from "lucide-react";
-import { useState, type DragEvent } from "react";
+import { ChevronDown, ChevronRight, GripVertical, Plus, Redo2, Search, Undo2 } from "lucide-react";
+import { useRef, useState, type DragEvent, type KeyboardEvent } from "react";
 
 import type {
   ConceptDisplayLookup,
@@ -294,6 +294,23 @@ export function ModuleNavigator({
   const [draggedModuleId, setDraggedModuleId] = useState<string | null>(null);
   const results = searchModuleNavigator(modules, lessons, query, conceptDisplays);
   const searching = query.trim().length > 0;
+  // Item 6 (first-run friction): below 900px the rail + header ate 45% of a
+  // 760x900 viewport before any slide showed. The disclosure below collapses
+  // everything but this one summary row under that breakpoint — CSS-only
+  // above 900px (the button and the open/closed state it drives simply have
+  // no visible effect there; see the delimited block in
+  // module-navigation.css).
+  const [railOpen, setRailOpen] = useState(false);
+  const disclosureRef = useRef<HTMLButtonElement | null>(null);
+  const activeModule = modules.find((module) => module.id === activeModuleId) ?? null;
+
+  function handleRailKeyDown(event: KeyboardEvent<HTMLDivElement>) {
+    if (event.key !== "Escape" || !railOpen) return;
+    event.preventDefault();
+    event.stopPropagation();
+    setRailOpen(false);
+    disclosureRef.current?.focus();
+  }
 
   function startDrag(event: DragEvent<HTMLButtonElement>, moduleId: string) {
     event.dataTransfer.effectAllowed = "move";
@@ -309,6 +326,7 @@ export function ModuleNavigator({
   }
 
   function selectResult(result: ModuleNavigatorSearchResult) {
+    setRailOpen(false);
     if (!result.lesson) {
       onSelectModule(result.module.id);
       return;
@@ -317,7 +335,34 @@ export function ModuleNavigator({
   }
 
   return (
-    <nav className="module-navigator" aria-label="Course modules">
+    <nav className="module-navigator" aria-label="Course modules" onKeyDown={handleRailKeyDown}>
+      {/* 6: compact rail under 900px — a "Modules ▾" disclosure that shows
+          the active module's name and toggles the rest of the rail
+          (search, module list, "Add module", save/undo status) underneath
+          it. Rendered unconditionally; module-navigation.css hides it above
+          900px and always shows the collapsible body there regardless of
+          `railOpen`, so this button and state are no-ops on wide screens. */}
+      <button
+        type="button"
+        ref={disclosureRef}
+        className="module-navigator-disclosure"
+        aria-expanded={railOpen}
+        aria-label={`Modules — ${activeModule?.name?.trim() || "Untitled module"}${railOpen ? ", collapse" : ", expand"}`}
+        onClick={() => setRailOpen((open) => !open)}
+      >
+        <span className="module-navigator-disclosure-label">
+          Modules
+          <span className="module-navigator-disclosure-active">
+            {activeModule?.name?.trim() || "Untitled module"}
+          </span>
+        </span>
+        <ChevronDown
+          size={14}
+          aria-hidden="true"
+          className={railOpen ? "module-navigator-disclosure-chevron open" : "module-navigator-disclosure-chevron"}
+        />
+      </button>
+      <div className="module-navigator-collapsible" data-open={railOpen}>
       <div className="module-navigator-header">
         <div className="module-navigator-search">
           <Search size={14} aria-hidden="true" />
@@ -419,7 +464,10 @@ export function ModuleNavigator({
                   module.id === activeModuleId ? " active" : ""
                 }`}
                 aria-current={module.id === activeModuleId ? "true" : undefined}
-                onClick={() => onSelectModule(module.id)}
+                onClick={() => {
+                  setRailOpen(false);
+                  onSelectModule(module.id);
+                }}
               >
                 <span className="module-navigator-row-name">
                   {module.name?.trim() || "Untitled module"}
@@ -487,6 +535,7 @@ export function ModuleNavigator({
             Retry save
           </button>
         )}
+      </div>
       </div>
     </nav>
   );

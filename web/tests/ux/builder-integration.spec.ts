@@ -4,6 +4,11 @@ for (const width of [1280, 900, 390]) {
   test(`module fills available column through collapse cycle at ${width}px`, async ({ page }, testInfo) => {
     await page.setViewportSize({ width, height: 900 });
     await page.goto("/admin/lesson-builder");
+    // Item 6: below 900px the rail collapses behind a "Modules" disclosure
+    // — open it before reaching for controls that live inside it.
+    if (width <= 900) {
+      await page.getByRole("button", { name: /^Modules/ }).click();
+    }
     await page.getByRole("button", { name: "Add module", exact: true }).click();
     const column = page.locator(".lesson-library-modules");
     const shell = page.locator(".lesson-library-with-navigator");

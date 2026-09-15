@@ -348,8 +348,7 @@ export function SentenceEditor(props: Props) {
                     onBlur={() => closeHint(piece)}
                     onKeyDown={(event) => {
                       if (event.nativeEvent.isComposing) return;
-                      if (event.key === "Enter") { event.preventDefault(); event.currentTarget.blur(); return; }
-                      if (event.key === "Escape") {
+                      if (event.key === "Enter" || event.key === "Escape") {
                         event.preventDefault(); event.stopPropagation();
                         closeHint(piece);
                         returnFromHint(piece);

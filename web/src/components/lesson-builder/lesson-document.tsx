@@ -383,6 +383,8 @@ export function LessonDocument(props: Props) {
                   variant="document"
                   onExit={() => exitBlock(block.id)}
                   onChange={(markdown, options) => actions.updateExplanation(lessonId, block.id, markdown, options)}
+                  onUndo={() => actions.editorUndo(lessonId, block.id)}
+                  onRedo={() => actions.editorRedo(lessonId, block.id)}
                 />
               </section>
             ) : (

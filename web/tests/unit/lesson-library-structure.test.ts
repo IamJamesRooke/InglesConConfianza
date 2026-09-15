@@ -83,7 +83,12 @@ test("(source) a same-page bridge event lets an external menu trigger the same d
 });
 
 test("(source) module delete, module title input, and lesson collapse markup are preserved", () => {
-  assert.ok(source.includes('aria-label="Delete module"'));
+  // The aria-label is dynamic since first-run friction #4 (explains *why*
+  // the button is disabled when it's the only module, not just "Delete
+  // module" either way) — check for both branches instead of one literal
+  // string.
+  assert.ok(source.includes("Can't delete the only module"));
+  assert.ok(source.includes('"Delete module"'));
   assert.ok(source.includes("lesson-library-module-title"));
   assert.ok(rowSource.includes("Collapse lesson"));
 });

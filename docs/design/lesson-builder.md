@@ -65,7 +65,8 @@ history, address bar). Ctrl+Alt is free of both in practice. Handlers check
 accented characters — still resolves correctly. A few narrow, already-safe
 exceptions keep plain modifiers: Ctrl/⌘+S/Z/Shift+Z (save/undo/redo, global,
 guarded against firing while a text field that wants those keys is
-focused), Ctrl/⌘+B/I (bold/italic, only inside the explanation editor), and
+focused — except the explanation editor, which claims them itself; see
+below), Ctrl/⌘+B/I (bold/italic, only inside the explanation editor), and
 plain Alt+↑/↓ on the module drag-handle button specifically (a single
 non-typing target, so the WM-collision risk doesn't apply the same way).
 
@@ -76,6 +77,7 @@ non-typing target, so the WM-collision risk doesn't apply the same way).
 | Lesson title (any row) | `Ctrl Alt ArrowUp` / `ArrowDown` | Moves the lesson one position up/down within its module; at the module boundary, moves it into the end (up) or start (down) of the adjacent module. The row keeps focus on its title, and the module navigator re-selects whichever module the lesson landed in. Reuses the existing lesson-move plumbing (`moveLesson`/`onDropLesson`) — no new API (§9 item R5). |
 | Anywhere on the page (not the concept typeahead or an open dialog) | `Ctrl Alt L` | Add a new lesson: right after the currently open lesson if one is open, otherwise at the end of the active module. Works with zero lessons in the module — the only keyboard path to create the very first lesson. Focuses the new title. |
 | Anywhere inside a lesson row | `Ctrl Alt P` | Preview that lesson, same as clicking its Play button. |
+| Anywhere on the page | `Ctrl Alt M` | Focus the active module's name input, so it can be renamed without the 8-`Shift Tab` walk back from inside a lesson (round: first-run friction #5). |
 | Sentence/Vocabulary block, before the pairs | `Tab` / `Shift Tab` | Native DOM tab order, not a handler: `Shift Tab` from pair 1's Spanish field reaches the "Add instruction" button (or the instruction field, if already shown); `Tab` from the instruction field reaches pair 1's Spanish field. |
 | Explanation (focused) | `Enter` | New paragraph (native contentEditable behavior). |
 | Explanation (focused) | `Ctrl Alt S` / `Ctrl Alt N` / `Ctrl Alt E` | Mark as Spanish / neutral / English. With a selection: wraps it in `<mark data-language="es\|en">`; with a collapsed caret: marks the word around it, or arms "typing mode" so subsequently typed text is marked live. Memorable letters (Spanish/Neutral/English) — chosen over the old adjacent `Q`/`W`/`E` on purpose. |
@@ -90,7 +92,7 @@ non-typing target, so the WM-collision risk doesn't apply the same way).
 | Sentence/Vocabulary — Spanish or English field | `Alt ArrowDown` | Opens/focuses that pair's hint pill, remembering the caret to restore on return. |
 | Sentence/Vocabulary — Spanish or English field | `Ctrl Alt Backspace` | Deletes the pair outright. |
 | Sentence/Vocabulary — English field | `/` | Not a shortcut — literal separator between accepted alternatives in the same field (`\/` escapes a literal slash). |
-| Hint pill input | `Enter` | Blurs (commits, closes). |
+| Hint pill input | `Enter` | Commits (clearing it if left blank) and returns focus + caret to the field it was opened from — same as `Escape`, not a plain `blur()` (round: first-run friction #1; a bare blur used to cascade into the block's `onBlurCapture`, clearing `activeBlock` and unmounting the slide's own editing view out from under the teacher). |
 | Hint pill input | `Escape` | Closes the hint (clearing it if left blank) and returns focus + caret to the field it was opened from. |
 | Instruction field | `Escape` | Blank → collapses the field back to the "Add instruction" button; non-blank → exits the slide like other fields. |
 | Slide (focused container, not a nested field) | `Enter` / `Space` | Enters editing: focuses the slide's first writing field. |
@@ -102,7 +104,8 @@ non-typing target, so the WM-collision risk doesn't apply the same way).
 | Insert chooser (open) | click outside | Closes the chooser (pointerdown listener on `document`, ignores clicks inside `.lesson-document-insert`). |
 | Slide (any) | `Ctrl Alt ArrowUp` / `ArrowDown` | Move the active slide up/down. |
 | Slide (any) | `Ctrl Alt D` | Finish this lesson: collapses its row. Flushes any pending idle-debounced save immediately (§9 item R4). |
-| Lesson row (any) | `Ctrl/⌘ Z` / `Ctrl/⌘ Shift Z` | Undo / redo (page-level; disabled while the event target is itself a text-editing target, so it doesn't fight native field undo). |
+| Lesson row (any) | `Ctrl/⌘ Z` / `Ctrl/⌘ Shift Z` | Undo / redo (page-level; disabled while the event target is a plain text-editing target — a sentence/vocabulary `<input>`/`<textarea>` — so it doesn't fight native field undo there). |
+| Explanation (focused) | `Ctrl/⌘ Z` / `Ctrl/⌘ Shift Z` | Undo / redo, routed to the same page-level reducer history as the row above (scoped to this block's own `contentMarkdown`), not native contentEditable undo. Native undo inside this field is suppressed entirely: it used to group changes far more coarsely than a teacher expects — 3 presses after "type a sentence, bold a word, type a sentence" wiped the whole field in one more step than that, since Chrome's own undo stack doesn't know about the app's action boundaries. The reducer's existing coalescing (≤1s idle window, broken by any formatting/mark op or paragraph break) gives one undo step per visible action instead. Caret lands at the end of the restored text. |
 | Lesson row (any) | `Ctrl/⌘ S` | Save now: flushes any pending idle-debounced save immediately (autosave also runs independently). Not advertised in the help dialog (§4) — autosave is the story — but it still works. |
 | Module navigator drag-handle button (focused) | `Alt ArrowUp` / `Alt ArrowDown` | Reorder that module up/down (plain Alt is safe here — a single non-typing button, not a global page listener). |
 | Anywhere in the builder | `Ctrl/⌘ .` | Toggle the keyboard-help dialog. |
@@ -149,6 +152,7 @@ them without reading the table.
 | `Ctrl Alt D` | Finish this lesson (collapse it). |
 | `Ctrl Alt L` | Add a new lesson — works from anywhere, even an empty module. Goes after the open lesson, or at the end of the module. |
 | `Ctrl Alt P` | Preview this lesson, from anywhere inside its row. |
+| `Ctrl Alt M` | Rename the active module — focuses its name field. |
 | `Alt ↓` | On a sentence pair: open its hint. |
 | `Ctrl Alt Backspace` | On a sentence pair: delete the pair. On a lesson's title: delete the lesson (confirm still required). |
 
@@ -343,6 +347,56 @@ not from any proposal doc's aspirations.
   coverage won't count it"` on the chip. Nothing else about it changes: no
   color shift, no icon, and it still isn't clickable (no `ConceptQuickEdit`,
   since there's no database row to edit).
+- **Seam "next slide" cue clears the "+" circle at every width down to
+  700px** (§9 item R7): under 850px the circle's `left` offset moves in to
+  `-14px` (§5, above), which put its right edge at `+6px` from the seam's
+  own left edge — 4px inside the cue text's old `margin-left: 2px`, visually
+  swallowing the leading "n" of "next slide". Fixed with a `margin-left:
+  10px` override on `.lesson-document-insert-cue` in the same `max-width:
+  850px` block in `insert.css`. The cue still hides entirely under 700px
+  (unchanged).
+- **Disabled module-delete explains itself** (§9 item R7): when
+  `modules.length === 1`, the trash icon's `title`/`aria-label` read "Can't
+  delete the only module" instead of the unconditional "Delete module", and
+  it carries `aria-disabled` alongside the native `disabled` (`lesson-library.tsx`).
+- **`Ctrl Alt M` renames the active module from the keyboard** (§9 item R7):
+  the module name `<input>` carries `data-module-name={module.id}`;
+  `lesson-library.tsx`'s existing document-level keydown handler (the one
+  that already owns `Ctrl Alt L`) focuses and selects it. Removes the old
+  8-`Shift Tab` walk as the only keyboard path.
+- **Compact rail under 900px** (§9 item R7, behind `/* 6: compact rail under
+  900px */ … /* end 6 */` in `module-navigation.css`, `lesson-builder/library.css`,
+  and `lesson-builder/document.css`): below 900px `ModuleNavigator` renders an
+  always-present "Modules ▾ <active module name>" disclosure button
+  (`.module-navigator-disclosure`, hidden above 900px via `display: none`);
+  the search box, module list, "Add module", and save/undo footer move into
+  a sibling `.module-navigator-collapsible` div that's `display: none`
+  unless `data-open="true"` (local `railOpen` state, toggled by the
+  disclosure button; `Escape` inside the rail closes it and refocuses the
+  button; picking a module or a search result also closes it). Above 900px
+  `.module-navigator-collapsible` is unconditionally `display: flex` — the
+  disclosure and `railOpen` are no-ops there. The rail also switches from
+  `position: static` to `position: sticky; top: 64px` below 900px (the
+  `64px` matches `.admin-header`'s own sticky height, out of this file's
+  scope, so the two don't overlap once scrolled), and module-header/lesson-row
+  padding and the `.lesson-library-with-navigator` stacked-layout gap are
+  trimmed at the same breakpoint. Net effect measured at 760×900 with one
+  short lesson: first-slide top moved from ~408px to ~224px (45% → ~25% of
+  the viewport).
+- **Icon-only controls meet a 24×24 hit-target floor** (§9 item R7): sizes
+  grown via `min-width`/`min-height` (padding), not by enlarging the icon
+  glyphs — `.lesson-document-block-actions button` (20→24), `.lesson-document-hint-add`
+  (18→24), `.lesson-document-pair-delete` (16→24, with its absolute
+  `top`/`right` offset pulled out from `-7px` to `-11px` so the visible
+  circle stays anchored near the pair's corner instead of creeping inward),
+  and `.module-navigator-row-drag` (18px-wide/content-height → 24×24).
+  `.lesson-library-row-icons > button` (28×28) and `.module-navigator-history
+  button` (26×26) already cleared the floor. Enforced by
+  `tests/ux/accessibility.spec.ts`'s "lesson library icon-only controls meet
+  the 24x24 click-target floor" test (asserts zero findings, scoped to
+  `.lesson-library` and to controls with no visible text) — the pre-existing
+  page-wide "icon-only controls meet a minimum click-target size" test
+  stays report-only, unchanged.
 
 ## 6. Owner decisions & rejected ideas
 
@@ -406,9 +460,11 @@ statically or spin up their own isolated server against a throwaway file.
 - The authoring page overflows horizontally at a 390px viewport when a long
   sentence piece is present; desktop is the deliberate current target (see
   §6), so this is unfixed by design for now, not unnoticed.
-- Preview-origin restoration and failed-save retry are covered by unit
-  tests (`lesson-preview.test.ts`, `lesson-persistence.test.ts`) only — no
-  browser-level `ux:check` coverage exists for either path yet.
+- Preview-origin restoration is covered by unit tests
+  (`lesson-preview.test.ts`) and by `tests/ux/authoring-ergonomics.spec.ts`'s
+  "Ctrl Alt P previews the lesson, and closing it returns focus…" case.
+  Failed-save retry is still unit-only (`lesson-persistence.test.ts`) — no
+  browser-level `ux:check` coverage exists for that path yet.
 
 ## 9. Roadmap
 
@@ -431,3 +487,5 @@ statically or spin up their own isolated server against a throwaway file.
 | R3 | Typing latency in a large, many-lesson module: measured with Playwright (12-slide lesson + 30 collapsed siblings), found every keystroke re-rendered every collapsed row (not the open lesson's own slides, which were already isolated per-block); extracted a memoized `LessonRow` (`lesson-library-row.tsx`) and stabilized the callbacks it depends on (`useCallback` on module-move handlers in `page.tsx`, a `lessonsRef` for `deleteBlock`/`deletePiece`/`moveBlock` so they don't need `[lessons]`) — off-field DOM mutation records per keystroke dropped ~5x (≈2300 → ≈450) | Sonnet | done |
 | R4 | Walkthrough fixes 1–9 | Sonnet | done |
 | R5 | Walkthrough-2 fixes | Sonnet | done |
+| R6 | Explanation editor fixes (data loss, paste, lists, mark switching, undo routing) | Sonnet | done |
+| R7 | First-run + 760px fixes | Sonnet | done |

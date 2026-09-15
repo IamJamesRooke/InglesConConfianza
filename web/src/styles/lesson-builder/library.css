@@ -640,3 +640,24 @@
   background: var(--destructive);
 }
 /* end F */
+
+/* 6: compact rail under 900px */
+/* Companion to module-navigation.css's own "6" block: the module header
+   card and lesson-row header sit between the now-collapsed rail and the
+   first slide, and their normal padding was part of why the first slide
+   sat at ~y=408 on a 760x900 viewport (first-run friction #6). Trims
+   padding/sizes only below 900px; desktop is untouched. */
+@media (max-width: 900px) {
+  .lesson-library-module-meta {
+    padding: 3px 12px;
+    gap: 2px;
+  }
+  .lesson-library-module-title {
+    font-size: 16px;
+  }
+  .lesson-library-row-head {
+    min-height: 32px;
+    padding: 2px 10px 2px 22px;
+  }
+}
+/* end 6 */

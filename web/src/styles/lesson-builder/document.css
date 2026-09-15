@@ -101,6 +101,16 @@
   }
 }
 
+/* 6: compact rail under 900px */
+/* Shaves the document's own top padding, part of the fixed overhead above
+   the first slide measured in first-run friction #6. */
+@media (max-width: 900px) {
+  .lesson-document {
+    padding-top: 2px;
+  }
+}
+/* end 6 */
+
 /* Theme slice — see library.css's matching comment for why this lives after
    the compact-document layer above. */
 .lesson-document {
@@ -137,8 +147,9 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 20px;
-  height: 20px;
+  /* Item 7: >=24x24 hit area via padding, not a bigger glyph. */
+  min-width: 24px;
+  min-height: 24px;
   border-radius: 5px;
   color: var(--muted-foreground);
   background: var(--surface-writing);

@@ -29,8 +29,16 @@ export type LessonPreviewPlatform = {
 };
 
 const browserPreviewPlatform: LessonPreviewPlatform = {
+  // `<body>` is never a real origin to restore to — it's what
+  // `document.activeElement` reports when nothing else claims focus (e.g.
+  // an unrelated focus-drop bug elsewhere already left focus there before
+  // Preview was even opened). Treating it as "no origin" here means a
+  // pre-existing body-focus state doesn't get faithfully "restored" back
+  // to body on close; it instead falls through to the caller's fallback
+  // (the lesson title) like a genuinely missing origin would.
   activeElement: () =>
-    document.activeElement instanceof HTMLElement
+    document.activeElement instanceof HTMLElement &&
+    document.activeElement !== document.body
       ? document.activeElement
       : null,
   inputSelection: (element) =>

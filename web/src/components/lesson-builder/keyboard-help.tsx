@@ -181,6 +181,12 @@ export function KeyboardHelpDialog({ onClose }: { onClose: () => void }) {
             </div>
             <div>
               <dt>
+                <kbd>Ctrl</kbd> <kbd>Alt</kbd> <kbd>M</kbd>
+              </dt>
+              <dd>Rename the active module — focuses its name field</dd>
+            </div>
+            <div>
+              <dt>
                 <kbd>Alt</kbd> <kbd>↓</kbd>
               </dt>
               <dd>On a sentence pair: open its hint</dd>
