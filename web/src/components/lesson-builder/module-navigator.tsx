@@ -617,6 +617,7 @@ export function ModuleNavigator({
           ref={importInputRef}
           type="file"
           accept="application/json"
+          aria-label="Import lessons.json"
           data-keymap-ignore
           className="module-navigator-backup-input"
           onChange={handleImportFile}
