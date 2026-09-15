@@ -60,6 +60,15 @@ export type LessonModule = {
   name: string | null;
   kind?: "course" | "onboarding";
   lessonIds: string[];
+  // The module's mandatory teaching list — see docs/design/module-syllabus.md.
+  // Coverage, "also taught", "reviewed", the known set, review priority,
+  // warnings, and "done" are all derived from this (syllabus.ts); nothing
+  // else about the syllabus is stored. Absent on modules written before this
+  // feature; treat as `{ main: [], review: [] }`.
+  syllabus?: {
+    main: LessonConcept[];
+    review: LessonConcept[];
+  };
 };
 
 export type LessonFile = {
