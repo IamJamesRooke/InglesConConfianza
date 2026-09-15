@@ -104,7 +104,7 @@ test("priority bands follow canonical role order with a neutral fallback", () =>
 
 // --- Auto-Covers (E5): extractLessonPairTerms + matchPairTermsToConcepts.
 
-test("extractLessonPairTerms pulls Spanish text, English answers, and language marks", () => {
+test("extractLessonPairTerms pulls Spanish text and English answers from pairs only, never explanation prose", () => {
   const withPairs: Lesson = {
     id: "l1",
     name: "l1",
@@ -113,7 +113,7 @@ test("extractLessonPairTerms pulls Spanish text, English answers, and language m
       {
         id: "b1",
         type: "explanation",
-        contentMarkdown: "Say [[es:hoy]] to mean [[en:today]].",
+        contentMarkdown: "Say [[es:hoy]] to mean [[en:today]]. I mean, anything works.",
       },
       {
         id: "b2",
@@ -134,13 +134,7 @@ test("extractLessonPairTerms pulls Spanish text, English answers, and language m
     ],
   };
 
-  assert.deepEqual(extractLessonPairTerms(withPairs), [
-    "hoy",
-    "today",
-    "Quieres",
-    "Do you want",
-    "you want",
-  ]);
+  assert.deepEqual(extractLessonPairTerms(withPairs), ["Quieres", "Do you want", "you want"]);
 });
 
 test("extractLessonPairTerms drops empties/short fragments and dedupes case-insensitively", () => {
@@ -176,33 +170,31 @@ function candidate(
   return { id, spanish, english, role };
 }
 
-test("matchPairTermsToConcepts prefers an exact match over a prefix match", () => {
+test("matchPairTermsToConcepts requires whole-term equality, not a prefix or substring", () => {
   const candidates = [
     candidate("c-hoy", "hoy", "today"),
     candidate("c-hoy-mismo", "hoy mismo", "this very day"),
   ];
 
-  assert.deepEqual(
-    matchPairTermsToConcepts(["hoy", "hoy mis"], candidates),
-    [
-      { term: "hoy", concept: candidates[0] },
-      { term: "hoy mis", concept: candidates[1] },
-    ],
-  );
+  // "hoy mis" is neither term nor concept text in full — no match, not a
+  // prefix hit against "hoy mismo".
+  assert.deepEqual(matchPairTermsToConcepts(["hoy", "hoy mis"], candidates), [
+    { term: "hoy", concept: candidates[0] },
+  ]);
 });
 
-test("matchPairTermsToConcepts is accent- and case-insensitive and strips bracket placeholders", () => {
+test("matchPairTermsToConcepts is accent- and case-insensitive, strips bracket placeholders and punctuation", () => {
   const candidates = [candidate("c-querer", "querer [algo]", "to want [something]")];
 
   assert.deepEqual(matchPairTermsToConcepts(["QUERER"], candidates), [
     { term: "QUERER", concept: candidates[0] },
   ]);
-  assert.deepEqual(matchPairTermsToConcepts(["to want"], candidates), [
-    { term: "to want", concept: candidates[0] },
+  assert.deepEqual(matchPairTermsToConcepts(["¿to want?"], candidates), [
+    { term: "¿to want?", concept: candidates[0] },
   ]);
 });
 
-test("matchPairTermsToConcepts skips terms with no exact/prefix match", () => {
+test("matchPairTermsToConcepts skips terms with no whole-term or example match", () => {
   const candidates = [candidate("c-hoy", "hoy", "today")];
   assert.deepEqual(matchPairTermsToConcepts(["mañana"], candidates), []);
 });
@@ -214,4 +206,85 @@ test("matchPairTermsToConcepts breaks a tie between equally-tiered candidates by
   ];
   const [match] = matchPairTermsToConcepts(["con"], candidates);
   assert.equal(match.concept.id, "c-high");
+});
+
+// --- Owner report regression (2026-09-15): "I want to do something today."
+// suggested "to have [something] repaired", "stuff", "anything", "I mean" —
+// all substring/prefix hits on "something"/"algo"/"I". None of those may
+// match now; only the terms the pairs actually name should surface.
+
+test("owner-report lesson pairs match only their own concepts, never a loose substring hit", () => {
+  const candidates = [
+    candidate("c-querer", "querer [algo]", "to want [something]"),
+    candidate("c-hacer", "hacer [algo]", "to do [something]"),
+    candidate("c-algo", "algo", "something"),
+    candidate("c-hoy", "hoy", "today"),
+    // Loose substring/prefix traps the owner actually hit — none may match.
+    candidate("c-repair", "reparar [algo]", "to have [something] repaired"),
+    candidate("c-stuff", "cosas", "stuff"),
+    candidate("c-anything", "cualquier cosa", "anything"),
+    candidate("c-i-mean", "quiero decir", "I mean"),
+  ];
+
+  const terms = ["quiero", "I want", "hacer", "to do", "algo", "something", "hoy", "today"];
+  const matches = matchPairTermsToConcepts(terms, candidates);
+  const matchedIds = new Set(matches.map((match) => match.concept.id));
+
+  assert.ok(matchedIds.has("c-hacer"));
+  assert.ok(matchedIds.has("c-algo"));
+  assert.ok(matchedIds.has("c-hoy"));
+  for (const bad of ["c-repair", "c-stuff", "c-anything", "c-i-mean"]) {
+    assert.equal(matchedIds.has(bad), false, `must not suggest ${bad}`);
+  }
+});
+
+test("a conjugated 'I want' reaches the infinitive 'to want […]' concept by dropping the leading pronoun/to", () => {
+  const candidates = [candidate("c-querer", "querer [algo]", "to want [something]")];
+  assert.deepEqual(matchPairTermsToConcepts(["I want"], candidates), [
+    { term: "I want", concept: candidates[0] },
+  ]);
+});
+
+test("an example-sentence match exists only as a fallback and ranks below a direct match", () => {
+  const direct = candidate("c-hoy", "hoy", "today");
+  const viaExample: PairMatchCandidate = {
+    id: "c-querer",
+    spanish: "querer [algo]",
+    english: "to want [something]",
+    role: "P1",
+    exampleSpanish: "Quiero un café.",
+    exampleEnglish: "I want a coffee.",
+  };
+
+  // "quiero" is not the concept's own Spanish text ("querer") — it only
+  // shows up in the example sentence, so it's a tier-2 fallback.
+  const matches = matchPairTermsToConcepts(["hoy", "quiero"], [direct, viaExample]);
+  assert.deepEqual(
+    matches.map((match) => match.concept.id),
+    ["c-hoy", "c-querer"],
+  );
+});
+
+test("example-sentence matches are capped at 3 per lesson", () => {
+  const withExample = (id: string, exampleSpanish: string): PairMatchCandidate => ({
+    id,
+    spanish: `concepto-${id}`,
+    english: `concept ${id}`,
+    role: "P1",
+    exampleSpanish,
+    exampleEnglish: "",
+  });
+
+  // Four terms, each a whole phrase in exactly one candidate's example only
+  // (none is the candidate's own Spanish/English text) — all four clear only
+  // the tier-2 example net.
+  const candidates = [
+    withExample("a", "Vamos a comprar pan hoy."),
+    withExample("b", "Ella vive aqui siempre."),
+    withExample("c", "Hoy no trabajo nunca."),
+    withExample("d", "Hoy es un buen dia."),
+  ];
+
+  const matches = matchPairTermsToConcepts(["pan", "vive", "trabajo", "dia"], candidates);
+  assert.equal(matches.length, 3);
 });

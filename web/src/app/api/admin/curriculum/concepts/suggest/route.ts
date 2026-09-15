@@ -24,6 +24,8 @@ type Row = {
   spanish: string;
   english: string;
   role: string;
+  exampleSpanish: string;
+  exampleEnglish: string;
 };
 
 export async function POST(request: Request) {
@@ -52,16 +54,25 @@ export async function POST(request: Request) {
     return NextResponse.json({ suggestions: [] });
   }
 
+  // ILIKE here is only a cheap, indexable candidate *pool* — the loose net
+  // the owner reported was matching on ("something" hitting "to have
+  // [something] repaired") lived in this query before it fed straight to the
+  // UI. `matchPairTermsToConcepts` now does the real whole-term/example
+  // decision in JS below, so a broad pool here is safe: nothing ILIKE finds
+  // that fails that check is ever returned.
   const conditions = terms.map((term) => {
     const like = `%${term}%`;
     return Prisma.sql`(
       regexp_replace(spanish, '\\[.*?\\]', '', 'g') ILIKE ${like}
       OR regexp_replace(english, '\\[.*?\\]', '', 'g') ILIKE ${like}
+      OR example_spanish ILIKE ${like}
+      OR example_english ILIKE ${like}
     )`;
   });
 
   const candidates = await prisma.$queryRaw<Row[]>(Prisma.sql`
-    SELECT id, spanish, english, curriculum_role AS "role"
+    SELECT id, spanish, english, curriculum_role AS "role",
+      example_spanish AS "exampleSpanish", example_english AS "exampleEnglish"
     FROM curriculum_concepts
     WHERE curriculum_role <> 'Trash'
       AND (${Prisma.join(conditions, " OR ")})

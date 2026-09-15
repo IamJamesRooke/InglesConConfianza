@@ -7,7 +7,13 @@ import { expect, test } from "./fixtures";
 // (extractLessonPairTerms / matchPairTermsToConcepts) and the
 // /api/admin/curriculum/concepts/suggest route.
 
-async function openLessonWithPairs(page: import("@playwright/test").Page) {
+async function openLessonWithPairs(
+  page: import("@playwright/test").Page,
+  pairs: Array<[string, string]> = [
+    ["querer", "to want"],
+    ["hoy", "today"],
+  ],
+) {
   await page.goto("/admin/lesson-builder");
   await page.getByRole("button", { name: /^(Add|Create) lesson$/ }).first().click();
   const title = page.locator("[data-lesson-title]").last();
@@ -21,17 +27,15 @@ async function openLessonWithPairs(page: import("@playwright/test").Page) {
   await tail.getByRole("button", { name: "Sentence — Insert at lesson end" }).click();
 
   const sentence = row.locator(".lesson-document-sentence").last();
-  const firstSpanish = sentence.locator('textarea[data-field="spanish"]').first();
-  const firstEnglish = sentence.locator('textarea[data-field="english"]').first();
-  await firstSpanish.fill("querer");
-  await firstEnglish.fill("to want");
 
-  await sentence.getByRole("button", { name: "Add pair" }).click();
-  const secondSpanish = sentence.locator('textarea[data-field="spanish"]').last();
-  const secondEnglish = sentence.locator('textarea[data-field="english"]').last();
-  await secondSpanish.fill("hoy");
-  await secondEnglish.fill("today");
-  await secondEnglish.blur();
+  for (const [index, [spanish, english]] of pairs.entries()) {
+    if (index > 0) await sentence.getByRole("button", { name: "Add pair" }).click();
+    const spanishField = sentence.locator('textarea[data-field="spanish"]').nth(index);
+    const englishField = sentence.locator('textarea[data-field="english"]').nth(index);
+    await spanishField.fill(spanish);
+    await englishField.fill(english);
+    if (index === pairs.length - 1) await englishField.blur();
+  }
 
   const coversInput = row.locator("[data-covers-for]");
   return { row, coversInput };
@@ -63,6 +67,28 @@ test("pairs already naming a concept surface as one-keystroke Covers suggestions
   const taggedLabels = await tagged.allTextContents();
   expect(taggedLabels.some((label) => /want/i.test(label))).toBe(true);
   expect(taggedLabels.some((label) => /today/i.test(label))).toBe(true);
+});
+
+// Owner report (2026-09-15): "I want to do something today." suggested
+// "to have [something] repaired", "stuff", "anything", "I mean" — loose
+// substring/prefix hits on "something"/"algo"/"I". Whole-term matching
+// (concept-suggestions.ts) must never surface "repaired" for this lesson.
+test("owner-report lesson never suggests a loose substring/prefix hit like 'repaired'", async ({
+  page,
+}) => {
+  await page.setViewportSize({ width: 1280, height: 900 });
+  const { row } = await openLessonWithPairs(page, [
+    ["quiero", "I want"],
+    ["hacer", "to do"],
+    ["algo", "something"],
+    ["hoy", "today"],
+  ]);
+
+  const suggestions = row.locator(".is-pair-suggestion");
+  await expect(suggestions).not.toHaveCount(0, { timeout: 5000 });
+
+  const labels = await suggestions.allTextContents();
+  expect(labels.some((label) => /repaired/i.test(label))).toBe(false);
 });
 
 test("dismissing a suggestion sticks for the rest of the session, not for the lesson data", async ({
