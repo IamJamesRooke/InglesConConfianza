@@ -55,7 +55,13 @@ export type LeaveReason = "escape" | "insert" | "finish" | "move" | "preview" | 
 export function leaveSlide(lessonId: string, blockId: string, reason: LeaveReason): void;
 ```
 Runs, in order: commit any English draft; prune pairs where Spanish, all answers and
-hint are blank (keep at least one pair in a sentence slide); end the history group.
+hint are blank (keep at least one pair in a sentence slide); **delete the slide itself
+if it is entirely empty** (sentence/table: no pair with any text, no instruction;
+explanation: markdown blank after trim) — owner requirement 2026-09-15: "if I escape
+out and it's empty, remove it"; the deletion is one undoable history step and shows the
+existing "Slide deleted — Undo" affordance; then end the history group. Exception: the
+slide being left because the teacher is *inserting the next slide after it*
+(`reason: "insert"`) is still deleted — an empty slide is never worth keeping.
 Implemented as a store effect on the selection transition, so **no key handler, click
 handler, or component calls it directly**. `sentence-editor.tsx`'s `exitEditing` and
 `isPieceBlank` move here.
