@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Baloo_2, Geist } from "next/font/google";
+import { Fraunces, Geist } from "next/font/google";
 import { SiteHeader } from "@/components/site-header";
 import "./globals.css";
 // Imported here rather than @import'd from globals.css so the dev server tracks
@@ -23,10 +23,12 @@ const geist = Geist({
   variable: "--font-geist",
 });
 
-// Warm, rounded display face for learner-facing headings and prompts.
-const baloo = Baloo_2({
+// Editorial serif for the practice "stage": the sentence on screen and the
+// lesson title. Variable font with optical-size, soft, and wonk axes so one
+// family covers both quiet body-adjacent moments and the large display type.
+const fraunces = Fraunces({
   subsets: ["latin"],
-  weight: ["500", "600", "700", "800"],
+  axes: ["opsz", "SOFT", "WONK"],
   variable: "--font-display",
 });
 
@@ -43,7 +45,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="es"
-      className={`${geist.variable} ${baloo.variable} h-full antialiased`}
+      className={`${geist.variable} ${fraunces.variable} h-full antialiased`}
     >
       <body className="flex min-h-full flex-col">
         <SiteHeader />

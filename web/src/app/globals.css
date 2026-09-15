@@ -192,6 +192,16 @@
      Used for the sentence-builder labels and the [[es:]]/[[en:]] highlights. */
   --lesson-hl-es: oklch(0.52 0.22 25);
   --lesson-hl-en: oklch(0.42 0.2 270);
+
+  /* Type scale. Practice's "stage" typography is built from these tokens
+     rather than one-off pixel values. */
+  --text-xs: 12px;
+  --text-sm: 14px;
+  --text-base: 17px;
+  --text-lg: 22px;
+  --text-xl: 32px;
+  --text-2xl: 48px;
+  --text-3xl: 64px;
 }
 
 .dark {
