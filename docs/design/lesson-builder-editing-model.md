@@ -38,6 +38,11 @@ Invariants:
   `activeBlock`, `activePiece`, `exitingBlock`, `focusAfterAdd`, `hintRequested`-as-
   focus-proxy, and every `:focus-within` style are deleted. Blocks render
   `data-state="resting" | "editing"` from the selection; CSS keys on that only.
+- **Resting means presentation only** — for sentence slides AND vocabulary tables: no
+  inputs, no row/pair delete `×`, no hint inputs, no add-pair/row button, no
+  instruction textarea. Today the table never gets a resting render (owner saw a stray
+  row `×` on a table at rest); in Phase 1 `SentenceEditor` renders `SentencePresentation`
+  (extended to table layout) whenever `data-state="resting"`.
 - **Programmatic focus goes through one helper**, `focusSelection(sel)` in `focus.ts`,
   which finds the DOM node for a selection (`[data-lesson-title]`, `[data-document-block]`,
   `[data-field][data-piece]`) and focuses it. Callers never call `.focus()` on nodes.
@@ -84,7 +89,9 @@ export function scopeOf(selection: EditingSelection): Scope[]; // innermost → 
   `Enter` on title → open + focus first field (create explanation if empty);
   `Tab`/`Shift+Tab` in spanish/english → pair navigation, last-English-Tab creates a pair
   only if complete; `Enter` in english → same as Tab; `Enter` in an empty last pair →
-  leave slide; `Escape` in a field → block; `Escape` on block → nothing (stay);
+  leave slide; `Escape` in a field → block; `Escape` on block → `none` (nothing selected:
+  no rail, no chrome, focus parked on the builder root with no visible ring — two
+  Escapes from a field fully deselect, owner requirement 2026-09-15);
   `Enter`/`Space` on block → first field; `Ctrl+Alt+Enter` (title/field/block) → insert
   predicted type after the current block (after title: at index 0) and focus it; a
   second `Ctrl+Alt+Enter` within 1.5 s on a still-empty just-inserted block → cycle its
