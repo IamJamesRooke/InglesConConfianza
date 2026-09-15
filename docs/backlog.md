@@ -1,10 +1,42 @@
 # Backlog
 
-> Last updated: 2026-09-08. Curriculum migration is complete. PostgreSQL is the canonical curriculum store; Lesson Builder remains JSON-backed. The completed build narrative lives in the [project timeline](history/project-timeline.md).
+> Last updated: 2026-09-15. Curriculum migration is complete. PostgreSQL is the canonical curriculum store; Lesson Builder remains JSON-backed. The completed build narrative lives in the [project timeline](history/project-timeline.md).
 
 ## Current objective
 
-Curate the curriculum into a selective, trustworthy teaching catalog, then build and validate the first course module.
+Ship an MVP to friends: Module 1 authored in the Lesson Builder, a polished learner experience with local-only progress, deployed read-only.
+
+## MVP roadmap (owner, 2026-09-15) — the active sequence
+
+Each step has a gate; nothing below a gate starts until it passes.
+
+1. **Lesson Builder good enough for MVP lessons** — rebuild plan in
+   [lesson-builder-rebuild.md](design/lesson-builder-rebuild.md) (Phases 1–2.5 landed;
+   3a landed; 3b on a branch awaiting owner review). Open: the autocomplete corruption
+   fix (`fix/autocomplete-corruption`), the walkthrough's remaining items, then the
+   [module syllabus](design/module-syllabus.md). *Gate:* the owner writes Module 1's
+   lessons without reporting a builder bug.
+2. **Module 1 content** — authored by the owner; the curation session's Level 1 set
+   ([curation/level-1.md](curation/level-1.md)) and the syllabus panel feed it.
+   *Gate:* the owner runs the whole module as a learner.
+3. **Learner experience polish** — same research→fix loop as the builder, blue theme,
+   sans-serif, phone-first (390px) + desktop; bring back the theme-neutral craft bits
+   (favicon, app icons, web manifest, loading/empty/error states).
+4. **Onboarding without accounts** — first-visit flow; progress in `localStorage`;
+   plain-language warning ("your progress lives in this browser; clearing browser
+   data erases it"); **export/import progress as a file**; a reset.
+5. **Deploy shape + `/admin` guard** — decision: learner app deploys read-only with
+   `lessons.json` bundled at build time and no database; the admin stays local-only
+   (author → commit → redeploy). Middleware guard on `/admin` and `/api/admin` behind an
+   env secret as belt-and-braces. `README` + `.env.example` for the deploy.
+6. **Feedback hooks** — a "¿Qué te pareció?" link/form on the completion screen and
+   cookie-free page analytics, so step 7 produces signal.
+7. **Deploy (Vercel/Netlify) and show friends.**
+8. **Decide next** from feedback; only then the "Marie Kondo" pass (refactor, README,
+   docs, history) — don't polish what feedback may change.
+
+Deliberate non-goals for the MVP: user accounts, server-side progress, spaced
+repetition, a public admin.
 
 ## Milestone: Pre-curation readiness
 
