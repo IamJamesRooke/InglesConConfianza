@@ -127,6 +127,14 @@ and only once the word is complete (no flicker). The three mark chords become
 ≥ 90 % of explanations need zero marking chords. Ship behind a per-teacher toggle; keep
 the manual path intact.
 
+### E2b. Multi-selection marking (owner ask 2026-09-15) — not possible, superseded
+Ctrl-selecting several ranges and marking them at once is impossible in Chrome
+(no discontiguous selections in editable content; ProseMirror follows the browser).
+Served instead by: E1/E2 auto-marking (nothing to select), word-at-caret marking
+(`Ctrl Alt S/E/N` with a collapsed caret marks the word — repeat with `Ctrl →`), and a
+**mark-all-occurrences** command (`Ctrl Alt Shift S/E`: every occurrence of the word
+under the caret in this explanation) in Phase 2.5 if auto-marking leaves a need.
+
 ### E3. Practice pairs proposed from the explanation
 An explanation containing marked pairs already *is* the practice content. On
 `Ctrl Alt Enter → S` (or automatically when the predicted next slide is a sentence),
