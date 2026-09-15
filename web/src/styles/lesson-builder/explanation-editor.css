@@ -20,15 +20,28 @@
    the layering argument applies identically to it, but flag this to the
    owner as the one part of this change verified by reasoning rather than
    a screenshot. */
+/* Phase 3b: the explanation reads as the document's own column, not a card
+   set off from it — a 2px primary rule instead of a grey fill, with the
+   left rule + its own padding netting the same 5px text inset every other
+   slide type uses (see lesson-document.css's one-left-edge note). No
+   min-height/background box; separation between slides comes from
+   lesson-document.css's block-level 24px rhythm instead. */
 .lesson-document-explanation {
   min-height: 0;
-  margin-block: 2px;
-  padding: 6px 9px;
+  margin-block: 0;
+  padding: 6px 9px 6px 3px;
   border: 0;
-  border-radius: 6px;
-  background: var(--muted);
+  border-left: 2px solid var(--primary);
+  border-radius: 0;
+  background: transparent;
   font-size: 14px;
   line-height: 1.45;
+}
+/* Editing state may keep a very faint wash for the toolbar to sit on — not
+   a border box, just a background tint scoped to this element only while a
+   field inside it is focused. */
+.lesson-document-explanation:focus-within {
+  background: color-mix(in oklch, var(--muted) 55%, transparent);
 }
 .lesson-document-explanation .authoring-wysiwyg-shell {
   width: 100%;
@@ -77,19 +90,19 @@
 .lesson-document-explanation .authoring-wysiwyg-shell[data-empty="true"]::before {
   text-align: left;
   font-style: normal;
-  font-size: 16px;
+  font-size: 17px;
   font-weight: 400;
   line-height: 1.5;
 }
 .lesson-document-explanation .practice-markdown-content :is(p, li, ol, ul) {
-  font-size: 16px;
+  font-size: 17px;
   font-weight: 400;
   line-height: 1.5;
 }
 /* Modestly heavier than body text, not the bold weight this used to share
    with paragraphs — headings still read as headings inside an explanation. */
 .lesson-document-explanation .practice-markdown-content :is(h1, h2, h3) {
-  font-size: 16px;
+  font-size: 17px;
   font-weight: 650;
   line-height: 1.5;
 }

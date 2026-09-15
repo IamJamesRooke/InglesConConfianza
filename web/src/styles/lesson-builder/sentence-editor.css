@@ -10,20 +10,25 @@
    redesign pass, and the "C"/"D"/E8 dated blocks), verified against a
    pixel diff. */
 
+/* Eyebrow (§4): same 12px caps treatment as the resting instruction line in
+   sentence-presentation.css — text-transform is CSS-only, so the stored
+   promptText itself is untouched. */
 .lesson-document-prompt {
   display: block;
   width: min(100%, 620px);
   min-height: 1lh;
-  margin-bottom: 3px;
+  margin-bottom: 5px;
   padding: 2px 8px;
   resize: none;
   field-sizing: content;
   border: 1px dashed transparent;
   border-radius: 7px;
   background: transparent;
-  color: var(--foreground);
-  font-size: 14px;
-  font-weight: 550;
+  color: var(--muted-foreground);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
   line-height: 1.5;
   outline: none;
 }
@@ -177,7 +182,11 @@
      the English column wander when Spanish phrases had different lengths. */
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 0 18px;
-  padding: 4px 26px 4px 10px;
+  /* Same 5px left inset every other slide's text uses (§1 one-left-edge) —
+     matches the vocab table's own resting presentation in
+     sentence-presentation.css, which already used 5px via its shared
+     .lesson-sentence-presentation ancestor. */
+  padding: 4px 26px 4px 5px;
   border: 0;
   border-radius: 0;
   border-bottom: 1px solid color-mix(in oklch, var(--border) 60%, transparent);
@@ -208,7 +217,7 @@
   > textarea {
   color: var(--foreground);
   font-weight: 600;
-  font-size: 16px;
+  font-size: 17px;
 }
 .lesson-document-sentence.vocab-table
   .lesson-document-piece:not(.active)
@@ -256,12 +265,13 @@
   align-items: flex-start;
   gap: 10px;
 }
-/* Centered as a content-sized block (align-items: center on a full-width
-   column centers the max-content pieces list without stretching it into a
-   left-hung table). */
+/* Left-aligned to the document's own text column, like every other table in
+   the document (§1: "tables are left-aligned to that edge, not centred") —
+   this used to center the table as a block, which put its left edge out of
+   line with the explanation/sentence text above and below it. */
 .lesson-document-sentence-body.vocab-table {
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   gap: 4px;
   width: 100%;
 }
@@ -300,12 +310,15 @@
   white-space: pre-wrap;
   overflow-wrap: anywhere;
 }
+/* Type scale (§6): 17px body (Spanish) / 15px secondary (English). */
 .lesson-document-language-field[data-language="es"] > textarea {
   color: var(--lesson-hl-es);
+  font-size: 17px;
   font-weight: 600;
 }
 .lesson-document-language-field[data-language="en"] > textarea {
   color: var(--lesson-hl-en);
+  font-size: 15px;
   font-weight: 400;
 }
 /* A neutral, un-tinted placeholder — otherwise it inherits this field's own

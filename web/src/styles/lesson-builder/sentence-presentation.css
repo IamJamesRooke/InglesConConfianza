@@ -11,10 +11,14 @@
 .lesson-sentence-presentation {
   padding: 0 5px;
 }
+/* Eyebrow (§4): 12px caps, never a tiny grey sentence. */
 .lesson-sentence-presentation-instruction {
-  margin-bottom: 1px;
+  margin-bottom: 3px;
   color: var(--muted-foreground);
   font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
 }
 .lesson-sentence-presentation-empty {
   color: var(--muted-foreground);
@@ -51,7 +55,7 @@
 .lesson-document-sentence.resting .lesson-sentence-composed[lang="es"] {
   color: var(--foreground);
   font-weight: 600;
-  font-size: 16px;
+  font-size: 17px;
 }
 .lesson-document-sentence.resting .lesson-sentence-composed[lang="en"] {
   color: var(--muted-foreground);
@@ -100,10 +104,12 @@
 .lesson-sentence-presentation-row span[lang="es"] {
   color: var(--foreground);
   font-weight: 600;
+  font-size: 17px;
 }
 .lesson-sentence-presentation-row span[lang="en"] {
   color: var(--muted-foreground);
   font-style: italic;
+  font-size: 15px;
 }
 /* A row's authored hint reuses the read-only pill sentence pairs use at
    rest — it lands in the row's own third subgrid column, at the end of the

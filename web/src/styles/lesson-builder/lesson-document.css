@@ -15,14 +15,23 @@
   border-top: 1px solid var(--border);
   background: var(--surface-writing);
 }
+/* One text column, one left edge (Phase 3b): a 40rem measure for the whole
+   document. Every child's own text — explanation, sentence pairs, table
+   rows, instruction, Covers — starts at the same x, 13px in from this
+   element's own left edge (8px block padding + 5px the sentence/table
+   pieces already used, see sentence-editor.css/sentence-presentation.css/
+   explanation-editor.css). */
 .lesson-document-body {
   position: relative;
-  max-width: 880px;
+  max-width: 40rem;
 }
 /* "Covers" sits at the very end of the document, after the last slide and
-   its tail insertion control. */
+   its tail insertion control. Padded to the shared 13px text column edge —
+   it used to sit flush with this element's own edge, 13px left of every
+   slide's own text. */
 .lesson-document-tags {
-  margin: 4px 0 0;
+  margin: 20px 0 0;
+  padding-left: 13px;
 }
 .lesson-document > div:first-child > div > span:first-child {
   font-size: 9px;
@@ -51,13 +60,16 @@
      keeps a permanent horizontal gutter for the slide-action icons below —
      reserved space, but width only, never height, so content never runs
      underneath them regardless of hover/focus state. */
-  padding: 0 54px 0 8px;
+  padding: 12px 54px 12px 8px;
   border-radius: 6px;
   outline: none;
   transition:
     transform 0.12s ease,
     box-shadow 0.12s ease;
 }
+/* Blocks are separated by rhythm (24px total, via this padding meeting the
+   next block's own padding), not by boxes — see explanation-editor.css,
+   which dropped the grey-card background this rhythm replaces. */
 @media (prefers-reduced-motion: reduce) {
   .lesson-document-block {
     transition: none;
