@@ -453,12 +453,21 @@
    full-width boxed footer bar. */
 .lesson-library-add-lesson {
   width: fit-content;
-  margin: 8px 0 0;
-  padding: 4px 2px;
-  border-radius: 5px;
+  margin: 12px 0 0;
+  padding: 8px 16px;
+  border-radius: 999px;
+  background: var(--primary);
+  color: var(--primary-foreground);
+  font-size: 13px;
+  font-weight: 650;
 }
 .lesson-library-add-lesson:hover {
-  color: var(--primary);
+  background: var(--brand-primary-hover, var(--primary));
+  color: var(--primary-foreground);
+}
+.lesson-library-add-lesson:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
 }
 /* Adds a whole new module card — a dashed placeholder the width of the column. */
 .lesson-library-add-module {
