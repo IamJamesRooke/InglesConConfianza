@@ -25,8 +25,9 @@ interaction decision below is in service of those three goals, not of
   as collapsible rows inside their module.
 - **Slide** (called `block` in code, `LessonBlock`) — one of three types:
   - **Explanation** — a rich-text note (`ExplanationBlock.contentMarkdown`),
-    edited as WYSIWYG contentEditable, serialized to a constrained Markdown
-    dialect by `serialize-explanation.ts`.
+    edited in Tiptap/ProseMirror over a four-node, three-mark schema
+    (`explanation-schema.ts`) and serialized to a constrained Markdown
+    dialect by `explanation-markdown.ts` (Phase 2, 2026-09-15).
   - **Sentence** — a `SentenceBlock` with `layout` left as `"sentence"`
     (default): one or more **pairs**.
   - **Vocabulary table** — a `SentenceBlock` with `layout: "vocabulary_table"`:
@@ -64,8 +65,10 @@ keymap (`web/src/lib/lesson-builder/keymap.ts`): a table of `scope × chord →
 command`, dispatched by a single capture-phase `keydown` listener mounted on
 the builder root (`LessonLibrary`). No other `onKeyDown` in the builder
 handles a chord — a component's own `onKeyDown` may remain only for
-text-editing semantics that need the literal element (the explanation
-editor's own Enter-for-paragraph and mark chords, until Phase 2). See
+text-editing semantics that need the literal element (inside an explanation,
+Enter/Shift+Enter/arrows/Backspace and `Ctrl/⌘+B`/`I` are ProseMirror's own
+keymap, never this table's). A handled chord is both `preventDefault`ed and
+`stopPropagation`ed, so ProseMirror's keydown never sees it twice. See
 `docs/design/lesson-builder-editing-model.md` for the full contract
 (selection shape, `leaveSlide`, the focus helper).
 
@@ -74,9 +77,10 @@ Ctrl) — plain Alt+letter is commonly eaten by Linux window managers before
 the page sees the keydown, and plain Ctrl+letter collides with the browser.
 `chordOf` reads `event.code` (not `event.key`), so macOS Ctrl+Option+letter
 still resolves. `Ctrl/⌘+Z/Shift+Z/S` and `Ctrl/⌘+.` keep plain modifiers (see
-the `page` scope below); explanation-internal `Ctrl/⌘+B/I` and the mark
-chords `Ctrl+Alt+S/E/N` are unchanged, staying inside the explanation editor
-until Phase 2.
+the `page` scope below). The mark chords `Ctrl+Alt+S/E/N` are now real
+`explanation`-scope entries; `Ctrl/⌘+B`/`I` are registered as deliberate
+no-ops (they return false) so the event falls through to Tiptap's own
+`Mod-b`/`Mod-i` bindings.
 
 **Scope resolution** (`scopeOf`, innermost → outermost): `none` → `[page]`;
 `title` → `[title, lesson, page]`; `block` → `[block, lesson, page]`;
@@ -111,7 +115,10 @@ The table below is generated from `KEYMAP` — one row per scope × chord.
 | `english` | `Ctrl+Alt+Backspace` | Delete this pair outright. |
 | `english` | `Escape` | Move selection to `block`. |
 | `hint` | `Enter` / `Escape` | Close the hint (clearing the pair's `callout` if left blank) and return focus to whichever field opened it (Spanish or English — remembered per pair; defaults to Spanish for the mouse lightbulb button). |
-| `explanation` | `Escape` | Move selection to `block` (registered via the same field-scope loop; the explanation editor's own Enter/marks/Ctrl+B/I stay internal to it — see §1). |
+| `explanation` | `Escape` | Move selection to `block` (registered via the same field-scope loop). |
+| `explanation` | `Ctrl+Alt+S` / `Ctrl+Alt+E` | Mark the selection Spanish / English. With a collapsed caret, marks the word around it; re-applying the language already there removes it. Marking across a run marked in the other language *replaces* it — the `lang` mark excludes itself, so marks can never nest. |
+| `explanation` | `Ctrl+Alt+N` | Remove any language mark from the selection, or from the word around a collapsed caret. |
+| `explanation` | `Ctrl/⌘+B` / `Ctrl/⌘+I` | Registered as no-ops that return false, so Tiptap's own `Mod-b`/`Mod-i` toggle bold/italic. Documented here so the table is the whole scope. |
 | `block` | `Enter` / `Space` | Enter editing: focus the slide's first field. |
 | `block` | `Escape` | Fully deselect (`selection → none`): no rail, no chrome, focus parks on the builder root with no visible ring. Two Escapes from a field reach this — field → block → none. |
 | `block` | `Ctrl+Alt+Enter` | Insert the predicted type after this block and focus it (explanation → sentence; sentence/vocabulary → explanation). A second `Ctrl+Alt+Enter` within 1.5s, while the just-inserted block is still empty, cycles its type instead (explanation → sentence → vocabulary → …). Also reached from every field scope (Ctrl+Alt+Enter isn't registered per-field). |
@@ -143,9 +150,11 @@ their own local handling rather than going through the dispatcher:
   reorder) and the rail's own `Escape` (closes the mobile disclosure) —
   modules aren't part of `EditingSelection` at all in Phase 1, so these stay
   local, element-scoped handlers, same as before.
-- Explanation-internal `Enter` (paragraph), `Ctrl/⌘+B`/`I`, and the mark
-  chords `Ctrl+Alt+S/E/N` — the editor's own business until Phase 2 moves
-  them onto the shared model.
+- Explanation-internal `Enter` (paragraph), `Shift+Enter` (hard break),
+  arrows, Backspace and `Ctrl/⌘+B`/`I` — ProseMirror's own keymap. `Ctrl/⌘+Z`
+  inside an explanation is also the editor's (text-level) history; the page
+  scope's undo declines whenever the keydown target is a text-editing
+  element. The mark chords `Ctrl+Alt+S/E/N` are in the shared table (§4).
 
 **Autosave timing** (`use-lesson-persistence.ts`): the lesson-body save is
 an *idle* debounce, not a throttle — every edit restarts a 2000ms window,
@@ -184,7 +193,7 @@ reading the table.
 
 | Keys | Behaviour |
 |---|---|
-| `Ctrl Alt S` · `Ctrl Alt E` · `Ctrl Alt N` | In an explanation: mark as Spanish · English · neutral. With text selected, marks it. |
+| `Ctrl Alt S` · `Ctrl Alt E` · `Ctrl Alt N` | In an explanation: mark as Spanish · English · neutral. With text selected, marks the selection; with just a caret, the word around it. |
 | `Ctrl Alt ↑` `↓` | Move the active slide up or down. |
 | `Ctrl Alt ↑` `↓` (from a lesson's title) | Move the lesson within its module, or across a module boundary at the top/bottom of the list. |
 | `Ctrl Alt D` | Finish this lesson (collapse it). |
@@ -443,9 +452,9 @@ without a fresh, explicit ask:
 
 - **Zen mode retired.** An earlier full-screen single-slide editing mode was
   removed; editing happens inline, in the document flow, at all times.
-- **HUD bar removed.** A persistent bottom heads-up-display (lesson name,
-  live shortcut legend) was cut in favor of the on-demand keyboard-help
-  dialog (`Ctrl/⌘ .`) and inline per-context affordances.
+- **HUD bar is wanted.** The bottom shortcut bar was removed in `5972306e` and
+  wrongly recorded here as an owner decision; the owner asked for it back
+  (2026-09-15). It is restored as a context-sensitive bar generated from `KEYMAP`.
 - **Lessons collapse to rows.** Only the active module's lessons render
   expanded; a lesson can be individually collapsed/expanded
   (`ChevronDown`/`ChevronRight`), and "Finish this lesson" (`Ctrl Alt D`)
@@ -511,11 +520,16 @@ statically or spin up their own isolated server against a throwaway file.
     other field (§3), instead of the old "if empty, collapse back to the
     'Add instruction' button" micro-behavior — a minor UX regression on a
     rarely-used sub-toggle, not restored in Phase 1.
-  - The explanation editor's local "mark typing mode" (armed via
-    `Ctrl+Alt+S/E/N`) can be interrupted by an Escape that the shared
-    dispatcher also routes to `block` — Escape no longer has a chance to
-    *only* cancel typing mode first the way it used to; Phase 2 (the editor
-    moves onto a real engine) is the natural point to reconcile this.
+  - Resolved by Phase 2: the explanation editor's local "mark typing mode"
+    is gone. `Ctrl+Alt+S/E/N` now act on a selection or the word around the
+    caret and nothing is left armed, so Escape has nothing to cancel and
+    always means "leave this field."
+  - Phase 2 leftover: `editorUndo`/`editorRedo` on `LessonBuilderActions`
+    (`builder-context.tsx`, `page.tsx`) no longer have a caller — the
+    explanation's Ctrl+Z is ProseMirror's own history. They are harmless but
+    dead; remove them with the next pass over the actions surface.
+  - Phase 2 leftover: a reducer-driven change to an explanation is ignored
+    while that editor holds focus (see the rebuild plan's Phase 2 note).
   - Module reorder (`Alt+ArrowUp/Down` on the drag-handle button) and the
     mobile rail's own `Escape` (closes the disclosure) stay local,
     element-scoped handlers — modules aren't part of `EditingSelection` in
@@ -558,3 +572,4 @@ statically or spin up their own isolated server against a throwaway file.
 | R5 | Walkthrough-2 fixes | Sonnet | done |
 | R6 | Explanation editor fixes (data loss, paste, lists, mark switching, undo routing) | Sonnet | done |
 | R7 | First-run + 760px fixes | Sonnet | done |
+| P2 | Phase 2: explanation editor on Tiptap/ProseMirror — schema + markdown round-trip, mark commands via an editor registry, floating toolbar, E1 auto-marking, mark-preserving copy/paste; `serialize-explanation.ts` and all `execCommand`/`Range` code deleted | Opus | done |
