@@ -1,11 +1,18 @@
 "use client";
 
 import { ChevronDown, ChevronRight, GripVertical, Plus, Redo2, Search, Undo2 } from "lucide-react";
-import { useRef, useState, type DragEvent, type KeyboardEvent } from "react";
+import { useRef, useState, type ChangeEvent, type DragEvent, type KeyboardEvent } from "react";
 
+import {
+  buildImportDiff,
+  exportFileName,
+  validateImportedFile,
+  type FileDiffSummary,
+} from "@/lib/lesson-builder/import-export";
 import type {
   ConceptDisplayLookup,
   Lesson,
+  LessonFile,
   LessonModule,
 } from "@/lib/lesson-builder/types";
 
@@ -271,6 +278,10 @@ type Props = {
   onUndo: () => void;
   onRedo: () => void;
   onRetrySave: () => void;
+  // Backup (Export/Import): replaces the whole course after a confirmed
+  // diff. The caller applies the returned file to its own lessons/modules
+  // state — see docs/design/module-syllabus.md §Backup.
+  onImported: (file: LessonFile) => void;
 };
 
 export function ModuleNavigator({
@@ -289,9 +300,66 @@ export function ModuleNavigator({
   onUndo,
   onRedo,
   onRetrySave,
+  onImported,
 }: Props) {
   const [query, setQuery] = useState("");
   const [draggedModuleId, setDraggedModuleId] = useState<string | null>(null);
+  const [pendingImport, setPendingImport] = useState<{
+    file: LessonFile;
+    diff: FileDiffSummary;
+  } | null>(null);
+  const [importError, setImportError] = useState<string | null>(null);
+  const importInputRef = useRef<HTMLInputElement | null>(null);
+
+  function exportCourse() {
+    const file: LessonFile = { version: 2, modules, lessons };
+    const blob = new Blob([JSON.stringify(file, null, 2)], { type: "application/json" });
+    const url = URL.createObjectURL(blob);
+    const anchor = document.createElement("a");
+    anchor.href = url;
+    anchor.download = exportFileName();
+    anchor.click();
+    URL.revokeObjectURL(url);
+  }
+
+  async function handleImportFile(event: ChangeEvent<HTMLInputElement>) {
+    const input = event.target;
+    const pickedFile = input.files?.[0];
+    input.value = ""; // allow re-picking the same file next time
+    if (!pickedFile) return;
+    setImportError(null);
+    let parsed: unknown;
+    try {
+      parsed = JSON.parse(await pickedFile.text());
+    } catch {
+      setImportError("That file isn't valid JSON.");
+      return;
+    }
+    const validated = validateImportedFile(parsed);
+    if ("error" in validated) {
+      setImportError(validated.error);
+      return;
+    }
+    const current: LessonFile = { version: 2, modules, lessons };
+    setPendingImport({ file: validated.file, diff: buildImportDiff(current, validated.file) });
+  }
+
+  async function confirmImport() {
+    if (!pendingImport) return;
+    const response = await fetch("/api/admin/lesson-builder/import-export", {
+      method: "PUT",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(pendingImport.file),
+    });
+    if (!response.ok) {
+      const body = (await response.json().catch(() => null)) as { error?: string } | null;
+      setImportError(body?.error ?? "Import failed.");
+      return;
+    }
+    const written = (await response.json()) as LessonFile;
+    onImported(written);
+    setPendingImport(null);
+  }
   const results = searchModuleNavigator(modules, lessons, query, conceptDisplays);
   const searching = query.trim().length > 0;
   // Item 6 (first-run friction): below 900px the rail + header ate 45% of a
@@ -537,6 +605,60 @@ export function ModuleNavigator({
           </button>
         )}
       </div>
+
+      <div className="module-navigator-backup-row">
+        <button type="button" onClick={exportCourse}>
+          Export
+        </button>
+        <button type="button" onClick={() => importInputRef.current?.click()}>
+          Import…
+        </button>
+        <input
+          ref={importInputRef}
+          type="file"
+          accept="application/json"
+          data-keymap-ignore
+          className="module-navigator-backup-input"
+          onChange={handleImportFile}
+        />
+      </div>
+      {importError && <p className="module-navigator-import-error">{importError}</p>}
+      {pendingImport && (
+        <div className="module-navigator-import-diff" data-keymap-ignore>
+          <p className="module-navigator-import-diff-title">Import this file?</p>
+          <ul>
+            {pendingImport.diff.modulesAdded.map((name) => (
+              <li key={`ma-${name}`}>+ module {name}</li>
+            ))}
+            {pendingImport.diff.modulesRemoved.map((name) => (
+              <li key={`mr-${name}`}>− module {name}</li>
+            ))}
+            {pendingImport.diff.modulesChanged.map((name) => (
+              <li key={`mc-${name}`}>~ module {name}</li>
+            ))}
+            {pendingImport.diff.lessonsAdded.map((name) => (
+              <li key={`la-${name}`}>+ lesson {name}</li>
+            ))}
+            {pendingImport.diff.lessonsRemoved.map((name) => (
+              <li key={`lr-${name}`}>− lesson {name}</li>
+            ))}
+            {pendingImport.diff.lessonsChanged.map((name) => (
+              <li key={`lc-${name}`}>~ lesson {name}</li>
+            ))}
+          </ul>
+          {Object.values(pendingImport.diff).every((list) => list.length === 0) && (
+            <p className="module-navigator-import-diff-empty">No differences from the current course.</p>
+          )}
+          <div className="module-navigator-import-diff-actions">
+            <button type="button" onClick={confirmImport}>
+              Replace course
+            </button>
+            <button type="button" onClick={() => setPendingImport(null)}>
+              Cancel
+            </button>
+          </div>
+        </div>
+      )}
       </div>
     </nav>
   );

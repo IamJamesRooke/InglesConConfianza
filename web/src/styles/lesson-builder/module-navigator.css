@@ -287,6 +287,78 @@
 .module-navigator-history button:disabled {
   opacity: 0.3;
 }
+/* Backup (Export/Import) — see docs/design/module-syllabus.md §Backup. */
+.module-navigator-backup-row {
+  display: flex;
+  gap: 6px;
+  margin-top: 6px;
+}
+.module-navigator-backup-row button {
+  padding: 3px 9px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  font-size: 11px;
+  color: var(--muted-foreground);
+}
+.module-navigator-backup-row button:hover {
+  border-color: var(--primary);
+  color: var(--primary);
+}
+.module-navigator-backup-input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  opacity: 0;
+  pointer-events: none;
+}
+.module-navigator-import-error {
+  margin: 4px 0 0;
+  font-size: 11px;
+  color: var(--destructive);
+}
+.module-navigator-import-diff {
+  margin-top: 6px;
+  padding: 8px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  background: var(--card);
+}
+.module-navigator-import-diff-title {
+  margin: 0 0 4px;
+  font-size: 12px;
+  font-weight: 700;
+}
+.module-navigator-import-diff ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  max-height: 160px;
+  overflow-y: auto;
+  font-size: 11px;
+  color: var(--muted-foreground);
+}
+.module-navigator-import-diff-empty {
+  margin: 0;
+  font-size: 11px;
+  color: var(--muted-foreground);
+}
+.module-navigator-import-diff-actions {
+  display: flex;
+  gap: 6px;
+  margin-top: 6px;
+}
+.module-navigator-import-diff-actions button {
+  padding: 3px 9px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  font-size: 11px;
+}
+.module-navigator-import-diff-actions button:first-child {
+  border-color: var(--primary);
+  color: var(--primary);
+  font-weight: 600;
+}
 .module-navigator-retry {
   flex-shrink: 0;
   padding: 4px 8px;

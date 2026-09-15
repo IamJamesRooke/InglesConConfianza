@@ -351,6 +351,7 @@ test("ModuleNavigator renders all 100 modules in browse mode without throwing", 
       onUndo: () => {},
       onRedo: () => {},
       onRetrySave: () => {},
+      onImported: () => {},
     }),
   );
   assert.ok(markup.includes("Module 0"));
@@ -378,6 +379,7 @@ test("ModuleNavigator marks the active module row", () => {
       onUndo: () => {},
       onRedo: () => {},
       onRetrySave: () => {},
+      onImported: () => {},
     }),
   );
   assert.ok(markup.includes('class="module-navigator-row active"'));

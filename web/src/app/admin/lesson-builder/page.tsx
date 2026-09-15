@@ -22,6 +22,7 @@ import {
 import type {
   LanguageBlock,
   LessonBlock,
+  LessonFile,
   LessonModule,
 } from "@/lib/lesson-builder/types";
 import { duplicateLessonStructure as duplicateLessonStructureMutation } from "@/lib/lesson-builder/mutations";
@@ -396,6 +397,17 @@ export default function LessonBuilderPage() {
       );
     },
     [modules, updateModules],
+  );
+
+  // Backup Import: the server has already validated, normalized, and
+  // written the file — replace this session's whole in-memory course with
+  // what it echoes back, same as a fresh load.
+  const handleImported = useCallback(
+    (file: LessonFile) => {
+      dispatch({ type: "SET_LESSONS", lessons: file.lessons });
+      updateModules(file.modules);
+    },
+    [updateModules],
   );
 
   const addBlock = useCallback(
@@ -777,6 +789,7 @@ export default function LessonBuilderPage() {
           onDropLesson={moveLessonToPosition}
           onMoveLessonToModule={moveLessonToModule}
           onChangeModule={patchModule}
+          onImported={handleImported}
         />
       </div>
       {preview && (

@@ -28,7 +28,7 @@ import {
 } from "@/lib/lesson-builder/editing";
 import { dispatchKeymap, fieldSelectionForBlock } from "@/lib/lesson-builder/keymap";
 import { rememberFocus, restoreRememberedFocus } from "@/lib/lesson-builder/focus";
-import type { Lesson, LessonModule } from "@/lib/lesson-builder/types";
+import type { Lesson, LessonFile, LessonModule } from "@/lib/lesson-builder/types";
 
 // The single open-lesson id survives reloads so a teacher returns to where
 // they left off (§1a "Lesson focus" — see docs/design/lesson-builder.md).
@@ -84,6 +84,7 @@ type Props = {
   ) => void;
   onMoveLessonToModule: (lessonId: string, moduleId: string) => void;
   onChangeModule: (moduleId: string, patch: Partial<LessonModule>) => void;
+  onImported: (file: LessonFile) => void;
 };
 
 export function LessonLibrary(props: Props) {
@@ -421,6 +422,7 @@ function LessonLibraryInner(props: Props) {
           onUndo={props.onUndo}
           onRedo={props.onRedo}
           onRetrySave={props.onRetrySave}
+          onImported={props.onImported}
         />
         <div className="lesson-library-modules">
           {props.modules
