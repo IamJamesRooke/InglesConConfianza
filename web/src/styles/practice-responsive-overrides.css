@@ -5,12 +5,20 @@
   color: var(--foreground);
   background:
     radial-gradient(
-      70% 50% at 50% 0%,
+      60% 40% at 50% 0%,
       color-mix(in oklch, var(--primary) 5%, transparent),
       transparent 70%
     ),
     var(--background);
   font-family: var(--font-geist), ui-sans-serif, system-ui, sans-serif;
+}
+/* Every focusable control on the stage gets the same visible keyboard-focus
+   ring — never on a mouse/touch focus, only :focus-visible. High enough
+   specificity (class + attr-or-type + pseudo-class) to win over the more
+   narrowly-scoped component rules below without needing !important. */
+.lesson-session :is(button, a, input, textarea, [tabindex]):focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
 }
 .lesson-topbar {
   position: relative;
@@ -47,8 +55,12 @@
   justify-self: start;
 }
 .lesson-topbar-title p {
+  overflow: hidden;
   color: var(--muted-foreground);
   font-size: var(--text-xs);
+  letter-spacing: 0.08em;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 .lesson-step-count {
   grid-column: 3;
@@ -291,12 +303,13 @@
   display: block;
   visibility: hidden;
   overflow: hidden;
-  max-width: 26rem;
+  max-width: min(26rem, 100%);
   min-width: max(8ch, 4.25rem);
   padding: 10px 4px;
   border: 0;
   border-bottom: 2px solid transparent;
-  white-space: pre;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
   font-family: var(--lesson-display);
   font-size: var(--text-xl);
   font-weight: 500;
@@ -313,12 +326,16 @@
   border: 0;
   border-bottom: 2px solid var(--border);
   border-radius: 0;
+  overflow: hidden;
+  overflow-wrap: anywhere;
   color: var(--lesson-hl-en);
   background: none;
   font-family: var(--lesson-display);
   font-size: var(--text-xl);
   font-weight: 500;
   text-align: center;
+  white-space: pre-wrap;
+  resize: none;
   transition:
     border-color 200ms,
     color 200ms;
@@ -498,6 +515,15 @@
   font-weight: 500;
   line-height: 1.4;
 }
+/* A quiet one-time nudge, shown only on the first retrieval slide of a
+   session — see showFirstRetrievalHint in SentencePracticeCard. */
+.retrieval-first-hint {
+  margin: 10px auto 0;
+  color: var(--muted-foreground);
+  font-size: 13px;
+  text-align: center;
+}
+
 /* The payoff — just a checkmark. Any words come from the author's feedback. */
 .sentence-success {
   display: flex;
@@ -540,13 +566,23 @@
   font-weight: 750;
 }
 .lesson-controls .learner-button {
+  flex-shrink: 0;
   min-width: 200px;
   min-height: 52px;
+  max-width: fit-content;
   justify-self: end;
+  padding: 14px 22px;
   border-radius: 999px;
   font-family: var(--font-geist), ui-sans-serif, system-ui, sans-serif;
-  font-size: var(--text-base);
-  font-weight: 650;
+  font-size: 17px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+.lesson-controls .learner-button-label {
+  min-width: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 .lesson-controls .learner-button.awaiting-answer {
   visibility: hidden;
@@ -642,10 +678,7 @@
     gap: 10px;
   }
   .lesson-topbar-title p {
-    font-size: 10px;
-  }
-  .lesson-topbar-title p > span {
-    display: block;
+    font-size: 11px;
   }
   .lesson-stage {
     padding: 36px 24px;
@@ -657,9 +690,12 @@
     gap: 14px;
   }
   .lesson-controls .learner-button {
-    min-width: 160px;
+    min-width: 0;
+    max-width: 60vw;
+    overflow: hidden;
     font-size: var(--text-base);
     padding-inline: 14px;
+    text-overflow: ellipsis;
   }
   .lesson-feedback {
     font-size: 14px;
@@ -718,9 +754,18 @@
   }
   .lesson-controls .learner-button {
     min-width: 0;
-    max-width: 175px;
+    max-width: 60vw;
+    font-size: 15px;
+    padding: 12px 18px;
+  }
+  .lesson-controls .learner-button-label {
+    overflow: hidden;
+    min-width: 0;
+    white-space: nowrap;
+    text-overflow: ellipsis;
   }
   .lesson-controls .learner-button svg {
+    flex-shrink: 0;
     width: 16px;
   }
   .vocabulary-practice .answer-piece {
@@ -800,10 +845,7 @@
   border-color: var(--brand-primary-hover);
   background: var(--brand-primary-hover);
 }
-.lesson-session .completion-action:focus-visible {
-  outline: 3px solid color-mix(in oklch, var(--primary) 32%, transparent);
-  outline-offset: 3px;
-}
+/* Covered by the stage-wide focus-visible rule below. */
 
 /* Vocabulary tables are reference-like scan rows, not four oversized
    sentence cards. These rules are deliberately scoped away from ordinary
@@ -905,10 +947,7 @@
 .lesson-session .vocabulary-practice .answer-hint-toggle:hover {
   transform: translateY(-50%) scale(1.05);
 }
-.lesson-session .vocabulary-practice .answer-hint-toggle:focus-visible {
-  outline: 3px solid color-mix(in oklch, var(--hint) 38%, transparent);
-  outline-offset: 2px;
-}
+/* Covered by the stage-wide focus-visible rule below. */
 @media (max-width: 480px) {
   .lesson-session .lesson-celebration {
     padding: 28px 20px;

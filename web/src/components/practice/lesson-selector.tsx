@@ -402,12 +402,14 @@ function LessonSession({
               disabled={!canAdvance}
               onClick={advance}
             >
-              {stepIndex === totalSteps - 1
-                ? "Terminar lección"
-                : block?.type === "explanation" &&
-                    lesson.blocks[stepIndex + 1]?.type === "sentence"
-                  ? "Vamos a practicar"
-                  : "Continuar"}
+              <span className="learner-button-label">
+                {stepIndex === totalSteps - 1
+                  ? "Terminar lección"
+                  : block?.type === "explanation" &&
+                      lesson.blocks[stepIndex + 1]?.type === "sentence"
+                    ? "Vamos a practicar"
+                    : "Continuar"}
+              </span>
               <ArrowRight size={18} aria-hidden="true" />
             </button>
           </div>

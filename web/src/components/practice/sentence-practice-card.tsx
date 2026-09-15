@@ -36,7 +36,7 @@ export function SentencePracticeCard({
   // A brief shake on the specific blank that was just checked and found
   // wrong — never on a plain "show me the answer" request.
   const [shakeBlockIndex, setShakeBlockIndex] = useState<number | null>(null);
-  const inputRefs = useRef<Array<HTMLInputElement | null>>([]);
+  const inputRefs = useRef<Array<HTMLTextAreaElement | null>>([]);
   const helpTimerRef = useRef<number | null>(null);
   const shakeTimerRef = useRef<number | null>(null);
   const correctAnswers = languageBlocks.map(
@@ -117,6 +117,24 @@ export function SentencePracticeCard({
   const hasAuthoredPrompt = Boolean(
     sentence.promptLabel.trim() || sentence.promptText?.trim(),
   );
+  // A quiet one-time nudge under the answer field, shown only on the very
+  // first retrieval slide of a session (sessionStorage, not per-lesson) so
+  // a returning learner isn't told how to answer on every slide. Read (and
+  // claimed) once, in the lazy initializer, so this card's first render
+  // already knows whether to show it — no effect, no extra render.
+  const [showFirstRetrievalHint] = useState(() => {
+    if (typeof window === "undefined") return false;
+    try {
+      if (window.sessionStorage.getItem("iccf-retrieval-hint-seen"))
+        return false;
+      window.sessionStorage.setItem("iccf-retrieval-hint-seen", "1");
+      return true;
+    } catch {
+      // Storage may be unavailable (private mode, disabled) — skip the hint
+      // rather than throw.
+      return false;
+    }
+  });
   return (
     <div
       className={`sentence-practice stage-enter ${isSingleLanguageBlock ? "single-answer" : ""} ${isVocabulary ? "vocabulary-practice" : ""}`}
@@ -162,17 +180,21 @@ export function SentencePracticeCard({
                         : languageBlock.acceptedAnswers[0]
                       )?.trim() || languageBlock.spanish}
                     </span>
-                    <input
+                    <textarea
                       ref={(element) => {
                         inputRefs.current[languageBlockIndex] = element;
                       }}
-                      type="text"
+                      rows={1}
                       data-practice-answer
                       autoFocus={languageBlockIndex === 0}
                       value={answers[languageBlockIndex] ?? ""}
                       onChange={(event) =>
                         updatePreviewAnswer(
-                          event.target.value,
+                          // A long pasted answer could carry a real newline —
+                          // Enter itself never inserts one (preventDefault
+                          // below), but sanitize paste too so the value
+                          // stays a single logical line that wraps visually.
+                          event.target.value.replace(/\r?\n/g, " "),
                           languageBlockIndex,
                         )
                       }
@@ -242,7 +264,7 @@ export function SentencePracticeCard({
                       spellCheck={false}
                       lang="en"
                       className={`answer-input ${helpedBlockIndex === languageBlockIndex ? "showing-hint" : ""}`}
-                    />
+                    ></textarea>
                     {isVocabulary &&
                       correctAnswers[languageBlockIndex] &&
                       helpedBlockIndex !== languageBlockIndex && (
@@ -315,6 +337,11 @@ export function SentencePracticeCard({
               ),
             )}
           </div>
+          {showFirstRetrievalHint && !isComplete && (
+            <p className="retrieval-first-hint">
+              Escribe en inglés y pulsa Enter
+            </p>
+          )}
           {isComplete && (
             <p
               className="sentence-success"
