@@ -1,6 +1,7 @@
 import type {
   Lesson,
   LessonBlock,
+  LessonConcept,
   LessonFile,
   LessonFileV1,
   LessonModule,
@@ -87,6 +88,16 @@ function isLessonFileV1(value: unknown): value is LessonFileV1 {
   );
 }
 
+function isModuleSyllabus(value: unknown): boolean {
+  return (
+    isRecord(value) &&
+    Array.isArray(value.main) &&
+    value.main.every(isLessonConcept) &&
+    Array.isArray(value.review) &&
+    value.review.every(isLessonConcept)
+  );
+}
+
 export function isLessonModule(value: unknown): value is LessonModule {
   return (
     isRecord(value) &&
@@ -96,8 +107,24 @@ export function isLessonModule(value: unknown): value is LessonModule {
       value.kind === "course" ||
       value.kind === "onboarding") &&
     Array.isArray(value.lessonIds) &&
-    value.lessonIds.every((lessonId) => typeof lessonId === "string")
+    value.lessonIds.every((lessonId) => typeof lessonId === "string") &&
+    (value.syllabus === undefined || isModuleSyllabus(value.syllabus))
   );
+}
+
+// No `conceptId` may appear twice across a module's main + review lists
+// (a freehand item with a null conceptId is never considered a duplicate of
+// another freehand item). Later occurrences are dropped, main before review.
+function dedupeSyllabus(syllabus: { main: LessonConcept[]; review: LessonConcept[] }) {
+  const seen = new Set<string>();
+  const keep = (items: LessonConcept[]) =>
+    items.filter((item) => {
+      if (!item.conceptId) return true;
+      if (seen.has(item.conceptId)) return false;
+      seen.add(item.conceptId);
+      return true;
+    });
+  return { main: keep(syllabus.main), review: keep(syllabus.review) };
 }
 
 export function normalizeModule(module: LessonModule): LessonModule {
@@ -106,6 +133,7 @@ export function normalizeModule(module: LessonModule): LessonModule {
     name: module.name,
     ...(module.kind ? { kind: module.kind } : {}),
     lessonIds: module.lessonIds,
+    syllabus: dedupeSyllabus(module.syllabus ?? { main: [], review: [] }),
   };
 }
 

@@ -6,6 +6,7 @@ import {
   isLessonFile,
   isLessonModule,
   migrateV1ToV2,
+  normalizeModule,
   parseLessonFile,
   reconcileLessonFile,
   moduleContainingLesson,
@@ -54,7 +55,10 @@ test("migrateV1ToV2 wraps every lesson in one module, order kept", () => {
 test("parseLessonFile accepts v1 and v2, rejects junk", () => {
   assert.equal(parseLessonFile({ version: 1, lessons: [] }).version, 2);
   const v2 = fileWith([["a"]], ["a"]);
-  assert.deepEqual(parseLessonFile(v2), v2);
+  assert.deepEqual(parseLessonFile(v2), {
+    ...v2,
+    modules: v2.modules.map((module) => ({ ...module, syllabus: { main: [], review: [] } })),
+  });
   assert.throws(() => parseLessonFile({ version: 3 }));
   assert.throws(() => parseLessonFile("nope"));
 });
@@ -125,6 +129,45 @@ test("reconcileLessonFile sorts lessons, drops danglers, re-homes orphans", () =
 test("reconcileLessonFile de-dupes a lessonId listed twice", () => {
   const clean = reconcileLessonFile(fileWith([["a", "a", "b"]], ["a", "b"]));
   assert.deepEqual(clean.modules[0].lessonIds, ["a", "b"]);
+});
+
+test("normalizeModule: a module without syllabus loads as {main:[],review:[]}", () => {
+  const normalized = normalizeModule({ id: "m1", name: "Module I", lessonIds: [] });
+  assert.deepEqual(normalized.syllabus, { main: [], review: [] });
+});
+
+test("normalizeModule: syllabus survives a load/save round trip", () => {
+  const querer = concept("querer", "querer [algo]");
+  const saber = concept("saber", "saber [algo]");
+  const withSyllabus = {
+    id: "m1",
+    name: "Module I",
+    lessonIds: [],
+    syllabus: { main: [querer], review: [saber] },
+  };
+  const normalized = normalizeModule(withSyllabus);
+  assert.deepEqual(normalized.syllabus, { main: [querer], review: [saber] });
+
+  const file: LessonFile = {
+    version: 2,
+    modules: [withSyllabus],
+    lessons: [],
+  };
+  assert.ok(isLessonFile(file));
+  const parsed = parseLessonFile(file);
+  assert.deepEqual(parsed.modules[0].syllabus, { main: [querer], review: [saber] });
+});
+
+test("normalizeModule drops a conceptId duplicated across main and review", () => {
+  const querer = concept("querer", "querer [algo]");
+  const querer2 = { id: "lc_other", conceptId: "querer", label: "querer, dup" };
+  const normalized = normalizeModule({
+    id: "m1",
+    name: "Module I",
+    lessonIds: [],
+    syllabus: { main: [querer], review: [querer2] },
+  });
+  assert.deepEqual(normalized.syllabus, { main: [querer], review: [] });
 });
 
 test("moduleContainingLesson", () => {
