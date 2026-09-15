@@ -319,7 +319,22 @@ function LessonLibraryInner(props: Props) {
     function onFocusOut(event: FocusEvent) {
       if (!(event.target instanceof Node) || !root!.contains(event.target)) return;
       const next = event.relatedTarget;
-      if (next instanceof Node && root!.contains(next)) return;
+      if (next instanceof Node) {
+        // A resolvable `relatedTarget` tells us exactly where focus went,
+        // which settles it either way — no need for the unresolved-only
+        // heuristic below. Inside the root: not a departure (e.g. Tab from
+        // one field to the next). Outside it — a click/focus landing on a
+        // real, identifiable element elsewhere in the page, such as the
+        // lesson-preview overlay (rendered as a sibling of the builder
+        // root, not inside it) — is always real, even though the blurring
+        // field's own block still matches the current selection: that
+        // same-block signal exists only to protect the *unresolved* case
+        // just below (a control that unmounts itself as a direct result of
+        // its own click), not to veto a `relatedTarget` we actually have.
+        if (root!.contains(next)) return;
+        dispatchDepsRef.current.editing.setSelection({ kind: "none" }, { reason: "blur" });
+        return;
+      }
       // `relatedTarget` didn't land us safely back inside the root — but a
       // control that unmounts itself as a direct result of its own click
       // (Add instruction, hint lightbulb, Add pair/row, pair ×, the

@@ -86,12 +86,27 @@ test("direct seam actions insert at exact boundaries without overlay", async ({ 
   await page.keyboard.press("Enter");
 
   const row = page.locator("[data-lesson-row]").last();
+  // leaveSlide (editing.ts) deletes a blank slide on every departure,
+  // `insert` included (owner requirement 2026-09-15: "an empty slide is
+  // never worth keeping") — give the lesson's opening explanation real
+  // content before leaving it via the tail-seam insert below, or it
+  // vanishes instead of becoming the first of two blocks this test needs.
+  await row.getByRole("textbox", { name: "Explanation 1" }).fill("Opening explanation");
   const tail = row.locator(".lesson-document-tail");
   // At rest the palette is `visibility: hidden` (not hit-testable); hover
   // the seam first, the way a real pointer user would, to reveal it.
   await tail.hover();
   await tail.getByRole("button", { name: "Sentence — Insert at lesson end" }).click();
   await expect(row.locator("[data-document-block]")).toHaveCount(2);
+  // Same leaveSlide rule as above: this sentence stays blank for the rest
+  // of the test (only its geometry/keyboard-reachability is under test
+  // here), so give it real content now — otherwise the *next* insertion
+  // below, which moves selection away from it, deletes it as an empty
+  // slide instead of leaving it as the second of the three blocks that
+  // insertion expects to land between.
+  const insertedTail = row.locator(".lesson-document-sentence").last();
+  await insertedTail.locator('textarea[data-field="spanish"]').first().fill("uno");
+  await insertedTail.locator('textarea[data-field="english"]').first().fill("one");
 
   const middle = row.locator(".lesson-document-insert").nth(1);
 
@@ -159,7 +174,14 @@ test("direct seam actions insert at exact boundaries without overlay", async ({ 
   expect(nextBox && paletteBox && paletteBox.y + paletteBox.height <= nextBox.y + 1).toBeTruthy();
   await page.keyboard.press("Enter");
   await expect(row.locator("[data-document-block]")).toHaveCount(3);
-  await expect(row.locator("[data-document-block]").nth(1).getByRole("region", { name: "Vocabulary table" })).toBeVisible();
+  const insertedTable = row.locator("[data-document-block]").nth(1).getByRole("region", { name: "Vocabulary table" });
+  await expect(insertedTable).toBeVisible();
+  // Same leaveSlide rule as the tail-inserted sentence above: give this
+  // table row real content before the next insertion moves selection away
+  // from it, or it's deleted as an empty slide instead of becoming the
+  // second of the four blocks the next check expects.
+  await insertedTable.locator('textarea[data-field="spanish"]').first().fill("dos");
+  await insertedTable.locator('textarea[data-field="english"]').first().fill("two");
 
   const firstSeam = row.locator(".lesson-document-insert").first();
   await firstSeam.hover();

@@ -411,25 +411,24 @@ test("hint and alternative metadata never widen the piece card, and long text wr
     ]);
 
   // Removing the second alternative collapses back to a single accepted
-  // answer, again only once committed on blur. The blur just above didn't
-  // just commit — with nowhere else in the block to receive focus, it also
-  // exited editing entirely (the sentence swaps back to its resting
-  // presentation, and its textarea stops existing), so re-enter editing
-  // before continuing to type.
-  await expect(sentence).toHaveClass(/resting/);
-  await sentence.click();
-  await expect(english).toBeVisible();
+  // answer, again only once committed on blur. Phase 1's editing-model
+  // rewrite (docs/design/lesson-builder-editing-model.md §1) replaced the
+  // old rAF+activeElement-polling blur handling — which used to force the
+  // slide back to resting on any dead-end blur — with a synchronous
+  // `relatedTarget`-based backstop that deliberately treats an unresolved
+  // blur landing back inside the same slide as internal churn (the same
+  // signal an insert/delete/move transition produces one render before its
+  // own explicit focus call lands); there's no separate signal left to
+  // tell a genuine dead end apart from that, so the slide now simply stays
+  // in editing — no need to re-enter it before continuing to type.
   await english.fill("yes");
   await english.blur();
   await expect.poll(answersOf).toEqual(["yes"]);
 
   // Long, wrapped authoring content, captured at desktop width — the
   // documented target per docs/design/lesson-builder-ux-acceptance.md
-  // ("Desktop authoring is the initial target"). Same re-entry as above:
-  // the preceding blur exited editing again.
-  await expect(sentence).toHaveClass(/resting/);
-  await sentence.click();
-  await expect(spanish).toBeVisible();
+  // ("Desktop authoring is the initial target"). Still in editing (see the
+  // note above), so no re-entry needed before continuing to type.
   await spanish.fill(
     "una oración bastante larga que debería envolverse en varias líneas dentro de la tarjeta",
   );
@@ -646,6 +645,12 @@ test("slide insertion seams are ordered Explanation/Sentence/Table, keyboard-rea
     .getByRole("textbox")
     .first();
   await explanationField.click();
+  // Give this explanation real content first — leaveSlide (editing.ts)
+  // deletes an empty slide on every departure, `insert` included (owner
+  // requirement 2026-09-15: "an empty slide is never worth keeping"), so
+  // triggering the very next insert from a still-blank explanation would
+  // delete it out from under this count instead of growing it by one.
+  await page.keyboard.type("first boundary explanation");
   const countBeforeSecondInsert = await lessonRow
     .locator("[data-document-block]")
     .count();
@@ -654,9 +659,14 @@ test("slide insertion seams are ordered Explanation/Sentence/Table, keyboard-rea
     countBeforeSecondInsert + 1,
   );
   const insertedBlock = lessonRow.locator("[data-document-block]").nth(1);
-  await expect(
-    insertedBlock.locator('textarea[data-field="spanish"]').first(),
-  ).toBeFocused();
+  const insertedSpanish = insertedBlock.locator('textarea[data-field="spanish"]').first();
+  await expect(insertedSpanish).toBeFocused();
+  // Give the new pair real content before Escaping out of it — leaveSlide
+  // deletes a blank slide on every departure, escape included (§2 of
+  // docs/design/lesson-builder-editing-model.md), so Escaping a still-blank
+  // just-inserted slide removes it outright rather than merely collapsing
+  // to its wrapper, which would defeat the point of this check.
+  await insertedSpanish.fill("uno");
   await page.keyboard.press("Escape");
   await expect(insertedBlock).toBeFocused();
   // Clean up this second insertion (E6 has no "chooser stays open,

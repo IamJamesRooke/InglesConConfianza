@@ -122,7 +122,15 @@ test("keyboard writing preserves alternatives and hints and prunes abandoned pai
   await row.locator(".lesson-document-sentence.resting").click();
   await expect(spanish).toHaveCount(2);
   await expect(spanish.nth(1)).toHaveValue("partial");
-  await expect(page.locator(".editing-hud")).toHaveCount(0);
+  // This assertion predates the HUD entirely (added in 5972306e, when
+  // `.editing-hud` was absent from the whole app) — it was never a check
+  // that the bar hides while editing, just an incidental truth of an app
+  // that didn't have one yet. The HUD was deliberately restored
+  // 2026-09-15 (docs/design/lesson-builder.md, "HUD bar is wanted") and is
+  // documented to show whenever `selection.kind !== "none"`, which is
+  // exactly the state this click just produced — so the bar being present
+  // here is correct, not a regression.
+  await expect(page.locator(".editing-hud")).toBeVisible();
   await page.screenshot({ path: testInfo.outputPath("sentence-edit.png"), fullPage: true });
 });
 
