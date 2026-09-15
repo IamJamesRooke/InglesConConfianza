@@ -16,8 +16,8 @@ const lesson = {
   moduleLessonNumber: 1,
   name: "Hello James!",
   previewText: "Hola James!",
-  answerText: "Hello James!",
   stepCount: 4,
+  concepts: [],
 };
 const modules = [
   {
@@ -25,6 +25,7 @@ const modules = [
     name: "Tu primera conversación",
     kind: "onboarding" as const,
     lessonCount: 1,
+    concepts: [],
     lessons: [lesson],
   },
   {
@@ -32,6 +33,7 @@ const modules = [
     name: "Planes de todos los días",
     kind: "course" as const,
     lessonCount: 1,
+    concepts: [],
     lessons: [{ ...lesson, id: "tomorrow", name: "Tomorrow", stepCount: 0 }],
   },
 ];
@@ -46,16 +48,15 @@ test("public course renders lesson destinations without any admin navigation", (
     html,
     /href="\/admin|Lesson Builder|Curriculum|Concepts Taught/,
   );
-  // The next lesson's row carries the "current" treatment.
-  assert.match(html, /Sigue aquí/);
+  assert.match(html, /aria-selected="true"/);
 });
 
-test("the full course path is always visible and unavailable lessons have no practice link", () => {
+test("an explicit module selection survives page load and unavailable lessons have no practice link", () => {
   const html = renderToStaticMarkup(
     createElement(LessonDashboard, { modules, initialModuleId: "plans" }),
   );
-  assert.match(html, /id="module-plans"/);
-  assert.match(html, /Pronto/);
+  assert.match(html, /aria-labelledby="module-tab-plans"/);
+  assert.match(html, /Próximamente/);
   assert.doesNotMatch(html, /href="\/practice\?lesson=tomorrow"/);
 });
 
@@ -136,9 +137,8 @@ test("the sentence practice card skips a dangling fully-blank language block", (
     }),
   );
   // Only the real block's Spanish prompt should render; the phantom blank
-  // block must not produce a second, unlabeled answer field. The answer
-  // field is a <textarea> (not <input>) so long answers can wrap.
+  // block must not produce a second, unlabeled input.
   assert.match(html, /hola/);
-  const inputCount = (html.match(/<textarea/g) ?? []).length;
+  const inputCount = (html.match(/<input/g) ?? []).length;
   assert.equal(inputCount, 1);
 });

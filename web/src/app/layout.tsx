@@ -1,5 +1,5 @@
-import type { Metadata, Viewport } from "next";
-import { Fraunces, Geist } from "next/font/google";
+import type { Metadata } from "next";
+import { Baloo_2, Geist } from "next/font/google";
 import { SiteHeader } from "@/components/site-header";
 import "./globals.css";
 // Imported here rather than @import'd from globals.css so the dev server tracks
@@ -23,40 +23,27 @@ const geist = Geist({
   variable: "--font-geist",
 });
 
-// Editorial serif for the practice "stage": the sentence on screen and the
-// lesson title. Variable font with optical-size, soft, and wonk axes so one
-// family covers both quiet body-adjacent moments and the large display type.
-const fraunces = Fraunces({
+// Warm, rounded display face for learner-facing headings and prompts.
+const baloo = Baloo_2({
   subsets: ["latin"],
-  // Home hero's second line ("Vas a poder decir…") is set in italic — the
-  // practice stage only ever needed roman weights, so italic wasn't loaded.
-  style: ["normal", "italic"],
-  axes: ["opsz", "SOFT", "WONK"],
+  weight: ["500", "600", "700", "800"],
   variable: "--font-display",
 });
 
 export const metadata: Metadata = {
   title: {
-    default: "Inglés con Confianza",
-    template: "%s · Inglés con Confianza",
+    default: "Inglés Con Confianza",
+    template: "%s | Inglés Con Confianza",
   },
   description:
     "Lecciones de inglés claras y prácticas para hispanohablantes.",
-};
-
-export const viewport: Viewport = {
-  colorScheme: "light dark",
-  themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "#2448c8" },
-    { media: "(prefers-color-scheme: dark)", color: "#16130f" },
-  ],
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="es"
-      className={`${geist.variable} ${fraunces.variable} h-full antialiased`}
+      className={`${geist.variable} ${baloo.variable} h-full antialiased`}
     >
       <body className="flex min-h-full flex-col">
         <SiteHeader />

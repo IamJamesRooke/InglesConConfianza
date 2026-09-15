@@ -12,14 +12,7 @@ import { redirect } from "next/navigation";
 import type { Viewport } from "next";
 
 export const dynamic = "force-dynamic";
-export const viewport: Viewport = {
-  interactiveWidget: "resizes-content",
-  colorScheme: "light dark",
-  themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "#2448c8" },
-    { media: "(prefers-color-scheme: dark)", color: "#16130f" },
-  ],
-};
+export const viewport: Viewport = { interactiveWidget: "resizes-content" };
 
 type PageProps = {
   searchParams: Promise<Record<string, string | string[] | undefined>>;

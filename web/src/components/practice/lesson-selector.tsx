@@ -65,14 +65,8 @@ export function LessonSelector({
   if (!lesson) return null;
   if (!hydrated)
     return (
-      <div
-        className="learner-theme lesson-session-loading"
-        role="status"
-        aria-label="Preparando tu lección"
-      >
-        <p className="sr-only">Preparando tu lección…</p>
-        <div className="loading-skel loading-stage-progress" />
-        <div className="loading-skel loading-stage-line" />
+      <div className="learner-theme lesson-loading" role="status">
+        Preparando tu lección…
       </div>
     );
   return (
@@ -254,45 +248,37 @@ function LessonSession({
   const sessionContent = (
     <section
       ref={sectionRef}
-      className="learner-theme lesson-session route-fade-in"
+      className="learner-theme lesson-session"
       role={onCloseLesson ? "dialog" : undefined}
       aria-modal={onCloseLesson ? "true" : undefined}
       aria-labelledby="practice-lesson-title"
       tabIndex={-1}
     >
       <header className="lesson-topbar">
-        <progress
-          className="lesson-top-progress"
-          aria-label="Progreso de la lección"
-          value={complete ? totalSteps : stepIndex}
-          max={totalSteps || 1}
-        />
         <button
           type="button"
-          className="learner-icon-button lesson-topbar-close"
+          className="learner-icon-button"
           onClick={close}
           aria-label="Volver a mis lecciones"
           title="Volver a mis lecciones"
         >
-          <X size={20} aria-hidden="true" />
+          <X size={21} aria-hidden="true" />
         </button>
         <div className="lesson-topbar-title">
-          <p className="learner-eyebrow">
+          <p>
             {lesson.moduleName || "Tu curso de inglés"}
             <span>
               {" "}
               · Lección {lesson.moduleLessonNumber ?? lesson.lessonNumber}
             </span>
           </p>
-          {/* The visible title is the eyebrow above; the lesson name stays
-              in the DOM only to label the session landmark for a11y. */}
-          <h1 id="practice-lesson-title" className="sr-only">
+          <h1 id="practice-lesson-title">
             {lesson.name || `Lección ${lesson.lessonNumber}`}
           </h1>
         </div>
         <span className="lesson-step-count">
           {complete ? (
-            <CheckCheck size={18} aria-label="Lección completa" />
+            <CheckCheck size={22} aria-label="Lección completa" />
           ) : (
             <>
               <strong>{stepIndex + 1}</strong>
@@ -300,13 +286,19 @@ function LessonSession({
             </>
           )}
         </span>
+        <progress
+          className="lesson-top-progress"
+          aria-label="Progreso de la lección"
+          value={complete ? totalSteps : stepIndex}
+          max={totalSteps || 1}
+        />
       </header>
 
       <div ref={contentRef} className="lesson-scroll-area">
         <div className="lesson-stage" key={complete ? "complete" : block?.id}>
           {complete ? (
             <div
-              className="lesson-celebration stage-enter"
+              className="lesson-celebration learner-enter"
               aria-live="polite"
             >
               <div className="completion-seal">
@@ -408,14 +400,12 @@ function LessonSession({
               disabled={!canAdvance}
               onClick={advance}
             >
-              <span className="learner-button-label">
-                {stepIndex === totalSteps - 1
-                  ? "Terminar lección"
-                  : block?.type === "explanation" &&
-                      lesson.blocks[stepIndex + 1]?.type === "sentence"
-                    ? "Vamos a practicar"
-                    : "Continuar"}
-              </span>
+              {stepIndex === totalSteps - 1
+                ? "Terminar lección"
+                : block?.type === "explanation" &&
+                    lesson.blocks[stepIndex + 1]?.type === "sentence"
+                  ? "Vamos a practicar"
+                  : "Continuar"}
               <ArrowRight size={18} aria-hidden="true" />
             </button>
           </div>

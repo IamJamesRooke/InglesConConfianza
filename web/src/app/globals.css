@@ -131,9 +131,6 @@
   --state-danger: #861331;
   --state-danger-soft: #fce8ec;
   --canvas-warm: #f7f7f4;
-  /* A touch warmer/lighter than --canvas-warm — the home page's editorial
-     hero ground, so it reads as one continuous sheet rather than a card. */
-  --paper: #fbfaf6;
   --surface-writing: #ffffff;
   --surface-subtle: #eef0f4;
   --ink-deep: #17213a;
@@ -195,16 +192,6 @@
      Used for the sentence-builder labels and the [[es:]]/[[en:]] highlights. */
   --lesson-hl-es: oklch(0.52 0.22 25);
   --lesson-hl-en: oklch(0.42 0.2 270);
-
-  /* Type scale. Practice's "stage" typography is built from these tokens
-     rather than one-off pixel values. */
-  --text-xs: 12px;
-  --text-sm: 14px;
-  --text-base: 17px;
-  --text-lg: 22px;
-  --text-xl: 32px;
-  --text-2xl: 48px;
-  --text-3xl: 64px;
 }
 
 .dark {
@@ -320,28 +307,6 @@
   }
   html {
     @apply font-sans;
-  }
-}
-
-/* Home <-> practice route transitions. This React/Next.js version doesn't
-   yet ship `<ViewTransition>` (react's export is undefined here — it needs
-   a canary build the App Router docs assume but this app doesn't pin), so
-   route changes get a plain CSS fade-in on mount instead: opacity only, no
-   transform, so there's no layout jump either. */
-@keyframes route-fade-in {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-.route-fade-in {
-  animation: route-fade-in 240ms ease-out both;
-}
-@media (prefers-reduced-motion: reduce) {
-  .route-fade-in {
-    animation: none;
   }
 }
 

@@ -1,7 +1,7 @@
 export default function Loading() {
   return (
     <main
-      className="learner-theme home-page"
+      className="learner-theme"
       aria-busy="true"
       aria-label="Cargando lecciones"
     >
@@ -9,15 +9,10 @@ export default function Loading() {
         <p className="sr-only" role="status">
           Preparando tus lecciones…
         </p>
-        <div className="loading-hero">
-          <div className="loading-skel loading-eyebrow" />
-          <div className="loading-skel loading-headline loading-headline-1" />
-          <div className="loading-skel loading-headline loading-headline-2" />
-          <div className="loading-skel loading-pill" />
-        </div>
-        <div className="loading-feature loading-skel" />
-        <div className="loading-row loading-skel" />
-        <div className="loading-row loading-skel" />
+        <div className="loading-line" />
+        <div className="loading-feature" />
+        <div className="loading-row" />
+        <div className="loading-row" />
       </div>
     </main>
   );

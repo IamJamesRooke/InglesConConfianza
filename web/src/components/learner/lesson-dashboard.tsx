@@ -1,17 +1,20 @@
 "use client";
 
 import {
+  ArrowDown,
   ArrowRight,
   BookOpen,
+  Check,
   CheckCheck,
-  Lock,
+  Clock3,
+  MessageCircle,
   RotateCcw,
   SkipForward,
 } from "lucide-react";
 import Link from "next/link";
-import type { CSSProperties } from "react";
-import { useEffect, useState, useSyncExternalStore } from "react";
+import { useRef, useState, useSyncExternalStore } from "react";
 
+import { ConceptPills } from "@/components/learner/concept-pills";
 import { LessonRow } from "@/components/learner/lesson-row";
 import type {
   LearnerLesson,
@@ -46,13 +49,14 @@ export function LessonDashboard({
     readProgress,
     serverProgress,
   );
+  const [selectedId, setSelectedId] = useState(initialModuleId);
   const [resetTarget, setResetTarget] = useState<{
     label: string;
     lessonIds: string[];
     scope: "lesson" | "module";
   } | null>(null);
+  const moduleButtons = useRef<Array<HTMLButtonElement | null>>([]);
   const lessons = modules.flatMap((module) => module.lessons);
-  const lessonIndex = new Map(lessons.map((lesson, index) => [lesson.id, index]));
   const available = lessons.filter((lesson) => lesson.stepCount > 0);
   const completed = available.filter(
     (lesson) => progress[lesson.id]?.completedAt,
@@ -61,22 +65,28 @@ export function LessonDashboard({
   const nextModule = modules.find((module) =>
     module.lessons.some((lesson) => lesson.id === nextLesson?.id),
   );
-  const nextModuleIndex = nextModule ? modules.indexOf(nextModule) : -1;
+  const selected =
+    modules.find((module) => module.id === selectedId) ??
+    nextModule ??
+    modules[0];
   const courseComplete = available.length > 0 && completed === available.length;
+  const moduleAvailable =
+    selected?.lessons.filter((lesson) => lesson.stepCount > 0) ?? [];
+  const moduleCompleted = moduleAvailable.filter(
+    (lesson) => progress[lesson.id]?.completedAt,
+  ).length;
+  const selectedIndex = modules.indexOf(selected);
   const hasActivity = available.some(
     (lesson) =>
-      progress[lesson.id]?.lastOpenedAt || progress[lesson.id]?.completedAt,
+      progress[lesson.id]?.lastOpenedAt ||
+      progress[lesson.id]?.completedAt,
   );
-
-  // A `?module=` link (from an "Omitir módulo" toast or a bookmark) jumps the
-  // page to that module's section instead of hiding the rest of the course —
-  // the whole path is always visible, editorial-style.
-  useEffect(() => {
-    if (!initialModuleId) return;
-    document
-      .getElementById(`module-${initialModuleId}`)
-      ?.scrollIntoView({ block: "start" });
-  }, [initialModuleId]);
+  const nextModuleIndex = nextModule ? modules.indexOf(nextModule) : -1;
+  const nextModuleReady =
+    nextModule?.lessons.filter((lesson) => lesson.stepCount > 0) ?? [];
+  const nextModuleDone = nextModuleReady.filter(
+    (lesson) => progress[lesson.id]?.completedAt,
+  ).length;
 
   function resetLesson(lesson: LearnerLesson) {
     setResetTarget({
@@ -94,71 +104,138 @@ export function LessonDashboard({
     });
   }
 
-  const eyebrow = courseComplete
-    ? null
-    : hasActivity
-      ? `Tu próxima lección · ${moduleLabel(modules, nextModuleIndex).toUpperCase()} · Lección ${nextLesson?.moduleLessonNumber}`
-      : "Empieza aquí";
-
-  const primaryLabel = courseComplete
-    ? "Repasar el curso"
-    : nextLesson && progress[nextLesson.id]?.lastOpenedAt
-      ? "Continuar"
-      : "Empezar";
+  function selectModule(index: number) {
+    setSelectedId(modules[index].id);
+    const url = new URL(window.location.href);
+    url.searchParams.set("module", modules[index].id);
+    window.history.replaceState(null, "", url);
+  }
 
   return (
-    <main
-      id="main-content"
-      tabIndex={-1}
-      className="learner-theme home-page route-fade-in"
-    >
+    <main id="main-content" tabIndex={-1} className="learner-theme course-home">
       <div className="course-container">
         {nextLesson ? (
-          <section className="home-hero learner-enter" aria-label="Tu próxima lección">
-            <p className="home-eyebrow">{eyebrow}</p>
-            {courseComplete ? (
-              <h1 className="home-hero-es">Lo lograste.</h1>
-            ) : (
-              <h1 className="home-hero-es" lang="es">
-                {nextLesson.previewText}
+          <section
+            className="course-feature learner-enter"
+            aria-label="Tu próxima lección"
+          >
+            <div className="course-feature-content">
+              <h1>
+                {hasActivity ? (
+                  <>
+                    Sigamos conversando<span aria-hidden="true">.</span>
+                  </>
+                ) : (
+                  <>
+                    Habla inglés.
+                    <br />
+                    Con confianza<span aria-hidden="true">.</span>
+                  </>
+                )}
               </h1>
-            )}
-            {courseComplete ? (
-              <p className="home-hero-sub">
-                Puedes repasar cualquier lección cuando quieras.
-              </p>
-            ) : (
-              nextLesson.answerText && (
-                <p className="home-hero-en" lang="en">
-                  {nextLesson.answerText}
+              {!hasActivity && (
+                <p className="course-promise">
+                  Aprende paso a paso y construye frases que puedes usar desde
+                  hoy.
                 </p>
-              )
-            )}
-            <div className="home-hero-actions">
-              <Link
-                href={`/practice?lesson=${encodeURIComponent(nextLesson.id)}`}
-                className="home-pill"
-              >
-                {primaryLabel}
-                <ArrowRight size={16} aria-hidden="true" />
-              </Link>
-              {!courseComplete && (
-                <span className="home-hero-duration">
-                  · {lessonMinutes(nextLesson.stepCount)} min
-                </span>
               )}
+              {nextLesson.concepts.length > 0 &&
+                !progress[nextLesson.id]?.completedAt && (
+                <div className="featured-learn">
+                  <p className="learner-eyebrow">Vas a aprender</p>
+                  <ConceptPills
+                    concepts={nextLesson.concepts}
+                    compact
+                    max={4}
+                  />
+                </div>
+              )}
+              <div className="featured-lesson">
+                <Link
+                  href={`/practice?lesson=${encodeURIComponent(nextLesson.id)}`}
+                  className="learner-button primary"
+                >
+                  {courseComplete
+                    ? "Volver a practicar"
+                    : progress[nextLesson.id]?.lastOpenedAt
+                      ? "Continuar lección"
+                      : completed
+                        ? "Empezar siguiente lección"
+                        : "Empezar mi primera lección"}
+                  <ArrowRight size={18} aria-hidden="true" />
+                </Link>
+                <p className="feature-meta">
+                  {nextModule && (
+                    <span className="feature-meta-lesson">
+                      {moduleLabel(modules, nextModuleIndex)} · Lección{" "}
+                      {nextLesson.moduleLessonNumber}
+                    </span>
+                  )}
+                  <strong lang="en">
+                    {nextLesson.name || `Lección ${nextLesson.lessonNumber}`}
+                  </strong>
+                  <span aria-hidden="true">·</span>
+                  <Clock3 size={14} aria-hidden="true" />
+                  {lessonMinutes(nextLesson.stepCount)} min
+                </p>
+              </div>
             </div>
+            {hasActivity && nextModule ? (
+              <div
+                className="course-feature-demo course-progress-panel"
+                aria-hidden="true"
+              >
+                <p className="demo-label">
+                  {moduleLabel(modules, nextModuleIndex)}
+                </p>
+                <p className="progress-panel-module">
+                  {nextModule.name || moduleLabel(modules, nextModuleIndex)}
+                </p>
+                <div className="progress-panel-bar">
+                  <span
+                    style={{
+                      width: `${
+                        nextModuleReady.length
+                          ? Math.round(
+                              (nextModuleDone / nextModuleReady.length) * 100,
+                            )
+                          : 0
+                      }%`,
+                    }}
+                  />
+                </div>
+                <p className="progress-panel-count">
+                  <strong>{nextModuleDone}</strong> de {nextModuleReady.length}{" "}
+                  lecciones
+                </p>
+              </div>
+            ) : (
+              <div className="course-feature-demo" aria-hidden="true">
+                <div className="demo-phrase">
+                  <p className="demo-label">Vas a poder decir</p>
+                  <strong lang="en">
+                    {nextLesson.name || "I can speak English."}
+                  </strong>
+                  <span lang="es">
+                    {nextLesson.previewText || "Puedo hablar inglés."}
+                  </span>
+                </div>
+              </div>
+            )}
           </section>
         ) : (
           <section className="course-empty">
             <BookOpen size={32} aria-hidden="true" />
-            <h1>Nos vemos pronto</h1>
+            <h2>Nos vemos pronto</h2>
             <p>Las próximas conversaciones ya están en camino.</p>
           </section>
         )}
 
-        {modules.length > 0 && (
-          <section className="course-journey" aria-labelledby="course-journey-title">
+        {selected && (
+          <section
+            className="course-journey"
+            aria-labelledby="course-journey-title"
+          >
             <div className="course-journey-heading">
               <div>
                 <p className="learner-eyebrow">Tu curso</p>
@@ -171,8 +248,17 @@ export function LessonDashboard({
                 </p>
               )}
             </div>
-            <div className="journey-columns">
-              <nav className="journey-toc" aria-label="Módulos del curso">
+            <div className="course-curriculum">
+              <aside className="module-navigation">
+                <div className="section-label">
+                  <h3>Módulos</h3>
+                  <span>{modules.length}</span>
+                </div>
+              <div
+                role="tablist"
+                aria-label="Módulos del curso"
+                className="module-tabs"
+              >
                 {modules.map((module, index) => {
                   const ready = module.lessons.filter(
                     (lesson) => lesson.stepCount > 0,
@@ -180,146 +266,181 @@ export function LessonDashboard({
                   const done = ready.filter(
                     (lesson) => progress[lesson.id]?.completedAt,
                   ).length;
-                  const pct = ready.length
-                    ? Math.round((done / ready.length) * 100)
-                    : 0;
-                  const locked = ready.length === 0;
+                  const isDone = ready.length > 0 && done === ready.length;
                   return (
-                    <a
+                    <button
                       key={module.id}
-                      href={`#module-${module.id}`}
-                      className={`journey-toc-item home-fade-up ${nextModule?.id === module.id ? "current" : ""} ${locked ? "locked" : ""}`}
-                      style={{ animationDelay: `${index * 40}ms` }}
+                      ref={(node) => {
+                        moduleButtons.current[index] = node;
+                      }}
+                      type="button"
+                      role="tab"
+                      id={`module-tab-${module.id}`}
+                      aria-controls="module-lessons"
+                      aria-selected={selected.id === module.id}
+                      tabIndex={selected.id === module.id ? 0 : -1}
+                      className={`module-tab ${selected.id === module.id ? "selected" : ""} ${isDone ? "complete" : ""}`}
+                      onClick={() => selectModule(index)}
+                      onKeyDown={(event) => {
+                        let target = index;
+                        if (
+                          event.key === "ArrowRight" ||
+                          event.key === "ArrowDown"
+                        )
+                          target = (index + 1) % modules.length;
+                        else if (
+                          event.key === "ArrowLeft" ||
+                          event.key === "ArrowUp"
+                        )
+                          target =
+                            (index - 1 + modules.length) % modules.length;
+                        else if (event.key === "Home") target = 0;
+                        else if (event.key === "End")
+                          target = modules.length - 1;
+                        else return;
+                        event.preventDefault();
+                        selectModule(target);
+                        moduleButtons.current[target]?.focus();
+                      }}
                     >
-                      <span className="journey-toc-label">
-                        {moduleLabel(modules, index)}
-                      </span>
-                      <strong>{module.name || moduleLabel(modules, index)}</strong>
-                      {locked ? (
-                        <span className="journey-toc-locked">
-                          <Lock size={11} aria-hidden="true" />
-                          Pronto
-                        </span>
-                      ) : (
-                        <>
-                          <span
-                            className="journey-toc-rule"
-                            style={{ "--target": `${pct}%` } as CSSProperties}
-                          >
-                            <span />
-                          </span>
-                          <span className="journey-toc-count">
-                            {done} de {ready.length}
-                          </span>
-                        </>
-                      )}
-                    </a>
-                  );
-                })}
-              </nav>
-
-              <div className="journey-lessons">
-                {modules.map((module, index) => {
-                  const moduleAvailable = module.lessons.filter(
-                    (lesson) => lesson.stepCount > 0,
-                  );
-                  const moduleCompleted = moduleAvailable.filter(
-                    (lesson) => progress[lesson.id]?.completedAt,
-                  ).length;
-                  const locked = moduleAvailable.length === 0;
-                  return (
-                    <section
-                      key={module.id}
-                      id={`module-${module.id}`}
-                      className="journey-module"
-                      aria-labelledby={`module-heading-${module.id}`}
-                    >
-                      <div className="journey-module-heading">
-                        <div>
-                          <p className="learner-eyebrow">
-                            {moduleLabel(modules, index)}
-                          </p>
-                          <h3
-                            id={`module-heading-${module.id}`}
-                            className={locked ? "locked" : ""}
-                          >
-                            {module.name || moduleLabel(modules, index)}
-                            {locked && (
-                              <span className="journey-module-locked">
-                                <Lock size={13} aria-hidden="true" />
-                                Pronto
-                              </span>
-                            )}
-                          </h3>
-                        </div>
-                        {!locked && (
-                          <div className="journey-module-actions">
-                            {moduleCompleted < moduleAvailable.length && (
-                              <button
-                                type="button"
-                                className="journey-text-link"
-                                onClick={() =>
-                                  skipLessons(
-                                    moduleAvailable.map((lesson) => lesson.id),
-                                  )
-                                }
-                              >
-                                <SkipForward size={12} aria-hidden="true" />
-                                Omitir módulo
-                              </button>
-                            )}
-                            {moduleAvailable.some(
-                              (lesson) =>
-                                progress[lesson.id]?.completedAt ||
-                                progress[lesson.id]?.lastOpenedAt,
-                            ) && (
-                              <button
-                                type="button"
-                                className="journey-text-link"
-                                onClick={() => resetModule(module)}
-                              >
-                                <RotateCcw size={12} aria-hidden="true" />
-                                Reiniciar módulo
-                              </button>
-                            )}
-                          </div>
+                      <span className="module-symbol" aria-hidden="true">
+                        {isDone ? (
+                          <Check size={20} />
+                        ) : module.kind === "onboarding" ? (
+                          <MessageCircle size={20} />
+                        ) : (
+                          String(
+                            modules
+                              .slice(0, index + 1)
+                              .filter((item) => item.kind !== "onboarding")
+                              .length,
+                          ).padStart(2, "0")
                         )}
-                      </div>
-                      {module.lessons.length > 0 ? (
-                        <ol className="lesson-path">
-                          {module.lessons.map((lesson) => (
-                            <LessonRow
-                              key={lesson.id}
-                              lesson={lesson}
-                              progress={progress[lesson.id]}
-                              isNext={lesson.id === nextLesson?.id && !courseComplete}
-                              onSkip={() => skipLesson(lesson.id)}
-                              onReset={() => resetLesson(lesson)}
-                              delayMs={(lessonIndex.get(lesson.id) ?? 0) * 40}
-                            />
-                          ))}
-                        </ol>
-                      ) : (
-                        <p className="module-empty">
-                          Las lecciones de este módulo estarán disponibles
-                          pronto.
-                        </p>
-                      )}
-                      {!locked && moduleCompleted === moduleAvailable.length && (
-                        <p className="module-finish">
-                          <CheckCheck size={19} aria-hidden="true" /> Módulo
-                          completo. Cada frase cuenta.
-                        </p>
-                      )}
-                    </section>
+                      </span>
+                      <span className="module-tab-copy">
+                        <span className="module-label">
+                          {moduleLabel(modules, index)}
+                        </span>
+                        <strong>
+                          {module.name || moduleLabel(modules, index)}
+                        </strong>
+                        <span className="module-count">
+                          {ready.length
+                            ? `${done} de ${ready.length} completas`
+                            : "Próximamente"}
+                        </span>
+                      </span>
+                      <ArrowRight
+                        className="module-arrow"
+                        size={16}
+                        aria-hidden="true"
+                      />
+                    </button>
                   );
                 })}
+                </div>
+              </aside>
+
+            <section
+              id="module-lessons"
+              role="tabpanel"
+              aria-labelledby={`module-tab-${selected.id}`}
+              tabIndex={0}
+              className="module-lessons"
+              key={selected.id}
+            >
+              <div className="module-heading">
+                <div>
+                  <p className="learner-eyebrow">
+                    {moduleLabel(modules, selectedIndex)}
+                  </p>
+                  <h2>
+                    {selected.name || moduleLabel(modules, selectedIndex)}
+                  </h2>
+                </div>
+                <div className="module-heading-actions">
+                  <span className="module-fraction">
+                    <strong>{moduleCompleted}</strong>/{moduleAvailable.length}
+                  </span>
+                  {moduleAvailable.length > 0 &&
+                    moduleCompleted < moduleAvailable.length && (
+                      <button
+                        type="button"
+                        className="progress-option"
+                        onClick={() =>
+                          skipLessons(moduleAvailable.map((lesson) => lesson.id))
+                        }
+                      >
+                        <SkipForward size={14} aria-hidden="true" />
+                        Omitir módulo
+                      </button>
+                    )}
+                  {moduleAvailable.some(
+                    (lesson) =>
+                      progress[lesson.id]?.completedAt ||
+                      progress[lesson.id]?.lastOpenedAt,
+                  ) && (
+                    <button
+                      type="button"
+                      className="progress-option"
+                      onClick={() => resetModule(selected)}
+                    >
+                      <RotateCcw size={14} aria-hidden="true" />
+                      Reiniciar módulo
+                    </button>
+                  )}
+                </div>
               </div>
+              <progress
+                className="module-progress"
+                aria-label="Progreso del módulo"
+                value={moduleCompleted}
+                max={moduleAvailable.length || 1}
+              />
+              <ol className="lesson-list">
+                {selected.lessons.map((lesson) => (
+                  <LessonRow
+                    key={lesson.id}
+                    lesson={lesson}
+                    progress={progress[lesson.id]}
+                    isNext={lesson.id === nextLesson?.id && !courseComplete}
+                    onSkip={() => skipLesson(lesson.id)}
+                    onReset={() => resetLesson(lesson)}
+                  />
+                ))}
+              </ol>
+              {selected.lessons.length === 0 && (
+                <p className="module-empty">
+                  Las lecciones de este módulo estarán disponibles pronto.
+                </p>
+              )}
+              {moduleAvailable.length > 0 &&
+                moduleCompleted === moduleAvailable.length && (
+                  <p className="module-finish">
+                    <CheckCheck size={19} aria-hidden="true" /> Módulo completo.
+                    Cada frase cuenta.
+                  </p>
+                )}
+              {selectedIndex < modules.length - 1 && (
+                <button
+                  type="button"
+                  className="next-module"
+                  onClick={() => {
+                    selectModule(selectedIndex + 1);
+                    moduleButtons.current[selectedIndex + 1]?.focus();
+                  }}
+                >
+                  Siguiente módulo
+                  <ArrowDown size={16} aria-hidden="true" />
+                </button>
+              )}
+              </section>
             </div>
           </section>
         )}
         <footer className="course-footer">
-          Inglés con Confianza · Bogotá
+          <span>Inglés con Confianza.</span>
+          <span>Una conversación a la vez.</span>
         </footer>
       </div>
       {resetTarget && (
