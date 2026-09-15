@@ -6,7 +6,7 @@ export function ExplanationStep({
   markdown: string;
 }) {
   return (
-    <div className="lesson-explanation learner-enter">
+    <div className="lesson-explanation stage-enter">
       <PracticeMarkdown markdown={markdown} />
     </div>
   );

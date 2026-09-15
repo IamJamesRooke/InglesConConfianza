@@ -255,30 +255,38 @@ function LessonSession({
       tabIndex={-1}
     >
       <header className="lesson-topbar">
+        <progress
+          className="lesson-top-progress"
+          aria-label="Progreso de la lección"
+          value={complete ? totalSteps : stepIndex}
+          max={totalSteps || 1}
+        />
         <button
           type="button"
-          className="learner-icon-button"
+          className="learner-icon-button lesson-topbar-close"
           onClick={close}
           aria-label="Volver a mis lecciones"
           title="Volver a mis lecciones"
         >
-          <X size={21} aria-hidden="true" />
+          <X size={20} aria-hidden="true" />
         </button>
         <div className="lesson-topbar-title">
-          <p>
+          <p className="learner-eyebrow">
             {lesson.moduleName || "Tu curso de inglés"}
             <span>
               {" "}
               · Lección {lesson.moduleLessonNumber ?? lesson.lessonNumber}
             </span>
           </p>
-          <h1 id="practice-lesson-title">
+          {/* The visible title is the eyebrow above; the lesson name stays
+              in the DOM only to label the session landmark for a11y. */}
+          <h1 id="practice-lesson-title" className="sr-only">
             {lesson.name || `Lección ${lesson.lessonNumber}`}
           </h1>
         </div>
         <span className="lesson-step-count">
           {complete ? (
-            <CheckCheck size={22} aria-label="Lección completa" />
+            <CheckCheck size={18} aria-label="Lección completa" />
           ) : (
             <>
               <strong>{stepIndex + 1}</strong>
@@ -286,19 +294,13 @@ function LessonSession({
             </>
           )}
         </span>
-        <progress
-          className="lesson-top-progress"
-          aria-label="Progreso de la lección"
-          value={complete ? totalSteps : stepIndex}
-          max={totalSteps || 1}
-        />
       </header>
 
       <div ref={contentRef} className="lesson-scroll-area">
         <div className="lesson-stage" key={complete ? "complete" : block?.id}>
           {complete ? (
             <div
-              className="lesson-celebration learner-enter"
+              className="lesson-celebration stage-enter"
               aria-live="polite"
             >
               <div className="completion-seal">
