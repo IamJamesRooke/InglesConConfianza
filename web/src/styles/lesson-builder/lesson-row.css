@@ -10,16 +10,22 @@
    the old file's "compact document" + theme-slice + "6: compact rail"
    layers, verified against a pixel diff. */
 
+/* Geometry rule (Phase 3a, reapplied here 2026-09-15): separators draw only
+   BETWEEN rows via border-top on every row but the first — never a
+   border-bottom, so there is never a line to zero out on the last row.
+   (The insert-a-lesson seam between rows is a 1px, opacity:0-at-rest strip
+   with no border of its own, so it never draws a visible extra divider.)
+   The first row paints no border-top of its own either, so it never
+   overlaps the module header's own rounded top join above it. */
 .lesson-library-list {
   border-top: 0;
 }
 .lesson-library-row {
   position: relative;
   display: block;
-  border-bottom: 1px solid var(--border);
 }
-.lesson-library-row:last-child {
-  border-bottom: 0;
+.lesson-library-row:not(:first-of-type) {
+  border-top: 1px solid var(--border);
 }
 .lesson-library-row.dragging {
   opacity: 0.45;
@@ -101,6 +107,16 @@
 }
 .lesson-library-row:focus-within > .lesson-library-row-head {
   background: color-mix(in oklch, var(--primary) 8%, var(--surface-writing));
+}
+/* Corner fix, same technique as the existing .lesson-document one below
+   lesson-library.css's .lesson-library-module (14px radius): a *closed*
+   last row's own flush background is this head, and it sat square across
+   the card's rounded bottom corners. `:last-child` on the head itself
+   (true only when no LessonDocument follows it, i.e. the row is closed)
+   keeps this inert whenever the row is open — the already-fixed document
+   owns the bottom edge then instead. */
+.lesson-library-row:last-child > .lesson-library-row-head:last-child {
+  border-radius: 0 0 14px 14px;
 }
 
 .lesson-library-title-input {

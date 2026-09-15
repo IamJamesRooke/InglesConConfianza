@@ -1,6 +1,6 @@
 "use client";
 
-import { ChevronDown, ChevronRight, Play, Plus } from "lucide-react";
+import { ChevronDown, ChevronRight, Code, Play, Plus } from "lucide-react";
 import { memo, useEffect, useRef, type DragEvent } from "react";
 
 import {
@@ -36,7 +36,6 @@ type Props = {
     usePointer?: boolean,
   ) => void;
   onStartLessonAt: (moduleId: string, insertionIndex?: number) => void;
-  onDuplicateStructure: (lessonId: string) => void;
   onRequestDeleteConfirm: (key: string) => void;
   onCancelDeleteConfirm: () => void;
 };
@@ -59,7 +58,6 @@ function LessonRowImpl({
   onDragEnd,
   onDrop,
   onStartLessonAt,
-  onDuplicateStructure,
   onRequestDeleteConfirm,
   onCancelDeleteConfirm,
 }: Props) {
@@ -179,11 +177,18 @@ function LessonRowImpl({
               >
                 <Play size={14} aria-hidden="true" />
               </button>
+              <button
+                type="button"
+                onClick={() => editing.setScriptView(lesson.id)}
+                aria-label="Edit as script"
+                title="Edit as script (Ctrl Alt T)"
+              >
+                <Code size={14} aria-hidden="true" />
+              </button>
               <LessonHeaderActions
                 lessonId={lesson.id}
                 lessonName={lesson.name?.trim() || "Untitled lesson"}
                 onDuplicate={() => builder.duplicateLesson(lesson.id)}
-                onDuplicateStructure={() => onDuplicateStructure(lesson.id)}
                 onRequestDelete={() => onRequestDeleteConfirm(lessonDeleteKey)}
               />
             </span>

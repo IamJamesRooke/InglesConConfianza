@@ -5,7 +5,6 @@ import * as m from "../../src/lib/lesson-builder/mutations";
 import { lessonsReducer } from "../../src/lib/lesson-builder/reducer";
 import type {
   Lesson,
-  LessonModule,
   SentenceBlock,
 } from "../../src/lib/lesson-builder/types";
 
@@ -83,116 +82,6 @@ test("duplicateLesson inserts a deep copy after its source", () => {
     copiedBlock.languageBlocks[0].id,
     originalBlock.languageBlocks[0].id,
   );
-});
-
-test("duplicateLessonStructure preserves slide-type sequence but empties every slide", () => {
-  const lessons: Lesson[] = [
-    {
-      id: "lesson_a",
-      name: "A useful lesson",
-      concepts: [{ id: "lc1", conceptId: "concept_a", label: "concept" }],
-      blocks: [
-        { id: "e1", type: "explanation", contentMarkdown: "Some **notes**." },
-        sentenceBlock({
-          id: "s1",
-          promptText: "Fill in the blank",
-          languageBlocks: [
-            {
-              id: "l1",
-              spanish: "hola",
-              callout: "a hint",
-              acceptedAnswers: ["hello", "hi"],
-              given: true,
-            },
-            {
-              id: "l2",
-              spanish: "adios",
-              callout: null,
-              acceptedAnswers: ["bye"],
-            },
-          ],
-        }),
-        sentenceBlock({
-          id: "t1",
-          layout: "vocabulary_table",
-          languageBlocks: [
-            { id: "l3", spanish: "gato", callout: null, acceptedAnswers: ["cat"] },
-          ],
-        }),
-      ],
-    },
-    { id: "lesson_b", name: "B", concepts: [], blocks: [] },
-  ];
-  const modules: LessonModule[] = [
-    { id: "mod_1", name: "Module 1", lessonIds: ["lesson_a", "lesson_b"] },
-  ];
-
-  const result = m.duplicateLessonStructure(lessons, modules, "lesson_a");
-
-  // New lesson lands right after its source, both in lessons and modules.
-  assert.deepEqual(
-    result.lessons.map((lesson) => lesson.id),
-    ["lesson_a", result.newLessonId, "lesson_b"],
-  );
-  assert.deepEqual(result.modules[0].lessonIds, [
-    "lesson_a",
-    result.newLessonId,
-    "lesson_b",
-  ]);
-
-  const skeleton = result.lessons[1];
-  assert.equal(skeleton.name, null);
-  assert.deepEqual(skeleton.concepts, []);
-
-  // Same sequence of slide types, same vocabulary-table layout, fresh ids.
-  assert.deepEqual(
-    skeleton.blocks.map((block) =>
-      block.type === "sentence" ? block.layout ?? "sentence" : "explanation",
-    ),
-    ["explanation", "sentence", "vocabulary_table"],
-  );
-  const originalIds = lessons[0].blocks.map((block) => block.id);
-  skeleton.blocks.forEach((block, index) => {
-    assert.notEqual(block.id, originalIds[index]);
-  });
-
-  const explanation = skeleton.blocks[0];
-  assert.equal(explanation.type, "explanation");
-  if (explanation.type === "explanation") {
-    assert.equal(explanation.contentMarkdown, "");
-  }
-
-  const sentence = skeleton.blocks[1] as SentenceBlock;
-  assert.equal(sentence.promptText, "");
-  assert.equal(sentence.languageBlocks.length, 1);
-  assert.equal(sentence.languageBlocks[0].spanish, "");
-  assert.equal(sentence.languageBlocks[0].callout, null);
-  assert.deepEqual(sentence.languageBlocks[0].acceptedAnswers, [""]);
-  assert.equal(sentence.languageBlocks[0].given, undefined);
-  assert.notEqual(
-    sentence.languageBlocks[0].id,
-    (lessons[0].blocks[1] as SentenceBlock).languageBlocks[0].id,
-  );
-
-  const table = skeleton.blocks[2] as SentenceBlock;
-  assert.equal(table.layout, "vocabulary_table");
-  assert.equal(table.languageBlocks.length, 1);
-  assert.equal(table.languageBlocks[0].spanish, "");
-
-  // Pure: never mutates the inputs.
-  assert.equal(lessons[0].blocks.length, 3);
-  assert.equal(modules[0].lessonIds.length, 2);
-});
-
-test("duplicateLessonStructure is a no-op when the source lesson doesn't exist", () => {
-  const lessons = baseLessons();
-  const modules: LessonModule[] = [
-    { id: "mod_1", name: null, lessonIds: ["lesson_a", "lesson_b"] },
-  ];
-  const result = m.duplicateLessonStructure(lessons, modules, "missing");
-  assert.equal(result.lessons, lessons);
-  assert.equal(result.modules, modules);
-  assert.ok(result.newLessonId);
 });
 
 test("moveLesson reorders with before/after and adjusts for removal", () => {

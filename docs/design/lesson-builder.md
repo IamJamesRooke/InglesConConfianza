@@ -263,8 +263,10 @@ add), and `Ctrl Alt Shift L` (page-level new lesson) were retired in the
 
 ### Script mode
 
-`Ctrl Alt T` (any field/block/title in a lesson) or the quiet "Script ⌥"
-button at the top of the open lesson toggles a monospace `<textarea>`
+`Ctrl Alt T` (any field/block/title in a lesson) or the `</>` icon in the
+lesson row header's icon cluster (next to Preview/Duplicate/Delete; moved
+there 2026-09-15, was previously in the document body) toggles a monospace
+`<textarea>`
 showing the whole lesson as plain text — the grammar is
 `docs/design/lesson-script-grammar.md`, implemented in
 `lib/lesson-builder/script.ts` (`parseScript`/`printScript`). An empty
@@ -566,20 +568,13 @@ without a fresh, explicit ask:
   own grey.
 - **Desktop is the authoring target.** Narrow/mobile authoring is
   explicitly out of scope for now (see Known gaps).
-- **"New lesson like this one" (E7) skeletons are legitimately-empty
-  placeholders, not a special "template" mode.** `duplicateLessonStructure`
-  produces a lesson whose slides are genuinely empty (`contentMarkdown: ""`,
-  one blank pair), same as any slide a teacher inserts and hasn't typed into
-  yet — there is no `templateFresh`/protected flag on the lesson or its
-  slides. `leaveSlide`'s empty-slide deletion (§3) only runs when a slide is
-  *entered and then left* still empty; a slide the teacher never enters at
-  all is never evaluated, so it survives indefinitely. Verified directly:
-  entering the new lesson's title and pressing Enter opens slide 1 (the
-  first explanation) and focuses it; typing into it and finishing
-  (`Ctrl Alt D`) keeps that content, while the sentence/table placeholders
-  after it — never entered — are untouched on save. The rule in one line:
+- **"New lesson like this one" (E7, "Duplicate structure") was removed
+  2026-09-15: the owner found no use for it.** The action, its mutation,
+  its header icon, and its tests are gone; "Duplicate lesson" (full copy)
+  is unaffected. The rule below about placeholder slides is retained for
+  general slide-lifecycle context. The rule in one line:
   **an untouched placeholder you skip stays; one you enter and leave empty
-  goes.** Covered by `tests/ux/duplicate-structure.spec.ts`.
+  goes.**
 
 ## 7. Verification protocol
 
@@ -682,5 +677,5 @@ statically or spin up their own isolated server against a throwaway file.
 | E5a | Auto-Covers: suggest "Covers" chips from a lesson's own pairs (`extractLessonPairTerms`/`matchPairTermsToConcepts` in `concept-suggestions.ts`, `POST /api/admin/curriculum/concepts/suggest`, dashed `.is-pair-suggestion` pills in `LessonConceptsField`, `Ctrl+Enter` accepts all, session-only dismissal). | Sonnet | done |
 | E3/E5b | Practice pairs proposed from the explanation (`proposePairsFromMarkdown`/`proposedPairsForBlock`, `pair-proposals.ts`) — a sentence/table slide inserted right after an explanation with adjacent `[[es:X]]`/`[[en:Y]]` marks is pre-filled, focused on the first pair's English field, via all three insertion paths (`Ctrl+Alt+Enter`, its type-cycle, the mouse chooser). Pair-field autocomplete (`PairLanguageField`/`usePairFieldAutocomplete`, `pair-field-autocomplete.tsx`): typing ≥2 chars in a Spanish/English pair field offers up to 5 curriculum completions after a 250ms pause, `Tab`/`Enter` fills both fields (when the other was empty) and moves focus to the other field, `Escape` closes the popover only. Reuses the Covers field's `.concept-typeahead-*` CSS. | Sonnet | done |
 | E3b/E8 | Chain building (`extendLastSentence`, `Ctrl+Alt+Shift+Enter`, the seam palette's "Extend" choice) and "given" pieces (`LanguageBlock.given?`, `Ctrl+Alt+G`, resting dotted-underline treatment, learner static rendering excluded from progression/completion). Found and fixed live: `lesson-file.ts`'s `normalizeLessonForFile` (every GET read) rebuilt each language block field-by-field and silently dropped `given` — a "given" pair round-tripped fine on disk but reverted to a normal tested blank on reload. Script syntax (`> +`, `> =`) stays open per `lesson-script-grammar.md`. | Sonnet | done |
-| E7 | "New lesson like this one": a second header icon, `LessonHeaderActions`' `LayoutTemplate` button (`aria-label="Duplicate structure"`), next to "Duplicate lesson". `duplicateLessonStructure` (`mutations.ts`) inserts a new lesson right after the source — same module bookkeeping as `duplicateLesson` — with the same sequence of slide *types* (a vocabulary table keeps `layout`) but every slide emptied: explanations to `""`, sentence/table slides down to one blank pair (`emptyLanguageBlock`), title reset to `null`. Wired as one `LessonBuilderActions.duplicateLessonStructure(lessonId): string` action (`page.tsx` computes the whole `{lessons, modules, newLessonId}` result from the pure mutation up front, then applies it via the existing `SET_LESSONS`/`updateModules` — no new reducer action, so this shipped without touching `reducer.ts`'s action union). `lesson-library.tsx`'s `duplicateStructure` opens the new lesson and focuses its title, mirroring `startLesson`. See §6 for why the empty skeleton survives `leaveSlide`. | Sonnet | done |
-| E4 | Script mode: `parseScript`/`printScript` (`lib/lesson-builder/script.ts`) over the block model per `lesson-script-grammar.md`, property-tested (500 generated lessons + the owner's two real lessons, ids ignored). `Ctrl+Alt+T` (new `lesson`-scope keymap entry) and a quiet "Script ⌥" button (`lesson-document.tsx`) toggle a per-lesson `<textarea>` (`lesson-script-view.tsx`, `editing.ts`'s new `scriptViewLessonId`/`setScriptView`). Leaving the view parses; success dispatches the new `REPLACE_LESSON_BLOCKS` reducer action (one undoable step, since it isn't in `history.ts`'s coalescing set) and closes; errors show inline with line numbers and the view stays open. An empty lesson's tail gains a third quiet "Paste a script…" action that opens the view blank. Does **not** auto-mark explanation text on parse (E1 stays editor-only) — see the note at the top of `script.ts`. | Sonnet | done |
+| E7 | "New lesson like this one" ("Duplicate structure") — removed 2026-09-15: owner found no use for it. `duplicateLessonStructure` (`mutations.ts`), its `LessonHeaderActions` icon, wiring, and tests (incl. `tests/ux/duplicate-structure.spec.ts`) were deleted outright. "Duplicate lesson" (full copy) is unaffected. | Sonnet | removed |
+| E4 | Script mode: `parseScript`/`printScript` (`lib/lesson-builder/script.ts`) over the block model per `lesson-script-grammar.md`, property-tested (500 generated lessons + the owner's two real lessons, ids ignored). `Ctrl+Alt+T` (new `lesson`-scope keymap entry) and a `</>` icon in the lesson row header's icon cluster (`lesson-library-row.tsx`, moved there 2026-09-15 from `lesson-document.tsx`) toggle a per-lesson `<textarea>` (`lesson-script-view.tsx`, `editing.ts`'s new `scriptViewLessonId`/`setScriptView`). Leaving the view parses; success dispatches the new `REPLACE_LESSON_BLOCKS` reducer action (one undoable step, since it isn't in `history.ts`'s coalescing set) and closes; errors show inline with line numbers and the view stays open. An empty lesson's tail gains a third quiet "Paste a script…" action that opens the view blank. Does **not** auto-mark explanation text on parse (E1 stays editor-only) — see the note at the top of `script.ts`. | Sonnet | done |

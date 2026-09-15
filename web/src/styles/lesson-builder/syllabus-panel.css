@@ -1,205 +1,165 @@
-/* Owner: syllabus-panel.tsx — the module header's collapsed Syllabus panel
-   (main/review tabs, also-taught/reviewed derived lists, progress bar,
-   review suggestions, "Copy module brief"). Blue theme, no redesign. */
-.syllabus-panel {
-  margin: 8px 0 4px;
-  border: 1px solid var(--border);
-  border-radius: 10px;
-  background: var(--card);
+/* Owner: syllabus-panel.tsx — the module's Syllabus card (own card above
+   the module's lesson-list card), its collapsed header + progress bar, the
+   two wrapped Main/Review chip lists, the Also-taught/Reviewed derived
+   lines, and "Copy as text". Blue theme, no redesign. */
+.syllabus-card {
+  border: 1px solid color-mix(in oklch, var(--primary) 30%, var(--border));
+  border-radius: 14px;
+  background: var(--surface-writing);
+  box-shadow: 0 1px 3px color-mix(in oklch, var(--foreground) 8%, transparent);
 }
 
-.syllabus-panel-toggle {
+.syllabus-card-header {
   display: flex;
   align-items: center;
   gap: 6px;
   width: 100%;
   padding: 8px 12px;
+  border-radius: 14px 14px 0 0;
+  background: color-mix(in oklch, var(--primary) 8%, transparent);
   color: var(--foreground);
   text-align: left;
 }
 
-.syllabus-panel-title {
+.syllabus-card-title {
   font-size: 12px;
   font-weight: 700;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  color: var(--muted-foreground);
+  color: var(--primary);
 }
 
-.syllabus-panel-summary {
+.syllabus-card-summary {
   margin-left: 4px;
   font-size: 12px;
   color: var(--muted-foreground);
 }
 
-.syllabus-panel-warning-count {
+.syllabus-card-warning-count {
   color: var(--destructive);
   font-weight: 600;
 }
 
-.syllabus-panel-body {
-  padding: 0 12px 12px;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.syllabus-panel-progress {
-  height: 4px;
-  border-radius: 999px;
+.syllabus-card-progress {
+  height: 3px;
   background: var(--muted);
   overflow: hidden;
 }
-.syllabus-panel-progress-fill {
+.syllabus-card-progress-fill {
   height: 100%;
-  border-radius: 999px;
   background: var(--primary);
   transition: width 0.2s ease;
 }
 
-.syllabus-panel-tabs {
-  display: flex;
-  gap: 4px;
-}
-.syllabus-panel-tab {
-  padding: 4px 10px;
-  border-radius: 999px;
-  font-size: 12px;
-  font-weight: 600;
-  color: var(--muted-foreground);
-  background: transparent;
-}
-.syllabus-panel-tab.is-active {
-  background: var(--primary);
-  color: var(--primary-foreground);
-}
-
-.syllabus-panel-order {
+.syllabus-card-body {
   display: flex;
   flex-direction: column;
-  gap: 2px;
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-.syllabus-panel-order li {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 8px;
-  padding: 2px 4px;
-  font-size: 12px;
-  color: var(--foreground);
-}
-.syllabus-panel-order-label {
-  min-width: 0;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-.syllabus-panel-order-controls {
-  display: flex;
-  gap: 2px;
-  flex-shrink: 0;
-}
-.syllabus-panel-order-controls button {
-  display: grid;
-  place-items: center;
-  width: 18px;
-  height: 18px;
-  border-radius: 4px;
-  color: var(--muted-foreground);
-}
-.syllabus-panel-order-controls button:not(:disabled):hover {
-  background: var(--muted);
-  color: var(--foreground);
-}
-.syllabus-panel-order-controls button:disabled {
-  opacity: 0.35;
+  gap: 10px;
+  padding: 10px 12px 12px;
 }
 
-.syllabus-panel-suggestions {
+.syllabus-group {
   display: flex;
-  flex-wrap: wrap;
-  gap: 6px;
+  flex-direction: column;
+  gap: 4px;
 }
-.syllabus-panel-suggestion {
-  padding: 3px 9px;
-  border: 1px dashed var(--border);
-  border-radius: 999px;
-  font-size: 12px;
-  color: var(--muted-foreground);
-}
-.syllabus-panel-suggestion:hover {
-  border-color: var(--primary);
-  color: var(--primary);
-}
-
-.syllabus-panel-empty {
-  margin: 0;
-  font-size: 12px;
-  color: var(--muted-foreground);
-}
-
-.syllabus-panel-derived {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 12px;
-}
-.syllabus-panel-derived-column h4 {
-  margin: 0 0 4px;
+.syllabus-group-eyebrow {
   font-size: 11px;
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--muted-foreground);
 }
-.syllabus-panel-derived-column ul {
-  margin: 0;
-  padding: 0;
-  list-style: none;
+
+/* Wrapped pill row — ~16 items reads as roughly 3 wrapped rows, not 16
+   stacked ones. */
+.syllabus-chip-row {
   display: flex;
-  flex-direction: column;
-  gap: 2px;
-}
-.syllabus-panel-derived-column li {
-  display: flex;
+  flex-wrap: wrap;
   align-items: center;
-  justify-content: space-between;
   gap: 6px;
-  font-size: 12px;
-  color: var(--foreground);
-}
-
-.syllabus-panel-promote {
-  padding: 2px 7px;
-  border-radius: 999px;
-  border: 1px solid var(--border);
-  font-size: 11px;
-  color: var(--muted-foreground);
-  flex-shrink: 0;
-}
-.syllabus-panel-promote:hover {
-  border-color: var(--primary);
-  color: var(--primary);
-}
-
-.syllabus-panel-brief {
-  align-self: flex-start;
-  padding: 5px 11px;
-  border: 1px solid var(--border);
+  min-height: 32px;
+  padding: 2px;
   border-radius: 8px;
-  font-size: 12px;
-  font-weight: 600;
-  color: var(--foreground);
 }
-.syllabus-panel-brief:hover {
+
+.syllabus-chip {
+  cursor: grab;
+}
+/* Also-taught promote chips are real <button> elements (a real interactive
+   element, not a span+role="button" stand-in) — reset the couple of
+   button-only UA defaults .lesson-concept-chip's own rules don't reach. */
+button.syllabus-chip {
+  font: inherit;
+  cursor: pointer;
+}
+.syllabus-chip.dragging {
+  opacity: 0.4;
+}
+/* Drop indicator: a vertical rule on the side the dragged chip would land,
+   the wrapped-row equivalent of the document's horizontal drop line. */
+.syllabus-chip.drop-before {
+  box-shadow: inset 2px 0 0 0 var(--primary);
+}
+.syllabus-chip.drop-after {
+  box-shadow: inset -2px 0 0 0 var(--primary);
+}
+.syllabus-chip:focus-visible {
+  outline: 2px solid var(--ring);
+  outline-offset: 1px;
+}
+
+.syllabus-chip.is-proposed {
+  border-style: dashed;
+  color: var(--muted-foreground);
+  background: transparent;
+  cursor: pointer;
+}
+.syllabus-chip.is-proposed:hover {
   border-color: var(--primary);
   color: var(--primary);
 }
 
-@media (max-width: 640px) {
-  .syllabus-panel-derived {
-    grid-template-columns: 1fr;
-  }
+.syllabus-chip-row .lesson-concepts-row {
+  display: contents;
+}
+
+.syllabus-panel-empty {
+  font-size: 12px;
+  color: var(--muted-foreground);
+}
+
+/* Also taught / Reviewed: one muted eyebrow + inline chips per line, not
+   separate boxed columns. */
+.syllabus-derived-line {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+}
+.syllabus-derived-eyebrow {
+  flex-shrink: 0;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted-foreground);
+}
+
+/* "Copy as text": a small muted text link at the panel's bottom-right, not
+   a boxed button (owner feedback 2026-09-15 — "Copy module brief" read as
+   unclear/button-like). */
+.syllabus-panel-copy-link {
+  align-self: flex-end;
+  padding: 0;
+  border: none;
+  background: none;
+  font-size: 12px;
+  color: var(--muted-foreground);
+  text-decoration: underline;
+  text-decoration-color: transparent;
+}
+.syllabus-panel-copy-link:hover {
+  color: var(--primary);
+  text-decoration-color: currentColor;
 }

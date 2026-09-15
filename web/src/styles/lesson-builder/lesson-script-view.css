@@ -1,23 +1,6 @@
 /* Owner: lesson-script-view.tsx — E4 script mode: the per-lesson plain-text
    drafting surface. See docs/design/lesson-script-grammar.md. */
 
-.lesson-document-script-toggle {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-width: 24px;
-  min-height: 24px;
-  color: var(--muted-foreground);
-  background: none;
-  border: none;
-  border-radius: 6px;
-  padding: 0;
-  cursor: pointer;
-}
-.lesson-document-script-toggle:hover {
-  color: var(--foreground);
-}
-
 .lesson-document-script-paste {
   color: var(--muted-foreground);
   font-size: 12px;

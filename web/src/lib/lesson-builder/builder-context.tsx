@@ -31,10 +31,6 @@ export type LessonBuilderActions = {
   newLesson: (moduleId: string, insertionIndex?: number) => string;
   previewLesson: (lessonId: string) => void;
   duplicateLesson: (lessonId: string) => void;
-  // E7 "New lesson like this one": a fresh lesson right after `lessonId`
-  // with the same slide-type sequence, every slide emptied. Returns the
-  // new lesson's id so the caller can open and focus it.
-  duplicateLessonStructure: (lessonId: string) => string;
   deleteLesson: (lessonId: string) => void;
   renameLesson: (lessonId: string, name: string) => void;
   addLessonConcept: (lessonId: string, concept: LessonConcept) => void;

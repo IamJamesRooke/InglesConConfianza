@@ -432,6 +432,19 @@ export function removeReviewItem(syllabus: ModuleSyllabus, itemId: string): Modu
   return { ...syllabus, review: syllabus.review.filter((item) => item.id !== itemId) };
 }
 
+// The review plan is stored as a set (no dedup or priority meaning attaches
+// to its order), but the panel renders it as a numbered list like Main for
+// visual consistency, so the owner can drag rows for their own reading
+// order without that changing anything else derived from `review`.
+export function reorderReviewItems(
+  syllabus: ModuleSyllabus,
+  draggedId: string,
+  targetId: string,
+  position: "before" | "after",
+): ModuleSyllabus {
+  return { ...syllabus, review: reorderList(syllabus.review, draggedId, targetId, position) };
+}
+
 /** Also taught → Main, one click: adds to main; if it was on the review
  * plan too (shouldn't normally happen — dedup guards against it), drops it
  * from review so the concept isn't listed twice. */

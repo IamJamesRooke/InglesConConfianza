@@ -4,7 +4,6 @@ import type {
   Lesson,
   LessonBlock,
   LessonConcept,
-  LessonModule,
   SentenceBlock,
 } from "@/lib/lesson-builder/types";
 import { createId } from "@/lib/lesson-builder/utils";
@@ -128,62 +127,6 @@ export function duplicateLesson(
   };
 
   return lessons.toSpliced(sourceIndex + 1, 0, duplicate);
-}
-
-// E7 "New lesson like this one": a fresh lesson right after `lessonId` with
-// the same sequence of slide *types* (and a vocabulary table's `layout`),
-// every slide emptied — explanations to "", sentence/table slides down to
-// one blank pair each. Title resets to null (renders as "Untitled lesson"
-// via the usual placeholder), concepts/instruction/hints/given all clear.
-// Mirrors `duplicateLesson`'s module bookkeeping (insert the new id right
-// after the source in whichever module contains it) since the two actions
-// otherwise diverge only in what each slide carries.
-export function duplicateLessonStructure(
-  lessons: Lesson[],
-  modules: LessonModule[],
-  lessonId: string,
-): { lessons: Lesson[]; modules: LessonModule[]; newLessonId: string } {
-  const newLessonId = createId("lesson");
-  const sourceIndex = lessons.findIndex((lesson) => lesson.id === lessonId);
-  if (sourceIndex === -1) {
-    return { lessons, modules, newLessonId };
-  }
-
-  const source = lessons[sourceIndex];
-  const skeleton: Lesson = {
-    id: newLessonId,
-    name: null,
-    concepts: [],
-    blocks: source.blocks.map((block): LessonBlock =>
-      block.type === "explanation"
-        ? { id: createId("block"), type: "explanation", contentMarkdown: "" }
-        : {
-            id: createId("block"),
-            type: "sentence",
-            ...(block.layout === "vocabulary_table"
-              ? { layout: block.layout }
-              : {}),
-            promptLabel: "",
-            promptText: "",
-            helperText: "",
-            answerFeedback: null,
-            languageBlocks: [emptyLanguageBlock(createId("lang"))],
-          },
-    ),
-  };
-
-  const nextLessons = lessons.toSpliced(sourceIndex + 1, 0, skeleton);
-  const nextModules = modules.map((module) => {
-    const index = module.lessonIds.indexOf(lessonId);
-    return index < 0
-      ? module
-      : {
-          ...module,
-          lessonIds: module.lessonIds.toSpliced(index + 1, 0, newLessonId),
-        };
-  });
-
-  return { lessons: nextLessons, modules: nextModules, newLessonId };
 }
 
 export function addLessonConcept(

@@ -64,10 +64,6 @@ function fakeActions(overrides: Partial<LessonBuilderActions> = {}): LessonBuild
     newLesson: record("newLesson", () => "new-lesson"),
     previewLesson: record("previewLesson"),
     duplicateLesson: record("duplicateLesson"),
-    duplicateLessonStructure: record(
-      "duplicateLessonStructure",
-      () => "new-lesson-structure",
-    ),
     deleteLesson: record("deleteLesson"),
     renameLesson: record("renameLesson"),
     addLessonConcept: record("addLessonConcept"),

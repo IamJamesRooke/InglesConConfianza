@@ -85,22 +85,36 @@ Inputs: `modules` (ordered), `lessons` (ordered per `lessonIds`), a concept look
 
 ## UI (`/admin/lesson-builder`, course binder)
 
-1. Module header gets a collapsed **Syllabus** panel: two authored tabs (**Main teaching
-   points**, **Review**) using the existing concept picker (search, suggestions, Alt
-   shortcuts per `keymap.ts`), and two read-only lists (**Also taught**, **Reviewed**).
-   Summary line always visible: `Main 5/12 · Review 3/6 · Also taught 4 · ⚠ 2`, with the
-   thin progress bar used on `/admin/curriculum`.
-2. Chips: green + lesson name on hover when covered; grey when not; red "missing".
-   One-click **promote** from Also taught → Main.
-3. Review tab opens with the algorithm's top 10 as suggestions (dimmed, "+" to accept);
-   Module 1 says "Nothing to review yet".
+1. **Syllabus is its own card, directly above the module's lesson-list card** (owner
+   revision 2026-09-15, third pass — an earlier chip-cloud-plus-numbered-list version,
+   then a numbered-row-per-item version, were both rejected). Small header (title +
+   summary line `Main 5/12 · Review 3/6 · Also taught 4 · ⚠ 2`) with a thin progress bar
+   always visible underneath; a chevron expands/collapses, remembered per module in
+   `localStorage`. Expanded body: **two wrapped pill lists, no tabs, no numbered rows** —
+   an eyebrow label (`MAIN TEACHING POINTS`, `REVIEW`) over a flex-wrap row of chips in
+   scaffold order, the concept-picker's search-and-add typeahead as each row's last item.
+   Chips reuse `.lesson-concept-chip` (English primary, Spanish in the tooltip). Dragging
+   a chip reorders it within its list or moves it to the other list — Main→Review demotes,
+   Review→Main promotes (works for proposed and accepted review items alike); `Ctrl Alt
+   ←/→` reorders the focused chip and `Ctrl Alt ↑/↓` moves it to the other list, handled
+   locally on the chip element rather than the global `keymap.ts` dispatcher (module
+   `syllabus` state lives outside `LessonBuilderActions`/`lessons`, the dispatcher's only
+   inputs). `×` on hover/focus removes a chip; 16 items reads as roughly 3 wrapped rows.
+2. Chips: green when covered by a lesson in this module; grey/outline when not yet; red
+   "missing" when the concept is Trash or absent. The **Review** list mixes the owner's
+   accepted items (solid chips, from `syllabus.review`) with the algorithm's proposals
+   (dashed, leading "+", click/Enter to accept, "×" to dismiss for the session) in the same
+   wrapped row. One-click **promote** from Also taught → Main (click the Also-taught chip).
+3. Module 1's Review list shows no proposals ("Nothing to review yet" if none apply).
 4. In a lesson's Covers picker, suggestions that are main/review items of this module
    and not yet covered carry a small marker ("in syllabus"). Words outside the known set
    show the soft "not introduced yet" dot — informational only.
-5. **AI brief**: a "Copy module brief" action produces the text a drafter needs — main
-   points in order, review plan, known set at the module's start, the naturalness policy
-   ("prefer the known set; if a sentence needs an outside word, use it and mark it as a
-   context hint"). Same function feeds a future auto-draft call; keep it pure.
+5. **AI brief**: a small muted "Copy as text" link at the panel's bottom-right (renamed
+   from "Copy module brief" — owner found the button unclear) produces the text a drafter
+   needs — main points in order, review plan, known set at the module's start, the
+   naturalness policy ("prefer the known set; if a sentence needs an outside word, use it
+   and mark it as a context hint"). Same function feeds a future auto-draft call; keep it
+   pure.
 6. **Backup**: Export (download `lessons.json` as a dated file) and Import (validate,
    show a diff summary — modules/lessons added/removed/changed — then replace). Admin only.
 7. `/admin/curriculum`: replace the level filter's meaning with **used in a module /

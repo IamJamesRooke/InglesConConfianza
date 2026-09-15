@@ -102,7 +102,6 @@ const stubBuilderActions: LessonBuilderActions = {
   newLesson: () => "",
   previewLesson: noop,
   duplicateLesson: noop,
-  duplicateLessonStructure: noopPiece,
   deleteLesson: noop,
   renameLesson: noop,
   addLessonConcept: noop,

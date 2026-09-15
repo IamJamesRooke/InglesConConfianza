@@ -321,14 +321,12 @@ leave the slide (no junk pair — the Phase-1 `leaveSlide` prunes). `Ctrl Alt En
 inserts the *predicted* type immediately (explanation → sentence → explanation…);
 `Ctrl Alt Enter` twice cycles the type. The chooser remains for the mouse.
 
-### E7. Templates and reuse — DONE 2026-09-15
-"New lesson like this one": duplicate the structure (explanation, sentence, table…)
-with empty content. Most lessons in this method share one skeleton.
-
-`duplicateLessonStructure` (`mutations.ts`) + a second `LessonHeaderActions` icon
-(`LayoutTemplate`, `aria-label="Duplicate structure"`). See `lesson-builder.md` §6
-and §9 (E7 row) for the shipped shape, the module-bookkeeping mirror of
-`duplicateLesson`, and why the emptied placeholder slides survive `leaveSlide`.
+### E7. Templates and reuse — removed 2026-09-15: owner found no use for it
+"New lesson like this one" duplicated a lesson's slide-type structure with empty
+content (`duplicateLessonStructure` in `mutations.ts` + a second `LessonHeaderActions`
+icon). The owner reviewed it live and found no use for it, so it was removed
+entirely: the action/mutation/tests and the `tests/ux/duplicate-structure.spec.ts`
+spec are gone; "Duplicate lesson" (full copy) is unaffected.
 
 ### Aesthetics (inside the blue theme, sans-serif)
 The screenshot shows four different left edges (card, pair, table, chips) and four
