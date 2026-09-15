@@ -10,6 +10,7 @@ import {
   curriculumPageSize,
   readCurriculumNavigationCounts,
   readCurriculumPage,
+  readLevelChecklistSummary,
 } from "@/lib/curriculum/server/curriculum-store";
 import {
   curriculumRoles,
@@ -116,7 +117,7 @@ export default async function CurriculumPage({ searchParams }: PageProps) {
       family.leaves.map((leaf) => leaf.collection),
     ) ?? [];
 
-  const [curriculum, navigationCounts] = await Promise.all([
+  const [curriculum, navigationCounts, levelChecklist] = await Promise.all([
     readCurriculumPage({
       page: Number.isFinite(requestedPage) ? requestedPage : 1,
       search,
@@ -142,6 +143,9 @@ export default async function CurriculumPage({ searchParams }: PageProps) {
           idFilter,
         })
       : Promise.resolve(new Map<string, Set<string>>()),
+    maxLevel
+      ? readLevelChecklistSummary(maxLevel, coveredIds)
+      : Promise.resolve(null),
   ]);
 
   const configuredFamilies: CurriculumNavigationFamilyWithCounts[] =
@@ -208,6 +212,7 @@ export default async function CurriculumPage({ searchParams }: PageProps) {
           pageSize={curriculumPageSize}
           coverage={visibleCoverage}
           coverageFilter={coverageFilter}
+          levelChecklist={levelChecklist}
           filters={{
             search: curriculum.search,
             collection: curriculum.collection,

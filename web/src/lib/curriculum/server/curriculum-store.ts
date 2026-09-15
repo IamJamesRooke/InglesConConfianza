@@ -10,6 +10,11 @@ import { curriculumRoleWhere } from "@/lib/curriculum/role-filter";
 import type { CurriculumNavigationFamily } from "@/lib/curriculum/navigation";
 import type { TopicBaseExclusion } from "@/lib/curriculum/scope";
 import { isCurriculumConcept } from "@/lib/curriculum/validation";
+import {
+  summarizeLevelChecklist,
+  type LevelChecklistSummary,
+} from "@/lib/curriculum/level-checklist";
+import { rolesUpToLevel } from "@/lib/curriculum/types";
 import { prisma } from "@/lib/database/prisma";
 
 // The SQL half of src/lib/curriculum/scope.ts: a topic's declared exclusions as
@@ -288,6 +293,21 @@ export async function readCurriculumNavigationCounts({
     conceptIdsByCollection.set(membership.collectionName, ids);
   }
   return conceptIdsByCollection;
+}
+
+// The header gauge on /admin/curriculum: "Level ≤ N · taught X / Y concepts".
+// Y = every non-trash row at P1..P<maxLevel> in the whole course (not scoped
+// to the current topic/search filters); X = how many of those are covered by
+// some lesson's Covers list. `coveredIds` comes from readConceptCoverage().
+export async function readLevelChecklistSummary(
+  maxLevel: CurriculumLevel,
+  coveredIds: readonly string[],
+): Promise<LevelChecklistSummary> {
+  const rows = await prisma.curriculumConcept.findMany({
+    where: { curriculumRole: { in: rolesUpToLevel(maxLevel) } },
+    select: { id: true, curriculumRole: true },
+  });
+  return summarizeLevelChecklist(rows, maxLevel, coveredIds);
 }
 
 export async function readCurriculumConcept(

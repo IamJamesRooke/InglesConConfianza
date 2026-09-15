@@ -29,6 +29,7 @@ import {
 import { useCurriculumEditing } from "@/components/curriculum/use-curriculum-editing";
 import { useCurriculumNavigation } from "@/components/curriculum/use-curriculum-navigation";
 import type { CurriculumNavigationFamilyWithCounts } from "@/lib/curriculum/navigation";
+import type { LevelChecklistSummary } from "@/lib/curriculum/level-checklist";
 import {
   roleForLevel,
   type CurriculumConcept,
@@ -51,6 +52,7 @@ export function CurriculumTable({
   pageSize = 100,
   coverage = {},
   coverageFilter = "all",
+  levelChecklist = null,
   filters,
   macrotags = [],
   activeTopic = null,
@@ -72,6 +74,7 @@ export function CurriculumTable({
     { lessonId: string; lessonNumber: number; lessonName: string | null }
   >;
   coverageFilter?: "all" | "taught" | "untaught";
+  levelChecklist?: LevelChecklistSummary | null;
   filters: {
     search: string;
     collection: string;
@@ -594,6 +597,32 @@ export function CurriculumTable({
           </h1>
         </div>
       </div>
+
+      {levelChecklist && levelChecklist.total > 0 && (
+        <div className="mb-3 rounded-lg border border-border bg-card px-3 py-2 shadow-sm">
+          <p className="text-xs font-medium text-muted-foreground">
+            Level ≤ {levelChecklist.maxLevel} · taught {levelChecklist.taught} /{" "}
+            {levelChecklist.total} concepts
+          </p>
+          <div
+            role="progressbar"
+            aria-valuenow={levelChecklist.taught}
+            aria-valuemin={0}
+            aria-valuemax={levelChecklist.total}
+            aria-label={`Level ${levelChecklist.maxLevel} taught progress`}
+            className="mt-1.5 h-1.5 w-full overflow-hidden rounded-full bg-muted"
+          >
+            <div
+              className="h-full rounded-full bg-primary transition-[width]"
+              style={{
+                width: `${Math.round(
+                  (levelChecklist.taught / levelChecklist.total) * 100,
+                )}%`,
+              }}
+            />
+          </div>
+        </div>
+      )}
 
       <form
         aria-busy={isNavigating}
