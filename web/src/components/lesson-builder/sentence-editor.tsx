@@ -102,7 +102,25 @@ export function SentenceEditor(props: Props) {
       {active && (
         <div className="lesson-document-active-tools" role="toolbar" aria-label="Active sentence tools">
           {!block.promptText.trim() && !showInstruction && (
-            <button type="button" onClick={() => setShowInstruction(true)}>
+            <button
+              type="button"
+              // Never let this click steal DOM focus off whatever field is
+              // currently focused (e.g. a brand-new, still-empty pair's
+              // Spanish field). This button unmounts itself the instant
+              // `showInstruction` flips true — if the click had focused it
+              // first, that self-removal fires a focusout whose
+              // `relatedTarget` can't be resolved, which used to read as
+              // "left the slide entirely" and delete it (owner-reported
+              // 2026-09-15: "Add instruction" on an empty sentence made the
+              // whole slide vanish). Keeping focus on the original field
+              // through the click avoids the race outright, and the
+              // freshly mounted instruction textarea's own `autoFocus`
+              // then moves focus there as a normal, single native focus
+              // change — its own `onFocus` reports the selection, same as
+              // every other field.
+              onMouseDown={(event) => event.preventDefault()}
+              onClick={() => setShowInstruction(true)}
+            >
               Add instruction
             </button>
           )}
@@ -169,6 +187,7 @@ export function SentenceEditor(props: Props) {
                   className="lesson-document-pair-delete"
                   aria-label={`Delete ${isTable ? "row" : "pair"} ${pieceLabel(piece, index)}`}
                   title={`Delete ${isTable ? "row" : "pair"}`}
+                  onMouseDown={(event) => event.preventDefault()}
                   onClick={() => actions.deletePiece(lessonId, block.id, piece.id)}
                 >
                   <X size={11} aria-hidden="true" />
@@ -203,6 +222,7 @@ export function SentenceEditor(props: Props) {
                     type="button"
                     className="lesson-document-hint-add"
                     aria-label={`Add hint to ${pieceLabel(piece)}`}
+                    onMouseDown={(event) => event.preventDefault()}
                     onClick={() => {
                       editing.setSelection({
                         kind: "field",
@@ -231,6 +251,7 @@ export function SentenceEditor(props: Props) {
               type="button"
               className={isTable ? "lesson-document-add-row" : "lesson-document-add-pair"}
               disabled={!lastPieceComplete}
+              onMouseDown={(event) => event.preventDefault()}
               onClick={addPair}
             >
               <Plus size={12} aria-hidden="true" /> Add {isTable ? "row" : "pair"}

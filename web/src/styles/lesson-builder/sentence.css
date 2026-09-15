@@ -248,20 +248,34 @@
   white-space: normal;
 }
 
-/* Vocabulary table at rest: aligned rows, not one composed sentence — see
-   SentencePresentation's table branch (sentence-presentation.tsx). Each row
-   is a flex line (not a real <table>) so a row without a hint simply has no
-   third element, instead of a reserved/blank cell. */
+/* Vocabulary table at rest: a compact two-column grid, not one composed
+   sentence and not a loose sentence-pair list — see SentencePresentation's
+   table branch (sentence-presentation.tsx). The Spanish/English columns
+   share one grid across all rows (via `subgrid`) so both line up under
+   each other regardless of per-row text length; each row is its own
+   subgrid so a row without a hint simply leaves that row's third column
+   empty, instead of a reserved/blank cell disturbing the row below it.
+   Left-aligned to the document's own text column — `width: fit-content`,
+   no `margin: auto` — visibly distinct from sentence pairs, which keep
+   their stacked Spanish-over-English look. */
 .lesson-sentence-presentation-table {
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
+  display: grid;
+  grid-template-columns: max-content 1fr auto;
+  column-gap: 24px;
+  width: fit-content;
+  max-width: 100%;
 }
 .lesson-sentence-presentation-row {
-  display: flex;
+  display: grid;
+  grid-column: 1 / -1;
+  grid-template-columns: subgrid;
   align-items: baseline;
-  gap: 10px;
+  padding: 4px 0;
+  border-bottom: 1px solid var(--border);
   font-size: 15px;
+}
+.lesson-sentence-presentation-row:last-child {
+  border-bottom: 0;
 }
 .lesson-sentence-presentation-row span[lang="es"] {
   color: var(--foreground);
@@ -270,6 +284,13 @@
 .lesson-sentence-presentation-row span[lang="en"] {
   color: var(--muted-foreground);
   font-style: italic;
+}
+/* A row's authored hint reuses the same read-only pill sentence pairs use
+   at rest (`.lesson-document-hint-pill`) — it lands in the row's own third
+   subgrid column, at the end of the row, without affecting rows that don't
+   have one. */
+.lesson-sentence-presentation-row .lesson-document-hint-pill {
+  justify-self: start;
 }
 .lesson-document-active-tools {
   display: flex;

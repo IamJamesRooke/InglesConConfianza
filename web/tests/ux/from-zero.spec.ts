@@ -264,3 +264,146 @@ test("(g) Ctrl+Alt+Enter from the title inserts a slide at index 0", async ({ pa
     contentMarkdown: "First slide, from the title.",
   });
 });
+
+// (h) leaving a still-empty sentence slide (created by Ctrl+Alt+Enter, never
+// typed into) via two Escapes deletes it outright — no empty slide is ever
+// saved, and the same "Slide deleted — Undo" affordance a manual delete
+// shows must appear.
+test("(h) Ctrl+Alt+Enter then Escape twice on the still-empty new sentence deletes it, with the Undo toast", async ({
+  page,
+}) => {
+  await page.goto("/admin/lesson-builder");
+  await expect(page.getByText("All changes saved")).toBeVisible({ timeout: 10000 });
+  await page.keyboard.press("Control+Alt+l");
+  const title = page.locator("[data-lesson-title]").last();
+  await title.fill("From-zero: empty sentence deleted");
+  await page.keyboard.press("Enter");
+  await waitForFocusedField(page, "explanation");
+  await page.keyboard.type("Comer es to eat.");
+
+  await page.keyboard.press("Control+Alt+Enter");
+  await waitForFocusedField(page, "spanish");
+
+  // Never type anything into the new sentence slide's Spanish field — leave
+  // it via Escape (field -> block), then Escape again (block -> none), the
+  // documented two-Escape full-deselect path.
+  await page.keyboard.press("Escape");
+  await page.keyboard.press("Escape");
+
+  await expect(page.getByText("Slide deleted")).toBeVisible({ timeout: 5000 });
+  await expect(page.getByText("Undo")).toBeVisible();
+  await expect(page.getByText("All changes saved")).toBeVisible({ timeout: 5000 });
+
+  const created = readLessons().lessons.find(
+    (lesson) => lesson.name === "From-zero: empty sentence deleted",
+  );
+  expect(created, "lesson should be persisted").toBeTruthy();
+  expect(created!.blocks.length).toBe(1);
+  expect(created!.blocks[0]).toMatchObject({
+    type: "explanation",
+    contentMarkdown: "Comer es to eat.",
+  });
+  expect(created!.blocks.some((block) => block.type === "sentence")).toBe(false);
+});
+
+// (i) Ctrl+Alt+Enter from a still-empty (never typed into) explanation slide
+// inserts the next slide and removes the empty explanation — same
+// "delete on leave" rule applied to reason "insert".
+test("(i) Ctrl+Alt+Enter from an empty explanation inserts the next slide and removes the empty explanation", async ({
+  page,
+}) => {
+  await page.goto("/admin/lesson-builder");
+  await expect(page.getByText("All changes saved")).toBeVisible({ timeout: 10000 });
+  await page.keyboard.press("Control+Alt+l");
+  const title = page.locator("[data-lesson-title]").last();
+  await title.fill("From-zero: empty explanation deleted on insert");
+  await page.keyboard.press("Enter");
+  // The lesson opens with a freshly created, empty explanation slide
+  // focused — do not type into it.
+  await waitForFocusedField(page, "explanation");
+
+  await page.keyboard.press("Control+Alt+Enter");
+  await waitForFocusedField(page, "spanish");
+  await page.keyboard.type("Quiero");
+  await page.keyboard.press("Tab");
+  await page.keyboard.type("I want");
+  await page.keyboard.press("Escape");
+  await page.keyboard.press("Control+s");
+  await expect(page.getByText("All changes saved")).toBeVisible({ timeout: 5000 });
+
+  const created = readLessons().lessons.find(
+    (lesson) => lesson.name === "From-zero: empty explanation deleted on insert",
+  );
+  expect(created, "lesson should be persisted").toBeTruthy();
+  expect(created!.blocks.length).toBe(1);
+  const sentence = created!.blocks[0];
+  if (sentence.type !== "sentence") throw new Error("expected the surviving block to be the sentence");
+  expect(sentence.languageBlocks.map(({ spanish, acceptedAnswers }) => ({ spanish, acceptedAnswers }))).toEqual([
+    { spanish: "Quiero", acceptedAnswers: ["I want"] },
+  ]);
+});
+
+// Regression 2026-09-15 (owner hit this live): a click on one of an empty
+// new sentence slide's own controls (Add instruction, hint lightbulb, Add
+// pair) must never make the whole slide disappear — the click's own focus
+// churn (the control unmounting itself, or focus briefly landing outside
+// any field) is not "leaving the slide," it's staying inside it.
+async function newEmptySentenceSlide(page: import("@playwright/test").Page, title: string) {
+  await page.goto("/admin/lesson-builder");
+  await expect(page.getByText("All changes saved")).toBeVisible({ timeout: 10000 });
+  await page.keyboard.press("Control+Alt+l");
+  const titleField = page.locator("[data-lesson-title]").last();
+  await titleField.fill(title);
+  await page.keyboard.press("Enter");
+  await waitForFocusedField(page, "explanation");
+  await page.keyboard.type("Comer es to eat.");
+  await page.keyboard.press("Control+Alt+Enter");
+  await waitForFocusedField(page, "spanish");
+  return page.locator("[data-lesson-row]").last();
+}
+
+test("(j) clicking 'Add instruction' on an empty new sentence slide keeps the slide and focuses the instruction field", async ({
+  page,
+}) => {
+  const row = await newEmptySentenceSlide(page, "From-zero: add instruction keeps slide");
+  await row.getByRole("button", { name: "Add instruction", exact: true }).click();
+  await waitForFocusedField(page, "instruction");
+  await expect(row.locator("[data-document-block]")).toHaveCount(2);
+
+  await page.keyboard.type("Fill in the blank.");
+  await page.keyboard.press("Escape");
+  await page.keyboard.press("Control+s");
+  await expect(page.getByText("All changes saved")).toBeVisible({ timeout: 5000 });
+
+  const created = readLessons().lessons.find(
+    (lesson) => lesson.name === "From-zero: add instruction keeps slide",
+  );
+  expect(created, "lesson should be persisted").toBeTruthy();
+  expect(created!.blocks.length).toBe(2);
+  const sentence = created!.blocks[1] as { type: string; promptText?: string };
+  expect(sentence.type).toBe("sentence");
+  expect(sentence.promptText).toBe("Fill in the blank.");
+});
+
+test("(k) clicking the hint lightbulb on an empty new sentence slide keeps the slide and focuses the hint field", async ({
+  page,
+}) => {
+  const row = await newEmptySentenceSlide(page, "From-zero: hint lightbulb keeps slide");
+  await row.getByRole("button", { name: /^Add hint/ }).click();
+  await waitForFocusedField(page, "hint");
+  await expect(row.locator("[data-document-block]")).toHaveCount(2);
+});
+
+test("(l) clicking 'Add pair' on an empty new sentence slide keeps the slide and focuses the new pair", async ({
+  page,
+}) => {
+  const row = await newEmptySentenceSlide(page, "From-zero: add pair keeps slide");
+  await page.keyboard.type("Quiero");
+  await page.keyboard.press("Tab");
+  await page.keyboard.type("I want");
+  // Commit the draft (blur) before clicking "Add pair" with the mouse.
+  await row.getByRole("button", { name: "Add pair", exact: true }).click();
+  await waitForFocusedField(page, "spanish");
+  await expect(row.locator("[data-document-block]")).toHaveCount(2);
+  await expect(row.locator("[data-piece]")).toHaveCount(2);
+});

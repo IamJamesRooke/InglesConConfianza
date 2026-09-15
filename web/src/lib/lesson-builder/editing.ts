@@ -122,6 +122,28 @@ function isPieceBlank(blockId: string, piece: LanguageBlock): boolean {
   );
 }
 
+// A sentence/vocabulary slide is "entirely empty" — worth deleting outright
+// rather than just pruning — when every pair is blank (see `isPieceBlank`)
+// and there's no instruction text either. Checked *before* pruning so the
+// whole-slide delete below is the only dispatch, i.e. one undoable step,
+// instead of a pile of per-piece deletes followed by a block delete.
+function isSentenceBlockEmpty(blockId: string, block: LanguageBlock[], promptText: string): boolean {
+  return !promptText.trim() && block.every((piece) => isPieceBlank(blockId, piece));
+}
+
+// An explanation slide is blank when its saved markdown has no real content
+// once every paragraph (split on blank lines) that is itself blank is
+// dropped — so a stray leading/trailing empty paragraph doesn't count as
+// content. Read from `contentMarkdown` (not live DOM) so this works
+// identically whether the slide was ever mounted with the old or the new
+// explanation editor.
+function isExplanationMarkdownBlank(markdown: string): boolean {
+  return !markdown
+    .split(/\n{2,}/)
+    .map((paragraph) => paragraph.trim())
+    .some((paragraph) => paragraph.length > 0);
+}
+
 export function leaveSlide(
   lessonId: string,
   blockId: string,
@@ -149,12 +171,29 @@ export function leaveSlide(
         if (raw !== stored) commitAnswerDraft(deps.actions, lessonId, blockId, piece, raw);
       }
     }
+    // Entirely empty (no instruction, every pair blank) — delete the whole
+    // slide rather than pruning down to one leftover blank pair. Owner
+    // requirement 2026-09-15: no empty slides, ever, on any LeaveReason
+    // (including "insert" — inserting the next slide still removes this
+    // one if it was never filled in).
+    if (isSentenceBlockEmpty(blockId, block.languageBlocks, block.promptText)) {
+      deps.actions.deleteBlock(lessonId, blockId);
+      deps.actions.endHistoryGroup();
+      return;
+    }
     const blanks = block.languageBlocks.filter((piece) => isPieceBlank(blockId, piece));
-    // Keep at least one pair in a sentence slide — if every pair is blank,
+    // Keep at least one pair in a sentence slide — if every pair is blank
+    // (but there's instruction text keeping the slide non-empty overall),
     // prune all but the first rather than leaving zero pairs.
     const toDelete =
       blanks.length === block.languageBlocks.length ? blanks.slice(1) : blanks;
     for (const piece of toDelete) deps.actions.deletePiece(lessonId, blockId, piece.id);
+  } else if (block && block.type === "explanation") {
+    if (isExplanationMarkdownBlank(block.contentMarkdown)) {
+      deps.actions.deleteBlock(lessonId, blockId);
+      deps.actions.endHistoryGroup();
+      return;
+    }
   }
   deps.actions.endHistoryGroup();
 }
@@ -231,6 +270,30 @@ function isLeavingSlide(prev: SelectionContext | null, next: SelectionContext | 
   if (!prev) return false;
   if (!next || next.blockId !== prev.blockId) return true;
   return prev.hasField && !next.hasField;
+}
+
+// Backstop for the builder root's native `focusout` listener (see
+// `lesson-library.tsx`): decides whether a blur that couldn't be resolved
+// to a same-root `relatedTarget` is a *real* departure from the currently
+// selected slide, worth collapsing the selection to `{kind:"none"}` (and
+// therefore running `leaveSlide`), or just DOM churn from one of the
+// slide's own controls (Add instruction, hint lightbulb, Add pair/row,
+// pair ×, the block's drag/duplicate/delete chrome) that unmounts the
+// clicked element as a direct result of its own click — which some engines
+// report as a `focusout` with no resolvable `relatedTarget` at all. A blur
+// whose target still belongs (via its nearest `[data-document-block]`) to
+// the slide the selection already points at is never a real leave, known
+// `relatedTarget` or not — every one of that slide's own controls is
+// expected to move focus somewhere *inside* the same slide, never out of
+// the builder. `targetBlockId` is null when the target isn't inside any
+// slide at all (e.g. the module rail, or nothing left to resolve because
+// the node is already detached) — that's always a real departure.
+export function isRealBlurAway(
+  targetBlockId: string | null,
+  selectionBlockId: string | null,
+): boolean {
+  if (targetBlockId === null) return true;
+  return targetBlockId !== selectionBlockId;
 }
 
 export type EditingActions = StoreState & {

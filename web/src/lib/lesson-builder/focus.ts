@@ -113,12 +113,25 @@ export function focusSelection(selection: EditingSelection): void {
           `[data-document-block="${selection.blockId}"]`,
         );
         if (!slide) return;
+        if (selection.kind === "field") {
+          // Do NOT park focus on the wrapper here: the wrapper's own
+          // onFocus (lesson-document.tsx) writes `{kind:"block"}` whenever
+          // it is genuinely the focus target, which would stomp this still-
+          // pending field selection before the field it names has even
+          // mounted — a table row's or sentence pair's hint input, opened
+          // via the lightbulb or Alt+ArrowDown, can still be a frame or two
+          // from existing under load. Selection already drives the block's
+          // `data-state="editing"` render regardless of DOM focus, so
+          // there's nothing lost by leaving focus where it is and just
+          // retrying the real field for a few more frames.
+          retryResolveField(slide, selection, 10);
+          return;
+        }
         // Focus the wrapper now so the block renders as active, then keep
         // retrying the real field for a few more frames — under load a
         // single extra frame isn't always enough for the editing grid
         // (several pieces, each with its own fields) to have committed.
         slide.focus({ preventScroll: true });
-        if (selection.kind === "field") retryResolveField(slide, selection, 10);
       }
     });
   }
