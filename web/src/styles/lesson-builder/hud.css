@@ -22,7 +22,9 @@
   grid-column: 1 / -1;
   display: flex;
   align-items: center;
-  gap: 14px;
+  /* The wide gap *between* groups — each group's own internal spacing
+     (modifier→"+"→pairs, pair→pair) is set below at normal chip scale. */
+  gap: 24px;
   height: 32px;
   padding: 0 12px;
   padding-bottom: env(safe-area-inset-bottom, 0px);
@@ -34,7 +36,10 @@
   mask-image: linear-gradient(to right, black calc(100% - 40px), transparent);
 }
 
-.editing-hud-chip {
+/* One group = a shared modifier prefix (or, for a modifier-less chord, just
+   itself) written like a keyboard legend: "[Ctrl][Alt] + S spanish · E
+   english · N normal" instead of repeating the modifier per chord. */
+.editing-hud-group {
   display: inline-flex;
   flex: 0 0 auto;
   align-items: center;
@@ -42,12 +47,27 @@
   white-space: nowrap;
 }
 
-.editing-hud-keys {
+.editing-hud-group-mods {
   display: inline-flex;
   gap: 3px;
 }
 
-.editing-hud-chip kbd {
+.editing-hud-group-plus {
+  color: var(--hud-fg-muted);
+  font-size: 11px;
+}
+
+.editing-hud-pair {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.editing-hud-dot {
+  color: var(--hud-fg-muted);
+}
+
+.editing-hud-group kbd {
   min-width: 16px;
   padding: 1px 5px;
   border-radius: 4px;

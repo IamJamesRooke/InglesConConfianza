@@ -11,7 +11,7 @@
 
 import { useEffect, useState } from "react";
 
-import { useLessonEditing } from "@/lib/lesson-builder/editing";
+import { useLessonEditing, type EditingSelection } from "@/lib/lesson-builder/editing";
 import { KEYMAP, scopeOf, type Chord, type Scope } from "@/lib/lesson-builder/keymap";
 
 // One label per chord, regardless of which scope it's read from — a chord
@@ -108,15 +108,91 @@ function orderForDisplay(chords: ActiveChord[], innermost: Scope): ActiveChord[]
   });
 }
 
-function ChordChip({ chord, label }: { chord: Chord; label: string }) {
+// Key-label formatting: a keyboard legend reads keys as their own glyphs,
+// not the DOM code names `chordOf` (keymap.ts) produces them from.
+const KEY_GLYPHS: Partial<Record<string, string>> = {
+  Escape: "Esc",
+  ArrowUp: "↑",
+  ArrowDown: "↓",
+  ArrowLeft: "←",
+  ArrowRight: "→",
+  Backspace: "⌫",
+};
+
+function keyGlyph(key: string): string {
+  return KEY_GLYPHS[key] ?? key;
+}
+
+export type Pair = { chord: Chord; key: string; label: string };
+export type Group = { modifiers: string[]; pairs: Pair[] };
+
+const MAX_PAIRS_PER_GROUP = 5;
+
+// Groups chords that share a modifier prefix (Ctrl+Alt+S/E/N/Enter → one
+// "[Ctrl][Alt] + S spanish · E english · …" legend instead of repeating the
+// modifier on every chip) — a keyboard legend, not a chip rail. A
+// modifier-less chord has nothing to factor out, so it's never merged with
+// another modifier-less chord; each stands alone, and all of them sort
+// after every modifier group (owner requirement 2026-09-15).
+export function buildGroups(chords: ActiveChord[]): Group[] {
+  const modGroups = new Map<string, Group>();
+  const modOrder: string[] = [];
+  const soloGroups: Group[] = [];
+  for (const item of chords) {
+    const parts = item.chord.split("+");
+    const modifiers = parts.slice(0, -1);
+    const pair: Pair = { chord: item.chord, key: keyGlyph(parts[parts.length - 1]), label: item.label };
+    if (modifiers.length === 0) {
+      soloGroups.push({ modifiers: [], pairs: [pair] });
+      continue;
+    }
+    const signature = modifiers.join("+");
+    let group = modGroups.get(signature);
+    if (!group) {
+      group = { modifiers, pairs: [] };
+      modGroups.set(signature, group);
+      modOrder.push(signature);
+    }
+    group.pairs.push(pair);
+  }
+  return [...modOrder.map((signature) => modGroups.get(signature)!), ...soloGroups];
+}
+
+// The whole pipeline — active chords for the selection, ordered, capped,
+// grouped — as one exported function so a test can assert on the same
+// groups the bar renders without reaching into its private pieces.
+export function groupsForSelection(selection: EditingSelection): Group[] {
+  const scopes = scopeOf(selection);
+  const chords = activeChords(scopes);
+  const ordered = orderForDisplay(chords, scopes[0]);
+  return buildGroups(ordered.slice(0, PRIMARY_COUNT));
+}
+
+function HudGroup({ group }: { group: Group }) {
+  const pairs = group.pairs.slice(0, MAX_PAIRS_PER_GROUP);
+  const truncated = group.pairs.length > MAX_PAIRS_PER_GROUP;
   return (
-    <span className="editing-hud-chip">
-      <span className="editing-hud-keys">
-        {chord.split("+").map((part, index) => (
-          <kbd key={index}>{part}</kbd>
-        ))}
-      </span>
-      <span className="editing-hud-label">{label}</span>
+    <span className="editing-hud-group">
+      {group.modifiers.length > 0 && (
+        <>
+          <span className="editing-hud-group-mods">
+            {group.modifiers.map((modifier) => (
+              <kbd key={modifier}>{modifier}</kbd>
+            ))}
+          </span>
+          <span className="editing-hud-group-plus" aria-hidden="true">
+            +
+          </span>
+        </>
+      )}
+      {pairs.map((pair, index) => (
+        <span className="editing-hud-pair" key={pair.chord}>
+          {index > 0 && <span className="editing-hud-dot">·</span>}
+          <kbd>{pair.key}</kbd>
+          <span className="editing-hud-label">{pair.label}</span>
+        </span>
+      ))}
+      {truncated && <span className="editing-hud-more">…</span>}
     </span>
   );
 }
@@ -150,27 +226,14 @@ export function EditingHud() {
   if (editing.selection.kind === "none") return null;
   if (ignoreFocused) return null;
 
-  const scopes = scopeOf(editing.selection);
-  const chords = activeChords(scopes);
-  if (chords.length === 0) return null;
-
-  const ordered = orderForDisplay(chords, scopes[0]);
-  const primary = ordered.slice(0, PRIMARY_COUNT);
-  const rest = ordered.slice(PRIMARY_COUNT);
+  const groups = groupsForSelection(editing.selection);
+  if (groups.length === 0) return null;
 
   return (
     <div className="editing-hud" aria-hidden="true">
-      {primary.map((item) => (
-        <ChordChip key={item.chord} chord={item.chord} label={item.label} />
+      {groups.map((group) => (
+        <HudGroup key={group.modifiers.join("+") || group.pairs[0].chord} group={group} />
       ))}
-      {rest.length > 0 && (
-        <span
-          className="editing-hud-more"
-          title={rest.map((item) => `${item.chord.replace(/\+/g, " ")}: ${item.label}`).join(" · ")}
-        >
-          …
-        </span>
-      )}
     </div>
   );
 }
