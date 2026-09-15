@@ -10,7 +10,30 @@
       transparent 70%
     ),
     var(--background);
-  font-family: var(--font-geist), ui-sans-serif, system-ui, sans-serif;
+  font-family: var(--font-sans);
+}
+/* Dark mode: the glow reads as a saturated blue cast on a near-black ground,
+   so it becomes a faint warm vignette (paper-cream, not brand-primary)
+   instead — same shape and strength, different ink. */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .lesson-session {
+    background:
+      radial-gradient(
+        60% 40% at 50% 0%,
+        color-mix(in oklch, var(--foreground) 5%, transparent),
+        transparent 70%
+      ),
+      var(--background);
+  }
+}
+:root[data-theme="dark"] .lesson-session {
+  background:
+    radial-gradient(
+      60% 40% at 50% 0%,
+      color-mix(in oklch, var(--foreground) 5%, transparent),
+      transparent 70%
+    ),
+    var(--background);
 }
 /* Every focusable control on the stage gets the same visible keyboard-focus
    ring — never on a mouse/touch focus, only :focus-visible. High enough
@@ -108,7 +131,7 @@
 }
 .lesson-explanation :is(p, li) {
   color: var(--foreground);
-  font-family: var(--font-geist), ui-sans-serif, system-ui, sans-serif;
+  font-family: var(--font-sans);
   font-size: 20px;
   line-height: 1.5;
   font-weight: 400;
@@ -573,7 +596,7 @@
   justify-self: end;
   padding: 14px 22px;
   border-radius: 999px;
-  font-family: var(--font-geist), ui-sans-serif, system-ui, sans-serif;
+  font-family: var(--font-sans);
   font-size: 17px;
   font-weight: 600;
   white-space: nowrap;

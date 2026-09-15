@@ -1,9 +1,86 @@
 .learner-theme {
-  --lesson-display: var(--font-display), var(--font-geist), ui-sans-serif,
-    system-ui, sans-serif;
+  --lesson-display: var(--font-display), var(--font-sans);
   color: var(--foreground);
   background: var(--background);
-  font-family: var(--font-geist), ui-sans-serif, system-ui, sans-serif;
+  font-family: var(--font-sans);
+  color-scheme: light dark;
+  -webkit-font-smoothing: auto;
+}
+
+/* Designed dark mode for the student surfaces only (home + practice stage).
+   Not a channel inversion: a near-black warm ground with paper-cream text,
+   and the brand red/blue lifted in lightness so they keep working as ink on
+   a dark page instead of receding. Contrast (relative-luminance, computed
+   from these exact oklch values): foreground on background 16.0:1, muted
+   foreground on background 8.6:1, lifted primary on background 8.3:1,
+   lifted accent on background 7.7:1, foreground on card 14.5:1 — all clear
+   the 4.5:1 body / 3:1 display AA floors with room to spare.
+   `:root:not([data-theme="light"])` (OS preference) and `:root[data-theme=
+   "dark"]` (an explicit choice, for if one is ever added) both lead here;
+   there is no toggle UI today, so only the media-query branch is reachable,
+   but the selectors are kept in the pair the rest of the app's tokens use. */
+/* These override the tokens the learner stylesheets actually consume
+   (`--background`, `--primary`, etc.), not the `--brand-*`/`--canvas-warm`
+   aliases those are built from at :root — a custom property's computed
+   value is substituted once, at the element that wins the cascade for it
+   (:root, here), and that already-resolved value is what inherits down;
+   redeclaring only the upstream alias inside `.learner-theme` never
+   reaches a descendant that consumes the downstream token instead. */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .learner-theme {
+    --background: oklch(0.17 0.01 60);
+    --paper: oklch(0.17 0.01 60);
+    --foreground: oklch(0.94 0.02 75);
+    --card: oklch(0.23 0.012 60);
+    --card-foreground: oklch(0.94 0.02 75);
+    --muted: oklch(0.26 0.014 60);
+    --muted-foreground: oklch(0.75 0.02 75);
+    --border: oklch(0.32 0.02 60);
+    --primary: oklch(0.74 0.13 255);
+    --primary-foreground: oklch(0.17 0.01 60);
+    --brand-primary-hover: oklch(0.8 0.12 255);
+    --accent: oklch(0.74 0.16 25);
+    --accent-foreground: oklch(0.17 0.01 60);
+    --secondary: oklch(0.28 0.03 255);
+    --secondary-foreground: oklch(0.88 0.03 255);
+    --destructive: oklch(0.72 0.17 20);
+    --success: oklch(0.72 0.17 152);
+    --success-foreground: oklch(0.88 0.13 152);
+    --success-contrast: oklch(0.17 0.01 60);
+    --hint: oklch(0.8 0.19 82);
+    --hint-foreground: oklch(0.17 0.01 60);
+    --state-help-soft: oklch(0.3 0.06 82);
+    --lesson-hl-es: oklch(0.72 0.19 30);
+    --lesson-hl-en: oklch(0.72 0.17 270);
+    -webkit-font-smoothing: antialiased;
+  }
+}
+:root[data-theme="dark"] .learner-theme {
+  --background: oklch(0.17 0.01 60);
+  --paper: oklch(0.17 0.01 60);
+  --foreground: oklch(0.94 0.02 75);
+  --card: oklch(0.23 0.012 60);
+  --card-foreground: oklch(0.94 0.02 75);
+  --muted: oklch(0.26 0.014 60);
+  --muted-foreground: oklch(0.75 0.02 75);
+  --border: oklch(0.32 0.02 60);
+  --primary: oklch(0.74 0.13 255);
+  --primary-foreground: oklch(0.17 0.01 60);
+  --brand-primary-hover: oklch(0.8 0.12 255);
+  --accent: oklch(0.74 0.16 25);
+  --accent-foreground: oklch(0.17 0.01 60);
+  --secondary: oklch(0.28 0.03 255);
+  --secondary-foreground: oklch(0.88 0.03 255);
+  --destructive: oklch(0.72 0.17 20);
+  --success: oklch(0.72 0.17 152);
+  --success-foreground: oklch(0.88 0.13 152);
+  --success-contrast: oklch(0.17 0.01 60);
+  --hint: oklch(0.8 0.19 82);
+  --hint-foreground: oklch(0.17 0.01 60);
+  --state-help-soft: oklch(0.3 0.06 82);
+  --lesson-hl-es: oklch(0.72 0.19 30);
+  --lesson-hl-en: oklch(0.72 0.17 270);
+  -webkit-font-smoothing: antialiased;
 }
 .learner-theme,
 .learner-theme * {
@@ -15,6 +92,26 @@
 }
 .learner-theme :is(h1, h2, h3) {
   overflow-wrap: normal;
+}
+.learner-theme p {
+  text-wrap: pretty;
+}
+/* Counts that change as the learner progresses ("3 de 12", "1 / 10") should
+   not jitter width digit-to-digit. */
+.learner-theme
+  :is(
+    .home-hero-duration,
+    .course-progress-summary,
+    .journey-toc-count,
+    .lesson-number,
+    .lesson-duration,
+    .lesson-step-count
+  ) {
+  font-variant-numeric: tabular-nums;
+}
+.learner-theme button,
+.learner-theme a {
+  touch-action: manipulation;
 }
 .learner-theme :is(button, a, input, [tabindex]):focus-visible {
   outline: 2px solid var(--primary);
@@ -85,7 +182,11 @@
   left: 20px;
   z-index: 100;
   padding: 12px 20px;
-  background: white;
+  border-radius: var(--radius-md);
+  background: var(--card);
+  color: var(--foreground);
+  font-weight: 700;
+  box-shadow: var(--shadow-md);
 }
 .learner-skip:focus {
   top: 12px;
@@ -768,6 +869,7 @@
   flex-direction: column;
   height: 100dvh;
   outline: none;
+  overscroll-behavior: contain;
 }
 .lesson-topbar {
   position: relative;

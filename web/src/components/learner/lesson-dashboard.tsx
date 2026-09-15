@@ -107,7 +107,11 @@ export function LessonDashboard({
       : "Empezar";
 
   return (
-    <main id="main-content" tabIndex={-1} className="learner-theme home-page">
+    <main
+      id="main-content"
+      tabIndex={-1}
+      className="learner-theme home-page route-fade-in"
+    >
       <div className="course-container">
         {nextLesson ? (
           <section className="home-hero learner-enter" aria-label="Tu próxima lección">

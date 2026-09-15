@@ -65,8 +65,14 @@ export function LessonSelector({
   if (!lesson) return null;
   if (!hydrated)
     return (
-      <div className="learner-theme lesson-loading" role="status">
-        Preparando tu lección…
+      <div
+        className="learner-theme lesson-session-loading"
+        role="status"
+        aria-label="Preparando tu lección"
+      >
+        <p className="sr-only">Preparando tu lección…</p>
+        <div className="loading-skel loading-stage-progress" />
+        <div className="loading-skel loading-stage-line" />
       </div>
     );
   return (
@@ -248,7 +254,7 @@ function LessonSession({
   const sessionContent = (
     <section
       ref={sectionRef}
-      className="learner-theme lesson-session"
+      className="learner-theme lesson-session route-fade-in"
       role={onCloseLesson ? "dialog" : undefined}
       aria-modal={onCloseLesson ? "true" : undefined}
       aria-labelledby="practice-lesson-title"

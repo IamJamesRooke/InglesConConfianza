@@ -135,9 +135,6 @@ export function SiteHeader() {
 function LearnerHeader() {
   return (
     <header className="learner-theme learner-header">
-      <a href="#main-content" className="learner-skip">
-        Ir al curso
-      </a>
       <div className="course-container learner-header-inner">
         <Link
           href="/"
@@ -156,6 +153,9 @@ function LearnerHeader() {
           </span>
         </Link>
       </div>
+      <a href="#main-content" className="learner-skip">
+        Saltar al contenido
+      </a>
     </header>
   );
 }

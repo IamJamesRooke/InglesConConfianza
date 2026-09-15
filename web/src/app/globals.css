@@ -323,6 +323,28 @@
   }
 }
 
+/* Home <-> practice route transitions. This React/Next.js version doesn't
+   yet ship `<ViewTransition>` (react's export is undefined here — it needs
+   a canary build the App Router docs assume but this app doesn't pin), so
+   route changes get a plain CSS fade-in on mount instead: opacity only, no
+   transform, so there's no layout jump either. */
+@keyframes route-fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.route-fade-in {
+  animation: route-fade-in 240ms ease-out both;
+}
+@media (prefers-reduced-motion: reduce) {
+  .route-fade-in {
+    animation: none;
+  }
+}
+
 @keyframes learner-enter {
   from {
     opacity: 0;

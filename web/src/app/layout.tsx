@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Fraunces, Geist } from "next/font/google";
 import { SiteHeader } from "@/components/site-header";
 import "./globals.css";
@@ -37,11 +37,19 @@ const fraunces = Fraunces({
 
 export const metadata: Metadata = {
   title: {
-    default: "Inglés Con Confianza",
-    template: "%s | Inglés Con Confianza",
+    default: "Inglés con Confianza",
+    template: "%s · Inglés con Confianza",
   },
   description:
     "Lecciones de inglés claras y prácticas para hispanohablantes.",
+};
+
+export const viewport: Viewport = {
+  colorScheme: "light dark",
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#2448c8" },
+    { media: "(prefers-color-scheme: dark)", color: "#16130f" },
+  ],
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
