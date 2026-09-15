@@ -5,7 +5,8 @@ import { PracticeMarkdown } from "@/components/practice/practice-markdown";
 import type { SentenceBlock } from "@/lib/lesson-builder/types";
 import {
   diffChars,
-  normalizeAnswer,
+  isAnswerAccepted,
+  isMeaningfulLanguageBlock,
   pickClosestAnswer,
 } from "@/lib/lesson-builder/utils";
 export function SentencePracticeCard({
@@ -19,8 +20,14 @@ export function SentencePracticeCard({
   initialAnswers?: string[];
   onAnswersChange?: (answers: string[]) => void;
 }) {
+  // Dangling fully-blank language blocks are authoring debris, not real
+  // questions — drop them before anything derives indices, progression, or
+  // rendering from this list. See isMeaningfulLanguageBlock.
+  const languageBlocks = sentence.languageBlocks.filter(
+    isMeaningfulLanguageBlock,
+  );
   const [answers, setAnswers] = useState<string[]>(() =>
-    sentence.languageBlocks.map((_, index) => initialAnswers?.[index] ?? ""),
+    languageBlocks.map((_, index) => initialAnswers?.[index] ?? ""),
   );
   const [helpedBlockIndex, setHelpedBlockIndex] = useState<number | null>(null);
   const [focusedBlockIndex, setFocusedBlockIndex] = useState<number | null>(
@@ -28,20 +35,16 @@ export function SentencePracticeCard({
   );
   const inputRefs = useRef<Array<HTMLInputElement | null>>([]);
   const helpTimerRef = useRef<number | null>(null);
-  const correctAnswers = sentence.languageBlocks.map(
-    (languageBlock, languageBlockIndex) => {
-      const currentAnswer = normalizeAnswer(answers[languageBlockIndex] ?? "");
-      return (
-        Boolean(currentAnswer) &&
-        languageBlock.acceptedAnswers.some(
-          (acceptedAnswer) => normalizeAnswer(acceptedAnswer) === currentAnswer,
-        )
-      );
-    },
+  const correctAnswers = languageBlocks.map(
+    (languageBlock, languageBlockIndex) =>
+      isAnswerAccepted(
+        answers[languageBlockIndex] ?? "",
+        languageBlock.acceptedAnswers,
+      ),
   );
   const isComplete =
     helpedBlockIndex === null &&
-    sentence.languageBlocks.length > 0 &&
+    languageBlocks.length > 0 &&
     correctAnswers.every(Boolean);
   const clearHelpTimer = useCallback(() => {
     if (helpTimerRef.current !== null) {
@@ -86,20 +89,15 @@ export function SentencePracticeCard({
     nextAnswers[languageBlockIndex] = answer;
     setAnswers(nextAnswers);
     onAnswersChange?.(nextAnswers);
-    const languageBlock = sentence.languageBlocks[languageBlockIndex];
-    const isCorrect =
-      Boolean(normalizeAnswer(answer)) &&
-      languageBlock.acceptedAnswers.some(
-        (acceptedAnswer) =>
-          normalizeAnswer(acceptedAnswer) === normalizeAnswer(answer),
-      );
-    if (isCorrect && languageBlockIndex < sentence.languageBlocks.length - 1)
+    const languageBlock = languageBlocks[languageBlockIndex];
+    const isCorrect = isAnswerAccepted(answer, languageBlock.acceptedAnswers);
+    if (isCorrect && languageBlockIndex < languageBlocks.length - 1)
       window.setTimeout(
         () => inputRefs.current[languageBlockIndex + 1]?.focus(),
         0,
       );
   }
-  const isSingleLanguageBlock = sentence.languageBlocks.length === 1;
+  const isSingleLanguageBlock = languageBlocks.length === 1;
   const isVocabulary = sentence.layout === "vocabulary_table";
   const hasAuthoredPrompt = Boolean(
     sentence.promptLabel.trim() || sentence.promptText?.trim(),
@@ -118,12 +116,12 @@ export function SentencePracticeCard({
           <PracticeMarkdown markdown={sentence.promptText} variant="prompt" />
         </div>
       )}
-      {sentence.languageBlocks.length > 0 ? (
+      {languageBlocks.length > 0 ? (
         <>
           <div
             className={`answer-grid ${hasAuthoredPrompt ? "has-prompt" : ""}`}
           >
-            {sentence.languageBlocks.map(
+            {languageBlocks.map(
               (languageBlock, languageBlockIndex) => (
                 <div
                   key={languageBlock.id}
@@ -253,6 +251,7 @@ export function SentencePracticeCard({
                   )}
                   {helpedBlockIndex === languageBlockIndex && (
                     <p className="answer-diff" aria-live="polite">
+                      <span className="answer-diff-label">Pista:</span>{" "}
                       {diffChars(
                         answers[languageBlockIndex] ?? "",
                         pickClosestAnswer(

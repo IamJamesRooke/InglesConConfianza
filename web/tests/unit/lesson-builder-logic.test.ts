@@ -197,8 +197,9 @@ test("reducer routes block-level actions to their mutation", () => {
 
 // --- answer validation ------------------------------------------------
 
-test("normalizeAnswer trims and collapses whitespace", () => {
-  assert.equal(normalizeAnswer("  I   want  to "), "I want to");
+test("normalizeAnswer trims and collapses whitespace, and folds case", () => {
+  assert.equal(normalizeAnswer("  I   want  to "), "i want to");
+  assert.equal(normalizeAnswer("To do"), normalizeAnswer("to do"));
 });
 
 test("getAnswerValidationMessage flags empty primary, empty alt, and duplicates", () => {

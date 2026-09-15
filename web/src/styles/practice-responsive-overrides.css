@@ -329,6 +329,10 @@
   pointer-events: none;
   box-shadow: var(--shadow-md);
 }
+.answer-diff-label {
+  color: var(--foreground);
+  font-weight: 700;
+}
 .answer-diff-insert {
   padding: 0 2px;
   border-radius: 4px;

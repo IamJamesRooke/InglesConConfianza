@@ -4,6 +4,11 @@ import { createElement } from "react";
 import { renderToStaticMarkup } from "react-dom/server";
 import { LessonDashboard } from "../../src/components/learner/lesson-dashboard";
 import { PracticeMarkdown } from "../../src/components/practice/practice-markdown";
+import { SentencePracticeCard } from "../../src/components/practice/sentence-practice-card";
+import {
+  isAnswerAccepted,
+  normalizeAnswer,
+} from "../../src/lib/lesson-builder/utils";
 
 const lesson = {
   id: "hello",
@@ -78,4 +83,62 @@ test("an empty explanation renders an empty markdown content container", () => {
   const html = renderToStaticMarkup(createElement(PracticeMarkdown, { markdown: "" }));
   assert.match(html, /^<div class="practice-markdown-content /);
   assert.doesNotMatch(html, /<p/);
+});
+
+test("normalizeAnswer folds case in addition to trimming whitespace", () => {
+  assert.equal(normalizeAnswer("To do"), normalizeAnswer("to do"));
+  assert.equal(normalizeAnswer("I'm hungry"), normalizeAnswer("i'm hungry"));
+  assert.notEqual(
+    normalizeAnswer("I want to buy"),
+    normalizeAnswer("I want to buy it"),
+  );
+});
+
+test("isAnswerAccepted is case-insensitive and splits legacy semicolon-joined alternates", () => {
+  assert.ok(isAnswerAccepted("To do", ["to do"]));
+  assert.ok(isAnswerAccepted("i'm hungry", ["I'm hungry"]));
+  assert.ok(!isAnswerAccepted("I want to buy it", ["I want to buy"]));
+  // Legacy content joins alternates in one literal string instead of two
+  // array entries — matching must still accept each half on its own.
+  assert.ok(
+    isAnswerAccepted("I want to buy", ["I want to buy; I wanna buy"]),
+  );
+  assert.ok(
+    isAnswerAccepted("i wanna buy", ["I want to buy; I wanna buy"]),
+  );
+  assert.ok(!isAnswerAccepted("", ["I want to buy; I wanna buy"]));
+});
+
+test("the sentence practice card skips a dangling fully-blank language block", () => {
+  const html = renderToStaticMarkup(
+    createElement(SentencePracticeCard, {
+      sentence: {
+        id: "s1",
+        type: "sentence",
+        promptLabel: "",
+        promptText: "",
+        helperText: "",
+        answerFeedback: null,
+        languageBlocks: [
+          {
+            id: "real",
+            spanish: "hola",
+            callout: null,
+            acceptedAnswers: ["hello"],
+          },
+          {
+            id: "phantom",
+            spanish: "",
+            callout: null,
+            acceptedAnswers: [""],
+          },
+        ],
+      },
+    }),
+  );
+  // Only the real block's Spanish prompt should render; the phantom blank
+  // block must not produce a second, unlabeled input.
+  assert.match(html, /hola/);
+  const inputCount = (html.match(/<input/g) ?? []).length;
+  assert.equal(inputCount, 1);
 });

@@ -60,6 +60,7 @@ export function LessonRow({
             </>
           )}
           {state && <span className="lesson-state">{state}</span>}
+          {complete && <span className="lesson-repasar">Repasar</span>}
           {isNext && !state && (
             <span className="lesson-state">Empieza aquí</span>
           )}

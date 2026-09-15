@@ -5,7 +5,44 @@ import type {
 } from "@/lib/lesson-builder/types";
 
 export function normalizeAnswer(answer: string) {
-  return answer.trim().replace(/\s+/g, " ");
+  return answer.trim().replace(/\s+/g, " ").toLowerCase();
+}
+
+// Some legacy lesson content stores multiple accepted alternates joined as a
+// single "answer one; answer two" string instead of separate array entries
+// (see scripts/audit-lessons-answers.ts). This does not change stored data —
+// it only widens matching at read time so a learner who types just the first
+// alternate is not marked wrong forever.
+export function expandLegacyAlternates(acceptedAnswers: string[]): string[] {
+  return acceptedAnswers.flatMap((answer) =>
+    answer.includes("; ") ? answer.split("; ") : [answer],
+  );
+}
+
+/** Whether `answer` matches one of `acceptedAnswers`, case-insensitively and
+ * including legacy semicolon-joined alternates. Empty input never matches. */
+export function isAnswerAccepted(
+  answer: string,
+  acceptedAnswers: string[],
+): boolean {
+  const normalizedAnswer = normalizeAnswer(answer);
+  if (!normalizedAnswer) return false;
+  return expandLegacyAlternates(acceptedAnswers).some(
+    (acceptedAnswer) => normalizeAnswer(acceptedAnswer) === normalizedAnswer,
+  );
+}
+
+/** A language block is "real" only if it has a Spanish prompt or at least one
+ * non-blank accepted answer — a dangling fully-blank block is authoring debris,
+ * not a question, and should not render or count toward completion. */
+export function isMeaningfulLanguageBlock(languageBlock: {
+  spanish: string;
+  acceptedAnswers: string[];
+}): boolean {
+  return (
+    languageBlock.spanish.trim().length > 0 ||
+    languageBlock.acceptedAnswers.some((answer) => answer.trim().length > 0)
+  );
 }
 
 export type DiffPart = { value: string; type: "equal" | "insert" | "delete" };

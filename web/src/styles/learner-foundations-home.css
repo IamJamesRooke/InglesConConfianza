@@ -761,6 +761,11 @@
   margin-left: 10px;
   font-weight: 650;
 }
+.lesson-repasar {
+  margin-left: 6px;
+  font-weight: 650;
+  color: var(--primary);
+}
 .lesson-state,
 .lesson-row.complete .lesson-number,
 .lesson-row.complete .lesson-action,

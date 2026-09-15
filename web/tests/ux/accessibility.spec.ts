@@ -1,4 +1,5 @@
 import AxeBuilder from "@axe-core/playwright";
+import { devices } from "@playwright/test";
 import { expect, test } from "./fixtures";
 
 // Mechanical accessibility + click-target audit for the Lesson Builder.
@@ -103,4 +104,80 @@ test("icon-only controls meet a minimum click-target size", async ({ page }) => 
     console.log(`\n[ux-check] ${tiny.length} control(s) under 24x24px:\n  - ${tiny.join("\n  - ")}`);
   }
   // Reported, not enforced — icon-button sizing is a design-pass decision.
+});
+
+test("practice page has no serious/moderate accessibility violations on phone", async ({
+  page,
+  request,
+}) => {
+  // Seed one lesson with a single explanation + sentence block directly
+  // through the lesson-builder API — the isolated course starts empty
+  // (see fixtures.ts), and /practice redirects home for any lesson id with
+  // zero blocks.
+  const lessonId = "ux-a11y-practice-lesson";
+  const lesson = {
+    id: lessonId,
+    name: "Practice a11y check",
+    concepts: [],
+    blocks: [
+      {
+        id: "block-explain",
+        type: "explanation",
+        contentMarkdown: "Hola, esto es una prueba.",
+      },
+      {
+        id: "block-sentence",
+        type: "sentence",
+        promptLabel: "",
+        promptText: "",
+        helperText: "",
+        answerFeedback: null,
+        languageBlocks: [
+          {
+            id: "lang-1",
+            spanish: "hola",
+            callout: null,
+            acceptedAnswers: ["hello"],
+          },
+        ],
+      },
+    ],
+  };
+  const putResponse = await request.put(
+    `/api/admin/lesson-builder/lessons/${lessonId}`,
+    { data: { lesson } },
+  );
+  expect(putResponse.ok()).toBeTruthy();
+
+  // Reproduce on the phone profile, per the student-friction walkthrough.
+  const browser = page.context().browser();
+  const phoneContext = await browser!.newContext({ ...devices["iPhone 13"] });
+  const phonePage = await phoneContext.newPage();
+  try {
+    await phonePage.goto(`/practice?lesson=${lessonId}`);
+    await phonePage.getByRole("heading", { level: 1 }).waitFor();
+
+    const results = await new AxeBuilder({ page: phonePage }).analyze();
+    const blocking = results.violations.filter(
+      (v) =>
+        v.impact === "critical" ||
+        v.impact === "serious" ||
+        v.impact === "moderate",
+    );
+    if (blocking.length) {
+      console.log(
+        `\n[ux-check] ${blocking.length} blocking a11y violation(s) on /practice:\n` +
+          blocking
+            .map(
+              (v) =>
+                `  - [${v.impact}] ${v.id}: ${v.help}\n` +
+                v.nodes.map((n) => `      ${n.target.join(" ")}`).join("\n"),
+            )
+            .join("\n"),
+      );
+    }
+    expect(blocking, JSON.stringify(blocking, null, 2)).toEqual([]);
+  } finally {
+    await phoneContext.close();
+  }
 });

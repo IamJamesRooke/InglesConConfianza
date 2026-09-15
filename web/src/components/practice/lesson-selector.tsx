@@ -241,12 +241,16 @@ function LessonSession({
     return () => document.removeEventListener("keydown", onKeyDown);
   }, [advance, close, complete, nextLesson, onCloseLesson, previous, router]);
 
-  return (
+  // Full learner navigation (no onCloseLesson) IS the page — it needs its own
+  // <main> landmark since this route renders nothing else. The Lesson
+  // Builder's inline preview (onCloseLesson is set) lives inside an admin
+  // page that already owns a <main>, so it stays a plain section there.
+  const sessionContent = (
     <section
       ref={sectionRef}
       className="learner-theme lesson-session"
-      role="dialog"
-      aria-modal="true"
+      role={onCloseLesson ? "dialog" : undefined}
+      aria-modal={onCloseLesson ? "true" : undefined}
       aria-labelledby="practice-lesson-title"
       tabIndex={-1}
     >
@@ -301,6 +305,9 @@ function LessonSession({
                 <Check size={34} strokeWidth={2.5} aria-hidden="true" />
               </div>
               <p className="completion-status">Lección completada</p>
+              <p className="completion-saved-note">
+                Tu progreso está guardado.
+              </p>
               {nextLesson && !onCloseLesson ? (
                 <div className="completion-next">
                   <h2>Siguiente lección</h2>
@@ -405,6 +412,12 @@ function LessonSession({
         </footer>
       )}
     </section>
+  );
+
+  return onCloseLesson ? (
+    sessionContent
+  ) : (
+    <main className="learner-theme">{sessionContent}</main>
   );
 }
 

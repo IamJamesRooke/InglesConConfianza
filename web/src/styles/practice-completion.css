@@ -18,6 +18,11 @@
   font-weight: 850;
   letter-spacing: 0.08em;
   text-transform: uppercase;
+  margin-bottom: 8px;
+}
+.completion-saved-note {
+  color: var(--muted-foreground);
+  font-size: 13px;
   margin-bottom: 34px;
 }
 .completion-actions {
