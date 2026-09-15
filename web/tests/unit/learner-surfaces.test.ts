@@ -142,3 +142,36 @@ test("the sentence practice card skips a dangling fully-blank language block", (
   const inputCount = (html.match(/<input/g) ?? []).length;
   assert.equal(inputCount, 1);
 });
+
+test("a given middle piece renders as static text, skips the input, and never blocks completion", () => {
+  const html = renderToStaticMarkup(
+    createElement(SentencePracticeCard, {
+      sentence: {
+        id: "s1",
+        type: "sentence",
+        promptLabel: "",
+        promptText: "",
+        helperText: "",
+        answerFeedback: null,
+        languageBlocks: [
+          { id: "l1", spanish: "Quiero", callout: null, acceptedAnswers: ["I want"] },
+          { id: "l2", spanish: "saber", callout: null, acceptedAnswers: ["to know"] },
+          { id: "l3", spanish: "si", callout: null, acceptedAnswers: ["if"] },
+          {
+            id: "l4",
+            spanish: "...",
+            callout: null,
+            acceptedAnswers: ["..."],
+            given: true,
+          },
+        ],
+      },
+    }),
+  );
+  // Three testable blanks, not four — the given piece gets no input.
+  const inputCount = (html.match(/<input/g) ?? []).length;
+  assert.equal(inputCount, 3);
+  // Its Spanish and English both still render, as static text.
+  assert.match(html, /answer-given-text/);
+  assert.match(html, /\.\.\.[\s\S]*\.\.\./);
+});

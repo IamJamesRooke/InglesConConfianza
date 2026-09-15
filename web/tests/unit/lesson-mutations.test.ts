@@ -243,3 +243,127 @@ test("createLesson seeds an empty concepts array", () => {
   const lessons = m.createLesson(baseLessons(), "lesson_c");
   assert.deepEqual(lessons[2].concepts, []);
 });
+
+test("toggleGiven sets and clears the given flag", () => {
+  let lessons = m.toggleGiven(baseLessons(), "lesson_a", "b1", "l1");
+  assert.equal(
+    (lessons[0].blocks[0] as SentenceBlock).languageBlocks[0].given,
+    true,
+  );
+  lessons = m.toggleGiven(lessons, "lesson_a", "b1", "l1");
+  assert.equal(
+    (lessons[0].blocks[0] as SentenceBlock).languageBlocks[0].given,
+    undefined,
+  );
+});
+
+function chainLessons(): Lesson[] {
+  return [
+    {
+      id: "lesson_a",
+      name: "A",
+      concepts: [],
+      blocks: [
+        sentenceBlock({
+          id: "b1",
+          languageBlocks: [
+            { id: "l1", spanish: "Quiero", callout: null, acceptedAnswers: ["I want"] },
+            { id: "l2", spanish: "saber", callout: null, acceptedAnswers: ["to know"] },
+            { id: "l3", spanish: "algo.", callout: null, acceptedAnswers: ["something."] },
+          ],
+        }),
+      ],
+    },
+  ];
+}
+
+test("extendLastSentence copies the preceding sentence slide's pieces, strips terminal punctuation, and appends one empty pair", () => {
+  const next = m.extendLastSentence(chainLessons(), "lesson_a", "b1", "b2", "l_new");
+  const lesson = next[0];
+  assert.equal(lesson.blocks.length, 2);
+  const extended = lesson.blocks[1] as SentenceBlock;
+  assert.equal(extended.id, "b2");
+  assert.equal(extended.languageBlocks.length, 4);
+  assert.deepEqual(
+    extended.languageBlocks.map((p) => p.spanish),
+    ["Quiero", "saber", "algo", ""],
+  );
+  assert.deepEqual(
+    extended.languageBlocks.map((p) => p.acceptedAnswers[0]),
+    ["I want", "to know", "something", ""],
+  );
+  assert.equal(extended.languageBlocks[3].id, "l_new");
+  // Deep copies, not references — fresh ids for every copied piece.
+  const originalIds = (lesson.blocks[0] as SentenceBlock).languageBlocks.map((p) => p.id);
+  for (const piece of extended.languageBlocks.slice(0, 3)) {
+    assert.ok(!originalIds.includes(piece.id));
+  }
+  // The source slide itself is untouched.
+  assert.deepEqual(
+    (lesson.blocks[0] as SentenceBlock).languageBlocks.map((p) => p.spanish),
+    ["Quiero", "saber", "algo."],
+  );
+});
+
+test("extendLastSentence preserves a copied piece's given flag except on the (punctuation-stripped) last piece", () => {
+  const lessons = chainLessons();
+  const sentence = lessons[0].blocks[0] as SentenceBlock;
+  sentence.languageBlocks[1] = { ...sentence.languageBlocks[1], given: true };
+  const next = m.extendLastSentence(lessons, "lesson_a", "b1", "b2", "l_new");
+  const extended = next[0].blocks[1] as SentenceBlock;
+  assert.equal(extended.languageBlocks[1].given, true);
+  assert.equal(extended.languageBlocks[0].given, undefined);
+});
+
+test("extendLastSentence with no preceding sentence slide behaves like inserting a plain sentence", () => {
+  const lessons: Lesson[] = [
+    {
+      id: "lesson_a",
+      name: null,
+      concepts: [],
+      blocks: [{ id: "e1", type: "explanation", contentMarkdown: "hola" }],
+    },
+  ];
+  const next = m.extendLastSentence(lessons, "lesson_a", "e1", "b1", "l1");
+  const block = next[0].blocks[1] as SentenceBlock;
+  assert.equal(block.languageBlocks.length, 1);
+  assert.equal(block.languageBlocks[0].id, "l1");
+  assert.equal(block.languageBlocks[0].spanish, "");
+});
+
+test("extendLastSentence with afterBlockId null inserts at index 0", () => {
+  const next = m.extendLastSentence(baseLessons(), "lesson_a", null, "b_new", "l_new");
+  assert.equal(next[0].blocks[0].id, "b_new");
+  assert.equal(next[0].blocks.length, 2);
+});
+
+test("extendLastSentence skips a vocabulary table when searching for a preceding sentence to copy", () => {
+  const lessons: Lesson[] = [
+    {
+      id: "lesson_a",
+      name: null,
+      concepts: [],
+      blocks: [
+        sentenceBlock({
+          id: "b1",
+          languageBlocks: [
+            { id: "l1", spanish: "Quiero", callout: null, acceptedAnswers: ["I want"] },
+          ],
+        }),
+        sentenceBlock({
+          id: "vt1",
+          layout: "vocabulary_table",
+          languageBlocks: [
+            { id: "v1", spanish: "con", callout: null, acceptedAnswers: ["with"] },
+          ],
+        }),
+      ],
+    },
+  ];
+  const next = m.extendLastSentence(lessons, "lesson_a", "vt1", "b2", "l_new");
+  const extended = next[0].blocks[2] as SentenceBlock;
+  assert.deepEqual(
+    extended.languageBlocks.map((p) => p.spanish),
+    ["Quiero", ""],
+  );
+});

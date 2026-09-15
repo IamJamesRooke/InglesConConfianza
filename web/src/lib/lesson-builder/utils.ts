@@ -184,6 +184,7 @@ export function normalizeLessons(lessons: Lesson[]) {
             spanish: languageBlock.spanish,
             callout: languageBlock.callout,
             acceptedAnswers: [...languageBlock.acceptedAnswers],
+            ...(languageBlock.given ? { given: true as const } : {}),
           })),
         ),
       };

@@ -11,10 +11,11 @@ import {
   type DocumentBlockType,
 } from "@/components/lesson-builder/slide-insert-control";
 import { useLessonBuilder } from "@/lib/lesson-builder/builder-context";
+import { extractLessonPairTerms } from "@/lib/lesson-builder/concept-suggestions";
 import { activeBlockId, blockDataState, useLessonEditing } from "@/lib/lesson-builder/editing";
 import { fieldSelectionForBlock, selectionForNewBlock } from "@/lib/lesson-builder/keymap";
 import { useDragReorder } from "@/lib/lesson-builder/use-drag-reorder";
-import type { Lesson } from "@/lib/lesson-builder/types";
+import type { Lesson, LessonBlock } from "@/lib/lesson-builder/types";
 
 export type { DocumentBlockType } from "@/components/lesson-builder/slide-insert-control";
 
@@ -102,6 +103,23 @@ export function LessonDocument(props: Props) {
     recordNextSlideUse();
   }
 
+  // E3b mouse path — the seam's "Extend" choice, gated to seams whose
+  // preceding block is a (non-table) sentence slide by `isExtendableSlide`
+  // below; `afterBlockId` is null only when the seam is at index 0 (no
+  // preceding block at all), which `isExtendableSlide` already excludes.
+  function extend(afterBlockId: string | null) {
+    const { blockId, languageBlockId } = actions.extendLastSentence(lessonId, afterBlockId);
+    closeInsert();
+    const sel = { kind: "field" as const, lessonId, blockId, field: "spanish" as const, pieceId: languageBlockId };
+    editing.setSelection(sel, { reason: "insert" });
+    editing.focusSelection(sel);
+    recordNextSlideUse();
+  }
+
+  function isExtendableSlide(block: LessonBlock | undefined): boolean {
+    return Boolean(block && block.type === "sentence" && block.layout !== "vocabulary_table");
+  }
+
   // Upper-right icon cluster: drag handle, duplicate, delete — reveals on
   // slide hover or focus-within, not tied to entering editing. No text
   // labels in the flow; accessible names carry the slide number instead.
@@ -131,7 +149,9 @@ export function LessonDocument(props: Props) {
               focusPalette={insertAt === index}
               afterActive={activeBlockIndex >= 0 && index === activeBlockIndex + 1}
               showNextSlideCue={showNextSlideCue && insertAt === null}
+              canExtend={isExtendableSlide(props.lesson.blocks[index - 1])}
               onAdd={(type) => add(type, index)}
+              onExtend={() => extend(props.lesson.blocks[index - 1]?.id ?? null)}
               onClose={closeInsert}
             />
             <div
@@ -208,7 +228,9 @@ export function LessonDocument(props: Props) {
             focusPalette={insertAt === props.lesson.blocks.length}
             afterActive={activeBlockIndex === props.lesson.blocks.length - 1 && activeBlockIndex >= 0}
             showNextSlideCue={showNextSlideCue && insertAt === null}
+            canExtend={isExtendableSlide(props.lesson.blocks.at(-1))}
             onAdd={(type) => add(type, props.lesson.blocks.length)}
+            onExtend={() => extend(props.lesson.blocks.at(-1)?.id ?? null)}
             onClose={closeInsert}
           />
         </div>
@@ -220,6 +242,7 @@ export function LessonDocument(props: Props) {
             concepts={props.lesson.concepts}
             conceptDisplays={actions.conceptDisplays}
             coversFor={lessonId}
+            pairTerms={extractLessonPairTerms(props.lesson)}
             onAdd={(concept) => actions.addLessonConcept(lessonId, concept)}
             onRemove={(id) => actions.removeLessonConcept(lessonId, id)}
             onRelabel={(id, label) => actions.relabelLessonConcept(lessonId, id, label)}

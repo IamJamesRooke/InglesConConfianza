@@ -199,6 +199,36 @@ function insertFromBlockOrField(ctx: CommandContext): boolean {
   return insertAfterBlock(ctx, lessonId, block);
 }
 
+// E3b — "extend the last sentence" (Ctrl+Alt+Shift+Enter): a new sentence
+// slide copying the nearest preceding sentence slide's pieces plus one new
+// empty pair, focused. Registered only on `title`/`block` (never per-field)
+// exactly like `Ctrl+Alt+Enter` above — every field scope still reaches it
+// because `scopeOf` always appends `block` after the field.
+function extendAfterBlock(ctx: CommandContext, lessonId: string, afterBlockId: string | null): boolean {
+  const { blockId, languageBlockId } = ctx.actions.extendLastSentence(lessonId, afterBlockId);
+  const sel: EditingSelection = {
+    kind: "field",
+    lessonId,
+    blockId,
+    field: "spanish",
+    pieceId: languageBlockId,
+  };
+  ctx.editing.setOpenLesson(lessonId);
+  ctx.editing.setSelection(sel, { reason: "insert" });
+  ctx.editing.focusSelection(sel);
+  return true;
+}
+
+function extendFromTitle(ctx: CommandContext): boolean {
+  if (ctx.selection.kind !== "title") return false;
+  return extendAfterBlock(ctx, ctx.selection.lessonId, null);
+}
+
+function extendFromBlockOrField(ctx: CommandContext): boolean {
+  if (ctx.selection.kind !== "block" && ctx.selection.kind !== "field") return false;
+  return extendAfterBlock(ctx, ctx.selection.lessonId, ctx.selection.blockId);
+}
+
 function enterBlock(ctx: CommandContext): boolean {
   if (ctx.selection.kind !== "block") return false;
   const lesson = findLesson(ctx.lessons, ctx.selection.lessonId);
@@ -337,6 +367,23 @@ function leaveHint(ctx: CommandContext): boolean {
   const sel: EditingSelection = { kind: "field", lessonId, blockId, field: origin, pieceId };
   ctx.editing.setSelection(sel);
   ctx.editing.focusSelection(sel);
+  return true;
+}
+
+// E8 — Ctrl+Alt+G in a spanish/english field toggles the pair's "given"
+// flag (shown to the student, not tested — see types.ts). Registered on
+// both field scopes since either field can have focus when the teacher
+// reaches for it.
+function toggleGivenCommand(ctx: CommandContext): boolean {
+  if (
+    ctx.selection.kind !== "field" ||
+    (ctx.selection.field !== "spanish" && ctx.selection.field !== "english") ||
+    !ctx.selection.pieceId
+  ) {
+    return false;
+  }
+  const { lessonId, blockId, pieceId } = ctx.selection;
+  ctx.actions.toggleGiven(lessonId, blockId, pieceId);
   return true;
 }
 
@@ -518,6 +565,7 @@ export const KEYMAP: Record<Scope, Partial<Record<Chord, Command>>> = {
   title: {
     Enter: enterFromTitle,
     "Ctrl+Alt+Enter": insertFromTitle,
+    "Ctrl+Alt+Shift+Enter": extendFromTitle,
     "Ctrl+Alt+ArrowUp": moveLessonCommand(-1),
     "Ctrl+Alt+ArrowDown": moveLessonCommand(1),
     "Ctrl+Alt+Backspace": deleteLessonConfirm,
@@ -548,6 +596,7 @@ export const KEYMAP: Record<Scope, Partial<Record<Chord, Command>>> = {
     Enter: blockNewlineOnly(),
     "Alt+ArrowDown": requestHint("spanish"),
     "Ctrl+Alt+Backspace": deletePairCommand,
+    "Ctrl+Alt+G": toggleGivenCommand,
   },
   english: {
     Tab: englishAdvance("tab"),
@@ -555,6 +604,7 @@ export const KEYMAP: Record<Scope, Partial<Record<Chord, Command>>> = {
     Enter: englishAdvance("enter"),
     "Alt+ArrowDown": requestHint("english"),
     "Ctrl+Alt+Backspace": deletePairCommand,
+    "Ctrl+Alt+G": toggleGivenCommand,
   },
   hint: {
     Enter: leaveHint,
@@ -565,6 +615,7 @@ export const KEYMAP: Record<Scope, Partial<Record<Chord, Command>>> = {
     Space: enterBlock,
     Escape: escapeBlockToNone,
     "Ctrl+Alt+Enter": insertFromBlockOrField,
+    "Ctrl+Alt+Shift+Enter": extendFromBlockOrField,
     "Ctrl+Alt+ArrowUp": moveBlockCommand(-1),
     "Ctrl+Alt+ArrowDown": moveBlockCommand(1),
   },

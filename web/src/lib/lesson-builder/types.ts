@@ -44,6 +44,11 @@ export type LanguageBlock = {
   spanish: string;
   callout: string | null;
   acceptedAnswers: string[];
+  // A "given" piece is shown to the learner (both languages) but never
+  // tested and never counted toward completion — an ellipsis, a name, a
+  // number the sentence needs but the lesson isn't teaching. Absent (or
+  // false) means tested, the default for every existing lesson file.
+  given?: true;
 };
 
 export type LessonBlock = ExplanationBlock | SentenceBlock;

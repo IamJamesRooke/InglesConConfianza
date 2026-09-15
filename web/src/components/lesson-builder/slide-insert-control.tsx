@@ -1,15 +1,16 @@
 "use client";
 
-import { AlignLeft, Languages, Table2 } from "lucide-react";
+import { AlignLeft, Languages, Link2, Table2 } from "lucide-react";
 import { useLayoutEffect, useRef, type KeyboardEvent } from "react";
 
 export type DocumentBlockType = "explanation" | "sentence" | "vocabulary";
+type Choice = DocumentBlockType | "extend";
 
 // Order and initial focus are an owner-approved contract: Explanation,
 // Sentence, Table — Sentence (index 1) is the one that gets focus when the
 // palette opens via keyboard, since it's the most common insert.
 const BLOCK_TYPES: {
-  type: DocumentBlockType;
+  type: Choice;
   label: string;
   icon: typeof Table2;
   key: string;
@@ -18,6 +19,11 @@ const BLOCK_TYPES: {
   { type: "sentence", label: "Sentence", icon: Languages, key: "s" },
   { type: "vocabulary", label: "Table", icon: Table2, key: "t" },
 ];
+
+// E3b — the mouse chooser's fourth choice, "Extend": only shown at a seam
+// whose preceding block is a sentence slide (never a table), since that's
+// the only case a preceding sentence's pieces exist to copy.
+const EXTEND_CHOICE = { type: "extend" as const, label: "Extend", icon: Link2, key: "x" };
 
 type Props = {
   insertionLabel: string;
@@ -32,7 +38,11 @@ type Props = {
    * itself (where it overlapped the following slide) onto this seam's own
    * hairline. */
   showNextSlideCue?: boolean;
+  /** Whether this seam's preceding block is a (non-table) sentence slide —
+   * gates the "Extend" fourth choice. See docs/design/lesson-builder-rebuild.md E3b. */
+  canExtend?: boolean;
   onAdd: (type: DocumentBlockType) => void;
+  onExtend?: () => void;
   onClose: () => void;
 };
 
@@ -42,10 +52,13 @@ export function SlideInsertControl({
   focusPalette = false,
   afterActive = false,
   showNextSlideCue = false,
+  canExtend = false,
   onAdd,
+  onExtend,
   onClose,
 }: Props) {
   const showCue = afterActive && showNextSlideCue;
+  const choices = canExtend && onExtend ? [...BLOCK_TYPES, EXTEND_CHOICE] : BLOCK_TYPES;
   const buttons = useRef<(HTMLButtonElement | null)[]>([]);
 
   // Focus synchronously before paint (the `.open` class that makes the
@@ -73,20 +86,24 @@ export function SlideInsertControl({
     }
     if (event.key === "ArrowRight" || event.key === "ArrowDown") {
       event.preventDefault();
-      buttons.current[(Math.max(0, current) + 1) % BLOCK_TYPES.length]?.focus();
+      buttons.current[(Math.max(0, current) + 1) % choices.length]?.focus();
       return;
     }
     if (event.key === "ArrowLeft" || event.key === "ArrowUp") {
       event.preventDefault();
-      buttons.current[(Math.max(0, current) - 1 + BLOCK_TYPES.length) % BLOCK_TYPES.length]?.focus();
+      buttons.current[(Math.max(0, current) - 1 + choices.length) % choices.length]?.focus();
       return;
     }
-    // E/S/T insert immediately, but only here — this handler only runs
+    // E/S/T/X insert immediately, but only here — this handler only runs
     // while focus is inside the open palette itself, never while typing
     // content elsewhere on the slide.
     if (event.ctrlKey || event.metaKey || event.altKey || event.nativeEvent.isComposing) return;
-    const choice = BLOCK_TYPES.find((entry) => entry.key === event.key.toLowerCase());
-    if (choice) { event.preventDefault(); onAdd(choice.type); }
+    const choice = choices.find((entry) => entry.key === event.key.toLowerCase());
+    if (choice) {
+      event.preventDefault();
+      if (choice.type === "extend") onExtend?.();
+      else onAdd(choice.type);
+    }
   }
 
   return (
@@ -107,7 +124,7 @@ export function SlideInsertControl({
         onKeyDown={handleKey}
       >
         {labelled && <span>Add slide</span>}
-        {BLOCK_TYPES.map((choice, index) => {
+        {choices.map((choice, index) => {
           const Icon = choice.icon;
           return (
             <button
@@ -117,7 +134,7 @@ export function SlideInsertControl({
               aria-label={`${choice.label} — ${insertionLabel}`}
               title={`${choice.label} — ${insertionLabel} (${choice.key.toUpperCase()})`}
               onMouseDown={(event) => event.preventDefault()}
-              onClick={() => onAdd(choice.type)}
+              onClick={() => (choice.type === "extend" ? onExtend?.() : onAdd(choice.type))}
             >
               <Icon size={15} aria-hidden="true" />
               <span>{choice.label}</span>

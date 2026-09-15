@@ -168,7 +168,18 @@ pre-fill the new sentence slide with every adjacent (Spanish, English) pair from
 preceding explanation — "hacer / to do" — focused on the first English field so the
 teacher can accept (`Enter`) or edit. Never retype a pair.
 
-### E3b. Chain building (from the owner's real lesson, 2026-09-15)
+### E3b. Chain building (from the owner's real lesson, 2026-09-15) — done 2026-09-15
+Shipped: `extendLastSentence` (`mutations.ts`), the `EXTEND_LAST_SENTENCE` reducer
+action, and `Ctrl+Alt+Shift+Enter` (title/block scope, reached from every field via
+the usual scope fallthrough) — a new sentence slide right after the current one,
+copying the nearest preceding sentence slide's pieces (deep copies, fresh ids;
+terminal punctuation stripped from the copied last piece in both languages) plus one
+new empty pair, focused. With no preceding sentence slide it degrades to a plain
+empty sentence, same as `Ctrl+Alt+Enter`'s predicted-sentence case. Mouse path: the
+seam palette (`SlideInsertControl`) gains a fourth "Extend" choice, shown only when
+the seam's preceding block is a (non-table) sentence. Script syntax (`> +`) stays
+open — this is only the block-model half; `lesson-script-grammar.md` already
+specifies the syntax.
 The owner's lesson "I want to do something today." shows the method's practice is
 cumulative: `Quiero / I want` → `Quiero · hacer · algo.` → `Quiero · hacer · algo · hoy.`
 Each recombination currently retypes every earlier piece. Add **extend the last
@@ -179,7 +190,19 @@ an instruction line ("Veamos la diferencia.") — script syntax: a line ending i
 or `:` before `|` rows becomes the instruction. Every explanation in the lesson is
 `[[es:X]] es [[en:Y]]` + optional Spanish comment — E1 covers 100 % of them.
 
-### E8. "Given" pieces — shown, not tested (owner ask 2026-09-15)
+### E8. "Given" pieces — shown, not tested (owner ask 2026-09-15) — done 2026-09-15
+Shipped: `LanguageBlock.given?: true` (absent = tested, back-compat preserved through
+both `normalizeLessons` and `parseLessonFile`'s read-time normalization — the latter
+was found dropping the flag on every read, since it rebuilds each language block
+field-by-field; fixed in `lesson-file.ts`); `toggleGiven` (`mutations.ts`) bound to
+`Ctrl+Alt+G` in the spanish/english field scopes. Builder: a muted "given" pill next
+to the pair while editing (`sentence-editor.tsx`); the resting composed view renders
+the given piece's English in normal weight with a dotted underline and a title
+tooltip (`sentence-presentation.tsx`). Learner: `SentencePracticeCard` renders a
+given piece as static Spanish/English text with no input, excluded from Tab/Enter
+progression and from `isComplete` (verified live: a 4-piece chain with a trailing
+given "…" piece completes on the 3 testable answers alone). Script syntax (`> = es /
+en`) stays open, per `lesson-script-grammar.md`.
 Some pieces of a sentence (an ellipsis "…", a name, a number) must be visible to the
 student but never asked for. Add `LanguageBlock.given?: true`: the learner renders it as
 plain text (Spanish and English both shown) and skips it in progression/completion; the
@@ -215,6 +238,15 @@ the curriculum; `Tab` accepts and moves on. The same lookup **auto-fills "Covers
 from the pairs used (`concept-suggestions.ts` already computes this — surface it as
 suggested chips, `Enter` accepts all). Six hand-tagged chips per lesson is the second
 biggest time sink after marking.
+
+**Auto-Covers half: done (2026-09-15).** `extractLessonPairTerms` +
+`matchPairTermsToConcepts` (`concept-suggestions.ts`) turn a lesson's own pairs
+(Spanish text, accepted English answers, `[[es:…]]`/`[[en:…]]` explanation marks)
+into curriculum concept matches via one `POST /api/admin/curriculum/concepts/suggest`
+call; `LessonConceptsField` renders them as dashed "+" pills after the tagged chips
+(`Enter`/click tags one, `Ctrl+Enter` tags all, `Backspace`/`×` dismisses for the
+session only). The pair-field autocomplete half (typing Spanish/English suggests the
+match inline, `Tab` accepts) is not part of this and remains open.
 
 ### E6. Fewer keystrokes per pair
 `Enter` in an English field = next pair (same as Tab); `Enter` on an empty last pair =

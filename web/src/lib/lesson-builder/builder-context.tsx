@@ -64,11 +64,21 @@ export type LessonBuilderActions = {
   ) => void;
   addPiece: (lessonId: string, blockId: string) => string;
   deletePiece: (lessonId: string, blockId: string, pieceId: string) => void;
+  toggleGiven: (lessonId: string, blockId: string, pieceId: string) => void;
   addBlock: (
     lessonId: string,
     type: DocumentBlockType,
     insertionIndex: number,
   ) => string;
+  // E3b: a new sentence slide right after `afterBlockId` (or at index 0 when
+  // null, e.g. from the lesson title) whose pieces are copies of the
+  // nearest preceding sentence slide's pieces plus one new empty pair.
+  // Returns the new block's id and the new empty pair's id so the caller
+  // can focus it.
+  extendLastSentence: (
+    lessonId: string,
+    afterBlockId: string | null,
+  ) => { blockId: string; languageBlockId: string };
   deleteBlock: (lessonId: string, blockId: string) => void;
   duplicateBlock: (lessonId: string, blockId: string) => void;
   moveBlock: (lessonId: string, blockId: string, direction: -1 | 1) => void;

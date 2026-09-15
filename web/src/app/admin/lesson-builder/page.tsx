@@ -364,6 +364,29 @@ export default function LessonBuilderPage() {
     return languageBlockId;
   }, []);
 
+  const toggleGiven = useCallback(
+    (lessonId: string, sentenceBlockId: string, languageBlockId: string) => {
+      dispatch({ type: "TOGGLE_GIVEN", lessonId, sentenceBlockId, languageBlockId });
+    },
+    [],
+  );
+
+  const extendLastSentence = useCallback(
+    (lessonId: string, afterBlockId: string | null) => {
+      const blockId = createId("block");
+      const languageBlockId = createId("lang");
+      dispatch({
+        type: "EXTEND_LAST_SENTENCE",
+        lessonId,
+        afterBlockId,
+        blockId,
+        languageBlockId,
+      });
+      return { blockId, languageBlockId };
+    },
+    [],
+  );
+
   const deleteBlock = useCallback((lessonId: string, blockId: string) => {
     const lesson = lessonsRef.current.find(
       (candidate) => candidate.id === lessonId,
@@ -562,7 +585,9 @@ export default function LessonBuilderPage() {
         }),
       addPiece,
       deletePiece,
+      toggleGiven,
       addBlock,
+      extendLastSentence,
       deleteBlock,
       duplicateBlock: (lessonId, blockId) =>
         dispatch({ type: "DUPLICATE_CONTENT_BLOCK", lessonId, blockId }),
@@ -596,7 +621,9 @@ export default function LessonBuilderPage() {
       deleteLesson,
       addPiece,
       deletePiece,
+      toggleGiven,
       addBlock,
+      extendLastSentence,
       deleteBlock,
       moveBlock,
       moveLessonKeyboard,

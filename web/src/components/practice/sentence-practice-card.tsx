@@ -26,8 +26,18 @@ export function SentencePracticeCard({
   const languageBlocks = sentence.languageBlocks.filter(
     isMeaningfulLanguageBlock,
   );
+  // E8 "given" pieces (shown, not tested) are rendered inline (below) but
+  // never drive answer state, progression, or completion — every index
+  // below (answers, correctAnswers, inputRefs, help/focus) is scoped to
+  // this testable-only subset, not the full `languageBlocks` list.
+  const testableBlocks = languageBlocks.filter(
+    (languageBlock) => !languageBlock.given,
+  );
+  const testableIndexById = new Map(
+    testableBlocks.map((languageBlock, index) => [languageBlock.id, index]),
+  );
   const [answers, setAnswers] = useState<string[]>(() =>
-    languageBlocks.map((_, index) => initialAnswers?.[index] ?? ""),
+    testableBlocks.map((_, index) => initialAnswers?.[index] ?? ""),
   );
   const [helpedBlockIndex, setHelpedBlockIndex] = useState<number | null>(null);
   const [focusedBlockIndex, setFocusedBlockIndex] = useState<number | null>(
@@ -35,7 +45,7 @@ export function SentencePracticeCard({
   );
   const inputRefs = useRef<Array<HTMLInputElement | null>>([]);
   const helpTimerRef = useRef<number | null>(null);
-  const correctAnswers = languageBlocks.map(
+  const correctAnswers = testableBlocks.map(
     (languageBlock, languageBlockIndex) =>
       isAnswerAccepted(
         answers[languageBlockIndex] ?? "",
@@ -44,7 +54,7 @@ export function SentencePracticeCard({
   );
   const isComplete =
     helpedBlockIndex === null &&
-    languageBlocks.length > 0 &&
+    testableBlocks.length > 0 &&
     correctAnswers.every(Boolean);
   const clearHelpTimer = useCallback(() => {
     if (helpTimerRef.current !== null) {
@@ -89,15 +99,15 @@ export function SentencePracticeCard({
     nextAnswers[languageBlockIndex] = answer;
     setAnswers(nextAnswers);
     onAnswersChange?.(nextAnswers);
-    const languageBlock = languageBlocks[languageBlockIndex];
+    const languageBlock = testableBlocks[languageBlockIndex];
     const isCorrect = isAnswerAccepted(answer, languageBlock.acceptedAnswers);
-    if (isCorrect && languageBlockIndex < languageBlocks.length - 1)
+    if (isCorrect && languageBlockIndex < testableBlocks.length - 1)
       window.setTimeout(
         () => inputRefs.current[languageBlockIndex + 1]?.focus(),
         0,
       );
   }
-  const isSingleLanguageBlock = languageBlocks.length === 1;
+  const isSingleLanguageBlock = testableBlocks.length === 1;
   const isVocabulary = sentence.layout === "vocabulary_table";
   const hasAuthoredPrompt = Boolean(
     sentence.promptLabel.trim() || sentence.promptText?.trim(),
@@ -121,8 +131,26 @@ export function SentencePracticeCard({
           <div
             className={`answer-grid ${hasAuthoredPrompt ? "has-prompt" : ""}`}
           >
-            {languageBlocks.map(
-              (languageBlock, languageBlockIndex) => (
+            {languageBlocks.map((languageBlock) => {
+              const testableIndex = testableIndexById.get(languageBlock.id);
+              // E8 "given" piece: shown, never tested — static text, no
+              // input, no answer-state indexing, so Tab/Enter progression
+              // (which only ever targets `inputRefs`) skips it for free.
+              if (testableIndex === undefined) {
+                return (
+                  <div key={languageBlock.id} className="answer-piece given">
+                    <span className="answer-source">{languageBlock.spanish}</span>
+                    <span
+                      className="answer-given-text"
+                      title="Se muestra al estudiante, no se evalúa"
+                    >
+                      {languageBlock.acceptedAnswers[0]}
+                    </span>
+                  </div>
+                );
+              }
+              const languageBlockIndex = testableIndex;
+              return (
                 <div
                   key={languageBlock.id}
                   className={`answer-piece ${correctAnswers[languageBlockIndex] && helpedBlockIndex !== languageBlockIndex ? "correct" : ""}`}
@@ -294,8 +322,8 @@ export function SentencePracticeCard({
                       </button>
                     )}
                 </div>
-              ),
-            )}
+              );
+            })}
           </div>
           {isComplete && (
             <p

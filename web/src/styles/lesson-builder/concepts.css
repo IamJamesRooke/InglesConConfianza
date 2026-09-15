@@ -84,6 +84,24 @@
   color: var(--muted-foreground);
 }
 
+/* Auto-Covers (E5): a concept the lesson's own pairs already name, offered
+   as a one-keystroke suggestion (not yet tagged). Dashed like is-freehand/
+   is-uncovered, but a primary-tinted outline plus a leading "+" makes clear
+   this is an offer to accept, not an existing chip's state. */
+.lesson-concept-chip.is-pair-suggestion {
+  border-style: dashed;
+  border-color: color-mix(in oklch, var(--primary) 45%, var(--border));
+  color: var(--muted-foreground);
+  background: transparent;
+  cursor: pointer;
+}
+.lesson-concept-chip.is-pair-suggestion:hover,
+.lesson-concept-chip.is-pair-suggestion:focus-visible {
+  background: color-mix(in oklch, var(--primary) 8%, transparent);
+  color: var(--foreground);
+  outline: none;
+}
+
 .lesson-concept-add {
   min-height: 24px;
   min-width: 92px;

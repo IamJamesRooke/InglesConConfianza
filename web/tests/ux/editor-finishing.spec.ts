@@ -190,8 +190,13 @@ test("direct seam actions insert at exact boundaries without overlay", async ({ 
   await expect(row.locator("[data-document-block]").first().locator(".lesson-document-explanation")).toBeVisible();
 
   // Palette buttons exist per seam regardless of rest-state visibility —
-  // count them in the accessibility tree including hidden nodes.
+  // count them in the accessibility tree including hidden nodes. Every seam
+  // has at least Explanation/Sentence/Table; a seam whose preceding block is
+  // a sentence slide (E3b) additionally gets a fourth "Extend" choice.
   for (const seam of await row.locator(".lesson-document-insert").all()) {
-    await expect(seam.getByRole("button", { includeHidden: true })).toHaveCount(3);
+    const names = await seam.getByRole("button", { includeHidden: true }).allTextContents();
+    expect(names.slice(0, 3)).toEqual(["Explanation", "Sentence", "Table"]);
+    expect(names.length).toBeLessThanOrEqual(4);
+    if (names.length === 4) expect(names[3]).toEqual("Extend");
   }
 });

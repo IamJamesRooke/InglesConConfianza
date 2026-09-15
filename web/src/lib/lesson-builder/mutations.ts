@@ -2,6 +2,7 @@ import type {
   ExplanationBlock,
   LanguageBlock,
   Lesson,
+  LessonBlock,
   LessonConcept,
   SentenceBlock,
 } from "@/lib/lesson-builder/types";
@@ -423,6 +424,80 @@ export function moveLanguageBlock(
   }));
 }
 
+// Strips trailing terminal punctuation (.?!… and runs of them, e.g. "?!")
+// from one piece of text — used when a sentence slide is extended, per
+// docs/design/lesson-script-grammar.md's `> +` semantics: the copied last
+// piece loses its terminal punctuation (both languages) so the teacher
+// retypes it on the new trailing pair rather than inheriting a stray
+// mid-sentence period.
+function stripTerminalPunctuation(text: string): string {
+  return text.replace(/[.?!…]+\s*$/u, "").trimEnd();
+}
+
+function isSentenceSlide(block: LessonBlock | undefined): block is SentenceBlock {
+  return Boolean(block && block.type === "sentence" && block.layout !== "vocabulary_table");
+}
+
+// E3b — "extend the last sentence": inserts a new sentence slide right after
+// `afterBlockId` (or at index 0 when `afterBlockId` is null, e.g. from the
+// lesson title) whose pieces are deep copies (new ids) of the nearest
+// *preceding* sentence slide's pieces — never a table — plus one new empty
+// pair. The copied last piece has its terminal punctuation stripped in both
+// languages; the teacher retypes it on the new pair. With no preceding
+// sentence slide to copy, this degrades to inserting a plain empty sentence
+// slide (identical to `addSentenceBlock`).
+export function extendLastSentence(
+  lessons: Lesson[],
+  lessonId: string,
+  afterBlockId: string | null,
+  blockId: string,
+  languageBlockId: string,
+): Lesson[] {
+  return mapLesson(lessons, lessonId, (lesson) => {
+    let insertionIndex: number;
+    if (afterBlockId === null) {
+      insertionIndex = 0;
+    } else {
+      const anchorIndex = lesson.blocks.findIndex((block) => block.id === afterBlockId);
+      if (anchorIndex === -1) return lesson;
+      insertionIndex = anchorIndex + 1;
+    }
+
+    let sourceIndex = insertionIndex - 1;
+    while (sourceIndex >= 0 && !isSentenceSlide(lesson.blocks[sourceIndex])) {
+      sourceIndex -= 1;
+    }
+    const source = sourceIndex >= 0 ? (lesson.blocks[sourceIndex] as SentenceBlock) : undefined;
+
+    const copiedPieces: LanguageBlock[] = source
+      ? source.languageBlocks.map((piece, index) => {
+          const isLastPiece = index === source.languageBlocks.length - 1;
+          return {
+            id: createId("lang"),
+            spanish: isLastPiece ? stripTerminalPunctuation(piece.spanish) : piece.spanish,
+            callout: piece.callout,
+            acceptedAnswers: isLastPiece
+              ? piece.acceptedAnswers.map(stripTerminalPunctuation)
+              : [...piece.acceptedAnswers],
+            ...(piece.given ? { given: true as const } : {}),
+          };
+        })
+      : [];
+
+    const block: SentenceBlock = {
+      id: blockId,
+      type: "sentence",
+      promptLabel: "",
+      promptText: "",
+      helperText: "",
+      answerFeedback: null,
+      languageBlocks: [...copiedPieces, emptyLanguageBlock(languageBlockId)],
+    };
+
+    return { ...lesson, blocks: lesson.blocks.toSpliced(insertionIndex, 0, block) };
+  });
+}
+
 // --- Accepted answers ------------------------------------------------
 
 export function updateAcceptedAnswer(
@@ -462,6 +537,26 @@ export function addAcceptedAnswer(
       ...languageBlock,
       acceptedAnswers: [...languageBlock.acceptedAnswers, ""],
     }),
+  );
+}
+
+export function toggleGiven(
+  lessons: Lesson[],
+  lessonId: string,
+  sentenceBlockId: string,
+  languageBlockId: string,
+): Lesson[] {
+  return mapLanguageBlock(
+    lessons,
+    lessonId,
+    sentenceBlockId,
+    languageBlockId,
+    (languageBlock) => {
+      if (!languageBlock.given) return { ...languageBlock, given: true };
+      const rest: LanguageBlock = { ...languageBlock };
+      delete rest.given;
+      return rest;
+    },
   );
 }
 

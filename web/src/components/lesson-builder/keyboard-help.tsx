@@ -202,6 +202,24 @@ export function KeyboardHelpDialog({ onClose }: { onClose: () => void }) {
                 title: delete the lesson (confirm still required)
               </dd>
             </div>
+            <div>
+              <dt>
+                <kbd>Ctrl</kbd> <kbd>Alt</kbd> <kbd>⇧</kbd> <kbd>Enter</kbd>
+              </dt>
+              <dd>
+                Extend the last sentence: a new slide with the previous
+                sentence&apos;s pieces plus one new empty pair, ready to type
+              </dd>
+            </div>
+            <div>
+              <dt>
+                <kbd>Ctrl</kbd> <kbd>Alt</kbd> <kbd>G</kbd>
+              </dt>
+              <dd>
+                On a sentence pair: mark it &quot;given&quot; — shown to the
+                student, never tested
+              </dd>
+            </div>
           </dl>
         </section>
       </div>

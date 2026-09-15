@@ -238,6 +238,22 @@
   vertical-align: -2px;
   color: var(--primary);
 }
+/* E8 "given" piece: shown to the learner, never tested — same Spanish
+   heading as a real blank, but the English is static text (no input, no
+   border) so it never looks answerable. */
+.answer-given-text {
+  display: block;
+  padding: 12px 16px;
+  color: var(--muted-foreground);
+  font-family: var(--lesson-display);
+  font-size: 24px;
+  font-weight: 600;
+  font-style: italic;
+}
+.single-answer .answer-given-text {
+  text-align: center;
+  font-size: 27px;
+}
 .answer-field {
   position: relative;
   min-width: 0;

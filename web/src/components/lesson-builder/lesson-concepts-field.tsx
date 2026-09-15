@@ -5,7 +5,11 @@ import { useEffect, useId, useLayoutEffect, useRef, useState, type Ref } from "r
 
 import { ConceptQuickEdit, type ConceptDraft } from "@/components/lesson-builder/concept-quick-edit";
 import { conceptKey } from "@/lib/lesson-builder/lesson-file";
-import type { LessonConceptSuggestion } from "@/lib/lesson-builder/concept-suggestions";
+import {
+  conceptPriority,
+  type LessonConceptSuggestion,
+  type PairConceptMatch,
+} from "@/lib/lesson-builder/concept-suggestions";
 import type {
   ConceptDisplayLookup,
   LessonConcept,
@@ -18,6 +22,36 @@ type ConceptResult = {
   english: string;
   curriculumRole: string;
 };
+
+// Dismissed auto-Covers suggestions, per lesson, for this tab's session only
+// — never written into the lesson data. Keyed by lesson id (`coversFor`).
+function dismissedKey(lessonId: string) {
+  return `lesson-builder:covers-dismissed:${lessonId}`;
+}
+
+function readDismissed(lessonId: string): Set<string> {
+  try {
+    const raw = window.sessionStorage.getItem(dismissedKey(lessonId));
+    if (!raw) return new Set();
+    const ids = JSON.parse(raw) as unknown;
+    return Array.isArray(ids) ? new Set(ids.filter((id) => typeof id === "string")) : new Set();
+  } catch {
+    return new Set();
+  }
+}
+
+function addDismissed(lessonId: string, conceptId: string) {
+  try {
+    const current = readDismissed(lessonId);
+    current.add(conceptId);
+    window.sessionStorage.setItem(dismissedKey(lessonId), JSON.stringify([...current]));
+  } catch {
+    /* storage unavailable (private mode, quota) — dismissal just won't stick */
+  }
+}
+
+const PAIR_SUGGESTION_DEBOUNCE_MS = 800;
+const MAX_PAIR_SUGGESTIONS = 8;
 
 export type { ConceptDisplayLookup } from "@/lib/lesson-builder/types";
 
@@ -39,6 +73,7 @@ export function LessonConceptsField({
   onDisplayChange,
   coversFor,
   onAdvance,
+  pairTerms,
 }: {
   concepts: LessonConcept[];
   onAdd: (concept: LessonConcept) => void;
@@ -61,6 +96,11 @@ export function LessonConceptsField({
   // empty field to move on to the lesson body.
   coversFor?: string;
   onAdvance?: () => void;
+  // Auto-Covers (E5): terms already named by this lesson's own pairs
+  // (extractLessonPairTerms). When given (with `coversFor` as the lesson id),
+  // the field looks up matching curriculum concepts and offers them as
+  // one-keystroke "Covers" suggestions after the tagged chips.
+  pairTerms?: string[];
 }) {
   const [query, setQuery] = useState("");
   const [results, setResults] = useState<ConceptResult[]>([]);
@@ -75,6 +115,50 @@ export function LessonConceptsField({
   const fieldWrapRef = useRef<HTMLDivElement | null>(null);
   const popoverRef = useRef<HTMLUListElement | null>(null);
   const [dropUp, setDropUp] = useState(false);
+  const [pairMatches, setPairMatches] = useState<PairConceptMatch[]>([]);
+  const [dismissed, setDismissed] = useState<Set<string>>(() =>
+    coversFor ? readDismissed(coversFor) : new Set(),
+  );
+  // Re-derive `dismissed` when the lesson changes, during render rather than
+  // an effect (avoids a synchronous setState-in-effect while still resetting
+  // before paint) — see https://react.dev/learn/you-might-not-need-an-effect.
+  const [dismissedFor, setDismissedFor] = useState(coversFor);
+  if (dismissedFor !== coversFor) {
+    setDismissedFor(coversFor);
+    setDismissed(coversFor ? readDismissed(coversFor) : new Set());
+  }
+
+  // Recompute auto-Covers suggestions 800ms after the lesson's pairs change,
+  // and once on open (a teacher who opens straight into an already-filled
+  // lesson still gets suggestions without needing to edit a pair first).
+  const pairTermsKey = pairTerms?.join("") ?? "";
+  useEffect(() => {
+    if (!coversFor || !pairTerms || pairTerms.length === 0) {
+      const timer = window.setTimeout(() => setPairMatches([]), 0);
+      return () => window.clearTimeout(timer);
+    }
+    const controller = new AbortController();
+    const timer = window.setTimeout(async () => {
+      try {
+        const response = await fetch("/api/admin/curriculum/concepts/suggest", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ terms: pairTerms }),
+          signal: controller.signal,
+        });
+        if (!response.ok) return;
+        const data = (await response.json()) as { suggestions: PairConceptMatch[] };
+        setPairMatches(data.suggestions);
+      } catch {
+        // aborted or offline — leave the previous suggestions in place
+      }
+    }, PAIR_SUGGESTION_DEBOUNCE_MS);
+    return () => {
+      controller.abort();
+      window.clearTimeout(timer);
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [coversFor, pairTermsKey, open]);
 
   useEffect(() => {
     const trimmed = query.trim();
@@ -175,6 +259,52 @@ export function LessonConceptsField({
       conceptId: suggestion.conceptId,
       label: suggestion.spanish,
     });
+  }
+
+  function acceptPairMatch(match: PairConceptMatch) {
+    const display = {
+      spanish: match.concept.spanish,
+      english: match.concept.english,
+      role: match.concept.role,
+    };
+    setLocalDisplays((current) => ({ ...current, [match.concept.id]: display }));
+    onDisplayChange?.(match.concept.id, display);
+    onAdd({
+      id: createId("lesson_concept"),
+      conceptId: match.concept.id,
+      label: match.concept.spanish,
+    });
+  }
+
+  function dismissPairMatch(conceptId: string) {
+    if (!coversFor) return;
+    addDismissed(coversFor, conceptId);
+    setDismissed((current) => new Set(current).add(conceptId));
+  }
+
+  // Dedupe by concept (several terms can name the same concept), drop
+  // already-tagged or dismissed-this-session concepts, then order by
+  // curriculum priority and, as a tiebreak, which term named it first.
+  const pairSuggestions = (() => {
+    const byId = new Map<string, PairConceptMatch>();
+    pairMatches.forEach((match) => {
+      if (!byId.has(match.concept.id)) byId.set(match.concept.id, match);
+    });
+    return [...byId.values()]
+      .filter(
+        (match) => !alreadyAdded.has(match.concept.id) && !dismissed.has(match.concept.id),
+      )
+      .sort((left, right) => {
+        const priorityDiff =
+          conceptPriority(left.concept.role).rank - conceptPriority(right.concept.role).rank;
+        if (priorityDiff !== 0) return priorityDiff;
+        return pairMatches.indexOf(left) - pairMatches.indexOf(right);
+      })
+      .slice(0, MAX_PAIR_SUGGESTIONS);
+  })();
+
+  function acceptAllPairSuggestions() {
+    pairSuggestions.forEach(acceptPairMatch);
   }
 
   return (
@@ -309,6 +439,46 @@ export function LessonConceptsField({
           </span>
           );
         })}
+        {pairSuggestions.map((match) => (
+          <span
+            key={match.concept.id}
+            role="button"
+            tabIndex={0}
+            className={
+              variant === "compact"
+                ? "lesson-concept-chip is-pair-suggestion"
+                : "group inline-flex items-center gap-2 rounded-xl border border-dashed px-3 py-1.5 text-xs text-muted-foreground"
+            }
+            title={`Named by this lesson's pairs — ${match.term}`}
+            onClick={() => acceptPairMatch(match)}
+            onKeyDown={(event) => {
+              if (event.key === "Enter") {
+                event.preventDefault();
+                acceptPairMatch(match);
+              } else if (event.key === "Backspace") {
+                event.preventDefault();
+                dismissPairMatch(match.concept.id);
+              }
+            }}
+          >
+            <Plus className="size-3" aria-hidden="true" />
+            <span className={variant === "compact" ? "lesson-concept-label" : "grid text-left leading-tight"}>
+              {match.concept.english}
+            </span>
+            <button
+              type="button"
+              tabIndex={-1}
+              onClick={(event) => {
+                event.stopPropagation();
+                dismissPairMatch(match.concept.id);
+              }}
+              aria-label={`Dismiss suggestion ${match.concept.english}`}
+              className={variant === "compact" ? "lesson-concept-remove" : "text-current/60 transition hover:text-[var(--destructive)]"}
+            >
+              <X className="size-3" aria-hidden="true" />
+            </button>
+          </span>
+        ))}
         <div
           ref={fieldWrapRef}
           className={`${variant === "compact" ? "relative min-w-28 max-w-56" : "relative min-w-40 flex-1"}`}
@@ -340,6 +510,11 @@ export function LessonConceptsField({
               setOpen(true);
             }}
             onKeyDown={(event) => {
+              if (event.key === "Enter" && event.ctrlKey && pairSuggestions.length > 0) {
+                event.preventDefault();
+                acceptAllPairSuggestions();
+                return;
+              }
               if (
                 event.key === "Backspace" &&
                 query === "" &&

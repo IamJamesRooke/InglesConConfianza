@@ -144,6 +144,19 @@ export type LessonsAction =
       sentenceBlockId: string;
       languageBlockId: string;
       answerIndex: number;
+    }
+  | {
+      type: "TOGGLE_GIVEN";
+      lessonId: string;
+      sentenceBlockId: string;
+      languageBlockId: string;
+    }
+  | {
+      type: "EXTEND_LAST_SENTENCE";
+      lessonId: string;
+      afterBlockId: string | null;
+      blockId: string;
+      languageBlockId: string;
     };
 
 export function lessonsReducer(
@@ -311,6 +324,21 @@ export function lessonsReducer(
         action.sentenceBlockId,
         action.languageBlockId,
         action.answerIndex,
+      );
+    case "TOGGLE_GIVEN":
+      return mutations.toggleGiven(
+        lessons,
+        action.lessonId,
+        action.sentenceBlockId,
+        action.languageBlockId,
+      );
+    case "EXTEND_LAST_SENTENCE":
+      return mutations.extendLastSentence(
+        lessons,
+        action.lessonId,
+        action.afterBlockId,
+        action.blockId,
+        action.languageBlockId,
       );
     default: {
       const exhaustiveCheck: never = action;

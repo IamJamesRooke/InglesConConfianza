@@ -37,14 +37,39 @@ interaction decision below is in service of those three goals, not of
   Spanish piece (`spanish`) and one or more accepted English answers
   (`acceptedAnswers: string[]`). In the UI, alternates are typed into a
   single English field separated by `/` (a literal slash is typed as `\/`);
-  see `answer-entry.ts` for the parse/format contract.
+  see `answer-entry.ts` for the parse/format contract. `given?: true`
+  (E8, 2026-09-15) marks a pair as shown to the learner but never tested —
+  an ellipsis, a name, a number the sentence needs but the lesson isn't
+  teaching. Absent (or false) means tested, the default for every existing
+  lesson. Toggled with `Ctrl+Alt+G` in either field (`mutations.ts`'s
+  `toggleGiven`); the editing view shows a small muted "given" pill next to
+  the pair, and the resting composed view renders the pair's English in
+  normal weight with a dotted underline (`lesson-sentence-presentation.tsx`,
+  `sentence.css`). The learner's `SentencePracticeCard` renders a given
+  piece as static Spanish/English text with no input, excluded from
+  Tab/Enter progression and from completion (`isComplete`).
 - **Hint** (`callout`) — an optional small pill of extra context attached to
   one pair, shown/edited only while that pair is active.
 - **Instruction** (`promptText`) — an optional line of learner-facing
   guidance shown above a Sentence/Vocabulary block's pairs.
 - **"Covers" concepts** (`Lesson.concepts: LessonConcept[]`) — curriculum
   concepts a lesson teaches, tagged from the compact field under the slide
-  list via `LessonConceptsField`.
+  list via `LessonConceptsField`. Two independent suggestion sources feed
+  that field, both dashed pills the teacher accepts with one keystroke and
+  neither ever writes to the lesson on its own:
+  - **Suggested review** (amber, `Snowflake` icon) — cold concepts from
+    earlier lessons that haven't reappeared recently (`suggestConceptsForLesson`,
+    `concept-suggestions.ts`).
+  - **Auto-Covers** (`.is-pair-suggestion`, dashed outline with a leading
+    "+") — concepts the lesson's own pairs already name. `extractLessonPairTerms`
+    pulls terms from every pair's Spanish text and accepted English answers,
+    plus `[[es:…]]`/`[[en:…]]` marks in explanation prose; `matchPairTermsToConcepts`
+    matches them against the curriculum (exact, then prefix, accent/case-insensitive,
+    bracket placeholders stripped) via one `POST /api/admin/curriculum/concepts/suggest`
+    call, recomputed 800ms after the pairs change and once on open. Already-tagged
+    concepts are excluded; `Enter`/click tags one, `Ctrl+Enter` (input focused) tags
+    all, `Backspace`/`×` on a focused suggestion dismisses it for that lesson —
+    dismissals live in `sessionStorage`, never in lesson data.
 - Two fields on `SentenceBlock` — `helperText` and `answerFeedback` — are
   **deprecated**: retained only for on-disk compatibility with older lesson
   files, intentionally inert in both authoring and learner UI. Do not build
@@ -104,6 +129,7 @@ The table below is generated from `KEYMAP` — one row per scope × chord.
 |---|---|---|
 | `title` | `Enter` | Open the lesson and focus its first slide's field, creating an explanation slide if it has none. |
 | `title` | `Ctrl+Alt+Enter` | Insert the predicted type (explanation) at index 0 and focus it. |
+| `title` | `Ctrl+Alt+Shift+Enter` | E3b "extend": insert a new sentence slide at index 0 copying the pieces of the nearest preceding sentence slide (none exists from the title, so this degrades to a plain empty sentence, same as `Ctrl+Alt+Enter`'s predicted-sentence case). |
 | `title` | `Ctrl+Alt+ArrowUp` / `ArrowDown` | Move the lesson within its module, or across a module boundary at the top/bottom of the list. |
 | `title` | `Ctrl+Alt+Backspace` | Open this row's inline "Delete lesson?" confirm, focused on Delete. |
 | `instruction` | `Enter` | Consumed — single-line field, no newline. |
@@ -113,11 +139,13 @@ The table below is generated from `KEYMAP` — one row per scope × chord.
 | `spanish` | `Enter` | Consumed — single-line field, no newline. |
 | `spanish` | `Alt+ArrowDown` | Open/focus this pair's hint. |
 | `spanish` | `Ctrl+Alt+Backspace` | Delete this pair outright. |
+| `spanish` | `Ctrl+Alt+G` | E8: toggle this pair's `given` flag (shown to the student, never tested). |
 | `spanish` | `Escape` | Move selection to `block`. |
 | `english` | `Tab` / `Enter` | Commit the draft (read from the live field, not React state), then: not the last pair → next pair's Spanish; last pair, complete → create and focus a new pair; last pair, incomplete → unhandled (Tab continues to the next real control; Enter does nothing further). |
 | `english` | `Shift+Tab` | Commit the draft, focus this pair's own Spanish field. |
 | `english` | `Alt+ArrowDown` | Open/focus this pair's hint. |
 | `english` | `Ctrl+Alt+Backspace` | Delete this pair outright. |
+| `english` | `Ctrl+Alt+G` | E8: toggle this pair's `given` flag (shown to the student, never tested). |
 | `english` | `Escape` | Move selection to `block`. |
 | `hint` | `Enter` / `Escape` | Close the hint (clearing the pair's `callout` if left blank) and return focus to whichever field opened it (Spanish or English — remembered per pair; defaults to Spanish for the mouse lightbulb button). |
 | `explanation` | `Escape` | Move selection to `block` (registered via the same field-scope loop). |
@@ -127,6 +155,7 @@ The table below is generated from `KEYMAP` — one row per scope × chord.
 | `block` | `Enter` / `Space` | Enter editing: focus the slide's first field. |
 | `block` | `Escape` | Fully deselect (`selection → none`): no rail, no chrome, focus parks on the builder root with no visible ring. Two Escapes from a field reach this — field → block → none. |
 | `block` | `Ctrl+Alt+Enter` | Insert the predicted type after this block and focus it (explanation → sentence; sentence/vocabulary → explanation). A second `Ctrl+Alt+Enter` within 1.5s, while the just-inserted block is still empty, cycles its type instead (explanation → sentence → vocabulary → …). Also reached from every field scope (Ctrl+Alt+Enter isn't registered per-field). |
+| `block` | `Ctrl+Alt+Shift+Enter` | E3b "extend": insert a new sentence slide after this block, copying the nearest preceding sentence slide's pieces (deep-copied, terminal punctuation stripped from the copied last piece in both languages) plus one new empty pair, focused. With no preceding sentence slide to copy, degrades to a plain empty sentence. Also reached from every field scope, same as `Ctrl+Alt+Enter`. |
 | `block` | `Ctrl+Alt+ArrowUp` / `ArrowDown` | Move this block up/down. Also reached from every field scope. |
 | `lesson` | `Ctrl+Alt+D` | Finish this lesson: fully deselect, collapse it, flush any pending save. Reached from title, block, and every field scope. |
 | `lesson` | `Ctrl+Alt+P` | Preview this lesson. Reached from title, block, and every field scope. |
@@ -147,6 +176,9 @@ their own local handling rather than going through the dispatcher:
   `Ctrl+Alt+Enter` above).
 - The concept-tag typeahead, the concept quick-edit dialog, and the
   keyboard-help dialog are each `[data-keymap-ignore]` for the same reason.
+  The Covers input's own `onKeyDown` also owns `Ctrl+Enter` (accept every
+  visible auto-Covers suggestion) and, on a focused suggestion pill itself,
+  `Enter` (tag it) and `Backspace` (dismiss it) — see §2's Auto-Covers entry.
 - The module navigator's search input and the module-name input are
   `[data-keymap-ignore]` too — nothing about typing in them is part of the
   `EditingSelection` model, so a stale selection elsewhere must never
@@ -592,3 +624,5 @@ statically or spin up their own isolated server against a throwaway file.
 | P2 | Phase 2: explanation editor on Tiptap/ProseMirror — schema + markdown round-trip, mark commands via an editor registry, floating toolbar, E1 auto-marking, mark-preserving copy/paste; `serialize-explanation.ts` and all `execCommand`/`Range` code deleted | Opus | done |
 | CT1 | "Covers" concept typeahead popover: fixed overlapping/clipped option rows, restyled the active row from a saturated `--accent` fill (read as danger) to a soft primary tint + left rule, added viewport flip and `data-keymap-ignore`, and ranked the search route's results (exact → prefix → word-boundary → substring, ties by priority then length) so e.g. "with" surfaces the standalone preposition before "to work with [somebody]" | Sonnet | done |
 | M1 | Merge-integration pass reconciling Phase 1, empty-slide deletion, the HUD restore, typeahead, and Phase 2 landing on top of each other same-day: fixed `lesson-library.tsx`'s `onFocusOut` treating a *resolvable* out-of-root `relatedTarget` (e.g. focus landing in the lesson-preview overlay, a sibling of the builder root) the same as an unresolved one, which wrongly kept the origin slide "active" through Preview and stopped its origin field from ever going stale enough to fall back to the title; updated four tests whose assumptions predated today's changes (a dead-end blur no longer force-exits editing — Phase 1 dropped the rAF/`activeElement` polling that used to do that and has no replacement signal; leaving a still-blank slide via any path, insert included, now deletes it, so tests that created blank sentence/table/explanation slides via the mouse and moved on need to fill them first; the restored `EditingHud` correctly shows whenever `selection.kind !== "none"`, including right after a mouse click back into a resting slide — a pre-HUD assertion of `.editing-hud` count 0 was stale, not a real check) | Sonnet | done |
+| E5a | Auto-Covers: suggest "Covers" chips from a lesson's own pairs (`extractLessonPairTerms`/`matchPairTermsToConcepts` in `concept-suggestions.ts`, `POST /api/admin/curriculum/concepts/suggest`, dashed `.is-pair-suggestion` pills in `LessonConceptsField`, `Ctrl+Enter` accepts all, session-only dismissal). Pair-field autocomplete half of E5 (inline Spanish/English suggestion while typing) is still open. | Sonnet | done |
+| E3b/E8 | Chain building (`extendLastSentence`, `Ctrl+Alt+Shift+Enter`, the seam palette's "Extend" choice) and "given" pieces (`LanguageBlock.given?`, `Ctrl+Alt+G`, resting dotted-underline treatment, learner static rendering excluded from progression/completion). Found and fixed live: `lesson-file.ts`'s `normalizeLessonForFile` (every GET read) rebuilt each language block field-by-field and silently dropped `given` — a "given" pair round-tripped fine on disk but reverted to a normal tested blank on reload. Script syntax (`> +`, `> =`) stays open per `lesson-script-grammar.md`. | Sonnet | done |

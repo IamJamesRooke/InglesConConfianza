@@ -77,7 +77,12 @@ function fakeActions(overrides: Partial<LessonBuilderActions> = {}): LessonBuild
     removeAnswer: record("removeAnswer"),
     addPiece: record("addPiece", () => "new-piece"),
     deletePiece: record("deletePiece"),
+    toggleGiven: record("toggleGiven"),
     addBlock: record("addBlock", () => "new-block"),
+    extendLastSentence: record("extendLastSentence", () => ({
+      blockId: "new-extend-block",
+      languageBlockId: "new-extend-piece",
+    })),
     deleteBlock: record("deleteBlock"),
     duplicateBlock: record("duplicateBlock"),
     moveBlock: record("moveBlock"),
@@ -243,6 +248,61 @@ test("Ctrl+Alt+Enter after an explanation predicts sentence; after a sentence pr
     event: fakeEvent({ ctrlKey: true, altKey: true }),
   });
   assert.deepEqual(actions2.calls.addBlock, [["lesson-1", "explanation", 2]]);
+});
+
+test("Ctrl+Alt+Shift+Enter on the title extends with afterBlockId null and focuses the new empty pair", () => {
+  const actions = fakeActions();
+  const editing = fakeEditing({ kind: "title", lessonId: "lesson-1" });
+  const handled = KEYMAP.title["Ctrl+Alt+Shift+Enter"]!({
+    selection: editing.selection,
+    lessons: [lesson([sentenceBlock()])],
+    actions,
+    editing,
+    event: fakeEvent({ ctrlKey: true, altKey: true, shiftKey: true }),
+  });
+  assert.equal(handled, true);
+  assert.deepEqual(actions.calls.extendLastSentence, [["lesson-1", null]]);
+  assert.deepEqual(editing.lastSelection, {
+    kind: "field",
+    lessonId: "lesson-1",
+    blockId: "new-extend-block",
+    field: "spanish",
+    pieceId: "new-extend-piece",
+  });
+});
+
+test("Ctrl+Alt+Shift+Enter on a block extends after that block", () => {
+  const actions = fakeActions();
+  const editing = fakeEditing({ kind: "block", lessonId: "lesson-1", blockId: "b1" });
+  const handled = KEYMAP.block["Ctrl+Alt+Shift+Enter"]!({
+    selection: editing.selection,
+    lessons: [lesson([sentenceBlock({ id: "b1" })])],
+    actions,
+    editing,
+    event: fakeEvent({ ctrlKey: true, altKey: true, shiftKey: true }),
+  });
+  assert.equal(handled, true);
+  assert.deepEqual(actions.calls.extendLastSentence, [["lesson-1", "b1"]]);
+});
+
+test("Ctrl+Alt+G in spanish/english toggles given on the current piece", () => {
+  const actions = fakeActions();
+  const editing = fakeEditing({
+    kind: "field",
+    lessonId: "lesson-1",
+    blockId: "block-1",
+    field: "spanish",
+    pieceId: "piece-1",
+  });
+  const handled = KEYMAP.spanish["Ctrl+Alt+G"]!({
+    selection: editing.selection,
+    lessons: [lesson([sentenceBlock()])],
+    actions,
+    editing,
+    event: fakeEvent({ ctrlKey: true, altKey: true }),
+  });
+  assert.equal(handled, true);
+  assert.deepEqual(actions.calls.toggleGiven, [["lesson-1", "block-1", "piece-1"]]);
 });
 
 test("Escape in a field moves selection to block, same blockId", () => {

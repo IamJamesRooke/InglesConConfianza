@@ -434,3 +434,20 @@ test("parseLessonFile round-trips a v2 file and normalizes its modules", () => {
   assert.equal(parsed.version, 2);
   assert.deepEqual(parsed.modules[0].lessonIds, ["a"]);
 });
+
+// Regression: normalizeLessonForFile (parseLessonFile's per-read pass, which
+// every GET of the lesson API runs) used to rebuild each languageBlock
+// field-by-field and silently drop `given` (E8) — found live 2026-09-15 when
+// a "given" pair round-tripped fine on disk but vanished from the API
+// response, so the learner card rendered it as a normal testable blank.
+test("parseLessonFile preserves a language block's given flag through the read-time normalization pass", () => {
+  const file = fileWith([["a"]], ["a"]);
+  const givenBlock = sentence("b1", ["l1", "l2"]);
+  givenBlock.languageBlocks[1] = { ...givenBlock.languageBlocks[1], given: true };
+  file.lessons[0].blocks = [givenBlock];
+
+  const parsed = parseLessonFile(file);
+  const parsedBlock = parsed.lessons[0].blocks[0] as SentenceBlock;
+  assert.equal(parsedBlock.languageBlocks[0].given, undefined);
+  assert.equal(parsedBlock.languageBlocks[1].given, true);
+});

@@ -3,7 +3,10 @@ import test from "node:test";
 
 import {
   conceptPriority,
+  extractLessonPairTerms,
+  matchPairTermsToConcepts,
   suggestConceptsForLesson,
+  type PairMatchCandidate,
 } from "../../src/lib/lesson-builder/concept-suggestions";
 import type { Lesson, LessonConcept } from "../../src/lib/lesson-builder/types";
 
@@ -97,4 +100,118 @@ test("priority bands follow canonical role order with a neutral fallback", () =>
   assert.equal(conceptPriority("P3").band, "medium");
   assert.equal(conceptPriority("P5").band, "low");
   assert.equal(conceptPriority("future-tier").band, "neutral");
+});
+
+// --- Auto-Covers (E5): extractLessonPairTerms + matchPairTermsToConcepts.
+
+test("extractLessonPairTerms pulls Spanish text, English answers, and language marks", () => {
+  const withPairs: Lesson = {
+    id: "l1",
+    name: "l1",
+    concepts: [],
+    blocks: [
+      {
+        id: "b1",
+        type: "explanation",
+        contentMarkdown: "Say [[es:hoy]] to mean [[en:today]].",
+      },
+      {
+        id: "b2",
+        type: "sentence",
+        promptLabel: "",
+        promptText: "",
+        helperText: "",
+        answerFeedback: null,
+        languageBlocks: [
+          {
+            id: "p1",
+            spanish: "¿Quieres?",
+            callout: null,
+            acceptedAnswers: ["Do you want?", "you want"],
+          },
+        ],
+      },
+    ],
+  };
+
+  assert.deepEqual(extractLessonPairTerms(withPairs), [
+    "hoy",
+    "today",
+    "Quieres",
+    "Do you want",
+    "you want",
+  ]);
+});
+
+test("extractLessonPairTerms drops empties/short fragments and dedupes case-insensitively", () => {
+  const lesson: Lesson = {
+    id: "l1",
+    name: "l1",
+    concepts: [],
+    blocks: [
+      {
+        id: "b1",
+        type: "sentence",
+        promptLabel: "",
+        promptText: "",
+        helperText: "",
+        answerFeedback: null,
+        languageBlocks: [
+          { id: "p1", spanish: "hoy", callout: null, acceptedAnswers: ["today", "a"] },
+          { id: "p2", spanish: "Hoy", callout: null, acceptedAnswers: ["Today"] },
+        ],
+      },
+    ],
+  };
+
+  assert.deepEqual(extractLessonPairTerms(lesson), ["hoy", "today"]);
+});
+
+function candidate(
+  id: string,
+  spanish: string,
+  english: string,
+  role = "P1",
+): PairMatchCandidate {
+  return { id, spanish, english, role };
+}
+
+test("matchPairTermsToConcepts prefers an exact match over a prefix match", () => {
+  const candidates = [
+    candidate("c-hoy", "hoy", "today"),
+    candidate("c-hoy-mismo", "hoy mismo", "this very day"),
+  ];
+
+  assert.deepEqual(
+    matchPairTermsToConcepts(["hoy", "hoy mis"], candidates),
+    [
+      { term: "hoy", concept: candidates[0] },
+      { term: "hoy mis", concept: candidates[1] },
+    ],
+  );
+});
+
+test("matchPairTermsToConcepts is accent- and case-insensitive and strips bracket placeholders", () => {
+  const candidates = [candidate("c-querer", "querer [algo]", "to want [something]")];
+
+  assert.deepEqual(matchPairTermsToConcepts(["QUERER"], candidates), [
+    { term: "QUERER", concept: candidates[0] },
+  ]);
+  assert.deepEqual(matchPairTermsToConcepts(["to want"], candidates), [
+    { term: "to want", concept: candidates[0] },
+  ]);
+});
+
+test("matchPairTermsToConcepts skips terms with no exact/prefix match", () => {
+  const candidates = [candidate("c-hoy", "hoy", "today")];
+  assert.deepEqual(matchPairTermsToConcepts(["mañana"], candidates), []);
+});
+
+test("matchPairTermsToConcepts breaks a tie between equally-tiered candidates by priority", () => {
+  const candidates = [
+    candidate("c-low", "con", "with", "P5"),
+    candidate("c-high", "con", "along with", "P1"),
+  ];
+  const [match] = matchPairTermsToConcepts(["con"], candidates);
+  assert.equal(match.concept.id, "c-high");
 });

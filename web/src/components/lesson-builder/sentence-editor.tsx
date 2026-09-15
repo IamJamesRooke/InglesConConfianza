@@ -192,6 +192,14 @@ export function SentenceEditor(props: Props) {
                 >
                   <X size={11} aria-hidden="true" />
                 </button>
+                {piece.given && (
+                  <span
+                    className="lesson-document-given-tag"
+                    title="Shown to the student, not tested"
+                  >
+                    given
+                  </span>
+                )}
                 {piece.callout !== null || hintOpen ? (
                   pieceActive ? (
                     <input

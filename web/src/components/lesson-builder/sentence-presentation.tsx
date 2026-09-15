@@ -15,18 +15,22 @@ export function composeSentenceParts(
   pieces: Piece[],
   language: "spanish" | "english",
 ) {
-  return pieces.reduce<Array<{ id: string; separator: string; text: string }>>(
-    (parts, piece) => {
-      const text = language === "spanish"
-        ? piece.spanish.trim()
-        : (piece.acceptedAnswers[0] ?? "").trim();
-      if (!text) return parts;
-      const previous = parts.at(-1)?.text ?? "";
-      parts.push({ id: piece.id, separator: separator(previous, text), text });
-      return parts;
-    },
-    [],
-  );
+  return pieces.reduce<
+    Array<{ id: string; separator: string; text: string; given: boolean }>
+  >((parts, piece) => {
+    const text = language === "spanish"
+      ? piece.spanish.trim()
+      : (piece.acceptedAnswers[0] ?? "").trim();
+    if (!text) return parts;
+    const previous = parts.at(-1)?.text ?? "";
+    parts.push({
+      id: piece.id,
+      separator: separator(previous, text),
+      text,
+      given: piece.given === true,
+    });
+    return parts;
+  }, []);
 }
 
 // Vocabulary tables never compose into one flowing sentence — each row is
@@ -88,7 +92,15 @@ export function SentencePresentation({ block }: { block: SentenceBlock }) {
             ))}
           </p>
           <p className="lesson-sentence-composed" lang="en">
-            {english.map((part) => <span key={part.id}>{part.separator}{part.text}</span>)}
+            {english.map((part) => (
+              <span
+                key={part.id}
+                data-given={part.given ? "true" : undefined}
+                title={part.given ? "Shown to the student, not tested" : undefined}
+              >
+                {part.separator}{part.text}
+              </span>
+            ))}
           </p>
         </>
       )}

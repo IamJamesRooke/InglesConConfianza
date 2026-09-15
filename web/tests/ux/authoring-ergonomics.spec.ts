@@ -560,7 +560,12 @@ test("slide insertion seams are ordered Explanation/Sentence/Table, keyboard-rea
       .nth(i)
       .getByRole("button", { includeHidden: true })
       .allTextContents();
-    expect(names).toEqual(["Explanation", "Sentence", "Table"]);
+    // Explanation/Sentence/Table are always present, in that order; a
+    // fourth "Extend" choice (E3b) additionally shows on a seam whose
+    // preceding block is a sentence slide — see slide-insert-control.tsx.
+    expect(names.slice(0, 3)).toEqual(["Explanation", "Sentence", "Table"]);
+    expect(names.length).toBeLessThanOrEqual(4);
+    if (names.length === 4) expect(names[3]).toEqual("Extend");
   }
 
   await page.screenshot({

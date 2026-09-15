@@ -244,6 +244,15 @@
   font-weight: 400;
   font-size: 15px;
 }
+/* E8 "given" piece at rest: normal weight (not italic, like the rest of
+   the English line) with a subtle dotted underline — shown to the student,
+   never tested, so it must read as calmer than an actual answer. */
+.lesson-document-sentence.resting .lesson-sentence-composed[lang="en"] span[data-given="true"] {
+  font-style: normal;
+  text-decoration: underline dotted;
+  text-underline-offset: 2px;
+  text-decoration-color: color-mix(in oklch, var(--muted-foreground) 55%, transparent);
+}
 .lesson-sentence-phrase {
   white-space: normal;
 }
@@ -496,6 +505,20 @@
   outline: none;
   border-color: var(--hint);
   background: color-mix(in oklch, var(--hint) 16%, var(--state-help-soft));
+}
+
+/* E8 "given" tag — same pill family as the hint pill above, but muted
+   (neutral, not the hint's amber) since it's informational, not an
+   authoring affordance: this pair is shown to the student, never tested. */
+.lesson-document-given-tag {
+  display: inline-block;
+  padding: 2px 10px;
+  border-radius: 999px;
+  color: var(--muted-foreground);
+  background: var(--muted);
+  font-size: 11px;
+  font-weight: 700;
+  white-space: nowrap;
 }
 /* Hint-on-demand (§1g): a quiet 18px circular affordance beside the active
    pair only, shown instead of an unrequested empty hint field. Same footprint
