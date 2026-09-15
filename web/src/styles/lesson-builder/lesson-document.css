@@ -28,10 +28,20 @@
 /* "Covers" sits at the very end of the document, after the last slide and
    its tail insertion control. Padded to the shared 13px text column edge —
    it used to sit flush with this element's own edge, 13px left of every
-   slide's own text. */
+   slide's own text.
+
+   9px, not 13px: the summary button inside (.lesson-covers-summary) has
+   its own 4px left padding for a comfortable hover/focus hit target — that
+   padding is what actually pushes its *text* the remaining 4px to the
+   shared column, so this container only needs to make up the difference.
+   (A margin-left on the button itself was tried first and is simpler to
+   read here, but a negative margin on a flex child changes how much of
+   the row's own width the browser thinks is taken, which briefly
+   regressed the narrow-viewport table's own width; padding math on the
+   static container avoids that.) */
 .lesson-document-tags {
   margin: 20px 0 0;
-  padding-left: 13px;
+  padding-left: 9px;
 }
 .lesson-document > div:first-child > div > span:first-child {
   font-size: 9px;

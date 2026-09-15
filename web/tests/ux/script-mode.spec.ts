@@ -129,4 +129,32 @@ test.describe("script mode", () => {
     const lesson = lastLesson();
     expect(lesson.blocks).toHaveLength(1);
   });
+
+  // Regression: closing script view (any way) used to leave the shared
+  // selection stomped to "none" — see lesson-document.tsx's script-toggle
+  // effect and lesson-library.tsx's onFocusOut. With no selection, the
+  // "lesson" scope Ctrl+Alt+T itself lives in is unreachable, so the same
+  // chord pressed again did nothing: a 100%-reproducible dead chord after
+  // the very first close, not a rare timing race.
+  test("Ctrl+Alt+T reopens the script view reliably, immediately after closing, 10x in a row", async ({
+    page,
+  }) => {
+    await page.goto("/admin/lesson-builder");
+    await expect(page.getByText("All changes saved")).toBeVisible({ timeout: 10000 });
+
+    await page.keyboard.press("Control+Alt+l");
+    const title = page.locator("[data-lesson-title]").last();
+    await expect(title).toBeFocused();
+    await title.fill("Reopen regression");
+    await page.keyboard.press("Enter");
+
+    const textarea = page.locator(".lesson-script-view-textarea");
+    for (let i = 0; i < 10; i++) {
+      await page.keyboard.press("Control+Alt+t");
+      await expect(textarea, `open #${i}`).toBeVisible({ timeout: 2000 });
+      await expect(textarea, `focused #${i}`).toBeFocused();
+      await page.keyboard.press("Control+Alt+t");
+      await expect(textarea, `closed #${i}`).toHaveCount(0);
+    }
+  });
 });

@@ -45,6 +45,16 @@
   background: var(--muted);
   overflow: hidden;
 }
+/* Corner fix, same technique used for .lesson-library-module's header/body
+   (lesson-library.css/lesson-row.css): when the card is collapsed, this
+   progress strip is the card's own last child and its square corners drew
+   straight across the card's rounded bottom. `:last-child` keeps this
+   inert once the card is open (`.syllabus-card-body` then owns the bottom
+   edge instead). Already `overflow: hidden`, so the radius also clips the
+   fill bar underneath it into the same curve. */
+.syllabus-card-progress:last-child {
+  border-radius: 0 0 14px 14px;
+}
 .syllabus-card-progress-fill {
   height: 100%;
   background: var(--primary);

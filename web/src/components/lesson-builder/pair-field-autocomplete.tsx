@@ -51,10 +51,38 @@ function ownText(lang: "es" | "en", result: PairAutocompleteResult): string {
 // component's own accept handler instead of reaching the shared keymap
 // dispatcher, silently overwriting whatever piece the stray accept landed on
 // instead of navigating — the corruption the owner hit while chaining pairs.
+// Case/whitespace-insensitive equality used only to compare a field's
+// current text against the concept it last *accepted* — never against
+// search results (see `usePairFieldAutocomplete`'s doc comment above for
+// why comparing against results was the bug).
+export function isAcceptedMatch(value: string, lastAccepted: string | null): boolean {
+  if (lastAccepted === null) return false;
+  return value.trim().toLowerCase() === lastAccepted.trim().toLowerCase();
+}
+
 export function usePairFieldAutocomplete(lang: "es" | "en", value: string, isSelected: boolean) {
   const [results, setResults] = useState<PairAutocompleteResult[]>([]);
   const [open, setOpen] = useState(false);
   const [highlight, setHighlight] = useState(0);
+  // The concept text this field last accepted via Tab/Enter (or null if
+  // none yet, or if the teacher has since edited the text away from it).
+  // Only this — never a search result's text — suppresses the popover for
+  // an exact match; see the block comment above.
+  //
+  // Seeded from the field's own value at mount (lazy initializer, so it
+  // only ever reads the value once): a field that mounts already holding
+  // real committed text — re-entering edit mode on an existing pair, not a
+  // teacher actively typing — must not have the popover pop up unbidden
+  // just because that saved text happens to itself be a curriculum
+  // headword (e.g. re-opening a table row whose Spanish is "comer").
+  // Treating "whatever was already there" as already-accepted is exactly
+  // right: there is nothing to complete, since it's already complete
+  // data. The teacher editing it away from this baseline text re-enables
+  // search normally, same as any other field.
+  const lastAcceptedRef = useRef<string | null>(value.trim() ? value : null);
+  const markAccepted = useCallback((text: string) => {
+    lastAcceptedRef.current = text;
+  }, []);
   // A fetch started while focused can resolve after the field has since
   // blurred — and, if the teacher comes right back to it, resolve *after*
   // it is refocused too, since a plain focused/unfocused flag can't tell a
@@ -90,7 +118,7 @@ export function usePairFieldAutocomplete(lang: "es" | "en", value: string, isSel
   useEffect(() => {
     const startGeneration = generationRef.current;
     const trimmed = value.trim();
-    if (trimmed.length < MIN_QUERY_LENGTH) {
+    if (trimmed.length < MIN_QUERY_LENGTH || isAcceptedMatch(trimmed, lastAcceptedRef.current)) {
       const timer = window.setTimeout(() => {
         setResults([]);
         setOpen(false);
@@ -108,15 +136,6 @@ export function usePairFieldAutocomplete(lang: "es" | "en", value: string, isSel
         if (generationRef.current !== startGeneration) return;
         const data = (await response.json()) as { concepts: PairAutocompleteResult[] };
         if (generationRef.current !== startGeneration) return;
-        const exactMatch = data.concepts.some(
-          (concept) =>
-            stripConceptPlaceholder(ownText(lang, concept)).toLowerCase() === trimmed.toLowerCase(),
-        );
-        if (exactMatch) {
-          setResults([]);
-          setOpen(false);
-          return;
-        }
         const top = data.concepts.slice(0, MAX_RESULTS);
         setResults(top);
         setHighlight(0);
@@ -137,6 +156,7 @@ export function usePairFieldAutocomplete(lang: "es" | "en", value: string, isSel
     results,
     highlight,
     setHighlight,
+    markAccepted,
     moveHighlight(delta: number) {
       setHighlight((current) => Math.min(Math.max(current + delta, 0), results.length - 1));
     },
@@ -197,6 +217,7 @@ export function PairLanguageField({
     const otherTextIfEmpty = otherValue.trim()
       ? null
       : stripConceptPlaceholder(ownText(otherLang, result));
+    auto.markAccepted(own);
     auto.close();
     onAcceptConcept(own, otherTextIfEmpty);
   }

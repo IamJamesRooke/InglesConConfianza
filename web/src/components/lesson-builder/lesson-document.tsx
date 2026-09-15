@@ -1,7 +1,7 @@
 "use client";
 
 import { Copy, GripVertical, Trash2, Undo2 } from "lucide-react";
-import { Fragment, useEffect, useState, type DragEvent } from "react";
+import { Fragment, useEffect, useRef, useState, type DragEvent } from "react";
 
 import { LessonConceptsField } from "@/components/lesson-builder/lesson-concepts-field";
 import { EditablePracticeMarkdown } from "@/components/lesson-builder/explanation-editor";
@@ -13,7 +13,12 @@ import {
 } from "@/components/lesson-builder/slide-insert-control";
 import { useLessonBuilder } from "@/lib/lesson-builder/builder-context";
 import { extractLessonPairTerms } from "@/lib/lesson-builder/concept-suggestions";
-import { activeBlockId, blockDataState, useLessonEditing } from "@/lib/lesson-builder/editing";
+import {
+  activeBlockId,
+  blockDataState,
+  useLessonEditing,
+  type EditingSelection,
+} from "@/lib/lesson-builder/editing";
 import { fieldSelectionForBlock, selectionForInsertion } from "@/lib/lesson-builder/keymap";
 import { proposedPairsForBlock } from "@/lib/lesson-builder/pair-proposals";
 import { useDragReorder } from "@/lib/lesson-builder/use-drag-reorder";
@@ -57,6 +62,7 @@ export function LessonDocument(props: Props) {
   // for it; the keyboard path (Ctrl+Alt+Enter) never touches this at all.
   const insertAt =
     editing.insertAfter?.lessonId === lessonId ? editing.insertAfter.index : null;
+  const scriptOpen = editing.scriptViewLessonId === lessonId;
 
   useEffect(() => {
     function updateWidth() {
@@ -65,6 +71,44 @@ export function LessonDocument(props: Props) {
     window.addEventListener("resize", updateWidth);
     return () => window.removeEventListener("resize", updateWidth);
   }, []);
+
+  // Ctrl+Alt+T reopen fix: script view replaces the whole block list with a
+  // single textarea that isn't inside any `[data-document-block]` — only
+  // the row's own `[data-lesson-row]`. So when it closes and DOM focus
+  // falls back to <body>, lesson-library.tsx's `onFocusOut` (an
+  // *unresolved* blur, since removing a focused node fires focusout with
+  // no real `relatedTarget`) compares that row-level key against whatever
+  // block/field was actually selected before script view opened — almost
+  // always a mismatch — and collapses the shared selection to "none". With
+  // no selection, the "lesson" scope (where Ctrl+Alt+T itself lives) is
+  // unreachable, so the very same chord pressed again does nothing: a
+  // silent, 100%-reproducible dead chord, not a rare race. Remembering the
+  // pre-open selection and re-focusing it the instant the view closes
+  // fires a real, resolved focus event that restores the correct
+  // selection before the teacher's next keystroke.
+  const preScriptSelectionRef = useRef<EditingSelection | null>(null);
+  const wasScriptOpenRef = useRef(scriptOpen);
+  useEffect(() => {
+    const wasOpen = wasScriptOpenRef.current;
+    if (scriptOpen && !wasOpen) {
+      preScriptSelectionRef.current = editing.selection.kind === "none" ? null : editing.selection;
+    } else if (!scriptOpen && wasOpen && preScriptSelectionRef.current) {
+      const saved = preScriptSelectionRef.current;
+      preScriptSelectionRef.current = null;
+      // By now the shared selection may already have been stomped to
+      // "none" (see the block comment above) — the affected block is
+      // rendering in its non-editing "resting" presentation, which for a
+      // field selection has no focusable element at all yet.
+      // `setSelection` first (same two-step pattern `enterFromTitle` uses
+      // for a just-created field) puts the block back into "editing" state
+      // so the real field exists, then `focusSelection` can find and focus
+      // it — a real, resolved focus event that fixes the selection for
+      // good, before the teacher's next keystroke.
+      editing.setSelection(saved);
+      editing.focusSelection(saved);
+    }
+    wasScriptOpenRef.current = scriptOpen;
+  }, [scriptOpen, editing]);
 
   function recordNextSlideUse() {
     setNextSlideUses((count) => {
@@ -143,8 +187,6 @@ export function LessonDocument(props: Props) {
       </div>
     );
   }
-
-  const scriptOpen = editing.scriptViewLessonId === lessonId;
 
   if (scriptOpen) {
     return (

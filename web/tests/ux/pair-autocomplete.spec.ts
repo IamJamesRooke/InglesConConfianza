@@ -83,6 +83,73 @@ test("Spanish/English pair-field autocomplete: popover, Tab-accept, Escape-close
   await expect(popover.locator(".concept-typeahead-option")).not.toHaveCount(0);
 });
 
+// Regression for the false-positive "exact match" suppression: before the
+// fix, the popover's own-text comparison ran against every SEARCH RESULT,
+// not against what the teacher had actually accepted — so typing a word
+// that is itself a curriculum headword (like "hacer") always matched one of
+// its own search results and the popover silently never opened, producing
+// a persisted half-pair (Spanish filled, English never Tab-filled) with no
+// visual sign in the resting view. See pair-field-autocomplete.tsx's
+// `isAcceptedMatch`.
+test("typing a Spanish word that is itself a curriculum headword still opens the popover", async ({
+  page,
+}) => {
+  await page.goto("/admin/lesson-builder");
+  await expect(page.getByText("All changes saved")).toBeVisible({ timeout: 10000 });
+
+  await page.keyboard.press("Control+Alt+l");
+  const title = page.locator("[data-lesson-title]").last();
+  await expect(title).toBeFocused();
+  await title.fill("Hacer headword");
+  await page.keyboard.press("Enter");
+  await waitForFocusedField(page, "explanation");
+  await page.keyboard.press("Control+Alt+Enter");
+  await waitForFocusedField(page, "spanish");
+
+  const pair = page.locator(".lesson-document-pair").first();
+  const spanish = pair.locator("[data-field='spanish']");
+  const english = pair.locator("[data-field='english']");
+  const popover = pair.locator(".concept-typeahead-popover");
+
+  await page.setViewportSize({ width: 760, height: 900 });
+  await spanish.pressSequentially("hace");
+  await expect(popover).toBeVisible({ timeout: 2000 });
+  await spanish.pressSequentially("r");
+  // Must still be open (or reopen) once the text is the exact headword
+  // "hacer" — this is the case the false-positive check broke. "hacer"
+  // may not be the top-ranked result (other concepts can share the "hace"
+  // prefix), so click it directly rather than assuming Tab's default
+  // highlight (index 0) lands on it.
+  await expect(popover).toBeVisible({ timeout: 2000 });
+  const hacerOption = popover
+    .locator(".concept-typeahead-option")
+    .filter({ has: page.locator(".concept-typeahead-option-english", { hasText: /^hacer\b/i }) })
+    .first();
+  await expect(hacerOption).toBeVisible({ timeout: 2000 });
+  await hacerOption.click();
+  await waitForFocusedField(page, "english");
+  await expect(spanish).toHaveValue(/^hacer/i);
+  await expect(english).not.toHaveValue("");
+
+  await page.keyboard.press("Escape");
+  await page.keyboard.press("Control+s");
+  // The module-navigator rail (and its save-status text) is hidden at
+  // 760px — widen back out to read it, same as pair-proposals.spec.ts.
+  await page.setViewportSize({ width: 1280, height: 900 });
+  await expect(page.getByText("All changes saved")).toBeVisible({ timeout: 10000 });
+
+  const blocks = readLastLessonBlocks();
+  const sentences = blocks.filter((block): block is SavedSentenceBlock => block.type === "sentence");
+  const last = sentences[sentences.length - 1];
+  // No half-pair: a pair with Spanish text must never persist with a blank
+  // accepted answer — if it does, the autofill above failed silently.
+  for (const languageBlock of last.languageBlocks) {
+    if (languageBlock.spanish.trim()) {
+      expect(languageBlock.acceptedAnswers.some((answer) => answer.trim())).toBe(true);
+    }
+  }
+});
+
 // Regression for the owner-reported corruption: chain-extend
 // (Ctrl+Alt+Shift+Enter) into a brand-new sentence slide whose fields don't
 // exist yet, typed into immediately — before this fix, the still-focused
