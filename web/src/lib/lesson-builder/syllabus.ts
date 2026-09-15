@@ -11,6 +11,7 @@ import type {
   LessonConcept,
   LessonModule,
 } from "@/lib/lesson-builder/types";
+import { createId } from "@/lib/lesson-builder/utils";
 
 // Syllabus items share the exact shape of a lesson's Covers entries.
 export type SyllabusItem = LessonConcept;
@@ -405,9 +406,17 @@ function reorderList<T extends { id: string }>(
   return without.toSpliced(insertAt, 0, dragged);
 }
 
+// A syllabus item is its own independent list entry — never reuse the id of
+// whatever it was derived from (a lesson concept's `id`, another syllabus
+// item's `id`, etc). The link back to the curriculum/lesson concept is
+// `conceptId`/`conceptKey`, never `id`, so minting a fresh one here is safe.
+function freshSyllabusItem(item: SyllabusItem): SyllabusItem {
+  return { ...item, id: createId("syllabus_item") };
+}
+
 export function addMainItem(syllabus: ModuleSyllabus, item: SyllabusItem): ModuleSyllabus {
   if (hasConcept(syllabus, item)) return syllabus;
-  return { ...syllabus, main: [...syllabus.main, item] };
+  return { ...syllabus, main: [...syllabus.main, freshSyllabusItem(item)] };
 }
 
 export function removeMainItem(syllabus: ModuleSyllabus, itemId: string): ModuleSyllabus {
@@ -425,7 +434,7 @@ export function reorderMainItems(
 
 export function addReviewItem(syllabus: ModuleSyllabus, item: SyllabusItem): ModuleSyllabus {
   if (hasConcept(syllabus, item)) return syllabus;
-  return { ...syllabus, review: [...syllabus.review, item] };
+  return { ...syllabus, review: [...syllabus.review, freshSyllabusItem(item)] };
 }
 
 export function removeReviewItem(syllabus: ModuleSyllabus, itemId: string): ModuleSyllabus {
@@ -454,5 +463,5 @@ export function promoteToMain(syllabus: ModuleSyllabus, item: SyllabusItem): Mod
   if (syllabus.main.some((existing) => conceptKey(existing) === key)) {
     return { ...syllabus, review };
   }
-  return { main: [...syllabus.main, item], review };
+  return { main: [...syllabus.main, freshSyllabusItem(item)], review };
 }

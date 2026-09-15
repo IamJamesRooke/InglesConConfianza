@@ -15,6 +15,7 @@ import type {
   Lesson,
   LessonConcept,
   LessonFile,
+  LessonModule,
 } from "../../src/lib/lesson-builder/types";
 
 function lesson(id: string, concepts: LessonConcept[] = []): Lesson {
@@ -168,6 +169,40 @@ test("normalizeModule drops a conceptId duplicated across main and review", () =
     syllabus: { main: [querer], review: [querer2] },
   });
   assert.deepEqual(normalized.syllabus, { main: [querer], review: [] });
+});
+
+test("parseLessonFile repairs syllabus items that copied a lesson concept's id (pre-fix data)", () => {
+  // Shaped like the owner's file: a stale promote path copied a lesson
+  // concept's `id` straight onto a syllabus item, giving 16 collisions
+  // between modules[0].syllabus.main[i].id and lessons[0].concepts[i].id.
+  const concepts = Array.from({ length: 16 }, (_, i) => concept(`c${i}`, `Label ${i}`));
+  const lessonWithConcepts: Lesson = { id: "lesson1", name: null, concepts, blocks: [] };
+  const badModule: LessonModule = {
+    id: "m1",
+    name: "Module I",
+    lessonIds: ["lesson1"],
+    syllabus: { main: concepts.map((c) => ({ ...c })), review: [] },
+  };
+  const file: LessonFile = { version: 2, modules: [badModule], lessons: [lessonWithConcepts] };
+  assert.ok(isLessonFile(file));
+
+  const parsed = parseLessonFile(file);
+  const allIds = [
+    ...parsed.lessons.flatMap((l) => l.concepts.map((c) => c.id)),
+    ...parsed.modules.flatMap((m) => [...m.syllabus!.main, ...m.syllabus!.review].map((i) => i.id)),
+  ];
+  assert.equal(new Set(allIds).size, allIds.length, "every id in the repaired file is unique");
+
+  // conceptId, label, and order are preserved — only the colliding ids move.
+  assert.deepEqual(
+    parsed.modules[0].syllabus!.main.map((item) => ({ conceptId: item.conceptId, label: item.label })),
+    concepts.map((c) => ({ conceptId: c.conceptId, label: c.label })),
+  );
+  // The lesson's own concept ids are untouched — only the syllabus copies moved.
+  assert.deepEqual(
+    parsed.lessons[0].concepts.map((c) => c.id),
+    concepts.map((c) => c.id),
+  );
 });
 
 test("moduleContainingLesson", () => {

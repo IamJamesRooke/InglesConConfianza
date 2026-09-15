@@ -271,16 +271,24 @@ test("reducer-facing mutations: add/remove/reorder/promote, dedup guard", () => 
   syllabus = addMainItem(syllabus, concept("querer", "querer, again", "lc_dup"));
   assert.equal(syllabus.main.length, 2);
 
-  syllabus = reorderMainItems(syllabus, comer.id, querer.id, "before");
-  assert.deepEqual(syllabus.main.map((i) => i.id), [comer.id, querer.id]);
+  // addMainItem mints its own id rather than reusing the id on the item it
+  // was given (a lesson concept's id must never be copied onto a syllabus
+  // item), so read the ids actually stored, not `querer.id`/`comer.id`.
+  const [storedQuerer, storedComer] = syllabus.main;
+  assert.notEqual(storedQuerer.id, querer.id);
+  assert.notEqual(storedComer.id, comer.id);
 
-  syllabus = removeMainItem(syllabus, comer.id);
-  assert.deepEqual(syllabus.main.map((i) => i.id), [querer.id]);
+  syllabus = reorderMainItems(syllabus, storedComer.id, storedQuerer.id, "before");
+  assert.deepEqual(syllabus.main.map((i) => i.id), [storedComer.id, storedQuerer.id]);
+
+  syllabus = removeMainItem(syllabus, storedComer.id);
+  assert.deepEqual(syllabus.main.map((i) => i.id), [storedQuerer.id]);
 
   const saber = concept("saber", "saber");
   syllabus = addReviewItem(syllabus, saber);
   assert.equal(syllabus.review.length, 1);
-  syllabus = removeReviewItem(syllabus, saber.id);
+  const storedSaber = syllabus.review[0];
+  syllabus = removeReviewItem(syllabus, storedSaber.id);
   assert.equal(syllabus.review.length, 0);
 
   // Promote an also-taught item (not previously in main or review) to main.

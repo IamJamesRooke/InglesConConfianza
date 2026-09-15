@@ -137,6 +137,68 @@ export function normalizeModule(module: LessonModule): LessonModule {
   };
 }
 
+// Every id that isn't a syllabus item's own — a syllabus item may never
+// reuse one of these. (Module ids are included too: unlikely to collide,
+// but cheap to guard.)
+function collectNonSyllabusIds(modules: LessonModule[], lessons: Lesson[]): Set<string> {
+  const ids = new Set<string>();
+  for (const lessonModule of modules) ids.add(lessonModule.id);
+  for (const lesson of lessons) {
+    ids.add(lesson.id);
+    for (const concept of lesson.concepts ?? []) ids.add(concept.id);
+    for (const block of lesson.blocks) {
+      ids.add(block.id);
+      if (block.type === "sentence") {
+        for (const languageBlock of block.languageBlocks) ids.add(languageBlock.id);
+      }
+    }
+  }
+  return ids;
+}
+
+// A stale authoring path once copied a lesson concept's `id` onto a promoted
+// syllabus item instead of minting a fresh one (fixed in syllabus.ts's
+// add*/promoteToMain, but files saved before that fix carry the collision).
+// Repair at load time: any syllabus item whose id collides with another id
+// anywhere in the file — a lesson concept, a block, a language-block piece,
+// the module itself, or an earlier syllabus item — gets a fresh id here.
+// Deterministic per load (same input → same repaired ids) so re-saving
+// doesn't churn ids that were already fine.
+function reassignDuplicateSyllabusIds(
+  module: LessonModule,
+  usedIds: Set<string>,
+): LessonModule {
+  const syllabus = module.syllabus ?? { main: [], review: [] };
+  let counter = 0;
+  const nextId = () => {
+    let candidate: string;
+    do {
+      candidate = `syllabus_item_repair_${module.id}_${counter}`;
+      counter += 1;
+    } while (usedIds.has(candidate));
+    return candidate;
+  };
+  const fix = (items: LessonConcept[]) =>
+    items.map((item) => {
+      if (usedIds.has(item.id)) {
+        const id = nextId();
+        usedIds.add(id);
+        return { ...item, id };
+      }
+      usedIds.add(item.id);
+      return item;
+    });
+  return { ...module, syllabus: { main: fix(syllabus.main), review: fix(syllabus.review) } };
+}
+
+export function repairSyllabusIdCollisions(
+  modules: LessonModule[],
+  lessons: Lesson[],
+): LessonModule[] {
+  const usedIds = collectNonSyllabusIds(modules, lessons);
+  return modules.map((module) => reassignDuplicateSyllabusIds(module, usedIds));
+}
+
 function normalizeLessonForFile(lesson: Lesson): Lesson {
   return {
     id: lesson.id,
@@ -227,10 +289,12 @@ export function emptyLessonFile(): LessonFile {
 // Parse whatever is on disk into a valid v2 file, migrating v1 in memory.
 export function parseLessonFile(parsed: unknown): LessonFile {
   if (isLessonFile(parsed)) {
+    const lessons = parsed.lessons.map(normalizeLessonForFile);
+    const modules = parsed.modules.map(normalizeModule);
     return {
       ...parsed,
-      modules: parsed.modules.map(normalizeModule),
-      lessons: parsed.lessons.map(normalizeLessonForFile),
+      modules: repairSyllabusIdCollisions(modules, lessons),
+      lessons,
     };
   }
   if (isLessonFileV1(parsed)) return migrateV1ToV2(parsed);
