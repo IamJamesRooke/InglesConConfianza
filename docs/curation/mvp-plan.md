@@ -3,9 +3,11 @@
 Goal: teach Level 1 as the MVP. Four tracks, each run by the cheapest agent that can do
 it well. Fable/Opus never executes; it only reviews the two ★ judgement outputs.
 
-**State now:** Track 1 done and committed (`9a2e6e5c`). Enum decision made: `P1..P5` =
-Level 1–5, no migration. Level-1 manifest merged with the owner's hand-set levels,
-infinitives only, **dry-run clean (64 rows, 0 conflicts)** — not applied.
+**State (2026-09-15 end of day): ALL TRACKS DONE.** Track 1 `9a2e6e5c` · 2.2 applied `d38160bc`
+(64 rows) · 2.3 Rules topic `ebcb070a` (5 rule rows) · 1.4 docs `f1c28a0e` · Track 3 merged
+`ab35cbfb` · Track 4 `2ddb93eb`. Level 1 = **104 rows**, 16 taught by the 3 lessons, 88 untaught.
+Open: 2.4 (Level 2/3 drafts, later) · builder `Alt+L` checklist panel (builder session) ·
+lesson 3's empty Covers (owner) · stray `.next-ux-check-3100/` dir breaks repo-wide lint.
 
 ## Agent roster
 
