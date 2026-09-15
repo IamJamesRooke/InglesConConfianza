@@ -3,7 +3,7 @@ import "dotenv/config";
 import { prisma } from "../src/lib/database/prisma";
 import { KNOWN_PARTICLE_VALUES } from "../src/lib/curriculum/collections";
 
-// Enforces the invariants from docs/curation/phrasal-verbs-plan-2026-09-05.md:
+// Enforces the invariants from docs/curation/specs/verb-organization-plan-2026-09-05.md (phrasal-verb section):
 // the mechanism meant to make a silent phrasal/prepositional-verb tagging gap
 // (like the 926 rows found missing across five fragmented, unreconciled
 // tagging schemes) unshippable in the future. Two things are checked:

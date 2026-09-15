@@ -4,7 +4,7 @@ import { CURRICULUM_TOPICS } from "../src/lib/curriculum/topics";
 import { prisma } from "../src/lib/database/prisma";
 
 // Token-cheap resume point for the full-database audit
-// (docs/curation/full-audit-plan.md). State lives in the DB (the
+// (docs/curation/archive/full-audit-plan.md). State lives in the DB (the
 // audit:reviewed tag), not in a markdown checklist, so it can't drift from
 // the data it describes. Run this first in any session before reading
 // anything else — it tells you exactly where to pick up.

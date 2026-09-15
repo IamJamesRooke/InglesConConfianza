@@ -42,7 +42,7 @@ Facets:
 - `topic:` — semantic domain (`topic:time`, `topic:date`).
 - `register:` / `dialect:` — formality and regional variety.
 
-During curation, apply collection changes from a reviewed manifest via `curriculum:collections:apply` (DELETE / MERGE / RENAME ops), recorded under `docs/curation/`. Merge spelling variants and collections that encode the same idea; give a new tag a facet. Do not introduce a second tag system until demonstrated needs exceed collections.
+During curation, apply collection changes from a reviewed manifest via `curriculum:collections:apply` (DELETE / MERGE / RENAME ops), recorded under `docs/curation/applied/`. Merge spelling variants and collections that encode the same idea; give a new tag a facet. Do not introduce a second tag system until demonstrated needs exceed collections.
 
 ## Curriculum roles
 
@@ -59,6 +59,6 @@ Promotion and demotion are curation decisions. Retiring genuinely low-value mate
 2. Inspect canonical concepts and likely duplicates together.
 3. Move low-value or malformed concepts to `trash`, merge true duplicates, normalize retained records, and simplify their collections.
 4. Check that examples remain generic, bilingual, and natural.
-5. Apply the batch from a reviewed TSV manifest (`curriculum:roles:apply`, `curriculum:concepts:apply`), recorded under `docs/curation/`. Export updated immutable snapshots, then run database regression tests and snapshot parity verification.
+5. Apply the batch from a reviewed TSV manifest (`curriculum:roles:apply`, `curriculum:concepts:apply`), recorded under `docs/curation/applied/`. Export updated immutable snapshots, then run database regression tests and snapshot parity verification.
 
 Do not attempt to perfect all curriculum records before lesson building. Complete the broad correctness and priority pass, then let Module 1 expose the next high-value curation work.

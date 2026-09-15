@@ -41,7 +41,7 @@ export const COLLECTION_FACETS: Record<CollectionFacet, string> = {
   construction: "sentence pattern or verb-complement shape",
   form: "verb form (past, past participle, gerund, third person) — English morphology drills, not Spanish conjugation",
   conjugation: "Spanish verb conjugation (person, tense, irregularity) for a specific suppletive/irregular verb's finite form — regular verbs stay infinitive-only and are not tagged here",
-  sense: "one sense of one verb lemma — the join between a conjugated-form paradigm and the infinitive row whose meaning it realizes. Value shape <lemma>-<slug>, e.g. sense:ser-identidad. See docs/curation/verb-organization-plan-2026-09-05.md",
+  sense: "one sense of one verb lemma — the join between a conjugated-form paradigm and the infinitive row whose meaning it realizes. Value shape <lemma>-<slug>, e.g. sense:ser-identidad. See docs/curation/specs/verb-organization-plan-2026-09-05.md",
   morphology: "affix and derivation relationship",
   cognate: "two disjoint value classes: TYPE (0 or 1 per row — transparent / opaque-gloss / false-friend, is the English cognate the actual gloss or not) and PATTERN (0..n per row — a specific <es>-to-<en> spelling-suffix family, or a <esStem>-to-<enRoot> Latin-root family). See docs/curation/cognates-plan-2026-09-05.md",
   sound: "pronunciation family and named sound cluster",
@@ -59,7 +59,7 @@ export const COLLECTION_FACETS: Record<CollectionFacet, string> = {
   imp: "imperative/command type (affirmative informal, affirmative formal, negative, nosotros \"let's\") — scoped to topic:imperative",
   coll: "which light verb (make/take/have/set/other) a fixed noun collocation uses in English — scoped to topic:collocation",
   adv: "adverb subcategory not already covered by an existing grammar: value (possibility, degree/approximation, habitual aspect) — scoped to pos:adverb",
-  audit: "full-database-audit state (docs/curation/full-audit-plan.md) — reviewed marks a concept as judged at least once for role/membership/tags/examples; flagged marks a concept with an open question for the user, noted in full-audit-findings.md",
+  audit: "full-database-audit state (docs/curation/archive/full-audit-plan.md) — reviewed marks a concept as judged at least once for role/membership/tags/examples; flagged marks a concept with an open question for the user, noted in full-audit-findings.md",
 };
 
 export function collectionFacet(name: string): CollectionFacet | null {
@@ -398,7 +398,7 @@ export const KNOWN_CONJUGATION_VALUES: ReadonlySet<string> = new Set([
 
 // Controlled vocabulary for the `sense:` facet — one entry per infinitive
 // sense that has been brought into the verb-conjugation system (see
-// docs/curation/verb-organization-plan-2026-09-05.md §3, §5). Grows only when
+// docs/curation/specs/verb-organization-plan-2026-09-05.md §3, §5). Grows only when
 // a verb's sense enumeration is done deliberately, not per new row.
 export const KNOWN_SENSE_VALUES: ReadonlySet<string> = new Set([
   "ser-identidad", "ser-clasificacion", "ser-caracteristica", "ser-hora",
@@ -467,7 +467,7 @@ export const KNOWN_DEGREE_VALUES: ReadonlySet<string> = new Set([
 // Controlled vocabulary for the `particle:` facet — the English particle(s)
 // or preposition(s) of a grammar:phrasal-verb / construction:prepositional-verb
 // row. A row can carry more than one (e.g. "take it out on somebody" is
-// out + on). See docs/curation/phrasal-verbs-plan-2026-09-05.md.
+// out + on). See docs/curation/specs/verb-organization-plan-2026-09-05.md (phrasal-verb section).
 export const KNOWN_PARTICLE_VALUES: ReadonlySet<string> = new Set([
   "about", "across", "after", "against", "ahead", "along", "among", "apart",
   "around", "as", "aside", "at", "away", "back", "before", "behind", "below",

@@ -19,7 +19,7 @@
         "topic:verb-feelings-love-like",
         "topic:map-querer"
       ],
-      "curriculumRole": "Unranked"
+      "curriculumRole": "P1"
     },
     {
       "id": "df1fa2p3xy",
@@ -44,7 +44,7 @@
         "topic:vp-full-inf",
         "topic:map-querer"
       ],
-      "curriculumRole": "Unranked"
+      "curriculumRole": "P1"
     },
     {
       "id": "z3i6f8s1or",
@@ -68,7 +68,7 @@
         "topic:vp-obj-complement",
         "topic:map-querer"
       ],
-      "curriculumRole": "Unranked"
+      "curriculumRole": "P2"
     },
     {
       "id": "5hlohr9z3f",
@@ -87,7 +87,7 @@
         "topic:verb-feelings-love-like",
         "topic:map-querer"
       ],
-      "curriculumRole": "Unranked"
+      "curriculumRole": "P3"
     },
     {
       "id": "592w2y5gz1",
@@ -109,7 +109,7 @@
         "topic:map-decir",
         "topic:map-querer"
       ],
-      "curriculumRole": "Unranked"
+      "curriculumRole": "P3"
     },
     {
       "id": "dvodf0y7wx",
@@ -128,7 +128,7 @@
         "audit:reviewed",
         "topic:map-querer"
       ],
-      "curriculumRole": "Unranked"
+      "curriculumRole": "P1"
     },
     {
       "id": "dnwd7gmll5",
@@ -147,7 +147,7 @@
         "audit:reviewed",
         "topic:map-querer"
       ],
-      "curriculumRole": "Unranked"
+      "curriculumRole": "P1"
     },
     {
       "id": "9h3jno3320",
@@ -170,7 +170,7 @@
         "topic:vp-obj-complement",
         "topic:map-querer"
       ],
-      "curriculumRole": "Unranked"
+      "curriculumRole": "P2"
     },
     {
       "id": "lennoglnrf",
@@ -617,7 +617,7 @@
         "audit:reviewed",
         "topic:verb-depending-fitting"
       ],
-      "curriculumRole": "Unranked"
+      "curriculumRole": "P1"
     },
     {
       "id": "1eotkqfnjg",
@@ -637,7 +637,7 @@
         "topic:vp-full-inf",
         "topic:verb-depending-fitting"
       ],
-      "curriculumRole": "Unranked"
+      "curriculumRole": "P1"
     },
     {
       "id": "qvltvv56qd",
@@ -723,7 +723,7 @@
         "audit:reviewed",
         "topic:verb-eating-drinking"
       ],
-      "curriculumRole": "Unranked"
+      "curriculumRole": "P3"
     },
     {
       "id": "rihgpnyn52",
@@ -921,7 +921,7 @@
         "topic:verb-eating-drinking",
         "topic:map-tomar"
       ],
-      "curriculumRole": "Unranked"
+      "curriculumRole": "P3"
     },
     {
       "id": "ggqsaeyv8u",
@@ -1036,7 +1036,7 @@
         "audit:reviewed",
         "topic:verb-eating-drinking"
       ],
-      "curriculumRole": "Unranked"
+      "curriculumRole": "P3"
     },
     {
       "id": "7hhmppjsyi",
@@ -1841,7 +1841,7 @@
         "topic:verb-communication-talking",
         "topic:map-hablar"
       ],
-      "curriculumRole": "Unranked"
+      "curriculumRole": "P3"
     },
     {
       "id": "b7q2nz5b40",
@@ -2447,7 +2447,7 @@
         "topic:map-decir",
         "topic:enmap-that"
       ],
-      "curriculumRole": "Unranked"
+      "curriculumRole": "P1"
     },
     {
       "id": "y2jk0txcur",
@@ -10129,7 +10129,7 @@
         "topic:verb-creation-hacer",
         "topic:map-hacer"
       ],
-      "curriculumRole": "Unranked"
+      "curriculumRole": "P1"
     },
     {
       "id": "m9dfm9pbq2",
@@ -11032,7 +11032,7 @@
         "topic:enmap-to",
         "topic:enmap-go"
       ],
-      "curriculumRole": "Unranked"
+      "curriculumRole": "P1"
     },
     {
       "id": "k9y5vq9p06",
@@ -14263,7 +14263,7 @@
         "topic:map-poder",
         "topic:verb-system"
       ],
-      "curriculumRole": "Unranked"
+      "curriculumRole": "P1"
     },
     {
       "id": "a1eubfzyp5",
@@ -19371,7 +19371,7 @@
         "topic:verb-thinking-opinions",
         "topic:enmap-that"
       ],
-      "curriculumRole": "Unranked"
+      "curriculumRole": "P1"
     },
     {
       "id": "1cgmo681z0",
@@ -20244,28 +20244,6 @@
         "topic:map-deber",
         "topic:enmap-to",
         "topic:verb-system"
-      ],
-      "curriculumRole": "Unranked"
-    },
-    {
-      "id": "gxnygskyt7",
-      "spanish": "debido a que [algo sucede]",
-      "english": "because [something happens]",
-      "example": {
-        "spanish": "Se canceló debido a que llovía.",
-        "english": "It was canceled because it was raining."
-      },
-      "collections": [
-        "es:deber",
-        "pos:connector",
-        "construction:map-a-que-because",
-        "form:participle",
-        "es:debido",
-        "en:because",
-        "topic:multi-sense",
-        "grammar:reason",
-        "audit:reviewed",
-        "topic:map-deber"
       ],
       "curriculumRole": "Unranked"
     },
@@ -21982,7 +21960,7 @@
         "audit:reviewed",
         "topic:verb-knowing"
       ],
-      "curriculumRole": "Unranked"
+      "curriculumRole": "P1"
     },
     {
       "id": "manx93glfl",
@@ -28255,7 +28233,7 @@
         "topic:pronoun",
         "audit:reviewed"
       ],
-      "curriculumRole": "Unranked"
+      "curriculumRole": "P1"
     },
     {
       "id": "608c3yq7i6",
@@ -28515,7 +28493,7 @@
         "topic:pronoun",
         "audit:reviewed"
       ],
-      "curriculumRole": "Unranked"
+      "curriculumRole": "P1"
     },
     {
       "id": "5ajqekseb3",
@@ -28541,7 +28519,7 @@
         "topic:enmap-you",
         "topic:confusable-pronoun"
       ],
-      "curriculumRole": "Unranked"
+      "curriculumRole": "P1"
     },
     {
       "id": "96zmjpedzq",
@@ -28561,7 +28539,7 @@
         "topic:pronoun",
         "audit:reviewed"
       ],
-      "curriculumRole": "Unranked"
+      "curriculumRole": "P1"
     },
     {
       "id": "qtybwfahhd",
@@ -28632,7 +28610,7 @@
         "audit:reviewed",
         "topic:confusable-pronoun"
       ],
-      "curriculumRole": "Unranked"
+      "curriculumRole": "P1"
     },
     {
       "id": "xd9c671eit",
@@ -28654,7 +28632,7 @@
         "topic:en-multi-sense",
         "audit:reviewed"
       ],
-      "curriculumRole": "Unranked"
+      "curriculumRole": "P1"
     },
     {
       "id": "a29elmu22c",
@@ -28677,7 +28655,7 @@
         "audit:reviewed",
         "topic:enmap-you"
       ],
-      "curriculumRole": "Unranked"
+      "curriculumRole": "P2"
     },
     {
       "id": "7poocn5na8",
@@ -28699,7 +28677,7 @@
         "topic:en-multi-sense",
         "audit:reviewed"
       ],
-      "curriculumRole": "Unranked"
+      "curriculumRole": "P1"
     },
     {
       "id": "m3zbdhcenj",
@@ -28721,7 +28699,7 @@
         "topic:en-multi-sense",
         "audit:reviewed"
       ],
-      "curriculumRole": "Unranked"
+      "curriculumRole": "P1"
     },
     {
       "id": "8kfu71csir",
@@ -28744,7 +28722,7 @@
         "audit:reviewed",
         "topic:enmap-you"
       ],
-      "curriculumRole": "Unranked"
+      "curriculumRole": "P2"
     },
     {
       "id": "5cest1aute",
@@ -28767,7 +28745,7 @@
         "topic:en-multi-sense",
         "audit:reviewed"
       ],
-      "curriculumRole": "Unranked"
+      "curriculumRole": "P1"
     },
     {
       "id": "kz7ntpcrhd",
@@ -28790,7 +28768,7 @@
         "audit:reviewed",
         "topic:enmap-you"
       ],
-      "curriculumRole": "Unranked"
+      "curriculumRole": "P2"
     },
     {
       "id": "zf3sq9mld5",
@@ -28812,7 +28790,7 @@
         "topic:en-multi-sense",
         "audit:reviewed"
       ],
-      "curriculumRole": "Unranked"
+      "curriculumRole": "P1"
     },
     {
       "id": "d2156w0qop",
@@ -28835,7 +28813,7 @@
         "audit:reviewed",
         "topic:enmap-you"
       ],
-      "curriculumRole": "Unranked"
+      "curriculumRole": "P2"
     },
     {
       "id": "w8wzsxl8uq",
@@ -30057,8 +30035,8 @@
     },
     {
       "id": "wsttz3une0",
-      "spanish": "a un lugar",
-      "english": "to a place",
+      "spanish": "a [un lugar]",
+      "english": "to [a place]",
       "example": {
         "spanish": "Vamos a un lugar tranquilo.",
         "english": "We're going to a quiet place."
@@ -30069,7 +30047,7 @@
         "topic:multi-sense",
         "audit:reviewed"
       ],
-      "curriculumRole": "Unranked"
+      "curriculumRole": "P1"
     },
     {
       "id": "gk4t4kddz0",
@@ -32671,7 +32649,7 @@
         "audit:reviewed",
         "topic:noun-time-days-periods"
       ],
-      "curriculumRole": "Unranked"
+      "curriculumRole": "P1"
     },
     {
       "id": "rf7wttxz5x",
@@ -32690,7 +32668,7 @@
         "audit:reviewed",
         "topic:adv-time-relative-day"
       ],
-      "curriculumRole": "Unranked"
+      "curriculumRole": "P1"
     },
     {
       "id": "uklvuftocv",
@@ -33721,7 +33699,7 @@
         "en:because",
         "audit:reviewed"
       ],
-      "curriculumRole": "Unranked"
+      "curriculumRole": "P1"
     },
     {
       "id": "9sl36wwkry",
@@ -33915,7 +33893,7 @@
         "topic:en-multi-sense",
         "audit:reviewed"
       ],
-      "curriculumRole": "Unranked"
+      "curriculumRole": "P1"
     },
     {
       "id": "kxitvfhebx",
@@ -34005,7 +33983,7 @@
         "expr:response",
         "audit:reviewed"
       ],
-      "curriculumRole": "Unranked"
+      "curriculumRole": "P1"
     },
     {
       "id": "t114homehd",
@@ -35810,7 +35788,7 @@
         "en:because",
         "audit:reviewed"
       ],
-      "curriculumRole": "Unranked"
+      "curriculumRole": "P4"
     },
     {
       "id": "7c8nib1a9x",
@@ -35828,7 +35806,7 @@
         "en:because",
         "audit:reviewed"
       ],
-      "curriculumRole": "Unranked"
+      "curriculumRole": "P5"
     },
     {
       "id": "v30numtk7s",
@@ -36213,7 +36191,7 @@
         "audit:reviewed",
         "topic:verb-money-commerce"
       ],
-      "curriculumRole": "Unranked"
+      "curriculumRole": "P2"
     },
     {
       "id": "fdeqgbcts4",
@@ -36233,7 +36211,7 @@
         "audit:reviewed",
         "topic:verb-thinking-opinions"
       ],
-      "curriculumRole": "Unranked"
+      "curriculumRole": "P5"
     },
     {
       "id": "fkhe36qwae",
@@ -57970,7 +57948,7 @@
         "topic:fem-a",
         "topic:objects-misc-language"
       ],
-      "curriculumRole": "Unranked"
+      "curriculumRole": "P1"
     },
     {
       "id": "u8ffmygjqi",
@@ -59861,7 +59839,7 @@
         "topic:fem-a",
         "topic:places-public-city"
       ],
-      "curriculumRole": "Unranked"
+      "curriculumRole": "P3"
     },
     {
       "id": "z4gqxgd1ln",
@@ -63651,7 +63629,7 @@
         "audit:reviewed",
         "topic:verb-communication-saying"
       ],
-      "curriculumRole": "Unranked"
+      "curriculumRole": "P4"
     },
     {
       "id": "bebv5oi2xq",
@@ -64313,8 +64291,8 @@
     },
     {
       "id": "zg737wtrp2",
-      "spanish": "ayudar a [alguien] con [algo]",
-      "english": "to help [somebody] with [something]",
+      "spanish": "ayudar",
+      "english": "to help",
       "example": {
         "spanish": "Ayudé a Laura con el informe.",
         "english": "I helped Laura with the report."
@@ -64333,7 +64311,7 @@
         "topic:part-with",
         "topic:enmap-with"
       ],
-      "curriculumRole": "Unranked"
+      "curriculumRole": "P2"
     },
     {
       "id": "l9nbah9qj7",
@@ -64350,7 +64328,7 @@
         "audit:reviewed",
         "topic:verb-social-relationships"
       ],
-      "curriculumRole": "Unranked"
+      "curriculumRole": "P2"
     },
     {
       "id": "6zok4qn7s1",
@@ -88286,7 +88264,7 @@
         "topic:part-with",
         "topic:enmap-with"
       ],
-      "curriculumRole": "Unranked"
+      "curriculumRole": "P1"
     },
     {
       "id": "rnldlhmpop",
@@ -88311,7 +88289,7 @@
         "topic:enmap-with",
         "topic:enmap-you"
       ],
-      "curriculumRole": "Unranked"
+      "curriculumRole": "P1"
     },
     {
       "id": "sxxbfgvhfa",
@@ -88865,7 +88843,7 @@
         "audit:reviewed",
         "grammar:indef-pronoun-thing"
       ],
-      "curriculumRole": "Unranked"
+      "curriculumRole": "P1"
     },
     {
       "id": "5xzf7m11n9",
@@ -91431,7 +91409,7 @@
         "topic:quant-some-any-no",
         "topic:confusable-determiner"
       ],
-      "curriculumRole": "Unranked"
+      "curriculumRole": "P1"
     },
     {
       "id": "1gq5hjnrzn",
@@ -91453,7 +91431,7 @@
         "audit:reviewed",
         "topic:quant-some-any-no"
       ],
-      "curriculumRole": "Unranked"
+      "curriculumRole": "P1"
     },
     {
       "id": "ob5wvw1ip2",
@@ -92167,7 +92145,7 @@
         "topic:map-ir",
         "topic:confusable-verb"
       ],
-      "curriculumRole": "Unranked"
+      "curriculumRole": "P1"
     },
     {
       "id": "0lbant78ng",
