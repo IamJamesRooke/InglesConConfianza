@@ -62,5 +62,20 @@ export function useCurriculumNavigation() {
     });
   }
 
-  return { isNavigating, navigate, selectTopic, selectFamily, selectLeaf };
+  /**
+   * Pagination never resets the page it's already changing, so it always
+   * passes `resetPage = false` to `navigate`.
+   */
+  function goToPage(page: number) {
+    navigate({ page }, false);
+  }
+
+  return {
+    isNavigating,
+    navigate,
+    selectTopic,
+    selectFamily,
+    selectLeaf,
+    goToPage,
+  };
 }

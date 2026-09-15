@@ -61,10 +61,6 @@ export const curriculumRoles: Array<{
   },
 ];
 
-export function getRoleLabel(role: CurriculumRole) {
-  return curriculumRoles.find((option) => option.value === role)?.label;
-}
-
 export function renderConceptPattern(value: string) {
   return value.split(/(\[[^\]]+\])/u).map((part, index) =>
     part.startsWith("[") && part.endsWith("]") ? (

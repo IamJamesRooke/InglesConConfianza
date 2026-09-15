@@ -14,17 +14,6 @@ export const topicTitles: Record<string, string> = {
   expressions: "Everyday expressions",
 };
 
-export const topicDescriptions: Record<string, string> = {
-  transformations: "Build new words with endings and prefixes. The bold letters show the pattern.",
-  cognates: "Explore shared roots, spelling patterns, and false friends across Spanish and English.",
-  "verb-forms": "Explore regular endings and irregular past forms by sound pattern.",
-  "verb-patterns": "See how verbs combine with the words that follow them.",
-  mappings: "Choose a Spanish word to explore its English meanings in context.",
-  "en-mappings": "Choose an English word to explore its Spanish meanings in context.",
-  "phrasal-verbs-by-root": "Choose a verb to explore its combinations with particles.",
-  "phrasal-verbs-by-particle": "Choose a particle to explore the phrasal verbs that use it.",
-};
-
 const shortLabels: Record<string, string> = {
   "contrast:confusable": "Common confusions",
   "grammar:ser-adjective": "ser + adjective",

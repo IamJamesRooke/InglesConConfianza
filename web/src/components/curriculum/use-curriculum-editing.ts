@@ -280,7 +280,7 @@ export function useCurriculumEditing({
 
   // The Alt+0..5 "set level in place" shortcut: same optimistic-update /
   // save-feedback shape as updateRole, but goes through the server action so
-  // the change is also logged to docs/curation/applied/inline-levels.tsv and
+  // the change is also logged to docs/curation/archive/manifests/inline-levels.tsv and
   // the seed-data snapshots are re-exported immediately.
   async function applyInlineLevel(
     conceptId: string,
