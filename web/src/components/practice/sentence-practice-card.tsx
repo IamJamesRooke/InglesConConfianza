@@ -33,8 +33,12 @@ export function SentencePracticeCard({
   const [focusedBlockIndex, setFocusedBlockIndex] = useState<number | null>(
     null,
   );
+  // A brief shake on the specific blank that was just checked and found
+  // wrong — never on a plain "show me the answer" request.
+  const [shakeBlockIndex, setShakeBlockIndex] = useState<number | null>(null);
   const inputRefs = useRef<Array<HTMLInputElement | null>>([]);
   const helpTimerRef = useRef<number | null>(null);
+  const shakeTimerRef = useRef<number | null>(null);
   const correctAnswers = languageBlocks.map(
     (languageBlock, languageBlockIndex) =>
       isAnswerAccepted(
@@ -57,9 +61,18 @@ export function SentencePracticeCard({
   // after a few seconds, or as soon as they type again (see
   // updatePreviewAnswer), whichever comes first.
   const showHelp = useCallback(
-    (languageBlockIndex: number) => {
+    (languageBlockIndex: number, wasWrongAttempt = false) => {
       clearHelpTimer();
       setHelpedBlockIndex(languageBlockIndex);
+      if (wasWrongAttempt) {
+        if (shakeTimerRef.current !== null)
+          window.clearTimeout(shakeTimerRef.current);
+        setShakeBlockIndex(languageBlockIndex);
+        shakeTimerRef.current = window.setTimeout(() => {
+          setShakeBlockIndex(null);
+          shakeTimerRef.current = null;
+        }, 150);
+      }
       helpTimerRef.current = window.setTimeout(() => {
         setHelpedBlockIndex(null);
         helpTimerRef.current = null;
@@ -73,6 +86,8 @@ export function SentencePracticeCard({
   useEffect(
     () => () => {
       clearHelpTimer();
+      if (shakeTimerRef.current !== null)
+        window.clearTimeout(shakeTimerRef.current);
     },
     [clearHelpTimer],
   );
@@ -94,7 +109,7 @@ export function SentencePracticeCard({
     if (isCorrect && languageBlockIndex < languageBlocks.length - 1)
       window.setTimeout(
         () => inputRefs.current[languageBlockIndex + 1]?.focus(),
-        0,
+        150,
       );
   }
   const isSingleLanguageBlock = languageBlocks.length === 1;
@@ -104,7 +119,7 @@ export function SentencePracticeCard({
   );
   return (
     <div
-      className={`sentence-practice learner-enter ${isSingleLanguageBlock ? "single-answer" : ""} ${isVocabulary ? "vocabulary-practice" : ""}`}
+      className={`sentence-practice stage-enter ${isSingleLanguageBlock ? "single-answer" : ""} ${isVocabulary ? "vocabulary-practice" : ""}`}
     >
       {sentence.promptLabel.trim() && (
         <div className="sentence-prompt-label">
@@ -125,7 +140,7 @@ export function SentencePracticeCard({
               (languageBlock, languageBlockIndex) => (
                 <div
                   key={languageBlock.id}
-                  className={`answer-piece ${correctAnswers[languageBlockIndex] && helpedBlockIndex !== languageBlockIndex ? "correct" : ""}`}
+                  className={`answer-piece ${correctAnswers[languageBlockIndex] && helpedBlockIndex !== languageBlockIndex ? "correct" : ""} ${shakeBlockIndex === languageBlockIndex ? "shake" : ""}`}
                 >
                   <span className="answer-source">
                     {languageBlock.spanish}
@@ -195,7 +210,10 @@ export function SentencePracticeCard({
                           !correctAnswers[languageBlockIndex]
                         ) {
                           event.preventDefault();
-                          showHelp(languageBlockIndex);
+                          showHelp(
+                            languageBlockIndex,
+                            Boolean((answers[languageBlockIndex] ?? "").trim()),
+                          );
                           return;
                         }
                         if (
