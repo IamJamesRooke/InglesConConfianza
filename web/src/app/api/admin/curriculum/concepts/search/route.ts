@@ -1,15 +1,19 @@
 import { NextResponse } from "next/server";
 
 import { prisma } from "@/lib/database/prisma";
+import { rankConceptSearchResults } from "@/lib/lesson-builder/concept-search-rank";
 
 export const dynamic = "force-dynamic";
 
 // Typeahead for the lesson builder's "concepts covered" field. Matches the query
 // against Spanish or English text — ignoring the bracketed placeholder part of a
-// label like "querer [hacer algo]" so "hacer" does not match it — skips the
-// trash tier, and orders by curriculum role then catalog sequence. The role
-// order is the CurriculumRole enum's declaration order in schema.prisma, which
-// Postgres sorts by, so nothing here hardcodes the tier list.
+// label like "querer [hacer algo]" so "hacer" does not match it — and skips the
+// trash tier. SQL does the (cheap, indexable) substring filter and pulls a wide
+// candidate pool; rankConceptSearchResults does the actual ordering — exact,
+// then prefix, then word-boundary, then substring match, ties broken by
+// curriculum priority then label length — so "with" surfaces the standalone
+// preposition before "to work with [somebody]". See
+// src/lib/lesson-builder/concept-search-rank.ts.
 type Row = {
   id: string;
   spanish: string;
@@ -25,7 +29,7 @@ export async function GET(request: Request) {
   }
 
   const like = `%${query}%`;
-  const concepts = await prisma.$queryRaw<Row[]>`
+  const candidates = await prisma.$queryRaw<Row[]>`
     SELECT id, spanish, english, curriculum_role AS "curriculumRole"
     FROM curriculum_concepts
     WHERE curriculum_role <> 'Trash'
@@ -34,8 +38,10 @@ export async function GET(request: Request) {
         OR regexp_replace(english, '\\[.*?\\]', '', 'g') ILIKE ${like}
       )
     ORDER BY curriculum_role ASC, sort_order ASC
-    LIMIT 30
+    LIMIT 200
   `;
+
+  const concepts = rankConceptSearchResults(candidates, query).slice(0, 30);
 
   return NextResponse.json({ concepts });
 }

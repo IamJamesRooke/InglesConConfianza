@@ -1,7 +1,7 @@
 "use client";
 
 import { Plus, Snowflake, X } from "lucide-react";
-import { useEffect, useId, useRef, useState, type Ref } from "react";
+import { useEffect, useId, useLayoutEffect, useRef, useState, type Ref } from "react";
 
 import { ConceptQuickEdit, type ConceptDraft } from "@/components/lesson-builder/concept-quick-edit";
 import { conceptKey } from "@/lib/lesson-builder/lesson-file";
@@ -72,6 +72,9 @@ export function LessonConceptsField({
   );
   const listboxId = useId();
   const blurTimer = useRef<number | undefined>(undefined);
+  const fieldWrapRef = useRef<HTMLDivElement | null>(null);
+  const popoverRef = useRef<HTMLUListElement | null>(null);
+  const [dropUp, setDropUp] = useState(false);
 
   useEffect(() => {
     const trimmed = query.trim();
@@ -121,6 +124,20 @@ export function LessonConceptsField({
   const visibleResults = results.filter(
     (result) => !alreadyAdded.has(result.id),
   );
+  const showPopover = open && visibleResults.length > 0;
+  const showEmptyState = open && query.trim().length >= 2 && visibleResults.length === 0;
+
+  // Flip the popover above the input when there isn't room below in the
+  // viewport (e.g. the Covers field sitting near the bottom of the window).
+  useLayoutEffect(() => {
+    if (!showPopover && !showEmptyState) return;
+    const wrap = fieldWrapRef.current;
+    if (!wrap) return;
+    const rect = wrap.getBoundingClientRect();
+    const spaceBelow = window.innerHeight - rect.bottom;
+    const estimatedHeight = popoverRef.current?.offsetHeight ?? 288;
+    setDropUp(spaceBelow < estimatedHeight && rect.top > spaceBelow);
+  }, [showPopover, showEmptyState, visibleResults.length]);
 
   function addFromResult(result: ConceptResult) {
     const display = {
@@ -292,7 +309,10 @@ export function LessonConceptsField({
           </span>
           );
         })}
-        <div className={`${variant === "compact" ? "relative min-w-28 max-w-56" : "relative min-w-40 flex-1"}`}>
+        <div
+          ref={fieldWrapRef}
+          className={`${variant === "compact" ? "relative min-w-28 max-w-56" : "relative min-w-40 flex-1"}`}
+        >
           <input
             ref={inputRef}
             data-covers-for={coversFor}
@@ -300,9 +320,12 @@ export function LessonConceptsField({
             type="text"
             value={query}
             role="combobox"
-            aria-expanded={open && visibleResults.length > 0}
+            aria-expanded={showPopover}
             aria-controls={listboxId}
             aria-autocomplete="list"
+            aria-activedescendant={
+              showPopover ? `${listboxId}-option-${highlight}` : undefined
+            }
             placeholder={
               concepts.length === 0
                 ? variant === "compact" ? "Add concept…" : "Type a concept, e.g. querer, poder, hablar…"
@@ -358,49 +381,77 @@ export function LessonConceptsField({
               ? "lesson-concept-add"
               : "w-full rounded-md border border-input bg-card px-2.5 py-1.5 text-sm text-foreground outline-none transition placeholder:text-muted-foreground focus:border-ring focus:ring-3 focus:ring-ring/30"}
           />
-          {open && visibleResults.length > 0 && (
+          {showPopover && (
             <ul
+              ref={popoverRef}
               id={listboxId}
               role="listbox"
-              className={variant === "compact"
-                ? "absolute left-0 top-full z-30 mt-1 max-h-48 w-[min(28rem,80vw)] overflow-auto rounded-lg border border-border bg-popover py-1 pl-2 text-sm shadow-xl"
-                : "absolute left-0 top-full z-30 mt-1 max-h-64 w-[min(28rem,80vw)] overflow-auto rounded-lg border border-border bg-popover py-1 text-sm shadow-xl"}
+              data-keymap-ignore
+              className={`concept-typeahead-popover${dropUp ? " is-flipped" : ""}`}
             >
-              {visibleResults.map((result, index) => (
-                // A plain div, not a button: keyboard selection is driven entirely
-                // by the input's arrow keys / Enter (see onKeyDown below), and
-                // onMouseDown already blocks these from taking focus on click — a
-                // focusable descendant here would violate role="option" semantics
-                // (axe: no-focusable-content) without adding any real capability.
-                <li key={result.id} role="option" aria-selected={index === highlight}>
-                  <div
-                    onMouseDown={(event) => event.preventDefault()}
-                    onMouseEnter={() => setHighlight(index)}
-                    onClick={() => addFromResult(result)}
-                    className={`flex w-full items-center justify-between gap-3 px-3 py-1.5 text-left transition ${
-                      index === highlight ? "bg-accent text-accent-foreground" : "hover:bg-muted"
-                    }`}
+              {visibleResults.map((result, index) => {
+                const roleToken = result.curriculumRole.replace(/[^A-Za-z0-9]/g, "");
+                const matchIndex = result.english
+                  .toLowerCase()
+                  .indexOf(query.trim().toLowerCase());
+                const hasMatch = query.trim().length > 0 && matchIndex !== -1;
+                return (
+                  // A plain div, not a button: keyboard selection is driven entirely
+                  // by the input's arrow keys / Enter (see onKeyDown below), and
+                  // onMouseDown already blocks these from taking focus on click — a
+                  // focusable descendant here would violate role="option" semantics
+                  // (axe: no-focusable-content) without adding any real capability.
+                  <li
+                    key={result.id}
+                    id={`${listboxId}-option-${index}`}
+                    role="option"
+                    aria-selected={index === highlight}
                   >
-                    <span className="grid min-w-0 text-left leading-tight">
-                      <span className={`truncate font-semibold ${index === highlight ? "" : "text-foreground"}`}>
-                        {result.english}
+                    <div
+                      onMouseDown={(event) => event.preventDefault()}
+                      onMouseEnter={() => setHighlight(index)}
+                      onClick={() => addFromResult(result)}
+                      className={`concept-typeahead-option${
+                        index === highlight ? " is-active" : ""
+                      }`}
+                    >
+                      <span className="concept-typeahead-option-label">
+                        <span className="concept-typeahead-option-english">
+                          {hasMatch ? (
+                            <>
+                              {result.english.slice(0, matchIndex)}
+                              <strong>
+                                {result.english.slice(
+                                  matchIndex,
+                                  matchIndex + query.trim().length,
+                                )}
+                              </strong>
+                              {result.english.slice(matchIndex + query.trim().length)}
+                            </>
+                          ) : (
+                            result.english
+                          )}
+                        </span>
+                        <span className="concept-typeahead-option-spanish">
+                          {result.spanish}
+                        </span>
                       </span>
-                      <span className={`mt-0.5 truncate text-xs ${index === highlight ? "opacity-90" : "text-muted-foreground"}`}>
-                        {result.spanish}
-                      </span>
-                    </span>
-                    <span className={`shrink-0 text-[10px] font-semibold uppercase tracking-wide ${index === highlight ? "opacity-90" : "text-muted-foreground"}`}>
-                      {result.curriculumRole}
-                    </span>
-                  </div>
-                </li>
-              ))}
+                      <span
+                        className={`concept-typeahead-option-role role-${roleToken || "Unranked"}`}
+                        title={result.curriculumRole}
+                        aria-hidden="true"
+                      />
+                    </div>
+                  </li>
+                );
+              })}
             </ul>
           )}
-          {open && query.trim().length >= 2 && visibleResults.length === 0 && (
-            <div className={variant === "compact"
-              ? "absolute left-0 top-full z-30 mt-1 w-[min(28rem,80vw)] rounded-lg border border-border bg-popover px-2 py-1 text-xs shadow-xl"
-              : "absolute left-0 top-full z-30 mt-1 w-[min(28rem,80vw)] rounded-lg border border-border bg-popover px-3 py-2 text-sm shadow-xl"}>
+          {showEmptyState && (
+            <div
+              data-keymap-ignore
+              className={`concept-typeahead-popover concept-typeahead-empty${dropUp ? " is-flipped" : ""}`}
+            >
               <p className="text-muted-foreground">
                 {searchState === "loading"
                   ? "Searching..."
