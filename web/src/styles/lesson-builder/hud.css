@@ -1,8 +1,21 @@
 /* Editing HUD — the bottom-bar keyboard cheat sheet generated from KEYMAP
    (see src/components/lesson-builder/editing-hud.tsx). Owned exclusively by
    that component; do not duplicate its rules elsewhere. It is a hint, not a
-   control surface: aria-hidden, no focusable children, no animation. */
+   control surface: aria-hidden, no focusable children, no animation.
+
+   Palette restored from the pre-5972306e HUD the owner missed (dark ink
+   bar, yellow keycaps) rather than the neutral --card/--border pairing —
+   same --ink-deep/--primary-foreground/--hint tokens admin-header.css
+   already uses for the always-dark admin chrome, so this stays correct in
+   both light and dark theme without a --primary-foreground contrast trap
+   (--admin-header-fg-muted's oklch(0.708 0 0) is borrowed the same way
+   admin-header.css borrows it: the app's own .dark --muted-foreground
+   value, tuned for ~6.15:1 contrast on --ink-deep, used here unconditional
+   of theme since this bar is always the dark variant). */
 .editing-hud {
+  --hud-fg: var(--primary-foreground);
+  --hud-fg-muted: oklch(0.708 0 0);
+
   position: sticky;
   bottom: 0;
   z-index: 30;
@@ -15,8 +28,9 @@
   padding-bottom: env(safe-area-inset-bottom, 0px);
   overflow: hidden;
   white-space: nowrap;
-  background: var(--card);
-  border-top: 1px solid var(--border);
+  color: var(--hud-fg);
+  background: var(--ink-deep);
+  border-top: 1px solid color-mix(in oklch, white 12%, transparent);
   mask-image: linear-gradient(to right, black calc(100% - 40px), transparent);
 }
 
@@ -37,21 +51,20 @@
   min-width: 16px;
   padding: 1px 5px;
   border-radius: 4px;
-  background: var(--muted);
-  box-shadow: inset 0 0 0 1px var(--border);
-  color: var(--foreground);
+  background: var(--hint);
+  color: var(--ink-deep);
   font: 650 10px ui-monospace, monospace;
   text-align: center;
 }
 
 .editing-hud-label {
   font-size: 12px;
-  color: var(--muted-foreground);
+  color: var(--hud-fg-muted);
 }
 
 .editing-hud-more {
   flex: 0 0 auto;
   font-size: 12px;
-  color: var(--muted-foreground);
+  color: var(--hud-fg-muted);
   cursor: default;
 }

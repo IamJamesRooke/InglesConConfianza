@@ -80,17 +80,26 @@ export function focusSelection(selection: EditingSelection): void {
   }
 
   if (selection.kind === "title") {
-    const title = document.querySelector<HTMLElement>(
-      `[data-lesson-title="${selection.lessonId}"]`,
-    );
-    if (title) {
-      title.focus({ preventScroll: true });
-      return;
-    }
-    // A brand-new lesson (Ctrl+Alt+L / "Create lesson"): its row doesn't
-    // exist in the DOM yet this same tick — retry for a few frames rather
-    // than silently no-op-ing.
-    retryFocusTitle(selection.lessonId, 10);
+    const lessonId = selection.lessonId;
+    const title = document.querySelector<HTMLElement>(`[data-lesson-title="${lessonId}"]`);
+    if (title) title.focus({ preventScroll: true });
+    // One frame later, confirm focus actually stuck. Most title-focus
+    // transitions target a node that's already stable, so the synchronous
+    // focus above is the whole story. But `Ctrl+Alt+ArrowUp/Down` moving a
+    // lesson across a module boundary calls this *before* React has
+    // committed the module switch — the query above still finds the old
+    // module's (about-to-be-removed) row and "succeeds" on a node that's
+    // gone a moment later, with nothing left to focus the fresh row that
+    // remounts in the new module. If the expected title isn't the active
+    // element by next frame, fall back to the same retry loop a brand-new
+    // lesson uses (its row doesn't exist yet at all, same fix either way).
+    requestAnimationFrame(() => {
+      const active = document.activeElement;
+      if (active instanceof HTMLElement && active.getAttribute("data-lesson-title") === lessonId) {
+        return;
+      }
+      retryFocusTitle(lessonId, 10);
+    });
     return;
   }
 

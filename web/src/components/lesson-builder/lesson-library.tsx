@@ -329,13 +329,32 @@ function LessonLibraryInner(props: Props) {
       // later). Only collapse to "none" — and therefore run `leaveSlide`
       // — when the blurred target didn't belong to the slide the
       // selection already points at. See `isRealBlurAway`.
+      //
+      // A `title` selection has no blockId at all, so it needs its own
+      // identity — `data-lesson-row` (the lesson's whole row, set in
+      // lesson-library-row.tsx) — or every blur off a title (including the
+      // in-between blur `Ctrl+Alt+ArrowUp/Down` fires when the move crosses
+      // a module boundary and the row unmounts from the old module and
+      // remounts in the new one) reads as `isRealBlurAway(null, null)` →
+      // always "real," collapsing the selection before the row even
+      // finishes remounting. Prefixed so a block id and a lesson id can
+      // never collide.
       const selection = dispatchDepsRef.current.editing.selection;
-      const selectionBlockId =
-        selection.kind === "block" || selection.kind === "field" ? selection.blockId : null;
-      const targetBlock =
-        event.target instanceof HTMLElement ? event.target.closest("[data-document-block]") : null;
-      const targetBlockId = targetBlock?.getAttribute("data-document-block") ?? null;
-      if (!isRealBlurAway(targetBlockId, selectionBlockId)) return;
+      const selectionKey =
+        selection.kind === "block" || selection.kind === "field"
+          ? `block:${selection.blockId}`
+          : selection.kind === "title"
+            ? `title:${selection.lessonId}`
+            : null;
+      const targetEl = event.target instanceof HTMLElement ? event.target : null;
+      const targetBlock = targetEl?.closest("[data-document-block]");
+      const targetRow = targetEl?.closest("[data-lesson-row]");
+      const targetKey = targetBlock
+        ? `block:${targetBlock.getAttribute("data-document-block")}`
+        : targetRow
+          ? `title:${targetRow.getAttribute("data-lesson-row")}`
+          : null;
+      if (!isRealBlurAway(targetKey, selectionKey)) return;
       dispatchDepsRef.current.editing.setSelection({ kind: "none" }, { reason: "blur" });
     }
     document.addEventListener("focusout", onFocusOut);

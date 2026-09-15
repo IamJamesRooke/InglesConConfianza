@@ -60,6 +60,34 @@ test.describe("editing HUD", () => {
     await expect(hud).toBeHidden();
   });
 
+  test("Ctrl Alt ArrowDown across a module boundary keeps the title focused and the HUD visible", async ({
+    page,
+  }) => {
+    // Regression for: moving a lesson down out of the last position of its
+    // module crosses into the next module — the row unmounts from the old
+    // module (only the active module's lessons render) and remounts fresh
+    // in the new one. The old fix left `focusSelection`'s synchronous query
+    // finding the about-to-be-removed row and "succeeding" on it, so
+    // nothing ever focused the real, freshly-mounted title — selection fell
+    // back to `none` and the HUD vanished.
+    await page.goto("/admin/lesson-builder");
+    await expect(page.getByText("All changes saved")).toBeVisible({ timeout: 10000 });
+    await page.getByRole("button", { name: "Add module" }).click();
+    await page.keyboard.press("Control+Alt+l");
+    const title = page.locator("[data-lesson-title]").last();
+    await title.fill("Crosses the boundary");
+    const lessonId = await title.getAttribute("data-lesson-title");
+    await page.getByRole("button", { name: "Add module" }).click();
+
+    await title.focus();
+    await expect(title).toBeFocused();
+    await page.keyboard.press("Control+Alt+ArrowDown");
+
+    const movedTitle = page.locator(`[data-lesson-title="${lessonId}"]`);
+    await expect(movedTitle).toBeFocused();
+    await expect(page.locator(".editing-hud")).toBeVisible();
+  });
+
   test("stays a single line at 760px", async ({ page }) => {
     await authorOneExplanationAndPair(page);
     // Resize after authoring, not before — the module navigator's
