@@ -19,7 +19,9 @@ import {
   LessonBuilderProvider,
   type LessonBuilderActions,
 } from "@/lib/lesson-builder/builder-context";
-import { focusSlideWritingField } from "@/lib/lesson-builder/focus";
+import { EditingProvider, useLessonEditing, type EditingSelection } from "@/lib/lesson-builder/editing";
+import { dispatchKeymap, fieldSelectionForBlock } from "@/lib/lesson-builder/keymap";
+import { rememberFocus, restoreRememberedFocus } from "@/lib/lesson-builder/focus";
 import type { Lesson, LessonModule } from "@/lib/lesson-builder/types";
 
 // The single open-lesson id survives reloads so a teacher returns to where
@@ -79,63 +81,44 @@ type Props = {
 };
 
 export function LessonLibrary(props: Props) {
-  const [showKeyboardHelp, setShowKeyboardHelp] = useState(false);
-  // Strict single-open: at most one lesson is expanded at a time across the
-  // whole builder (§1a). `null` means every lesson is collapsed.
-  const [openLessonId, setOpenLessonId] = useState<string | null>(null);
-  const [confirmDelete, setConfirmDelete] = useState<string | null>(null);
+  return (
+    <EditingProvider lessons={props.lessons} actions={props.builder}>
+      <LessonLibraryInner {...props} />
+    </EditingProvider>
+  );
+}
+
+function LessonLibraryInner(props: Props) {
+  const editing = useLessonEditing();
+  const [confirmDeleteModule, setConfirmDeleteModule] = useState<string | null>(null);
   const [dragged, setDragged] = useState<{
     moduleId: string;
     lessonId: string;
   } | null>(null);
-  const lastFocusedBeforeHelpRef = useRef<HTMLElement | null>(null);
-  // One-shot: set just before opening a lesson whose very next render should
-  // jump straight into writing (item 8 — Enter on a collapsed title). State,
-  // not a ref, because it's read during render (JSX below) and a ref can't
-  // be read or written there. `LessonDocument` reports back via
-  // `clearFocusOnMount` once consumed, so a later plain re-open (chevron
-  // click) of the same lesson doesn't replay the jump.
-  const [focusOnOpenLessonId, setFocusOnOpenLessonId] = useState<string | null>(
-    null,
-  );
-  const clearFocusOnMount = useCallback(() => {
-    setFocusOnOpenLessonId(null);
-  }, []);
   const lessonById = useMemo(
     () => new Map(props.lessons.map((lesson) => [lesson.id, lesson])),
     [props.lessons],
   );
 
   // Only the active module's lessons render as the inline document — the
-  // rest live as compact rows in ModuleNavigator. Derived rather than
-  // effect-synced, so a deleted/renumbered active module falls back to the
-  // first module on the very next render, with no extra render pass.
-  const [selectedModuleId, setSelectedModuleId] = useState<string | null>(null);
+  // rest live as compact rows in ModuleNavigator.
   const activeModuleId = props.modules.some(
-    (module) => module.id === selectedModuleId,
+    (module) => module.id === editing.activeModuleId,
   )
-    ? selectedModuleId
+    ? editing.activeModuleId
     : (props.modules[0]?.id ?? null);
 
-  // Sets the single open lesson and remembers it for next time (§1a).
-  // Stable identity (no deps) so it — and everything built on it below —
-  // stays safe to hand to the memoized LessonRow without forcing every
-  // collapsed row to re-render on each keystroke elsewhere in the lesson.
-  const openLesson = useCallback((lessonId: string | null) => {
-    setOpenLessonId(lessonId);
-    writeLastLesson(lessonId);
-  }, []);
+  const openLessonId = editing.openLessonId;
 
-  // Item 8: Enter on a collapsed lesson's title expands it AND moves focus
-  // into writing (creating an explanation if the lesson has none) — the
-  // same jump a brand-new lesson gets. `focusOnOpenLessonIdRef` is set first
-  // so the render that mounts this lesson's `LessonDocument` sees it.
-  const openLessonForWriting = useCallback(
-    (lessonId: string) => {
-      setFocusOnOpenLessonId(lessonId);
-      openLesson(lessonId);
+  // Sets the single open lesson and remembers it for next time (§1a), and
+  // moves DOM focus + selection to its title — the one path every "open a
+  // lesson" flow (search, chevron click, new-lesson) shares.
+  const openLesson = useCallback(
+    (lessonId: string | null) => {
+      editing.setOpenLesson(lessonId);
+      writeLastLesson(lessonId);
     },
-    [openLesson],
+    [editing],
   );
 
   // The "remembered/first" fallback, scoped to one module: the last-opened
@@ -151,20 +134,16 @@ export function LessonLibrary(props: Props) {
   }
 
   function openModule(moduleId: string) {
-    setSelectedModuleId(moduleId);
+    editing.setActiveModule(moduleId);
     const target = props.modules.find((candidate) => candidate.id === moduleId);
     if (!target) return;
-    // Leave the open lesson alone if it already belongs to this module —
-    // only reassign when actually switching into a module that doesn't
-    // contain the currently open lesson.
     if (openLessonId && target.lessonIds.includes(openLessonId)) return;
     openLesson(pickLessonForModule(target));
   }
 
   // On first load, open exactly one lesson: the `?lesson=` URL param, else
   // the remembered last-opened lesson, else the active module's first
-  // lesson (§1a). Guarded to run once, and only once real data has arrived
-  // (props.saveLabel stays "Loading…" until then).
+  // lesson (§1a). Guarded to run once, and only once real data has arrived.
   const initializedOpenLessonRef = useRef(false);
   useEffect(() => {
     if (initializedOpenLessonRef.current || props.saveLabel === "Loading…") {
@@ -188,7 +167,7 @@ export function LessonLibrary(props: Props) {
       home = props.modules[0];
       target = pickLessonForModule(home);
     }
-    if (home) setSelectedModuleId(home.id);
+    if (home) editing.setActiveModule(home.id);
     openLesson(target);
     // Runs once (guarded above); re-running on every dependency change would
     // fight a teacher's own subsequent open/close actions.
@@ -199,27 +178,17 @@ export function LessonLibrary(props: Props) {
     const home = props.modules.find((module) =>
       module.lessonIds.includes(lessonId),
     );
-    if (home) setSelectedModuleId(home.id);
+    if (home) editing.setActiveModule(home.id);
     openLesson(lessonId);
-    requestAnimationFrame(() => {
-      // Item 5: a search result used to only scroll the lesson into view,
-      // leaving focus in the search box — a keyboard-only teacher had to
-      // Tab/click in by hand. Now it activates the matched slide and
-      // focuses its writing field (or the title, for a title hit).
-      if (blockId) {
-        // data-document-block is LessonDocument's own per-slide anchor.
-        document
-          .querySelector(`[data-document-block="${blockId}"]`)
-          ?.scrollIntoView({ behavior: "smooth", block: "start" });
-        focusSlideWritingField(blockId);
-        return;
-      }
-      const titleField = document.querySelector<HTMLInputElement>(
-        `[data-lesson-title="${lessonId}"]`,
-      );
-      titleField?.scrollIntoView({ behavior: "smooth", block: "start" });
-      titleField?.focus();
-    });
+    // Item 5: a search result activates the matched slide (or the title,
+    // for a title hit) rather than only scrolling it into view.
+    const lesson = lessonById.get(lessonId);
+    const block = blockId ? lesson?.blocks.find((candidate) => candidate.id === blockId) : undefined;
+    const sel: EditingSelection = block
+      ? fieldSelectionForBlock(lessonId, block)
+      : { kind: "title", lessonId };
+    editing.setSelection(sel);
+    editing.focusSelection(sel);
   }
 
   const { onFlushSave } = props;
@@ -227,13 +196,11 @@ export function LessonLibrary(props: Props) {
     (lessonId: string) => {
       openLesson(null);
       onFlushSave();
-      requestAnimationFrame(() =>
-        document
-          .querySelector<HTMLInputElement>(`[data-lesson-title="${lessonId}"]`)
-          ?.focus(),
-      );
+      const sel: EditingSelection = { kind: "title", lessonId };
+      editing.setSelection(sel);
+      editing.focusSelection(sel);
     },
-    [openLesson, onFlushSave],
+    [openLesson, onFlushSave, editing],
   );
 
   const toggleLesson = useCallback(
@@ -273,202 +240,99 @@ export function LessonLibrary(props: Props) {
     [dragged, onDropLesson],
   );
 
-  // Item 2: Ctrl Alt ArrowUp/Down from a lesson's title moves it one
-  // position within its module, or — at the module boundary — into the
-  // end/start of the adjacent module. Reuses `onDropLesson`
-  // (`moveLessonToPosition` in page.tsx) rather than adding a new API: a
-  // same-module move is just a reorder within it, a cross-module move is
-  // an insertion at the destination's end (moving up) or start (moving
-  // down). Title rows only render for the active module (see the
-  // `.filter` below), so `home.id` is always the current `activeModuleId`
-  // when this fires — no extra bookkeeping needed to detect "did it move
-  // to a different module," a plain id comparison is enough.
-  const { modules: propModules } = props;
-  const moveLessonKeyboard = useCallback(
-    (lessonId: string, direction: -1 | 1) => {
-      const homeIndex = propModules.findIndex((module) =>
-        module.lessonIds.includes(lessonId),
-      );
-      if (homeIndex < 0) return;
-      const home = propModules[homeIndex];
-      const position = home.lessonIds.indexOf(lessonId);
-      const withinModule = position + direction;
-      let destinationModuleId = home.id;
-      let insertionIndex: number;
-      if (withinModule < 0 || withinModule >= home.lessonIds.length) {
-        const adjacentIndex = homeIndex + direction;
-        if (adjacentIndex < 0 || adjacentIndex >= propModules.length) return;
-        const adjacent = propModules[adjacentIndex];
-        destinationModuleId = adjacent.id;
-        // Destination doesn't contain this lesson yet, so its lessonIds
-        // array is already in "final" terms — no off-by-one to correct for.
-        insertionIndex = direction === -1 ? adjacent.lessonIds.length : 0;
-      } else {
-        // `moveLessonToPosition` (page.tsx) reads insertionIndex as a
-        // position in the module's *original* (pre-removal) lessonIds
-        // array — it only subtracts 1 itself when the source sits before
-        // that index. Moving backward, the target index is already before
-        // the source, so it's used as-is; moving forward, we have to name
-        // the original index one past where the lesson should land so that
-        // same internal subtraction lands it exactly on `withinModule`.
-        insertionIndex = direction > 0 ? withinModule + 1 : withinModule;
-      }
-      onDropLesson(lessonId, destinationModuleId, insertionIndex);
-      if (destinationModuleId !== home.id) setSelectedModuleId(destinationModuleId);
-      requestAnimationFrame(() => {
-        document
-          .querySelector<HTMLInputElement>(`[data-lesson-title="${lessonId}"]`)
-          ?.focus();
-      });
-    },
-    [propModules, onDropLesson],
-  );
-
   const startLesson = useCallback(
     (moduleId: string, insertionIndex?: number) => {
       const lessonId = props.builder.newLesson(moduleId, insertionIndex);
       openLesson(lessonId);
-      requestAnimationFrame(() => {
-        document
-          .querySelector<HTMLInputElement>(`[data-lesson-title="${lessonId}"]`)
-          ?.focus();
-      });
+      const sel: EditingSelection = { kind: "title", lessonId };
+      editing.setSelection(sel);
+      editing.focusSelection(sel);
     },
-    [props.builder, openLesson],
+    [props.builder, openLesson, editing],
   );
 
-  const requestDeleteConfirm = useCallback((key: string) => setConfirmDelete(key), []);
-  const cancelDeleteConfirm = useCallback(() => setConfirmDelete(null), []);
-
   function toggleKeyboardHelp() {
-    setShowKeyboardHelp((open) => {
-      if (!open) {
-        // Remember whatever had focus (the Ctrl+. keypress's target, or the
-        // header menu's "Keyboard shortcuts" entry) so Escape/close can
-        // return it there — there's no fixed trigger button to focus back onto.
-        lastFocusedBeforeHelpRef.current =
-          document.activeElement instanceof HTMLElement
-            ? document.activeElement
-            : null;
-      }
-      return !open;
-    });
+    if (!editing.helpOpen) rememberFocus();
+    editing.setHelpOpen(!editing.helpOpen);
   }
 
   function closeKeyboardHelp() {
-    setShowKeyboardHelp(false);
-    requestAnimationFrame(() => lastFocusedBeforeHelpRef.current?.focus());
+    editing.setHelpOpen(false);
+    restoreRememberedFocus();
   }
 
-  // Item 3: Ctrl Alt L adds a lesson from anywhere on the page — not just
-  // from inside the currently open lesson's own document — since it's also
-  // the only keyboard path to create the very first lesson in an empty
-  // module (there is no open lesson, and no document keydown handler, to
-  // catch it from). Inserted after the open lesson if there is one,
-  // otherwise at the end of the active module.
-  function addLessonFromAnywhere() {
-    if (openLessonId) {
-      const home = props.modules.find((module) =>
-        module.lessonIds.includes(openLessonId),
-      );
-      if (home) {
-        startLesson(home.id, home.lessonIds.indexOf(openLessonId) + 1);
-        return;
-      }
-    }
-    if (activeModuleId) startLesson(activeModuleId);
-  }
-  // The document keydown effect below subscribes once ([] deps, like the
-  // Ctrl/⌘+. handler it lives beside) — read the latest closure through a
-  // ref rather than resubscribing on every render. The ref is updated in an
-  // effect (every commit, no deps) rather than during render itself, since
-  // refs may not be written while rendering.
-  const addLessonFromAnywhereRef = useRef(addLessonFromAnywhere);
+  // Same-page bridge for the header's "Keyboard shortcuts" menu entry
+  // (site-header.tsx, outside this component tree).
   useEffect(() => {
-    addLessonFromAnywhereRef.current = addLessonFromAnywhere;
-  });
-  // Item 5 (Ctrl Alt M) needs the current active module id inside the same
-  // once-subscribed document keydown effect below — same ref-bridge pattern
-  // as addLessonFromAnywhereRef just above.
-  const activeModuleIdRef = useRef(activeModuleId);
-  useEffect(() => {
-    activeModuleIdRef.current = activeModuleId;
-  });
-
-  useEffect(() => {
-    const onKey = (event: KeyboardEvent) => {
-      if (event.isComposing) return;
-      // Ignore the concept typeahead (combobox/listbox) and any open dialog
-      // (keyboard-help, the concept quick-edit) — they own their own keys.
-      const target = event.target instanceof HTMLElement ? event.target : null;
-      if (target?.closest('[role="combobox"], [role="listbox"], [role="dialog"]')) {
-        return;
-      }
-      if (
-        event.code === "KeyL" &&
-        event.ctrlKey &&
-        event.altKey &&
-        !event.metaKey &&
-        !event.shiftKey
-      ) {
-        event.preventDefault();
-        addLessonFromAnywhereRef.current();
-        return;
-      }
-      // Item 5: Ctrl Alt M focuses the active module's name input — the
-      // only keyboard path to renaming a module used to be 8 Shift+Tab
-      // presses back from inside the open lesson (first-run friction #5).
-      if (
-        event.code === "KeyM" &&
-        event.ctrlKey &&
-        event.altKey &&
-        !event.metaKey &&
-        !event.shiftKey
-      ) {
-        const currentModuleId = activeModuleIdRef.current;
-        if (!currentModuleId) return;
-        const field = document.querySelector<HTMLInputElement>(
-          `[data-module-name="${currentModuleId}"]`,
-        );
-        if (!field) return;
-        event.preventDefault();
-        field.focus();
-        field.select();
-        return;
-      }
-      if (
-        !(event.ctrlKey || event.metaKey) ||
-        event.altKey ||
-        event.shiftKey ||
-        event.key !== "."
-      )
-        return;
-      event.preventDefault();
-      toggleKeyboardHelp();
-    };
-    // Same-page bridge for the header's "Keyboard shortcuts" menu entry
-    // (site-header.tsx, outside this component tree) — dispatched instead
-    // of prop-drilling dialog state up through the layout. Event name must
-    // stay in sync with site-header.tsx's dispatch.
     const onExternalToggle = () => toggleKeyboardHelp();
-    document.addEventListener("keydown", onKey);
-    document.addEventListener(
-      "lesson-builder:toggle-keyboard-help",
-      onExternalToggle,
-    );
+    document.addEventListener("lesson-builder:toggle-keyboard-help", onExternalToggle);
+    return () =>
+      document.removeEventListener("lesson-builder:toggle-keyboard-help", onExternalToggle);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [editing.helpOpen]);
+
+  // ---------------------------------------------------------------------
+  // The one keymap dispatcher (§3): a single capture-phase keydown listener
+  // on the builder root, reading current selection/lessons/actions/editing
+  // through refs kept fresh every render (subscribes once, like the effects
+  // this replaced) so its own identity — and thus the listener — never
+  // needs to change across a typing session.
+  // ---------------------------------------------------------------------
+  const dispatchDepsRef = useRef({ selection: editing.selection, lessons: props.lessons, actions: props.builder, editing });
+  useEffect(() => {
+    dispatchDepsRef.current = { selection: editing.selection, lessons: props.lessons, actions: props.builder, editing };
+  });
+  const rootRef = useRef<HTMLElement | null>(null);
+  useEffect(() => {
+    const root = rootRef.current;
+    if (!root) return;
+    function onKeyDown(event: KeyboardEvent) {
+      const deps = dispatchDepsRef.current;
+      dispatchKeymap(event, { selection: deps.selection, lessons: deps.lessons, actions: deps.actions, editing: deps.editing });
+    }
+    // On `document`, not `root`: when nothing in the builder has focus yet
+    // (a fresh empty course — no title, no field exists to hold it), a
+    // keydown's real target is `document.body`, which isn't a descendant of
+    // `root` — a capture-phase listener on `root` never sees an event whose
+    // path doesn't pass through it. `document` is always an ancestor.
+    document.addEventListener("keydown", onKeyDown, { capture: true });
+    // Blur does not write "none" by itself (§1) — only a focusout whose
+    // relatedTarget lands outside the builder root does; any focusin
+    // within the root overwrites the selection anyway on its own, and a
+    // focusout *followed by* a focusin inside the root (e.g. Tab from one
+    // field to the next) must not flash "none" in between.
+    //
+    // Attached on `document`, not `root`, and deliberately *after* React's
+    // own delegated listener has had a chance to run its field's onBlur
+    // (e.g. sentence-editor.tsx committing the English draft): both are
+    // reacting to the very same native focusout, in the same tick, with no
+    // render in between, so whichever runs first sees stale props. Sitting
+    // above React's root container in the bubble phase — instead of below
+    // it, on `root` — means this store update composes with that commit
+    // instead of racing it.
+    function onFocusOut(event: FocusEvent) {
+      if (!(event.target instanceof Node) || !root!.contains(event.target)) return;
+      const next = event.relatedTarget;
+      if (next instanceof Node && root!.contains(next)) return;
+      dispatchDepsRef.current.editing.setSelection({ kind: "none" }, { reason: "blur" });
+    }
+    document.addEventListener("focusout", onFocusOut);
     return () => {
-      document.removeEventListener("keydown", onKey);
-      document.removeEventListener(
-        "lesson-builder:toggle-keyboard-help",
-        onExternalToggle,
-      );
+      document.removeEventListener("keydown", onKeyDown, { capture: true });
+      document.removeEventListener("focusout", onFocusOut);
     };
   }, []);
 
   return (
     <LessonBuilderProvider value={props.builder}>
-    <section className="lesson-library" aria-label="Course lessons">
-      {showKeyboardHelp && <KeyboardHelpDialog onClose={closeKeyboardHelp} />}
+    <section
+      className="lesson-library"
+      aria-label="Course lessons"
+      ref={rootRef}
+      data-lesson-library-root
+      tabIndex={-1}
+    >
+      {editing.helpOpen && <KeyboardHelpDialog onClose={closeKeyboardHelp} />}
 
       <div className="lesson-library-with-navigator">
         <ModuleNavigator
@@ -496,7 +360,6 @@ export function LessonLibrary(props: Props) {
               const moduleLessons = module.lessonIds
                 .map((id) => lessonById.get(id))
                 .filter((lesson): lesson is Lesson => Boolean(lesson));
-              const moduleDeleteKey = `module:${module.id}`;
 
               return (
                 <Fragment key={module.id}>
@@ -514,6 +377,7 @@ export function LessonLibrary(props: Props) {
                         <input
                           className="lesson-library-module-title"
                           data-module-name={module.id}
+                          data-keymap-ignore
                           value={module.name ?? ""}
                           onChange={(event) =>
                             props.onChangeModule(module.id, {
@@ -523,7 +387,7 @@ export function LessonLibrary(props: Props) {
                           placeholder="Untitled module"
                           aria-label={`Module ${moduleIndex + 1} name`}
                         />
-                        {confirmDelete === moduleDeleteKey ? (
+                        {confirmDeleteModule === module.id ? (
                           <span className="lesson-library-module-controls lesson-inline-confirm">
                             <span>Delete module and move its lessons?</span>
                             <button
@@ -531,15 +395,12 @@ export function LessonLibrary(props: Props) {
                               className="danger"
                               onClick={() => {
                                 props.onDeleteModule(module.id);
-                                setConfirmDelete(null);
+                                setConfirmDeleteModule(null);
                               }}
                             >
                               Delete
                             </button>
-                            <button
-                              type="button"
-                              onClick={() => setConfirmDelete(null)}
-                            >
+                            <button type="button" onClick={() => setConfirmDeleteModule(null)}>
                               Cancel
                             </button>
                           </span>
@@ -550,7 +411,7 @@ export function LessonLibrary(props: Props) {
                               className="danger lesson-library-module-delete"
                               disabled={props.modules.length === 1}
                               aria-disabled={props.modules.length === 1}
-                              onClick={() => setConfirmDelete(moduleDeleteKey)}
+                              onClick={() => setConfirmDeleteModule(module.id)}
                               aria-label={
                                 props.modules.length === 1
                                   ? "Can't delete the only module"
@@ -579,21 +440,16 @@ export function LessonLibrary(props: Props) {
                           isOpen={openLessonId === lesson.id}
                           isDragged={dragged?.lessonId === lesson.id}
                           dragInProgress={dragged !== null}
-                          confirmingDelete={confirmDelete === `lesson:${lesson.id}`}
+                          confirmingDelete={editing.confirmDeleteKey === `lesson:${lesson.id}`}
                           builder={props.builder}
                           onToggle={toggleLesson}
-                          onCollapse={collapse}
-                          onOpenForWriting={openLessonForWriting}
-                          focusOnOpenLessonId={focusOnOpenLessonId}
-                          onFocusOnMountHandled={clearFocusOnMount}
                           onFlushSave={onFlushSave}
                           onStartDrag={startDrag}
                           onDragEnd={endDrag}
                           onDrop={drop}
                           onStartLessonAt={startLesson}
-                          onMoveLesson={moveLessonKeyboard}
-                          onRequestDeleteConfirm={requestDeleteConfirm}
-                          onCancelDeleteConfirm={cancelDeleteConfirm}
+                          onRequestDeleteConfirm={(key) => editing.requestDeleteConfirm(key)}
+                          onCancelDeleteConfirm={() => editing.requestDeleteConfirm(null)}
                         />
                       ))}
                       {moduleLessons.length === 0 && (
@@ -610,9 +466,6 @@ export function LessonLibrary(props: Props) {
                     </div>
                   </section>
                   {moduleLessons.length > 0 && (
-                    // Outside the module card: an always-visible, compact,
-                    // left-aligned control, not a boxed full-width in-card
-                    // footer.
                     <button
                       type="button"
                       className="lesson-library-add-lesson"

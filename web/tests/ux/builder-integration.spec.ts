@@ -61,17 +61,11 @@ test("keyboard writing preserves alternatives and hints and prunes abandoned pai
   const explanation = row.getByRole("textbox", { name: "Explanation 1" });
   await expect(explanation).toBeFocused();
   await page.keyboard.type("Tengo hambre es I'm hungry.");
+  // E6: Ctrl+Alt+Enter inserts the *predicted* type directly (after an
+  // explanation, that's a sentence) and focuses its Spanish field — no
+  // chooser to pick from on the keyboard path any more. `toBeFocused()`
+  // polls, so it waits out focus.ts's requestAnimationFrame on its own.
   await page.keyboard.press("Control+Alt+Enter");
-  // Ctrl+Alt+Enter focuses the tail seam's Sentence button via a
-  // requestAnimationFrame scheduled in SlideInsertControl, not
-  // synchronously — wait for that focus to actually land before pressing
-  // "s"; otherwise "s" can race ahead of the rAF and land back on the
-  // explanation field instead of the seam group, silently typing an "s"
-  // instead of inserting a sentence.
-  await expect(
-    row.getByRole("button", { name: "Sentence — Insert at lesson end" }),
-  ).toBeFocused();
-  await page.keyboard.press("s");
   const sentence = row.locator(".lesson-document-sentence").last();
   const spanish = sentence.locator('textarea[data-field="spanish"]');
   const english = sentence.locator('textarea[data-field="english"]');
@@ -84,11 +78,17 @@ test("keyboard writing preserves alternatives and hints and prunes abandoned pai
   const hint = sentence.getByRole("textbox", { name: "Hint for Tengo hambre." });
   await expect(hint).toBeFocused();
   await page.keyboard.type("Estoy hambriento");
+  // Escape from the hint returns to whichever field opened it (English here).
   await page.keyboard.press("Escape");
   await expect(english.first()).toBeFocused();
   await page.keyboard.press("Tab");
   await expect(spanish).toHaveCount(2);
   await expect(spanish.nth(1)).toBeFocused();
+  // Two Escapes to fully rest (owner requirement 2026-09-15): the first
+  // drops the field (block selected, still "editing" chrome — and this is
+  // exactly when the abandoned blank pair is pruned); the second clears the
+  // selection entirely, which is when the slide actually shows resting.
+  await page.keyboard.press("Escape");
   await page.keyboard.press("Escape");
   const rest = row.locator(".lesson-document-sentence.resting");
   await expect(rest).toBeVisible();
@@ -114,7 +114,11 @@ test("keyboard writing preserves alternatives and hints and prunes abandoned pai
   await expect(spanish).toHaveCount(2);
   await expect(spanish.nth(1)).toBeFocused();
   await page.keyboard.type("partial");
+  // Two Escapes to fully rest — see the note above. Give the smooth-scroll
+  // that follows a chance to settle before the click below.
   await page.keyboard.press("Escape");
+  await page.keyboard.press("Escape");
+  await page.waitForTimeout(400);
   await row.locator(".lesson-document-sentence.resting").click();
   await expect(spanish).toHaveCount(2);
   await expect(spanish.nth(1)).toHaveValue("partial");
@@ -132,13 +136,13 @@ test("table presentation stays centered and compact through hint editing", async
   const row = page.locator(`[data-lesson-row="${id}"]`);
   const explanation = row.getByRole("textbox", { name: "Explanation 1" });
   await explanation.fill("Comer es to eat.");
+  // E6: no chooser on the keyboard path any more. The predicted type after
+  // an explanation is a sentence, not a table — a second Ctrl+Alt+Enter
+  // within 1.5s cycles the still-empty just-inserted block's type
+  // (explanation -> sentence -> vocabulary -> …), so two presses land on a
+  // vocabulary table.
   await page.keyboard.press("Control+Alt+Enter");
-  // See the other test in this file: the seam's Sentence button focus is
-  // rAF-scheduled, not synchronous — wait for it before pressing "t".
-  await expect(
-    row.getByRole("button", { name: "Sentence — Insert at lesson end" }),
-  ).toBeFocused();
-  await page.keyboard.press("t");
+  await page.keyboard.press("Control+Alt+Enter");
   const table = row.getByRole("region", { name: "Vocabulary table", exact: true });
   const spanish = table.locator('textarea[data-field="spanish"]');
   const english = table.locator('textarea[data-field="english"]');
@@ -155,16 +159,37 @@ test("table presentation stays centered and compact through hint editing", async
   await expect(hint).toBeFocused();
   await page.keyboard.type("Morning meal");
   await expect(hint).toHaveValue("Morning meal");
+  // Escape from the hint returns to whichever field opened it (English).
   await page.keyboard.press("Escape");
   await expect(english.last()).toBeFocused();
+  // Two Escapes to fully rest — resting means presentation only, for
+  // tables exactly like sentences: no inputs, no row delete `×`, no add-row
+  // button, the hint as plain read-only text.
+  await page.keyboard.press("Escape");
   await page.keyboard.press("Escape");
   await page.mouse.move(0, 0);
   await expect(table.getByRole("button", { name: "Add row" })).toHaveCount(0);
+  await expect(table.locator("textarea")).toHaveCount(0);
+  await expect(table.locator(".lesson-document-pair-delete")).toHaveCount(0);
   await expect(table.getByText("Morning meal", { exact: true })).toBeVisible();
   await expect(table.locator(".lesson-document-hint-pill-input")).toHaveCount(0);
-  await expect(spanish.first()).toHaveCSS("font-size", "16px");
-  await expect(spanish.first()).toHaveCSS("font-weight", "600");
-  await expect(english.first()).toHaveCSS("font-weight", "400");
+  const restRows = table.locator(".lesson-sentence-presentation-row");
+  await expect(restRows).toHaveCount(4);
+  await expect(restRows.first().locator('[lang="es"]')).toHaveText("comer");
+  await expect(restRows.first().locator('[lang="es"]')).toHaveCSS("font-weight", "600");
+  await expect(restRows.first().locator('[lang="en"]')).toHaveCSS("font-style", "italic");
+  await page.screenshot({ path: testInfo.outputPath("table-rest.png"), fullPage: true });
+
+  // Click back in: re-enters editing, same shape as before (four rows, the
+  // add-row button back, the authored hint back in its editable input).
+  // A real coordinate-based click intermittently misses in this harness at
+  // this exact scroll position (unrelated to the app itself — a native
+  // `element.click()` and a dispatched click both land correctly) —
+  // dispatch the click event directly instead of simulating a pointer.
+  await restRows.first().dispatchEvent("click");
+  await expect(spanish.first()).toBeFocused();
+  await expect(spanish).toHaveCount(4);
+  await expect(table.getByRole("button", { name: "Add row" })).toBeVisible();
   const content = table.locator(".lesson-document-pieces");
   const bounds = await content.boundingBox();
   const tableBounds = await table.boundingBox();
@@ -173,9 +198,6 @@ test("table presentation stays centered and compact through hint editing", async
   expect(Math.max(...englishStarts) - Math.min(...englishStarts)).toBeLessThan(1);
   const tags = await row.locator(".lesson-document-tags").boundingBox();
   await testInfo.attach("table-geometry", { body: JSON.stringify({ table: bounds, concepts: tags, gap: tags!.y - bounds!.y - bounds!.height }), contentType: "application/json" });
-  await page.screenshot({ path: testInfo.outputPath("table-rest.png"), fullPage: true });
-  await english.last().focus();
-  await expect(table.getByRole("button", { name: "Add row" })).toBeVisible();
   await page.screenshot({ path: testInfo.outputPath("table-edit.png"), fullPage: true });
   await page.setViewportSize({ width: 390, height: 844 });
   expect(await page.evaluate(() => document.documentElement.scrollWidth)).toBeLessThanOrEqual(391);

@@ -9,7 +9,8 @@ import {
   LessonBuilderProvider,
   type LessonBuilderActions,
 } from "../../src/lib/lesson-builder/builder-context";
-import type { SentenceBlock } from "../../src/lib/lesson-builder/types";
+import { EditingProvider } from "../../src/lib/lesson-builder/editing";
+import type { SentenceBlock, Lesson } from "../../src/lib/lesson-builder/types";
 
 // The lesson tail must behave exactly like a mid-document insertion seam
 // (hover/focus-reveal, no persistent "Add slide" row) once the lesson has at
@@ -119,24 +120,36 @@ const stubBuilderActions: LessonBuilderActions = {
   duplicateBlock: noop,
   moveBlock: noop,
   reorderBlock: noop,
+  moveLessonKeyboard: () => null,
+  newLessonAfter: () => null,
   undoDeletion: noop,
   endHistoryGroup: noop,
   editorUndo: () => null,
   editorRedo: () => null,
+  undo: noop,
+  redo: noop,
+  canUndo: false,
+  canRedo: false,
+  flushSave: noop,
 };
 
 function renderTable(block: SentenceBlock, active: boolean) {
+  const lesson: Lesson = { id: "lesson-1", name: null, concepts: [], blocks: [block] };
   return renderToStaticMarkup(
-    LessonBuilderProvider({
-      value: stubBuilderActions,
-      children: createElement(SentenceEditor, {
-        lessonId: "lesson-1",
-        block,
-        active,
-        onActivate: noop,
-        onExit: noop,
+    createElement(
+      EditingProvider,
+      {
+        lessons: [lesson],
+        actions: stubBuilderActions,
+        initialSelection: active
+          ? { kind: "block", lessonId: "lesson-1", blockId: block.id }
+          : { kind: "none" },
+      },
+      LessonBuilderProvider({
+        value: stubBuilderActions,
+        children: createElement(SentenceEditor, { lessonId: "lesson-1", block }),
       }),
-    }),
+    ),
   );
 }
 

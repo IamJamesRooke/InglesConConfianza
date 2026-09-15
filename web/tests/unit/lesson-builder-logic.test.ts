@@ -292,6 +292,91 @@ test("normalizeLessons backfills missing arrays and leaves explanation blocks", 
   assert.ok(!("conceptLinks" in s.languageBlocks[0]));
 });
 
+test("normalizeLessons self-heals a junk blank pair left by an old exit path, keeping the real ones", () => {
+  const raw = [
+    {
+      id: "L",
+      name: null,
+      concepts: [],
+      blocks: [
+        {
+          id: "s1",
+          type: "sentence",
+          promptLabel: "",
+          promptText: "",
+          helperText: "",
+          answerFeedback: null,
+          languageBlocks: [
+            { id: "p1", spanish: "Quiero", callout: null, acceptedAnswers: ["I want"] },
+            { id: "p2", spanish: "hacerlo", callout: null, acceptedAnswers: ["to do it"] },
+            { id: "p3", spanish: "", callout: null, acceptedAnswers: [""] },
+          ],
+        },
+      ],
+    },
+  ] as unknown as Lesson[];
+  const [out] = normalizeLessons(raw);
+  const s = out.blocks[0] as SentenceBlock;
+  assert.deepEqual(
+    s.languageBlocks.map((piece) => piece.id),
+    ["p1", "p2"],
+  );
+});
+
+test("normalizeLessons keeps a single blank pair in a fresh sentence slide (nothing to heal)", () => {
+  const raw = [
+    {
+      id: "L",
+      name: null,
+      concepts: [],
+      blocks: [
+        {
+          id: "s1",
+          type: "sentence",
+          promptLabel: "",
+          promptText: "",
+          helperText: "",
+          answerFeedback: null,
+          languageBlocks: [{ id: "only", spanish: "", callout: null, acceptedAnswers: [""] }],
+        },
+      ],
+    },
+  ] as unknown as Lesson[];
+  const [out] = normalizeLessons(raw);
+  const s = out.blocks[0] as SentenceBlock;
+  assert.equal(s.languageBlocks.length, 1);
+});
+
+test("normalizeLessons with every pair blank keeps only the first", () => {
+  const raw = [
+    {
+      id: "L",
+      name: null,
+      concepts: [],
+      blocks: [
+        {
+          id: "s1",
+          type: "sentence",
+          promptLabel: "",
+          promptText: "",
+          helperText: "",
+          answerFeedback: null,
+          languageBlocks: [
+            { id: "p1", spanish: "", callout: null, acceptedAnswers: [""] },
+            { id: "p2", spanish: "", callout: null, acceptedAnswers: [""] },
+          ],
+        },
+      ],
+    },
+  ] as unknown as Lesson[];
+  const [out] = normalizeLessons(raw);
+  const s = out.blocks[0] as SentenceBlock;
+  assert.deepEqual(
+    s.languageBlocks.map((piece) => piece.id),
+    ["p1"],
+  );
+});
+
 // --- module / lesson-file helpers --------------------------------------
 
 function fileWith(moduleLessonIds: string[][], lessonIds: string[]): LessonFile {

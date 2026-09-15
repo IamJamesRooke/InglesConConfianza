@@ -78,8 +78,30 @@ export type LessonBuilderActions = {
     targetId: string,
     position: "before" | "after",
   ) => void;
+  // Moves a lesson within its module, or across a module boundary when the
+  // move runs off the top/bottom of its own module. Returns the lesson's
+  // resulting module id (unchanged if the move stayed within one module, or
+  // null if there was nowhere to move) so the keymap command can keep the
+  // module rail showing wherever the lesson landed.
+  moveLessonKeyboard: (lessonId: string, direction: -1 | 1) => string | null;
+  // Ctrl+Alt+L: a new lesson right after `afterLessonId` (its own module),
+  // or at the end of `fallbackModuleId` when there's no open lesson to
+  // anchor to (an empty module, or the page with nothing selected).
+  // Returns the new lesson id, or null if neither anchor resolved.
+  newLessonAfter: (
+    afterLessonId: string | null,
+    fallbackModuleId: string | null,
+  ) => string | null;
   undoDeletion: () => void;
   endHistoryGroup: () => void;
+  // Page-level history/save, folded in here so the keymap's "page" scope
+  // commands (Ctrl/Cmd+Z, Ctrl/Cmd+Shift+Z, Ctrl/Cmd+S) can reach them
+  // through the one CommandContext.actions value.
+  undo: () => void;
+  redo: () => void;
+  canUndo: boolean;
+  canRedo: boolean;
+  flushSave: () => void;
   // Undo/redo scoped to one explanation block, routed through the page's
   // reducer history instead of native contentEditable undo (see
   // explanation-editor.tsx). Returns the block's restored contentMarkdown,

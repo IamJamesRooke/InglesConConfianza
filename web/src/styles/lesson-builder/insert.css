@@ -6,16 +6,16 @@
    dots down the left gutter, one per seam, which is exactly the "chrome
    everywhere" the rest of this doc argues against. The one exception is
    `[data-after-active="true"]` (set in lesson-document.tsx on the seam
-   immediately following `data-active="true"`): it shows the "+" circle at
-   rest, pairing with the `Ctrl Alt Enter · next slide` cue on that same
-   slide as the one always-visible next-action affordance. Every seam still
-   reveals its "+" and the full action palette
+   immediately following the block whose `data-state` is `"editing"`): it
+   shows the "+" circle at rest, pairing with the `Ctrl Alt Enter · next
+   slide` cue on that same slide as the one always-visible next-action
+   affordance. Every seam still reveals its "+" and the full action palette
    (`opacity: 0; visibility: hidden; pointer-events: none` at rest, so it
    cannot be hit-tested or tabbed to) on hover/focus-within/`.labelled`/
-   `.open`. `.open` is set from React when the palette was focused via
-   keyboard (Ctrl+Alt+Enter), since the rAF-scheduled `.focus()` needs the
-   button already visible. On touch, expanded and always-visible (no hover
-   needed). */
+   `.open`. `.open` is set from React when the mouse chooser is focused
+   (Ctrl+Alt+Enter inserts the predicted slide type directly and never opens
+   this palette — see lesson-builder-editing-model.md §3). On touch,
+   expanded and always-visible (no hover needed). */
 .lesson-document-insert {
   position: relative;
   display: grid;

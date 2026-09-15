@@ -58,6 +58,7 @@ export function KeyboardHelpDialog({ onClose }: { onClose: () => void }) {
     <dialog
       ref={dialogRef}
       className="lesson-library-help"
+      data-keymap-ignore
       aria-labelledby="lesson-keyboard-help-title"
       onCancel={(event) => {
         event.preventDefault();

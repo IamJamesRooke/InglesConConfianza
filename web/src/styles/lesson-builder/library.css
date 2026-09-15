@@ -7,6 +7,12 @@
   display: grid;
   gap: 22px;
 }
+/* Escape on a block fully deselects (editing.ts: selection -> "none") and
+   parks focus here so keyboard navigation has somewhere sane to resume from
+   — deliberately invisible, since "nothing selected" has no chrome. */
+.lesson-library:focus {
+  outline: none;
+}
 .lesson-library-modules {
   display: grid;
   grid-template-columns: minmax(0, 1fr);
@@ -596,50 +602,6 @@
   color: var(--primary-foreground);
   background: var(--brand-primary-hover);
 }
-
-/* F: quiet module header — reversible; comment out this block to restore
-   the filled primary-blue module header bar above. Reads as a plain
-   document title (foreground text, hairline rule) instead of a second
-   large blue block competing with the navigator's own active-module pill. */
-.lesson-library-module-meta {
-  border-bottom: 1px solid var(--border);
-  border-radius: 13px 13px 0 0;
-  background: transparent;
-}
-.lesson-library-module-title {
-  color: var(--foreground);
-  font-size: 20px;
-  font-weight: 700;
-}
-.lesson-library-module-line > span,
-.lesson-library-module-meta .lesson-library-collapse,
-.lesson-library-module-meta .lesson-library-module-controls button {
-  color: var(--muted-foreground);
-}
-.lesson-library-module-meta .lesson-library-collapse:hover,
-.lesson-library-module-meta
-  .lesson-library-module-controls
-  button:hover:not(:disabled) {
-  color: var(--foreground);
-  background: var(--muted);
-}
-.lesson-library-module-title:focus {
-  color: var(--foreground);
-  background: var(--card);
-  box-shadow: 0 0 0 2px color-mix(in oklch, var(--primary) 22%, transparent);
-}
-.lesson-library-module-meta .lesson-library-module-delete,
-.lesson-library-module-meta .lesson-library-module-controls .danger {
-  color: var(--muted-foreground);
-}
-.lesson-library-module-meta .lesson-library-module-delete:hover:not(:disabled),
-.lesson-library-module-meta
-  .lesson-library-module-controls
-  .danger:hover:not(:disabled) {
-  color: var(--destructive-foreground);
-  background: var(--destructive);
-}
-/* end F */
 
 /* 6: compact rail under 900px */
 /* Companion to module-navigation.css's own "6" block: the module header

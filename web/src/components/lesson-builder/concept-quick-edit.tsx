@@ -206,6 +206,7 @@ export function ConceptQuickEdit({
             role="dialog"
             aria-modal="true"
             aria-label="Edit concept"
+            data-keymap-ignore
             onMouseDown={(event) => {
               if (event.target === event.currentTarget && !saving)
                 setOpen(false);

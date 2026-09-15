@@ -368,6 +368,7 @@ export function ModuleNavigator({
           <Search size={14} aria-hidden="true" />
           <input
             type="search"
+            data-keymap-ignore
             value={query}
             onChange={(event) => setQuery(event.target.value)}
             placeholder="Search lessons, phrases, or concepts…"

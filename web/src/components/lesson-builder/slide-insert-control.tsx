@@ -99,6 +99,11 @@ export function SlideInsertControl({
         className="lesson-document-insert-actions"
         role="group"
         aria-label={insertionLabel}
+        // The keymap dispatcher's `ctx.selection` reflects whichever
+        // field/block was last focused inside a slide, not this palette —
+        // its own Escape/Arrow/E-S-T handling below must be the only thing
+        // reading keys while focus is in here.
+        data-keymap-ignore
         onKeyDown={handleKey}
       >
         {labelled && <span>Add slide</span>}

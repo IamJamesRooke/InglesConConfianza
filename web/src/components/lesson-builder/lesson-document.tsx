@@ -1,7 +1,7 @@
 "use client";
 
 import { Copy, GripVertical, Trash2, Undo2 } from "lucide-react";
-import { Fragment, useEffect, useRef, useState, type DragEvent } from "react";
+import { Fragment, useEffect, useState, type DragEvent } from "react";
 
 import { LessonConceptsField } from "@/components/lesson-builder/lesson-concepts-field";
 import { EditablePracticeMarkdown } from "@/components/lesson-builder/explanation-editor";
@@ -11,66 +11,14 @@ import {
   type DocumentBlockType,
 } from "@/components/lesson-builder/slide-insert-control";
 import { useLessonBuilder } from "@/lib/lesson-builder/builder-context";
-import { focusSlideWritingField } from "@/lib/lesson-builder/focus";
+import { activeBlockId, blockDataState, useLessonEditing } from "@/lib/lesson-builder/editing";
+import { fieldSelectionForBlock, selectionForNewBlock } from "@/lib/lesson-builder/keymap";
 import { useDragReorder } from "@/lib/lesson-builder/use-drag-reorder";
 import type { Lesson } from "@/lib/lesson-builder/types";
 
 export type { DocumentBlockType } from "@/components/lesson-builder/slide-insert-control";
 
-type CaretOrigin =
-  | { kind: "field"; el: HTMLInputElement | HTMLTextAreaElement; start: number; end: number }
-  | { kind: "editable"; el: HTMLElement; textOffset: number }
-  | { kind: "other"; el: HTMLElement };
-
-// Caret position inside a contentEditable expressed as a character offset from
-// its start, so it survives the field being re-rendered while the chooser is open.
-function caretTextOffset(root: HTMLElement): number {
-  const selection = window.getSelection();
-  if (!selection || selection.rangeCount === 0) return 0;
-  const range = selection.getRangeAt(0);
-  if (!root.contains(range.startContainer)) return 0;
-  const measure = range.cloneRange();
-  measure.selectNodeContents(root);
-  measure.setEnd(range.startContainer, range.startOffset);
-  return measure.toString().length;
-}
-
-function setCaretAtOffset(root: HTMLElement, target: number) {
-  const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT);
-  let seen = 0;
-  for (let node = walker.nextNode(); node; node = walker.nextNode()) {
-    const length = node.textContent?.length ?? 0;
-    if (seen + length >= target) {
-      const range = document.createRange();
-      range.setStart(node, Math.max(0, Math.min(length, target - seen)));
-      range.collapse(true);
-      const selection = window.getSelection();
-      selection?.removeAllRanges();
-      selection?.addRange(range);
-      return;
-    }
-    seen += length;
-  }
-  const end = document.createRange();
-  end.selectNodeContents(root);
-  end.collapse(false);
-  const selection = window.getSelection();
-  selection?.removeAllRanges();
-  selection?.addRange(end);
-}
-
-type Props = {
-  lesson: Lesson;
-  onDone: () => void;
-  // Set for exactly one render — the one where this lesson just opened via
-  // Enter on its (previously collapsed) title (item 8) — so the very first
-  // Enter always jumps into writing, whether the lesson was already open or
-  // not. Resolved once the document has actually mounted (so its slides
-  // exist in the DOM to focus), then reported back via
-  // `onFocusOnMountHandled` so the caller can clear its one-shot ref.
-  focusOnMount?: boolean;
-  onFocusOnMountHandled?: () => void;
-};
+type Props = { lesson: Lesson };
 
 // Learnability: the inline "next slide" cue (§1c) fades away once a teacher
 // has clearly learned the chord, and never shows on narrow viewports where
@@ -89,29 +37,23 @@ function readNextSlideUses(): number {
 
 export function LessonDocument(props: Props) {
   const actions = useLessonBuilder();
+  const editing = useLessonEditing();
   const lessonId = props.lesson.id;
-  const [activeBlock, setActiveBlock] = useState<string | null>(null);
-  const [insertAt, setInsertAt] = useState<number | null>(null);
   const [nextSlideUses, setNextSlideUses] = useState(readNextSlideUses);
   const [narrowViewport, setNarrowViewport] = useState(
     () => typeof window !== "undefined" && window.innerWidth < NEXT_SLIDE_CUE_MIN_WIDTH,
   );
-  const focusAfterAdd = useRef<string | null>(null);
-  const caretOrigin = useRef<CaretOrigin | null>(null);
-  const exitingBlock = useRef<string | null>(null);
-  const bodyRef = useRef<HTMLDivElement | null>(null);
   const drag = useDragReorder({ axis: "y", mode: "nested" });
   const dragScope = lessonId;
   const undoDeletionLabel =
     actions.deletionUndo?.lessonId === lessonId ? actions.deletionUndo.label : null;
-  // Drives which single seam shows its "+" signpost at rest (§5, item A) —
-  // the one immediately after the active slide. That same seam also carries
-  // the "next slide · Ctrl Alt Enter" cue text (round 2, item 2): rendered
-  // by SlideInsertControl itself, not here, so it lives on the seam's own
-  // hairline instead of overlapping the following slide's content.
-  const activeBlockIndex = props.lesson.blocks.findIndex((block) => block.id === activeBlock);
-  const showNextSlideCue =
-    nextSlideUses < NEXT_SLIDE_CUE_MAX_USES && !narrowViewport;
+  const activeId = activeBlockId(editing.selection);
+  const activeBlockIndex = props.lesson.blocks.findIndex((block) => block.id === activeId);
+  const showNextSlideCue = nextSlideUses < NEXT_SLIDE_CUE_MAX_USES && !narrowViewport;
+  // Mouse-chooser seam state — `insertAfter` (§1) is the store's own field
+  // for it; the keyboard path (Ctrl+Alt+Enter) never touches this at all.
+  const insertAt =
+    editing.insertAfter?.lessonId === lessonId ? editing.insertAfter.index : null;
 
   useEffect(() => {
     function updateWidth() {
@@ -133,112 +75,31 @@ export function LessonDocument(props: Props) {
     });
   }
 
-  useEffect(() => {
-    if (!focusAfterAdd.current) return;
-    focusSlideWritingField(focusAfterAdd.current);
-    focusAfterAdd.current = null;
-  }, [props.lesson.blocks]);
-
-  // Mount-only: a lesson that just opened via Enter-on-title (item 8) jumps
-  // straight into writing, same as a brand-new lesson.
-  useEffect(() => {
-    if (!props.focusOnMount) return;
-    const first = props.lesson.blocks[0];
-    focusSlideWritingField(
-      first ? first.id : actions.addBlock(lessonId, "explanation", 0),
-    );
-    props.onFocusOnMountHandled?.();
-    // Runs once, on mount, deliberately — this is a one-shot reaction to how
-    // the lesson was opened, not to any prop that changes afterward.
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
-
-  function captureCaretOrigin() {
-    const el = document.activeElement;
-    if (!(el instanceof HTMLElement)) { caretOrigin.current = null; return; }
-    if (el instanceof HTMLInputElement || el instanceof HTMLTextAreaElement) {
-      caretOrigin.current = { kind: "field", el, start: el.selectionStart ?? 0, end: el.selectionEnd ?? 0 };
-      return;
-    }
-    if (el.isContentEditable) {
-      caretOrigin.current = { kind: "editable", el, textOffset: caretTextOffset(el) };
-      return;
-    }
-    caretOrigin.current = { kind: "other", el };
-  }
-
-  function restoreCaretOrigin() {
-    const origin = caretOrigin.current;
-    caretOrigin.current = null;
-    if (!origin || !document.contains(origin.el)) return;
-    origin.el.focus();
-    if (origin.kind === "field") {
-      try { origin.el.setSelectionRange(origin.start, origin.end); } catch { /* unsupported input type */ }
-      return;
-    }
-    if (origin.kind === "editable") {
-      setCaretAtOffset(origin.el, origin.textOffset);
-    }
-  }
-
-  function openInsert(index: number) {
-    captureCaretOrigin();
-    setInsertAt(index);
-  }
-
   function closeInsert() {
-    setInsertAt(null);
-    restoreCaretOrigin();
+    editing.setInsertAfter(null);
   }
 
   // A click anywhere outside the open chooser (its trigger or its choices
-  // popover) closes it — otherwise it stays open until Escape or a choice,
-  // which reads as broken once a teacher clicks past it into another slide.
+  // popover) closes it — otherwise it stays open until Escape or a choice.
   useEffect(() => {
     if (insertAt === null) return;
     function handlePointerDown(event: PointerEvent) {
       const target = event.target as HTMLElement | null;
       if (target?.closest(".lesson-document-insert")) return;
-      setInsertAt(null);
-      caretOrigin.current = null;
+      closeInsert();
     }
     document.addEventListener("pointerdown", handlePointerDown);
     return () => document.removeEventListener("pointerdown", handlePointerDown);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [insertAt]);
 
   function add(type: DocumentBlockType, index: number) {
-    caretOrigin.current = null;
     const blockId = actions.addBlock(lessonId, type, index);
-    focusAfterAdd.current = blockId;
-    setActiveBlock(blockId);
-    setInsertAt(null);
-  }
-
-  function exitBlock(blockId: string) {
-    exitingBlock.current = blockId;
-    setActiveBlock(null);
-    requestAnimationFrame(() => {
-      document
-        .querySelector<HTMLElement>(`[data-document-block="${blockId}"]`)
-        ?.focus({ preventScroll: true });
-    });
-  }
-
-  // Ctrl/⌘+Enter moves to the direct insertion actions after the active slide.
-  // `activeBlock` is only set while DOM focus sits *inside* a slide's field —
-  // Escape (or a click on the block wrapper itself) moves focus onto the
-  // wrapper and clears it, so falling back to `activeBlock` alone silently
-  // targeted nothing. Resolve the slide from wherever focus actually is.
-  function resolveTargetBlockId(target: EventTarget | null): string | null {
-    if (activeBlock) return activeBlock;
-    const el = target instanceof HTMLElement ? target : null;
-    return el?.closest<HTMLElement>("[data-document-block]")?.dataset.documentBlock ?? null;
-  }
-
-  function openInsertAfterActive(target: EventTarget | null) {
-    const targetBlockId = resolveTargetBlockId(target);
-    const index = props.lesson.blocks.findIndex((block) => block.id === targetBlockId);
-    openInsert(index >= 0 ? index + 1 : props.lesson.blocks.length);
+    closeInsert();
+    const sel = selectionForNewBlock(lessonId, blockId, type);
+    editing.setSelection(sel, { reason: "insert" });
+    editing.focusSelection(sel);
+    recordNextSlideUse();
   }
 
   // Upper-right icon cluster: drag handle, duplicate, delete — reveals on
@@ -260,48 +121,9 @@ export function LessonDocument(props: Props) {
     );
   }
 
-
   return (
     <div className="lesson-document">
-      <div
-        ref={bodyRef}
-        className="lesson-document-body"
-        onBlurCapture={(event) => {
-          actions.endHistoryGroup();
-          const next = event.relatedTarget;
-          if (!(next instanceof Node) || !event.currentTarget.contains(next)) {
-            requestAnimationFrame(() => {
-              const focused = document.activeElement;
-              if (!focused || !bodyRef.current?.contains(focused)) setActiveBlock(null);
-            });
-          }
-        }}
-        onKeyDown={(event) => {
-          // Ctrl+Alt, not Alt alone: plain Alt+letter is commonly grabbed by
-          // Linux window managers (app-launch/switch binds) before the page
-          // ever sees the keydown, and Ctrl+letter alone collides with the
-          // browser (save, history, address bar, paste…) — Ctrl+Alt is free
-          // of both in practice. event.code, not event.key, so Mac
-          // Ctrl+Option+letter (which composes ´å∂…) still resolves.
-          if (!event.altKey || !event.ctrlKey || event.metaKey || event.nativeEvent.isComposing || event.defaultPrevented) return;
-          const stop = () => { event.preventDefault(); event.stopPropagation(); };
-          if (event.code === "Enter" || event.code === "NumpadEnter") {
-            if (!event.shiftKey && insertAt === null) {
-              stop();
-              openInsertAfterActive(event.target);
-              recordNextSlideUse();
-            }
-          } else if (event.shiftKey) {
-            return;
-          } else if (event.code === "KeyD") {
-            stop(); props.onDone();
-          } else if (event.code === "ArrowUp" && activeBlock) {
-            stop(); actions.moveBlock(lessonId, activeBlock, -1);
-          } else if (event.code === "ArrowDown" && activeBlock) {
-            stop(); actions.moveBlock(lessonId, activeBlock, 1);
-          }
-        }}
-      >
+      <div className="lesson-document-body">
         {props.lesson.blocks.map((block, index) => (
           <Fragment key={block.id}>
             <SlideInsertControl
@@ -317,20 +139,33 @@ export function LessonDocument(props: Props) {
                 drag.dropTarget?.id === block.id ? ` drop-${drag.dropTarget.position}` : ""
               }`}
               data-document-block={block.id}
-              data-active={activeBlock === block.id ? "true" : "false"}
-              tabIndex={activeBlock === block.id ? -1 : 0}
-              onFocusCapture={(event) => {
-                if (event.target === event.currentTarget && exitingBlock.current === block.id) {
-                  exitingBlock.current = null;
-                  return;
-                }
-                setActiveBlock(block.id);
+              data-state={blockDataState(editing.selection, block.id)}
+              tabIndex={activeId === block.id ? -1 : 0}
+              onFocus={(event) => {
+                if (event.target !== event.currentTarget) return;
+                editing.setSelection({ kind: "block", lessonId, blockId: block.id });
               }}
               onClick={(event) => {
-                if (activeBlock === block.id) return;
+                // Guards against re-triggering when a field *within* this
+                // block already has focus (e.g. the mousedown that preceded
+                // this click landed straight on a textarea) — but a plain
+                // click on a resting slide's own wrapper can itself have
+                // already become `{kind:"block"}` a moment earlier (the
+                // browser natively focuses the nearest focusable ancestor
+                // on mousedown when the click target isn't itself
+                // focusable, which fires this wrapper's own onFocus first).
+                // Only a genuine field selection for this block should
+                // suppress the jump-into-editing below.
+                if (
+                  editing.selection.kind === "field" &&
+                  editing.selection.blockId === block.id
+                ) {
+                  return;
+                }
                 if ((event.target as HTMLElement).closest("button, input, textarea, [contenteditable='true']")) return;
-                setActiveBlock(block.id);
-                requestAnimationFrame(() => focusSlideWritingField(block.id));
+                const sel = fieldSelectionForBlock(lessonId, block);
+                editing.setSelection(sel);
+                editing.focusSelection(sel);
               }}
               onDragOver={(event) => drag.dragOver(event, dragScope, block.id)}
               onDrop={(event) => {
@@ -342,35 +177,6 @@ export function LessonDocument(props: Props) {
                 }
                 drag.reset();
               }}
-              onKeyDown={(event) => {
-                // Plain Enter/Space enters editing — but Ctrl+Alt+Enter is a
-                // different, more specific shortcut (open the insert
-                // chooser, handled by the document-body handler below) and
-                // must not be swallowed here. This exact collision was why
-                // Ctrl+Alt+Enter silently failed right after Escape: DOM
-                // focus lands on this wrapper, `event.key` is still "Enter"
-                // regardless of modifiers, so this branch used to fire
-                // first, call `preventDefault()`, and refocus the writing
-                // field — leaving the body handler's `defaultPrevented`
-                // guard nothing to do.
-                if (
-                  event.target === event.currentTarget &&
-                  (event.key === "Enter" || event.key === " ") &&
-                  !event.ctrlKey &&
-                  !event.altKey &&
-                  !event.metaKey
-                ) {
-                  event.preventDefault();
-                  setActiveBlock(block.id);
-                  requestAnimationFrame(() => focusSlideWritingField(block.id));
-                  return;
-                }
-                if (event.key === "Escape" && event.target !== event.currentTarget) {
-                  event.preventDefault();
-                  event.stopPropagation();
-                  exitBlock(block.id);
-                }
-              }}
             >
             {renderSlideActions(block, index)}
             {block.type === "explanation" ? (
@@ -381,20 +187,16 @@ export function LessonDocument(props: Props) {
                   ariaLabel={`Explanation ${index + 1}`}
                   fieldName={`explanation-${block.id}`}
                   variant="document"
-                  onExit={() => exitBlock(block.id)}
+                  onFocus={() =>
+                    editing.setSelection({ kind: "field", lessonId, blockId: block.id, field: "explanation" })
+                  }
                   onChange={(markdown, options) => actions.updateExplanation(lessonId, block.id, markdown, options)}
                   onUndo={() => actions.editorUndo(lessonId, block.id)}
                   onRedo={() => actions.editorRedo(lessonId, block.id)}
                 />
               </section>
             ) : (
-              <SentenceEditor
-                lessonId={lessonId}
-                block={block}
-                active={activeBlock === block.id}
-                onActivate={() => setActiveBlock(block.id)}
-                onExit={() => exitBlock(block.id)}
-              />
+              <SentenceEditor lessonId={lessonId} block={block} />
             )}
             </div>
           </Fragment>

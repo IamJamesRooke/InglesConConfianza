@@ -112,7 +112,7 @@ export function EditablePracticeMarkdown({
   fieldName,
   variant = "explanation",
   showSelectionMenu = true,
-  onExit,
+  onFocus,
   onUndo,
   onRedo,
 }: {
@@ -126,7 +126,9 @@ export function EditablePracticeMarkdown({
   fieldName?: string;
   variant?: PracticeMarkdownVariant;
   showSelectionMenu?: boolean;
-  onExit?: () => void;
+  // Reports real focus into the shared selection (editing.ts) — the keymap
+  // dispatcher's only source of truth for "which field is current."
+  onFocus?: () => void;
   // Undo/redo routed through the page's own reducer history instead of
   // native contentEditable undo (which groups changes far more coarsely
   // than a teacher expects — 3 native Ctrl+Z presses after "type, bold,
@@ -443,11 +445,13 @@ export function EditablePracticeMarkdown({
         aria-label={ariaLabel}
         aria-multiline="true"
         data-authoring-field={fieldName}
+        data-field="explanation"
         data-placeholder={placeholder}
         className={`authoring-wysiwyg authoring-wysiwyg-${variant}`}
         onFocus={() => {
           editingRef.current = true;
           setIsActive(true);
+          onFocus?.();
           const content = rootRef.current?.querySelector<HTMLElement>(
             `.${WRAPPER_CLASS}`,
           );
@@ -580,14 +584,17 @@ export function EditablePracticeMarkdown({
             return;
           }
           if (event.key === "Escape") {
-            event.preventDefault();
-            event.stopPropagation();
+            // Canceling a local mark-typing mode is this field's own
+            // business and stays fully internal. A plain Escape, though,
+            // must reach the keymap dispatcher (capture phase, already run
+            // by the time this bubble handler sees the event) undisturbed —
+            // no preventDefault/stopPropagation here — so it can move the
+            // shared selection to "block" and focus the slide wrapper; the
+            // blur that causes commits this field exactly as it always has.
             if (typingModeRef.current) {
+              event.preventDefault();
               endTypingMode();
-              return;
             }
-            finishEditing(event.currentTarget);
-            onExit?.();
           }
         }}
       >

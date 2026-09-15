@@ -51,18 +51,6 @@ async function waitForFocusedField(
   );
 }
 
-// The Ctrl+Alt+Enter insertion palette auto-focuses its Sentence button, but
-// only once React has mounted/focused it — wait for real focus inside the
-// palette's own group rather than assuming a fixed settle time.
-async function waitForPaletteFocus(page: import("@playwright/test").Page) {
-  await page.waitForFunction(
-    () =>
-      (document.activeElement as HTMLElement | null)?.closest(
-        ".lesson-document-insert-actions",
-      ) !== null,
-  );
-}
-
 // Alt+ArrowDown focuses the selected pair's hint pill-input — wait for real
 // focus inside it before typing.
 async function waitForHintFocus(page: import("@playwright/test").Page) {
@@ -106,21 +94,22 @@ test("keyboard-only lesson authoring produces the expected structure", async ({
   await page.keyboard.press("Shift+Control+ArrowLeft");
   await page.keyboard.press("Control+Alt+e");
 
-  // First sentence slide: single piece. The insertion palette needs a beat
-  // to mount and auto-focus Sentence before it can react to the E/S/T key.
+  // First sentence slide: single piece. E6: Ctrl+Alt+Enter inserts the
+  // *predicted* type directly (after an explanation, that's a sentence) and
+  // focuses it — no chooser to open, no E/S/T pick on the keyboard path.
   await page.keyboard.press("Control+Alt+Enter");
-  await waitForPaletteFocus(page);
-  await page.keyboard.press("s");
   await waitForFocusedField(page, "spanish");
   await page.keyboard.type("voy a");
   await page.keyboard.press("Tab");
   await waitForFocusedField(page, "english");
   await page.keyboard.type("I am going");
 
-  // Second sentence slide: two pieces, plus a hint via Alt+ArrowDown (no mouse).
+  // Second sentence slide: two pieces, plus a hint via Alt+ArrowDown (no
+  // mouse). The predicted type after a sentence is an explanation, not
+  // another sentence — a second Ctrl+Alt+Enter within 1.5s cycles the
+  // still-empty just-inserted block's type instead (explanation -> sentence).
   await page.keyboard.press("Control+Alt+Enter");
-  await waitForPaletteFocus(page);
-  await page.keyboard.press("s");
+  await page.keyboard.press("Control+Alt+Enter");
   await waitForFocusedField(page, "spanish");
   await page.keyboard.type("Voy a");
   await page.keyboard.press("Tab");
@@ -232,10 +221,10 @@ test("next-slide cue only marks the seam after the active slide and hides while 
 
   // A second slide (inserted at the tail) becomes active in its place — the
   // cue must follow it to the new tail seam, not stay on the seam between
-  // the two slides.
+  // the two slides. E6: Ctrl+Alt+Enter inserts the predicted type directly
+  // (no chooser to open on the keyboard path any more), so one press is the
+  // whole interaction.
   await page.keyboard.press("Control+Alt+Enter");
-  await waitForPaletteFocus(page);
-  await page.keyboard.press("e");
   await expect(lessonRow.locator(`.lesson-document-tail ${cueLabel}`)).toBeVisible();
   await expect(
     lessonRow
@@ -243,12 +232,6 @@ test("next-slide cue only marks the seam after the active slide and hides while 
       .locator(cueLabel),
   ).toHaveCount(0);
   await expect(lessonRow.locator(cueLabel)).toHaveCount(1);
-
-  // Opening the chooser again hides the cue for this lesson entirely.
-  await page.keyboard.press("Control+Alt+Enter");
-  await waitForPaletteFocus(page);
-  await expect(lessonRow.locator(cueLabel)).toHaveCount(0);
-  await page.keyboard.press("Escape");
 
   await page.keyboard.press("Control+s");
   await expect(page.getByText("All changes saved")).toBeVisible({

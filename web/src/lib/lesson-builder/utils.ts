@@ -127,6 +127,35 @@ export function normalizeLessonConcept(
   };
 }
 
+// A pair with no Spanish, no non-blank accepted answer, and no hint is
+// junk — the same "blank pair" leaveSlide (editing.ts) prunes when a
+// teacher leaves a sentence slide. Load-time normalization applies the same
+// rule so a lesson file that already carries one (written before this
+// pruning existed, or from any future exit path that somehow misses it)
+// self-heals on the very next load rather than only on the next edit.
+// Keeps at least one pair per slide, exactly like leaveSlide: if every pair
+// is blank, only the first is kept rather than leaving zero.
+function isBlankLanguageBlock(block: {
+  spanish: string;
+  acceptedAnswers: string[];
+  callout: string | null;
+}): boolean {
+  return (
+    !block.spanish.trim() &&
+    block.acceptedAnswers.every((answer) => !answer.trim()) &&
+    !block.callout?.trim()
+  );
+}
+
+function pruneBlankLanguageBlocks<T extends { spanish: string; acceptedAnswers: string[]; callout: string | null }>(
+  blocks: T[],
+): T[] {
+  const blanks = blocks.filter(isBlankLanguageBlock);
+  if (blanks.length === 0) return blocks;
+  if (blanks.length === blocks.length) return blocks.slice(0, 1);
+  return blocks.filter((block) => !isBlankLanguageBlock(block));
+}
+
 export function normalizeLessons(lessons: Lesson[]) {
   return lessons.map((lesson) => ({
     id: lesson.id,
@@ -149,12 +178,14 @@ export function normalizeLessons(lessons: Lesson[]) {
         promptText: block.promptText,
         helperText: block.helperText,
         answerFeedback: block.answerFeedback,
-        languageBlocks: block.languageBlocks.map((languageBlock) => ({
-          id: languageBlock.id,
-          spanish: languageBlock.spanish,
-          callout: languageBlock.callout,
-          acceptedAnswers: [...languageBlock.acceptedAnswers],
-        })),
+        languageBlocks: pruneBlankLanguageBlocks(
+          block.languageBlocks.map((languageBlock) => ({
+            id: languageBlock.id,
+            spanish: languageBlock.spanish,
+            callout: languageBlock.callout,
+            acceptedAnswers: [...languageBlock.acceptedAnswers],
+          })),
+        ),
       };
     }),
   }));

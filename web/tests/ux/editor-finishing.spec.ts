@@ -9,12 +9,9 @@ test("sentence rest composition, hint tools, Escape, and explanation tools stay 
   const row = page.locator("[data-lesson-row]").last();
   const explanation = row.getByRole("textbox", { name: "Explanation 1" });
   await explanation.fill("A short explanation");
+  // E6: Ctrl+Alt+Enter inserts the predicted type (sentence, after an
+  // explanation) directly and focuses it — no chooser to pick from.
   await page.keyboard.press("Control+Alt+Enter");
-  const directSentence = row.getByRole("button", {
-    name: "Sentence — Insert at lesson end",
-  });
-  await expect(directSentence).toBeFocused();
-  await page.keyboard.press("Enter");
 
   const sentence = row.locator(".lesson-document-sentence").last();
   await expect(sentence.getByRole("toolbar", { name: "Active sentence tools" })).toBeVisible();
@@ -36,7 +33,11 @@ test("sentence rest composition, hint tools, Escape, and explanation tools stay 
   await hint.fill("desire");
   await hint.press("Escape");
   await expect(spanish.first()).toBeFocused();
+  // Two Escapes to fully rest (owner requirement 2026-09-15): the first
+  // drops the field (still "editing" chrome), the second clears the
+  // selection entirely — that's when the slide actually shows resting.
   await spanish.first().press("Escape");
+  await page.keyboard.press("Escape");
 
   const resting = row.locator(".lesson-document-sentence.resting");
   await expect(resting).toBeVisible();

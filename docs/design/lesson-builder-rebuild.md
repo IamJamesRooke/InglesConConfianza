@@ -27,7 +27,7 @@ Each phase ends with the **owner writing one lesson from an empty course, keyboa
 only, at their real window width**. No phase starts until the previous trial passes.
 No autonomous "improvement rounds" outside these phases.
 
-### Phase 1 — one editing model (fixes what the owner hit)
+### Phase 1 — one editing model (fixes what the owner hit) — DONE 2026-09-15
 - `lib/lesson-builder/editing.ts`: a single `EditingSelection`
   `{ lessonId, blockId, pieceId, field } | null` in a small store (context + reducer).
   Components **write** it on focus/blur of their real fields; nothing else writes it.

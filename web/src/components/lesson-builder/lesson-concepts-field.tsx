@@ -296,6 +296,7 @@ export function LessonConceptsField({
           <input
             ref={inputRef}
             data-covers-for={coversFor}
+            data-keymap-ignore
             type="text"
             value={query}
             role="combobox"

@@ -66,10 +66,9 @@
 }
 /* No hairline "thread" between blocks — the insert control sitting right
    there already marks the boundary. Only the active slide paints this bar
-   (see [data-active="true"]::after below) — it used to also light up on
-   plain :focus-within, which stayed lit after Escape moved DOM focus onto
-   the block wrapper itself (exitBlock's own .focus() call), painting a
-   stray blue line on a slide the teacher no longer considered "active". */
+   (see [data-state="editing"]::after below) — `data-state` comes straight
+   from the shared EditingSelection (editing.ts), not DOM focus, so it can
+   never light up on a slide the teacher has actually left. */
 .lesson-document-block::after {
   content: "";
   position: absolute;
@@ -123,9 +122,8 @@
      never runs underneath them regardless of hover/focus state. */
   padding: 0 54px 0 8px;
 }
-.lesson-document-block[data-active="false"]:hover,
-.lesson-document-block[data-active="false"]:focus-within,
-.lesson-document-block[data-active="true"] {
+.lesson-document-block[data-state="resting"]:hover,
+.lesson-document-block[data-state="editing"] {
   transform: none;
   box-shadow: none;
   background: transparent;
@@ -140,7 +138,7 @@
   opacity: 0;
 }
 .lesson-document-block:hover > .lesson-document-block-actions,
-.lesson-document-block:focus-within > .lesson-document-block-actions {
+.lesson-document-block[data-state="editing"] > .lesson-document-block-actions {
   opacity: 1;
 }
 .lesson-document-block-actions button {
@@ -169,7 +167,7 @@
     opacity: 1;
   }
 }
-.lesson-document-block[data-active="true"]::after {
+.lesson-document-block[data-state="editing"]::after {
   width: 4px;
   background: var(--primary);
 }

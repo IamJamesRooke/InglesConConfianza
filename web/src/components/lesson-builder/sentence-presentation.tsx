@@ -29,11 +29,50 @@ export function composeSentenceParts(
   );
 }
 
+// Vocabulary tables never compose into one flowing sentence — each row is
+// its own Spanish/English pair, shown aligned. A row's authored hint (if
+// any) reuses the same static-pill shape the editing view shows for an
+// unselected pair (`lesson-document-hint-pill`) — never an editable input,
+// and never a reserved/blank slot for rows without one.
+function VocabularyTablePresentation({ block }: { block: SentenceBlock }) {
+  const rows = block.languageBlocks.filter(
+    (piece) => piece.spanish.trim() || piece.acceptedAnswers.some((answer) => answer.trim()),
+  );
+  return (
+    <div className="lesson-sentence-presentation vocab-table">
+      {block.promptText.trim() && (
+        <p className="lesson-sentence-presentation-instruction">{block.promptText}</p>
+      )}
+      {rows.length === 0 ? (
+        <span className="lesson-sentence-presentation-empty">Empty table</span>
+      ) : (
+        <div className="lesson-sentence-presentation-table" role="table">
+          {rows.map((piece) => {
+            const spanish = piece.spanish.trim();
+            return (
+              <div className="lesson-sentence-presentation-row" role="row" key={piece.id}>
+                <span lang="es">{spanish}</span>
+                <span lang="en">{piece.acceptedAnswers[0]?.trim() ?? ""}</span>
+                {piece.callout?.trim() && (
+                  <span className="lesson-document-hint-pill" aria-label={`Hint for ${spanish}`}>
+                    {piece.callout}
+                  </span>
+                )}
+              </div>
+            );
+          })}
+        </div>
+      )}
+    </div>
+  );
+}
+
 // Resting presentation is teaching content only: composed Spanish/English
 // (plus any authored instruction). Hints are an editing-only affordance —
 // they surface as a pill next to the selected pair in sentence-editor.tsx,
 // never here, so a learner-facing screenshot never leaks authoring metadata.
 export function SentencePresentation({ block }: { block: SentenceBlock }) {
+  if (block.layout === "vocabulary_table") return <VocabularyTablePresentation block={block} />;
   const spanish = composeSentenceParts(block.languageBlocks, "spanish");
   const english = composeSentenceParts(block.languageBlocks, "english");
   const empty = spanish.length === 0 && english.length === 0;

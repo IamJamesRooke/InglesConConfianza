@@ -247,6 +247,30 @@
 .lesson-sentence-phrase {
   white-space: normal;
 }
+
+/* Vocabulary table at rest: aligned rows, not one composed sentence — see
+   SentencePresentation's table branch (sentence-presentation.tsx). Each row
+   is a flex line (not a real <table>) so a row without a hint simply has no
+   third element, instead of a reserved/blank cell. */
+.lesson-sentence-presentation-table {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.lesson-sentence-presentation-row {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  font-size: 15px;
+}
+.lesson-sentence-presentation-row span[lang="es"] {
+  color: var(--foreground);
+  font-weight: 600;
+}
+.lesson-sentence-presentation-row span[lang="en"] {
+  color: var(--muted-foreground);
+  font-style: italic;
+}
 .lesson-document-active-tools {
   display: flex;
   min-height: 22px;

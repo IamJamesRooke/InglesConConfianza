@@ -57,59 +57,95 @@ still read (never written) for back-compat.
 
 ## 3. Interaction contract
 
-Modifier scheme: chords use **Ctrl+Alt** (not plain Alt, not plain Ctrl).
-Plain Alt+letter is commonly eaten by Linux window managers before the page
-sees the keydown; plain Ctrl+letter collides with the browser (save,
-history, address bar). Ctrl+Alt is free of both in practice. Handlers check
-`event.code` (not `event.key`) so macOS Ctrl+Option+letter — which composes
-accented characters — still resolves correctly. A few narrow, already-safe
-exceptions keep plain modifiers: Ctrl/⌘+S/Z/Shift+Z (save/undo/redo, global,
-guarded against firing while a text field that wants those keys is
-focused — except the explanation editor, which claims them itself; see
-below), Ctrl/⌘+B/I (bold/italic, only inside the explanation editor), and
-plain Alt+↑/↓ on the module drag-handle button specifically (a single
-non-typing target, so the WM-collision risk doesn't apply the same way).
+**Phase 1 (2026-09-15) replaced this whole section's mechanism.** There is
+now exactly one source of truth for "what is the teacher editing"
+(`EditingSelection`, `web/src/lib/lesson-builder/editing.ts`) and exactly one
+keymap (`web/src/lib/lesson-builder/keymap.ts`): a table of `scope × chord →
+command`, dispatched by a single capture-phase `keydown` listener mounted on
+the builder root (`LessonLibrary`). No other `onKeyDown` in the builder
+handles a chord — a component's own `onKeyDown` may remain only for
+text-editing semantics that need the literal element (the explanation
+editor's own Enter-for-paragraph and mark chords, until Phase 2). See
+`docs/design/lesson-builder-editing-model.md` for the full contract
+(selection shape, `leaveSlide`, the focus helper).
 
-| Context | Keys | Behaviour |
+Modifier scheme unchanged: chords use **Ctrl+Alt** (not plain Alt, not plain
+Ctrl) — plain Alt+letter is commonly eaten by Linux window managers before
+the page sees the keydown, and plain Ctrl+letter collides with the browser.
+`chordOf` reads `event.code` (not `event.key`), so macOS Ctrl+Option+letter
+still resolves. `Ctrl/⌘+Z/Shift+Z/S` and `Ctrl/⌘+.` keep plain modifiers (see
+the `page` scope below); explanation-internal `Ctrl/⌘+B/I` and the mark
+chords `Ctrl+Alt+S/E/N` are unchanged, staying inside the explanation editor
+until Phase 2.
+
+**Scope resolution** (`scopeOf`, innermost → outermost): `none` → `[page]`;
+`title` → `[title, lesson, page]`; `block` → `[block, lesson, page]`;
+`field` → `[<field>, block, lesson, page]`. The dispatcher walks this list
+for the pressed chord and runs the first command it finds; a command
+returning `true` calls `preventDefault()`. A field-shaped scope (anything
+but `block`/`lesson`/`page`) is skipped entirely if the keydown's real
+target isn't actually inside that field — the shared selection can be
+momentarily stale relative to DOM focus (e.g. Tab-ing to a plain button
+elsewhere in the row), and a stray Enter/Tab/Escape on it must never be
+swallowed by e.g. the `spanish` scope's own `Enter`.
+
+The table below is generated from `KEYMAP` — one row per scope × chord.
+
+| Scope | Chord | Behaviour |
 |---|---|---|
-| Lesson title (any row, open or collapsed) | `Enter` | Focus jumps into writing: the first slide's field, creating an explanation slide if the lesson has none. If the lesson was collapsed, it expands first — the jump into writing happens either way. |
-| Lesson title (any row) | `Ctrl Alt Backspace` | Opens that row's inline "Delete lesson?" confirm, focused on Delete. `Enter` confirms; `Escape` cancels and returns focus to the title. (The pair-level `Ctrl Alt Backspace` inside a sentence/vocabulary field keeps its own separate meaning — delete that pair — see below.) |
-| Lesson title (any row) | `Ctrl Alt ArrowUp` / `ArrowDown` | Moves the lesson one position up/down within its module; at the module boundary, moves it into the end (up) or start (down) of the adjacent module. The row keeps focus on its title, and the module navigator re-selects whichever module the lesson landed in. Reuses the existing lesson-move plumbing (`moveLesson`/`onDropLesson`) — no new API (§9 item R5). |
-| Anywhere on the page (not the concept typeahead or an open dialog) | `Ctrl Alt L` | Add a new lesson: right after the currently open lesson if one is open, otherwise at the end of the active module. Works with zero lessons in the module — the only keyboard path to create the very first lesson. Focuses the new title. |
-| Anywhere inside a lesson row | `Ctrl Alt P` | Preview that lesson, same as clicking its Play button. |
-| Anywhere on the page | `Ctrl Alt M` | Focus the active module's name input, so it can be renamed without the 8-`Shift Tab` walk back from inside a lesson (round: first-run friction #5). |
-| Sentence/Vocabulary block, before the pairs | `Tab` / `Shift Tab` | Native DOM tab order, not a handler: `Shift Tab` from pair 1's Spanish field reaches the "Add instruction" button (or the instruction field, if already shown); `Tab` from the instruction field reaches pair 1's Spanish field. |
-| Explanation (focused) | `Enter` | New paragraph (native contentEditable behavior). |
-| Explanation (focused) | `Ctrl Alt S` / `Ctrl Alt N` / `Ctrl Alt E` | Mark as Spanish / neutral / English. With a selection: wraps it in `<mark data-language="es\|en">`; with a collapsed caret: marks the word around it, or arms "typing mode" so subsequently typed text is marked live. Memorable letters (Spanish/Neutral/English) — chosen over the old adjacent `Q`/`W`/`E` on purpose. |
-| Explanation (selection active) | Floating format toolbar (`Spanish` / `English` / `Normal` / `B` / `I`) | Same actions as the shortcuts, mouse-driven; shown only while `isActive` and there is a live/saved selection. |
-| Explanation (focused) | `Ctrl/⌘ B`, `Ctrl/⌘ I` | Bold / italic via `document.execCommand`. |
-| Explanation (focused) | `Escape` | If a typing mode is armed, clears it first (one Escape = one step back); otherwise finishes editing and calls `onExit` (bubbles to slide-level exit). |
-| Sentence/Vocabulary — Spanish field | `Tab` / `Shift Tab` | Move to this pair's English field / previous pair's English field. |
-| Sentence/Vocabulary — Spanish or English field | `Enter` | Blocked (no newline) — pairs are single-line. `Shift/Ctrl/⌘+Enter` are exempted from the block (composition-safe) but still don't insert a newline in practice since the field is `rows={1}`. |
-| Sentence/Vocabulary — English field | `Tab` | Commits the draft, then: not-last pair → focuses next pair's Spanish field; last pair, complete → creates and focuses a new pair; last pair, incomplete → does **not** preventDefault, so Tab continues to the next real focusable control (Add pair / toolbar). |
-| Sentence/Vocabulary — English field | `Shift Tab` | Commits the draft, focuses this pair's own Spanish field. |
-| Sentence/Vocabulary — Spanish or English field | `Escape` | Commits any pending draft, prunes any pair left entirely blank, then exits the slide (`onExit`). |
-| Sentence/Vocabulary — Spanish or English field | `Alt ArrowDown` | Opens/focuses that pair's hint pill, remembering the caret to restore on return. |
-| Sentence/Vocabulary — Spanish or English field | `Ctrl Alt Backspace` | Deletes the pair outright. |
-| Sentence/Vocabulary — English field | `/` | Not a shortcut — literal separator between accepted alternatives in the same field (`\/` escapes a literal slash). |
-| Hint pill input | `Enter` | Commits (clearing it if left blank) and returns focus + caret to the field it was opened from — same as `Escape`, not a plain `blur()` (round: first-run friction #1; a bare blur used to cascade into the block's `onBlurCapture`, clearing `activeBlock` and unmounting the slide's own editing view out from under the teacher). |
-| Hint pill input | `Escape` | Closes the hint (clearing it if left blank) and returns focus + caret to the field it was opened from. |
-| Instruction field | `Escape` | Blank → collapses the field back to the "Add instruction" button; non-blank → exits the slide like other fields. |
-| Slide (focused container, not a nested field) | `Enter` / `Space` | Enters editing: focuses the slide's first writing field. |
-| Slide (focused container) | `Escape` | Exits editing back to the container (`exitBlock`), which then refocuses the slide wrapper itself (not the lesson row). |
-| Slide (anywhere inside, via the shared document-body handler) | `Ctrl Alt Enter` | Opens the insert chooser positioned after the active slide (or at the end, if none active). Also counts one use toward `lesson-builder:next-slide-uses` (§5's inline cue fades after 5). Resolves its target slide as `activeBlock` if set, else the `[data-document-block]` ancestor of `event.target` — so it also works right after `Escape` (DOM focus on the block wrapper, `activeBlock` cleared) or after a click that landed on the wrapper rather than a field, not only while focus is still inside a real field. |
-| Insert chooser (open, focus inside it) | `E` / `S` / `T` | Pick that type immediately (only while focus is inside the open chooser). |
-| Insert chooser (open, focus inside it) | `←/→/↑/↓` | Move focus between the three choice buttons (wraps). |
-| Insert chooser (open) | `Escape` | Closes the chooser and restores the caret to wherever it was before the chooser opened. |
-| Insert chooser (open) | click outside | Closes the chooser (pointerdown listener on `document`, ignores clicks inside `.lesson-document-insert`). |
-| Slide (any) | `Ctrl Alt ArrowUp` / `ArrowDown` | Move the active slide up/down. |
-| Slide (any) | `Ctrl Alt D` | Finish this lesson: collapses its row. Flushes any pending idle-debounced save immediately (§9 item R4). |
-| Lesson row (any) | `Ctrl/⌘ Z` / `Ctrl/⌘ Shift Z` | Undo / redo (page-level; disabled while the event target is a plain text-editing target — a sentence/vocabulary `<input>`/`<textarea>` — so it doesn't fight native field undo there). |
-| Explanation (focused) | `Ctrl/⌘ Z` / `Ctrl/⌘ Shift Z` | Undo / redo, routed to the same page-level reducer history as the row above (scoped to this block's own `contentMarkdown`), not native contentEditable undo. Native undo inside this field is suppressed entirely: it used to group changes far more coarsely than a teacher expects — 3 presses after "type a sentence, bold a word, type a sentence" wiped the whole field in one more step than that, since Chrome's own undo stack doesn't know about the app's action boundaries. The reducer's existing coalescing (≤1s idle window, broken by any formatting/mark op or paragraph break) gives one undo step per visible action instead. Caret lands at the end of the restored text. |
-| Lesson row (any) | `Ctrl/⌘ S` | Save now: flushes any pending idle-debounced save immediately (autosave also runs independently). Not advertised in the help dialog (§4) — autosave is the story — but it still works. |
-| Module navigator drag-handle button (focused) | `Alt ArrowUp` / `Alt ArrowDown` | Reorder that module up/down (plain Alt is safe here — a single non-typing button, not a global page listener). |
-| Anywhere in the builder | `Ctrl/⌘ .` | Toggle the keyboard-help dialog. |
-| Keyboard-help dialog (open) | `Escape` | Closes it and restores focus to whatever was focused before it opened. |
+| `title` | `Enter` | Open the lesson and focus its first slide's field, creating an explanation slide if it has none. |
+| `title` | `Ctrl+Alt+Enter` | Insert the predicted type (explanation) at index 0 and focus it. |
+| `title` | `Ctrl+Alt+ArrowUp` / `ArrowDown` | Move the lesson within its module, or across a module boundary at the top/bottom of the list. |
+| `title` | `Ctrl+Alt+Backspace` | Open this row's inline "Delete lesson?" confirm, focused on Delete. |
+| `instruction` | `Enter` | Consumed — single-line field, no newline. |
+| `instruction` | `Escape` | Move selection to `block` (see the field-scope `Escape` row below — registered identically on every field scope except `hint`). |
+| `spanish` | `Tab` | Move to this pair's English field. |
+| `spanish` | `Shift+Tab` | Move to the previous pair's English field (unhandled — lets Tab continue — at pair 1). |
+| `spanish` | `Enter` | Consumed — single-line field, no newline. |
+| `spanish` | `Alt+ArrowDown` | Open/focus this pair's hint. |
+| `spanish` | `Ctrl+Alt+Backspace` | Delete this pair outright. |
+| `spanish` | `Escape` | Move selection to `block`. |
+| `english` | `Tab` / `Enter` | Commit the draft (read from the live field, not React state), then: not the last pair → next pair's Spanish; last pair, complete → create and focus a new pair; last pair, incomplete → unhandled (Tab continues to the next real control; Enter does nothing further). |
+| `english` | `Shift+Tab` | Commit the draft, focus this pair's own Spanish field. |
+| `english` | `Alt+ArrowDown` | Open/focus this pair's hint. |
+| `english` | `Ctrl+Alt+Backspace` | Delete this pair outright. |
+| `english` | `Escape` | Move selection to `block`. |
+| `hint` | `Enter` / `Escape` | Close the hint (clearing the pair's `callout` if left blank) and return focus to whichever field opened it (Spanish or English — remembered per pair; defaults to Spanish for the mouse lightbulb button). |
+| `explanation` | `Escape` | Move selection to `block` (registered via the same field-scope loop; the explanation editor's own Enter/marks/Ctrl+B/I stay internal to it — see §1). |
+| `block` | `Enter` / `Space` | Enter editing: focus the slide's first field. |
+| `block` | `Escape` | Fully deselect (`selection → none`): no rail, no chrome, focus parks on the builder root with no visible ring. Two Escapes from a field reach this — field → block → none. |
+| `block` | `Ctrl+Alt+Enter` | Insert the predicted type after this block and focus it (explanation → sentence; sentence/vocabulary → explanation). A second `Ctrl+Alt+Enter` within 1.5s, while the just-inserted block is still empty, cycles its type instead (explanation → sentence → vocabulary → …). Also reached from every field scope (Ctrl+Alt+Enter isn't registered per-field). |
+| `block` | `Ctrl+Alt+ArrowUp` / `ArrowDown` | Move this block up/down. Also reached from every field scope. |
+| `lesson` | `Ctrl+Alt+D` | Finish this lesson: fully deselect, collapse it, flush any pending save. Reached from title, block, and every field scope. |
+| `lesson` | `Ctrl+Alt+P` | Preview this lesson. Reached from title, block, and every field scope. |
+| `page` | `Ctrl+Alt+L` | Add a new lesson: right after the currently open lesson if one is selected, else at the end of the active module. Works with zero lessons in the module. |
+| `page` | `Ctrl+Alt+M` | Focus the active module's name input. |
+| `page` | `Ctrl+Z` / `Ctrl+Shift+Z` | Undo / redo, unless the keydown's target is itself a text-editing element (input/textarea/contenteditable) — native undo wins there (the explanation editor routes its own `Ctrl+Z` internally; see §1). |
+| `page` | `Ctrl+S` | Flush any pending idle-debounced save immediately. Not advertised in the help dialog (§4) — autosave is the story — but it still works. |
+| `page` | `Ctrl+.` | Toggle the keyboard-help dialog, remembering whatever had focus so it can be restored on close. |
+
+Not in `KEYMAP` — element-level or out of the selection model, so they keep
+their own local handling rather than going through the dispatcher:
+
+- The mouse-driven insert chooser (`SlideInsertControl`) — hover/focus
+  reveals its three always-in-DOM buttons; `E`/`S`/`T`/arrow keys/`Escape`
+  inside it are its own `onKeyDown`, guarded by `[data-keymap-ignore]` so the
+  shared dispatcher never sees them. Driven by `EditingState.insertAfter`
+  (mouse-only per the contract) — the keyboard path never opens it (see
+  `Ctrl+Alt+Enter` above).
+- The concept-tag typeahead, the concept quick-edit dialog, and the
+  keyboard-help dialog are each `[data-keymap-ignore]` for the same reason.
+- The module navigator's search input and the module-name input are
+  `[data-keymap-ignore]` too — nothing about typing in them is part of the
+  `EditingSelection` model, so a stale selection elsewhere must never
+  intercept a keystroke meant for them.
+- The module-rail drag-handle's own `Alt+ArrowUp`/`ArrowDown` (module
+  reorder) and the rail's own `Escape` (closes the mobile disclosure) —
+  modules aren't part of `EditingSelection` at all in Phase 1, so these stay
+  local, element-scoped handlers, same as before.
+- Explanation-internal `Enter` (paragraph), `Ctrl/⌘+B`/`I`, and the mark
+  chords `Ctrl+Alt+S/E/N` — the editor's own business until Phase 2 moves
+  them onto the shared model.
 
 **Autosave timing** (`use-lesson-persistence.ts`): the lesson-body save is
 an *idle* debounce, not a throttle — every edit restarts a 2000ms window,
@@ -125,6 +161,8 @@ unaffected by this.
 A teacher needs to know **six things** to write a whole lesson; everything
 else is optional power-user territory. The dialog reflects that split with
 two labelled sections — this table mirrors it exactly, in the same order.
+(This is the *teacher-facing* subset/wording of §3's generated table, kept
+hand-written for tone — `keyboard-help.tsx` is not itself generated.)
 
 ### Writing a lesson
 
@@ -132,15 +170,15 @@ two labelled sections — this table mirrors it exactly, in the same order.
 |---|---|
 | `Enter` | From the title: start writing. In an explanation: new paragraph. |
 | `Tab` / `Shift Tab` | Spanish → English → next pair. |
-| `Ctrl Alt Enter` | Open insert choices after this slide, then `E`/`S`/`T` to pick Explanation, Sentence, or Table. |
+| `Ctrl Alt Enter` | Insert the next slide (predicted type) after this one immediately — press it twice to cycle the type instead. |
 | `Ctrl/⌘ B` · `Ctrl/⌘ I` | Bold / italic. |
 | `Ctrl/⌘ Z` · `Ctrl/⌘ Shift Z` | Undo / redo. |
-| `Esc` | Close the nested tool / leave the slide. |
+| `Esc` | Close the nested tool / leave the slide (twice, from a field, to fully deselect). |
 
 A compact QWERTY graphic (`KeyboardMap` in `keyboard-help.tsx`) follows this
 section, highlighting only the keys used above (`Tab`, `Ctrl`, `Alt`,
-`Enter`, `E`/`S`/`T`, `B`, `I`, `Z`, `Esc`) so a teacher can visually locate
-them without reading the table.
+`Enter`, `B`, `I`, `Z`, `Esc`) so a teacher can visually locate them without
+reading the table.
 
 ### More
 
@@ -159,7 +197,7 @@ them without reading the table.
 This table is authoritative for what the teacher is told. `Ctrl/⌘ S` (save
 now) and `Ctrl/⌘ .` (this dialog) exist in code but are deliberately not
 advertised here — autosave is the story for the former, and the latter is
-how you got here. The insert chooser's `E`/`S`/`T` key badges, and `/` as
+how you got here. The mouse chooser's `E`/`S`/`T` key badges, and `/` as
 the literal separator between accepted English alternatives in the same
 field, are covered inline where they're used rather than in this dialog.
 `Ctrl Alt Q` / `W` (old Spanish/neutral marks), `Ctrl Alt 1`/`2`/`3` (direct
@@ -465,6 +503,37 @@ statically or spin up their own isolated server against a throwaway file.
   "Ctrl Alt P previews the lesson, and closing it returns focus…" case.
   Failed-save retry is still unit-only (`lesson-persistence.test.ts`) — no
   browser-level `ux:check` coverage exists for that path yet.
+- **Phase 1 (one editing model, one keymap) is done** — see
+  `docs/design/lesson-builder-editing-model.md` for the contract and §3/§4
+  above for the generated keymap table. Residual gaps from that work,
+  deliberately left for later phases or flagged as open questions:
+  - The instruction field's `Escape` now always moves to `block` like every
+    other field (§3), instead of the old "if empty, collapse back to the
+    'Add instruction' button" micro-behavior — a minor UX regression on a
+    rarely-used sub-toggle, not restored in Phase 1.
+  - The explanation editor's local "mark typing mode" (armed via
+    `Ctrl+Alt+S/E/N`) can be interrupted by an Escape that the shared
+    dispatcher also routes to `block` — Escape no longer has a chance to
+    *only* cancel typing mode first the way it used to; Phase 2 (the editor
+    moves onto a real engine) is the natural point to reconcile this.
+  - Module reorder (`Alt+ArrowUp/Down` on the drag-handle button) and the
+    mobile rail's own `Escape` (closes the disclosure) stay local,
+    element-scoped handlers — modules aren't part of `EditingSelection` in
+    Phase 1, so they don't fit the keymap's scope model.
+  - `resolveFieldElement` (focus.ts) only recognizes a piece as a real match
+    when its own `[data-piece]` wrapper exists — fixed during this phase
+    after it was found to silently mis-focus a *different* piece's field
+    while the real (just-created) one hadn't mounted yet; regression risk
+    if a future change reintroduces a "fall back to any field of this type"
+    branch for a `pieceId`-scoped selection.
+  - `leaveSlide`'s own English-draft commit is skipped for `reason:"blur"`
+    transitions (a real native focusout already triggers the field's own
+    `onBlur` commit in the same tick, and doubling up on a stale
+    `piece.acceptedAnswers` closure produced a duplicated accepted answer —
+    caught by `tests/ux/authoring-ergonomics.spec.ts`'s long-alternative
+    test). Any future new "reason" should consider whether a natural blur
+    also fires in the same tick before assuming `leaveSlide`'s own commit
+    is safe to run unconditionally.
 
 ## 9. Roadmap
 

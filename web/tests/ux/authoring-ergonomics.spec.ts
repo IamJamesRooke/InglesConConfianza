@@ -26,18 +26,6 @@ function readLessons() {
   }
 }
 
-// The Ctrl+Alt+Enter insertion palette auto-focuses its Sentence button —
-// wait for real focus inside the palette's own group rather than a fixed
-// aria-label that predates the current SlideInsertControl.
-async function waitForPaletteFocus(page: import("@playwright/test").Page) {
-  await page.waitForFunction(
-    () =>
-      (document.activeElement as HTMLElement | null)?.closest(
-        ".lesson-document-insert-actions",
-      ) !== null,
-  );
-}
-
 test("explanation toolbar preserves editing context and sentence pairs stay discoverable", async ({
   page,
 }) => {
@@ -87,9 +75,9 @@ test("explanation toolbar preserves editing context and sentence pairs stay disc
   await toolbar.getByRole("button", { name: /Normal/ }).click();
   await page.keyboard.type(" normal");
 
+  // E6: Ctrl+Alt+Enter inserts the predicted type (sentence, after an
+  // explanation) directly and focuses it — no chooser on the keyboard path.
   await page.keyboard.press("Control+Alt+Enter");
-  await waitForPaletteFocus(page);
-  await page.keyboard.press("s");
 
   const sentence = page.locator(".lesson-document-sentence").last();
   await expect(
@@ -335,9 +323,9 @@ test("hint and alternative metadata never widen the piece card, and long text wr
   await page.locator("[data-lesson-title]").last().fill("UX smoke: long pair");
   await page.keyboard.press("Enter");
 
+  // E6: Ctrl+Alt+Enter inserts the predicted type (sentence, after an
+  // explanation) directly and focuses it — no chooser on the keyboard path.
   await page.keyboard.press("Control+Alt+Enter");
-  await waitForPaletteFocus(page);
-  await page.keyboard.press("s");
 
   const sentence = page.locator(".lesson-document-sentence").last();
   const piece = sentence.locator(".lesson-document-piece").first();
@@ -503,18 +491,15 @@ test("slide insertion seams are ordered Explanation/Sentence/Table, keyboard-rea
   // to add a short and a wrapped sentence pair, so there's real content to
   // insert between and around. Each seam is a `role="group"` of three
   // always-in-DOM buttons — "{Type} — Insert {position}", in Explanation/
-  // Sentence/Table order — not a separate floating "chooser" popup (that
-  // UI no longer exists). Ctrl+Alt+Enter focuses the active block's tail
-  // group's Sentence button directly (initial focus = Sentence, per the
-  // approved insertion contract); the E/S/T letter keys insert immediately
-  // while that group has focus.
+  // Sentence/Table order — not a separate floating "chooser" popup. E6:
+  // Ctrl+Alt+Enter no longer opens this group on the keyboard path at all —
+  // it inserts the *predicted* type directly and focuses it (explanation ->
+  // sentence -> explanation …); a second Ctrl+Alt+Enter within 1.5s on the
+  // still-empty just-inserted block cycles its type instead. The E/S/T
+  // letter keys still insert immediately, but only while the group has
+  // focus via the mouse/Tab path (see the seam-click section below).
   await page.keyboard.type("hacer es to do");
-  const tailSentenceButton = lessonRow.getByRole("button", {
-    name: "Sentence — Insert at lesson end",
-  });
   await page.keyboard.press("Control+Alt+Enter");
-  await expect(tailSentenceButton).toBeFocused();
-  await page.keyboard.press("s");
   await expect(lessonRow.locator("[data-document-block]")).toHaveCount(2);
   // `.nth(0)`, not `.last()`: this locator is re-resolved live at every use,
   // including much later (after a second sentence and several explanations
@@ -522,6 +507,7 @@ test("slide insertion seams are ordered Explanation/Sentence/Table, keyboard-rea
   // changes in this test, so anchoring to the first one keeps pointing at
   // this exact "sí"/"yes" pair instead of drifting to whatever is newest.
   const shortSentence = lessonRow.locator(".lesson-document-sentence").nth(0);
+  await expect(shortSentence.locator('textarea[data-field="spanish"]').first()).toBeFocused();
   await shortSentence
     .locator('textarea[data-field="spanish"]')
     .first()
@@ -531,9 +517,10 @@ test("slide insertion seams are ordered Explanation/Sentence/Table, keyboard-rea
     .first()
     .fill("yes");
 
+  // The predicted type after a sentence is an explanation, not another
+  // sentence — cycle it (second Ctrl+Alt+Enter within the window).
   await page.keyboard.press("Control+Alt+Enter");
-  await expect(tailSentenceButton).toBeFocused();
-  await page.keyboard.press("s");
+  await page.keyboard.press("Control+Alt+Enter");
   await expect(lessonRow.locator("[data-document-block]")).toHaveCount(3);
   const wrappedSentence = lessonRow.locator(".lesson-document-sentence").last();
   await wrappedSentence
@@ -635,25 +622,39 @@ test("slide insertion seams are ordered Explanation/Sentence/Table, keyboard-rea
       .locator(".lesson-document-explanation"),
   ).toBeVisible();
 
-  // Escape restores the original caret instead of leaving focus stranded
-  // on the seam: focus a real writing field, jump to the seam right after
-  // it via Ctrl+Alt+Enter (per §3: "positioned after the active slide" —
-  // this field is now the first block, so that's "Insert before slide 2",
-  // not the tail), then Escape and confirm focus returns to that exact
-  // field.
+  // E6: Ctrl+Alt+Enter no longer opens a chooser to potentially cancel out
+  // of — it inserts the predicted type directly and focuses it. Focus a
+  // real writing field, insert from there, and confirm the new slide's own
+  // field gets focus immediately (not stranded on a seam, and not left
+  // behind on the field that triggered it); Escape from there moves to that
+  // new block's own wrapper, not back to the original field.
   const explanationField = lessonRow
     .locator("[data-document-block]")
     .first()
     .getByRole("textbox")
     .first();
   await explanationField.click();
+  const countBeforeSecondInsert = await lessonRow
+    .locator("[data-document-block]")
+    .count();
   await page.keyboard.press("Control+Alt+Enter");
-  const seamAfterExplanationField = lessonRow
-    .locator('[role="group"][aria-label="Insert before slide 2"]')
-    .getByRole("button", { name: /^Sentence/ });
-  await expect(seamAfterExplanationField).toBeFocused();
+  await expect(lessonRow.locator("[data-document-block]")).toHaveCount(
+    countBeforeSecondInsert + 1,
+  );
+  const insertedBlock = lessonRow.locator("[data-document-block]").nth(1);
+  await expect(
+    insertedBlock.locator('textarea[data-field="spanish"]').first(),
+  ).toBeFocused();
   await page.keyboard.press("Escape");
-  await expect(explanationField).toBeFocused();
+  await expect(insertedBlock).toBeFocused();
+  // Clean up this second insertion (E6 has no "chooser stays open,
+  // uncommitted" state to cancel out of any more — Ctrl+Alt+Enter always
+  // inserts) so the block-count arithmetic below matches the one net
+  // insertion the rest of this test expects.
+  await insertedBlock.getByRole("button", { name: /Delete slide/ }).click();
+  await expect(lessonRow.locator("[data-document-block]")).toHaveCount(
+    countBeforeSecondInsert,
+  );
 
   // Duplicate, delete, and undo — on whatever block is now at index 1, to
   // prove the mechanisms work regardless of exact position.
@@ -777,9 +778,9 @@ test("a semicolon in the English field commits as separate accepted answers on b
     .fill("UX smoke: semicolon alternatives");
   await page.keyboard.press("Enter");
 
+  // E6: Ctrl+Alt+Enter inserts the predicted type (sentence, after an
+  // explanation) directly and focuses it — no chooser on the keyboard path.
   await page.keyboard.press("Control+Alt+Enter");
-  await waitForPaletteFocus(page);
-  await page.keyboard.press("s");
 
   const sentence = page.locator(".lesson-document-sentence").last();
   const piece = sentence.locator(".lesson-document-piece").first();
@@ -861,12 +862,13 @@ test("a semicolon in the English field commits as separate accepted answers on b
     .toBe(false);
 });
 
-// Regression for item 1 of the walkthrough friction log: Escape moves DOM
-// focus onto the `.lesson-document-block` wrapper (activeBlock cleared) —
-// Ctrl+Alt+Enter from there used to silently target nothing, and the very
-// next keystroke (the letter picking a slide type) typed into whatever
-// field regained focus instead of opening the chooser.
-test("Escape then Ctrl Alt Enter still opens the insert chooser and inserts after that slide", async ({
+// Regression for item 1 of the walkthrough friction log: Escape moves the
+// shared selection to `{kind:"block"}` and focuses the `.lesson-document-
+// block` wrapper — Ctrl+Alt+Enter from there used to silently target
+// nothing. E6 also removed the keyboard chooser itself (Ctrl+Alt+Enter
+// inserts the predicted type directly), so this now also covers that the
+// insertion still resolves against the right block right after an Escape.
+test("Escape then Ctrl Alt Enter still inserts after that slide", async ({
   page,
 }) => {
   await page.goto("/admin/lesson-builder");
@@ -884,9 +886,11 @@ test("Escape then Ctrl Alt Enter still opens the insert chooser and inserts afte
   await expect(row.locator("[data-document-block]").first()).toBeFocused();
 
   const countBefore = await row.locator("[data-document-block]").count();
+  // E6: Ctrl+Alt+Enter inserts the predicted type directly (sentence, after
+  // the explanation) — a second press within 1.5s cycles the still-empty
+  // just-inserted block's type (sentence -> vocabulary) to reach a table.
   await page.keyboard.press("Control+Alt+Enter");
-  await waitForPaletteFocus(page);
-  await page.keyboard.press("t");
+  await page.keyboard.press("Control+Alt+Enter");
 
   await expect(row.locator("[data-document-block]")).toHaveCount(
     countBefore + 1,
@@ -950,9 +954,9 @@ test("Ctrl Alt P previews the lesson, and closing it returns focus to the field 
   // the dialog even closes. The origin element is gone by the time restore
   // runs, so the documented fallback — the lesson's title input, never
   // `<body>` — is the correct, verified outcome here, not a compromise.
+  // E6: Ctrl+Alt+Enter inserts the predicted type (sentence, after an
+  // explanation) directly and focuses it — no chooser on the keyboard path.
   await page.keyboard.press("Control+Alt+Enter");
-  await waitForPaletteFocus(page);
-  await page.keyboard.press("s");
   const sentence = row.locator(".lesson-document-sentence").last();
   const spanish = sentence.locator('textarea[data-field="spanish"]').first();
   await spanish.fill("Quiero hacerlo");

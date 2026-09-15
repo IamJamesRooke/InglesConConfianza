@@ -13,7 +13,7 @@ import type { DocumentBlockType } from "@/components/lesson-builder/lesson-docum
 import { LessonLibrary } from "@/components/lesson-builder/lesson-library";
 import { LessonSelector } from "@/components/practice/lesson-selector";
 import type { LessonBuilderActions } from "@/lib/lesson-builder/builder-context";
-import { focusSlideWritingField } from "@/lib/lesson-builder/focus";
+import { focusSelection } from "@/lib/lesson-builder/focus";
 import {
   findRestoredFocusTarget,
   initialUndoableLessons,
@@ -37,13 +37,6 @@ type Deletion =
       piece: LanguageBlock;
       index: number;
     };
-function isTextEditingTarget(target: EventTarget | null) {
-  return (
-    target instanceof HTMLElement &&
-    Boolean(target.closest("input, textarea, [contenteditable='true']"))
-  );
-}
-
 export default function LessonBuilderPage() {
   const [history, dispatch] = useReducer(
     undoableLessonsReducer,
@@ -88,10 +81,31 @@ export default function LessonBuilderPage() {
     const next = undoableLessonsReducer(current, { type: "UNDO" });
     if (next === current) return;
     const target = findRestoredFocusTarget(current.present, next.present);
+    const owner = target
+      ? next.present.find((lesson) =>
+          lesson.blocks.some((block) => block.id === target.blockId),
+        )
+      : undefined;
+    const restoredBlock = owner?.blocks.find((block) => block.id === target?.blockId);
     dispatch({ type: "UNDO" });
-    if (target?.kind === "block") focusSlideWritingField(target.blockId);
-    else if (target?.kind === "piece")
-      focusSlideWritingField(target.blockId, { pieceId: target.pieceId });
+    if (target && owner) {
+      if (target.kind === "block") {
+        focusSelection({
+          kind: "field",
+          lessonId: owner.id,
+          blockId: target.blockId,
+          field: restoredBlock?.type === "explanation" ? "explanation" : "spanish",
+        });
+      } else {
+        focusSelection({
+          kind: "field",
+          lessonId: owner.id,
+          blockId: target.blockId,
+          field: "spanish",
+          pieceId: target.pieceId,
+        });
+      }
+    }
   }, []);
   // Undo/redo scoped to one explanation block (item 5: native
   // contentEditable undo inside the field is suppressed in favor of this).
@@ -139,36 +153,6 @@ export default function LessonBuilderPage() {
     },
     [flushSave, openPreview],
   );
-
-  useEffect(() => {
-    const handleKeyDown = (event: KeyboardEvent) => {
-      const cmd = event.ctrlKey || event.metaKey;
-      if (cmd && !event.altKey && event.key.toLowerCase() === "s") {
-        event.preventDefault();
-        flushSave();
-      } else if (
-        cmd &&
-        !event.altKey &&
-        !event.shiftKey &&
-        event.key.toLowerCase() === "z" &&
-        !isTextEditingTarget(event.target)
-      ) {
-        event.preventDefault();
-        performUndo();
-      } else if (
-        cmd &&
-        !event.altKey &&
-        event.shiftKey &&
-        event.key.toLowerCase() === "z" &&
-        !isTextEditingTarget(event.target)
-      ) {
-        event.preventDefault();
-        dispatch({ type: "REDO" });
-      }
-    };
-    document.addEventListener("keydown", handleKeyDown);
-    return () => document.removeEventListener("keydown", handleKeyDown);
-  }, [flushSave, performUndo]);
 
   const updateModules = useCallback((next: LessonModule[]) => {
     setModules(next);
@@ -438,6 +422,42 @@ export default function LessonBuilderPage() {
     setDeletionUndo(null);
   }, []);
 
+  const moveLessonKeyboard = useCallback(
+    (lessonId: string, direction: -1 | 1): string | null => {
+      const homeIndex = modules.findIndex((module) => module.lessonIds.includes(lessonId));
+      if (homeIndex < 0) return null;
+      const home = modules[homeIndex];
+      const position = home.lessonIds.indexOf(lessonId);
+      const withinModule = position + direction;
+      let destinationModuleId = home.id;
+      let insertionIndex: number;
+      if (withinModule < 0 || withinModule >= home.lessonIds.length) {
+        const adjacentIndex = homeIndex + direction;
+        if (adjacentIndex < 0 || adjacentIndex >= modules.length) return null;
+        const adjacent = modules[adjacentIndex];
+        destinationModuleId = adjacent.id;
+        insertionIndex = direction === -1 ? adjacent.lessonIds.length : 0;
+      } else {
+        insertionIndex = direction > 0 ? withinModule + 1 : withinModule;
+      }
+      moveLessonToPosition(lessonId, destinationModuleId, insertionIndex);
+      return destinationModuleId;
+    },
+    [modules, moveLessonToPosition],
+  );
+
+  const newLessonAfter = useCallback(
+    (afterLessonId: string | null, fallbackModuleId: string | null): string | null => {
+      if (afterLessonId) {
+        const home = modules.find((module) => module.lessonIds.includes(afterLessonId));
+        if (home) return createLesson(home.id, home.lessonIds.indexOf(afterLessonId) + 1);
+      }
+      if (fallbackModuleId) return createLesson(fallbackModuleId);
+      return null;
+    },
+    [modules, createLesson],
+  );
+
   const moveBlock = useCallback(
     (lessonId: string, blockId: string, direction: -1 | 1) => {
       const lesson = lessonsRef.current.find(
@@ -555,10 +575,17 @@ export default function LessonBuilderPage() {
           targetId,
           position,
         }),
+      moveLessonKeyboard,
+      newLessonAfter,
       undoDeletion,
       endHistoryGroup: () => dispatch({ type: "END_HISTORY_GROUP" }),
       editorUndo,
       editorRedo,
+      undo: performUndo,
+      redo: () => dispatch({ type: "REDO" }),
+      canUndo: history.past.length > 0,
+      canRedo: history.future.length > 0,
+      flushSave,
     }),
     [
       conceptDisplays,
@@ -572,9 +599,15 @@ export default function LessonBuilderPage() {
       addBlock,
       deleteBlock,
       moveBlock,
+      moveLessonKeyboard,
+      newLessonAfter,
       undoDeletion,
       editorUndo,
       editorRedo,
+      performUndo,
+      history.past.length,
+      history.future.length,
+      flushSave,
     ],
   );
 

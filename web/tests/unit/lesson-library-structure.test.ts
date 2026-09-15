@@ -73,9 +73,13 @@ test("(source) floating keyboard-help FAB button and its ref are gone", () => {
   assert.ok(!source.includes("keyboardHelpButtonRef"));
 });
 
-test("(source) Ctrl+. shortcut listener is preserved", () => {
-  assert.match(source, /event\.key !== "\."/);
-  assert.ok(source.includes('addEventListener("keydown", onKey)'));
+test("(source) Ctrl+. shortcut is preserved — now via the shared keymap dispatcher", () => {
+  const keymapSource = readFileSync(
+    path.join(__dirname, "../../src/lib/lesson-builder/keymap.ts"),
+    "utf8",
+  );
+  assert.ok(keymapSource.includes('"Ctrl+."'));
+  assert.ok(source.includes('addEventListener("keydown", onKeyDown'));
 });
 
 test("(source) a same-page bridge event lets an external menu trigger the same dialog", () => {
