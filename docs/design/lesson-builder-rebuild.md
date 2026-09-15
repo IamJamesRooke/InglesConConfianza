@@ -44,6 +44,9 @@ No autonomous "improvement rounds" outside these phases.
   actions. `Ctrl Alt Enter` must work from the **title** too (opens the chooser at
   slide 0). Owner confirmed 2026-09-15 the chooser DID open — the failure was that it
   was not obvious a choice was required; E6 removes the chooser from the keyboard path.
+- One-time normalisation on load (`normalizeLessons`): drop pairs whose Spanish, all
+  answers and hint are blank (keeping ≥ 1 per slide) — the owner's real lesson already
+  carries one such junk pair.
 - Tests: command-level unit tests for every chord × selection kind; **four `ux:check`
   flows that end by reading the saved JSON** — finish a pair then Escape /
   `Ctrl Alt Enter` / `Ctrl Alt D` / click-away — plus the owner's literal flow from an
@@ -57,6 +60,16 @@ No autonomous "improvement rounds" outside these phases.
 - Delete `serialize-explanation.ts` DOM walking, `normalizeEditorDom`, `execCommand`,
   caret-offset restore. Toolbar shows only with a non-collapsed selection (the current
   `data-has-selection` gates nothing).
+- Owner-reported bug 2026-09-15 (acceptance test, not a patch to the old editor):
+  **"Normal" must remove a language mark and B/I must toggle, both at a caret inside a
+  marked word and on a selection, from the toolbar (mousedown must not drop the
+  selection) and from `Ctrl Alt N` / `Ctrl B` / `Ctrl I`.** Spike found: the keymap
+  dispatcher must `stopPropagation()` on handled chords so Tiptap's own keydown never
+  sees them. Spike artefacts: scratchpad `tiptap-spike/` (`SPIKE.md`, schema,
+  round-trip + input-rule tests); packages `@tiptap/{core,pm,react,extension-document,
+  extension-paragraph,extension-text,extension-hard-break,extension-bold,extension-italic}@3.31.3`,
+  not starter-kit; 92 kB gzip. Model: **Opus** for the integration (editor ↔ selection
+  store ↔ keymap is the judgement-heavy seam), Sonnet for the serializer port and tests.
 - This adds a dependency (~100 kB); it is the one deliberate exception to the
   "no new editor framework" rule, because hand-rolled contentEditable is where the data
   loss was and will be again.
@@ -71,6 +84,10 @@ section. Model: Sonnet; Fable writes the script grammar.
 - One stylesheet per component, imported by the component; one declaration per
   selector; state only via `data-state`/`data-*` attributes the component itself sets.
   All "delimited revert blocks" (F, N, 6, 1b) resolved into the base rules.
+- Owner-reported 2026-09-15: the drag/duplicate/delete cluster sits on top of the grey
+  explanation card (white icon box over grey). Resolved by construction: the
+  explanation is no longer a card, and block chrome lives in the gutter outside the
+  text column, never over content.
 - Geometry rules: only a card's outermost element has `border-radius` and it clips
   (`overflow: hidden`) unless something must escape — then that something is portalled.
   A lint script fails the build on duplicate top-level selectors and on `!important`
@@ -116,6 +133,17 @@ An explanation containing marked pairs already *is* the practice content. On
 pre-fill the new sentence slide with every adjacent (Spanish, English) pair from the
 preceding explanation — "hacer / to do" — focused on the first English field so the
 teacher can accept (`Enter`) or edit. Never retype a pair.
+
+### E3b. Chain building (from the owner's real lesson, 2026-09-15)
+The owner's lesson "I want to do something today." shows the method's practice is
+cumulative: `Quiero / I want` → `Quiero · hacer · algo.` → `Quiero · hacer · algo · hoy.`
+Each recombination currently retypes every earlier piece. Add **extend the last
+sentence**: a command (and script syntax `> + hoy / today`) that creates a new sentence
+slide = previous sentence's pieces + the new piece(s), moving terminal punctuation from
+the old last piece to the new one. Tables in this method are *contrasts* introduced by
+an instruction line ("Veamos la diferencia.") — script syntax: a line ending in `?`
+or `:` before `|` rows becomes the instruction. Every explanation in the lesson is
+`[[es:X]] es [[en:Y]]` + optional Spanish comment — E1 covers 100 % of them.
 
 ### E4. Script mode — type the whole lesson as text
 The fastest authoring surface is a plain text stream with a tiny syntax, losslessly
