@@ -121,6 +121,8 @@ const stubBuilderActions: LessonBuilderActions = {
   reorderBlock: noop,
   undoDeletion: noop,
   endHistoryGroup: noop,
+  editorUndo: () => null,
+  editorRedo: () => null,
 };
 
 function renderTable(block: SentenceBlock, active: boolean) {

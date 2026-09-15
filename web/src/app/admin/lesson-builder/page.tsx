@@ -93,6 +93,29 @@ export default function LessonBuilderPage() {
     else if (target?.kind === "piece")
       focusSlideWritingField(target.blockId, { pieceId: target.pieceId });
   }, []);
+  // Undo/redo scoped to one explanation block (item 5: native
+  // contentEditable undo inside the field is suppressed in favor of this).
+  // Shares `historyRef` with `performUndo` above so identity stays stable.
+  const editorUndo = useCallback((lessonId: string, blockId: string) => {
+    const current = historyRef.current;
+    const next = undoableLessonsReducer(current, { type: "UNDO" });
+    if (next === current) return null;
+    dispatch({ type: "UNDO" });
+    const block = next.present
+      .find((lesson) => lesson.id === lessonId)
+      ?.blocks.find((candidate) => candidate.id === blockId);
+    return block?.type === "explanation" ? block.contentMarkdown : null;
+  }, []);
+  const editorRedo = useCallback((lessonId: string, blockId: string) => {
+    const current = historyRef.current;
+    const next = undoableLessonsReducer(current, { type: "REDO" });
+    if (next === current) return null;
+    dispatch({ type: "REDO" });
+    const block = next.present
+      .find((lesson) => lesson.id === lessonId)
+      ?.blocks.find((candidate) => candidate.id === blockId);
+    return block?.type === "explanation" ? block.contentMarkdown : null;
+  }, []);
   const onInitialLoad = useCallback((course: typeof currentCourse) => {
     dispatch({ type: "SET_LESSONS", lessons: course.lessons });
     setModules(course.modules);
@@ -534,6 +557,8 @@ export default function LessonBuilderPage() {
         }),
       undoDeletion,
       endHistoryGroup: () => dispatch({ type: "END_HISTORY_GROUP" }),
+      editorUndo,
+      editorRedo,
     }),
     [
       conceptDisplays,
@@ -548,6 +573,8 @@ export default function LessonBuilderPage() {
       deleteBlock,
       moveBlock,
       undoDeletion,
+      editorUndo,
+      editorRedo,
     ],
   );
 

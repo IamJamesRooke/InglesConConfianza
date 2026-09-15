@@ -80,6 +80,12 @@ export type LessonBuilderActions = {
   ) => void;
   undoDeletion: () => void;
   endHistoryGroup: () => void;
+  // Undo/redo scoped to one explanation block, routed through the page's
+  // reducer history instead of native contentEditable undo (see
+  // explanation-editor.tsx). Returns the block's restored contentMarkdown,
+  // or null if there was nothing to undo/redo (or the block is gone).
+  editorUndo: (lessonId: string, blockId: string) => string | null;
+  editorRedo: (lessonId: string, blockId: string) => string | null;
 };
 
 const LessonBuilderContext = createContext<LessonBuilderActions | null>(null);
