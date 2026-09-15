@@ -192,7 +192,7 @@ Effective curriculum design depends on three connected disciplines:
 2. **Information architecture:** Organize language into clear, reusable concepts and chunk each concept at the level that makes it easiest to understand, retrieve, and combine.
 3. **Sequencing:** Arrange lessons so each one scaffolds logically onto what came before, introduces only answerable next steps, and schedules deliberate Anki-like retrieval over time for long-term retention.
 
-Curriculum priority supports curation but does not replace sequencing. Concepts receive exactly one database role: **Core**, **Supporting**, or **Reference**. Core is an elite functional tier; Supporting is selective and broadly reusable; Reference retains valid secondary, situational, specialized, or readily inferable material. The course should concentrate on stronger-priority language while ordering concepts according to prerequisites, teaching clarity, and lesson flow rather than treating the role as a fixed lesson sequence.
+Curriculum levels support curation but do not replace sequencing. Level 1 (defined in `docs/curation/level-1.md`) is the generic spine the MVP teaches: *I and you, affirmative, present or going-to.* Higher levels open later; vocabulary is incidental filler until a level claims it. The course should build Level-1 concepts into complete lessons, then open and teach higher levels, rather than treating levels as a fixed lesson sequence: order concepts by prerequisites, teaching clarity, and lesson flow.
 
 ## Questions and answers
 

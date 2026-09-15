@@ -4,7 +4,7 @@ Ingles Con Confianza is a language-learning application built from the owner's t
 
 ## Current priorities
 
-1. Curate the PostgreSQL curriculum: remove low-value material, correct normalization, merge duplicates, simplify collections, and make curriculum roles selective.
+1. Teach Level 1 (`docs/curation/level-1.md`): every Level-1 concept covered by a lesson is the MVP. Promote/demote concepts by hand while authoring; levels live in `curriculumRole` (P1–P5 = Level 1–5, Unranked, Trash).
 2. Build the first course module from the curated database and validate the lesson-authoring and learner experience.
 
 Migration is complete. Do not recreate the retired Markdown source trees, build another import pipeline, or add specialized curriculum tables. New curriculum work consists of deliberate database inserts, edits, merges, and deletions.

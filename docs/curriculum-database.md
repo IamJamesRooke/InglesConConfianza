@@ -10,12 +10,13 @@ Every curriculum concept has:
 - exactly one normalized English target;
 - one generic Spanish example and its natural English equivalent;
 - reusable collections for retrieval and lesson building; and
-- exactly one curriculum role: `core`, `supporting`, `reference`, or `trash`.
+- one curriculum level: `P1`–`P5` (Level 1–5), `Unranked`, or `Trash` (deletion staging); nothing teaching-facing reads `Trash`.
 
 The database is a Spanish-to-English map. Only Spanish belongs in Spanish fields and only English belongs in English fields. Keep independently teachable phrases and constructions intact instead of reducing everything to dictionary words.
 
 ## Normalization
 
+- Concepts are stored as infinitives (`tener`, `tener que [hacer algo]`), never as conjugated forms (`tengo`, `tienes`); the lesson shows the form.
 - Store ordinary verbs as infinitives with meaningful slots: `comer [algo]` -> `to eat [something]`.
 - Store nouns with natural Spanish articles when the concept is nominal: `el territorio` -> `territory`.
 - Store adjective and state mappings with the support verb that expresses the intended meaning: `ser listo` -> `to be smart`, `estar listo` -> `to be ready`, and `tener hambre` -> `to be hungry`.
@@ -44,14 +45,9 @@ Facets:
 
 During curation, apply collection changes from a reviewed manifest via `curriculum:collections:apply` (DELETE / MERGE / RENAME ops), recorded under `docs/curation/applied/`. Merge spelling variants and collections that encode the same idea; give a new tag a facet. Do not introduce a second tag system until demonstrated needs exceed collections.
 
-## Curriculum roles
+## Curriculum levels
 
-- `core`: language learners must explicitly master to make basic English function. Frequency alone is insufficient; every concept must earn this role.
-- `supporting`: highly useful, broadly reusable language that directly strengthens Core instruction. This tier is also selective.
-- `reference`: useful but secondary, situational, specialized, readily inferable, or retained for later retrieval.
-- `trash`: a staging tier for deletion candidates only. Nothing teaching-facing reads it. Concepts sit here, filterable and recoverable, until the owner bulk-deletes the `/curriculum?role=trash` survivors.
-
-Promotion and demotion are curation decisions. Retiring genuinely low-value material is expected now that lossless source provenance is secure — move it to `trash` rather than deleting it as a judgement call.
+`curriculumRole` is a **level**: `P1`–`P5` mean Level 1–5, `Unranked` means not yet placed, `Trash` is the deletion staging tier (nothing teaching-facing reads it). Level 1 is defined in `docs/curation/level-1.md`; rows stay `Unranked` until the owner promotes them while writing lessons (in `/admin/curriculum` with Alt+0..5, or by manifest). Promotion and demotion are curation decisions during lesson authoring; retiring low-value material is expected — move it to `Trash` rather than deleting it as a judgement call.
 
 ## Curation workflow
 
