@@ -72,6 +72,35 @@ test("arrow down + enter adds the highlighted concept as a chip", async ({ page 
   await expect(row.locator(".lesson-concept-chip")).toContainText("if");
 });
 
+test("repeated ArrowDown scrolls the active option into view within the popover", async ({
+  page,
+}) => {
+  await page.setViewportSize({ width: 1280, height: 900 });
+  const { input } = await openLessonWithCoversField(page);
+
+  await input.click();
+  await input.fill("querer");
+  const popover = page.locator(".concept-typeahead-popover");
+  await expect(popover).toBeVisible();
+  const options = popover.locator('[role="option"]');
+  await expect(options.nth(7)).toBeAttached({ timeout: 5000 });
+
+  for (let i = 0; i < 8; i += 1) {
+    await input.press("ArrowDown");
+  }
+
+  const active = popover.locator('[aria-selected="true"]');
+  await expect(active).toHaveCount(1);
+  const activeBox = await active.boundingBox();
+  const popoverBox = await popover.boundingBox();
+  expect(activeBox).not.toBeNull();
+  expect(popoverBox).not.toBeNull();
+  if (activeBox && popoverBox) {
+    expect(activeBox.y).toBeGreaterThanOrEqual(popoverBox.y - 1);
+    expect(activeBox.y + activeBox.height).toBeLessThanOrEqual(popoverBox.y + popoverBox.height + 1);
+  }
+});
+
 test("escape closes the popover and returns focus to the input", async ({ page }) => {
   await page.setViewportSize({ width: 1280, height: 900 });
   const { input } = await openLessonWithCoversField(page);

@@ -287,8 +287,18 @@ export function PairAutocompletePopover({
   onPick: (result: PairAutocompleteResult) => void;
 }) {
   const listboxId = useId();
+  const popoverRef = useRef<HTMLUListElement | null>(null);
+
+  // Same fix as the main concept-typeahead popover: keep the active option
+  // visible as ↑/↓ walks it past the popover's own scroll viewport.
+  useEffect(() => {
+    const active = popoverRef.current?.querySelector('[aria-selected="true"]');
+    active?.scrollIntoView({ block: "nearest" });
+  }, [highlight]);
+
   return (
     <ul
+      ref={popoverRef}
       id={listboxId}
       role="listbox"
       data-keymap-ignore

@@ -4,6 +4,7 @@ import { Plus, Snowflake, X } from "lucide-react";
 import { useEffect, useId, useLayoutEffect, useRef, useState, type Ref } from "react";
 
 import { ConceptQuickEdit, type ConceptDraft } from "@/components/lesson-builder/concept-quick-edit";
+import { curriculumRoles } from "@/components/curriculum/curriculum-row-editor";
 import { conceptKey } from "@/lib/lesson-builder/lesson-file";
 import type { SyllabusMarkers } from "@/lib/lesson-builder/builder-context";
 import {
@@ -54,6 +55,12 @@ function addDismissed(lessonId: string, conceptId: string) {
 const PAIR_SUGGESTION_DEBOUNCE_MS = 800;
 const MAX_PAIR_SUGGESTIONS = 8;
 
+// Same "Level N / Unranked / Trash" wording the curriculum page and the
+// quick-edit dialog use — never a raw "P1" role code in front of a teacher.
+function roleLabel(role?: string): string {
+  return curriculumRoles.find((candidate) => candidate.value === role)?.label ?? "Unranked";
+}
+
 export type { ConceptDisplayLookup } from "@/lib/lesson-builder/types";
 
 // The quick "concepts covered" field under a lesson title. Type to search the
@@ -77,6 +84,7 @@ export function LessonConceptsField({
   pairTerms,
   missingConceptKeys,
   syllabusMarkers,
+  hideChips,
 }: {
   concepts: LessonConcept[];
   onAdd: (concept: LessonConcept) => void;
@@ -113,6 +121,11 @@ export function LessonConceptsField({
   // the field looks up matching curriculum concepts and offers them as
   // one-keystroke "Covers" suggestions after the tagged chips.
   pairTerms?: string[];
+  // The syllabus panel's Main/Review lists render their own ordered rows
+  // (numbered, draggable) for already-tagged concepts and only want this
+  // field for its search-and-add input; when true, the plain inline chips
+  // below are skipped (pair suggestions and the input still render).
+  hideChips?: boolean;
 }) {
   const [query, setQuery] = useState("");
   const [results, setResults] = useState<ConceptResult[]>([]);
@@ -234,6 +247,15 @@ export function LessonConceptsField({
     const estimatedHeight = popoverRef.current?.offsetHeight ?? 288;
     setDropUp(spaceBelow < estimatedHeight && rect.top > spaceBelow);
   }, [showPopover, showEmptyState, visibleResults.length]);
+
+  // Keep the active option visible as ArrowUp/ArrowDown moves it past the
+  // popover's own scroll viewport (max-height + overflow-y: auto) — without
+  // this, repeated ArrowDown walks the highlight below the visible list.
+  useEffect(() => {
+    if (!showPopover) return;
+    const active = popoverRef.current?.querySelector('[aria-selected="true"]');
+    active?.scrollIntoView({ block: "nearest" });
+  }, [showPopover, highlight]);
 
   function addFromResult(result: ConceptResult) {
     const display = {
@@ -364,7 +386,7 @@ export function LessonConceptsField({
             {label}
           </span>
         )}
-        {concepts.map((concept) => {
+        {!hideChips && concepts.map((concept) => {
           const met = coveredConceptKeys?.has(conceptKey(concept)) ?? false;
           const display = concept.conceptId
             ? localDisplays[concept.conceptId] ?? conceptDisplays[concept.conceptId]
@@ -402,7 +424,7 @@ export function LessonConceptsField({
               isCoverageField
                 ? (met ? "Referenced by a lesson in this module" : "Not yet referenced by a lesson in this module")
                 : concept.conceptId
-                  ? (display?.spanish ? `${display.spanish} — Priority: ${display?.role ?? "Unranked"}` : `Priority: ${display?.role ?? "Unranked"}`)
+                  ? (display?.spanish ? `${display.spanish} — ${roleLabel(display?.role)}` : roleLabel(display?.role))
                   : "Not in the curriculum — coverage won't count it"
             }
           >
@@ -648,7 +670,7 @@ export function LessonConceptsField({
                         )}
                         <span
                           className={`concept-typeahead-option-role role-${roleToken || "Unranked"}`}
-                          title={result.curriculumRole}
+                          title={roleLabel(result.curriculumRole)}
                           aria-hidden="true"
                         />
                       </span>

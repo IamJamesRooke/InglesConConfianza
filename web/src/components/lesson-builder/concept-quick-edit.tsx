@@ -6,7 +6,7 @@ import { useEffect, useState, type ReactNode } from "react";
 import { createPortal } from "react-dom";
 
 import { COLLECTION_FACETS } from "@/lib/curriculum/collections";
-import { curriculumRoles } from "@/lib/curriculum/types";
+import { curriculumRoles } from "@/components/curriculum/curriculum-row-editor";
 
 const KNOWN_FACETS = new Set(Object.keys(COLLECTION_FACETS));
 
@@ -292,7 +292,7 @@ export function ConceptQuickEdit({
                   </div>
                   <label className="block">
                     <span className="mb-1 block text-xs font-medium text-muted-foreground">
-                      Role
+                      Level
                     </span>
                     <select
                       value={form.role}
@@ -300,8 +300,8 @@ export function ConceptQuickEdit({
                       className={inputClass}
                     >
                       {curriculumRoles.map((role) => (
-                        <option key={role} value={role}>
-                          {role}
+                        <option key={role.value} value={role.value}>
+                          {role.label}
                         </option>
                       ))}
                     </select>
