@@ -95528,6 +95528,84 @@
         "en:chicken"
       ],
       "curriculumRole": "Unranked"
+    },
+    {
+      "id": "h5sraetm0f",
+      "spanish": "ser y estar",
+      "english": "be",
+      "example": {
+        "spanish": "Soy profesor. Estoy aquí.",
+        "english": "I am a teacher. I am here."
+      },
+      "collections": [
+        "pos:verb",
+        "es:ser",
+        "es:estar",
+        "en:be",
+        "topic:rule",
+        "grammar:rule"
+      ],
+      "curriculumRole": "P1"
+    },
+    {
+      "id": "x21yo1k86v",
+      "spanish": "contracciones",
+      "english": "contractions of be",
+      "example": {
+        "spanish": "Soy yo.",
+        "english": "It's me."
+      },
+      "collections": [
+        "pos:connector",
+        "topic:rule",
+        "grammar:rule"
+      ],
+      "curriculumRole": "P1"
+    },
+    {
+      "id": "bxb7bp9zku",
+      "spanish": "to después de want / need / have / going",
+      "english": "want to, need to, have to, going to",
+      "example": {
+        "spanish": "Quiero hacerlo.",
+        "english": "I want to do it."
+      },
+      "collections": [
+        "pos:verb",
+        "topic:rule",
+        "grammar:rule"
+      ],
+      "curriculumRole": "P1"
+    },
+    {
+      "id": "jgjvsgjoka",
+      "spanish": "verbo sin to después de can",
+      "english": "can + verb (no to)",
+      "example": {
+        "spanish": "Puedo hacerlo.",
+        "english": "I can do it."
+      },
+      "collections": [
+        "pos:verb",
+        "topic:rule",
+        "grammar:rule"
+      ],
+      "curriculumRole": "P1"
+    },
+    {
+      "id": "qy1koesxvg",
+      "spanish": "el pronombre objeto va después del verbo",
+      "english": "object pronoun after the verb",
+      "example": {
+        "spanish": "Lo quiero.",
+        "english": "I want it."
+      },
+      "collections": [
+        "pos:pronoun",
+        "topic:rule",
+        "grammar:rule"
+      ],
+      "curriculumRole": "P1"
     }
   ]
 }

@@ -239,6 +239,7 @@ const EXPECTED_FAMILY_STRUCTURE: Record<string, Array<[string, number]>> = {
   "questions-negation": [["Question & negative patterns", 6]],
   imperatives: [["Command types", 4]],
   collocations: [["Verb groups", 5]],
+  rules: [["Level 1 rules", 1]],
 };
 
 test("family structure matches the reviewed snapshot", () => {

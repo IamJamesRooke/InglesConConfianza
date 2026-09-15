@@ -1,0 +1,8 @@
+# Task 2.3: give the five Level-1 rule rows a home in the new Rules topic
+# (topic:rule + grammar:rule), so the curriculum-reachability tests pass.
+# concept-id	spanish	english	role	extra-collections	reason
+h5sraetm0f	ser y estar	be	P1	topic:rule|grammar:rule	Rule row: tag into the Rules topic so it reaches a group
+x21yo1k86v	contracciones	contractions of be	P1	topic:rule|grammar:rule	Rule row: tag into the Rules topic so it reaches a group
+bxb7bp9zku	to después de want / need / have / going	want to, need to, have to, going to	P1	topic:rule|grammar:rule	Rule row: tag into the Rules topic so it reaches a group
+jgjvsgjoka	verbo sin to después de can	can + verb (no to)	P1	topic:rule|grammar:rule	Rule row: tag into the Rules topic so it reaches a group
+qy1koesxvg	el pronombre objeto va después del verbo	object pronoun after the verb	P1	topic:rule|grammar:rule	Rule row: tag into the Rules topic so it reaches a group

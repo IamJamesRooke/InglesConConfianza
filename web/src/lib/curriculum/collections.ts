@@ -376,7 +376,7 @@ export const KNOWN_GRAMMAR_VALUES: ReadonlySet<string> = new Set([
   "pronoun-between-verb-and-particle", "proximal", "purpose", "quantifier",
   "question", "reason", "reciprocal-pronoun", "referenced-quantity",
   "reflexive", "reflexive-pronoun", "relative-determiner", "relative-pronoun",
-  "resulting-state", "role", "se", "sentence-structure",
+  "resulting-state", "role", "rule", "se", "sentence-structure",
   "sequence", "ser-adjective", "singular", "statement-order",
   "subject-pronoun", "subjunctive", "subordinate-subject-pronoun", "suggestion",
   "superlative", "supposed-to", "tener-adjective", "the-other", "three-jobs-of-have",

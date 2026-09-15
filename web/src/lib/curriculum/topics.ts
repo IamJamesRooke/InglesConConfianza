@@ -25,6 +25,7 @@ import { verbPatternsTopic } from "@/lib/curriculum/topic-definitions/verb-patte
 import { questionsNegationTopic } from "@/lib/curriculum/topic-definitions/questions-negation";
 import { imperativesTopic } from "@/lib/curriculum/topic-definitions/imperatives";
 import { collocationsTopic } from "@/lib/curriculum/topic-definitions/collocations";
+import { rulesTopic } from "@/lib/curriculum/topic-definitions/rules";
 import type { CurriculumTopic } from "@/lib/curriculum/topic-types";
 
 export const CURRICULUM_TOPICS: CurriculumTopic[] = [
@@ -51,6 +52,7 @@ export const CURRICULUM_TOPICS: CurriculumTopic[] = [
   questionsNegationTopic,
   imperativesTopic,
   collocationsTopic,
+  rulesTopic,
 ];
 
 export function findCurriculumTopic(slug: string): CurriculumTopic | undefined {

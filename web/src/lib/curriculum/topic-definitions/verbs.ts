@@ -15,6 +15,7 @@ export const verbsTopic: CurriculumTopic = {
     { collection: "topic:verb-system", unlessRole: [] },
     { collection: "topic:cognate", unlessRole: [] },
     { collection: "topic:phrasal-verb", unlessRole: [] },
+    { collection: "topic:rule", unlessRole: [] },
   ],
   facetButtons: [
     // Communication

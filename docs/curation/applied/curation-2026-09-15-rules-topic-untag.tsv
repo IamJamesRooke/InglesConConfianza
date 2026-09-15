@@ -1,0 +1,9 @@
+# Task 2.3: remove the misleading non-rule topic tags from the five rule rows
+# now that they live in the Rules topic, so they stop polluting those topics'
+# audits (pos:/es:/en: tags are kept).
+# concept-id	collection-name	reason
+h5sraetm0f	topic:verb-system	Rule row now lives in the Rules topic, not verb-system
+x21yo1k86v	topic:question-negation	Rule row now lives in the Rules topic, not question-negation
+bxb7bp9zku	topic:verb-pattern	Rule row now lives in the Rules topic, not verb-pattern
+jgjvsgjoka	topic:verb-pattern	Rule row now lives in the Rules topic, not verb-pattern
+qy1koesxvg	topic:pronoun	Rule row now lives in the Rules topic, not pronoun

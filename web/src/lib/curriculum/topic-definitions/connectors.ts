@@ -6,6 +6,7 @@ export const connectorsTopic: CurriculumTopic = {
   description:
     "The words that join two clauses or ideas together — the everyday set (y, pero, o, porque, si) plus reason, concession, contrast, and addition connectors for building longer sentences.",
   baseCollection: "pos:connector",
+  baseExclusions: [{ collection: "topic:rule", unlessRole: [] }],
   facetButtons: [
     {
       collection: "grammar:sentence-structure",
