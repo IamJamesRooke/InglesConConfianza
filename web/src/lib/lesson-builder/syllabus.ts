@@ -115,8 +115,8 @@ export function buildCourseTimeline(
 
   // deliberate = highest importance any syllabus ever gave the concept:
   // main (3) beats review (2) beats "just covered incidentally" (1, above).
-  for (const module of modules) {
-    const syllabus = syllabusOf(module);
+  for (const courseModule of modules) {
+    const syllabus = syllabusOf(courseModule);
     for (const item of syllabus.main) {
       const entry = entries.get(conceptKey(item));
       if (entry) entry.deliberate = 3;

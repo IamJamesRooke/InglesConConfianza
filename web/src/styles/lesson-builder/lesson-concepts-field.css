@@ -74,6 +74,12 @@
   border-style: dashed;
   color: var(--muted-foreground);
 }
+/* Syllabus panel: the concept is Trash or no longer in the curriculum. */
+.lesson-concept-chip.is-missing {
+  border-color: color-mix(in oklch, var(--destructive) 45%, var(--border));
+  background: color-mix(in oklch, var(--destructive) 12%, var(--card));
+  color: var(--destructive);
+}
 
 /* Item 6: a freehand concept (no conceptId, so not backed by the curriculum
    database) reads as dashed — same visual language as "uncovered" above,

@@ -74,6 +74,7 @@ export function LessonConceptsField({
   coversFor,
   onAdvance,
   pairTerms,
+  missingConceptKeys,
 }: {
   concepts: LessonConcept[];
   onAdd: (concept: LessonConcept) => void;
@@ -83,6 +84,10 @@ export function LessonConceptsField({
   // When given, a chip whose concept key is in this set renders green ("met" —
   // some lesson in the module covers it). Used by the module Key concepts field.
   coveredConceptKeys?: Set<string>;
+  // When given (module Syllabus panel), a chip whose concept key is in this
+  // set renders red — its concept is Trash or no longer in the curriculum.
+  // Takes precedence over `coveredConceptKeys`.
+  missingConceptKeys?: Set<string>;
   variant?: "block" | "inline" | "compact";
   inputRef?: Ref<HTMLInputElement>;
   conceptDisplays?: ConceptDisplayLookup;
@@ -365,12 +370,15 @@ export function LessonConceptsField({
             onRelabel(concept.id, draft.spanish);
           };
           const isCoverageField = Boolean(coveredConceptKeys);
+          const isMissing = missingConceptKeys?.has(conceptKey(concept)) ?? false;
           const roleToken = (display?.role ?? "").replace(/[^A-Za-z0-9]/g, "");
-          const chipTone = isCoverageField
-            ? (met ? "is-covered" : "is-uncovered")
-            : concept.conceptId
-              ? `role-${roleToken || "Unranked"}`
-              : "is-freehand";
+          const chipTone = isMissing
+            ? "is-missing"
+            : isCoverageField
+              ? (met ? "is-covered" : "is-uncovered")
+              : concept.conceptId
+                ? `role-${roleToken || "Unranked"}`
+                : "is-freehand";
           return (
           <span
             key={concept.id}

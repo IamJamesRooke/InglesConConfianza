@@ -17,6 +17,7 @@ import "../styles/lesson-builder/sentence-presentation.css";
 import "../styles/lesson-builder/slide-insert-control.css";
 import "../styles/lesson-builder/lesson-script-view.css";
 import "../styles/lesson-builder/lesson-concepts-field.css";
+import "../styles/lesson-builder/syllabus-panel.css";
 import "../styles/lesson-builder/keyboard-help.css";
 import "../styles/lesson-builder/editing-hud.css";
 import "../styles/lesson-builder/print.css";
