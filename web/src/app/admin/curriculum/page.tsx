@@ -11,7 +11,11 @@ import {
   readCurriculumNavigationCounts,
   readCurriculumPage,
 } from "@/lib/curriculum/server/curriculum-store";
-import { curriculumRoles, type CurriculumRole } from "@/lib/curriculum/types";
+import {
+  curriculumRoles,
+  type CurriculumLevel,
+  type CurriculumRole,
+} from "@/lib/curriculum/types";
 import {
   CURRICULUM_TOPICS,
   findCurriculumTopic,
@@ -62,6 +66,17 @@ export default async function CurriculumPage({ searchParams }: PageProps) {
   )
     ? (requestedRole as CurriculumRole)
     : "all";
+  // "Level ≤ N" ceiling, defaulting to Level 1: default only applies when the
+  // URL carries neither `maxLevel` nor `role`. `maxLevel=0` is the filter's
+  // "all levels" option (a literal "all" would be stripped from the URL by
+  // useCurriculumNavigation, which treats "all" as "clear this param").
+  const requestedMaxLevel = first(parameters.maxLevel);
+  const maxLevel: CurriculumLevel | undefined =
+    requestedMaxLevel && /^[1-5]$/.test(requestedMaxLevel)
+      ? (Number(requestedMaxLevel) as CurriculumLevel)
+      : requestedMaxLevel === undefined && parameters.role === undefined
+        ? 1
+        : undefined;
   const sortParam = first(parameters.sort);
   const sort =
     sortParam === "spanish" ||
@@ -108,6 +123,7 @@ export default async function CurriculumPage({ searchParams }: PageProps) {
       collection,
       role,
       sort,
+      maxLevel,
       requireCollections: requiredCollections,
       anyCollections: familyCollections,
       excludeAnyCollections: outsideFamilies ? allBrowseCollections : [],
@@ -122,6 +138,7 @@ export default async function CurriculumPage({ searchParams }: PageProps) {
           search,
           collection,
           role,
+          maxLevel,
           idFilter,
         })
       : Promise.resolve(new Map<string, Set<string>>()),
@@ -196,6 +213,7 @@ export default async function CurriculumPage({ searchParams }: PageProps) {
             collection: curriculum.collection,
             role: curriculum.role,
             sort: curriculum.sort,
+            maxLevel: curriculum.maxLevel,
           }}
           macrotags={CURRICULUM_TOPICS.map((entry) => ({
             slug: entry.slug,
@@ -225,6 +243,7 @@ export default async function CurriculumPage({ searchParams }: PageProps) {
             unresolvedLegacyFacets.join(","),
             collection,
             role,
+            maxLevel ?? "",
             coverageFilter,
             search,
             sort,

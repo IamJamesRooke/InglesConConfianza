@@ -23,7 +23,6 @@ import { CurriculumConceptDetails } from "@/components/curriculum/curriculum-con
 import {
   curriculumRoles,
   EditableCell,
-  getRoleLabel,
   renderConceptPattern,
   type EditableField,
 } from "@/components/curriculum/curriculum-row-editor";
@@ -32,6 +31,7 @@ import { useCurriculumNavigation } from "@/components/curriculum/use-curriculum-
 import type { CurriculumNavigationFamilyWithCounts } from "@/lib/curriculum/navigation";
 import type {
   CurriculumConcept,
+  CurriculumLevel,
   CurriculumRole,
 } from "@/lib/curriculum/types";
 
@@ -82,6 +82,7 @@ export function CurriculumTable({
       | "english"
       | "english-desc"
       | "role";
+    maxLevel?: CurriculumLevel;
   };
   macrotags?: Macrotag[];
   activeTopic?: { slug: string; title: string; baseCollection: string } | null;
@@ -131,6 +132,36 @@ export function CurriculumTable({
   const selectedCollection = filters.collection || null;
   const selectedRole = filters.role;
   const sort = filters.sort;
+  // The single "Level ≤ N" control folds together the store's independent
+  // `maxLevel` ceiling and `role` exact-match filters: a number sets maxLevel,
+  // "Unranked"/"Trash" sets role, and "all" clears both explicitly (so the
+  // page's own maxLevel=1 default doesn't reassert itself).
+  const levelFilterValue: string =
+    selectedRole === "Unranked" || selectedRole === "Trash"
+      ? selectedRole
+      : filters.maxLevel
+        ? String(filters.maxLevel)
+        : "all";
+  const levelFilterLabel =
+    levelFilterValue === "Unranked" || levelFilterValue === "Trash"
+      ? levelFilterValue
+      : levelFilterValue === "all"
+        ? "All levels"
+        : `Level ≤ ${levelFilterValue}`;
+
+  function handleLevelFilterChange(value: string) {
+    if (value === "Unranked" || value === "Trash") {
+      navigate({ role: value, maxLevel: null });
+    } else if (value === "all") {
+      // `navigate` treats the string "all" as "clear this param" for every
+      // key, so an explicit "every level" choice needs a sentinel ("0", not a
+      // real level) that survives in the URL — otherwise the page's own
+      // maxLevel=1 default would reassert itself once the param is gone.
+      navigate({ role: null, maxLevel: "0" });
+    } else {
+      navigate({ role: null, maxLevel: value });
+    }
+  }
   const detailConcept = concepts.find((concept) => concept.id === detailConceptId);
   const detailConceptIndex = concepts.findIndex(
     (concept) => concept.id === detailConceptId,
@@ -335,6 +366,7 @@ export function CurriculumTable({
       search: null,
       collection: null,
       role: null,
+      maxLevel: "0",
       taught: null,
       ...(legacyFacets.length > 0 ? { facets: null } : {}),
     });
@@ -577,18 +609,20 @@ export function CurriculumTable({
           </button>
         </div>
         <label className="grid gap-1 text-[11px] font-semibold uppercase tracking-wide text-muted-foreground">
-          Role
+          Level ≤
           <select
-            value={selectedRole}
-            onChange={(event) => navigate({ role: event.target.value })}
+            value={levelFilterValue}
+            onChange={(event) => handleLevelFilterChange(event.target.value)}
             className="h-10 min-w-32 rounded-lg border border-input bg-background px-3 text-sm font-medium normal-case tracking-normal text-foreground outline-none focus:border-ring focus:ring-3 focus:ring-ring/20"
           >
-            <option value="all">All roles (includes Trash)</option>
-            {curriculumRoles.map((role) => (
-              <option key={role.value} value={role.value}>
-                {role.label}
-              </option>
-            ))}
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="all">All levels (includes Trash)</option>
+            <option value="Unranked">Unranked only</option>
+            <option value="Trash">Trash only</option>
           </select>
         </label>
         <label className="grid gap-1 text-[11px] font-semibold uppercase tracking-wide text-muted-foreground">
@@ -613,7 +647,7 @@ export function CurriculumTable({
       {(filters.search ||
         legacyFacets.length > 0 ||
         selectedCollection ||
-        selectedRole !== "all" ||
+        levelFilterValue !== "all" ||
         coverageFilter !== "all") && (
         <div className="mb-3 flex flex-wrap items-center gap-2" aria-label="Active filters">
           <span className="inline-flex items-center gap-1 text-xs font-semibold text-muted-foreground">
@@ -672,13 +706,13 @@ export function CurriculumTable({
               <X className="size-3" aria-hidden="true" />
             </button>
           )}
-          {selectedRole !== "all" && (
+          {levelFilterValue !== "all" && (
             <button
               type="button"
-              onClick={() => navigate({ role: null })}
+              onClick={() => handleLevelFilterChange("all")}
               className="inline-flex items-center gap-1 rounded-md border border-border bg-card px-2.5 py-1 text-xs font-medium"
             >
-              Role: {getRoleLabel(selectedRole)}
+              {levelFilterLabel}
               <X className="size-3" aria-hidden="true" />
             </button>
           )}

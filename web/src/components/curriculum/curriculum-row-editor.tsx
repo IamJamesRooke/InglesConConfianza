@@ -26,27 +26,27 @@ export const curriculumRoles: Array<{
 }> = [
   {
     value: "P1",
-    label: "P1",
+    label: "Level 1",
     description: "Highest leverage — teach first",
   },
   {
     value: "P2",
-    label: "P2",
+    label: "Level 2",
     description: "High priority",
   },
   {
     value: "P3",
-    label: "P3",
+    label: "Level 3",
     description: "Mid priority",
   },
   {
     value: "P4",
-    label: "P4",
+    label: "Level 4",
     description: "Lower priority — later in the course",
   },
   {
     value: "P5",
-    label: "P5",
+    label: "Level 5",
     description: "Lowest — niche / completeness only",
   },
   {
