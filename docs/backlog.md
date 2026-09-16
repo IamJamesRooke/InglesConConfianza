@@ -106,3 +106,5 @@ This scaffold is demo content, not a claim that Module 1 has passed learner vali
 ## Curriculum gaps noticed while authoring (batch into one curation pass)
 
 - 2026-09-15 — no bare concept for **con / with** (only phrasal entries: "trabajar con [alguien]", "traer [algo] consigo"…). Owner hit it tagging "I want to do something with you."
+- 2026-09-16 — no double object pronoun rows (**me lo / te lo / se lo / nos lo → it to me / you / him / us**). Owner hit it authoring Confianza I. Routed to the infinitive-normalization curation session.
+- 2026-09-16 — conjugated rows surface instead of infinitives (`estoy [haciendo algo]`); the infinitive normalization pass (`docs/curation/infinitive-normalization-kickoff-prompt.md`) is running.
