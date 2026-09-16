@@ -12,7 +12,7 @@ export type ByLevelConcept = {
   spanish: string;
   english: string;
   curriculumRole: string;
-  pos: string | null;
+  collections: string[] | null;
 };
 
 function claimedConceptIds(modules: readonly LessonModule[]): Set<string> {
@@ -42,5 +42,5 @@ export function unclaimedConceptsForLevel(
 ): SyllabusGroupOf<ByLevelConcept>[] {
   const claimed = claimedConceptIds(modules);
   const unclaimed = rows.filter((row) => !claimed.has(row.id));
-  return groupSyllabusItems(unclaimed, (row) => row.pos);
+  return groupSyllabusItems(unclaimed, (row) => row.collections);
 }

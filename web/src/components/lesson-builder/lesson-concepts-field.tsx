@@ -168,8 +168,8 @@ export function LessonConceptsField({
               english: draft.english,
               role: draft.role,
               // The quick-edit dialog never touches collections — keep the
-              // known part of speech so the syllabus card can still group it.
-              pos: display?.pos,
+              // known ones so the syllabus card can still group this pill.
+              collections: display?.collections,
             };
             recordDisplay(concept.conceptId, nextDisplay);
             onRelabel(concept.id, draft.spanish);

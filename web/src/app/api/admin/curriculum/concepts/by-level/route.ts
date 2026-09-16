@@ -10,9 +10,9 @@ export const dynamic = "force-dynamic";
 // hands the builder every concept at one level so it can offer the ones no
 // module has claimed yet (course-wide — exclusion of already-claimed ids
 // happens client-side in syllabus-fill.ts, since the caller already has every
-// module in hand). Same shape and `pos` subquery as the search route, minus
-// the text-query filter: ordered by sort_order, capped at 500 (Level 1 is
-// ~100 rows in practice).
+// module in hand). Same shape and `collections` subquery as the search
+// route, minus the text-query filter: ordered by sort_order, capped at 500
+// (Level 1 is ~100 rows in practice).
 const SELECTABLE_ROLES = new Set<string>(
   curriculumRoles.filter((role) => role.startsWith("P")),
 );
@@ -22,7 +22,7 @@ type Row = {
   spanish: string;
   english: string;
   curriculumRole: string;
-  pos: string | null;
+  collections: string[] | null;
 };
 
 export async function GET(request: Request) {
@@ -37,12 +37,13 @@ export async function GET(request: Request) {
 
   const concepts = await prisma.$queryRaw<Row[]>`
     SELECT id, spanish, english, curriculum_role AS "curriculumRole",
-      (SELECT substring(cc.collection_name from 5)
+      (SELECT array_agg(cc.collection_name ORDER BY cc.position ASC)
          FROM concept_collections cc
         WHERE cc.concept_id = curriculum_concepts.id
-          AND cc.collection_name LIKE 'pos:%'
-        ORDER BY cc.position ASC
-        LIMIT 1) AS "pos"
+          AND (cc.collection_name LIKE 'pos:%'
+            OR cc.collection_name LIKE 'grammar:%'
+            OR cc.collection_name LIKE 'construction:%')
+      ) AS "collections"
     FROM curriculum_concepts
     WHERE curriculum_role = ${role as CurriculumRole}
     ORDER BY sort_order ASC

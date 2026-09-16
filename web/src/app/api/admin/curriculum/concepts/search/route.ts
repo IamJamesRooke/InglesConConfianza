@@ -37,12 +37,12 @@ type Row = {
   curriculumRole: string;
   exampleSpanish: string;
   exampleEnglish: string;
-  // Bare part-of-speech token from the concept's first `pos:*` collection
+  // The concept's `pos:*`/`grammar:*`/`construction:*` collection names
   // (null when it has none): the lesson builder's syllabus card groups its
-  // pills by it, and a pill added from this typeahead must be groupable
-  // immediately, without a page reload (concept-typeahead.tsx records it
-  // into the display lookup alongside spanish/english/role).
-  pos: string | null;
+  // pills by the full set, and a pill added from this typeahead must be
+  // groupable immediately, without a page reload (concept-typeahead.tsx
+  // records it into the display lookup alongside spanish/english/role).
+  collections: string[] | null;
 };
 
 export async function GET(request: Request) {
@@ -63,12 +63,13 @@ export async function GET(request: Request) {
   const candidates = await prisma.$queryRaw<Row[]>`
     SELECT id, spanish, english, curriculum_role AS "curriculumRole",
       example_spanish AS "exampleSpanish", example_english AS "exampleEnglish",
-      (SELECT substring(cc.collection_name from 5)
+      (SELECT array_agg(cc.collection_name ORDER BY cc.position ASC)
          FROM concept_collections cc
         WHERE cc.concept_id = curriculum_concepts.id
-          AND cc.collection_name LIKE 'pos:%'
-        ORDER BY cc.position ASC
-        LIMIT 1) AS "pos"
+          AND (cc.collection_name LIKE 'pos:%'
+            OR cc.collection_name LIKE 'grammar:%'
+            OR cc.collection_name LIKE 'construction:%')
+      ) AS "collections"
     FROM curriculum_concepts
     WHERE curriculum_role <> 'Trash'
       AND (

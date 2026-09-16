@@ -384,7 +384,7 @@ export function SyllabusPanel({
         spanish: row.spanish,
         english: row.english,
         role: row.curriculumRole,
-        pos: row.pos ?? undefined,
+        collections: row.collections ?? undefined,
       });
     });
     patchSyllabus({ ...syllabus, main: [...syllabus.main, ...newItems] });
@@ -424,8 +424,8 @@ export function SyllabusPanel({
                 english: draft.english,
                 role: draft.role,
                 // The quick-edit dialog doesn't touch collections; keeping
-                // the known `pos` stops the pill jumping to "Untagged".
-                pos: conceptDisplays[item.conceptId]?.pos,
+                // the known ones stops the pill jumping to "Untagged".
+                collections: conceptDisplays[item.conceptId]?.collections,
               });
               relabelItem(item.id, draft.spanish);
             }}
@@ -520,7 +520,7 @@ export function SyllabusPanel({
     // list itself is still one flat array, and every row is the same drop
     // target, so a pill dragged across a group boundary lands at the flat
     // index of whatever pill it was dropped on.
-    const groups = groupSyllabusItems(items, (item) => displayOf(item)?.pos);
+    const groups = groupSyllabusItems(items, (item) => displayOf(item)?.collections);
     const dropProps = {
       onDragOver: (event: DragEvent<HTMLElement>) => {
         if (drag.dragged) event.preventDefault();

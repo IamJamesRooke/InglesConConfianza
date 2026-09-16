@@ -12,11 +12,13 @@ import { expect, test } from "./fixtures";
 // Untagged, and "Copy as text" carries the same headings.
 
 const GROUP_ORDER = [
-  "Pronouns",
+  "People",
   "Verbs",
+  "Sentence patterns",
   "Connectors",
-  "Prepositions, time and place",
-  "Words",
+  "Prepositions and phrases",
+  "Time and place",
+  "Things and describing words",
   "Untagged",
 ];
 
@@ -105,7 +107,7 @@ test("Copy as text carries the group headings", async ({ page, context }) => {
   test.setTimeout(120_000);
   await context.grantPermissions(["clipboard-read", "clipboard-write"]);
   const card = await openSyllabus(page);
-  for (const term of ["estar", "conmigo"]) {
+  for (const term of ["estar", "yo"]) {
     await addConcept(page, card, term);
   }
 
@@ -113,9 +115,12 @@ test("Copy as text carries the group headings", async ({ page, context }) => {
   await expect(card.getByRole("button", { name: "Copied!" })).toBeVisible();
   const text = await page.evaluate(() => navigator.clipboard.readText());
   expect(text).toContain("Main teaching points (in order):");
-  expect(text).toMatch(/^(Pronouns|Verbs|Connectors|Prepositions, time and place|Words|Untagged):$/m);
-  // Pronouns before Verbs, as on the card, whatever the flat order.
-  expect(text.indexOf("Pronouns:")).toBeLessThan(text.indexOf("Verbs:"));
+  expect(text).toMatch(
+    /^(People|Verbs|Sentence patterns|Connectors|Prepositions and phrases|Time and place|Things and describing words|Untagged):$/m,
+  );
+  // People before Verbs, as on the card, whatever the flat order ("estar"
+  // was added first).
+  expect(text.indexOf("People:")).toBeLessThan(text.indexOf("Verbs:"));
   // And the level in words, next to the entry.
   expect(text).toMatch(/\[(Level [1-5]|Unranked|not in the curriculum)\]/);
 });
@@ -144,15 +149,18 @@ test("Ctrl+Alt+Arrow still moves a grouped pill between the lists", async ({ pag
 
 // Regression: a concept already sitting in the syllabus at page load must
 // group the same as one added during the session. The load path
-// (route.ts -> readConceptDisplays -> setConceptDisplays) once dropped
-// `pos`, so every pre-existing pill fell into Untagged no matter its
-// curriculum collections — only typeahead-added pills grouped correctly.
-test("a concept already in the syllabus at load groups by its curriculum pos, not Untagged", async ({
+// (route.ts -> readConceptDisplays -> setConceptDisplays) once dropped the
+// collections field, so every pre-existing pill fell into Untagged no
+// matter its curriculum collections — only typeahead-added pills grouped
+// correctly.
+test("a concept already in the syllabus at load groups by its curriculum facet, not Untagged", async ({
   page,
 }) => {
   test.setTimeout(60_000);
-  // "yo" (concept o25n43wg3o) carries a `pos:pronoun` collection in the
-  // curriculum database — verified read-only via psql before writing this.
+  // "yo" (concept o25n43wg3o) carries a `pos:pronoun` collection, and no
+  // other pos:/grammar:/construction: facet, in the curriculum database —
+  // verified read-only via psql before writing this. That makes it "People",
+  // not one of the narrower facet-specific groups.
   await writeFile(
     uxCheckLessonsPath,
     JSON.stringify({
@@ -173,10 +181,10 @@ test("a concept already in the syllabus at load groups by its curriculum pos, no
   );
 
   const card = await openSyllabus(page);
-  const pronouns = card
+  const people = card
     .locator(".syllabus-pos-group")
-    .filter({ has: page.locator(".syllabus-pos-eyebrow", { hasText: "Pronouns" }) });
-  await expect(pronouns.locator(".syllabus-chip")).toContainText("yo");
+    .filter({ has: page.locator(".syllabus-pos-eyebrow", { hasText: "People" }) });
+  await expect(people.locator(".syllabus-chip")).toContainText("yo");
   const untagged = card
     .locator(".syllabus-pos-group")
     .filter({ has: page.locator(".syllabus-pos-eyebrow", { hasText: "Untagged" }) });

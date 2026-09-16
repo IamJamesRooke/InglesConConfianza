@@ -348,7 +348,7 @@ function pushGrouped(
   format: (item: SyllabusItem, index: number) => string,
 ): void {
   const groups = groupSyllabusItems(items, (item) =>
-    item.conceptId ? conceptDisplays[item.conceptId]?.pos : undefined,
+    item.conceptId ? conceptDisplays[item.conceptId]?.collections : undefined,
   );
   groups.forEach((group, position) => {
     if (position > 0) lines.push("");

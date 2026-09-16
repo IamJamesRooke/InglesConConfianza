@@ -51,6 +51,33 @@ this module) has it in Covers.
 Learner-facing copy comes from these: "What you will learn" = main + also taught;
 "You'll also practise" = reviewed.
 
+## Grouping (display only)
+
+The syllabus card's Main/Review pills, and the "Add from Level…" picker, are sub-grouped
+under quiet headings so thirty-odd pills read as something other than soup
+(`web/src/lib/lesson-builder/syllabus-groups.ts`). This never touches stored data — the
+flat `syllabus.main`/`.review` arrays are the only thing on disk; grouping is recomputed
+at render time from each concept's curriculum collections.
+
+Fixed render order, one group per concept (first match wins under the **evaluation**
+order below, which differs from render order — see the file's header comment):
+
+1. **People** — `pos:pronoun` not otherwise claimed below (plain subject/object pronouns,
+   `grammar:object-pronoun` combos like "me lo").
+2. **Verbs** — `pos:verb`.
+3. **Sentence patterns** — `construction:object-control` or `grammar:subjunctive`
+   ("que yo [haga algo]").
+4. **Connectors** — `pos:connector`.
+5. **Prepositions and phrases** — `pos:preposition` or `grammar:prepositional-pronoun`
+   ("para mí", "conmigo").
+6. **Time and place** — `pos:adverb`.
+7. **Things and describing words** — `grammar:indefinite-pronoun` ("algo") or
+   `pos:` noun/adjective/determiner/number/quantifier/interjection.
+8. **Untagged** — no recognised collection, or a freehand pill with no curriculum row.
+
+Groups 3, 5 and 7 are evaluated before group 1, since several of their rows also carry
+`pos:pronoun` and would otherwise be misread as plain People.
+
 ## Derivations (one pure module, `web/src/lib/lesson-builder/syllabus.ts`)
 
 Inputs: `modules` (ordered), `lessons` (ordered per `lessonIds`), a concept lookup.

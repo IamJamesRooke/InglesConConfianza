@@ -5,7 +5,7 @@ import { unclaimedConceptsForLevel, type ByLevelConcept } from "../../src/lib/le
 import type { LessonModule } from "../../src/lib/lesson-builder/types";
 
 function row(id: string, pos: string | null): ByLevelConcept {
-  return { id, spanish: id, english: id, curriculumRole: "P1", pos };
+  return { id, spanish: id, english: id, curriculumRole: "P1", collections: pos ? [`pos:${pos}`] : null };
 }
 
 function moduleWith(main: string[], review: string[]): LessonModule {
@@ -25,7 +25,7 @@ test("excludes ids already in any module's Main list", () => {
   const modules = [moduleWith(["querer"], [])];
   const groups = unclaimedConceptsForLevel(rows, modules);
   const ids = groups.flatMap((g) => g.entries.map((e) => e.item.id));
-  // Fixed group order (Pronouns before Verbs) wins over source-row order.
+  // Fixed group order (People before Verbs) wins over source-row order.
   assert.deepEqual(ids, ["yo", "saber"]);
 });
 
@@ -70,7 +70,7 @@ test("groups via syllabus-groups, fixed order, untagged last", () => {
   const groups = unclaimedConceptsForLevel(rows, []);
   assert.deepEqual(
     groups.map((g) => g.label),
-    ["Pronouns", "Verbs", "Words", "Untagged"],
+    ["People", "Verbs", "Things and describing words", "Untagged"],
   );
 });
 
