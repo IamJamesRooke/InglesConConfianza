@@ -1,10 +1,8 @@
 "use client";
 
-import { Plus, Snowflake, X } from "lucide-react";
+import { X } from "lucide-react";
 import {
   useEffect,
-  useId,
-  useLayoutEffect,
   useRef,
   useState,
   type FocusEvent,
@@ -13,55 +11,21 @@ import {
 
 import { ConceptQuickEdit, type ConceptDraft } from "@/components/lesson-builder/concept-quick-edit";
 import { curriculumRoles } from "@/components/curriculum/curriculum-row-editor";
+import {
+  PairSuggestionChips,
+  ReviewSuggestions,
+  usePairSuggestions,
+} from "@/components/lesson-builder/concept-suggestion-chips";
+import { ConceptTypeahead } from "@/components/lesson-builder/concept-typeahead";
+import { CoversSummary } from "@/components/lesson-builder/covers-summary";
 import { conceptKey } from "@/lib/lesson-builder/lesson-file";
 import type { SyllabusMarkers } from "@/lib/lesson-builder/builder-context";
-import {
-  conceptPriority,
-  type LessonConceptSuggestion,
-  type PairConceptMatch,
-} from "@/lib/lesson-builder/concept-suggestions";
+import type { LessonConceptSuggestion } from "@/lib/lesson-builder/concept-suggestions";
 import type {
   ConceptDisplayLookup,
   LessonConcept,
 } from "@/lib/lesson-builder/types";
 import { createId } from "@/lib/lesson-builder/utils";
-
-type ConceptResult = {
-  id: string;
-  spanish: string;
-  english: string;
-  curriculumRole: string;
-};
-
-// Dismissed auto-Covers suggestions, per lesson, for this tab's session only
-// — never written into the lesson data. Keyed by lesson id (`coversFor`).
-function dismissedKey(lessonId: string) {
-  return `lesson-builder:covers-dismissed:${lessonId}`;
-}
-
-function readDismissed(lessonId: string): Set<string> {
-  try {
-    const raw = window.sessionStorage.getItem(dismissedKey(lessonId));
-    if (!raw) return new Set();
-    const ids = JSON.parse(raw) as unknown;
-    return Array.isArray(ids) ? new Set(ids.filter((id) => typeof id === "string")) : new Set();
-  } catch {
-    return new Set();
-  }
-}
-
-function addDismissed(lessonId: string, conceptId: string) {
-  try {
-    const current = readDismissed(lessonId);
-    current.add(conceptId);
-    window.sessionStorage.setItem(dismissedKey(lessonId), JSON.stringify([...current]));
-  } catch {
-    /* storage unavailable (private mode, quota) — dismissal just won't stick */
-  }
-}
-
-const PAIR_SUGGESTION_DEBOUNCE_MS = 800;
-const MAX_PAIR_SUGGESTIONS = 8;
 
 // Same "Level N / Unranked / Trash" wording the curriculum page and the
 // quick-edit dialog use — never a raw "P1" role code in front of a teacher.
@@ -135,31 +99,10 @@ export function LessonConceptsField({
   // below are skipped (pair suggestions and the input still render).
   hideChips?: boolean;
 }) {
-  const [query, setQuery] = useState("");
-  const [results, setResults] = useState<ConceptResult[]>([]);
-  const [highlight, setHighlight] = useState(0);
-  const [open, setOpen] = useState(false);
   const [localDisplays, setLocalDisplays] = useState<ConceptDisplayLookup>({});
-  const [searchState, setSearchState] = useState<"idle" | "loading" | "error">(
-    "idle",
-  );
-  const listboxId = useId();
-  const blurTimer = useRef<number | undefined>(undefined);
-  const fieldWrapRef = useRef<HTMLDivElement | null>(null);
-  const popoverRef = useRef<HTMLUListElement | null>(null);
-  const [dropUp, setDropUp] = useState(false);
-  const [pairMatches, setPairMatches] = useState<PairConceptMatch[]>([]);
-  const [dismissed, setDismissed] = useState<Set<string>>(() =>
-    coversFor ? readDismissed(coversFor) : new Set(),
-  );
-  // Re-derive `dismissed` when the lesson changes, during render rather than
-  // an effect (avoids a synchronous setState-in-effect while still resetting
-  // before paint) — see https://react.dev/learn/you-might-not-need-an-effect.
-  const [dismissedFor, setDismissedFor] = useState(coversFor);
-  if (dismissedFor !== coversFor) {
-    setDismissedFor(coversFor);
-    setDismissed(coversFor ? readDismissed(coversFor) : new Set());
-  }
+  // Mirrors the typeahead's popover open state so the auto-Covers pair
+  // suggestions can refetch "once on open" (see usePairSuggestions below).
+  const [typeaheadOpen, setTypeaheadOpen] = useState(false);
 
   // Covers as one quiet line (§5): the lesson's own "Covers" field (compact
   // variant + coversFor) collapses to a summary line at rest — the full
@@ -186,139 +129,24 @@ export function LessonConceptsField({
     coversWrapRef.current?.querySelector<HTMLInputElement>("input[data-covers-for]")?.focus();
   }, [collapsible, expanded]);
 
-  // Recompute auto-Covers suggestions 800ms after the lesson's pairs change,
-  // and once on open (a teacher who opens straight into an already-filled
-  // lesson still gets suggestions without needing to edit a pair first).
-  const pairTermsKey = pairTerms?.join("") ?? "";
-  useEffect(() => {
-    if (!coversFor || !pairTerms || pairTerms.length === 0) {
-      const timer = window.setTimeout(() => setPairMatches([]), 0);
-      return () => window.clearTimeout(timer);
-    }
-    const controller = new AbortController();
-    const timer = window.setTimeout(async () => {
-      try {
-        const response = await fetch("/api/admin/curriculum/concepts/suggest", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ terms: pairTerms }),
-          signal: controller.signal,
-        });
-        if (!response.ok) return;
-        const data = (await response.json()) as { suggestions: PairConceptMatch[] };
-        setPairMatches(data.suggestions);
-      } catch {
-        // aborted or offline — leave the previous suggestions in place
-      }
-    }, PAIR_SUGGESTION_DEBOUNCE_MS);
-    return () => {
-      controller.abort();
-      window.clearTimeout(timer);
-    };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [coversFor, pairTermsKey, open]);
-
-  useEffect(() => {
-    const trimmed = query.trim();
-    const controller = new AbortController();
-    const timer = window.setTimeout(async () => {
-      if (trimmed.length < 2) {
-        setResults([]);
-        setSearchState("idle");
-        return;
-      }
-      setSearchState("loading");
-      try {
-        const response = await fetch(
-          `/api/admin/curriculum/concepts/search?q=${encodeURIComponent(trimmed)}`,
-          { signal: controller.signal },
-        );
-        if (!response.ok) {
-          setSearchState("error");
-          return;
-        }
-        const data = (await response.json()) as { concepts: ConceptResult[] };
-        setResults(data.concepts);
-        setHighlight(0);
-        setSearchState("idle");
-      } catch {
-        // aborted or offline — leave the previous results in place
-        if (!controller.signal.aborted) {
-          setSearchState("error");
-        }
-      }
-    }, 180);
-
-    return () => {
-      controller.abort();
-      window.clearTimeout(timer);
-    };
-  }, [query]);
-
-  useEffect(
-    () => () => window.clearTimeout(blurTimer.current),
-    [],
-  );
+  function recordDisplay(conceptId: string, display: ConceptDisplayLookup[string]) {
+    setLocalDisplays((current) => ({ ...current, [conceptId]: display }));
+    onDisplayChange?.(conceptId, display);
+  }
 
   const alreadyAdded = new Set(
     concepts.map((concept) => concept.conceptId).filter(Boolean),
   );
-  const visibleResults = results.filter(
-    (result) => !alreadyAdded.has(result.id),
-  );
-  const showPopover = open && visibleResults.length > 0;
-  const showEmptyState = open && query.trim().length >= 2 && visibleResults.length === 0;
 
-  // Flip the popover above the input when there isn't room below in the
-  // viewport (e.g. the Covers field sitting near the bottom of the window).
-  useLayoutEffect(() => {
-    if (!showPopover && !showEmptyState) return;
-    const wrap = fieldWrapRef.current;
-    if (!wrap) return;
-    const rect = wrap.getBoundingClientRect();
-    const spaceBelow = window.innerHeight - rect.bottom;
-    const estimatedHeight = popoverRef.current?.offsetHeight ?? 288;
-    setDropUp(spaceBelow < estimatedHeight && rect.top > spaceBelow);
-  }, [showPopover, showEmptyState, visibleResults.length]);
-
-  // Keep the active option visible as ArrowUp/ArrowDown moves it past the
-  // popover's own scroll viewport (max-height + overflow-y: auto) — without
-  // this, repeated ArrowDown walks the highlight below the visible list.
-  useEffect(() => {
-    if (!showPopover) return;
-    const active = popoverRef.current?.querySelector('[aria-selected="true"]');
-    active?.scrollIntoView({ block: "nearest" });
-  }, [showPopover, highlight]);
-
-  function addFromResult(result: ConceptResult) {
-    const display = {
-      spanish: result.spanish,
-      english: result.english,
-      role: result.curriculumRole,
-    };
-    setLocalDisplays((current) => ({
-      ...current,
-      [result.id]: display,
-    }));
-    onDisplayChange?.(result.id, display);
-    onAdd({
-      id: createId("lesson_concept"),
-      conceptId: result.id,
-      label: result.spanish,
+  const { pairSuggestions, acceptPairMatch, dismissPairMatch, acceptAllPairSuggestions } =
+    usePairSuggestions({
+      coversFor,
+      pairTerms,
+      alreadyAdded,
+      open: typeaheadOpen,
+      onAdd,
+      recordDisplay,
     });
-    setQuery("");
-    setResults([]);
-    setOpen(false);
-  }
-
-  function addFreehand() {
-    const label = query.trim();
-    if (!label) return;
-    onAdd({ id: createId("lesson_concept"), conceptId: null, label });
-    setQuery("");
-    setResults([]);
-    setOpen(false);
-  }
 
   function addSuggestion(suggestion: LessonConceptSuggestion) {
     onAdd({
@@ -326,52 +154,6 @@ export function LessonConceptsField({
       conceptId: suggestion.conceptId,
       label: suggestion.spanish,
     });
-  }
-
-  function acceptPairMatch(match: PairConceptMatch) {
-    const display = {
-      spanish: match.concept.spanish,
-      english: match.concept.english,
-      role: match.concept.role,
-    };
-    setLocalDisplays((current) => ({ ...current, [match.concept.id]: display }));
-    onDisplayChange?.(match.concept.id, display);
-    onAdd({
-      id: createId("lesson_concept"),
-      conceptId: match.concept.id,
-      label: match.concept.spanish,
-    });
-  }
-
-  function dismissPairMatch(conceptId: string) {
-    if (!coversFor) return;
-    addDismissed(coversFor, conceptId);
-    setDismissed((current) => new Set(current).add(conceptId));
-  }
-
-  // Dedupe by concept (several terms can name the same concept), drop
-  // already-tagged or dismissed-this-session concepts, then order by
-  // curriculum priority and, as a tiebreak, which term named it first.
-  const pairSuggestions = (() => {
-    const byId = new Map<string, PairConceptMatch>();
-    pairMatches.forEach((match) => {
-      if (!byId.has(match.concept.id)) byId.set(match.concept.id, match);
-    });
-    return [...byId.values()]
-      .filter(
-        (match) => !alreadyAdded.has(match.concept.id) && !dismissed.has(match.concept.id),
-      )
-      .sort((left, right) => {
-        const priorityDiff =
-          conceptPriority(left.concept.role).rank - conceptPriority(right.concept.role).rank;
-        if (priorityDiff !== 0) return priorityDiff;
-        return pairMatches.indexOf(left) - pairMatches.indexOf(right);
-      })
-      .slice(0, MAX_PAIR_SUGGESTIONS);
-  })();
-
-  function acceptAllPairSuggestions() {
-    pairSuggestions.forEach(acceptPairMatch);
   }
 
   // Priority dots (§5): only shown when the lesson's own concepts don't all
@@ -392,27 +174,9 @@ export function LessonConceptsField({
         : undefined;
       return display?.english ?? concept.label;
     });
-    const shown = terms.slice(0, 3);
-    const extra = terms.length - shown.length;
     return (
       <div ref={coversWrapRef} onBlur={collapseIfFocusLeft}>
-        <button
-          type="button"
-          data-covers-summary
-          className="lesson-covers-summary"
-          onClick={openCovers}
-          onFocus={openCovers}
-          aria-label="Covers — click or press Enter to edit"
-        >
-          <span className="lesson-covers-summary-label">Covers</span>
-          {shown.map((term, index) => (
-            <span key={index} className="lesson-covers-summary-term">
-              {" "}
-              · {term}
-            </span>
-          ))}
-          {extra > 0 && <span className="lesson-covers-summary-more"> · +{extra}</span>}
-        </button>
+        <CoversSummary terms={terms} onOpen={openCovers} />
       </div>
     );
   }
@@ -427,37 +191,7 @@ export function LessonConceptsField({
           : "border-b border-border bg-card px-6 py-3"
       }
     >
-      {suggestions.length > 0 && (
-        <div className="mb-3">
-          <div className="mb-1.5 flex items-center gap-1.5 text-[11px] font-semibold uppercase tracking-[0.12em] text-muted-foreground">
-            <Snowflake className="size-3.5" aria-hidden="true" />
-            Suggested review
-          </div>
-          <div className="flex flex-wrap gap-2">
-            {suggestions.map((suggestion) => (
-              <button
-                key={suggestion.conceptId}
-                type="button"
-                className="concept-suggestion"
-                data-priority={suggestion.priorityBand}
-                onClick={() => addSuggestion(suggestion)}
-                title={`Last covered ${suggestion.lessonGap} ${suggestion.lessonGap === 1 ? "lesson" : "lessons"} ago`}
-              >
-                <span className="grid min-w-0 text-left leading-tight">
-                  <strong>{suggestion.english}</strong>
-                  <span>{suggestion.spanish}</span>
-                </span>
-                <span className="concept-suggestion-meta">
-                  <span>{suggestion.role ?? "unranked"}</span>
-                  <span aria-hidden="true">·</span>
-                  <span>{suggestion.lessonGap} back</span>
-                </span>
-                <Plus className="size-3.5" aria-hidden="true" />
-              </button>
-            ))}
-          </div>
-        </div>
-      )}
+      <ReviewSuggestions suggestions={suggestions} onAdd={addSuggestion} />
       <div
         className={variant === "compact" ? "lesson-concepts-row" : "flex flex-wrap items-center gap-1.5"}
         data-roles-uniform={rolesUniform ? "true" : undefined}
@@ -475,8 +209,7 @@ export function LessonConceptsField({
           const applySaved = (draft: ConceptDraft) => {
             if (!concept.conceptId) return;
             const nextDisplay = { spanish: draft.spanish, english: draft.english, role: draft.role };
-            setLocalDisplays((current) => ({ ...current, [concept.conceptId!]: nextDisplay }));
-            onDisplayChange?.(concept.conceptId, nextDisplay);
+            recordDisplay(concept.conceptId, nextDisplay);
             onRelabel(concept.id, draft.spanish);
           };
           const isCoverageField = Boolean(coveredConceptKeys);
@@ -557,230 +290,26 @@ export function LessonConceptsField({
           </span>
           );
         })}
-        {pairSuggestions.map((match) => (
-          <span
-            key={match.concept.id}
-            role="button"
-            tabIndex={0}
-            className={
-              variant === "compact"
-                ? "lesson-concept-chip is-pair-suggestion"
-                : "group inline-flex items-center gap-2 rounded-xl border border-dashed px-3 py-1.5 text-xs text-muted-foreground"
-            }
-            title={`Named by this lesson's pairs — ${match.term}`}
-            onClick={() => acceptPairMatch(match)}
-            onKeyDown={(event) => {
-              if (event.key === "Enter") {
-                event.preventDefault();
-                acceptPairMatch(match);
-              } else if (event.key === "Backspace") {
-                event.preventDefault();
-                dismissPairMatch(match.concept.id);
-              }
-            }}
-          >
-            <Plus className="size-3" aria-hidden="true" />
-            <span className={variant === "compact" ? "lesson-concept-label" : "grid text-left leading-tight"}>
-              {match.concept.english}
-            </span>
-            <button
-              type="button"
-              tabIndex={-1}
-              onClick={(event) => {
-                event.stopPropagation();
-                dismissPairMatch(match.concept.id);
-              }}
-              aria-label={`Dismiss suggestion ${match.concept.english}`}
-              className={variant === "compact" ? "lesson-concept-remove" : "text-current/60 transition hover:text-[var(--destructive)]"}
-            >
-              <X className="size-3" aria-hidden="true" />
-            </button>
-          </span>
-        ))}
-        <div
-          ref={fieldWrapRef}
-          className={`${variant === "compact" ? "relative min-w-28 max-w-56" : "relative min-w-40 flex-1"}`}
-        >
-          <input
-            ref={inputRef}
-            data-covers-for={coversFor}
-            data-keymap-ignore
-            type="text"
-            value={query}
-            role="combobox"
-            aria-expanded={showPopover}
-            aria-controls={listboxId}
-            aria-autocomplete="list"
-            aria-activedescendant={
-              showPopover ? `${listboxId}-option-${highlight}` : undefined
-            }
-            placeholder={
-              concepts.length === 0
-                ? variant === "compact" ? "Add concept…" : "Type a concept, e.g. querer, poder, hablar…"
-                : variant === "compact" ? "+ concept" : "Add another…"
-            }
-            onFocus={() => setOpen(true)}
-            onBlur={() => {
-              blurTimer.current = window.setTimeout(() => setOpen(false), 120);
-            }}
-            onChange={(event) => {
-              setQuery(event.target.value);
-              setOpen(true);
-            }}
-            onKeyDown={(event) => {
-              if (event.key === "Enter" && event.ctrlKey && pairSuggestions.length > 0) {
-                event.preventDefault();
-                acceptAllPairSuggestions();
-                return;
-              }
-              if (
-                event.key === "Backspace" &&
-                query === "" &&
-                concepts.length > 0
-              ) {
-                onRemove(concepts[concepts.length - 1].id);
-                return;
-              }
-              if (event.key === "Escape") {
-                setOpen(false);
-                return;
-              }
-              if (event.key === "ArrowDown") {
-                event.preventDefault();
-                setOpen(true);
-                setHighlight((current) =>
-                  Math.min(current + 1, visibleResults.length - 1),
-                );
-                return;
-              }
-              if (event.key === "ArrowUp") {
-                event.preventDefault();
-                setHighlight((current) => Math.max(current - 1, 0));
-                return;
-              }
-              if (event.key === "Enter" && !event.nativeEvent.isComposing) {
-                event.preventDefault();
-                const chosen = open ? visibleResults[highlight] : undefined;
-                if (chosen) {
-                  addFromResult(chosen);
-                } else if (query.trim()) {
-                  addFreehand();
-                } else {
-                  onAdvance?.();
-                }
-              }
-            }}
-            className={variant === "compact"
-              ? "lesson-concept-add"
-              : "w-full rounded-md border border-input bg-card px-2.5 py-1.5 text-sm text-foreground outline-none transition placeholder:text-muted-foreground focus:border-ring focus:ring-3 focus:ring-ring/30"}
-          />
-          {showPopover && (
-            <ul
-              ref={popoverRef}
-              id={listboxId}
-              role="listbox"
-              data-keymap-ignore
-              className={`concept-typeahead-popover${dropUp ? " is-flipped" : ""}`}
-            >
-              {visibleResults.map((result, index) => {
-                const roleToken = result.curriculumRole.replace(/[^A-Za-z0-9]/g, "");
-                const matchIndex = result.english
-                  .toLowerCase()
-                  .indexOf(query.trim().toLowerCase());
-                const hasMatch = query.trim().length > 0 && matchIndex !== -1;
-                const inSyllabus = syllabusMarkers?.inSyllabusUncovered.has(result.id) ?? false;
-                const notIntroducedYet = syllabusMarkers
-                  ? !syllabusMarkers.known.has(result.id) && !syllabusMarkers.mainOfModule.has(result.id)
-                  : false;
-                return (
-                  // A plain div, not a button: keyboard selection is driven entirely
-                  // by the input's arrow keys / Enter (see onKeyDown below), and
-                  // onMouseDown already blocks these from taking focus on click — a
-                  // focusable descendant here would violate role="option" semantics
-                  // (axe: no-focusable-content) without adding any real capability.
-                  <li
-                    key={result.id}
-                    id={`${listboxId}-option-${index}`}
-                    role="option"
-                    aria-selected={index === highlight}
-                  >
-                    <div
-                      onMouseDown={(event) => event.preventDefault()}
-                      onMouseEnter={() => setHighlight(index)}
-                      onClick={() => addFromResult(result)}
-                      className={`concept-typeahead-option${
-                        index === highlight ? " is-active" : ""
-                      }`}
-                    >
-                      <span className="concept-typeahead-option-label">
-                        <span className="concept-typeahead-option-english">
-                          {hasMatch ? (
-                            <>
-                              {result.english.slice(0, matchIndex)}
-                              <strong>
-                                {result.english.slice(
-                                  matchIndex,
-                                  matchIndex + query.trim().length,
-                                )}
-                              </strong>
-                              {result.english.slice(matchIndex + query.trim().length)}
-                            </>
-                          ) : (
-                            result.english
-                          )}
-                        </span>
-                        <span className="concept-typeahead-option-spanish">
-                          {result.spanish}
-                        </span>
-                      </span>
-                      <span className="concept-typeahead-option-meta">
-                        {inSyllabus && (
-                          <span
-                            className="concept-typeahead-option-syllabus"
-                            title="In this module's syllabus — not yet covered"
-                          >
-                            in syllabus
-                          </span>
-                        )}
-                        {!inSyllabus && notIntroducedYet && (
-                          <span
-                            className="concept-typeahead-option-not-introduced"
-                            title="Not introduced yet in the course"
-                            aria-hidden="true"
-                          />
-                        )}
-                        <span
-                          className={`concept-typeahead-option-role role-${roleToken || "Unranked"}`}
-                          title={roleLabel(result.curriculumRole)}
-                          aria-hidden="true"
-                        />
-                      </span>
-                    </div>
-                  </li>
-                );
-              })}
-            </ul>
-          )}
-          {showEmptyState && (
-            <div
-              data-keymap-ignore
-              className={`concept-typeahead-popover concept-typeahead-empty${dropUp ? " is-flipped" : ""}`}
-            >
-              <p className="text-muted-foreground">
-                {searchState === "loading"
-                  ? "Searching..."
-                  : searchState === "error"
-                    ? "Concept search unavailable."
-                    : "No linked concept found. Press Enter to add an unlinked label."}
-              </p>
-              {searchState === "idle" && (
-                <p className="mt-1 text-muted-foreground/70">
-                  Tip: search the infinitive (e.g. &ldquo;creer&rdquo;, not &ldquo;creo&rdquo;).
-                </p>
-              )}
-            </div>
-          )}
-        </div>
+        <PairSuggestionChips
+          pairSuggestions={pairSuggestions}
+          variant={variant}
+          onAccept={acceptPairMatch}
+          onDismiss={dismissPairMatch}
+        />
+        <ConceptTypeahead
+          concepts={concepts}
+          onAdd={onAdd}
+          onRemove={onRemove}
+          onAdvance={onAdvance}
+          recordDisplay={recordDisplay}
+          coversFor={coversFor}
+          variant={variant}
+          inputRef={inputRef}
+          syllabusMarkers={syllabusMarkers}
+          pairSuggestionsCount={pairSuggestions.length}
+          onAcceptAllPairSuggestions={acceptAllPairSuggestions}
+          onOpenChange={setTypeaheadOpen}
+        />
       </div>
     </div>
   );

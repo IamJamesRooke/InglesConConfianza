@@ -1,6 +1,6 @@
 "use client";
 
-import { ChevronDown, ChevronRight, GripVertical, Plus, Redo2, Search, Undo2 } from "lucide-react";
+import { ChevronRight, GripVertical, Plus, Search } from "lucide-react";
 import { useRef, useState, type ChangeEvent, type DragEvent, type KeyboardEvent } from "react";
 
 import {
@@ -15,6 +15,8 @@ import type {
   LessonFile,
   LessonModule,
 } from "@/lib/lesson-builder/types";
+import { ModuleNavigatorDisclosure } from "@/components/lesson-builder/module-navigator-disclosure";
+import { ModuleNavigatorStatus } from "@/components/lesson-builder/module-navigator-status";
 
 export type ModuleNavigatorMatchField =
   | "module-title"
@@ -404,32 +406,12 @@ export function ModuleNavigator({
 
   return (
     <nav className="module-navigator" aria-label="Course modules" onKeyDown={handleRailKeyDown}>
-      {/* 6: compact rail under 900px — a "Modules ▾" disclosure that shows
-          the active module's name and toggles the rest of the rail
-          (search, module list, "Add module", save/undo status) underneath
-          it. Rendered unconditionally; module-navigation.css hides it above
-          900px and always shows the collapsible body there regardless of
-          `railOpen`, so this button and state are no-ops on wide screens. */}
-      <button
-        type="button"
-        ref={disclosureRef}
-        className="module-navigator-disclosure"
-        aria-expanded={railOpen}
-        aria-label={`Modules — ${activeModule?.name?.trim() || "Untitled module"}${railOpen ? ", collapse" : ", expand"}`}
-        onClick={() => setRailOpen((open) => !open)}
-      >
-        <span className="module-navigator-disclosure-label">
-          Modules
-          <span className="module-navigator-disclosure-active">
-            {activeModule?.name?.trim() || "Untitled module"}
-          </span>
-        </span>
-        <ChevronDown
-          size={14}
-          aria-hidden="true"
-          className={railOpen ? "module-navigator-disclosure-chevron open" : "module-navigator-disclosure-chevron"}
-        />
-      </button>
+      <ModuleNavigatorDisclosure
+        activeModuleName={activeModule?.name?.trim() || "Untitled module"}
+        open={railOpen}
+        onToggle={() => setRailOpen((open) => !open)}
+        buttonRef={disclosureRef}
+      />
       <div className="module-navigator-collapsible" data-open={railOpen}>
       <div className="module-navigator-header">
         <div className="module-navigator-search">
@@ -563,48 +545,15 @@ export function ModuleNavigator({
         </button>
       )}
 
-      {/* E: save status + undo/redo footer, replacing the retired full-width
-          `.lesson-library-utility` header card. */}
-      <div className="module-navigator-status-row">
-        <span
-          className="module-navigator-save"
-          role="status"
-          aria-live="polite"
-        >
-          {saveLabel}
-        </span>
-        <span className="module-navigator-history">
-          <button
-            type="button"
-            onClick={onUndo}
-            disabled={!canUndo}
-            suppressHydrationWarning
-            aria-label="Undo"
-            title="Undo (Ctrl+Z)"
-          >
-            <Undo2 size={14} />
-          </button>
-          <button
-            type="button"
-            onClick={onRedo}
-            disabled={!canRedo}
-            suppressHydrationWarning
-            aria-label="Redo"
-            title="Redo (Ctrl+Shift+Z)"
-          >
-            <Redo2 size={14} />
-          </button>
-        </span>
-        {saveFailed && (
-          <button
-            type="button"
-            className="module-navigator-retry"
-            onClick={onRetrySave}
-          >
-            Retry save
-          </button>
-        )}
-      </div>
+      <ModuleNavigatorStatus
+        saveLabel={saveLabel}
+        saveFailed={saveFailed}
+        canUndo={canUndo}
+        canRedo={canRedo}
+        onUndo={onUndo}
+        onRedo={onRedo}
+        onRetrySave={onRetrySave}
+      />
 
       <div className="module-navigator-backup-row">
         <button type="button" onClick={exportCourse}>

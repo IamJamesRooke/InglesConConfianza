@@ -86,7 +86,8 @@ still read (never written) for back-compat.
 **Phase 1 (2026-09-15) replaced this whole section's mechanism.** There is
 now exactly one source of truth for "what is the teacher editing"
 (`EditingSelection`, `web/src/lib/lesson-builder/editing.ts`) and exactly one
-keymap (`web/src/lib/lesson-builder/keymap.ts`): a table of `scope × chord →
+keymap (`web/src/lib/lesson-builder/keymap/`, `index.ts` assembling one table
+per scope from `title.ts`/`explanation.ts`/`pair.ts`/`block.ts`/`lesson.ts`/`page.ts`/`shared.ts`): a table of `scope × chord →
 command`, dispatched by a single capture-phase `keydown` listener mounted on
 the builder root (`LessonLibrary`). No other `onKeyDown` in the builder
 handles a chord — a component's own `onKeyDown` may remain only for
@@ -493,9 +494,10 @@ proposal doc's aspirations.
   other `variant`, are unaffected), collapses to a summary button
   (`data-covers-summary`) reading `Covers · <english> · <english> · +N` for
   concepts past the first three. Clicking it, focusing it, or tabbing to it
-  expands the field in place (React state, `lesson-concepts-field.tsx`) —
-  the chips, the add-input, the typeahead popover, and the pair-suggestion
-  pills all mount only once expanded. Focus leaving the whole field
+  expands the field in place (React state, `lesson-concepts-field.tsx`
+  composing `covers-summary.tsx`, `concept-typeahead.tsx`, and
+  `concept-suggestion-chips.tsx`) — the chips, the add-input, the typeahead
+  popover, and the pair-suggestion pills all mount only once expanded. Focus leaving the whole field
   (`onBlur` checking `relatedTarget` against the container) collapses it
   back to the summary line; expanding refocuses the add-input automatically,
   so a keyboard user can type immediately. Priority dots

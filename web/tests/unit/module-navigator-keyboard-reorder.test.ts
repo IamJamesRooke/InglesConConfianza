@@ -85,6 +85,18 @@ const source = readFileSync(
   path.join(__dirname, "../../src/components/lesson-builder/module-navigator.tsx"),
   "utf8",
 );
+// The compact-rail disclosure (ChevronDown) and the save-status footer
+// (Redo2/Undo2) were extracted into their own components (Section B item 4)
+// — module-navigator.tsx composes them rather than importing their icons
+// itself.
+const disclosureSource = readFileSync(
+  path.join(__dirname, "../../src/components/lesson-builder/module-navigator-disclosure.tsx"),
+  "utf8",
+);
+const statusSource = readFileSync(
+  path.join(__dirname, "../../src/components/lesson-builder/module-navigator-status.tsx"),
+  "utf8",
+);
 
 test("(source) keyboard reorder lives on the existing drag-handle button, uses onReorderModule, no new controls", () => {
   assert.match(source, /className="module-navigator-row-drag"[\s\S]{0,400}onKeyDown=/);
@@ -95,13 +107,18 @@ test("(source) keyboard reorder lives on the existing drag-handle button, uses o
   assert.ok(source.includes("onReorderModule(modules[index + 1].id, module.id)"));
   // No new icon import for the reorder feature itself (e.g. ArrowUp/
   // ArrowDown/ChevronUp) — same GripVertical handle, no new visible arrow
-  // buttons. Redo2/Undo2 are present for the unrelated save-status footer
-  // row (round 2, item E), not for reordering. ChevronDown is present for
-  // the also-unrelated compact-rail disclosure (first-run friction #6).
-  assert.match(
-    source,
-    /^import \{ ChevronDown, ChevronRight, GripVertical, Plus, Redo2, Search, Undo2 \} from "lucide-react";/m,
-  );
+  // buttons.
+  assert.ok(!source.includes("ArrowUp,"));
+  assert.ok(!source.includes("ArrowDown,"));
+  assert.ok(!source.includes("ChevronUp"));
+  assert.ok(source.includes("GripVertical"));
+  // Redo2/Undo2 are present for the unrelated save-status footer row (round
+  // 2, item E), not for reordering — now in their own extracted component.
+  // ChevronDown is present for the also-unrelated compact-rail disclosure
+  // (first-run friction #6), likewise extracted.
+  assert.match(statusSource, /Redo2/);
+  assert.match(statusSource, /Undo2/);
+  assert.match(disclosureSource, /ChevronDown/);
 });
 
 test("(source) drag handle's accessible name/help mentions the keyboard shortcut", () => {

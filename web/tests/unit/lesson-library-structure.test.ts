@@ -75,7 +75,7 @@ test("(source) floating keyboard-help FAB button and its ref are gone", () => {
 
 test("(source) Ctrl+. shortcut is preserved — now via the shared keymap dispatcher", () => {
   const keymapSource = readFileSync(
-    path.join(__dirname, "../../src/lib/lesson-builder/keymap.ts"),
+    path.join(__dirname, "../../src/lib/lesson-builder/keymap/index.ts"),
     "utf8",
   );
   assert.ok(keymapSource.includes('"Ctrl+."'));
