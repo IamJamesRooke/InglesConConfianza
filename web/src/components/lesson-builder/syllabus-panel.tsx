@@ -16,13 +16,31 @@
 // as two muted one-line lists below. Everything here reads/writes
 // `module.syllabus` through `onChangeModule` (not part of the undoable
 // lessons history — same as every other module-level edit).
-import { ChevronDown, ChevronRight, Plus, X } from "lucide-react";
+//
+// Structure (round 2, item A — docs/design/lesson-builder-round-2.md): the
+// Main and Review lists render grouped by part of speech (Pronouns, Verbs,
+// Connectors, Time/place/degree, Words, Untagged — syllabus-groups.ts) and
+// every pill carries a 6px colour dot for its level. The grouping is
+// render-only: `syllabus.main`/`.review` stay flat ordered arrays, so a drop
+// on a pill in another group simply reorders the flat list to that pill's
+// index, exactly as before. Colour is never the only signal (see
+// docs/teaching-methodology.md): the pill's tooltip names the level in
+// words and a legend at the card's foot names every dot on screen.
+//
+// Pill tone (owner, 2026-09-16): a planned-but-not-yet-taught pill is the
+// *resting* state, not a problem — 23 dashed faint pills on a module with no
+// lessons yet read as 23 errors. Coverage is now stated positively (a check +
+// the success tint on `is-covered`); dashed is reserved for `is-missing`.
+import { Check, ChevronDown, ChevronRight, Plus, X } from "lucide-react";
 import { useEffect, useRef, useState, type DragEvent, type KeyboardEvent } from "react";
 
 import { ConceptQuickEdit } from "@/components/lesson-builder/concept-quick-edit";
 import { LessonConceptsField } from "@/components/lesson-builder/lesson-concepts-field";
+import { renderConceptLabel } from "@/lib/lesson-builder/concept-label";
 import { conceptKey } from "@/lib/lesson-builder/lesson-file";
+import { curriculumRoleLabel } from "@/lib/curriculum/types";
 import { useDragReorder } from "@/lib/lesson-builder/use-drag-reorder";
+import { groupSyllabusItems } from "@/lib/lesson-builder/syllabus-groups";
 import {
   addMainItem,
   addReviewItem,
@@ -59,6 +77,9 @@ type Props = {
 };
 
 type ListKind = "main" | "review";
+
+// Level order for the legend line (the curriculum enum's own order).
+const LEVEL_ROLES = ["P1", "P2", "P3", "P4", "P5", "Unranked"] as const;
 
 function openStorageKey(moduleId: string) {
   return `lesson-builder:syllabus-open:${moduleId}`;
@@ -116,6 +137,18 @@ export function SyllabusPanel({
   const totalItems = syllabus.main.length + syllabus.review.length;
   const totalCovered = mainCovered + reviewCovered;
 
+  // Curation debt, stated where the owner is already looking: an Unranked
+  // concept is one nobody has placed on the level ladder yet.
+  const plannedItems = [...syllabus.main, ...syllabus.review];
+  const unrankedCount = plannedItems.filter(
+    (item) => item.conceptId && conceptDisplays[item.conceptId]?.role === "Unranked",
+  ).length;
+  // Legend for the level dots, in level order — only the levels actually on
+  // screen, and only when there is more than one to tell apart.
+  const levelsPresent = LEVEL_ROLES.filter((role) =>
+    plannedItems.some((item) => item.conceptId && conceptDisplays[item.conceptId]?.role === role),
+  );
+
   const { alsoTaught, reviewed } = alsoTaughtAndReviewed(module, moduleIndex, lessons, timeline);
 
   const warnings = computeModuleWarnings(module, moduleIndex, lessons, timeline, conceptDisplays);
@@ -161,11 +194,11 @@ export function SyllabusPanel({
   // "tú → you" and "te → you" are otherwise the same pill (owner, 2026-09-16).
   function labelNode(item: SyllabusItem) {
     const display = item.conceptId ? conceptDisplays[item.conceptId] : undefined;
-    if (!display) return item.label;
+    if (!display) return renderConceptLabel(item.label);
     return (
       <>
-        {display.spanish}
-        <span className="lesson-concept-english">{display.english}</span>
+        {renderConceptLabel(display.spanish)}
+        <span className="lesson-concept-english">{renderConceptLabel(display.english)}</span>
       </>
     );
   }
@@ -175,12 +208,36 @@ export function SyllabusPanel({
     return coverageOfItem(item, moduleLessons).covered ? "is-covered" : "is-uncovered";
   }
 
+  function displayOf(item: SyllabusItem) {
+    return item.conceptId ? conceptDisplays[item.conceptId] : undefined;
+  }
+
+  // The level dot reuses the Covers field's `role-*` token classes, so the
+  // two surfaces read identically. A freehand pill has no curriculum row and
+  // therefore no dot at all — its absence is the signal.
+  function roleClassOf(item: SyllabusItem): string {
+    const role = displayOf(item)?.role;
+    if (!role) return "";
+    return ` role-${role.replace(/[^A-Za-z0-9]/g, "")}`;
+  }
+
   function titleFor(item: SyllabusItem): string {
     const display = item.conceptId ? conceptDisplays[item.conceptId] : undefined;
-    const coverage = coverageOfItem(item, moduleLessons).covered
-      ? "Referenced by a lesson in this module"
-      : "Not yet referenced by a lesson in this module";
-    return display?.spanish ? `${display.spanish} — ${coverage}` : coverage;
+    const state = isMissingConcept(item, conceptDisplays)
+      ? "No longer in the curriculum (Trash or deleted)"
+      : coverageOfItem(item, moduleLessons).covered
+        ? "Taught by a lesson in this module"
+        : "Planned — not taught by a lesson in this module yet";
+    // The full label (brackets and all) stays here, even though the pill
+    // itself lets the `[…]` placeholders recede.
+    const full = display?.spanish
+      ? display.english
+        ? `${display.spanish} → ${display.english}`
+        : display.spanish
+      : item.label;
+    // The dot's colour is restated in words here (and in the card's legend).
+    const level = display?.role ? ` · ${curriculumRoleLabel(display.role)}` : "";
+    return `${full ? `${full} — ` : ""}${state}${level}`;
   }
 
   function listOf(kind: ListKind): SyllabusItem[] {
@@ -311,6 +368,7 @@ export function SyllabusPanel({
 
   function renderAcceptedChip(item: SyllabusItem, kind: ListKind) {
     const label = labelFor(item);
+    const tone = toneFor(item);
     const isDragging = drag.dragged?.id === item.id;
     const dropClass = drag.dropTarget?.id === item.id ? ` drop-${drag.dropTarget.position}` : "";
     return (
@@ -320,13 +378,14 @@ export function SyllabusPanel({
         tabIndex={0}
         data-syllabus-chip={item.id}
         data-chip-focusable
-        className={`lesson-concept-chip syllabus-chip ${toneFor(item)}${isDragging ? " dragging" : ""}${dropClass}`}
+        className={`lesson-concept-chip syllabus-chip ${tone}${roleClassOf(item)}${isDragging ? " dragging" : ""}${dropClass}`}
         title={titleFor(item)}
         onDragStart={(event) => drag.dragStart(event, dragScope, item.id)}
         onDragEnd={drag.reset}
         onDragOver={(event) => drag.dragOver(event, dragScope, item.id)}
         onKeyDown={(event) => handleChipKeyDown(event, item.id, kind)}
       >
+        {tone === "is-covered" && <Check size={11} className="syllabus-chip-check" aria-hidden="true" />}
         {item.conceptId ? (
           // Same popover as a lesson's Covers pill: edit the curriculum row
           // in place; the pill re-labels itself from the saved display.
@@ -339,6 +398,9 @@ export function SyllabusPanel({
                 spanish: draft.spanish,
                 english: draft.english,
                 role: draft.role,
+                // The quick-edit dialog doesn't touch collections; keeping
+                // the known `pos` stops the pill jumping to "Untagged".
+                pos: conceptDisplays[item.conceptId]?.pos,
               });
               relabelItem(item.id, draft.spanish);
             }}
@@ -375,7 +437,7 @@ export function SyllabusPanel({
             title="Rename (not in the curriculum)"
             onClick={() => setRenamingId(item.id)}
           >
-            {label}
+            {renderConceptLabel(label)}
           </button>
         )}
         <button
@@ -429,28 +491,42 @@ export function SyllabusPanel({
   function renderList(kind: ListKind) {
     const items = listOf(kind);
     const add = kind === "main" ? addMainItem : addReviewItem;
+    // One wrapped row per non-empty group, in the fixed group order; the
+    // list itself is still one flat array, and every row is the same drop
+    // target, so a pill dragged across a group boundary lands at the flat
+    // index of whatever pill it was dropped on.
+    const groups = groupSyllabusItems(items, (item) => displayOf(item)?.pos);
+    const dropProps = {
+      onDragOver: (event: DragEvent<HTMLElement>) => {
+        if (drag.dragged) event.preventDefault();
+      },
+      onDrop: (event: DragEvent<HTMLElement>) => handleContainerDrop(event, kind),
+    };
     return (
-      <div
-        className="syllabus-chip-row"
-        onDragOver={(event) => {
-          if (drag.dragged) event.preventDefault();
-        }}
-        onDrop={(event) => handleContainerDrop(event, kind)}
-      >
-        {items.map((item) => renderAcceptedChip(item, kind))}
-        {kind === "review" && reviewSuggestions.map((item) => renderProposedChip(item))}
-        <LessonConceptsField
-          variant="compact"
-          label=""
-          hideChips
-          concepts={items}
-          conceptDisplays={conceptDisplays}
-          onAdd={(concept) => patchSyllabus(add(syllabus, concept))}
-          onRemove={(id) => patchSyllabus(removeFnFor(kind)(syllabus, id))}
-          onRelabel={relabelItem}
-          onDisplayChange={onDisplayChange}
-        />
-      </div>
+      <>
+        {groups.map((group) => (
+          <div key={group.id} className="syllabus-pos-group">
+            <span className="syllabus-pos-eyebrow">{group.label}</span>
+            <div className="syllabus-chip-row" {...dropProps}>
+              {group.entries.map((entry) => renderAcceptedChip(entry.item, kind))}
+            </div>
+          </div>
+        ))}
+        <div className="syllabus-chip-row" {...dropProps}>
+          {kind === "review" && reviewSuggestions.map((item) => renderProposedChip(item))}
+          <LessonConceptsField
+            variant="compact"
+            label=""
+            hideChips
+            concepts={items}
+            conceptDisplays={conceptDisplays}
+            onAdd={(concept) => patchSyllabus(add(syllabus, concept))}
+            onRemove={(id) => patchSyllabus(removeFnFor(kind)(syllabus, id))}
+            onRelabel={relabelItem}
+            onDisplayChange={onDisplayChange}
+          />
+        </div>
+      </>
     );
   }
 
@@ -467,22 +543,28 @@ export function SyllabusPanel({
         <span className="syllabus-card-summary">
           Main {mainCovered}/{syllabus.main.length} · Review {reviewCovered}/{syllabus.review.length} · Also
           taught {alsoTaught.length}
+          {unrankedCount > 0 && ` · ${unrankedCount} unranked`}
           {warningCount > 0 && <span className="syllabus-card-warning-count"> · ⚠ {warningCount}</span>}
         </span>
       </button>
-      <div
-        className="syllabus-card-progress"
-        role="progressbar"
-        aria-valuenow={totalCovered}
-        aria-valuemin={0}
-        aria-valuemax={totalItems}
-        aria-label="Syllabus coverage"
-      >
+      {/* An always-empty bar on a module with no lessons yet is pure
+          discouragement — the summary line already says 0/23. It appears as
+          soon as the module has its first lesson (owner, 2026-09-16). */}
+      {moduleLessons.length > 0 && (
         <div
-          className="syllabus-card-progress-fill"
-          style={{ width: `${totalItems === 0 ? 0 : Math.round((totalCovered / totalItems) * 100)}%` }}
-        />
-      </div>
+          className="syllabus-card-progress"
+          role="progressbar"
+          aria-valuenow={totalCovered}
+          aria-valuemin={0}
+          aria-valuemax={totalItems}
+          aria-label="Syllabus coverage"
+        >
+          <div
+            className="syllabus-card-progress-fill"
+            style={{ width: `${totalItems === 0 ? 0 : Math.round((totalCovered / totalItems) * 100)}%` }}
+          />
+        </div>
+      )}
 
       {open && (
         <div className="syllabus-card-body">
@@ -525,6 +607,17 @@ export function SyllabusPanel({
               ))
             )}
           </div>
+
+          {levelsPresent.length > 1 && (
+            <div className="syllabus-legend">
+              {levelsPresent.map((role) => (
+                <span key={role} className={`syllabus-legend-item role-${role}`}>
+                  <span className="syllabus-legend-dot" aria-hidden="true" />
+                  {curriculumRoleLabel(role)}
+                </span>
+              ))}
+            </div>
+          )}
 
           <button
             type="button"

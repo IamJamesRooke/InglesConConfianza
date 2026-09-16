@@ -115,9 +115,17 @@
   background: color-mix(in oklch, var(--success) 12%, var(--card));
   color: var(--success-foreground);
 }
+/* Planned, not taught yet — the *resting* state of a syllabus pill, not a
+   problem (round 2, item A.3): a plain hairline outline. Dashed is reserved
+   for `is-missing` and for the genuinely provisional pills below. */
 .lesson-concept-chip.is-uncovered {
-  border-style: dashed;
+  border-color: var(--border);
   color: var(--muted-foreground);
+}
+/* A bracketed placeholder ("querer que [alguien] [haga algo]") recedes so
+   the head words carry the eye; the full text stays in the pill's title. */
+.lesson-concept-placeholder {
+  opacity: 0.55;
 }
 /* Syllabus panel: the concept is Trash or no longer in the curriculum. */
 .lesson-concept-chip.is-missing {

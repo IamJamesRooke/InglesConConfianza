@@ -93,8 +93,57 @@
   border-radius: 8px;
 }
 
+/* Part-of-speech sub-group inside Main/Review: a quieter eyebrow than the
+   list's own, and only rendered for non-empty groups (syllabus-groups.ts). */
+.syllabus-pos-group {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.syllabus-pos-eyebrow {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  color: color-mix(in oklch, var(--muted-foreground) 75%, transparent);
+}
+
 .syllabus-chip {
   cursor: grab;
+}
+/* Coverage stated positively: a small check instead of "not dashed". */
+.syllabus-chip-check {
+  flex-shrink: 0;
+  opacity: 0.75;
+}
+/* Unranked reads as an empty slot on the level ladder, not another colour. */
+.syllabus-chip.role-Unranked::before {
+  background: transparent;
+  box-shadow: inset 0 0 0 1px var(--role-border);
+}
+
+/* Colour is never the only signal (docs/teaching-methodology.md): every dot
+   on screen is named here, at the card's foot, once levels are mixed. */
+.syllabus-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  font-size: 11px;
+  color: var(--muted-foreground);
+}
+.syllabus-legend-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+.syllabus-legend-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--role-border, var(--border));
+}
+.syllabus-legend-item.role-Unranked .syllabus-legend-dot {
+  background: transparent;
+  box-shadow: inset 0 0 0 1px var(--role-border);
 }
 /* Also-taught promote chips are real <button> elements (a real interactive
    element, not a span+role="button" stand-in) — reset the couple of

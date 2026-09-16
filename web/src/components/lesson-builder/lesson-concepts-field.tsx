@@ -18,6 +18,7 @@ import {
 } from "@/components/lesson-builder/concept-suggestion-chips";
 import { ConceptTypeahead } from "@/components/lesson-builder/concept-typeahead";
 import { CoversSummary } from "@/components/lesson-builder/covers-summary";
+import { renderConceptLabel } from "@/lib/lesson-builder/concept-label";
 import { conceptKey } from "@/lib/lesson-builder/lesson-file";
 import type { SyllabusMarkers } from "@/lib/lesson-builder/builder-context";
 import type { LessonConceptSuggestion } from "@/lib/lesson-builder/concept-suggestions";
@@ -208,7 +209,14 @@ export function LessonConceptsField({
             : undefined;
           const applySaved = (draft: ConceptDraft) => {
             if (!concept.conceptId) return;
-            const nextDisplay = { spanish: draft.spanish, english: draft.english, role: draft.role };
+            const nextDisplay = {
+              spanish: draft.spanish,
+              english: draft.english,
+              role: draft.role,
+              // The quick-edit dialog never touches collections — keep the
+              // known part of speech so the syllabus card can still group it.
+              pos: display?.pos,
+            };
             recordDisplay(concept.conceptId, nextDisplay);
             onRelabel(concept.id, draft.spanish);
           };
@@ -262,16 +270,20 @@ export function LessonConceptsField({
                   onDeleted={() => onRemove(concept.id)}
                 >
                   {display ? (
+                    // Bracketed placeholders recede on both halves, so a long
+                    // label reads as "querer que → to want" first.
                     <>
-                      {display.spanish}
-                      <span className="lesson-concept-english">{display.english}</span>
+                      {renderConceptLabel(display.spanish)}
+                      <span className="lesson-concept-english">
+                        {renderConceptLabel(display.english)}
+                      </span>
                     </>
                   ) : (
-                    concept.label
+                    renderConceptLabel(concept.label)
                   )}
                 </ConceptQuickEdit>
               ) : (
-                <span className="lesson-concept-label">{concept.label}</span>
+                <span className="lesson-concept-label">{renderConceptLabel(concept.label)}</span>
               )
             ) : concept.conceptId ? (
               <ConceptQuickEdit

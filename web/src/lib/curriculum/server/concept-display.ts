@@ -7,6 +7,11 @@ export type ConceptDisplay = {
   spanish: string;
   english: string;
   role: CurriculumRole;
+  // Bare part-of-speech token ("verb", "pronoun", …) taken from the
+  // concept's first `pos:*` collection; absent when it has none. Read by
+  // the lesson builder's syllabus card to group its pills
+  // (src/lib/lesson-builder/syllabus-groups.ts).
+  pos?: string;
 };
 
 export async function readConceptDisplays(conceptIds: string[]) {
@@ -20,6 +25,12 @@ export async function readConceptDisplays(conceptIds: string[]) {
       spanish: true,
       english: true,
       curriculumRole: true,
+      collections: {
+        where: { collectionName: { startsWith: "pos:" } },
+        orderBy: { position: "asc" },
+        take: 1,
+        select: { collectionName: true },
+      },
     },
   });
 
@@ -30,6 +41,7 @@ export async function readConceptDisplays(conceptIds: string[]) {
         spanish: concept.spanish,
         english: concept.english,
         role: concept.curriculumRole,
+        pos: concept.collections[0]?.collectionName.slice(4),
       },
     ]),
   ) as Record<string, ConceptDisplay>;

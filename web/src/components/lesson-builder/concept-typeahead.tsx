@@ -27,6 +27,10 @@ type ConceptResult = {
   // src/lib/lesson-builder/concept-search-rank.ts.
   matchedVia: "label" | "example";
   matchedExample?: string;
+  // Bare part-of-speech token ("verb", …), null when the concept has no
+  // `pos:*` collection. Recorded into the display lookup below so a pill
+  // added here can be grouped by the syllabus card straight away.
+  pos?: string | null;
 };
 
 // Same "Level N / Unranked / Trash" wording the curriculum page and the
@@ -159,6 +163,7 @@ export function ConceptTypeahead({
       spanish: result.spanish,
       english: result.english,
       role: result.curriculumRole,
+      pos: result.pos ?? undefined,
     };
     recordDisplay(result.id, display);
     onAdd({

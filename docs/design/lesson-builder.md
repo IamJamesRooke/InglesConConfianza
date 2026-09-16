@@ -524,11 +524,19 @@ proposal doc's aspirations.
   `.lesson-concepts-row[data-roles-uniform="true"]` (set from the tagged
   concepts' resolved roles) hides them when every chip would show the same
   dot.
+- **Module syllabus pills** (round 2, item A — `syllabus-panel.tsx`): Main/
+  Review group by part of speech under `.syllabus-pos-eyebrow` headings in a
+  fixed order (`syllabus-groups.ts`); grouping is render-only, so drag and
+  `Ctrl Alt` moves still walk the flat list. Each pill carries the Covers
+  field's 6px `role-*` level dot (hollow for Unranked), named in its `title`
+  and in the card-foot legend; the header adds "· N unranked". `is-uncovered`
+  is now a plain hairline (dashed = `is-missing`), `is-covered` adds a check,
+  `[brackets]` recede, and the progress bar hides until the module has a lesson.
 - **Freehand "Covers" concepts render dashed** (§9 item R5): a concept chip
   with no `conceptId` (typed and accepted but not matched to anything in the
   curriculum database) gets `border-style: dashed` — `.lesson-concept-chip.is-freehand`
-  in `lesson-concepts-field.css`, the same visual language as the module Key Concepts
-  field's `is-uncovered` state — plus `title="Not in the curriculum —
+  in `lesson-concepts-field.css`, the same visual language as a `is-missing`
+  chip (`is-uncovered` stopped being dashed in round 2, item A) — plus `title="Not in the curriculum —
   coverage won't count it"` on the chip. Nothing else about it changes: no
   color shift, no icon, and it still isn't clickable (no `ConceptQuickEdit`,
   since there's no database row to edit).
@@ -740,3 +748,4 @@ statically or spin up their own isolated server against a throwaway file.
 | E7 | "New lesson like this one" ("Duplicate structure") — removed 2026-09-15: owner found no use for it. `duplicateLessonStructure` (`mutations.ts`), its `LessonHeaderActions` icon, wiring, and tests (incl. `tests/ux/duplicate-structure.spec.ts`) were deleted outright. "Duplicate lesson" (full copy) is unaffected. | Sonnet | removed |
 | E4 | Script mode: `parseScript`/`printScript` (`lib/lesson-builder/script.ts`) over the block model per `lesson-script-grammar.md`, property-tested (500 generated lessons + the owner's two real lessons, ids ignored). `Ctrl+Alt+T` (new `lesson`-scope keymap entry) and a `</>` icon in the lesson row header's icon cluster (`lesson-library-row.tsx`, moved there 2026-09-15 from `lesson-document.tsx`) toggle a per-lesson `<textarea>` (`lesson-script-view.tsx`, `editing.ts`'s new `scriptViewLessonId`/`setScriptView`). Leaving the view parses; success dispatches the new `REPLACE_LESSON_BLOCKS` reducer action (one undoable step, since it isn't in `history.ts`'s coalescing set) and closes; errors show inline with line numbers and the view stays open. An empty lesson's tail gains a third quiet "Paste a script…" action that opens the view blank. Does **not** auto-mark explanation text on parse (E1 stays editor-only) — see the note at the top of `script.ts`. | Sonnet | done |
 | MM1 | Module & lesson metadata — module `description`/`status`/`access` (blue header: quiet description input, Draft/Published + Free/Premium pills), lesson `status`/`notes` (row `Draft`/`Eye`/`EyeOff` toggle, `Ctrl+Alt+V`, dashed "Draft" tag; `notes` has no UI yet, data-only), server-side filtering of draft modules/lessons out of `readCourseSummary` (`/` and `/practice`; coverage/studio surfaces are unaffected and still count drafts). | Sonnet | done (2026-09-16) |
+| R2-A | Round-2 syllabus card: part-of-speech groups (`syllabus-groups.ts`, render-only over the flat lists), a `role-*` level dot per pill with tooltip + card-foot legend, "· N unranked" in the header, quiet resting tones (`is-uncovered` hairline, `is-covered` check, receding `[brackets]`), progress bar hidden until the module has a lesson, and group headings + levels in "Copy as text". `ConceptDisplayLookup` gained `pos` (first `pos:*` collection), read by `readConceptDisplays` and the concept-search route. | Opus | done (2026-09-16) |
