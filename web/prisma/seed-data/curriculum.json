@@ -14300,7 +14300,7 @@
     },
     {
       "id": "mjncmw1m8b",
-      "spanish": "puede [hacer algo] (permiso formal)",
+      "spanish": "poder [hacer algo] (permiso formal)",
       "english": "may [do something]",
       "example": {
         "spanish": "Puede comenzar ahora.",
@@ -14324,7 +14324,7 @@
     },
     {
       "id": "ltn1qfc1r6",
-      "spanish": "no puede [hacer algo] (prohibición formal)",
+      "spanish": "no poder [hacer algo] (prohibición formal)",
       "english": "may not [do something]",
       "example": {
         "spanish": "No puede entrar.",
@@ -14349,8 +14349,8 @@
     },
     {
       "id": "rhb07wm3u7",
-      "spanish": "puede [hacer algo] (oportunidad)",
-      "english": "gets to [do something]",
+      "spanish": "poder [hacer algo] (oportunidad)",
+      "english": "to get to [do something]",
       "example": {
         "spanish": "Puede trabajar desde casa.",
         "english": "She gets to work from home."
@@ -14408,7 +14408,7 @@
         "topic:enmap-get",
         "topic:verb-system"
       ],
-      "curriculumRole": "Unranked"
+      "curriculumRole": "Trash"
     },
     {
       "id": "0x5jkr1aja",
@@ -14441,7 +14441,7 @@
         "topic:enmap-get",
         "topic:verb-system"
       ],
-      "curriculumRole": "Unranked"
+      "curriculumRole": "Trash"
     },
     {
       "id": "cl4hfx7beh",
@@ -14465,12 +14465,12 @@
         "topic:map-poder",
         "topic:verb-system"
       ],
-      "curriculumRole": "Unranked"
+      "curriculumRole": "Trash"
     },
     {
       "id": "4onwfj2pow",
-      "spanish": "pudo [hacer algo] (éxito específico)",
-      "english": "managed to [do something]",
+      "spanish": "poder [hacer algo] (lograr)",
+      "english": "to manage to [do something]",
       "example": {
         "spanish": "Pudo abrir la puerta.",
         "english": "She managed to open the door."
@@ -14514,7 +14514,7 @@
         "topic:map-poder",
         "topic:verb-system"
       ],
-      "curriculumRole": "Unranked"
+      "curriculumRole": "Trash"
     },
     {
       "id": "v2jinicnwh",
@@ -14570,7 +14570,7 @@
     },
     {
       "id": "ipa706hrsh",
-      "spanish": "podría [hacer algo] (condición)",
+      "spanish": "poder [hacer algo] (condicional)",
       "english": "could [do something]",
       "example": {
         "spanish": "Podría ayudar si tuviera tiempo.",
@@ -14588,7 +14588,9 @@
         "pos:verb",
         "topic:verb-modal-ability",
         "topic:map-poder",
-        "topic:verb-system"
+        "topic:verb-system",
+        "topic:verb-pattern",
+        "topic:vp-bare-inf"
       ],
       "curriculumRole": "Unranked"
     },
@@ -14616,7 +14618,7 @@
         "topic:map-haber",
         "topic:verb-system"
       ],
-      "curriculumRole": "Unranked"
+      "curriculumRole": "Trash"
     },
     {
       "id": "yhchadk82l",
@@ -14672,7 +14674,7 @@
         "topic:enmap-have",
         "topic:verb-system"
       ],
-      "curriculumRole": "Unranked"
+      "curriculumRole": "Trash"
     },
     {
       "id": "93vebts2ml",
@@ -14700,7 +14702,7 @@
         "topic:map-haber",
         "topic:verb-system"
       ],
-      "curriculumRole": "Unranked"
+      "curriculumRole": "Trash"
     },
     {
       "id": "q0xx0fzsx3",
@@ -14725,7 +14727,7 @@
         "topic:map-poder",
         "topic:verb-system"
       ],
-      "curriculumRole": "Unranked"
+      "curriculumRole": "Trash"
     },
     {
       "id": "dq62rzd2ga",
@@ -14996,7 +14998,7 @@
     },
     {
       "id": "zy6xwkoq5s",
-      "spanish": "puede estar [en un estado o lugar]",
+      "spanish": "poder estar [en un estado o lugar]",
       "english": "may be [in a state or place]",
       "example": {
         "spanish": "Ana puede estar ocupada.",
@@ -15022,7 +15024,7 @@
     },
     {
       "id": "wew9sag3jl",
-      "spanish": "podría estar [en un estado o lugar]",
+      "spanish": "poder estar [en un estado o lugar] (condicional)",
       "english": "could be [in a state or place]",
       "example": {
         "spanish": "Podría estar cansada.",
@@ -15049,7 +15051,7 @@
     },
     {
       "id": "mwqsbens4h",
-      "spanish": "podría haber [hecho algo]",
+      "spanish": "poder haber [hecho algo]",
       "english": "might have [done something]",
       "example": {
         "spanish": "Podría haber tomado otro bus.",
@@ -15359,7 +15361,7 @@
         "topic:map-poder",
         "topic:verb-system"
       ],
-      "curriculumRole": "Unranked"
+      "curriculumRole": "Trash"
     },
     {
       "id": "tlwmwkpfcj",
@@ -15382,7 +15384,7 @@
         "topic:map-poder",
         "topic:verb-system"
       ],
-      "curriculumRole": "Unranked"
+      "curriculumRole": "Trash"
     },
     {
       "id": "278hopgdpm",
@@ -15408,7 +15410,7 @@
         "topic:map-haber",
         "topic:verb-system"
       ],
-      "curriculumRole": "Unranked"
+      "curriculumRole": "Trash"
     },
     {
       "id": "gtr8psda9i",
@@ -15432,11 +15434,11 @@
         "topic:map-poder",
         "topic:verb-system"
       ],
-      "curriculumRole": "Unranked"
+      "curriculumRole": "Trash"
     },
     {
       "id": "12340xb2xp",
-      "spanish": "podría [ocurrir algo] (posibilidad incierta)",
+      "spanish": "poder [ocurrir algo] (posibilidad)",
       "english": "[something] might happen",
       "example": {
         "spanish": "Podría llegar tarde.",
@@ -15558,7 +15560,7 @@
     },
     {
       "id": "qzm188rl47",
-      "spanish": "podría haber [hecho algo] (especulación)",
+      "spanish": "poder haber [hecho algo] (especulación)",
       "english": "could have [done something]",
       "example": {
         "spanish": "Podría haber tomado otro bus.",
@@ -15576,7 +15578,8 @@
         "topic:verb-modal-possibility",
         "topic:map-poder",
         "topic:enmap-have",
-        "topic:verb-system"
+        "topic:verb-system",
+        "topic:verb-modal-ability"
       ],
       "curriculumRole": "Unranked"
     },
@@ -73929,8 +73932,8 @@
       "spanish": "poder [hacer algo] (pasado)",
       "english": "could [do something]",
       "example": {
-        "spanish": "Él podía hacerlo.",
-        "english": "He could do it."
+        "spanish": "De niña podía nadar.",
+        "english": "As a child, she could swim."
       },
       "collections": [
         "construction:verb-forms",
@@ -73948,7 +73951,9 @@
         "topic:verb-modal-ability",
         "topic:vp-bare-inf",
         "topic:map-poder",
-        "topic:verb-system"
+        "topic:verb-system",
+        "grammar:ability",
+        "grammar:permission"
       ],
       "curriculumRole": "Unranked"
     },
@@ -73978,7 +73983,7 @@
         "topic:map-poder",
         "topic:verb-system"
       ],
-      "curriculumRole": "Unranked"
+      "curriculumRole": "Trash"
     },
     {
       "id": "uwy1l647pg",

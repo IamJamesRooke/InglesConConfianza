@@ -1,0 +1,13 @@
+# Infinitive normalization — poder: generic paradigm rows, infinitive uses, examples, merges.
+# id	spanish	english	role	collections-to-add	reason	[exSpanish	exEnglish]
+mjncmw1m8b	poder [hacer algo] (permiso formal)	may [do something]	Unranked		rewrite to infinitive use (was «puede [hacer algo] (permiso formal) → may [do something]»)
+ltn1qfc1r6	no poder [hacer algo] (prohibición formal)	may not [do something]	Unranked		rewrite to infinitive use (was «no puede [hacer algo] (prohibición formal) → may not [do something]»)
+rhb07wm3u7	poder [hacer algo] (oportunidad)	to get to [do something]	Unranked		rewrite to infinitive use (was «puede [hacer algo] (oportunidad) → gets to [do something]»)
+4onwfj2pow	poder [hacer algo] (lograr)	to manage to [do something]	Unranked		rewrite to infinitive use (was «pudo [hacer algo] (éxito específico) → managed to [do something]»)
+ipa706hrsh	poder [hacer algo] (condicional)	could [do something]	Unranked	topic:verb-pattern|topic:vp-bare-inf	rewrite to infinitive use (was «podría [hacer algo] (condición) → could [do something]»); merge collections from folded fragments
+zy6xwkoq5s	poder estar [en un estado o lugar]	may be [in a state or place]	Unranked		rewrite to infinitive use (was «puede estar [en un estado o lugar] → may be [in a state or place]»)
+wew9sag3jl	poder estar [en un estado o lugar] (condicional)	could be [in a state or place]	Unranked		rewrite to infinitive use (was «podría estar [en un estado o lugar] → could be [in a state or place]»)
+mwqsbens4h	poder haber [hecho algo]	might have [done something]	Unranked		rewrite to infinitive use (was «podría haber [hecho algo] → might have [done something]»)
+12340xb2xp	poder [ocurrir algo] (posibilidad)	[something] might happen	Unranked		rewrite to infinitive use (was «podría [ocurrir algo] (posibilidad incierta) → [something] might happen»)
+qzm188rl47	poder haber [hecho algo] (especulación)	could have [done something]	Unranked	topic:verb-modal-ability	rewrite to infinitive use (was «podría haber [hecho algo] (especulación) → could have [done something]»); merge collections from folded fragments
+dugiwco70z	poder [hacer algo] (pasado)	could [do something]	Unranked	grammar:ability|grammar:permission	first-person example (was «Él podía hacerlo.»); merge collections from folded fragments	De niña podía nadar.	As a child, she could swim.
