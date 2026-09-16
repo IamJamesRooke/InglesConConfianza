@@ -42,6 +42,7 @@ const COALESCING_ACTIONS = new Set<LessonsAction["type"]>([
   "UPDATE_ACCEPTED_ANSWER",
   "RENAME_LESSON",
   "RELABEL_LESSON_CONCEPT",
+  "SET_LESSON_NOTES",
 ]);
 
 function coalesceKey(action: LessonsAction): string | null {

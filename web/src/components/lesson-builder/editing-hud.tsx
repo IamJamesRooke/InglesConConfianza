@@ -38,6 +38,7 @@ export const HUD_LABELS: Partial<Record<Chord, string>> = {
   "Alt+ArrowDown": "hint",
   Space: "open",
   "Ctrl+Alt+D": "finish lesson",
+  "Ctrl+Alt+V": "toggle draft",
   "Ctrl+Alt+P": "preview",
   "Ctrl+Alt+L": "new lesson",
   "Ctrl+Alt+M": "rename module",

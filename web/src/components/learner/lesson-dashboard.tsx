@@ -357,6 +357,9 @@ export function LessonDashboard({
                   <h2>
                     {selected.name || moduleLabel(modules, selectedIndex)}
                   </h2>
+                  {selected.description && (
+                    <p className="module-description">{selected.description}</p>
+                  )}
                 </div>
                 <div className="module-heading-actions">
                   <span className="module-fraction">

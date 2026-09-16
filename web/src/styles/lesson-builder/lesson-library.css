@@ -89,6 +89,46 @@
   background: var(--surface-writing);
   box-shadow: 0 0 0 4px color-mix(in oklch, var(--primary) 42%, transparent);
 }
+.lesson-library-module-description {
+  width: 100%;
+  padding: 1px 3px;
+  border: 0;
+  border-radius: 4px;
+  background: transparent;
+  color: color-mix(in oklch, var(--primary-foreground) 85%, transparent);
+  font-size: 12px;
+  font-style: italic;
+  outline: none;
+}
+.lesson-library-module-description::placeholder {
+  color: color-mix(in oklch, var(--primary-foreground) 55%, transparent);
+  font-style: italic;
+}
+.lesson-library-module-description:focus {
+  color: var(--ink-deep);
+  background: var(--surface-writing);
+  box-shadow: 0 0 0 4px color-mix(in oklch, var(--primary) 42%, transparent);
+}
+.lesson-library-module-pills {
+  display: flex;
+  flex-shrink: 0;
+  gap: 6px;
+}
+.lesson-library-module-pill {
+  padding: 3px 9px;
+  border: 1px solid color-mix(in oklch, var(--primary-foreground) 55%, transparent);
+  border-radius: 999px;
+  color: var(--primary-foreground);
+  font-size: 10px;
+  font-weight: 650;
+  white-space: nowrap;
+}
+.lesson-library-module-pill.is-draft {
+  border-style: dashed;
+}
+.lesson-library-module-pill:hover {
+  background: color-mix(in oklch, var(--primary-foreground) 17%, transparent);
+}
 .lesson-library-module-delete {
   display: grid;
   place-items: center;

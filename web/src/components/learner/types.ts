@@ -24,6 +24,9 @@ export type LearnerModule = {
   id: string;
   name: string | null;
   kind: "course" | "onboarding";
+  // The module's Spanish promise ("what will the learner be able to say?"),
+  // authored in the builder's module header. Absent/null when unset.
+  description?: string | null;
   lessonCount: number;
   lessons: LearnerLesson[];
 };

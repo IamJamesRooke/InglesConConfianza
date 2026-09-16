@@ -27,6 +27,8 @@ export type LessonsAction =
   | { type: "CREATE_LESSON"; lessonId: string }
   | { type: "DUPLICATE_LESSON"; lessonId: string; duplicateId: string }
   | { type: "RENAME_LESSON"; lessonId: string; name: string }
+  | { type: "SET_LESSON_STATUS"; lessonId: string; status: "draft" | "published" }
+  | { type: "SET_LESSON_NOTES"; lessonId: string; notes: string }
   | {
       type: "ADD_LESSON_CONCEPT";
       lessonId: string;
@@ -192,6 +194,10 @@ export function lessonsReducer(
       );
     case "RENAME_LESSON":
       return mutations.renameLesson(lessons, action.lessonId, action.name);
+    case "SET_LESSON_STATUS":
+      return mutations.setLessonStatus(lessons, action.lessonId, action.status);
+    case "SET_LESSON_NOTES":
+      return mutations.setLessonNotes(lessons, action.lessonId, action.notes);
     case "ADD_LESSON_CONCEPT":
       return mutations.addLessonConcept(
         lessons,

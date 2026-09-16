@@ -33,6 +33,8 @@ export type LessonBuilderActions = {
   duplicateLesson: (lessonId: string) => void;
   deleteLesson: (lessonId: string) => void;
   renameLesson: (lessonId: string, name: string) => void;
+  toggleLessonDraft: (lessonId: string) => void;
+  setLessonNotes: (lessonId: string, notes: string) => void;
   addLessonConcept: (lessonId: string, concept: LessonConcept) => void;
   removeLessonConcept: (lessonId: string, conceptId: string) => void;
   relabelLessonConcept: (

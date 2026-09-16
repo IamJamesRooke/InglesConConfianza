@@ -307,6 +307,21 @@ export function useBuilderActions(params: {
     [dispatch, lessonsRef],
   );
 
+  const toggleLessonDraft = useCallback(
+    (lessonId: string) => {
+      const lesson = lessonsRef.current.find((candidate) => candidate.id === lessonId);
+      const nextStatus = lesson?.status === "draft" ? "published" : "draft";
+      dispatch({ type: "SET_LESSON_STATUS", lessonId, status: nextStatus });
+    },
+    [dispatch, lessonsRef],
+  );
+
+  const setLessonNotes = useCallback(
+    (lessonId: string, notes: string) =>
+      dispatch({ type: "SET_LESSON_NOTES", lessonId, notes }),
+    [dispatch],
+  );
+
   const builderActions: LessonBuilderActions = useMemo(
     () => ({
       conceptDisplays,
@@ -318,6 +333,8 @@ export function useBuilderActions(params: {
       deleteLesson: (lessonId) => void deleteLesson(lessonId),
       renameLesson: (lessonId, name) =>
         dispatch({ type: "RENAME_LESSON", lessonId, name }),
+      toggleLessonDraft,
+      setLessonNotes,
       addLessonConcept: (lessonId, concept) =>
         dispatch({ type: "ADD_LESSON_CONCEPT", lessonId, concept }),
       removeLessonConcept: (lessonId, lessonConceptId) =>
@@ -428,6 +445,8 @@ export function useBuilderActions(params: {
       previewLessonWithFlush,
       duplicateLesson,
       deleteLesson,
+      toggleLessonDraft,
+      setLessonNotes,
       addPiece,
       deletePiece,
       toggleGiven,

@@ -1,6 +1,15 @@
 export type Lesson = {
   id: string;
   name: string | null;
+  // Absent (or "published") means visible to learners — the default for
+  // every existing lesson. "draft" hides the lesson from `/` and `/practice`
+  // server-side (course-summary.ts) while it stays fully visible/editable
+  // in the builder.
+  status?: "draft" | "published";
+  // Teacher-only free text (why this lesson exists, what to fix, what a
+  // friend said) — never read by any learner-facing surface. No UI for it
+  // yet; the field only needs to survive load/save/import/export.
+  notes?: string;
   concepts: LessonConcept[];
   blocks: LessonBlock[];
 };
@@ -54,6 +63,17 @@ export type LessonModule = {
   id: string;
   name: string | null;
   kind?: "course" | "onboarding";
+  // Learner-facing Spanish promise ("what will the learner be able to
+  // say?"), shown under the module name on the learner home. Absent or
+  // empty means no description.
+  description?: string;
+  // Absent (or "published") means visible to learners — the default for
+  // every existing module. "draft" hides the whole module (and its
+  // lessons) from `/` and `/practice` server-side.
+  status?: "draft" | "published";
+  // Stored, not enforced yet (see docs/design/product-vision.md §4/§6):
+  // absent (or "free") means free. Nothing reads this outside the builder.
+  access?: "free" | "premium";
   lessonIds: string[];
   // The module's mandatory teaching list — see docs/design/module-syllabus.md.
   // Coverage, "also taught", "reviewed", the known set, review priority,
