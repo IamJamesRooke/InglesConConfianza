@@ -30,6 +30,7 @@ export function useBuilderActions(params: {
   history: UndoableLessons;
   lessonsRef: React.RefObject<Lesson[]>;
   conceptDisplays: LessonBuilderActions["conceptDisplays"];
+  recordConceptDisplay: LessonBuilderActions["recordConceptDisplay"];
   getSyllabusMarkers: (lessonId: string) => SyllabusMarkers;
   flushSave: () => void;
   createLesson: (moduleId: string, insertionIndex?: number) => string;
@@ -44,6 +45,7 @@ export function useBuilderActions(params: {
     history,
     lessonsRef,
     conceptDisplays,
+    recordConceptDisplay,
     getSyllabusMarkers,
     flushSave,
     createLesson,
@@ -310,6 +312,7 @@ export function useBuilderActions(params: {
   const builderActions: LessonBuilderActions = useMemo(
     () => ({
       conceptDisplays,
+      recordConceptDisplay,
       getSyllabusMarkers,
       deletionUndo,
       newLesson: createLesson,
@@ -422,6 +425,7 @@ export function useBuilderActions(params: {
     }),
     [
       conceptDisplays,
+      recordConceptDisplay,
       getSyllabusMarkers,
       deletionUndo,
       createLesson,

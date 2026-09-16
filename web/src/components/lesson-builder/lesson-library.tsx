@@ -427,6 +427,7 @@ function LessonLibraryInner(props: Props) {
                     modules={props.modules}
                     lessons={props.lessons}
                     conceptDisplays={props.builder.conceptDisplays}
+                    onDisplayChange={props.builder.recordConceptDisplay}
                     onChangeModule={props.onChangeModule}
                   />
                   <section

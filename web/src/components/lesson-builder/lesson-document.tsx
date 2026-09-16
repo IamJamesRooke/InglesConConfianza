@@ -307,6 +307,7 @@ export function LessonDocument(props: Props) {
             label=""
             concepts={props.lesson.concepts}
             conceptDisplays={actions.conceptDisplays}
+            onDisplayChange={actions.recordConceptDisplay}
             coversFor={lessonId}
             pairTerms={extractLessonPairTerms(props.lesson)}
             syllabusMarkers={actions.getSyllabusMarkers(lessonId)}

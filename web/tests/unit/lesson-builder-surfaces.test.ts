@@ -97,6 +97,7 @@ const noopPiece = () => "";
 
 const stubBuilderActions: LessonBuilderActions = {
   conceptDisplays: {},
+  recordConceptDisplay: () => {},
   getSyllabusMarkers: () => ({ known: new Set(), mainOfModule: new Set(), inSyllabusUncovered: new Set() }),
   deletionUndo: null,
   newLesson: () => "",

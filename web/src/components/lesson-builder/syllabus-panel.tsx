@@ -19,6 +19,7 @@
 import { ChevronDown, ChevronRight, Plus, X } from "lucide-react";
 import { useEffect, useRef, useState, type DragEvent, type KeyboardEvent } from "react";
 
+import { ConceptQuickEdit } from "@/components/lesson-builder/concept-quick-edit";
 import { LessonConceptsField } from "@/components/lesson-builder/lesson-concepts-field";
 import { conceptKey } from "@/lib/lesson-builder/lesson-file";
 import { useDragReorder } from "@/lib/lesson-builder/use-drag-reorder";
@@ -53,6 +54,7 @@ type Props = {
   modules: LessonModule[];
   lessons: Lesson[];
   conceptDisplays: ConceptDisplayLookup;
+  onDisplayChange: (conceptId: string, display: ConceptDisplayLookup[string]) => void;
   onChangeModule: (moduleId: string, patch: Partial<LessonModule>) => void;
 };
 
@@ -84,9 +86,12 @@ export function SyllabusPanel({
   modules,
   lessons,
   conceptDisplays,
+  onDisplayChange,
   onChangeModule,
 }: Props) {
   const [open, setOpen] = useState(() => readOpen(module.id));
+  // Freehand pill being renamed in place (no curriculum row to quick-edit).
+  const [renamingId, setRenamingId] = useState<string | null>(null);
   const [briefCopied, setBriefCopied] = useState(false);
   const [dismissedProposed, setDismissedProposed] = useState<Set<string>>(new Set());
   // A cross-list keyboard move re-parents the chip (different array, so
@@ -175,6 +180,14 @@ export function SyllabusPanel({
 
   function removeFnFor(kind: ListKind) {
     return kind === "main" ? removeMainItem : removeReviewItem;
+  }
+
+  function relabelItem(itemId: string, label: string) {
+    const trimmed = label.trim();
+    if (!trimmed) return;
+    const rename = (items: SyllabusItem[]) =>
+      items.map((item) => (item.id === itemId ? { ...item, label: trimmed } : item));
+    patchSyllabus({ main: rename(syllabus.main), review: rename(syllabus.review) });
   }
 
   function findListOf(itemId: string): ListKind | null {
@@ -293,7 +306,57 @@ export function SyllabusPanel({
         onDragOver={(event) => drag.dragOver(event, dragScope, item.id)}
         onKeyDown={(event) => handleChipKeyDown(event, item.id, kind)}
       >
-        <span className="lesson-concept-label">{label}</span>
+        {item.conceptId ? (
+          // Same popover as a lesson's Covers pill: edit the curriculum row
+          // in place; the pill re-labels itself from the saved display.
+          <ConceptQuickEdit
+            conceptId={item.conceptId}
+            className="lesson-concept-label"
+            onSaved={(draft) => {
+              if (!item.conceptId) return;
+              onDisplayChange(item.conceptId, {
+                spanish: draft.spanish,
+                english: draft.english,
+                role: draft.role,
+              });
+              relabelItem(item.id, draft.spanish);
+            }}
+            onDeleted={() => patchSyllabus(removeFnFor(kind)(syllabus, item.id))}
+          >
+            {label}
+          </ConceptQuickEdit>
+        ) : renamingId === item.id ? (
+          <input
+            className="lesson-concept-label syllabus-chip-rename"
+            defaultValue={item.label}
+            aria-label={`Rename ${label}`}
+            autoFocus
+            data-keymap-ignore
+            onBlur={(event) => {
+              relabelItem(item.id, event.currentTarget.value);
+              setRenamingId(null);
+            }}
+            onKeyDown={(event) => {
+              if (event.key === "Enter") {
+                event.preventDefault();
+                event.currentTarget.blur();
+              } else if (event.key === "Escape") {
+                event.preventDefault();
+                event.currentTarget.value = item.label;
+                event.currentTarget.blur();
+              }
+            }}
+          />
+        ) : (
+          <button
+            type="button"
+            className="lesson-concept-label"
+            title="Rename (not in the curriculum)"
+            onClick={() => setRenamingId(item.id)}
+          >
+            {label}
+          </button>
+        )}
         <button
           type="button"
           className="lesson-concept-remove"
@@ -363,7 +426,8 @@ export function SyllabusPanel({
           conceptDisplays={conceptDisplays}
           onAdd={(concept) => patchSyllabus(add(syllabus, concept))}
           onRemove={(id) => patchSyllabus(removeFnFor(kind)(syllabus, id))}
-          onRelabel={() => {}}
+          onRelabel={relabelItem}
+          onDisplayChange={onDisplayChange}
         />
       </div>
     );

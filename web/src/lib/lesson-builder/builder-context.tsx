@@ -22,6 +22,7 @@ export type SyllabusMarkers = {
 // rather than having them pre-bound and drilled down through props.
 export type LessonBuilderActions = {
   conceptDisplays: ConceptDisplayLookup;
+  recordConceptDisplay: (conceptId: string, display: ConceptDisplayLookup[string]) => void;
   // A stable-identity function (reads live modules/lessons via refs in
   // page.tsx) rather than precomputed data, so adding it here never forces
   // every closed lesson row to re-render when unrelated content changes —

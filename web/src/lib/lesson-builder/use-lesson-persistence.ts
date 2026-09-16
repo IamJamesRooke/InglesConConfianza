@@ -344,10 +344,27 @@ export function useLessonPersistence({
     [queue],
   );
 
+  // A concept picked or edited during the session (typeahead, quick edit)
+  // joins the lookup so every chip for it — lesson Covers and the syllabus
+  // card alike — shows its English target without a reload.
+  const recordConceptDisplay = useCallback(
+    (conceptId: string, display: ConceptDisplayLookup[string]) => {
+      setConceptDisplays((current) =>
+        current[conceptId]?.spanish === display.spanish &&
+        current[conceptId]?.english === display.english &&
+        current[conceptId]?.role === display.role
+          ? current
+          : { ...current, [conceptId]: display },
+      );
+    },
+    [],
+  );
+
   return {
     saveState,
     isDirty: dirtyState.isDirty,
     conceptDisplays,
+    recordConceptDisplay,
     save,
     retrySave: save,
     flush,
