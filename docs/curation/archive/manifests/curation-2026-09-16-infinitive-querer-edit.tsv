@@ -1,0 +1,4 @@
+# Infinitive normalization — querer: generic paradigm rows, infinitive uses, examples, merges.
+# id	spanish	english	role	collections-to-add	reason	[exSpanish	exEnglish]
+lennoglnrf	querer [hacer algo] (intento no logrado)	to try [to do something]	Unranked		rewrite to infinitive use (was «quiso [hacer algo] (intento no logrado) → tried [to do something]»)
+e6kt0s21ap	no querer [hacer algo] (pasado)	to refuse [to do something]	Unranked		rewrite to infinitive use (was «no quiso [hacer algo] → refused [to do something]»)

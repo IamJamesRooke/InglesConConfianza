@@ -174,8 +174,8 @@
     },
     {
       "id": "lennoglnrf",
-      "spanish": "quiso [hacer algo] (intento no logrado)",
-      "english": "tried [to do something]",
+      "spanish": "querer [hacer algo] (intento no logrado)",
+      "english": "to try [to do something]",
       "example": {
         "spanish": "Quiso hacerlo, pero no pudo.",
         "english": "He tried to do it, but he couldn't."
@@ -192,8 +192,8 @@
     },
     {
       "id": "e6kt0s21ap",
-      "spanish": "no quiso [hacer algo]",
-      "english": "refused [to do something]",
+      "spanish": "no querer [hacer algo] (pasado)",
+      "english": "to refuse [to do something]",
       "example": {
         "spanish": "No quiso hacerlo.",
         "english": "He refused to do it."
@@ -494,7 +494,7 @@
         "audit:reviewed",
         "topic:map-querer"
       ],
-      "curriculumRole": "Unranked"
+      "curriculumRole": "Trash"
     },
     {
       "id": "5zjqxkzep9",
@@ -513,7 +513,7 @@
         "audit:reviewed",
         "topic:map-querer"
       ],
-      "curriculumRole": "Unranked"
+      "curriculumRole": "Trash"
     },
     {
       "id": "okgrw0eqjz",
