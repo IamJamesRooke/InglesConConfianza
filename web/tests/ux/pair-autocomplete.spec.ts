@@ -17,9 +17,14 @@ function readLastLessonBlocks(): SavedBlock[] {
 // E5b — curriculum autocomplete in pair fields
 // (docs/design/lesson-builder-rebuild.md E5). Typing ≥2 characters in a
 // sentence pair's Spanish (or English) field, after a short pause, offers
-// up to 5 matching curriculum concepts in a popover; Tab/Enter accepts one,
-// filling this field and (when empty) the other, then moves focus to the
-// other field. Escape closes the popover only.
+// up to 5 matching curriculum concepts in a popover with NO default
+// selection (owner regression, 2026-09-16: a pre-highlighted first result
+// meant typing "Quiero" and pressing Enter silently replaced it with
+// "quiero decir"). Until the teacher presses ArrowDown, the field behaves as
+// if the popover weren't there at all — typing, Tab and Enter do exactly
+// what they'd do with no popover open. ArrowDown enters the list at the
+// first item; from there Enter accepts and Escape closes the popover only
+// (field stays focused/selected).
 
 async function waitForFocusedField(page: import("@playwright/test").Page, field: string, timeout?: number) {
   await page.waitForFunction(
@@ -29,7 +34,7 @@ async function waitForFocusedField(page: import("@playwright/test").Page, field:
   );
 }
 
-test("Spanish/English pair-field autocomplete: popover, Tab-accept, Escape-closes-only", async ({
+test("typing a match keeps what the teacher typed — Enter/Tab never accept an unhighlighted suggestion", async ({
   page,
 }, testInfo) => {
   await page.goto("/admin/lesson-builder");
@@ -52,24 +57,87 @@ test("Spanish/English pair-field autocomplete: popover, Tab-accept, Escape-close
 
   // Resize after authoring, not before — see pair-proposals.spec.ts.
   await page.setViewportSize({ width: 760, height: 900 });
-  await spanish.pressSequentially("quer");
+  await spanish.pressSequentially("Quiero");
   await expect(popover).toBeVisible({ timeout: 2000 });
+  // "quiero decir" ("I mean") is a real label match for this prefix. Note:
+  // in this Spanish field's popover the *own*-language text (Spanish) is
+  // rendered in the `.concept-typeahead-option-english` span — the class
+  // names are purely positional (first line/second line), not tied to the
+  // actual language; see PairAutocompletePopover's `primary`/`secondary`.
   await expect(
-    popover.locator(".concept-typeahead-option-english", { hasText: "querer" }).first(),
+    popover.locator(".concept-typeahead-option-english", { hasText: "quiero decir" }).first(),
   ).toBeVisible();
+  // `scope=label` (E5b's fix): "quiero" only appears in "ser"/"estar"'s own
+  // EXAMPLE sentences ("Quiero ser…"/"Quiero estar…"), never in their own
+  // labels — those must not pollute a pair field's list the way they do the
+  // Covers typeahead (owner regression, 2026-09-16).
+  await expect(popover.locator(".concept-typeahead-option-english", { hasText: /^ser\b/i })).toHaveCount(0);
+  await expect(popover.locator(".concept-typeahead-option-english", { hasText: /^estar\b/i })).toHaveCount(0);
+  // Nothing highlighted by default — the regression this guards against.
+  await expect(popover.locator(".is-active")).toHaveCount(0);
   await page.screenshot({ path: testInfo.outputPath("autocomplete-760.png"), fullPage: true });
 
-  // Escape closes the popover only — the field stays focused/selected, no
-  // slide-level Escape fires.
+  // Enter with nothing highlighted: the spanish scope's own Enter (consume,
+  // no navigation, single-line field) fires exactly as it would with no
+  // popover — the typed text is left completely untouched and the field
+  // stays focused.
+  await page.keyboard.press("Enter");
+  await waitForFocusedField(page, "spanish");
+  await expect(spanish).toHaveValue("Quiero");
+
+  // Tab with nothing highlighted: plain pair navigation, unaffected by the
+  // still-open popover.
+  await page.keyboard.press("Tab");
+  await waitForFocusedField(page, "english");
+  await expect(spanish).toHaveValue("Quiero");
+
+  // Same contract on the English field: typing re-triggers a search, and
+  // Tab with nothing highlighted advances normally (adds a new pair)
+  // instead of accepting a suggestion.
+  await english.pressSequentially("to wa");
+  await expect(popover).toBeVisible({ timeout: 2000 });
+  await expect(popover.locator(".is-active")).toHaveCount(0);
+  await page.keyboard.press("Tab");
+  await expect(english).toHaveValue("to wa");
+});
+
+test("ArrowDown enters the list, Enter accepts, Escape closes the popover only", async ({ page }) => {
+  await page.goto("/admin/lesson-builder");
+  await expect(page.getByText("All changes saved")).toBeVisible({ timeout: 10000 });
+
+  await page.keyboard.press("Control+Alt+l");
+  const title = page.locator("[data-lesson-title]").last();
+  await expect(title).toBeFocused();
+  await title.fill("Querer arrow");
+  await page.keyboard.press("Enter");
+  await waitForFocusedField(page, "explanation");
+  await page.keyboard.press("Control+Alt+Enter");
+  await waitForFocusedField(page, "spanish");
+
+  const pair = page.locator(".lesson-document-pair").first();
+  const spanish = pair.locator("[data-field='spanish']");
+  const english = pair.locator("[data-field='english']");
+  const popover = pair.locator(".concept-typeahead-popover");
+
+  await page.setViewportSize({ width: 760, height: 900 });
+  await spanish.pressSequentially("quer");
+  await expect(popover).toBeVisible({ timeout: 2000 });
+
+  // ArrowDown highlights the first option; Escape from there closes the
+  // popover only — the field stays focused/selected, no slide-level Escape
+  // fires.
+  await page.keyboard.press("ArrowDown");
+  await expect(popover.locator(".is-active")).toHaveCount(1);
   await page.keyboard.press("Escape");
   await expect(popover).toBeHidden();
   await waitForFocusedField(page, "spanish");
 
   // Re-trigger the popover (the value must change for the debounced search
-  // effect to refire) and accept the first completion with Tab.
+  // effect to refire), ArrowDown into it, and accept with Enter.
   await spanish.pressSequentially("e");
   await expect(popover).toBeVisible({ timeout: 2000 });
-  await page.keyboard.press("Tab");
+  await page.keyboard.press("ArrowDown");
+  await page.keyboard.press("Enter");
 
   await waitForFocusedField(page, "english");
   await expect(spanish).not.toHaveValue("");
@@ -180,11 +248,14 @@ test("chain-extend into a fresh pair never corrupts the previous pair, and its p
   const firstPopover = firstPair.locator(".concept-typeahead-popover");
 
   // Type a real curriculum-matching prefix (opens the popover), then finish
-  // the phrase, then Escape — which, per the interaction contract, closes
-  // the popover only and leaves the field focused/selected.
+  // the phrase, ArrowDown to highlight a suggestion (without accepting it),
+  // then Escape — which, per the interaction contract, closes the popover
+  // only and leaves the field focused/selected.
   await firstSpanish.pressSequentially("quie");
   await expect(firstPopover).toBeVisible({ timeout: 2000 });
   await firstSpanish.pressSequentially("res o tú quieres");
+  await page.keyboard.press("ArrowDown");
+  await expect(firstPopover.locator(".is-active")).toHaveCount(1);
   await page.keyboard.press("Escape");
   // Not just hidden — gone from the DOM, and no keymap-ignore left behind.
   await expect(firstPopover).toHaveCount(0);
@@ -279,8 +350,13 @@ test("a concept search that resolves after Escape does not resurrect the popover
   await spanish.pressSequentially("quie");
   await expect(popover).toBeVisible({ timeout: 2000 });
   // One more keystroke starts a second, slow (800ms) fetch — still in
-  // flight when Escape is pressed a moment later.
+  // flight when Escape is pressed a moment later. ArrowDown highlights a
+  // suggestion first so Escape is the "close the popover only" gesture
+  // (the interaction contract) rather than unhighlighted Escape's normal
+  // field-scope behavior.
   await spanish.pressSequentially("r");
+  await page.keyboard.press("ArrowDown");
+  await expect(popover.locator(".is-active")).toHaveCount(1);
   await page.keyboard.press("Escape");
   await expect(popover).toHaveCount(0);
   // Wait past the delayed response's arrival — it must not resurrect the

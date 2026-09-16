@@ -21,6 +21,15 @@ export const dynamic = "force-dynamic";
 // [somebody]", and "estoy" still surfaces "estar [en un estado]" (example
 // "Estoy cansado.") below any label match. See
 // src/lib/lesson-builder/concept-search-rank.ts.
+//
+// `?scope=label` skips the example-sentence columns entirely — used by the
+// sentence pair-field autocomplete (pair-field-autocomplete.tsx), where a
+// teacher typing "Quiero" must not see "ser"/"estar" surfaced merely because
+// their example sentences happen to contain "quiero" (owner regression,
+// 2026-09-16). The Covers/syllabus typeahead (concept-typeahead.tsx) omits
+// the flag and keeps matching examples too. The ranking code
+// (rankConceptSearchResults) is shared either way — with `scope=label` every
+// candidate row already matched a label, so it always ranks in tiers 0-3.
 type Row = {
   id: string;
   spanish: string;
@@ -37,7 +46,10 @@ type Row = {
 };
 
 export async function GET(request: Request) {
-  const query = new URL(request.url).searchParams.get("q")?.trim() ?? "";
+  const params = new URL(request.url).searchParams;
+  const query = params.get("q")?.trim() ?? "";
+  // Label-only scope: see the block comment above.
+  const labelOnly = params.get("scope") === "label";
 
   if (query.length < 2) {
     return NextResponse.json({ concepts: [] });
@@ -62,8 +74,7 @@ export async function GET(request: Request) {
       AND (
         regexp_replace(spanish, '\\[.*?\\]', '', 'g') ILIKE ${like}
         OR regexp_replace(english, '\\[.*?\\]', '', 'g') ILIKE ${like}
-        OR example_spanish ~* ${wordStart}
-        OR example_english ~* ${wordStart}
+        OR (NOT ${labelOnly} AND (example_spanish ~* ${wordStart} OR example_english ~* ${wordStart}))
       )
     ORDER BY
       -- Exact and prefix label hits first, so a short query like "ser"

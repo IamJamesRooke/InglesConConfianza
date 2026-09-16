@@ -60,10 +60,28 @@ export function isAcceptedMatch(value: string, lastAccepted: string | null): boo
   return value.trim().toLowerCase() === lastAccepted.trim().toLowerCase();
 }
 
+// -1 means "nothing highlighted" — the popover's resting state while the
+// teacher is typing, so Tab/Enter never accept a suggestion she didn't ask
+// for (owner regression, 2026-09-16: typing "Quiero" then Enter replaced it
+// with the pre-highlighted "quiero decir"). ArrowDown from -1 enters the
+// list at index 0; ArrowUp from 0 leaves it back to -1. Pulled out as a pure
+// function so the "no default selection" contract is unit-testable without
+// rendering the hook.
+export function nextHighlight(current: number, delta: number, resultCount: number): number {
+  return Math.min(Math.max(current + delta, -1), resultCount - 1);
+}
+
 function usePairFieldAutocomplete(lang: "es" | "en", value: string, isSelected: boolean) {
   const [results, setResults] = useState<PairAutocompleteResult[]>([]);
   const [open, setOpen] = useState(false);
-  const [highlight, setHighlight] = useState(0);
+  // -1 = no default selection (owner regression, 2026-09-16): typing must
+  // never pre-highlight a suggestion, since Enter/Tab accept whatever is
+  // highlighted and a pre-highlighted first result silently replaced typed
+  // text like "Quiero" with "quiero decir". Only ArrowDown moves into the
+  // list (to index 0); until then the field behaves as if the popover
+  // weren't there — see `data-keymap-ignore` below, which is set only once
+  // something is actually highlighted.
+  const [highlight, setHighlight] = useState(-1);
   // The concept text this field last accepted via Tab/Enter (or null if
   // none yet, or if the teacher has since edited the text away from it).
   // Only this — never a search result's text — suppresses the popover for
@@ -128,8 +146,13 @@ function usePairFieldAutocomplete(lang: "es" | "en", value: string, isSelected: 
     const controller = new AbortController();
     const timer = window.setTimeout(async () => {
       try {
+        // `scope=label` — pair fields must never surface a concept purely
+        // because the query happens to appear in its example sentence
+        // ("Quiero" must not pull in "ser"/"estar"); the Covers/syllabus
+        // typeahead (concept-typeahead.tsx) omits this and still matches
+        // examples. See the search route's doc comment.
         const response = await fetch(
-          `/api/admin/curriculum/concepts/search?q=${encodeURIComponent(trimmed)}`,
+          `/api/admin/curriculum/concepts/search?q=${encodeURIComponent(trimmed)}&scope=label`,
           { signal: controller.signal },
         );
         if (!response.ok) return;
@@ -138,7 +161,7 @@ function usePairFieldAutocomplete(lang: "es" | "en", value: string, isSelected: 
         if (generationRef.current !== startGeneration) return;
         const top = data.concepts.slice(0, MAX_RESULTS);
         setResults(top);
-        setHighlight(0);
+        setHighlight(-1);
         setOpen(top.length > 0);
       } catch {
         // aborted or offline — leave the previous popover state in place
@@ -158,7 +181,7 @@ function usePairFieldAutocomplete(lang: "es" | "en", value: string, isSelected: 
     setHighlight,
     markAccepted,
     moveHighlight(delta: number) {
-      setHighlight((current) => Math.min(Math.max(current + delta, 0), results.length - 1));
+      setHighlight((current) => nextHighlight(current, delta, results.length));
     },
   };
 }
@@ -167,11 +190,15 @@ function usePairFieldAutocomplete(lang: "es" | "en", value: string, isSelected: 
 // around the existing `.lesson-document-language-field` textarea markup —
 // callers keep their own onFocus/onChange/onBlur wiring to the shared
 // selection and lesson state; this only adds the popover and the keys that
-// drive it. `data-keymap-ignore` is set on the textarea *only* while the
-// popover is open, so the shared keymap dispatcher (keymap.ts) skips this
-// field and the local `onKeyDown` below handles ↑/↓/Tab/Enter/Escape
-// instead; closed, the field behaves exactly as before and every normal
-// chord (Tab/Enter pair navigation, Escape, etc.) reaches the dispatcher.
+// drive it. `data-keymap-ignore` is set on the textarea only once a
+// suggestion is actually highlighted (ArrowDown pressed) — the shared keymap
+// dispatcher (keymap/index.ts) then skips this field and the local
+// `onKeyDown` below handles ↑/↓/Tab/Enter/Escape instead. While the popover
+// is merely showing candidates with nothing highlighted, the attribute is
+// absent and every normal chord (Tab/Enter pair navigation, Escape, etc.)
+// reaches the dispatcher exactly as if the popover weren't there — the fix
+// for the owner's "Quiero" -> "quiero decir" regression (2026-09-16): typing
+// must never pre-select a suggestion that Enter/Tab could silently accept.
 export function PairLanguageField({
   lang,
   dataField,
@@ -227,7 +254,14 @@ export function PairLanguageField({
       <textarea
         rows={1}
         data-field={dataField}
-        data-keymap-ignore={auto.open ? "" : undefined}
+        // Only claimed by the popover once a suggestion is actually
+        // highlighted (ArrowDown pressed). Until then the shared keymap
+        // dispatcher (a capture-phase listener that runs before this
+        // element's own onKeyDown — see keymap/index.ts) is left free to
+        // handle Tab/Enter/Escape exactly as it would with no popover open
+        // at all: typing "Quiero" and pressing Enter/Tab must never accept
+        // an unhighlighted suggestion (owner regression, 2026-09-16).
+        data-keymap-ignore={auto.open && auto.highlight >= 0 ? "" : undefined}
         value={value}
         onFocus={onFocus}
         onChange={(event) => onChange(event.target.value)}
@@ -256,11 +290,20 @@ export function PairLanguageField({
             event.preventDefault();
             auto.moveHighlight(-1);
           } else if (event.key === "Tab" && event.shiftKey) {
-            // Shift+Tab isn't an accept gesture — close the popover and let
-            // the normal (unhandled, since the global dispatcher already
-            // skipped this field for `data-keymap-ignore`) Tab-back happen.
+            // Reachable only while something is highlighted (that's the
+            // only state where `data-keymap-ignore` is set and the global
+            // dispatcher skips this field). Shift+Tab isn't an accept
+            // gesture — close the popover and let the normal (unhandled)
+            // Tab-back happen.
             auto.close();
           } else if (event.key === "Tab" || event.key === "Enter") {
+            // Nothing highlighted: `data-keymap-ignore` isn't set in this
+            // state (see the textarea's attribute above), so the shared
+            // keymap dispatcher already handled this chord as plain pair
+            // navigation before this handler could even run — this branch
+            // is unreachable in practice and only guards against acting on
+            // a stale highlight if it ever is reached.
+            if (auto.highlight < 0) return;
             const picked = auto.results[auto.highlight];
             if (picked) {
               event.preventDefault();

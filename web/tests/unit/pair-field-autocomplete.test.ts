@@ -1,7 +1,7 @@
 import assert from "node:assert/strict";
 import test from "node:test";
 
-import { isAcceptedMatch } from "../../src/components/lesson-builder/pair-field-autocomplete";
+import { isAcceptedMatch, nextHighlight } from "../../src/components/lesson-builder/pair-field-autocomplete";
 
 // Regression test for the autocomplete false-positive: the popover must be
 // suppressed only when the field's current text matches the concept the
@@ -29,4 +29,32 @@ test("isAcceptedMatch: case- and whitespace-insensitive", () => {
 
 test("isAcceptedMatch: stops matching once the teacher edits away from the accepted text", () => {
   assert.equal(isAcceptedMatch("hacer algo", "hacer"), false);
+});
+
+// Regression for the owner-reported bug: the popover pre-highlighted its
+// first suggestion, so typing "Quiero" and pressing Enter/Tab replaced it
+// with "quiero decir". -1 ("nothing highlighted") must be the resting state
+// every fresh search lands on — only ArrowDown enters the list.
+test("nextHighlight: no default selection — resting state is -1", () => {
+  assert.equal(nextHighlight(-1, 0, 5), -1);
+});
+
+test("nextHighlight: ArrowDown from -1 enters the list at index 0", () => {
+  assert.equal(nextHighlight(-1, 1, 5), 0);
+});
+
+test("nextHighlight: ArrowDown walks forward through the results", () => {
+  assert.equal(nextHighlight(0, 1, 5), 1);
+});
+
+test("nextHighlight: ArrowDown never passes the last result", () => {
+  assert.equal(nextHighlight(4, 1, 5), 4);
+});
+
+test("nextHighlight: ArrowUp from index 0 leaves the list (back to -1)", () => {
+  assert.equal(nextHighlight(0, -1, 5), -1);
+});
+
+test("nextHighlight: ArrowUp never goes below -1", () => {
+  assert.equal(nextHighlight(-1, -1, 5), -1);
 });
