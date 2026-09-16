@@ -76763,7 +76763,7 @@
         "topic:map-haber",
         "topic:verb-system"
       ],
-      "curriculumRole": "Unranked"
+      "curriculumRole": "Trash"
     },
     {
       "id": "hufvgyko3z",
@@ -76787,7 +76787,7 @@
         "topic:map-haber",
         "topic:verb-system"
       ],
-      "curriculumRole": "Unranked"
+      "curriculumRole": "Trash"
     },
     {
       "id": "id38r2eakh",
@@ -76936,7 +76936,7 @@
         "topic:map-haber",
         "topic:verb-system"
       ],
-      "curriculumRole": "Unranked"
+      "curriculumRole": "Trash"
     },
     {
       "id": "qeak5scchp",
@@ -76988,7 +76988,7 @@
         "topic:enmap-have",
         "topic:verb-system"
       ],
-      "curriculumRole": "Unranked"
+      "curriculumRole": "Trash"
     },
     {
       "id": "yqiin6tdtl",
@@ -77040,7 +77040,7 @@
         "topic:map-haber",
         "topic:verb-system"
       ],
-      "curriculumRole": "Unranked"
+      "curriculumRole": "Trash"
     },
     {
       "id": "4dtd8lj623",
@@ -77092,7 +77092,7 @@
         "topic:map-haber",
         "topic:verb-system"
       ],
-      "curriculumRole": "Unranked"
+      "curriculumRole": "Trash"
     },
     {
       "id": "8aej7jfu2y",
@@ -92741,7 +92741,7 @@
     {
       "id": "01rpjz02jy",
       "spanish": "ha [hecho algo]",
-      "english": "has [done something]",
+      "english": "he/she/it has [done something]",
       "example": {
         "spanish": "Ella ha llegado.",
         "english": "She has arrived."
