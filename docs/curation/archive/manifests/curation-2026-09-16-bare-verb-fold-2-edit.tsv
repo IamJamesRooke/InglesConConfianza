@@ -1,0 +1,5 @@
+# Bare-verb fold, part 2 (owner rule 2026-09-16): brackets mark a complement slot, never a sense gloss on a plain infinitive.
+# Where plain «X → to X» exists, a same-head «X [gloss] → to X [gloss]» sibling is folded into it. Roles are the live values (qt9aqatj4f is the owner's P1).
+# id	spanish	english	role	collections-to-add	reason	exSpanish	exEnglish
+qt9aqatj4f	hacer	to do	P1		absorbs 1qz4qeh9oi «hacer [una tarea o actividad] → to do [a task or activity]»; its first-person main-verb example is stronger than «Quiero hacerlo.»; no collections to merge (identical set)	Hago la tarea.	I do the homework.
+xd020ctw06	costar	to cost	Unranked	topic:money-business	absorbs pvep99mzux «costar [una cantidad] → to cost [an amount]»; plainer present-tense example replaces «La reparación puede costar más de un millón de pesos.»	El libro cuesta veinte dólares.	The book costs twenty dollars.

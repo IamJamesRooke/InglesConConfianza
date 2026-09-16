@@ -10130,7 +10130,7 @@
         "topic:verb-creation-hacer",
         "topic:map-hacer"
       ],
-      "curriculumRole": "Unranked"
+      "curriculumRole": "Trash"
     },
     {
       "id": "m9dfm9pbq2",
@@ -19118,7 +19118,7 @@
         "audit:reviewed",
         "topic:verb-money-earning-spending"
       ],
-      "curriculumRole": "Unranked"
+      "curriculumRole": "Trash"
     },
     {
       "id": "9y6wrrzjfz",
@@ -38570,8 +38570,8 @@
       "spanish": "costar",
       "english": "to cost",
       "example": {
-        "spanish": "La reparación puede costar más de un millón de pesos.",
-        "english": "The repair may cost more than one million pesos."
+        "spanish": "El libro cuesta veinte dólares.",
+        "english": "The book costs twenty dollars."
       },
       "collections": [
         "pos:verb",
@@ -38583,7 +38583,8 @@
         "topic:en-multi-sense",
         "audit:reviewed",
         "topic:verb-money-earning-spending",
-        "topic:cognate-transparent"
+        "topic:cognate-transparent",
+        "topic:money-business"
       ],
       "curriculumRole": "Unranked"
     },
@@ -73405,8 +73406,8 @@
       "spanish": "hacer",
       "english": "to do",
       "example": {
-        "spanish": "Quiero hacerlo.",
-        "english": "I want to do it."
+        "spanish": "Hago la tarea.",
+        "english": "I do the homework."
       },
       "collections": [
         "construction:verb-forms",
