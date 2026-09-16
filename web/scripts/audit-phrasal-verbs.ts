@@ -50,7 +50,7 @@ const SWEEP_EXEMPTIONS: Record<string, string> = {
   "ser [hecho] por [alguien]|to be [done] by [somebody]": "passive-voice marker (grammar:passive), not a phrasal verb",
   "pedir [comida] para llevar|to order [food] to go": "\"to go\" is a fixed takeout idiom modifying \"food\", not a verb+particle unit",
   "estar [en un estado]|to be [in a state]": "generic template row — \"[en]\" is a placeholder for any preposition, not a concrete particle",
-  "estar [en un lugar]|to be [in a place]": "generic template row — \"[en]\" is a placeholder for any preposition, not a concrete particle",
+  "estar [en un lugar]|to be [at a place]": "generic template row — \"[en]\" is a placeholder for any preposition, not a concrete particle",
   "quedar con [alguien]|to arrange to meet [somebody]": "\"arrange to meet\" is a full-infinitive complement; the English gloss has no surviving particle",
   "traer [algo] consigo|to have [something] with you": "\"have with you\" is a generic possession construction, not a prepositional verb",
   "ser muy aficionado a [un equipo]|to be a big fan of [a team]": "predicate-adjective idiom (\"be a fan of\") — the noun \"fan\" carries the meaning, not a verb+particle unit (taxonomy-cleanup 2026-09-07)",

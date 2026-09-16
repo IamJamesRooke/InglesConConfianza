@@ -1,0 +1,9 @@
+# Infinitive normalization — estar: generic paradigm rows, infinitive uses, examples, merges.
+# id	spanish	english	role	collections-to-add	reason	[exSpanish	exEnglish]
+obf74hel79	estar [en un lugar]	to be [at a place]	Unranked		rewrite to infinitive use (was «estar [en un lugar] → to be [in a place]»); first-person example (was «Ana está en casa.»)	Estoy en casa.	I'm at home.
+f2zryn85p8	estar [haciendo algo]	to be [doing something]	Unranked	topic:verb-tobe-present	merge collections from folded fragments
+93wmoiwink	estoy	I am	Unranked	sense:estar-progresivo	one generic row per conjugated form (was «estoy [en un estado o lugar] → I am [somewhere or feeling something]»); merge collections from folded fragments
+0k44vohfn6	estás	you are	Unranked	sense:estar-progresivo	one generic row per conjugated form (was «estás [en un estado o lugar] → you are [somewhere or feeling something]»); merge collections from folded fragments
+zs2vl4oxdq	está	he/she/it is	Unranked	sense:estar-progresivo	one generic row per conjugated form (was «está [en un estado o lugar] → is [somewhere or feeling something]»); merge collections from folded fragments
+kaq1f0slza	estamos	we are	Unranked	sense:estar-progresivo	one generic row per conjugated form (was «estamos [en un estado o lugar] → we are [somewhere or feeling something]»); merge collections from folded fragments
+widbvn1zzj	están	they are	Unranked	sense:estar-progresivo	one generic row per conjugated form (was «están [en un estado o lugar] → they are [somewhere or feeling something]»); merge collections from folded fragments

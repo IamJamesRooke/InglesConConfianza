@@ -8002,10 +8002,10 @@
     {
       "id": "obf74hel79",
       "spanish": "estar [en un lugar]",
-      "english": "to be [in a place]",
+      "english": "to be [at a place]",
       "example": {
-        "spanish": "Ana está en casa.",
-        "english": "Ana is at home."
+        "spanish": "Estoy en casa.",
+        "english": "I'm at home."
       },
       "collections": [
         "topic:location",
@@ -8054,7 +8054,8 @@
         "topic:map-estar",
         "topic:enmap-be",
         "topic:verb-estar-idioms",
-        "topic:verb-system"
+        "topic:verb-system",
+        "topic:verb-tobe-present"
       ],
       "curriculumRole": "Unranked"
     },
@@ -76859,7 +76860,7 @@
         "topic:map-estar",
         "topic:verb-system"
       ],
-      "curriculumRole": "Unranked"
+      "curriculumRole": "Trash"
     },
     {
       "id": "qondlt4ahl",
@@ -76881,7 +76882,7 @@
         "topic:phr-be",
         "topic:enmap-be"
       ],
-      "curriculumRole": "Unranked"
+      "curriculumRole": "Trash"
     },
     {
       "id": "nxcynwooyz",
@@ -76903,7 +76904,7 @@
         "topic:phr-be",
         "topic:enmap-be"
       ],
-      "curriculumRole": "Unranked"
+      "curriculumRole": "Trash"
     },
     {
       "id": "05v29ctfcb",
@@ -77523,7 +77524,7 @@
         "topic:map-estar",
         "topic:verb-system"
       ],
-      "curriculumRole": "Unranked"
+      "curriculumRole": "Trash"
     },
     {
       "id": "bvjzllj20d",
@@ -77579,7 +77580,7 @@
         "topic:map-estar",
         "topic:verb-system"
       ],
-      "curriculumRole": "Unranked"
+      "curriculumRole": "Trash"
     },
     {
       "id": "ihsw7a0ggn",
@@ -92403,8 +92404,8 @@
     },
     {
       "id": "93wmoiwink",
-      "spanish": "estoy [en un estado o lugar]",
-      "english": "I am [somewhere or feeling something]",
+      "spanish": "estoy",
+      "english": "I am",
       "example": {
         "spanish": "Estoy cansado.",
         "english": "I am tired."
@@ -92426,14 +92427,15 @@
         "topic:verb-tobe-present",
         "topic:map-estar",
         "topic:confusable-verb",
-        "topic:verb-system"
+        "topic:verb-system",
+        "sense:estar-progresivo"
       ],
       "curriculumRole": "Unranked"
     },
     {
       "id": "0k44vohfn6",
-      "spanish": "estás [en un estado o lugar]",
-      "english": "you are [somewhere or feeling something]",
+      "spanish": "estás",
+      "english": "you are",
       "example": {
         "spanish": "¿Estás bien?",
         "english": "Are you okay?"
@@ -92452,14 +92454,15 @@
         "audit:reviewed",
         "topic:verb-tobe-present",
         "topic:map-estar",
-        "topic:verb-system"
+        "topic:verb-system",
+        "sense:estar-progresivo"
       ],
       "curriculumRole": "Unranked"
     },
     {
       "id": "zs2vl4oxdq",
-      "spanish": "está [en un estado o lugar]",
-      "english": "is [somewhere or feeling something]",
+      "spanish": "está",
+      "english": "he/she/it is",
       "example": {
         "spanish": "Él está en casa.",
         "english": "He is at home."
@@ -92481,14 +92484,15 @@
         "topic:verb-tobe-present",
         "topic:map-estar",
         "topic:confusable-verb",
-        "topic:verb-system"
+        "topic:verb-system",
+        "sense:estar-progresivo"
       ],
       "curriculumRole": "Unranked"
     },
     {
       "id": "kaq1f0slza",
-      "spanish": "estamos [en un estado o lugar]",
-      "english": "we are [somewhere or feeling something]",
+      "spanish": "estamos",
+      "english": "we are",
       "example": {
         "spanish": "Estamos listos.",
         "english": "We are ready."
@@ -92507,14 +92511,15 @@
         "audit:reviewed",
         "topic:verb-tobe-present",
         "topic:map-estar",
-        "topic:verb-system"
+        "topic:verb-system",
+        "sense:estar-progresivo"
       ],
       "curriculumRole": "Unranked"
     },
     {
       "id": "widbvn1zzj",
-      "spanish": "están [en un estado o lugar]",
-      "english": "they are [somewhere or feeling something]",
+      "spanish": "están",
+      "english": "they are",
       "example": {
         "spanish": "Están ocupados.",
         "english": "They are busy."
@@ -92533,7 +92538,8 @@
         "audit:reviewed",
         "topic:verb-tobe-present",
         "topic:map-estar",
-        "topic:verb-system"
+        "topic:verb-system",
+        "sense:estar-progresivo"
       ],
       "curriculumRole": "Unranked"
     },
@@ -92819,7 +92825,7 @@
         "topic:map-estar",
         "topic:verb-system"
       ],
-      "curriculumRole": "Unranked"
+      "curriculumRole": "Trash"
     },
     {
       "id": "g2rq6v6czz",
@@ -92845,7 +92851,7 @@
         "topic:map-estar",
         "topic:verb-system"
       ],
-      "curriculumRole": "Unranked"
+      "curriculumRole": "Trash"
     },
     {
       "id": "9yf8jsp2b1",
@@ -92871,7 +92877,7 @@
         "topic:map-estar",
         "topic:verb-system"
       ],
-      "curriculumRole": "Unranked"
+      "curriculumRole": "Trash"
     },
     {
       "id": "4e3tp75nnw",
@@ -92897,7 +92903,7 @@
         "topic:map-estar",
         "topic:verb-system"
       ],
-      "curriculumRole": "Unranked"
+      "curriculumRole": "Trash"
     },
     {
       "id": "bb48xm25wt",
@@ -92923,7 +92929,7 @@
         "topic:map-estar",
         "topic:verb-system"
       ],
-      "curriculumRole": "Unranked"
+      "curriculumRole": "Trash"
     },
     {
       "id": "opdzad1zrx",
