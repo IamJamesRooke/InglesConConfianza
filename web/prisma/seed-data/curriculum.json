@@ -29658,7 +29658,7 @@
         "audit:reviewed",
         "topic:verb-keeping-storing"
       ],
-      "curriculumRole": "Unranked"
+      "curriculumRole": "Trash"
     },
     {
       "id": "1vh5rntj16",
@@ -34499,7 +34499,7 @@
         "audit:reviewed",
         "topic:verb-wishes"
       ],
-      "curriculumRole": "Unranked"
+      "curriculumRole": "Trash"
     },
     {
       "id": "fywyjd1hm5",
@@ -34674,7 +34674,7 @@
         "audit:reviewed",
         "topic:verb-wishes"
       ],
-      "curriculumRole": "Unranked"
+      "curriculumRole": "Trash"
     },
     {
       "id": "8sroghkesj",
@@ -36130,7 +36130,7 @@
         "audit:reviewed",
         "topic:verb-creation-repair-other"
       ],
-      "curriculumRole": "Unranked"
+      "curriculumRole": "Trash"
     },
     {
       "id": "xo44xzb3jh",
@@ -37850,7 +37850,7 @@
         "audit:reviewed",
         "topic:verb-money-earning-spending"
       ],
-      "curriculumRole": "Unranked"
+      "curriculumRole": "Trash"
     },
     {
       "id": "gs1i2tjs8s",
@@ -38064,7 +38064,7 @@
         "audit:reviewed",
         "topic:verb-admin-legal-formal"
       ],
-      "curriculumRole": "Unranked"
+      "curriculumRole": "Trash"
     },
     {
       "id": "ip4nnqfbwi",
@@ -54613,7 +54613,9 @@
         "en:require",
         "audit:reviewed",
         "topic:verb-admin-legal-formal",
-        "topic:cognate-opaque"
+        "topic:cognate-opaque",
+        "register:formal",
+        "grammar:verb-direct-object"
       ],
       "curriculumRole": "Unranked"
     },
@@ -55684,8 +55686,8 @@
       "spanish": "construir",
       "english": "to build",
       "example": {
-        "spanish": "La ciudad planea construir un nuevo puente.",
-        "english": "The city plans to construct a new bridge."
+        "spanish": "Construyeron una casa.",
+        "english": "They built a house."
       },
       "collections": [
         "pos:verb",
@@ -55697,7 +55699,8 @@
         "cognate:latin-root",
         "audit:reviewed",
         "topic:verb-creation-repair-other",
-        "topic:cognate-latin-root"
+        "topic:cognate-latin-root",
+        "grammar:verb-direct-object"
       ],
       "curriculumRole": "Unranked"
     },
@@ -62384,8 +62387,8 @@
       "spanish": "empezar",
       "english": "to start",
       "example": {
-        "spanish": "La clase empieza a las ocho.",
-        "english": "Class starts at eight."
+        "spanish": "Empiezo el informe por la mañana.",
+        "english": "I start the report in the morning."
       },
       "collections": [
         "pos:verb",
@@ -62393,7 +62396,8 @@
         "en:start",
         "topic:en-multi-sense",
         "audit:reviewed",
-        "topic:verb-wishes"
+        "topic:verb-wishes",
+        "grammar:verb-direct-object"
       ],
       "curriculumRole": "Unranked"
     },
@@ -63356,7 +63360,9 @@
         "en:pay",
         "topic:en-multi-sense",
         "audit:reviewed",
-        "topic:verb-money-earning-spending"
+        "topic:verb-money-earning-spending",
+        "grammar:verb-direct-object",
+        "topic:money-business"
       ],
       "curriculumRole": "Unranked"
     },

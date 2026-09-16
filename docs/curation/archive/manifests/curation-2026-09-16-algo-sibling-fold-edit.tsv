@@ -1,0 +1,8 @@
+# [algo] siblings folded into the plain infinitive (owner decision 2026-09-16): keep «X → to X», merge example/collections, trash «X [algo] → to X [something]».
+# id	spanish	english	role	collections-to-add	reason	[exSpanish	exEnglish]
+qrdegrts3w	construir	to build	Unranked	grammar:verb-direct-object	absorbs 4z5hy6veqe «construir [algo] → to build [something]»; plain example translated «construct», not «build»	Construyeron una casa.	They built a house.
+ooo5pxwt1y	empezar	to start	Unranked	grammar:verb-direct-object	absorbs 16421aymo4 «empezar [algo] → to start [something]»; first-person example replaces «La clase empieza a las ocho.»	Empiezo el informe por la mañana.	I start the report in the morning.
+jbffg23epm	mantener	to maintain	Unranked		absorbs afxy3gj8g5 «mantener [algo] → to maintain [something]»; keeps its own example
+8i7uc2z97a	pagar	to pay	Unranked	grammar:verb-direct-object|topic:money-business	absorbs l71bpvl4t0 «pagar [algo] → to pay [something]»; keeps its own example
+j7ecz0bqjs	requerir	to require	Unranked	register:formal|grammar:verb-direct-object	absorbs kloejv5hcu «requerir [algo] → to require [something]»; keeps its own example
+1nm2wdol3n	terminar	to finish	Unranked		absorbs q60j06yhe9 «terminar [algo] → to finish [something]»; keeps its own example
