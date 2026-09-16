@@ -138,6 +138,89 @@ test("a P1 example-match ranks above an Unranked example-match", () => {
   assert.ok(results.every((r) => r.matchedVia === "example"));
 });
 
+test("among example-only matches, a shared Spanish head-word prefix outranks unrelated example hits", () => {
+  const results = rankConceptSearchResults(
+    [
+      candidate("tan", "so", "tan", "Unranked", {
+        spanish: "Estoy tan cansado.",
+        english: "I am so tired.",
+      }),
+      candidate("ahora", "now", "ahora", "Unranked", {
+        spanish: "Estoy ahora mismo ocupado.",
+        english: "I am busy right now.",
+      }),
+      candidate("estar-ocupado", "[to be] busy", "[estar] ocupado", "Unranked", {
+        spanish: "Estoy ocupado.",
+        english: "I am busy.",
+      }),
+      candidate(
+        "estar-lugar",
+        "to be [in a place]",
+        "estar [en un lugar]",
+        "Unranked",
+        { spanish: "Estoy en casa.", english: "I am at home." },
+      ),
+      candidate(
+        "estar-gerundio",
+        "to be [doing something]",
+        "estar [haciendo algo]",
+        "Unranked",
+        { spanish: "Estoy trabajando.", english: "I am working." },
+      ),
+      candidate("estoy-label", "I am [somewhere]", "estoy [en un lugar]"),
+    ],
+    "estoy",
+  );
+  assert.deepEqual(
+    results.map((r) => r.id),
+    ["estoy-label", "estar-lugar", "estar-gerundio", "tan", "ahora", "estar-ocupado"],
+  );
+});
+
+test("'tengo' ranks 'tener [algo]' above an unrelated example match", () => {
+  const results = rankConceptSearchResults(
+    [
+      candidate("tan", "so", "tan", "Unranked", {
+        spanish: "Tengo tan poco tiempo.",
+        english: "I have so little time.",
+      }),
+      candidate("tener-algo", "to have [something]", "tener [algo]", "Unranked", {
+        spanish: "Tengo un perro.",
+        english: "I have a dog.",
+      }),
+    ],
+    "tengo",
+  );
+  assert.deepEqual(
+    results.map((r) => r.id),
+    ["tener-algo", "tan"],
+  );
+});
+
+test("a query shorter than 3 letters never triggers the head-word bonus", () => {
+  const results = rankConceptSearchResults(
+    [
+      // Spanish head word "quedarse" would share a 2-letter prefix with the
+      // query, but the rule requires 3 — and never fires below a 3-letter
+      // query anyway.
+      candidate("quedarse-casa", "to stay [at home]", "quedarse en casa", "P5", {
+        spanish: "Es en casa.",
+        english: "It's at home.",
+      }),
+      candidate("otro", "other", "otro", "P1", {
+        spanish: "Es otro día.",
+        english: "It's another day.",
+      }),
+    ],
+    "es",
+  );
+  // Without the head-word bonus, priority alone decides the tie: P1 first.
+  assert.deepEqual(
+    results.map((r) => r.id),
+    ["otro", "quedarse-casa"],
+  );
+});
+
 test("an example matches only at a word start — 'melo' never surfaces 'gemelos'", () => {
   const rows = [
     {

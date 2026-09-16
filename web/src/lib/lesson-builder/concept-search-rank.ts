@@ -7,9 +7,12 @@
 // infinitives ("estar [en un lugar]"), but a teacher types the conjugated
 // form she's about to teach ("estoy"), which never appears in the label — so
 // a row whose only hit is in its own example sentence ("Estoy en casa.")
-// still surfaces, but ranks below every label match: a new lowest tier,
-// tie-broken the same way. Ties break by curriculum priority (P1 first) then
-// by label length (shorter first).
+// still surfaces, but ranks below every label match: a new lowest tier.
+// Within that lowest tier, a row whose Spanish head word shares the query's
+// first three letters ("est…" -> "estar") outranks one that doesn't, since
+// that's probably the verb the teacher meant, not an incidental hit in an
+// unrelated example sentence. Remaining ties break by curriculum priority
+// (P1 first) then by label length (shorter first).
 
 export type ConceptSearchCandidate = {
   id: string;
@@ -70,6 +73,26 @@ function matchTier(candidateText: string, normalizedQuery: string): number {
 // under the *worst* label match.
 const EXAMPLE_TIER_OFFSET = 4;
 
+// Minimum shared-prefix length for the example-only "head word" bonus below.
+const HEAD_PREFIX_MIN_LENGTH = 3;
+
+// Among example-only matches, a row whose Spanish head word (the label's
+// first word, after normalize() strips a leading bracketed placeholder like
+// "[estar]") shares the query's first three letters is probably the verb the
+// teacher actually typed ("estoy" -> "estar"), not an incidental hit
+// somewhere in an unrelated example sentence. Query strings under the
+// minimum length never trigger this — "es" shouldn't pull in every "est…"
+// row.
+function hasMatchingHeadWord(spanishLabel: string, normalizedQuery: string): boolean {
+  if (normalizedQuery.length < HEAD_PREFIX_MIN_LENGTH) return false;
+  const headWord = normalize(spanishLabel).split(/\s+/)[0] ?? "";
+  if (headWord.length < HEAD_PREFIX_MIN_LENGTH) return false;
+  return (
+    headWord.slice(0, HEAD_PREFIX_MIN_LENGTH) ===
+    normalizedQuery.slice(0, HEAD_PREFIX_MIN_LENGTH)
+  );
+}
+
 // Word-start match on the example text — no bracket-stripping, since
 // examples are real sentences, not templated labels. Unlike labels there is
 // no substring tier: "melo" must not surface "No puedo distinguir a los
@@ -112,6 +135,14 @@ export function rankConceptSearchResults<T extends ConceptSearchCandidate>(
         : bestExampleTier + EXAMPLE_TIER_OFFSET;
       const matchedVia: "label" | "example" = Number.isFinite(labelTier) ? "label" : "example";
 
+      // Only breaks ties among example-only matches (see hasMatchingHeadWord
+      // above) — label-tier rows always get 0 here so this never touches
+      // their existing ordering.
+      const headPrefixRank =
+        matchedVia === "example" && hasMatchingHeadWord(candidate.spanish, normalizedQuery)
+          ? 0
+          : 1;
+
       const length = Math.min(
         normalize(candidate.english).length || Number.POSITIVE_INFINITY,
         normalize(candidate.spanish).length || Number.POSITIVE_INFINITY,
@@ -121,12 +152,19 @@ export function rankConceptSearchResults<T extends ConceptSearchCandidate>(
         tier,
         priority: priorityRank(candidate.curriculumRole),
         length,
+        headPrefixRank,
         matchedVia,
         matchedExample: matchedVia === "example" ? matchedExample : undefined,
       };
     })
     .filter((entry) => Number.isFinite(entry.tier))
-    .sort((a, b) => a.tier - b.tier || a.priority - b.priority || a.length - b.length)
+    .sort(
+      (a, b) =>
+        a.tier - b.tier ||
+        a.headPrefixRank - b.headPrefixRank ||
+        a.priority - b.priority ||
+        a.length - b.length,
+    )
     .map((entry) => ({
       ...entry.candidate,
       matchedVia: entry.matchedVia,
