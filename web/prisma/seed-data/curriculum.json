@@ -96098,6 +96098,28 @@
         "en:us"
       ],
       "curriculumRole": "P1"
+    },
+    {
+      "id": "at8dkibi7m",
+      "spanish": "para [hacer algo]",
+      "english": "in order [to do something]",
+      "example": {
+        "spanish": "Estudio para aprender.",
+        "english": "I study in order to learn."
+      },
+      "collections": [
+        "construction:verb-forms",
+        "grammar:purpose",
+        "construction:map-para-full-infinitive",
+        "construction:followed-by-full-infinitive",
+        "form:full-infinitive",
+        "es:para",
+        "en:order",
+        "pos:preposition",
+        "topic:verb-pattern",
+        "topic:vp-full-inf"
+      ],
+      "curriculumRole": "P1"
     }
   ]
 }
