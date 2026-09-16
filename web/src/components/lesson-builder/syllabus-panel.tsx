@@ -36,11 +36,14 @@ import { useEffect, useRef, useState, type DragEvent, type KeyboardEvent } from 
 
 import { ConceptQuickEdit } from "@/components/lesson-builder/concept-quick-edit";
 import { LessonConceptsField } from "@/components/lesson-builder/lesson-concepts-field";
+import { AddFromLevelPicker } from "@/components/lesson-builder/syllabus-fill-picker";
 import { renderConceptLabel } from "@/lib/lesson-builder/concept-label";
 import { conceptKey } from "@/lib/lesson-builder/lesson-file";
+import { createId } from "@/lib/lesson-builder/utils";
 import { curriculumRoleLabel } from "@/lib/curriculum/types";
 import { useDragReorder } from "@/lib/lesson-builder/use-drag-reorder";
 import { groupSyllabusItems } from "@/lib/lesson-builder/syllabus-groups";
+import type { ByLevelConcept } from "@/lib/lesson-builder/syllabus-fill";
 import {
   addMainItem,
   addReviewItem,
@@ -366,6 +369,31 @@ export function SyllabusPanel({
       });
   }
 
+  // "Add from Level…" (round 2, item B): append the picker's selection to
+  // Main, in the order it was shown (group order, then flat order within a
+  // group — the picker already hands rows back in that order). Each becomes
+  // a linked LessonConcept with a fresh id, same shape the Covers typeahead
+  // mints (addFromResult in concept-typeahead.tsx); recording the display
+  // here means the pill can render (and group by pos) before any reload.
+  function handleAddFromLevel(rows: ByLevelConcept[]) {
+    if (rows.length === 0) return;
+    const newItems: SyllabusItem[] = rows.map((row) => ({
+      id: createId("lesson_concept"),
+      conceptId: row.id,
+      label: row.spanish,
+    }));
+    rows.forEach((row) => {
+      onDisplayChange(row.id, {
+        spanish: row.spanish,
+        english: row.english,
+        role: row.curriculumRole,
+        pos: row.pos ?? undefined,
+      });
+    });
+    patchSyllabus({ ...syllabus, main: [...syllabus.main, ...newItems] });
+    pendingFocusRef.current = newItems[0].id;
+  }
+
   function renderAcceptedChip(item: SyllabusItem, kind: ListKind) {
     const label = labelFor(item);
     const tone = toneFor(item);
@@ -626,14 +654,17 @@ export function SyllabusPanel({
             </div>
           )}
 
-          <button
-            type="button"
-            className="syllabus-panel-copy-link"
-            onClick={copyAsText}
-            title="Copies this module's teaching points, review items and coverage as plain text — e.g. to paste into an AI prompt"
-          >
-            {briefCopied ? "Copied!" : "Copy as text"}
-          </button>
+          <div className="syllabus-panel-footer">
+            <AddFromLevelPicker modules={modules} onAdd={handleAddFromLevel} />
+            <button
+              type="button"
+              className="syllabus-panel-copy-link"
+              onClick={copyAsText}
+              title="Copies this module's teaching points, review items and coverage as plain text — e.g. to paste into an AI prompt"
+            >
+              {briefCopied ? "Copied!" : "Copy as text"}
+            </button>
+          </div>
         </div>
       )}
     </div>

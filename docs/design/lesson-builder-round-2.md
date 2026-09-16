@@ -1,6 +1,6 @@
 # Lesson builder, round 2 — plan for owner agreement (2026-09-16)
 
-> Status: **agreed by the owner 2026-09-16 (colour dot for levels); A done, C started, B after A.** Written from the owner's screenshot of Confianza I
+> Status: **agreed by the owner 2026-09-16 (colour dot for levels); A done, B done, C started.** Written from the owner's screenshot of Confianza I
 > with 31 Main teaching points and no lessons yet, plus the owner's two asks (group the
 > teaching points by type; show each concept's level without clicking). Everything here
 > is delegated; Fable reviews diffs and screenshots and gates merges.
@@ -50,13 +50,28 @@ Proof: before/after screenshots at 1280 and 760 with pills in several groups and
 levels, one covered pill, one Unranked. Playwright: extend `geometry-corners` and add a
 `syllabus-groups` spec (grouping order, level mark text, untagged bucket).
 
-### B. Fill the syllabus from the database (Sonnet, after A merges, same branch lineage)
+### B. Fill the syllabus from the database — **done (2026-09-16)**, branch `feat/syllabus-fill-from-level`
 
 The owner is re-typing Level 1 by hand. A picker on the card: **"Add from Level…"** →
 choose a level → a checklist of that level's concepts not yet in any module's syllabus
 (course-wide, so Confianza II does not re-offer what I already claims), grouped the same
 way as A, multi-select, "Add N to Main". Uses the existing search API pattern with a
 role filter; no new tables. Sonnet: it is a list-and-add feature over known seams.
+
+Done: a quiet "Add from Level…" text-button next to "Copy as text"
+(`syllabus-panel.tsx`) opens a portal popover (`syllabus-fill-picker.tsx`,
+same pattern as `ConceptQuickEdit`) with a level selector (Level 1…Level 5),
+a `Select all`/`Clear` pair, and the level's concepts grouped by
+`syllabus-groups.ts` with a level dot per row — pure exclusion logic in
+`syllabus-fill.ts` (`unclaimedConceptsForLevel`) filters out any concept id
+already in any module's Main or Review list. Data comes from a new read-only
+route, `GET /api/admin/curriculum/concepts/by-level?role=P1`, the same
+`pos:*` subquery as the search route, ordered by `sort_order`, capped at
+500. Adding appends linked `LessonConcept`s to the module's Main list in
+group order, records their displays, closes the popover, and focuses the
+first new pill (reusing the panel's existing cross-list focus-transfer
+ref). Styling: `syllabus-fill.css`. Tests:
+`tests/unit/syllabus-fill.test.ts`, `tests/ux/syllabus-fill.spec.ts`.
 
 ### C. Search ranking for conjugated forms (Sonnet, small, independent — can run now)
 
