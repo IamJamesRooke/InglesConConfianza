@@ -1,0 +1,6 @@
+# Infinitive normalization — deber: generic paradigm rows, infinitive uses, examples, merges.
+# id	spanish	english	role	collections-to-add	reason	[exSpanish	exEnglish]
+yrb2jzggm4	deber [hacer algo] (consejo)	should [do something]	Unranked		rewrite to infinitive use (was «debería [hacer algo] → should [do something]»)
+q95c3kam4n	deber [hacer algo] (consejo)	ought to [do something]	Unranked		rewrite to infinitive use (was «debería [hacer algo] → ought to [do something]»)
+shtk95phvk	no deber [hacer algo] (consejo)	should not [do something]	Unranked		rewrite to infinitive use (was «no debería [hacer algo] → should not [do something]»)
+eemg8n6ho5	deber haber [hecho algo] (consejo)	should have [done something]	Unranked		rewrite to infinitive use (was «debí haber [hecho algo] → should have [done something]»)

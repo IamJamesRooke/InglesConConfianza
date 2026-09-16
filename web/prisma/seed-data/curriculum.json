@@ -19835,7 +19835,7 @@
     },
     {
       "id": "yrb2jzggm4",
-      "spanish": "debería [hacer algo]",
+      "spanish": "deber [hacer algo] (consejo)",
       "english": "should [do something]",
       "example": {
         "spanish": "Deberías descansar.",
@@ -19863,7 +19863,7 @@
     },
     {
       "id": "q95c3kam4n",
-      "spanish": "debería [hacer algo]",
+      "spanish": "deber [hacer algo] (consejo)",
       "english": "ought to [do something]",
       "example": {
         "spanish": "Deberíamos cumplir la promesa.",
@@ -20047,7 +20047,7 @@
     },
     {
       "id": "shtk95phvk",
-      "spanish": "no debería [hacer algo]",
+      "spanish": "no deber [hacer algo] (consejo)",
       "english": "should not [do something]",
       "example": {
         "spanish": "No deberías preocuparte.",
@@ -20099,7 +20099,7 @@
     },
     {
       "id": "eemg8n6ho5",
-      "spanish": "debí haber [hecho algo]",
+      "spanish": "deber haber [hecho algo] (consejo)",
       "english": "should have [done something]",
       "example": {
         "spanish": "Debí haber llamado.",
@@ -20172,7 +20172,7 @@
         "topic:map-deber",
         "topic:verb-system"
       ],
-      "curriculumRole": "Unranked"
+      "curriculumRole": "Trash"
     },
     {
       "id": "5qa1ueater",
