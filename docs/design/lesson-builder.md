@@ -531,7 +531,9 @@ proposal doc's aspirations.
   field's 6px `role-*` level dot (hollow for Unranked), named in its `title`
   and in the card-foot legend; the header adds "· N unranked". `is-uncovered`
   is now a plain hairline (dashed = `is-missing`), `is-covered` adds a check,
-  `[brackets]` recede, and the progress bar hides until the module has a lesson.
+  `[brackets]` recede, and the progress bar paints only once the module
+  has a lesson (the 3px track stays in the layout while idle — unmounting it
+  made the whole lesson list jump when the first lesson landed).
 - **Freehand "Covers" concepts render dashed** (§9 item R5): a concept chip
   with no `conceptId` (typed and accepted but not matched to anything in the
   curriculum database) gets `border-style: dashed` — `.lesson-concept-chip.is-freehand`

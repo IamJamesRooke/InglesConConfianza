@@ -55,6 +55,11 @@
 .syllabus-card-progress:last-child {
   border-radius: 0 0 14px 14px;
 }
+/* Idle (module with no lessons): the track holds its 3px but paints
+   nothing, so adding the first lesson doesn't shift the page. */
+.syllabus-card-progress.is-idle {
+  visibility: hidden;
+}
 .syllabus-card-progress-fill {
   height: 100%;
   background: var(--primary);
