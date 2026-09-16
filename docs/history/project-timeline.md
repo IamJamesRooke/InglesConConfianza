@@ -269,6 +269,18 @@ The follow-up pass made that document usable from a blank course. Module informa
 
 The fixed 17-lesson presentation fixture had served its purpose and was replaced by the owner's manually authored course. Its content-specific regression test was retired in favor of checking structural integrity and unique IDs without prescribing lesson content. From this point, real lesson authoring drives small improvements to the Builder as friction appears.
 
+## September 14–16: Rebuild the Lesson Builder around one editing model
+
+Real authoring on a blank course exposed a builder that had grown by accretion: several competing focus and keyboard systems, a hand-written explanation serializer that lost paragraphs and corrupted mark boundaries, and an insertion chooser that made the teacher select a type before typing. A root-cause diagnostic replaced patchwork with a rebuild in phases. One editing-selection store now drives focus, a single keymap table generates both the dispatcher and the on-screen shortcut bar, and leaving a slide prunes blank pairs and deletes empty slides so junk never reaches the file. The explanation editor became a ProseMirror document with Spanish and English marks, a property-tested Markdown dialect, and an "X es Y" rule that marks languages as the teacher types.
+
+Ergonomics followed the rule that authoring speed should equal typing speed: script mode (a plain-text grammar for a whole lesson, which the owner called "pretty genius"), chain building, given pieces, pair proposals from the explanation, curriculum autocomplete inside pair fields, suggested Covers, and type-predicted insertion on `Ctrl+Alt+Enter`. A module syllabus card, specified in the curation session, now records each module's Main and Review teaching points as wrapped pill lists with coverage derived from the lessons.
+
+Two process lessons were recorded. An unsupervised visual redesign of the learner side (serif type, dark theme) was rejected on sight and reverted in full; visual direction now changes only against owner screenshots. Parallel agent sessions in git worktrees worked, but reconciliation cost made one larger sequential session the default.
+
+The codebase was then decluttered for token economy: eight unused dependencies and all dead files and exports removed, one-off curation scripts archived, the docs top level cut from hundreds of files to a couple dozen, the builder page and keymap split by scope, the curriculum table split into five components, and the learner stylesheets deduplicated with screenshot proof (which caught a real cascade change). The gate at the end: 330 unit tests, 81 Playwright specs, clean type check, lint, dead-code scan and production build.
+
+The owner then emptied the course, named three modules Confianza I, II and III, and asked for the product vision to be written down before authoring the pre-alpha. That vision, the module promises, and the metadata the modules need are in [the product vision](../design/product-vision.md).
+
 ## The next chapter
 
 The project now moves through two connected phases.
