@@ -230,6 +230,12 @@
   color: var(--muted-foreground);
   line-height: 1.3;
 }
+/* Shown only when the query matched via the example sentence, not the label
+   (concept-search-rank.ts's example tier) — quieter than the Spanish label
+   it trails, since it's context for the match, not the concept itself. */
+.concept-typeahead-option-example {
+  color: color-mix(in oklch, var(--muted-foreground) 70%, transparent);
+}
 .concept-typeahead-option-meta {
   grid-column: 2;
   align-self: center;

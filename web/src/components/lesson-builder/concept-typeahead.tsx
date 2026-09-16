@@ -20,6 +20,13 @@ type ConceptResult = {
   spanish: string;
   english: string;
   curriculumRole: string;
+  // "example" when the query only matched this concept's example sentence
+  // (e.g. typing the conjugated "estoy" against the infinitive concept
+  // "estar [en un lugar]") — the popover then shows that example as a
+  // second, quieter line so the teacher can see why it matched. See
+  // src/lib/lesson-builder/concept-search-rank.ts.
+  matchedVia: "label" | "example";
+  matchedExample?: string;
 };
 
 // Same "Level N / Unranked / Trash" wording the curriculum page and the
@@ -315,6 +322,12 @@ export function ConceptTypeahead({
                     </span>
                     <span className="concept-typeahead-option-spanish">
                       {result.spanish}
+                      {result.matchedVia === "example" && result.matchedExample && (
+                        <span className="concept-typeahead-option-example">
+                          {" "}
+                          · {result.matchedExample}
+                        </span>
+                      )}
                     </span>
                   </span>
                   <span className="concept-typeahead-option-meta">

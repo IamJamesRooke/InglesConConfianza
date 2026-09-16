@@ -125,6 +125,29 @@ test("backspace on an empty field focuses the last chip; a second backspace remo
   await expect(chip).toHaveCount(0);
 });
 
+test("a conjugated form ('estoy') offers its infinitive concept ('estar…') via the example sentence", async ({ page }) => {
+  // Concepts are stored as infinitives ("estar [en un lugar]"), but a teacher
+  // types the conjugated form she's about to teach ("estoy"), which never
+  // appears in the label — only in the concept's own example sentence
+  // ("Estoy cansado."). Verified read-only against the curriculum DB before
+  // writing this test: "estar [en un estado]" (Unranked) has example_spanish
+  // "Estoy cansado.", so "estoy" must surface a Spanish-label option starting
+  // with "estar".
+  await page.setViewportSize({ width: 1280, height: 900 });
+  const { input } = await openLessonWithCoversField(page);
+
+  await input.click();
+  await input.fill("estoy");
+  const popover = page.locator(".concept-typeahead-popover");
+  await expect(popover).toBeVisible();
+
+  const infinitiveOption = popover
+    .locator(".concept-typeahead-option-spanish")
+    .filter({ hasText: /^estar\b/ })
+    .first();
+  await expect(infinitiveOption).toBeVisible();
+});
+
 test("escape closes the popover and returns focus to the input", async ({ page }) => {
   await page.setViewportSize({ width: 1280, height: 900 });
   const { input } = await openLessonWithCoversField(page);
