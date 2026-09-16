@@ -104,6 +104,27 @@ test("repeated ArrowDown scrolls the active option into view within the popover"
   }
 });
 
+test("backspace on an empty field focuses the last chip; a second backspace removes it", async ({ page }) => {
+  await page.setViewportSize({ width: 1280, height: 900 });
+  const { row, input } = await openLessonWithCoversField(page);
+
+  await input.click();
+  await input.fill("if");
+  await input.press("ArrowDown");
+  await input.press("Enter");
+  const chip = row.locator(".lesson-concept-chip");
+  await expect(chip).toHaveCount(1);
+
+  // First Backspace: nothing is deleted, the chip takes focus.
+  await input.press("Backspace");
+  await expect(chip).toHaveCount(1);
+  await expect(chip).toBeFocused();
+
+  // Second Backspace, on the chip itself, removes it.
+  await page.keyboard.press("Backspace");
+  await expect(chip).toHaveCount(0);
+});
+
 test("escape closes the popover and returns focus to the input", async ({ page }) => {
   await page.setViewportSize({ width: 1280, height: 900 });
   const { input } = await openLessonWithCoversField(page);

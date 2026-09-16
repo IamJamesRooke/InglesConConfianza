@@ -31,7 +31,6 @@ function roleLabel(role?: string): string {
 export function ConceptTypeahead({
   concepts,
   onAdd,
-  onRemove,
   onAdvance,
   recordDisplay,
   coversFor,
@@ -44,7 +43,6 @@ export function ConceptTypeahead({
 }: {
   concepts: LessonConcept[];
   onAdd: (concept: LessonConcept) => void;
-  onRemove: (lessonConceptId: string) => void;
   // Marks this as a lesson's "Covers" setup field: tags the input for the
   // title → covers focus hop, and `onAdvance` fires when Enter is pressed on
   // an empty field to move on to the lesson body.
@@ -212,12 +210,19 @@ export function ConceptTypeahead({
             onAcceptAllPairSuggestions();
             return;
           }
-          if (
-            event.key === "Backspace" &&
-            query === "" &&
-            concepts.length > 0
-          ) {
-            onRemove(concepts[concepts.length - 1].id);
+          if (event.key === "Backspace" && query === "" && concepts.length > 0) {
+            // Never delete on the first press: move focus onto the last
+            // chip, where a second Backspace (or Delete) removes it — so a
+            // reflexive Backspace can't silently eat a concept. The chip
+            // row is the nearest wrapper around both the chips and this input.
+            const row = event.currentTarget.closest(".lesson-concepts-row, .syllabus-chip-row");
+            const chips = row?.querySelectorAll<HTMLElement>("[data-chip-focusable]");
+            const last = chips?.[chips.length - 1];
+            if (last) {
+              event.preventDefault();
+              setOpen(false);
+              last.focus();
+            }
             return;
           }
           if (event.key === "Escape") {

@@ -258,6 +258,13 @@ export function SyllabusPanel({
   }
 
   function handleChipKeyDown(event: KeyboardEvent<HTMLElement>, itemId: string, kind: ListKind) {
+    if (event.target === event.currentTarget && (event.key === "Backspace" || event.key === "Delete")) {
+      // Only when the pill itself is focused (a second Backspace after the
+      // field's first one, or Delete) — never from the quick-edit trigger.
+      event.preventDefault();
+      patchSyllabus(removeFnFor(kind)(syllabus, itemId));
+      return;
+    }
     if (!((event.ctrlKey || event.metaKey) && event.altKey)) return;
     if (event.key === "ArrowLeft" || event.key === "ArrowRight") {
       event.preventDefault();
@@ -299,6 +306,7 @@ export function SyllabusPanel({
         draggable
         tabIndex={0}
         data-syllabus-chip={item.id}
+        data-chip-focusable
         className={`lesson-concept-chip syllabus-chip ${toneFor(item)}${isDragging ? " dragging" : ""}${dropClass}`}
         title={titleFor(item)}
         onDragStart={(event) => drag.dragStart(event, dragScope, item.id)}

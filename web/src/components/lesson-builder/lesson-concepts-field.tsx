@@ -225,6 +225,17 @@ export function LessonConceptsField({
           return (
           <span
             key={concept.id}
+            tabIndex={0}
+            data-chip-focusable
+            onKeyDown={(event) => {
+              // Reached by Backspace from an empty concept field (or Tab):
+              // a second Backspace, or Delete, removes this chip.
+              if (event.target !== event.currentTarget) return;
+              if (event.key === "Backspace" || event.key === "Delete") {
+                event.preventDefault();
+                onRemove(concept.id);
+              }
+            }}
             className={variant === "compact"
               ? `lesson-concept-chip ${chipTone}`
               : `group inline-flex items-center gap-2 rounded-xl border px-3 py-1.5 text-xs ${
@@ -299,7 +310,6 @@ export function LessonConceptsField({
         <ConceptTypeahead
           concepts={concepts}
           onAdd={onAdd}
-          onRemove={onRemove}
           onAdvance={onAdvance}
           recordDisplay={recordDisplay}
           coversFor={coversFor}
