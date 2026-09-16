@@ -2,7 +2,7 @@
 
 _Started 2026-09-07. Supersedes the core/supporting/reference split for the
 purpose of course sequencing. `trash` is unchanged. Builds on the Phase 2
-taxonomy work (`docs/curation/taxonomy-cleanup-2026-09-07/`)._
+taxonomy work (`docs/curation/archive/taxonomy-cleanup-2026-09-07/`)._
 
 ## Why
 

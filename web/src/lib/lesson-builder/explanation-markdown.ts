@@ -20,10 +20,10 @@ export type PMMark =
   | { type: "bold" }
   | { type: "italic" }
   | { type: "lang"; attrs: { language: "es" | "en" } };
-export type PMTextNode = { type: "text"; text: string; marks?: PMMark[] };
-export type PMHardBreak = { type: "hardBreak" };
+type PMTextNode = { type: "text"; text: string; marks?: PMMark[] };
+type PMHardBreak = { type: "hardBreak" };
 export type PMInline = PMTextNode | PMHardBreak;
-export type PMParagraph = { type: "paragraph"; content?: PMInline[] };
+type PMParagraph = { type: "paragraph"; content?: PMInline[] };
 export type PMDoc = { type: "doc"; content: PMParagraph[] };
 
 // ---------------------------------------------------------------- parse ---

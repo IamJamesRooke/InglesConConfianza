@@ -15,7 +15,7 @@ import { prisma } from "../src/lib/database/prisma";
 // 2026-09-07 taxonomy cleanup. Reachability mirrors the real page query in
 // src/lib/curriculum/server/curriculum-store.ts: a concept shows under a group
 // only if it carries BOTH the topic base tag and that group's collection.
-// See docs/curation/taxonomy-cleanup-2026-09-07/.
+// See docs/curation/archive/taxonomy-cleanup-2026-09-07/.
 
 type Row = {
   id: string;

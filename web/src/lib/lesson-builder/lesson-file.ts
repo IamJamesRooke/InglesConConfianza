@@ -191,7 +191,7 @@ function reassignDuplicateSyllabusIds(
   return { ...module, syllabus: { main: fix(syllabus.main), review: fix(syllabus.review) } };
 }
 
-export function repairSyllabusIdCollisions(
+function repairSyllabusIdCollisions(
   modules: LessonModule[],
   lessons: Lesson[],
 ): LessonModule[] {
@@ -264,7 +264,7 @@ export function isLessonFile(value: unknown): value is LessonFile {
   );
 }
 
-export function emptyModule(name: string): LessonModule {
+function emptyModule(name: string): LessonModule {
   return {
     id: createId("module"),
     name,

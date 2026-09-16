@@ -2,7 +2,7 @@ import "dotenv/config";
 
 import { writeFile } from "node:fs/promises";
 
-import { prisma } from "../src/lib/database/prisma";
+import { prisma } from "../../src/lib/database/prisma";
 
 const ES_ARTICLES = new Set([
   "el",

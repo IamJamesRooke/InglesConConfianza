@@ -14,7 +14,7 @@ was left open when we stopped.
 
 ## Done and stable
 
-- **Phase 2** — Topic → Family → Group taxonomy re-audit. `docs/curation/taxonomy-cleanup-2026-09-07/`.
+- **Phase 2** — Topic → Family → Group taxonomy re-audit. `docs/curation/archive/taxonomy-cleanup-2026-09-07/`.
 - **Phase 3** — 5-tier priority ladder (`core / essential / common / extended /
   rare / trash`). `docs/curation/role-granularity/plan.md`, P3-0 … P3-10.
 - A short "shrink the catalog" pass was attempted and **fully reverted**

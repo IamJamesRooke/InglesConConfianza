@@ -24,7 +24,7 @@ function hasLangMark(node: PMNode): boolean {
   return found;
 }
 
-export const explanationAutoMarkKey = new PluginKey("explanationAutoMark");
+const explanationAutoMarkKey = new PluginKey("explanationAutoMark");
 
 // The paragraph the rule looks at: the one holding the caret when it ends in
 // a terminator (". ! ?" just typed), or the one just left behind when Enter

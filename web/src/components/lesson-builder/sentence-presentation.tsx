@@ -11,7 +11,7 @@ function separator(previous: string, current: string) {
   return " ";
 }
 
-export function composeSentenceParts(
+function composeSentenceParts(
   pieces: Piece[],
   language: "spanish" | "english",
 ) {

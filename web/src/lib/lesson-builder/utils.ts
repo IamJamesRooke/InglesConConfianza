@@ -10,10 +10,10 @@ export function normalizeAnswer(answer: string) {
 
 // Some legacy lesson content stores multiple accepted alternates joined as a
 // single "answer one; answer two" string instead of separate array entries
-// (see scripts/audit-lessons-answers.ts). This does not change stored data —
+// (see scripts/archive/audit-lessons-answers.ts). This does not change stored data —
 // it only widens matching at read time so a learner who types just the first
 // alternate is not marked wrong forever.
-export function expandLegacyAlternates(acceptedAnswers: string[]): string[] {
+function expandLegacyAlternates(acceptedAnswers: string[]): string[] {
   return acceptedAnswers.flatMap((answer) =>
     answer.includes("; ") ? answer.split("; ") : [answer],
   );

@@ -57,10 +57,6 @@ export function rolesUpToLevel(maxLevel: CurriculumLevel): CurriculumRole[] {
   );
 }
 
-export function levelLabel(role: CurriculumRole): string {
-  return role.startsWith("P") ? `Level ${role.slice(1)}` : role;
-}
-
 export function roleForLevel(level: CurriculumLevel): CurriculumRole {
   return LEVEL_ROLES[level];
 }

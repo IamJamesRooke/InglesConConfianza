@@ -56,7 +56,7 @@ export function conceptInTopicScope(
  * is present (and audits that want to report *why* a row is absent) can ask
  * about the exclusion alone.
  */
-export function isExcludedFromTopic(
+function isExcludedFromTopic(
   topic: TopicScope,
   concept: { curriculumRole: string; collections: Iterable<string> },
 ): boolean {

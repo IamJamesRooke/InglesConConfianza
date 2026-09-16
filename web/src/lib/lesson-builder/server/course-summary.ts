@@ -4,7 +4,7 @@ import type { Lesson, LessonBlock, LessonConcept } from "@/lib/lesson-builder/ty
 import { normalizeLessonMarkdown } from "@/lib/lesson-builder/markdown";
 import { readLessonFile } from "@/lib/lesson-builder/server/lesson-store";
 
-export type CourseLessonSummary = {
+type CourseLessonSummary = {
   id: string;
   lessonNumber: number;
   moduleId: string;
@@ -18,7 +18,7 @@ export type CourseLessonSummary = {
   blocks: LessonBlock[];
 };
 
-export type CourseModuleSummary = {
+type CourseModuleSummary = {
   id: string;
   name: string | null;
   kind: "course" | "onboarding";

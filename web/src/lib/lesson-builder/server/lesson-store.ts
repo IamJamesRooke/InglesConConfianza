@@ -10,13 +10,7 @@ import {
   reconcileLessonFile,
 } from "@/lib/lesson-builder/lesson-file";
 
-export {
-  isLesson,
-  isLessonFile,
-  isLessonModule,
-  moduleContainingLesson,
-  reconcileLessonFile,
-} from "@/lib/lesson-builder/lesson-file";
+export { isLesson } from "@/lib/lesson-builder/lesson-file";
 
 // Overridable so the UX-check harness (tests/ux/) can point at an isolated
 // fixture file instead of the real course data — see playwright.config.ts.
@@ -43,7 +37,7 @@ export async function readLessonFile(): Promise<LessonFile> {
   }
 }
 
-export async function writeLessonFile(lessonFile: LessonFile) {
+async function writeLessonFile(lessonFile: LessonFile) {
   const temporaryLessonsFilePath = `${lessonsFilePath}.tmp`;
 
   await mkdir(path.dirname(lessonsFilePath), { recursive: true });

@@ -22,7 +22,7 @@
 import { readFile } from "node:fs/promises";
 import path from "node:path";
 
-import type { Lesson, LessonFile, SentenceBlock } from "../src/lib/lesson-builder/types";
+import type { Lesson, LessonFile, SentenceBlock } from "../../src/lib/lesson-builder/types";
 
 async function main() {
   const filePath = path.resolve(

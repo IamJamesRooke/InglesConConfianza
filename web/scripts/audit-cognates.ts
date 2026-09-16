@@ -2,7 +2,7 @@ import "dotenv/config";
 
 import { prisma } from "../src/lib/database/prisma";
 
-// Enforces the six invariants from docs/curation/specs/cognates-plan-2026-09-05.md
+// Enforces the six invariants from docs/curation/archive/cognates-plan-2026-09-05.md
 // §2.3 — the mechanism meant to make a silent cognate-family gap (like the
 // original untagged "predecir"/"contradecir") unshippable. Checks every row
 // carrying a `cognate:` tag; does not touch the ~3,400 other concepts.

@@ -1,7 +1,7 @@
 import { curriculumRoles } from "@/lib/curriculum/types";
 import type { Lesson, LessonBlock } from "@/lib/lesson-builder/types";
 
-export type ConceptPriorityBand = "high" | "medium" | "low" | "neutral";
+type ConceptPriorityBand = "high" | "medium" | "low" | "neutral";
 
 export type SuggestionConceptDisplay = {
   spanish: string;
@@ -136,12 +136,6 @@ export function stripConceptPlaceholder(text: string): string {
   return text.replace(/\[.*?\]/g, "").replace(/\s+/g, " ").trim();
 }
 
-// Same normalization the concept typeahead uses: drop the bracketed
-// placeholder half of a label, fold accents, lowercase.
-export function normalizeConceptText(text: string): string {
-  return foldAccents(stripConceptPlaceholder(text)).toLowerCase();
-}
-
 export type PairMatchCandidate = SuggestionConceptDisplay & {
   id: string;
   // Bilingual example sentence — only used for the tier-2 "example net"
@@ -158,8 +152,7 @@ export type PairConceptMatch = {
 
 const LEADING_SUBJECT_PRONOUNS = new Set(["i", "you", "he", "she", "it", "we", "they"]);
 
-// Full normalization for *matching* (stricter than `normalizeConceptText`,
-// which is only for display text): drop bracket placeholders and their
+// Full normalization for *matching*: drop bracket placeholders and their
 // contents entirely, fold accents, strip all punctuation (not just edges —
 // "¿Quieres?" must equal "quieres"), lowercase, collapse whitespace.
 function normalizeMatchText(raw: string): string {

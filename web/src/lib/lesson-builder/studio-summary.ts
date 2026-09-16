@@ -2,7 +2,7 @@ import type { CourseSummary } from "@/lib/lesson-builder/server/course-summary";
 import type { CoverageReport } from "@/lib/lesson-builder/server/coverage-report";
 import { getSentenceValidationIssueCount } from "@/lib/lesson-builder/utils";
 
-export type StudioIssue = {
+type StudioIssue = {
   lessonId: string;
   lessonName: string;
   lessonNumber: number;

@@ -10,7 +10,7 @@ import { normalizeLessons } from "@/lib/lesson-builder/utils";
 // long it has gone untouched. Everything here is derived from data/lessons.json
 // + the curriculum rows it points at — nothing is stored.
 
-export type CoveredConcept = {
+type CoveredConcept = {
   conceptId: string;
   spanish: string;
   english: string;

@@ -6,12 +6,13 @@ import type { CurriculumRole } from "@/lib/curriculum/types";
 // docs/curation lives at the repo root, one level above the Next.js app
 // (`web/`), which is this process's cwd in both `next dev`/`next start` and
 // the curation scripts.
-export const inlineLevelsLogPath = path.join(
+const inlineLevelsLogPath = path.join(
   process.cwd(),
   "..",
   "docs",
   "curation",
-  "applied",
+  "archive",
+  "manifests",
   "inline-levels.tsv",
 );
 

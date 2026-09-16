@@ -12,7 +12,7 @@ export type ApplyLevelInlineDeps = {
 };
 
 // The testable core of the "set level in place" action, with every effect
-// (DB write, docs/curation/applied/inline-levels.tsv append, seed-data
+// (DB write, docs/curation/archive/manifests/inline-levels.tsv append, seed-data
 // re-export) injected — so it can be exercised with fakes instead of hitting
 // the real database and the real files on every test run. The "use server"
 // wrapper in set-level-inline.ts supplies the real dependencies.

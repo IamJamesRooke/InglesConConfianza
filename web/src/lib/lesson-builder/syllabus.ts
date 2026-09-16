@@ -28,20 +28,20 @@ export function syllabusOf(module: LessonModule): ModuleSyllabus {
 // --- Review-priority constants (owner tunes by feel) ---------------------
 // Anki-like spaced review: the interval before a concept needs review again
 // doubles for every extra module it has been covered in.
-export const REVIEW_BASE_INTERVAL_LESSONS = 5;
-export const REVIEW_INTERVAL_GROWTH = 2;
-export const REVIEW_PROPOSAL_COUNT = 10;
+const REVIEW_BASE_INTERVAL_LESSONS = 5;
+const REVIEW_INTERVAL_GROWTH = 2;
+const REVIEW_PROPOSAL_COUNT = 10;
 
 // --- Course timeline -------------------------------------------------------
 
-export type OrderedLesson = {
+type OrderedLesson = {
   moduleId: string;
   moduleIndex: number;
   lessonId: string;
   lessonNumber: number; // 1-based, across the whole course
 };
 
-export type CourseTimelineEntry = {
+type CourseTimelineEntry = {
   key: string;
   firstTaughtLesson: number;
   firstTaughtModuleIndex: number;
@@ -246,7 +246,7 @@ export function proposedReviewPlan(moduleIndex: number, timeline: CourseTimeline
 
 // --- Warnings ----------------------------------------------------------
 
-export type LessonWarning = { lessonId: string; conceptKey: string; label: string };
+type LessonWarning = { lessonId: string; conceptKey: string; label: string };
 export type ModuleWarnings = {
   /** A lesson covered a concept outside its known set and outside its own
    * module's main points. */

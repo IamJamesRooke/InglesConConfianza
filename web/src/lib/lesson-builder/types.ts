@@ -1,8 +1,3 @@
-export type DropTarget = {
-  lessonId: string;
-  position: "before" | "after";
-};
-
 export type Lesson = {
   id: string;
   name: string | null;

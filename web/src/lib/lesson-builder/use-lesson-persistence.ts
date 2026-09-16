@@ -36,7 +36,7 @@ type PersistenceObserver = {
   onSaveState: (state: Exclude<LessonSaveState, "loading" | "idle">) => void;
 };
 
-export type DeleteLessonResult = {
+type DeleteLessonResult = {
   modules: LessonModule[];
 };
 

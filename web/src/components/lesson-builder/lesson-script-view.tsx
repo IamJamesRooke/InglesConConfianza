@@ -2,7 +2,7 @@
 
 // E4 — script mode: a plain-text drafting surface over the block model, per
 // docs/design/lesson-script-grammar.md. Toggled per lesson by Ctrl+Alt+T
-// (lib/lesson-builder/keymap.ts, "lesson" scope) or the quiet "Script ⌥"
+// (lib/lesson-builder/keymap/lesson.ts, "lesson" scope) or the quiet "Script ⌥"
 // button in lesson-document.tsx. Leaving the view (the same chord again,
 // Escape, or blur to outside) parses the textarea; a successful parse
 // dispatches REPLACE_LESSON_BLOCKS as one undoable step and closes the

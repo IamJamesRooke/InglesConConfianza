@@ -2,7 +2,7 @@
 
 _Rewritten 2026-09-07 after a direct measurement pass against PostgreSQL.
 Supersedes the earlier Fable draft (which is preserved in git history at
-`docs/curation/taxonomy-cleanup-2026-09-07/next-plan.md`, pre-rewrite).
+`docs/curation/archive/taxonomy-cleanup-2026-09-07/next-plan.md`, pre-rewrite).
 Policy: `policy.md`. State: `batch-plan.md`. Prior per-concept analysis:
 `findings.md` — reuse, do not re-derive._
 
@@ -503,4 +503,4 @@ are already close to right.
 - `web/src/lib/curriculum/collections.ts` (registry, axis guard)
 - `web/scripts/curriculum-inventory.ts` (`--members`)
 - `web/tests/curriculum-reachability.test.ts` (structure snapshot, axis guard)
-- `docs/curation/taxonomy-cleanup-2026-09-07/{batch-plan,findings}.md` (ledger)
+- `docs/curation/archive/taxonomy-cleanup-2026-09-07/{batch-plan,findings}.md` (ledger)

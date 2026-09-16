@@ -8,7 +8,7 @@ import { conceptInTopicScope } from "../src/lib/curriculum/scope";
 import { prisma } from "../src/lib/database/prisma";
 
 // Reusable curriculum taxonomy inventory for the 2026-09-07 three-level
-// browser cleanup (docs/curation/taxonomy-cleanup-2026-09-07/).
+// browser cleanup (docs/curation/archive/taxonomy-cleanup-2026-09-07/).
 //
 //   npm run curriculum:inventory            # writes JSON + prints summary
 //
@@ -24,7 +24,7 @@ import { prisma } from "../src/lib/database/prisma";
 // Repo-root-relative regardless of cwd (scripts/ -> web/ -> repo root).
 const OUT_JSON = resolve(
   __dirname,
-  "../../docs/curation/taxonomy-cleanup-2026-09-07/inventory.json",
+  "../../docs/curation/archive/taxonomy-cleanup-2026-09-07/inventory.json",
 );
 
 type Row = {
@@ -45,7 +45,7 @@ function isConfusion(collection: string, label: string) {
 
 // `npm run curriculum:inventory -- --members <topic-slug>` prints every member
 // row per family -> group as `id · role · spanish -> english`, for the
-// semantic re-audit (docs/curation/taxonomy-cleanup-2026-09-07/next-plan.md).
+// semantic re-audit (docs/curation/archive/taxonomy-cleanup-2026-09-07/next-plan.md).
 // `--structure` prints the {topic: [family labels + group counts]} map that the
 // family-structure snapshot test asserts.
 const MEMBERS_FLAG_INDEX = process.argv.indexOf("--members");

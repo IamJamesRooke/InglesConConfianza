@@ -38,7 +38,7 @@ declare module "@tiptap/core" {
 // corruption bug — the old contentEditable code produced overlapping
 // `<mark>` elements and the serializer then emitted unbalanced `[[es:…`.
 // Bold/italic can still stack on top of a `lang` mark.
-export const Lang = Mark.create({
+const Lang = Mark.create({
   name: "lang",
   // Not inclusive: typing immediately after a marked run starts *outside*
   // the mark. A language mark names a specific word or phrase, so continuing
@@ -82,7 +82,7 @@ export const Lang = Mark.create({
 // Hand-rolled over `@tiptap/pm/history` rather than pulling in Tiptap's
 // `@tiptap/extension-undo-redo` package: the history plugin ships inside
 // `@tiptap/pm`, which is already a dependency, and the wrapper is five lines.
-export const ExplanationHistory = Extension.create({
+const ExplanationHistory = Extension.create({
   name: "explanationHistory",
   addProseMirrorPlugins() {
     return [history()];

@@ -2,6 +2,8 @@
 
 This timeline tells the story of how Ingles Con Confianza developed from a teaching corpus into a working lesson-authoring application backed by a canonical PostgreSQL curriculum database. It records the important decisions, experiments, reversals, and completion milestones; Git preserves the finer-grained commit history.
 
+The dated one-off curation specs and audit ledgers behind individual milestones below live under `docs/curation/archive/` (applied manifests, superseded plans, per-batch specs) rather than duplicated here.
+
 ## At a glance
 
 | Period | Main outcome |

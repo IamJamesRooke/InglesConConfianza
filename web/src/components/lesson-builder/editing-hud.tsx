@@ -74,7 +74,7 @@ function humanize(raw: string): string {
   return (spaced || raw).toLowerCase();
 }
 
-export function labelFor(chord: Chord, commandName: string): string {
+function labelFor(chord: Chord, commandName: string): string {
   return HUD_LABELS[chord] ?? humanize(commandName || chord);
 }
 
@@ -125,7 +125,7 @@ function keyGlyph(key: string): string {
   return KEY_GLYPHS[key] ?? key;
 }
 
-export type Pair = { chord: Chord; key: string; label: string };
+type Pair = { chord: Chord; key: string; label: string };
 export type Group = { modifiers: string[]; pairs: Pair[] };
 
 const MAX_PAIRS_PER_GROUP = 5;
@@ -136,7 +136,7 @@ const MAX_PAIRS_PER_GROUP = 5;
 // modifier-less chord has nothing to factor out, so it's never merged with
 // another modifier-less chord; each stands alone, and all of them sort
 // after every modifier group (owner requirement 2026-09-15).
-export function buildGroups(chords: ActiveChord[]): Group[] {
+function buildGroups(chords: ActiveChord[]): Group[] {
   const modGroups = new Map<string, Group>();
   const modOrder: string[] = [];
   const soloGroups: Group[] = [];

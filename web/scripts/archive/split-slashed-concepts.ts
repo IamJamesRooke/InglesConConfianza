@@ -2,8 +2,8 @@ import "dotenv/config";
 
 import { randomBytes } from "node:crypto";
 
-import type { CurriculumRole } from "../src/lib/curriculum/types";
-import { prisma } from "../src/lib/database/prisma";
+import type { CurriculumRole } from "../../src/lib/curriculum/types";
+import { prisma } from "../../src/lib/database/prisma";
 
 const ID_ALPHABET = "0123456789abcdefghijklmnopqrstuvwxyz";
 function newId(): string {

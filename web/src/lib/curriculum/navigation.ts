@@ -17,7 +17,7 @@ export function canonicalFacetCollection(name: string): string {
   return stem && ALL_FACET_COLLECTIONS.has(stem) ? stem : name;
 }
 
-export type CurriculumNavigationLeaf = {
+type CurriculumNavigationLeaf = {
   collection: string;
   label: string;
 };

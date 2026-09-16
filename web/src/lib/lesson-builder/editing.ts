@@ -28,7 +28,7 @@ import { planAcceptedAnswersCommit } from "@/lib/lesson-builder/answer-commit-pl
 import { focusSelection as focusSelectionDom } from "@/lib/lesson-builder/focus";
 import type { LanguageBlock, Lesson } from "@/lib/lesson-builder/types";
 
-export type Field =
+type Field =
   | "title"
   | "explanation"
   | "instruction"
@@ -48,7 +48,7 @@ export type EditingSelection =
       pieceId?: string;
     };
 
-export type EditingState = {
+type EditingState = {
   selection: EditingSelection;
   openLessonId: string | null;
   insertAfter: { lessonId: string; index: number } | null;

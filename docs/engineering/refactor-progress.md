@@ -1,12 +1,12 @@
 # Refactor progress
 
-Execution log for completed checkpoints in `docs/design/agent-friendly-refactor.md`.
+Execution log for completed checkpoints in `docs/design/archive/lesson-builder/agent-friendly-refactor.md`.
 
 | Field | Baseline / task A result |
 | --- | --- |
 | Baseline commit | `27fb6a6748c06174c119dc4f62c165cdf8aab961` |
 | Date | 2026-09-09 |
-| Dirty files at start | `docs/design/agent-friendly-refactor.md` (pre-existing, untracked) |
+| Dirty files at start | `docs/design/archive/lesson-builder/agent-friendly-refactor.md` (pre-existing, untracked) |
 | Browser availability | No browser or browser tab surfaces available in the session; browser checks remain unavailable. |
 | Status | Complete: code map, execution log, and root pointer added. Application behavior and data were not changed. |
 | Changed paths | `AGENTS.md`, `docs/engineering/code-map.md`, `docs/engineering/refactor-progress.md` |
@@ -112,7 +112,7 @@ Execution log for completed checkpoints in `docs/design/agent-friendly-refactor.
 | Status | A prior session (Codex) began G1 but stopped mid-edit with credits exhausted. `curriculum-table.tsx` was left syntactically broken (a function body spliced into the import block; dangling `}, {});`), and the build/lint failed. |
 | Recovery | `curriculum-table.tsx` restored with `git checkout`; the three partial new files (`curriculum-browse-panel.tsx`, `curriculum-concept-details.tsx`, `curriculum-row-editor.tsx`) moved to a scratch dir for reference. Tasks A–F were unaffected. |
 | Post-recovery checks | `npm run test:unit` — 85 pass / 0 fail. `npm run lint` — 0 errors, 2 pre-existing warnings. `npm run build` — pass. |
-| Next | Reimplement G1 fresh from `docs/design/agent-friendly-refactor.md`. |
+| Next | Reimplement G1 fresh from `docs/design/archive/lesson-builder/agent-friendly-refactor.md`. |
 
 ## Task G1 — curriculum table presentation
 

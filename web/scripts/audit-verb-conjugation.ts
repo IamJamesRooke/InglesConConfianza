@@ -2,7 +2,7 @@ import "dotenv/config";
 
 import { prisma } from "../src/lib/database/prisma";
 
-// Enforces the four invariants from docs/curation/specs/verb-organization-plan-2026-09-05.md
+// Enforces the four invariants from docs/curation/archive/verb-organization-plan-2026-09-05.md
 // §4.3 — the mechanism meant to make a silent sense-drop (like the original
 // missing "estoy [haciendo algo]") unshippable. Checks every row carrying a
 // `sense:` or `conjugation:` tag; does not touch the ~700 other pos:verb rows

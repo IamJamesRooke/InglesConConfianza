@@ -46,7 +46,7 @@ type ConceptRow = {
 
 export const curriculumPageSize = 100;
 
-export type CurriculumSort =
+type CurriculumSort =
   "default" | "spanish" | "spanish-desc" | "english" | "english-desc" | "role";
 
 export type CurriculumPageFilters = {
@@ -60,7 +60,6 @@ export type CurriculumPageFilters = {
   maxLevel?: CurriculumLevel;
 };
 
-export { curriculumRoleWhere };
 
 const SORT_ORDER_BY: Record<
   CurriculumSort,
@@ -120,7 +119,7 @@ async function ensureCollections(
   });
 }
 
-export async function removeUnusedCollections(
+async function removeUnusedCollections(
   transaction: Prisma.TransactionClient,
 ) {
   await transaction.collection.deleteMany({
@@ -398,24 +397,4 @@ export async function deleteCurriculumConcept(conceptId: string) {
     await removeUnusedCollections(transaction);
     return conceptId;
   });
-}
-
-// A narrower sibling of updateCurriculumConcept for the "set level in place"
-// keyboard shortcut: it only ever changes curriculumRole, so it doesn't need
-// the caller to hand back the full concept (spanish/english/example/
-// collections untouched).
-export async function setCurriculumRole(
-  conceptId: string,
-  curriculumRole: CurriculumRole,
-): Promise<CurriculumConcept> {
-  try {
-    const updated = await prisma.curriculumConcept.update({
-      where: { id: conceptId },
-      data: { curriculumRole },
-      include: conceptRelations,
-    });
-    return toCurriculumConcept(updated);
-  } catch {
-    throw new CurriculumConceptNotFoundError();
-  }
 }

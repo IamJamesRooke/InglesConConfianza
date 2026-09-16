@@ -60,7 +60,7 @@ export function isAcceptedMatch(value: string, lastAccepted: string | null): boo
   return value.trim().toLowerCase() === lastAccepted.trim().toLowerCase();
 }
 
-export function usePairFieldAutocomplete(lang: "es" | "en", value: string, isSelected: boolean) {
+function usePairFieldAutocomplete(lang: "es" | "en", value: string, isSelected: boolean) {
   const [results, setResults] = useState<PairAutocompleteResult[]>([]);
   const [open, setOpen] = useState(false);
   const [highlight, setHighlight] = useState(0);
@@ -294,7 +294,7 @@ export function PairLanguageField({
   );
 }
 
-export function PairAutocompletePopover({
+function PairAutocompletePopover({
   lang,
   results,
   highlight,

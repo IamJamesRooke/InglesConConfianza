@@ -15,7 +15,7 @@ export type { SetLevelInlineResult };
 
 // Server action behind the /admin/curriculum "set level in place" shortcut
 // (Alt+0..5 on a focused/selected row): sets curriculumRole, records the
-// change in docs/curation/applied/inline-levels.tsv (the same audit trail
+// change in docs/curation/archive/manifests/inline-levels.tsv (the same audit trail
 // every other curation manifest uses), and immediately re-exports the
 // prisma/seed-data snapshots so `npm run db:verify`/`db:test` stay clean
 // without a separate manual export step. Admin-only by convention: only

@@ -11,10 +11,9 @@ and rationale: `../../web/CLAUDE.md` and the memory note `curriculum-curation-pl
 | `level-1.md` | **the MVP spine** — 58 items / 101 rows that must be taught first | building lessons, tagging levels |
 | `level-1-checklist.md` | how "taught / still to teach" is computed and shown | building the checklist |
 | `mvp-plan.md` | the execution plan (declutter, levels, `/curriculum` filter, checklist) | picking up work |
-| `specs/` | canonical topic specs the audit scripts enforce (verb org, cognates, pronoun/determiner/verb matrices) | running `curriculum:audit:*` |
-| `taxonomy-cleanup-2026-09-07/` | topic → family → group browser inventory; `curriculum-inventory.ts` reads `inventory.json` | touching topic navigation |
-| `applied/` | every manifest already applied (audit trail) | never — `git log -- docs/curation/applied` |
-| `archive/` | superseded plans and drafts | never |
+| `specs/` | canonical topic specs the audit scripts enforce (pronoun/determiner/verb matrices) | running `curriculum:audit:*` |
+| `archive/manifests/` | every manifest already applied (audit trail) | never — `git log -- docs/curation/archive/manifests` |
+| `archive/` | superseded plans, drafts, and dated one-off specs (verb org, cognates, the 2026-09-07 taxonomy-cleanup inventory) | never |
 
 ## Levels
 
@@ -32,7 +31,8 @@ npm run curriculum:apply docs/curation/<manifest>.tsv [...] --apply
 
 `curriculum:apply` detects each manifest's type, applies it, re-exports the snapshot and
 runs `db:verify` + `db:test`, halting on the first failure. Then `git add docs/curation/
-web/prisma/seed-data/` and commit, one commit per batch; move the manifest to `applied/`.
+web/prisma/seed-data/` and commit, one commit per batch; move the manifest to
+`archive/manifests/`.
 
 Individual scripts (dry-run by default, `--apply` to write):
 

@@ -1,7 +1,7 @@
 import "dotenv/config";
 
-import { prisma } from "../src/lib/database/prisma";
-import { cleanOrphanCollections, runScript } from "./lib/manifest";
+import { prisma } from "../../src/lib/database/prisma";
+import { cleanOrphanCollections, runScript } from "../lib/manifest";
 
 // One-off: carve the grammatical verb machinery (ser/estar/haber/hay, the
 // perfect auxiliary, and the modals) out of the thematic Verbs page into a
@@ -9,8 +9,8 @@ import { cleanOrphanCollections, runScript } from "./lib/manifest";
 // with `topic:verb-system`; `topics.ts` then bases the new topic on that tag
 // and excludes it from Verbs (same mechanism as cognate / phrasal verbs).
 //
-//   npx tsx scripts/split-verb-system.ts            # dry run
-//   npx tsx scripts/split-verb-system.ts --apply
+//   npx tsx scripts/archive/split-verb-system.ts            # dry run
+//   npx tsx scripts/archive/split-verb-system.ts --apply
 
 const SYSTEM_TAG = "topic:verb-system";
 
