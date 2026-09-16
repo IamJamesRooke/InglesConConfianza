@@ -96120,6 +96120,142 @@
         "topic:vp-full-inf"
       ],
       "curriculumRole": "P1"
+    },
+    {
+      "id": "ohbx808u3h",
+      "spanish": "me la",
+      "english": "it to me",
+      "example": {
+        "spanish": "Me la vas a enviar.",
+        "english": "You're going to send it to me."
+      },
+      "collections": [
+        "pos:pronoun",
+        "topic:pronoun",
+        "grammar:object-pronoun",
+        "grammar:indirect-object-pronoun",
+        "grammar:direct-object-pronoun",
+        "grammar:singular",
+        "es:la",
+        "en:it",
+        "es:me",
+        "en:me"
+      ],
+      "curriculumRole": "P1"
+    },
+    {
+      "id": "5rjv2vtt6u",
+      "spanish": "te la",
+      "english": "it to you",
+      "example": {
+        "spanish": "Te la voy a enviar.",
+        "english": "I'm going to send it to you."
+      },
+      "collections": [
+        "pos:pronoun",
+        "topic:pronoun",
+        "grammar:object-pronoun",
+        "grammar:indirect-object-pronoun",
+        "grammar:direct-object-pronoun",
+        "grammar:singular",
+        "es:la",
+        "en:it",
+        "es:te",
+        "en:you",
+        "register:informal"
+      ],
+      "curriculumRole": "P1"
+    },
+    {
+      "id": "g3k2zlui7p",
+      "spanish": "se la",
+      "english": "it to him",
+      "example": {
+        "spanish": "Se la voy a dar a él.",
+        "english": "I'm going to give it to him."
+      },
+      "collections": [
+        "pos:pronoun",
+        "topic:pronoun",
+        "grammar:object-pronoun",
+        "grammar:indirect-object-pronoun",
+        "grammar:direct-object-pronoun",
+        "grammar:singular",
+        "es:la",
+        "en:it",
+        "grammar:se",
+        "sound:replacement-for-le-les",
+        "en:him"
+      ],
+      "curriculumRole": "P1"
+    },
+    {
+      "id": "gc5vlve96x",
+      "spanish": "se la",
+      "english": "it to her",
+      "example": {
+        "spanish": "Se la voy a dar a ella.",
+        "english": "I'm going to give it to her."
+      },
+      "collections": [
+        "pos:pronoun",
+        "topic:pronoun",
+        "grammar:object-pronoun",
+        "grammar:indirect-object-pronoun",
+        "grammar:direct-object-pronoun",
+        "grammar:singular",
+        "es:la",
+        "en:it",
+        "grammar:se",
+        "sound:replacement-for-le-les",
+        "en:her"
+      ],
+      "curriculumRole": "P1"
+    },
+    {
+      "id": "o2oa6l0fs1",
+      "spanish": "se la",
+      "english": "it to them",
+      "example": {
+        "spanish": "Se la voy a enviar a ellos.",
+        "english": "I'm going to send it to them."
+      },
+      "collections": [
+        "pos:pronoun",
+        "topic:pronoun",
+        "grammar:object-pronoun",
+        "grammar:indirect-object-pronoun",
+        "grammar:direct-object-pronoun",
+        "grammar:singular",
+        "es:la",
+        "en:it",
+        "grammar:se",
+        "sound:replacement-for-le-les",
+        "en:them"
+      ],
+      "curriculumRole": "P1"
+    },
+    {
+      "id": "k5fke5m2q6",
+      "spanish": "nos la",
+      "english": "it to us",
+      "example": {
+        "spanish": "Nos la vas a explicar.",
+        "english": "You're going to explain it to us."
+      },
+      "collections": [
+        "pos:pronoun",
+        "topic:pronoun",
+        "grammar:object-pronoun",
+        "grammar:indirect-object-pronoun",
+        "grammar:direct-object-pronoun",
+        "grammar:singular",
+        "es:la",
+        "en:it",
+        "es:nos",
+        "en:us"
+      ],
+      "curriculumRole": "P1"
     }
   ]
 }

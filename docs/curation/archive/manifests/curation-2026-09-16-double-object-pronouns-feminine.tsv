@@ -1,0 +1,8 @@
+# Singular feminine double object pronouns (coordinator-approved 2026-09-16), matching the plural los/las rows.
+# spanish	english	exSpanish	exEnglish	role	collections
+me la	it to me	Me la vas a enviar.	You're going to send it to me.	P1	pos:pronoun|topic:pronoun|grammar:object-pronoun|grammar:indirect-object-pronoun|grammar:direct-object-pronoun|grammar:singular|es:la|en:it|es:me|en:me
+te la	it to you	Te la voy a enviar.	I'm going to send it to you.	P1	pos:pronoun|topic:pronoun|grammar:object-pronoun|grammar:indirect-object-pronoun|grammar:direct-object-pronoun|grammar:singular|es:la|en:it|es:te|en:you|register:informal
+se la	it to him	Se la voy a dar a él.	I'm going to give it to him.	P1	pos:pronoun|topic:pronoun|grammar:object-pronoun|grammar:indirect-object-pronoun|grammar:direct-object-pronoun|grammar:singular|es:la|en:it|grammar:se|sound:replacement-for-le-les|en:him
+se la	it to her	Se la voy a dar a ella.	I'm going to give it to her.	P1	pos:pronoun|topic:pronoun|grammar:object-pronoun|grammar:indirect-object-pronoun|grammar:direct-object-pronoun|grammar:singular|es:la|en:it|grammar:se|sound:replacement-for-le-les|en:her
+se la	it to them	Se la voy a enviar a ellos.	I'm going to send it to them.	P1	pos:pronoun|topic:pronoun|grammar:object-pronoun|grammar:indirect-object-pronoun|grammar:direct-object-pronoun|grammar:singular|es:la|en:it|grammar:se|sound:replacement-for-le-les|en:them
+nos la	it to us	Nos la vas a explicar.	You're going to explain it to us.	P1	pos:pronoun|topic:pronoun|grammar:object-pronoun|grammar:indirect-object-pronoun|grammar:direct-object-pronoun|grammar:singular|es:la|en:it|es:nos|en:us
