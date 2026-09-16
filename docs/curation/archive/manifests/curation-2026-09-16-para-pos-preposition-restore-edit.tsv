@@ -1,0 +1,4 @@
+# Owner correction 2026-09-16: the two para [hacer algo] purpose rows are prepositions, not verbs. Restore pos:preposition (roles are live values).
+# id	spanish	english	role	collections-to-add	reason
+zxp06uqig0	para [hacer algo]	to [do something]	P1	pos:preposition	owner correction: para is a preposition; pos:verb was a wrong regroup
+at8dkibi7m	para [hacer algo]	in order [to do something]	P2	pos:preposition	owner correction: para is a preposition; pos:verb was a wrong regroup

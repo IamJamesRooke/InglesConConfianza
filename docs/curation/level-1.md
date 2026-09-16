@@ -41,7 +41,7 @@ ever overwritten. Owner's P2–P5 rows (20) are untouched.
 13. **would like** — `9jt3xxrxse` gustaría [hacer] · `fr2zv8cgr5` gustaría [algo] · `dvodf0y7wx` quisiera [algo] · `dnwd7gmll5` quisiera [hacer]
 14. **like** — `1uo0obtd8h` me gusta [algo] → I like · `mowb8a6hvx` me gusta [hacer] → I like to
 15. **know** — `3wtzllym25` saber [algo] · `manx93glfl` saber que · `ahq54carab` saber si
-15a. **to / in order to** (purpose, infinitive pattern — added 2026-09-16) — `zxp06uqig0` para [hacer algo] → to [do something] · `at8dkibi7m` para [hacer algo] → in order [to do something]
+15a. **to / in order to** (purpose: preposition *para* + infinitive, not a connector — added 2026-09-16) — `zxp06uqig0` para [hacer algo] → to [do something] · `at8dkibi7m` para [hacer algo] → in order [to do something]
 
 ## Being and being able — 7 items
 

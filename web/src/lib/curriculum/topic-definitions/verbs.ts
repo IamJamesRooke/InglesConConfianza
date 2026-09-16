@@ -11,8 +11,8 @@ export const verbsTopic: CurriculumTopic = {
   // estar / haber / hay / modals) -> Special Verbs; `topic:cognate` ->
   // Cognates (by spelling pattern); `topic:phrasal-verb` -> the two Phrasal
   // Verbs pages (by root, by particle). A fourth keeps the two purpose rows
-  // `para [hacer algo] → to / in order to` (pos:verb so the syllabus files them
-  // with the other infinitive patterns) on Verb Patterns only.
+  // `para [hacer algo] → to / in order to` (pos:preposition) off this page
+  // should they ever carry pos:verb; they belong on Verb Patterns and Prepositions.
   baseExclusions: [
     { collection: "topic:verb-system", unlessRole: [] },
     { collection: "topic:cognate", unlessRole: [] },
