@@ -20,28 +20,36 @@
    the layering argument applies identically to it, but flag this to the
    owner as the one part of this change verified by reasoning rather than
    a screenshot. */
-/* Phase 3b: the explanation reads as the document's own column, not a card
-   set off from it — a 2px primary rule instead of a grey fill, with the
-   left rule + its own padding netting the same 5px text inset every other
-   slide type uses (see lesson-document.css's one-left-edge note). No
-   min-height/background box; separation between slides comes from
-   lesson-document.css's block-level 24px rhythm instead. */
+/* A quiet grey block, resting and editing alike — replaces the earlier 2px
+   primary left-rule treatment (owner, 2026-09-16: the blue rule read as a
+   focus/accent signal competing with the slide-level active bar in
+   lesson-document.css, not as "this is an explanation"). `--muted` is the
+   same quiet-surface token authoring-base.css already uses for chip/hover
+   washes elsewhere in the builder, so this doesn't introduce a new surface
+   colour. Separation between slides still comes from lesson-document.css's
+   block-level rhythm, not a margin here.
+
+   Owner follow-up, same day: a plain block-level child only fills its
+   parent's *content* box, which stops 54px short of `.lesson-document-
+   block`'s own right edge (the permanent gutter reserved for the hover
+   drag/duplicate/delete cluster — see that file). With a visible fill that
+   read as the grey block "stopping short" with the icons floating outside
+   it. The negative margin below cancels exactly that reserved gutter (and
+   enough of the block's own 12px top padding to reach the cluster's 2px
+   top offset), so the fill spans the full slide row and the icon cluster
+   — position:absolute, so unaffected by this element's own box — paints
+   over its top-right corner instead of beside it. Left/bottom are
+   untouched: the left edge already matches every other slide's own text
+   column, and there's no gutter to reclaim at the bottom. */
 .lesson-document-explanation {
   min-height: 0;
-  margin-block: 0;
-  padding: 6px 9px 6px 3px;
+  margin: -10px -54px 0 0;
+  padding: 10px 14px;
   border: 0;
-  border-left: 2px solid var(--primary);
-  border-radius: 0;
-  background: transparent;
+  border-radius: 6px;
+  background: var(--muted);
   font-size: 14px;
   line-height: 1.45;
-}
-/* Editing state may keep a very faint wash for the toolbar to sit on — not
-   a border box, just a background tint scoped to this element only while a
-   field inside it is focused. */
-.lesson-document-explanation:focus-within {
-  background: color-mix(in oklch, var(--muted) 55%, transparent);
 }
 .lesson-document-explanation .authoring-wysiwyg-shell {
   width: 100%;

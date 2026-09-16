@@ -47,25 +47,25 @@
 /* Resting pair typography — the owner-decided calm treatment. Only the
    *resting* presentation (this slide not active) reads this way; the
    active/editing pair fields below keep their own red/blue language ink.
-   The resting English line now matches the explanation marks' theme-blue
-   italic instead of a plain grey italic (owner, 2026-09-16 — "one visual
-   language" round), and the resting Spanish line matches the explanation
-   marks' `--lesson-hl-es` colour (colour restored 2026-09-16). */
+   Both lines are plain ink (`--foreground`), not the red/blue mark colours
+   — those are reserved for marks inside explanations (owner, 2026-09-16 —
+   reverted the "one visual language" colour experiment from 50b4c5bf/
+   c9df1e8f). Spanish is bold, English is italic, both at the same size. */
 .lesson-document-sentence.resting .lesson-sentence-presentation {
   display: flex;
   flex-direction: column;
   gap: 2px;
 }
 .lesson-document-sentence.resting .lesson-sentence-composed[lang="es"] {
-  color: var(--lesson-hl-es);
-  font-weight: 600;
+  color: var(--foreground);
+  font-weight: 700;
   font-size: 17px;
 }
 .lesson-document-sentence.resting .lesson-sentence-composed[lang="en"] {
-  color: var(--primary);
+  color: var(--foreground);
   font-style: italic;
   font-weight: 400;
-  font-size: 15px;
+  font-size: 17px;
 }
 /* E8 "given" piece at rest: normal weight (not italic, like the rest of
    the English line) with a subtle dotted underline — shown to the student,

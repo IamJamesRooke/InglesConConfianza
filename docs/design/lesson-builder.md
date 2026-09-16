@@ -70,21 +70,27 @@ interaction decision below is in service of those three goals, not of
   guidance shown above a Sentence/Vocabulary block's pairs.
 - **"Covers" concepts** (`Lesson.concepts: LessonConcept[]`) — curriculum
   concepts a lesson teaches, tagged from the compact field under the slide
-  list via `LessonConceptsField`. Two independent suggestion sources feed
-  that field, both dashed pills the teacher accepts with one keystroke and
-  neither ever writes to the lesson on its own:
-  - **Suggested review** (amber, `Snowflake` icon) — cold concepts from
-    earlier lessons that haven't reappeared recently (`suggestConceptsForLesson`,
-    `concept-suggestions.ts`).
-  - **Auto-Covers** (`.is-pair-suggestion`, dashed outline with a leading
-    "+") — concepts the lesson's own pairs already name. `extractLessonPairTerms`
-    pulls terms from every pair's Spanish text and accepted English answers,
-    plus `[[es:…]]`/`[[en:…]]` marks in explanation prose; `matchPairTermsToConcepts`
-    matches them against the curriculum (exact, then prefix, accent/case-insensitive,
-    bracket placeholders stripped) via one `POST /api/admin/curriculum/concepts/suggest`
-    call, recomputed 800ms after the pairs change and once on open. Already-tagged
-    concepts are excluded; `Enter`/click tags one, `Ctrl+Enter` (input focused) tags
-    all, `Backspace`/`×` on a focused suggestion dismisses it for that lesson —
+  list via `LessonConceptsField`, which always renders in full (see §5,
+  "Covers never collapses"). Two independent suggestion sources feed that
+  field and neither ever writes to the lesson on its own:
+  - **Suggested review** (amber, `Snowflake` icon, dashed pill) — cold
+    concepts from earlier lessons that haven't reappeared recently
+    (`suggestConceptsForLesson`, `concept-suggestions.ts`).
+  - **Auto-Covers** (`.lesson-concept-suggestion-ghost`, borderless ghost
+    text with a leading "+", owner 2026-09-16) — concepts the lesson's own
+    pairs already name. `extractLessonPairTerms` pulls terms from every
+    pair's Spanish text and accepted English answers (explanation prose is
+    never a source); `matchPairTermsToConcepts` matches them against the
+    curriculum (exact, then example-sentence, accent/case-insensitive,
+    bracket placeholders stripped) via one `POST
+    /api/admin/curriculum/concepts/suggest` call, recomputed 800ms after
+    the pairs change and once on open. `isSyllabusEligiblePairMatch`
+    (`concept-suggestions.ts`) then drops any match that isn't Level 1
+    (`P1`) or already in this lesson's module syllabus (main or review) —
+    an incidental sentence noun never becomes a suggestion — and the field
+    caps the result at four visible. Already-tagged concepts are excluded;
+    `Enter`/click tags one, `Ctrl+Enter` (input focused) tags all,
+    `Backspace`/`×` on a focused suggestion dismisses it for that lesson —
     dismissals live in `sessionStorage`, never in lesson data.
 - Two fields on `SentenceBlock` — `helperText` and `answerFeedback` — are
   **deprecated**: retained only for on-disk compatibility with older lesson
@@ -410,14 +416,14 @@ proposal doc's aspirations.
   text column. Vocabulary tables are left-aligned, not centred
   (`.lesson-document-sentence-body.vocab-table` is `align-items:
   flex-start`, not `center`).
-- **Explanation slide**: no longer a grey card — a 2px `var(--primary)` left
-  rule (`border-left`), `background: transparent`, `border-radius: 0`.
+- **Explanation slide**: a quiet grey block, resting and editing alike —
+  `background: var(--muted)`, `border-radius: 6px`, `padding: 10px 14px`, no
+  border and no left rule (owner, 2026-09-16 — replaced the earlier 2px
+  `var(--primary)` left-rule treatment, which read as a focus/accent signal).
   Blocks are separated by rhythm, not boxes: `.lesson-document-block` carries
   `padding-block: 12px` (24px total between adjacent slides), which replaced
   the explanation's own `margin-block`. No focus glow of its own; the
-  slide-level blue bar carries the focus signal. The editing state may add a
-  faint wash for the toolbar to sit on — `.lesson-document-explanation:
-  focus-within` gets a 55%-mixed `var(--muted)` background, never a border.
+  slide-level blue bar carries the focus signal.
 - **Sentence/Vocabulary pieces**: resting pairs carry no visible box
   (`border: 1px solid transparent; background: transparent`); only the
   `.active` pair gets a visible card (`border-color: var(--primary)`,
@@ -434,22 +440,22 @@ proposal doc's aspirations.
   presentation and vocabulary-table rows use a different, settled palette
   (below).
 - **Resting pair typography** (round 2, item C — owner-decided, no longer an
-  A/B; sizes bumped to the Phase 3b type scale — 17px body / 15px secondary,
-  from 16/15): Spanish `color: var(--foreground); font-weight: 600;
-  font-size: 17px`, English `color: var(--muted-foreground); font-style:
-  italic; font-weight: 400; font-size: 15px`, with 6px between pairs and 2px
-  between a pair's own two lines. Applies to `.lesson-document-sentence
-  .resting .lesson-sentence-composed[lang="es"|"en"]` and, for consistency,
-  to a vocabulary table's own unfocused rows — vocabulary tables never get
-  the `.resting` class (there's no separate resting/editing presentation
-  for a table, per `sentence-editor.tsx`), so the equivalent selector is
+  A/B; colour reverted 2026-09-16, see the "One visual language" bullet
+  below): a composed sentence slide's own two lines
+  (`.lesson-document-sentence.resting .lesson-sentence-composed[lang="es"|
+  "en"]`) are both plain ink `var(--foreground)` — Spanish `font-weight: 700;
+  font-size: 17px`, English `font-style: italic; font-weight: 400; font-size:
+  17px` (same size as Spanish, not smaller) — with 6px between pairs and 2px
+  between a pair's own two lines. A vocabulary table's own unfocused rows use
+  a separate, still-two-tone selector — vocabulary tables never get the
+  `.resting` class (there's no separate resting/editing presentation for a
+  table, per `sentence-editor.tsx`) — so the equivalent selector is
   `.lesson-document-sentence.vocab-table .lesson-document-piece:not(.active)
-  .lesson-document-language-field[data-language="es"|"en"] > textarea` —
-  note the full descendant chain through `.lesson-document-language-field`,
-  not a `.lesson-document-piece > textarea` direct-child selector, since the
-  textarea is nested inside that field wrapper, not a direct child of the
-  piece. Editing fields, explanation marks, and the active vocab-table row
-  keep the always-on red/blue ink from the bullet above.
+  .lesson-document-language-field[data-language="es"|"en"] > textarea`:
+  Spanish `color: var(--foreground); font-weight: 600; font-size: 17px`,
+  English `color: var(--muted-foreground); font-style: italic; font-size:
+  15px`, unchanged. Editing fields, explanation marks, and the active
+  vocab-table row keep the always-on red/blue ink from the bullet above.
 - **Hint input shown only on demand**: an empty hint no longer renders
   under every active pair. The input (`.lesson-document-hint-pill-input`)
   renders only when the pair already has a stored hint (`piece.callout !==
@@ -506,22 +512,25 @@ proposal doc's aspirations.
   `letter-spacing: 0.08em`, `text-transform: uppercase`, `var(--muted-
   foreground)` — the `text-transform` is CSS-only, so the stored
   `promptText` itself keeps whatever case the teacher typed.
-- **Covers is one quiet line at rest, expanding on focus/click** (Phase 3b):
-  `LessonConceptsField`'s compact variant, only when it's the lesson's own
-  Covers field (`coversFor` set — the module Key Concepts field, and every
-  other `variant`, are unaffected), collapses to a summary button
-  (`data-covers-summary`) reading `Covers · <english> · <english> · +N` for
-  concepts past the first three. Clicking it, focusing it, or tabbing to it
-  expands the field in place (React state, `lesson-concepts-field.tsx`
-  composing `covers-summary.tsx`, `concept-typeahead.tsx`, and
-  `concept-suggestion-chips.tsx`) — the chips, the add-input, the typeahead
-  popover, and the pair-suggestion pills all mount only once expanded. Focus leaving the whole field
-  (`onBlur` checking `relatedTarget` against the container) collapses it
-  back to the summary line; expanding refocuses the add-input automatically,
-  so a keyboard user can type immediately. Priority dots
-  (`.lesson-concept-chip[class*="role-"]::before`) only render when the
-  lesson's own concepts don't all share one curriculum role —
-  `.lesson-concepts-row[data-roles-uniform="true"]` (set from the tagged
+- **Covers never collapses** (owner, 2026-09-16 — reverses the Phase 3b
+  "quiet line at rest" rule): `LessonConceptsField`'s compact Covers field
+  (`coversFor` set) always renders the full line — tagged pills, the
+  pair-suggestion ghost text, and the add-input — with no summary/expand
+  state (`covers-summary.tsx` and its `data-covers-summary` button are gone).
+  Auto-Covers suggestions (`concept-suggestion-chips.tsx`'s
+  `usePairSuggestions`/`PairSuggestionChips`) render as borderless ghost
+  text ("+ some term", `.lesson-concept-suggestion-ghost`) rather than
+  dashed pills, capped at four visible, and a pair-derived match is only
+  offered when its concept is Level 1 (`P1`) or already in this lesson's
+  module syllabus (main or review — `isSyllabusEligiblePairMatch` in
+  `concept-suggestions.ts`, fed the field's own `syllabusMarkers`); this
+  keeps an incidental sentence noun (e.g. "egg") from becoming a suggestion.
+  The add-input (`.lesson-concept-add`) is borderless at rest, gaining a
+  border only on `:focus-visible`, with a fixed "Add concept…" placeholder
+  (same wording regardless of whether the lesson already has concepts).
+  Priority dots (`.lesson-concept-chip[class*="role-"]::before`) only
+  render when the lesson's own concepts don't all share one curriculum role
+  — `.lesson-concepts-row[data-roles-uniform="true"]` (set from the tagged
   concepts' resolved roles) hides them when every chip would show the same
   dot.
 - **Linked concept pills stack English over Spanish** (owner, 2026-09-16):
@@ -607,16 +616,19 @@ proposal doc's aspirations.
   `.lesson-library` and to controls with no visible text) — the pre-existing
   page-wide "icon-only controls meet a minimum click-target size" test
   stays report-only, unchanged.
-- **One visual language for bilingual marks** (owner, 2026-09-16, colour
-  restored 2026-09-16): a Spanish `<mark data-language="es">` is bold
-  `var(--lesson-hl-es)` with no underline, an English one is italic theme
-  `--primary` blue with no underline (`practice-responsive-overrides.css`'s
-  shared `.learner-theme mark`/`.practice-markdown-content mark` rule,
-  mirrored in `explanation-editor.css`); the resting sentence-slide's English
-  line (`sentence-presentation.css`'s `.lesson-document-sentence.resting
-  .lesson-sentence-composed[lang="en"]`) matches that same theme-blue
-  italic, while its Spanish line matches the same `var(--lesson-hl-es)`
-  colour.
+- **One visual language for bilingual marks, but only for marks** (owner,
+  2026-09-16, colour restored 2026-09-16; scope narrowed 2026-09-16): a
+  Spanish `<mark data-language="es">` is bold `var(--lesson-hl-es)` with no
+  underline, an English one is italic theme `--primary` blue with no
+  underline (`practice-responsive-overrides.css`'s shared `.learner-theme
+  mark`/`.practice-markdown-content mark` rule, mirrored in
+  `explanation-editor.css`) — this is a *mark-only* treatment. The resting
+  sentence-slide's own two lines do **not** borrow it: both are plain ink
+  `var(--foreground)` (`sentence-presentation.css`'s
+  `.lesson-document-sentence.resting .lesson-sentence-composed[lang="es"|
+  "en"]`) — Spanish bold, English italic, same size — the one-day experiment
+  of colouring them like marks (50b4c5bf, c9df1e8f) was reverted the same
+  day it shipped; see "Resting pair typography" above.
 
 ## 6. Owner decisions & rejected ideas
 
