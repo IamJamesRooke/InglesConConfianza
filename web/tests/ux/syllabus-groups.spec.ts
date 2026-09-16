@@ -1,5 +1,7 @@
 import type { Locator, Page } from "@playwright/test";
+import { writeFile } from "node:fs/promises";
 
+import { uxCheckLessonsPath } from "../../playwright.config";
 import { expect, test } from "./fixtures";
 
 // The module Syllabus card's round-2 structure (docs/design/lesson-builder.md
@@ -138,4 +140,45 @@ test("Ctrl+Alt+Arrow still moves a grouped pill between the lists", async ({ pag
   await expect(summary).toContainText("Review 0/1");
   // Still grouped on the other side of the move.
   await expect(card.locator(".syllabus-pos-eyebrow")).toHaveCount(1);
+});
+
+// Regression: a concept already sitting in the syllabus at page load must
+// group the same as one added during the session. The load path
+// (route.ts -> readConceptDisplays -> setConceptDisplays) once dropped
+// `pos`, so every pre-existing pill fell into Untagged no matter its
+// curriculum collections — only typeahead-added pills grouped correctly.
+test("a concept already in the syllabus at load groups by its curriculum pos, not Untagged", async ({
+  page,
+}) => {
+  test.setTimeout(60_000);
+  // "yo" (concept o25n43wg3o) carries a `pos:pronoun` collection in the
+  // curriculum database — verified read-only via psql before writing this.
+  await writeFile(
+    uxCheckLessonsPath,
+    JSON.stringify({
+      version: 2,
+      modules: [
+        {
+          id: "module_seed",
+          name: "Seeded module",
+          lessonIds: [],
+          syllabus: {
+            main: [{ id: "syllabus_item_seed", conceptId: "o25n43wg3o", label: "yo" }],
+            review: [],
+          },
+        },
+      ],
+      lessons: [],
+    }),
+  );
+
+  const card = await openSyllabus(page);
+  const pronouns = card
+    .locator(".syllabus-pos-group")
+    .filter({ has: page.locator(".syllabus-pos-eyebrow", { hasText: "Pronouns" }) });
+  await expect(pronouns.locator(".syllabus-chip")).toContainText("yo");
+  const untagged = card
+    .locator(".syllabus-pos-group")
+    .filter({ has: page.locator(".syllabus-pos-eyebrow", { hasText: "Untagged" }) });
+  await expect(untagged).toHaveCount(0);
 });
