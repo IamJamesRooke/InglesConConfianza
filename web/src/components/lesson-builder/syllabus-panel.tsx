@@ -34,6 +34,7 @@
 import { Check, ChevronDown, ChevronRight, Plus, X } from "lucide-react";
 import { useEffect, useRef, useState, type DragEvent, type KeyboardEvent } from "react";
 
+import { ConceptPillLabel } from "@/components/lesson-builder/concept-pill-label";
 import { ConceptQuickEdit } from "@/components/lesson-builder/concept-quick-edit";
 import { LessonConceptsField } from "@/components/lesson-builder/lesson-concepts-field";
 import { AddFromLevelPicker } from "@/components/lesson-builder/syllabus-fill-picker";
@@ -193,17 +194,13 @@ export function SyllabusPanel({
     return display?.english ?? item.label;
   }
 
-  // Both languages on the pill, Spanish first (the concept is Spanish-first):
-  // "tú → you" and "te → you" are otherwise the same pill (owner, 2026-09-16).
+  // Both languages on the pill, stacked English-over-Spanish (owner,
+  // 2026-09-16): "tú" and "te" are otherwise the same English pill ("you"),
+  // so the Spanish line still disambiguates them.
   function labelNode(item: SyllabusItem) {
     const display = item.conceptId ? conceptDisplays[item.conceptId] : undefined;
     if (!display) return renderConceptLabel(item.label);
-    return (
-      <>
-        {renderConceptLabel(display.spanish)}
-        <span className="lesson-concept-english">{renderConceptLabel(display.english)}</span>
-      </>
-    );
+    return <ConceptPillLabel english={display.english} spanish={display.spanish} />;
   }
 
   function toneFor(item: SyllabusItem): "is-covered" | "is-uncovered" | "is-missing" {
@@ -500,7 +497,7 @@ export function SyllabusPanel({
         }}
       >
         <Plus size={11} aria-hidden="true" />
-        <span className="lesson-concept-label">{item.label}</span>
+        <span className="lesson-concept-label">{labelNode(item)}</span>
         <button
           type="button"
           className="lesson-concept-remove"

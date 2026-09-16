@@ -181,4 +181,27 @@ test("a concept already in the syllabus at load groups by its curriculum pos, no
     .locator(".syllabus-pos-group")
     .filter({ has: page.locator(".syllabus-pos-eyebrow", { hasText: "Untagged" }) });
   await expect(untagged).toHaveCount(0);
+// Stacked bilingual pills (owner, 2026-09-16): a linked concept pill renders
+// English above Spanish, not side by side on one line.
+test("a linked syllabus pill stacks its English line above its Spanish line", async ({ page }) => {
+  test.setTimeout(120_000);
+  const card = await openSyllabus(page);
+  await addConcept(page, card, "estar");
+
+  const chip = card.locator(".syllabus-chip[data-syllabus-chip]").first();
+  await expect(chip.locator(".lesson-concept-pill-label")).toBeVisible();
+  const english = chip.locator(".lesson-concept-pill-en");
+  const spanish = chip.locator(".lesson-concept-pill-es");
+  await expect(english).toBeVisible();
+  await expect(spanish).toBeVisible();
+  const englishBox = await english.boundingBox();
+  const spanishBox = await spanish.boundingBox();
+  expect(englishBox).not.toBeNull();
+  expect(spanishBox).not.toBeNull();
+  if (englishBox && spanishBox) {
+    // English's top sits above Spanish's top, with no horizontal offset
+    // (a stack, not "spanish → english" side by side).
+    expect(englishBox.y).toBeLessThan(spanishBox.y);
+    expect(englishBox.x).toBe(spanishBox.x);
+  }
 });

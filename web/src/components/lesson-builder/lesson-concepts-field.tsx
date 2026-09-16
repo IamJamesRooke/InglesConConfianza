@@ -9,6 +9,7 @@ import {
   type Ref,
 } from "react";
 
+import { ConceptPillLabel } from "@/components/lesson-builder/concept-pill-label";
 import { ConceptQuickEdit, type ConceptDraft } from "@/components/lesson-builder/concept-quick-edit";
 import { curriculumRoles } from "@/components/curriculum/curriculum-row-editor";
 import {
@@ -270,14 +271,7 @@ export function LessonConceptsField({
                   onDeleted={() => onRemove(concept.id)}
                 >
                   {display ? (
-                    // Bracketed placeholders recede on both halves, so a long
-                    // label reads as "querer que → to want" first.
-                    <>
-                      {renderConceptLabel(display.spanish)}
-                      <span className="lesson-concept-english">
-                        {renderConceptLabel(display.english)}
-                      </span>
-                    </>
+                    <ConceptPillLabel english={display.english} spanish={display.spanish} />
                   ) : (
                     renderConceptLabel(concept.label)
                   )}

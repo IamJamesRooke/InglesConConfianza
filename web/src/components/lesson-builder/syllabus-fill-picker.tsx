@@ -11,7 +11,7 @@ import { X } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 
-import { renderConceptLabel } from "@/lib/lesson-builder/concept-label";
+import { ConceptPillLabel } from "@/components/lesson-builder/concept-pill-label";
 import { curriculumRoleLabel } from "@/lib/curriculum/types";
 import { unclaimedConceptsForLevel, type ByLevelConcept } from "@/lib/lesson-builder/syllabus-fill";
 import type { LessonModule } from "@/lib/lesson-builder/types";
@@ -196,10 +196,7 @@ export function AddFromLevelPicker({
                               aria-hidden="true"
                             />
                             <span className="syllabus-fill-row-label">
-                              {renderConceptLabel(item.spanish)}
-                              <span className="lesson-concept-english">
-                                {renderConceptLabel(item.english)}
-                              </span>
+                              <ConceptPillLabel english={item.english} spanish={item.spanish} />
                             </span>
                           </label>
                         ))}
