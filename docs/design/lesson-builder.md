@@ -421,7 +421,7 @@ proposal doc's aspirations.
   border and no left rule (owner, 2026-09-16 — replaced the earlier 2px
   `var(--primary)` left-rule treatment, which read as a focus/accent signal).
   Blocks are separated by rhythm, not boxes: `.lesson-document-block` carries
-  `padding-block: 12px` (24px total between adjacent slides), which replaced
+  `padding-block: 6px` (12px total between adjacent slides), which replaced
   the explanation's own `margin-block`. No focus glow of its own; the
   slide-level blue bar carries the focus signal.
 - **Sentence/Vocabulary pieces**: resting pairs carry no visible box

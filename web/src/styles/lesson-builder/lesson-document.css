@@ -23,7 +23,6 @@
    explanation-editor.css). */
 .lesson-document-body {
   position: relative;
-  max-width: 40rem;
 }
 /* "Covers" sits at the very end of the document, after the last slide and
    its tail insertion control. Padded to the shared 13px text column edge —
@@ -70,14 +69,14 @@
      keeps a permanent horizontal gutter for the slide-action icons below —
      reserved space, but width only, never height, so content never runs
      underneath them regardless of hover/focus state. */
-  padding: 12px 54px 12px 8px;
+  padding: 6px 54px 6px 8px;
   border-radius: 6px;
   outline: none;
   transition:
     transform 0.12s ease,
     box-shadow 0.12s ease;
 }
-/* Blocks are separated by rhythm (24px total, via this padding meeting the
+/* Blocks are separated by rhythm (12px total, via this padding meeting the
    next block's own padding), not by boxes — see explanation-editor.css,
    which dropped the grey-card background this rhythm replaces. */
 @media (prefers-reduced-motion: reduce) {
