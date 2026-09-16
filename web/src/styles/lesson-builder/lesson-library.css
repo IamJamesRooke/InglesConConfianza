@@ -47,6 +47,7 @@
 
 .lesson-library-module-meta {
   display: grid;
+  grid-template-columns: minmax(0, 1fr);
   gap: 5px;
   padding: 8px 16px;
   border-bottom: 0;
@@ -62,6 +63,7 @@
 }
 .lesson-library-module-line {
   display: flex;
+  min-width: 0;
   align-items: center;
   gap: 9px;
 }
@@ -91,6 +93,7 @@
 }
 .lesson-library-module-description {
   width: 100%;
+  min-width: 0;
   padding: 1px 3px;
   border: 0;
   border-radius: 4px;
@@ -307,6 +310,18 @@
 @media (max-width: 850px) {
   .lesson-library-module-controls {
     flex-shrink: 0;
+  }
+}
+
+/* Under 480px the title alone can eat the whole row (its own min-width is
+   150px) — wrap the pills and the trash button onto their own line instead
+   of forcing the row (and the grid track above) wider than the viewport. */
+@media (max-width: 480px) {
+  .lesson-library-module-line {
+    flex-wrap: wrap;
+  }
+  .lesson-library-module-controls {
+    margin-left: 0;
   }
 }
 
