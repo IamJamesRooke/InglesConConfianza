@@ -45,8 +45,11 @@
 }
 
 /* Resting pair typography — the owner-decided calm treatment. Only the
-   *resting* presentation (this slide not active) reads this way; editing
-   fields and explanation marks keep the red/blue language ink. */
+   *resting* presentation (this slide not active) reads this way; the
+   active/editing pair fields below keep their own red/blue language ink.
+   The resting English line now matches the explanation marks' theme-blue
+   italic instead of a plain grey italic (owner, 2026-09-16 — "one visual
+   language" round). */
 .lesson-document-sentence.resting .lesson-sentence-presentation {
   display: flex;
   flex-direction: column;
@@ -58,7 +61,7 @@
   font-size: 17px;
 }
 .lesson-document-sentence.resting .lesson-sentence-composed[lang="en"] {
-  color: var(--muted-foreground);
+  color: var(--primary);
   font-style: italic;
   font-weight: 400;
   font-size: 15px;

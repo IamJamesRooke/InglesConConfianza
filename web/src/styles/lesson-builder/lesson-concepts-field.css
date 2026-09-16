@@ -55,9 +55,9 @@
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  padding: 4px 10px;
+  padding: 3px 7px;
   border: 1px solid var(--border);
-  border-radius: 999px;
+  border-radius: 8px;
   background: var(--card);
   color: var(--foreground);
   font-size: 12px;
@@ -72,6 +72,13 @@
    line) is unaffected. */
 .lesson-concept-chip:has(.lesson-concept-pill-label) {
   align-items: flex-start;
+}
+/* A concept label doubles as a <button> (curriculum-backed pills open the
+   quick-edit popover, freehand pills rename in place) — the browser's
+   default centred button text otherwise drifts the Spanish line out from
+   under the wider English line above it (round: "stacked pills", item 1). */
+.lesson-concept-label {
+  text-align: left;
 }
 .lesson-concept-label:hover {
   text-decoration: underline;

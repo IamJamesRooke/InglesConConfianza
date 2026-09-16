@@ -72,17 +72,23 @@
 .lesson-document-explanation .practice-markdown-content :is(ol, ul) {
   text-align: left;
 }
+/* One visual language across the lesson document (owner, 2026-09-16): bold
+   ink for Spanish, italic theme blue for English, no underline, no red —
+   practice-responsive-overrides.css's shared `mark` rule is the one that
+   actually wins the cascade here (same selector specificity, imported
+   later), so these exist to keep this file's own reading of the mark
+   colors from contradicting it, not because they're load-bearing. */
 .lesson-document-explanation mark[data-language="es"] {
   padding: 0;
   background: transparent;
-  color: var(--lesson-hl-es);
-  font-weight: 600;
+  color: var(--foreground);
+  font-weight: 700;
 }
 .lesson-document-explanation mark[data-language="en"] {
   padding: 0;
   background: transparent;
-  color: var(--lesson-hl-en);
-  font-weight: 400;
+  color: var(--primary);
+  font-style: italic;
 }
 /* Same type scale as the sentence/vocabulary fields (14px / 1.45) — this
    used to force 16px/1.65, so an explanation slide and the sentence slide

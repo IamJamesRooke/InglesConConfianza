@@ -48,7 +48,7 @@
 .lesson-library-module-meta {
   display: grid;
   grid-template-columns: minmax(0, 1fr);
-  gap: 5px;
+  gap: 1px;
   padding: 8px 16px;
   border-bottom: 0;
   /* Corner fix (diagnostic root cause 3): matches .lesson-library-module's
@@ -91,9 +91,17 @@
   background: var(--surface-writing);
   box-shadow: 0 0 0 4px color-mix(in oklch, var(--primary) 42%, transparent);
 }
+/* Holds the description input plus the Published/Free toggles at its right
+   end (moved off the title line, owner round: "module header", item 5). */
+.lesson-library-module-description-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
 .lesson-library-module-description {
   width: 100%;
   min-width: 0;
+  flex: 1;
   padding: 1px 3px;
   border: 0;
   border-radius: 4px;
@@ -115,15 +123,21 @@
 .lesson-library-module-pills {
   display: flex;
   flex-shrink: 0;
+  margin-left: auto;
   gap: 6px;
 }
+/* Small-label treatment (matches .syllabus-card-title's uppercase-tracking
+   idiom) now that these sit on the description line, not the title line —
+   owner round: "module header", item 5. */
 .lesson-library-module-pill {
-  padding: 3px 9px;
-  border: 1px solid color-mix(in oklch, var(--primary-foreground) 55%, transparent);
+  padding: 2px 7px;
+  border: 1px solid color-mix(in oklch, var(--primary-foreground) 50%, transparent);
   border-radius: 999px;
   color: var(--primary-foreground);
-  font-size: 10px;
+  font-size: 11px;
   font-weight: 650;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
   white-space: nowrap;
 }
 .lesson-library-module-pill.is-draft {
@@ -274,7 +288,7 @@
   place-items: center;
   align-content: center;
   gap: 8px;
-  padding: 26px 22px;
+  padding: 14px 22px;
   text-align: center;
 }
 .lesson-library-first-lesson > button {

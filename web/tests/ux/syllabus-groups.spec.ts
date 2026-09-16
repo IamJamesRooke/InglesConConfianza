@@ -181,6 +181,8 @@ test("a concept already in the syllabus at load groups by its curriculum pos, no
     .locator(".syllabus-pos-group")
     .filter({ has: page.locator(".syllabus-pos-eyebrow", { hasText: "Untagged" }) });
   await expect(untagged).toHaveCount(0);
+});
+
 // Stacked bilingual pills (owner, 2026-09-16): a linked concept pill renders
 // English above Spanish, not side by side on one line.
 test("a linked syllabus pill stacks its English line above its Spanish line", async ({ page }) => {

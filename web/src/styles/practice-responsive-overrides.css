@@ -137,40 +137,32 @@
   font-weight: 700;
 }
 
-/* Bilingual highlight: colored ink + thin underline, never a fill.
+/* Bilingual highlight: language is told by weight/style + colour alone, no
+   underline and no red (owner, 2026-09-16 — "one visual language" round:
+   a Spanish mark is bold ink, an English mark is italic theme blue).
    Matches both the learner canvas and any PracticeMarkdown preview
    (e.g. the lesson builder), which renders outside .learner-theme. */
 .learner-theme mark,
 .practice-markdown-content mark {
   padding: 0;
   border: 0;
-  border-bottom: 2px solid currentColor;
   border-radius: 0;
   color: inherit;
   background: none;
-  font-weight: 600;
 }
 .learner-theme mark.spanish,
 .learner-theme mark[data-language="es"],
 .practice-markdown-content mark.spanish,
 .practice-markdown-content mark[data-language="es"] {
-  color: var(--lesson-hl-es);
-  border-bottom-color: color-mix(
-    in oklch,
-    var(--lesson-hl-es) 45%,
-    transparent
-  );
+  color: var(--foreground);
+  font-weight: 700;
 }
 .learner-theme mark.english,
 .learner-theme mark[data-language="en"],
 .practice-markdown-content mark.english,
 .practice-markdown-content mark[data-language="en"] {
-  color: var(--lesson-hl-en);
-  border-bottom-color: color-mix(
-    in oklch,
-    var(--lesson-hl-en) 45%,
-    transparent
-  );
+  color: var(--primary);
+  font-style: italic;
 }
 
 /* --- Sentence builder: one calm card, blanks flow left-to-right --- */

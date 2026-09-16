@@ -99,11 +99,20 @@
 }
 
 /* Part-of-speech sub-group inside Main/Review: a quieter eyebrow than the
-   list's own, and only rendered for non-empty groups (syllabus-groups.ts). */
+   list's own, and only rendered for non-empty groups (syllabus-groups.ts).
+   Each group reads as one block: clearly more space above its own heading
+   than below it (18px above via this margin plus the parent
+   `.syllabus-group`'s own 4px flex gap, 6px below via this gap) — the first
+   group needs no extra top space, since it already sits right under the
+   "Main teaching points"/"Review" eyebrow. */
 .syllabus-pos-group {
   display: flex;
   flex-direction: column;
-  gap: 2px;
+  gap: 6px;
+  margin-top: 14px;
+}
+.syllabus-pos-group:first-of-type {
+  margin-top: 0;
 }
 .syllabus-pos-eyebrow {
   font-size: 10px;

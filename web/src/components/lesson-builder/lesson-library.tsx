@@ -454,34 +454,6 @@ function LessonLibraryInner(props: Props) {
                           placeholder="Untitled module"
                           aria-label={`Module ${moduleIndex + 1} name`}
                         />
-                        <span className="lesson-library-module-pills">
-                          <button
-                            type="button"
-                            aria-pressed={module.status === "draft"}
-                            className={`lesson-library-module-pill${
-                              module.status === "draft" ? " is-draft" : ""
-                            }`}
-                            onClick={() =>
-                              props.onChangeModule(module.id, {
-                                status: module.status === "draft" ? "published" : "draft",
-                              })
-                            }
-                          >
-                            {module.status === "draft" ? "Draft" : "Published"}
-                          </button>
-                          <button
-                            type="button"
-                            aria-pressed={module.access === "premium"}
-                            className="lesson-library-module-pill"
-                            onClick={() =>
-                              props.onChangeModule(module.id, {
-                                access: module.access === "premium" ? "free" : "premium",
-                              })
-                            }
-                          >
-                            {module.access === "premium" ? "Premium" : "Free"}
-                          </button>
-                        </span>
                         {confirmDeleteModule === module.id ? (
                           <span className="lesson-library-module-controls lesson-inline-confirm">
                             <span>Delete module and move its lessons?</span>
@@ -523,18 +495,48 @@ function LessonLibraryInner(props: Props) {
                           </span>
                         )}
                       </div>
-                      <input
-                        className="lesson-library-module-description"
-                        data-keymap-ignore
-                        value={module.description ?? ""}
-                        onChange={(event) =>
-                          props.onChangeModule(module.id, {
-                            description: event.target.value,
-                          })
-                        }
-                        placeholder="What will the learner be able to say?"
-                        aria-label={`Module ${moduleIndex + 1} description`}
-                      />
+                      <div className="lesson-library-module-description-row">
+                        <input
+                          className="lesson-library-module-description"
+                          data-keymap-ignore
+                          value={module.description ?? ""}
+                          onChange={(event) =>
+                            props.onChangeModule(module.id, {
+                              description: event.target.value,
+                            })
+                          }
+                          placeholder="What will the learner be able to say?"
+                          aria-label={`Module ${moduleIndex + 1} description`}
+                        />
+                        <span className="lesson-library-module-pills">
+                          <button
+                            type="button"
+                            aria-pressed={module.status === "draft"}
+                            className={`lesson-library-module-pill${
+                              module.status === "draft" ? " is-draft" : ""
+                            }`}
+                            onClick={() =>
+                              props.onChangeModule(module.id, {
+                                status: module.status === "draft" ? "published" : "draft",
+                              })
+                            }
+                          >
+                            {module.status === "draft" ? "Draft" : "Published"}
+                          </button>
+                          <button
+                            type="button"
+                            aria-pressed={module.access === "premium"}
+                            className="lesson-library-module-pill"
+                            onClick={() =>
+                              props.onChangeModule(module.id, {
+                                access: module.access === "premium" ? "free" : "premium",
+                              })
+                            }
+                          >
+                            {module.access === "premium" ? "Premium" : "Free"}
+                          </button>
+                        </span>
+                      </div>
                     </div>
 
                     <div className="lesson-library-list">
@@ -568,9 +570,6 @@ function LessonLibraryInner(props: Props) {
                             <Plus size={15} /> Create lesson
                           </button>
                           <span>Everything saves automatically.</span>
-                          <span>
-                            Lesson 1 is the learner&rsquo;s first contact — assume nothing.
-                          </span>
                         </div>
                       )}
                     </div>
