@@ -35,7 +35,7 @@ export const SYLLABUS_GROUPS: readonly GroupDefinition[] = [
   { id: "connectors", label: "Connectors", pos: ["connector"] },
   {
     id: "time-place-degree",
-    label: "Time, place and degree",
+    label: "Prepositions, time and place",
     pos: ["adverb", "preposition"],
   },
   {

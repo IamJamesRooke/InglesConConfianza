@@ -29,7 +29,7 @@ const posOf = (entry: Item) => entry.pos;
 test("group order is fixed and ends in Untagged", () => {
   assert.deepEqual(
     SYLLABUS_GROUPS.map((group) => group.label),
-    ["Pronouns", "Verbs", "Connectors", "Time, place and degree", "Words", "Untagged"],
+    ["Pronouns", "Verbs", "Connectors", "Prepositions, time and place", "Words", "Untagged"],
   );
 });
 

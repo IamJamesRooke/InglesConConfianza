@@ -15,7 +15,7 @@ const GROUP_ORDER = [
   "Pronouns",
   "Verbs",
   "Connectors",
-  "Time, place and degree",
+  "Prepositions, time and place",
   "Words",
   "Untagged",
 ];
@@ -113,7 +113,7 @@ test("Copy as text carries the group headings", async ({ page, context }) => {
   await expect(card.getByRole("button", { name: "Copied!" })).toBeVisible();
   const text = await page.evaluate(() => navigator.clipboard.readText());
   expect(text).toContain("Main teaching points (in order):");
-  expect(text).toMatch(/^(Pronouns|Verbs|Connectors|Time, place and degree|Words|Untagged):$/m);
+  expect(text).toMatch(/^(Pronouns|Verbs|Connectors|Prepositions, time and place|Words|Untagged):$/m);
   // Pronouns before Verbs, as on the card, whatever the flat order.
   expect(text.indexOf("Pronouns:")).toBeLessThan(text.indexOf("Verbs:"));
   // And the level in words, next to the entry.
