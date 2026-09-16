@@ -12,6 +12,10 @@ const eslintConfig = defineConfig([
     "out/**",
     "build/**",
     "next-env.d.ts",
+    // Isolated Playwright/UX-check dev servers build into throwaway dirs
+    // like this (see docs/ux-checks); never lint their compiled output.
+    ".next-ux-check-*/**",
+    ".next-verify-*/**",
   ]),
 ]);
 
