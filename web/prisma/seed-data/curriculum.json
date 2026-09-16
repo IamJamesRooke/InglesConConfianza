@@ -57949,7 +57949,7 @@
     {
       "id": "tzymzgnepe",
       "spanish": "[la] cosa",
-      "english": "thing",
+      "english": "[the] thing",
       "example": {
         "spanish": "¿Qué es esa cosa?",
         "english": "What is that thing?"
@@ -91411,8 +91411,8 @@
     },
     {
       "id": "7rngt9gu3p",
-      "spanish": "algún [sustantivo]",
-      "english": "some [noun]",
+      "spanish": "algún",
+      "english": "some",
       "example": {
         "spanish": "¿Tienes algún libro sobre historia?",
         "english": "Do you have some book about history?"
@@ -91436,8 +91436,8 @@
     },
     {
       "id": "1gq5hjnrzn",
-      "spanish": "alguna [sustantivo]",
-      "english": "some [noun]",
+      "spanish": "alguna",
+      "english": "some",
       "example": {
         "spanish": "Necesito alguna solución pronto.",
         "english": "I need some solution soon."
