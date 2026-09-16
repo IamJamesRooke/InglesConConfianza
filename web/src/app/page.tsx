@@ -63,6 +63,7 @@ export default async function HomePage({
         id: module.id,
         name: module.name,
         kind: module.kind,
+        description: module.description,
         lessonCount: module.lessonCount,
         lessons,
       };

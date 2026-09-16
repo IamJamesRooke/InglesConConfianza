@@ -587,6 +587,12 @@
   letter-spacing: -0.025em;
   text-wrap: balance;
 }
+.module-description {
+  margin-top: 4px;
+  color: var(--muted-foreground);
+  font-size: 14px;
+  line-height: 1.4;
+}
 .module-fraction {
   font-size: 13px;
   white-space: nowrap;

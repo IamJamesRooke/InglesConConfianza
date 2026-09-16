@@ -71,6 +71,10 @@ export function isLesson(value: unknown): value is Lesson {
     isRecord(value) &&
     typeof value.id === "string" &&
     isStringOrNull(value.name) &&
+    (value.status === undefined ||
+      value.status === "draft" ||
+      value.status === "published") &&
+    (value.notes === undefined || typeof value.notes === "string") &&
     (value.concepts === undefined ||
       (Array.isArray(value.concepts) &&
         value.concepts.every(isLessonConcept))) &&
@@ -106,6 +110,13 @@ export function isLessonModule(value: unknown): value is LessonModule {
     (value.kind === undefined ||
       value.kind === "course" ||
       value.kind === "onboarding") &&
+    (value.description === undefined || typeof value.description === "string") &&
+    (value.status === undefined ||
+      value.status === "draft" ||
+      value.status === "published") &&
+    (value.access === undefined ||
+      value.access === "free" ||
+      value.access === "premium") &&
     Array.isArray(value.lessonIds) &&
     value.lessonIds.every((lessonId) => typeof lessonId === "string") &&
     (value.syllabus === undefined || isModuleSyllabus(value.syllabus))
@@ -128,10 +139,14 @@ function dedupeSyllabus(syllabus: { main: LessonConcept[]; review: LessonConcept
 }
 
 export function normalizeModule(module: LessonModule): LessonModule {
+  const description = module.description?.trim();
   return {
     id: module.id,
     name: module.name,
     ...(module.kind ? { kind: module.kind } : {}),
+    ...(description ? { description } : {}),
+    ...(module.status === "draft" ? { status: module.status } : {}),
+    ...(module.access === "premium" ? { access: module.access } : {}),
     lessonIds: module.lessonIds,
     syllabus: dedupeSyllabus(module.syllabus ?? { main: [], review: [] }),
   };
@@ -200,9 +215,12 @@ function repairSyllabusIdCollisions(
 }
 
 function normalizeLessonForFile(lesson: Lesson): Lesson {
+  const notes = lesson.notes?.trim();
   return {
     id: lesson.id,
     name: lesson.name,
+    ...(lesson.status === "draft" ? { status: lesson.status } : {}),
+    ...(notes ? { notes } : {}),
     concepts: lesson.concepts ?? [],
     blocks: lesson.blocks.map((block): LessonBlock => {
       if (block.type === "explanation") {

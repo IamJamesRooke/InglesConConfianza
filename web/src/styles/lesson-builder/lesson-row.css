@@ -139,6 +139,17 @@
   box-shadow: 0 0 0 3px color-mix(in oklch, var(--primary) 28%, transparent);
 }
 
+.lesson-library-draft-tag {
+  flex-shrink: 0;
+  padding: 1px 7px;
+  border: 1px dashed var(--muted-foreground);
+  border-radius: 999px;
+  color: var(--muted-foreground);
+  font-size: 10px;
+  font-weight: 650;
+  white-space: nowrap;
+}
+
 .lesson-library-try {
   padding: 6px 8px;
   border-radius: 6px;

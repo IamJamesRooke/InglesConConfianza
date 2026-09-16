@@ -83,3 +83,54 @@ test("validateImportedFile: accepts a well-formed v2 file and normalizes it (syl
     assert.deepEqual(result.file.modules[0].syllabus, { main: [], review: [] });
   }
 });
+
+test("round trip: module/lesson metadata fields all set survive export -> import unchanged", () => {
+  const file: LessonFile = {
+    version: 2,
+    modules: [
+      {
+        id: "m1",
+        name: "Confianza I",
+        description: "Al terminar puedes decir lo que quieres.",
+        status: "draft",
+        access: "premium",
+        lessonIds: ["a"],
+      },
+    ],
+    lessons: [
+      {
+        id: "a",
+        name: "Lesson one",
+        status: "draft",
+        notes: "Fix the second slide.",
+        concepts: [],
+        blocks: [],
+      },
+    ],
+  };
+  const result = validateImportedFile(file);
+  assert.ok("file" in result);
+  if (!("file" in result)) return;
+  assert.equal(
+    result.file.modules[0].description,
+    "Al terminar puedes decir lo que quieres.",
+  );
+  assert.equal(result.file.modules[0].status, "draft");
+  assert.equal(result.file.modules[0].access, "premium");
+  assert.equal(result.file.lessons[0].status, "draft");
+  assert.equal(result.file.lessons[0].notes, "Fix the second slide.");
+});
+
+test("round trip: module/lesson metadata fields all absent import unchanged (no keys added)", () => {
+  const file = fileWith([["a"]], ["a"]);
+  const result = validateImportedFile(file);
+  assert.ok("file" in result);
+  if (!("file" in result)) return;
+  const importedModule = result.file.modules[0];
+  assert.equal(importedModule.description, undefined);
+  assert.equal(importedModule.status, undefined);
+  assert.equal(importedModule.access, undefined);
+  const importedLesson = result.file.lessons[0];
+  assert.equal(importedLesson.status, undefined);
+  assert.equal(importedLesson.notes, undefined);
+});

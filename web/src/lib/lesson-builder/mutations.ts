@@ -178,6 +178,28 @@ export function renameLesson(
   }));
 }
 
+export function setLessonStatus(
+  lessons: Lesson[],
+  lessonId: string,
+  status: "draft" | "published",
+): Lesson[] {
+  return mapLesson(lessons, lessonId, (lesson) => ({
+    ...lesson,
+    ...(status === "draft" ? { status } : { status: undefined }),
+  }));
+}
+
+export function setLessonNotes(
+  lessons: Lesson[],
+  lessonId: string,
+  notes: string,
+): Lesson[] {
+  return mapLesson(lessons, lessonId, (lesson) => ({
+    ...lesson,
+    notes,
+  }));
+}
+
 export function deleteLesson(lessons: Lesson[], lessonId: string): Lesson[] {
   return lessons.filter((lesson) => lesson.id !== lessonId);
 }

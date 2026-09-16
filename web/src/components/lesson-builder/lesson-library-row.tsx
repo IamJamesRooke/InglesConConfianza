@@ -1,6 +1,6 @@
 "use client";
 
-import { ChevronDown, ChevronRight, Code, Play, Plus } from "lucide-react";
+import { ChevronDown, ChevronRight, Code, Eye, EyeOff, Play, Plus } from "lucide-react";
 import { memo, useEffect, useRef, type DragEvent } from "react";
 
 import {
@@ -130,6 +130,9 @@ function LessonRowImpl({
             placeholder="Name this lesson…"
             aria-label={`Lesson ${lessonIndex + 1} title`}
           />
+          {lesson.status === "draft" && (
+            <span className="lesson-library-draft-tag">Draft</span>
+          )}
           {confirmingDelete ? (
             <span
               className="lesson-library-row-icons lesson-inline-confirm"
@@ -167,6 +170,22 @@ function LessonRowImpl({
             </span>
           ) : (
             <span className="lesson-library-row-icons">
+              <button
+                type="button"
+                onClick={() => builder.toggleLessonDraft(lesson.id)}
+                aria-label={lesson.status === "draft" ? "Publish lesson" : "Mark as draft"}
+                title={
+                  lesson.status === "draft"
+                    ? "Publish lesson (Ctrl Alt V)"
+                    : "Mark as draft (Ctrl Alt V)"
+                }
+              >
+                {lesson.status === "draft" ? (
+                  <EyeOff size={14} aria-hidden="true" />
+                ) : (
+                  <Eye size={14} aria-hidden="true" />
+                )}
+              </button>
               <button
                 type="button"
                 className="lesson-library-try"

@@ -13,7 +13,7 @@ import {
   insertFromBlockOrField,
   moveBlockCommand,
 } from "./block";
-import { finishLesson, previewLesson, toggleScriptView } from "./lesson";
+import { finishLesson, previewLesson, toggleDraftLesson, toggleScriptView } from "./lesson";
 import { newLesson, redoCommand, renameModule, saveCommand, toggleHelp, undoCommand } from "./page";
 import {
   deletePairCommand,
@@ -108,6 +108,7 @@ export const KEYMAP: Record<Scope, Partial<Record<Chord, Command>>> = {
   },
   lesson: {
     "Ctrl+Alt+D": finishLesson,
+    "Ctrl+Alt+V": toggleDraftLesson,
     "Ctrl+Alt+P": previewLesson,
     "Ctrl+Alt+T": toggleScriptView,
   },

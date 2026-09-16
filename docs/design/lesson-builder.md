@@ -20,9 +20,25 @@ interaction decision below is in service of those three goals, not of
 ## 2. Vocabulary
 
 - **Module** — a named group of lessons, shown in the left `ModuleNavigator`.
-  A module can be `kind: "course"` or `"onboarding"`.
+  A module can be `kind: "course"` or `"onboarding"`. `description?: string`
+  (2026-09-16) is the learner-facing Spanish promise ("what will the learner
+  be able to say?"), edited as a quiet single-line field under the title in
+  the module's own blue header; absent/empty means no description.
+  `status?: "draft" | "published"` (absent = published) hides the whole
+  module — and every lesson in it — from `/` and `/practice`
+  (`readCourseSummary`); the header shows a `Draft`/`Published` pill (dashed
+  border while draft). `access?: "free" | "premium"` (absent = free) is
+  stored and shown as a second pill but not enforced anywhere yet (see
+  `docs/design/product-vision.md` §4/§6).
 - **Lesson** — a titled sequence of slides (`Lesson.blocks`). Lessons render
-  as collapsible rows inside their module.
+  as collapsible rows inside their module. `status?: "draft" | "published"`
+  (absent = published, 2026-09-16) hides the lesson from `/` and `/practice`
+  the same way a draft module does; the row's icon cluster carries an
+  `Eye`/`EyeOff` toggle (`Ctrl+Alt+V`, lesson scope — `Ctrl+Alt+D` was
+  already "finish lesson") and a draft lesson's title carries a small dashed
+  "Draft" tag. `notes?: string` is teacher-only free text (why this lesson
+  exists, what to fix) that survives load/save/import/export but has no
+  builder UI yet — never shown to learners.
 - **Slide** (called `block` in code, `LessonBlock`) — one of three types:
   - **Explanation** — a rich-text note (`ExplanationBlock.contentMarkdown`),
     edited in Tiptap/ProseMirror over a four-node, three-mark schema
@@ -159,6 +175,7 @@ The table below is generated from `KEYMAP` — one row per scope × chord.
 | `block` | `Ctrl+Alt+Shift+Enter` | E3b "extend": insert a new sentence slide after this block, copying the nearest preceding sentence slide's pieces (deep-copied, terminal punctuation stripped from the copied last piece in both languages) plus one new empty pair, focused. With no preceding sentence slide to copy, degrades to a plain empty sentence. Also reached from every field scope, same as `Ctrl+Alt+Enter`. |
 | `block` | `Ctrl+Alt+ArrowUp` / `ArrowDown` | Move this block up/down. Also reached from every field scope. |
 | `lesson` | `Ctrl+Alt+D` | Finish this lesson: fully deselect, collapse it, flush any pending save. Reached from title, block, and every field scope. |
+| `lesson` | `Ctrl+Alt+V` | Toggle this lesson's draft/published status (2026-09-16). Reached from title, block, and every field scope. |
 | `lesson` | `Ctrl+Alt+P` | Preview this lesson. Reached from title, block, and every field scope. |
 | `page` | `Ctrl+Alt+L` | Add a new lesson: right after the currently open lesson if one is selected, else at the end of the active module. Works with zero lessons in the module. |
 | `page` | `Ctrl+Alt+M` | Focus the active module's name input. |
@@ -245,6 +262,7 @@ reading the table.
 | `Ctrl Alt ↑` `↓` | Move the active slide up or down. |
 | `Ctrl Alt ↑` `↓` (from a lesson's title) | Move the lesson within its module, or across a module boundary at the top/bottom of the list. |
 | `Ctrl Alt D` | Finish this lesson (collapse it). |
+| `Ctrl Alt V` | Toggle this lesson's draft/published status. |
 | `Ctrl Alt L` | Add a new lesson — works from anywhere, even an empty module. Goes after the open lesson, or at the end of the module. |
 | `Ctrl Alt P` | Preview this lesson, from anywhere inside its row. |
 | `Ctrl Alt M` | Rename the active module — focuses its name field. |
@@ -721,3 +739,4 @@ statically or spin up their own isolated server against a throwaway file.
 | E3b/E8 | Chain building (`extendLastSentence`, `Ctrl+Alt+Shift+Enter`, the seam palette's "Extend" choice) and "given" pieces (`LanguageBlock.given?`, `Ctrl+Alt+G`, resting dotted-underline treatment, learner static rendering excluded from progression/completion). Found and fixed live: `lesson-file.ts`'s `normalizeLessonForFile` (every GET read) rebuilt each language block field-by-field and silently dropped `given` — a "given" pair round-tripped fine on disk but reverted to a normal tested blank on reload. Script syntax (`> +`, `> =`) stays open per `lesson-script-grammar.md`. | Sonnet | done |
 | E7 | "New lesson like this one" ("Duplicate structure") — removed 2026-09-15: owner found no use for it. `duplicateLessonStructure` (`mutations.ts`), its `LessonHeaderActions` icon, wiring, and tests (incl. `tests/ux/duplicate-structure.spec.ts`) were deleted outright. "Duplicate lesson" (full copy) is unaffected. | Sonnet | removed |
 | E4 | Script mode: `parseScript`/`printScript` (`lib/lesson-builder/script.ts`) over the block model per `lesson-script-grammar.md`, property-tested (500 generated lessons + the owner's two real lessons, ids ignored). `Ctrl+Alt+T` (new `lesson`-scope keymap entry) and a `</>` icon in the lesson row header's icon cluster (`lesson-library-row.tsx`, moved there 2026-09-15 from `lesson-document.tsx`) toggle a per-lesson `<textarea>` (`lesson-script-view.tsx`, `editing.ts`'s new `scriptViewLessonId`/`setScriptView`). Leaving the view parses; success dispatches the new `REPLACE_LESSON_BLOCKS` reducer action (one undoable step, since it isn't in `history.ts`'s coalescing set) and closes; errors show inline with line numbers and the view stays open. An empty lesson's tail gains a third quiet "Paste a script…" action that opens the view blank. Does **not** auto-mark explanation text on parse (E1 stays editor-only) — see the note at the top of `script.ts`. | Sonnet | done |
+| MM1 | Module & lesson metadata — module `description`/`status`/`access` (blue header: quiet description input, Draft/Published + Free/Premium pills), lesson `status`/`notes` (row `Draft`/`Eye`/`EyeOff` toggle, `Ctrl+Alt+V`, dashed "Draft" tag; `notes` has no UI yet, data-only), server-side filtering of draft modules/lessons out of `readCourseSummary` (`/` and `/practice`; coverage/studio surfaces are unaffected and still count drafts). | Sonnet | done (2026-09-16) |

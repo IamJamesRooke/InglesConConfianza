@@ -30,3 +30,12 @@ export function previewLesson(ctx: CommandContext): boolean {
   ctx.actions.previewLesson(ctx.selection.lessonId);
   return true;
 }
+
+// Toggle draft/published for the selected lesson. `Ctrl+Alt+D` was already
+// taken by finishLesson above, so this uses `Ctrl+Alt+V` ("visibility")
+// instead — see docs/design/lesson-builder.md §3.
+export function toggleDraftLesson(ctx: CommandContext): boolean {
+  if (ctx.selection.kind === "none") return false;
+  ctx.actions.toggleLessonDraft(ctx.selection.lessonId);
+  return true;
+}
