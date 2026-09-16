@@ -28,6 +28,12 @@ type Row = {
   curriculumRole: string;
   exampleSpanish: string;
   exampleEnglish: string;
+  // Bare part-of-speech token from the concept's first `pos:*` collection
+  // (null when it has none): the lesson builder's syllabus card groups its
+  // pills by it, and a pill added from this typeahead must be groupable
+  // immediately, without a page reload (concept-typeahead.tsx records it
+  // into the display lookup alongside spanish/english/role).
+  pos: string | null;
 };
 
 export async function GET(request: Request) {
@@ -44,7 +50,13 @@ export async function GET(request: Request) {
   const wordStart = `\\m${query.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}`;
   const candidates = await prisma.$queryRaw<Row[]>`
     SELECT id, spanish, english, curriculum_role AS "curriculumRole",
-      example_spanish AS "exampleSpanish", example_english AS "exampleEnglish"
+      example_spanish AS "exampleSpanish", example_english AS "exampleEnglish",
+      (SELECT substring(cc.collection_name from 5)
+         FROM concept_collections cc
+        WHERE cc.concept_id = curriculum_concepts.id
+          AND cc.collection_name LIKE 'pos:%'
+        ORDER BY cc.position ASC
+        LIMIT 1) AS "pos"
     FROM curriculum_concepts
     WHERE curriculum_role <> 'Trash'
       AND (

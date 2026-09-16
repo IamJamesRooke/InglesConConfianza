@@ -40,6 +40,24 @@ export const curriculumRoles: CurriculumRole[] = [
   "Trash",
 ];
 
+// Teacher-facing wording for a role — a raw "P1" never reaches a teacher.
+// The curriculum row editor keeps its own list (same labels plus a
+// description per option, for its <select>); this is the plain lookup for
+// everywhere else, including pure modules that must not import a component.
+export const curriculumRoleLabels: Record<CurriculumRole, string> = {
+  P1: "Level 1",
+  P2: "Level 2",
+  P3: "Level 3",
+  P4: "Level 4",
+  P5: "Level 5",
+  Unranked: "Unranked",
+  Trash: "Trash",
+};
+
+export function curriculumRoleLabel(role?: string | null): string {
+  return curriculumRoleLabels[role as CurriculumRole] ?? "Unranked";
+}
+
 export type CurriculumLevel = 1 | 2 | 3 | 4 | 5;
 
 const LEVEL_ROLES: Record<CurriculumLevel, CurriculumRole> = {

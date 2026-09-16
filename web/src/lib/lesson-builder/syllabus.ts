@@ -4,7 +4,9 @@
 // lookup, it derives coverage, "also taught", "reviewed", the known set,
 // review priority, warnings, and "done" — nothing beyond `syllabus` is ever
 // stored on disk.
+import { curriculumRoleLabel } from "@/lib/curriculum/types";
 import { conceptKey } from "@/lib/lesson-builder/lesson-file";
+import { groupSyllabusItems } from "@/lib/lesson-builder/syllabus-groups";
 import type {
   ConceptDisplayLookup,
   Lesson,
@@ -331,6 +333,30 @@ export function courseProgress(
 
 // --- AI brief --------------------------------------------------------------
 
+// "yo — I [Level 1]" — the level is stated in words here; the card states it
+// as a colour dot with the same wording in its tooltip and legend.
+function entryFor(item: SyllabusItem, conceptDisplays: ConceptDisplayLookup): string {
+  const display = item.conceptId ? conceptDisplays[item.conceptId] : undefined;
+  if (!display) return `${item.label} [not in the curriculum]`;
+  return `${labelFor(item, conceptDisplays)} [${curriculumRoleLabel(display.role)}]`;
+}
+
+function pushGrouped(
+  lines: string[],
+  items: SyllabusItem[],
+  conceptDisplays: ConceptDisplayLookup,
+  format: (item: SyllabusItem, index: number) => string,
+): void {
+  const groups = groupSyllabusItems(items, (item) =>
+    item.conceptId ? conceptDisplays[item.conceptId]?.pos : undefined,
+  );
+  groups.forEach((group, position) => {
+    if (position > 0) lines.push("");
+    lines.push(`${group.label}:`);
+    group.entries.forEach((entry) => lines.push(format(entry.item, entry.index)));
+  });
+}
+
 function labelFor(item: SyllabusItem, conceptDisplays: ConceptDisplayLookup): string {
   const display = item.conceptId ? conceptDisplays[item.conceptId] : undefined;
   return display ? `${display.spanish} — ${display.english}` : item.label;
@@ -361,14 +387,17 @@ export function moduleBrief(
   if (syllabus.main.length === 0) {
     lines.push("(none set)");
   } else {
-    syllabus.main.forEach((item, index) => lines.push(`${index + 1}. ${labelFor(item, conceptDisplays)}`));
+    // Same part-of-speech groups and level marks the card shows, so the
+    // pasted brief reads like docs/curation/level-1.md (round 2, A.4). The
+    // number is still the concept's place in the flat teaching order.
+    pushGrouped(lines, syllabus.main, conceptDisplays, (item, index) => `${index + 1}. ${entryFor(item, conceptDisplays)}`);
   }
   lines.push("");
   lines.push("Review plan:");
   if (syllabus.review.length === 0) {
     lines.push("(none set)");
   } else {
-    syllabus.review.forEach((item) => lines.push(`- ${labelFor(item, conceptDisplays)}`));
+    pushGrouped(lines, syllabus.review, conceptDisplays, (item) => `- ${entryFor(item, conceptDisplays)}`);
   }
   lines.push("");
   lines.push(`Known set at the start of this module (${known.length} concepts):`);

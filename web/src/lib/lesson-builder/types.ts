@@ -93,9 +93,12 @@ export type LessonFile = {
   lessons: Lesson[];
 };
 
+// `pos` is the bare part-of-speech token ("verb", "pronoun", …) from the
+// concept's first `pos:*` collection, absent when it has none — the module
+// syllabus card groups its pills by it (syllabus-groups.ts).
 export type ConceptDisplayLookup = Record<
   string,
-  { spanish: string; english: string; role?: string }
+  { spanish: string; english: string; role?: string; pos?: string }
 >;
 
 // The pre-modules file shape, still read from disk until the first v2 write.

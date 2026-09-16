@@ -1,6 +1,6 @@
 # Lesson builder, round 2 — plan for owner agreement (2026-09-16)
 
-> Status: **agreed by the owner 2026-09-16 (colour dot for levels); A and C started, B after A.** Written from the owner's screenshot of Confianza I
+> Status: **agreed by the owner 2026-09-16 (colour dot for levels); A done, C started, B after A.** Written from the owner's screenshot of Confianza I
 > with 31 Main teaching points and no lessons yet, plus the owner's two asks (group the
 > teaching points by type; show each concept's level without clicking). Everything here
 > is delegated; Fable reviews diffs and screenshots and gates merges.
@@ -15,7 +15,7 @@ it calm: while deciding what a module teaches.
 
 ## The work, grouped by session
 
-### A. Syllabus card: structure and level (Opus, one session, branch `design/syllabus-groups`)
+### A. Syllabus card: structure and level — **done (2026-09-16)**, branch `design/syllabus-groups`
 
 Opus because it is one dense component with several interacting rules and the owner will
 judge it on sight.
@@ -40,6 +40,11 @@ judge it on sight.
 4. **"Copy as text" carries the groups and levels**, so the module brief reads like
    `docs/curation/level-1.md` and is what a future drafting agent receives.
 5. **Level via the pill's quick-edit** already exists; no change.
+
+Done: A.1–A.4 landed (`syllabus-groups.ts` + unit tests, `syllabus-panel.tsx`/
+`.css`, `ConceptDisplayLookup.pos` from the concept's `pos:*` collection in
+`readConceptDisplays` and the search route, `moduleBrief` headings and level
+marks, `tests/ux/syllabus-groups.spec.ts`). A.5 unchanged as planned.
 
 Proof: before/after screenshots at 1280 and 760 with pills in several groups and
 levels, one covered pill, one Unranked. Playwright: extend `geometry-corners` and add a
