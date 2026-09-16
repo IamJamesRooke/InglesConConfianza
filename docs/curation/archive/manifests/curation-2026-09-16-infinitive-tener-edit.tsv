@@ -1,0 +1,9 @@
+# Infinitive normalization — tener: generic paradigm rows, infinitive uses, examples, merges.
+# id	spanish	english	role	collections-to-add	reason	[exSpanish	exEnglish]
+ccrgp9wvgz	tener [número] años	to be [number] years old	Unranked		first-person example (was «Tiene diez años.»)	Tengo veinte años.	I'm twenty years old.
+7s7vnrgxud	tener que [hacer algo]	to have to [do something]	Unranked	topic:enmap-have|topic:verb-possession-having	merge collections from folded fragments
+p1ga7e8bhn	tengo	I have	Unranked	sense:tener-edad|sense:tener-obligacion	one generic row per conjugated form (was «tengo [algo] → I have [something]»); merge collections from folded fragments
+mwpgnk4gb9	tienes	you have	Unranked	sense:tener-edad|sense:tener-obligacion	one generic row per conjugated form (was «tienes [algo] → you have [something]»); merge collections from folded fragments
+vea3m3h1kq	tiene	he/she/it has	Unranked	sense:tener-edad|sense:tener-obligacion	one generic row per conjugated form (was «tiene [algo] → has [something]»); merge collections from folded fragments
+xisncbwr6s	tenemos	we have	Unranked	sense:tener-edad|sense:tener-obligacion	one generic row per conjugated form (was «tenemos [algo] → we have [something]»); merge collections from folded fragments
+rkkkgau83q	tienen	they have	Unranked	sense:tener-edad|sense:tener-obligacion	one generic row per conjugated form (was «tienen [algo] → they have [something]»); merge collections from folded fragments

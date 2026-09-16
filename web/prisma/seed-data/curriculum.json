@@ -24919,8 +24919,8 @@
       "spanish": "tener [número] años",
       "english": "to be [number] years old",
       "example": {
-        "spanish": "Tiene diez años.",
-        "english": "She is ten years old."
+        "spanish": "Tengo veinte años.",
+        "english": "I'm twenty years old."
       },
       "collections": [
         "en:old",
@@ -24970,7 +24970,9 @@
         "topic:vp-full-inf",
         "topic:map-tener",
         "topic:enmap-to",
-        "topic:verb-system"
+        "topic:verb-system",
+        "topic:enmap-have",
+        "topic:verb-possession-having"
       ],
       "curriculumRole": "Unranked"
     },
@@ -77144,7 +77146,7 @@
         "topic:map-tener",
         "topic:enmap-to"
       ],
-      "curriculumRole": "Unranked"
+      "curriculumRole": "Trash"
     },
     {
       "id": "dj00e4gi88",
@@ -77170,7 +77172,7 @@
         "topic:map-tener",
         "topic:enmap-to"
       ],
-      "curriculumRole": "Unranked"
+      "curriculumRole": "Trash"
     },
     {
       "id": "22pjks5vmh",
@@ -92545,8 +92547,8 @@
     },
     {
       "id": "p1ga7e8bhn",
-      "spanish": "tengo [algo]",
-      "english": "I have [something]",
+      "spanish": "tengo",
+      "english": "I have",
       "example": {
         "spanish": "Tengo un perro.",
         "english": "I have a dog."
@@ -92564,14 +92566,16 @@
         "audit:reviewed",
         "topic:verb-possession-having",
         "topic:map-tener",
-        "topic:enmap-have"
+        "topic:enmap-have",
+        "sense:tener-edad",
+        "sense:tener-obligacion"
       ],
       "curriculumRole": "Unranked"
     },
     {
       "id": "mwpgnk4gb9",
-      "spanish": "tienes [algo]",
-      "english": "you have [something]",
+      "spanish": "tienes",
+      "english": "you have",
       "example": {
         "spanish": "Tienes un mensaje nuevo.",
         "english": "You have a new message."
@@ -92589,14 +92593,16 @@
         "audit:reviewed",
         "topic:verb-possession-having",
         "topic:map-tener",
-        "topic:enmap-have"
+        "topic:enmap-have",
+        "sense:tener-edad",
+        "sense:tener-obligacion"
       ],
       "curriculumRole": "Unranked"
     },
     {
       "id": "vea3m3h1kq",
-      "spanish": "tiene [algo]",
-      "english": "has [something]",
+      "spanish": "tiene",
+      "english": "he/she/it has",
       "example": {
         "spanish": "Ella tiene dos hijos.",
         "english": "She has two children."
@@ -92612,14 +92618,16 @@
         "topic:multi-sense",
         "audit:reviewed",
         "topic:verb-possession-having",
-        "topic:map-tener"
+        "topic:map-tener",
+        "sense:tener-edad",
+        "sense:tener-obligacion"
       ],
       "curriculumRole": "Unranked"
     },
     {
       "id": "xisncbwr6s",
-      "spanish": "tenemos [algo]",
-      "english": "we have [something]",
+      "spanish": "tenemos",
+      "english": "we have",
       "example": {
         "spanish": "Tenemos suficiente tiempo.",
         "english": "We have enough time."
@@ -92637,14 +92645,16 @@
         "audit:reviewed",
         "topic:verb-possession-having",
         "topic:map-tener",
-        "topic:enmap-have"
+        "topic:enmap-have",
+        "sense:tener-edad",
+        "sense:tener-obligacion"
       ],
       "curriculumRole": "Unranked"
     },
     {
       "id": "rkkkgau83q",
-      "spanish": "tienen [algo]",
-      "english": "they have [something]",
+      "spanish": "tienen",
+      "english": "they have",
       "example": {
         "spanish": "Ellos tienen una casa grande.",
         "english": "They have a big house."
@@ -92662,7 +92672,9 @@
         "audit:reviewed",
         "topic:verb-possession-having",
         "topic:map-tener",
-        "topic:enmap-have"
+        "topic:enmap-have",
+        "sense:tener-edad",
+        "sense:tener-obligacion"
       ],
       "curriculumRole": "Unranked"
     },
@@ -93227,7 +93239,7 @@
         "topic:verb-possession-having",
         "topic:map-tener"
       ],
-      "curriculumRole": "Unranked"
+      "curriculumRole": "Trash"
     },
     {
       "id": "ksjxfltxqk",
@@ -93252,7 +93264,7 @@
         "topic:verb-possession-having",
         "topic:map-tener"
       ],
-      "curriculumRole": "Unranked"
+      "curriculumRole": "Trash"
     },
     {
       "id": "a5e2xjebla",
@@ -93277,7 +93289,7 @@
         "topic:verb-possession-having",
         "topic:map-tener"
       ],
-      "curriculumRole": "Unranked"
+      "curriculumRole": "Trash"
     },
     {
       "id": "qh9awmasdd",
@@ -93302,7 +93314,7 @@
         "topic:verb-possession-having",
         "topic:map-tener"
       ],
-      "curriculumRole": "Unranked"
+      "curriculumRole": "Trash"
     },
     {
       "id": "680u7m5wn5",
@@ -93327,7 +93339,7 @@
         "topic:verb-possession-having",
         "topic:map-tener"
       ],
-      "curriculumRole": "Unranked"
+      "curriculumRole": "Trash"
     },
     {
       "id": "yye01uov38",
@@ -93355,7 +93367,7 @@
         "topic:enmap-to",
         "topic:enmap-have"
       ],
-      "curriculumRole": "Unranked"
+      "curriculumRole": "Trash"
     },
     {
       "id": "kjllit1qgt",
@@ -93381,7 +93393,7 @@
         "topic:map-tener",
         "topic:enmap-have"
       ],
-      "curriculumRole": "Unranked"
+      "curriculumRole": "Trash"
     },
     {
       "id": "ogdv00s3cw",
@@ -93405,7 +93417,7 @@
         "topic:verb-possession-having",
         "topic:map-tener"
       ],
-      "curriculumRole": "Unranked"
+      "curriculumRole": "Trash"
     },
     {
       "id": "ny8jxz2s41",
@@ -93431,7 +93443,7 @@
         "topic:map-tener",
         "topic:enmap-have"
       ],
-      "curriculumRole": "Unranked"
+      "curriculumRole": "Trash"
     },
     {
       "id": "x9hss06n9a",
@@ -93457,7 +93469,7 @@
         "topic:map-tener",
         "topic:enmap-have"
       ],
-      "curriculumRole": "Unranked"
+      "curriculumRole": "Trash"
     },
     {
       "id": "n8ahr1jble",
