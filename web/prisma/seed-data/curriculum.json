@@ -19,7 +19,7 @@
         "topic:verb-feelings-love-like",
         "topic:map-querer"
       ],
-      "curriculumRole": "Unranked"
+      "curriculumRole": "P1"
     },
     {
       "id": "df1fa2p3xy",
@@ -23743,7 +23743,7 @@
     },
     {
       "id": "othawv9u0f",
-      "spanish": "ser [identidad]",
+      "spanish": "ser [una identidad]",
       "english": "to be [an identity]",
       "example": {
         "spanish": "Soy profesora.",
@@ -23816,7 +23816,8 @@
         "topic:phr-be",
         "topic:map-ser",
         "topic:enmap-be",
-        "topic:verb-system"
+        "topic:verb-system",
+        "topic:verb-tobe-present"
       ],
       "curriculumRole": "Unranked"
     },
@@ -23881,7 +23882,9 @@
         "topic:map-ser",
         "topic:enmap-from",
         "topic:enmap-be",
-        "topic:verb-system"
+        "topic:verb-system",
+        "grammar:origin",
+        "topic:verb-tobe-present"
       ],
       "curriculumRole": "Unranked"
     },
@@ -28233,7 +28236,7 @@
         "topic:pronoun",
         "audit:reviewed"
       ],
-      "curriculumRole": "Unranked"
+      "curriculumRole": "P1"
     },
     {
       "id": "608c3yq7i6",
@@ -28493,7 +28496,7 @@
         "topic:pronoun",
         "audit:reviewed"
       ],
-      "curriculumRole": "Unranked"
+      "curriculumRole": "P1"
     },
     {
       "id": "5ajqekseb3",
@@ -28519,7 +28522,7 @@
         "topic:enmap-you",
         "topic:confusable-pronoun"
       ],
-      "curriculumRole": "Unranked"
+      "curriculumRole": "P1"
     },
     {
       "id": "96zmjpedzq",
@@ -75827,7 +75830,7 @@
         "audit:reviewed",
         "topic:map-ser"
       ],
-      "curriculumRole": "Unranked"
+      "curriculumRole": "Trash"
     },
     {
       "id": "shzp9wzrxq",
@@ -75851,7 +75854,7 @@
         "audit:reviewed",
         "topic:map-ser"
       ],
-      "curriculumRole": "Unranked"
+      "curriculumRole": "Trash"
     },
     {
       "id": "mac4komrt9",
@@ -78391,11 +78394,11 @@
     },
     {
       "id": "46elg5u15i",
-      "spanish": "[ser] [adjetivo]",
-      "english": "[to be] [adjective]",
+      "spanish": "ser [adjetivo]",
+      "english": "to be [adjective]",
       "example": {
-        "spanish": "La reunión es importante.",
-        "english": "The meeting is important."
+        "spanish": "Soy alto.",
+        "english": "I'm tall."
       },
       "collections": [
         "pos:adjective",
@@ -78412,7 +78415,12 @@
         "audit:reviewed",
         "topic:phr-be",
         "topic:map-ser",
-        "topic:enmap-be"
+        "topic:enmap-be",
+        "contrast:confusable",
+        "contrast:ser-adjetivo-vs-estar-adjetivo",
+        "grammar:ser-adjective",
+        "topic:confusable-verb",
+        "topic:verb-tobe-present"
       ],
       "curriculumRole": "Unranked"
     },
@@ -88264,7 +88272,7 @@
         "topic:part-with",
         "topic:enmap-with"
       ],
-      "curriculumRole": "Unranked"
+      "curriculumRole": "P1"
     },
     {
       "id": "rnldlhmpop",
@@ -88451,7 +88459,7 @@
         "topic:confusable-possessive",
         "topic:multi-sense"
       ],
-      "curriculumRole": "Unranked"
+      "curriculumRole": "P1"
     },
     {
       "id": "sqd8xxfwmx",
@@ -88477,7 +88485,7 @@
         "topic:enmap-for",
         "topic:enmap-you"
       ],
-      "curriculumRole": "Unranked"
+      "curriculumRole": "P1"
     },
     {
       "id": "8rtzxhe293",
@@ -92252,8 +92260,8 @@
     },
     {
       "id": "b5c13zo3bg",
-      "spanish": "soy [algo]",
-      "english": "I am [something]",
+      "spanish": "soy",
+      "english": "I am",
       "example": {
         "spanish": "Soy profesor.",
         "english": "I am a teacher."
@@ -92275,14 +92283,16 @@
         "topic:verb-tobe-present",
         "topic:map-ser",
         "topic:confusable-verb",
-        "topic:verb-system"
+        "topic:verb-system",
+        "sense:ser-caracteristica",
+        "sense:ser-origen"
       ],
       "curriculumRole": "Unranked"
     },
     {
       "id": "0rv1zmpu5c",
-      "spanish": "eres [algo]",
-      "english": "you are [something]",
+      "spanish": "eres",
+      "english": "you are",
       "example": {
         "spanish": "Eres muy inteligente.",
         "english": "You are very smart."
@@ -92301,14 +92311,16 @@
         "audit:reviewed",
         "topic:verb-tobe-present",
         "topic:map-ser",
-        "topic:verb-system"
+        "topic:verb-system",
+        "sense:ser-caracteristica",
+        "sense:ser-origen"
       ],
       "curriculumRole": "Unranked"
     },
     {
       "id": "rf1kaz8lmr",
-      "spanish": "es [algo]",
-      "english": "is [something]",
+      "spanish": "es",
+      "english": "he/she/it is",
       "example": {
         "spanish": "Ella es doctora.",
         "english": "She is a doctor."
@@ -92327,14 +92339,16 @@
         "audit:reviewed",
         "topic:verb-tobe-present",
         "topic:map-ser",
-        "topic:verb-system"
+        "topic:verb-system",
+        "sense:ser-caracteristica",
+        "sense:ser-origen"
       ],
       "curriculumRole": "Unranked"
     },
     {
       "id": "d3s5uo0ahx",
-      "spanish": "somos [algo]",
-      "english": "we are [something]",
+      "spanish": "somos",
+      "english": "we are",
       "example": {
         "spanish": "Somos amigos.",
         "english": "We are friends."
@@ -92353,14 +92367,16 @@
         "audit:reviewed",
         "topic:verb-tobe-present",
         "topic:map-ser",
-        "topic:verb-system"
+        "topic:verb-system",
+        "sense:ser-caracteristica",
+        "sense:ser-origen"
       ],
       "curriculumRole": "Unranked"
     },
     {
       "id": "0kqlhwpi3i",
-      "spanish": "son [algo]",
-      "english": "they are [something]",
+      "spanish": "son",
+      "english": "they are",
       "example": {
         "spanish": "Ellos son hermanos.",
         "english": "They are siblings."
@@ -92379,7 +92395,9 @@
         "audit:reviewed",
         "topic:verb-tobe-present",
         "topic:map-ser",
-        "topic:verb-system"
+        "topic:verb-system",
+        "sense:ser-caracteristica",
+        "sense:ser-origen"
       ],
       "curriculumRole": "Unranked"
     },
@@ -93068,7 +93086,7 @@
         "topic:enmap-from",
         "topic:verb-system"
       ],
-      "curriculumRole": "Unranked"
+      "curriculumRole": "Trash"
     },
     {
       "id": "6zy7d60lhd",
@@ -93095,7 +93113,7 @@
         "topic:enmap-from",
         "topic:verb-system"
       ],
-      "curriculumRole": "Unranked"
+      "curriculumRole": "Trash"
     },
     {
       "id": "25qdaau47d",
@@ -93122,7 +93140,7 @@
         "topic:enmap-from",
         "topic:verb-system"
       ],
-      "curriculumRole": "Unranked"
+      "curriculumRole": "Trash"
     },
     {
       "id": "ht2nxiu107",
@@ -93149,7 +93167,7 @@
         "topic:enmap-from",
         "topic:verb-system"
       ],
-      "curriculumRole": "Unranked"
+      "curriculumRole": "Trash"
     },
     {
       "id": "w8b4nwsykp",
@@ -93176,7 +93194,7 @@
         "topic:enmap-from",
         "topic:verb-system"
       ],
-      "curriculumRole": "Unranked"
+      "curriculumRole": "Trash"
     },
     {
       "id": "8mpe0b3ksv",
@@ -93465,7 +93483,7 @@
         "topic:confusable-verb",
         "topic:verb-system"
       ],
-      "curriculumRole": "Unranked"
+      "curriculumRole": "Trash"
     },
     {
       "id": "hfip8vre8c",
@@ -93493,7 +93511,7 @@
         "topic:enmap-be",
         "topic:verb-system"
       ],
-      "curriculumRole": "Unranked"
+      "curriculumRole": "Trash"
     },
     {
       "id": "9c2am535n8",
@@ -93524,7 +93542,7 @@
         "topic:confusable-verb",
         "topic:verb-system"
       ],
-      "curriculumRole": "Unranked"
+      "curriculumRole": "Trash"
     },
     {
       "id": "kqssflfv3m",
@@ -93552,7 +93570,7 @@
         "topic:enmap-be",
         "topic:verb-system"
       ],
-      "curriculumRole": "Unranked"
+      "curriculumRole": "Trash"
     },
     {
       "id": "elhfo7u8o3",
@@ -93580,7 +93598,7 @@
         "topic:enmap-be",
         "topic:verb-system"
       ],
-      "curriculumRole": "Unranked"
+      "curriculumRole": "Trash"
     },
     {
       "id": "7irrsf9sy8",
@@ -93605,7 +93623,7 @@
         "topic:map-ser",
         "topic:verb-system"
       ],
-      "curriculumRole": "Unranked"
+      "curriculumRole": "Trash"
     },
     {
       "id": "u8levmjjk9",
