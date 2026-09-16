@@ -68,6 +68,15 @@
   text-decoration: underline;
   cursor: pointer;
 }
+/* The English target after the Spanish, quieter, with an arrow so the pill
+   reads as a translation pair: "tú → you". */
+.lesson-concept-english {
+  margin-left: 0.35em;
+  opacity: 0.62;
+}
+.lesson-concept-english::before {
+  content: "→ ";
+}
 /* Priority indicator: a 6px dot before the label for curriculum role. */
 .lesson-concept-chip[class*="role-"]::before {
   content: "";

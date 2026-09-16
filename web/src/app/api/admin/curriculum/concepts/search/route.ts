@@ -38,6 +38,7 @@ export async function GET(request: Request) {
   }
 
   const like = `%${query}%`;
+  const prefix = `${query}%`;
   // Examples match at word starts only ("melo" must not hit "gemelos");
   // \m is Postgres' word-start anchor. The query is regex-escaped.
   const wordStart = `\\m${query.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}`;
@@ -52,7 +53,16 @@ export async function GET(request: Request) {
         OR example_spanish ~* ${wordStart}
         OR example_english ~* ${wordStart}
       )
-    ORDER BY curriculum_role ASC, sort_order ASC
+    ORDER BY
+      -- Exact and prefix label hits first, so a short query like "ser"
+      -- (hundreds of substring hits: servir, conservar, "user"…) can never
+      -- push the generic "ser → to be" row past the pool limit before the
+      -- ranker sees it.
+      (regexp_replace(spanish, '\\[.*?\\]', '', 'g') ILIKE ${query}
+        OR regexp_replace(english, '\\[.*?\\]', '', 'g') ILIKE ${query}) DESC,
+      (regexp_replace(spanish, '\\[.*?\\]', '', 'g') ILIKE ${prefix}
+        OR regexp_replace(english, '\\[.*?\\]', '', 'g') ILIKE ${prefix}) DESC,
+      curriculum_role ASC, sort_order ASC
     LIMIT 200
   `;
 

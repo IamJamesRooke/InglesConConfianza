@@ -161,3 +161,16 @@ test("escape closes the popover and returns focus to the input", async ({ page }
   await expect(popover).toBeHidden();
   await expect(input).toBeFocused();
 });
+
+test("a short exact query ('ser') surfaces the generic row first despite hundreds of substring hits", async ({ page }) => {
+  // "ser" is a substring of servir, conservar, "user"… — more than the SQL
+  // candidate pool holds. The pool is ordered exact-then-prefix first so the
+  // generic "ser → to be" row can never be truncated away (owner, 2026-09-16).
+  await page.setViewportSize({ width: 1280, height: 900 });
+  const { input } = await openLessonWithCoversField(page);
+  await input.click();
+  await input.fill("ser");
+  const first = page.locator(".concept-typeahead-popover [role=option]").first();
+  await expect(first).toBeVisible();
+  await expect(first.locator(".concept-typeahead-option-spanish")).toHaveText("ser");
+});

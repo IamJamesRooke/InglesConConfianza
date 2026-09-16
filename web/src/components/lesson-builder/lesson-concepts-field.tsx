@@ -261,7 +261,14 @@ export function LessonConceptsField({
                   onSaved={applySaved}
                   onDeleted={() => onRemove(concept.id)}
                 >
-                  {display?.english ?? concept.label}
+                  {display ? (
+                    <>
+                      {display.spanish}
+                      <span className="lesson-concept-english">{display.english}</span>
+                    </>
+                  ) : (
+                    concept.label
+                  )}
                 </ConceptQuickEdit>
               ) : (
                 <span className="lesson-concept-label">{concept.label}</span>

@@ -157,6 +157,19 @@ export function SyllabusPanel({
     return display?.english ?? item.label;
   }
 
+  // Both languages on the pill, Spanish first (the concept is Spanish-first):
+  // "tú → you" and "te → you" are otherwise the same pill (owner, 2026-09-16).
+  function labelNode(item: SyllabusItem) {
+    const display = item.conceptId ? conceptDisplays[item.conceptId] : undefined;
+    if (!display) return item.label;
+    return (
+      <>
+        {display.spanish}
+        <span className="lesson-concept-english">{display.english}</span>
+      </>
+    );
+  }
+
   function toneFor(item: SyllabusItem): "is-covered" | "is-uncovered" | "is-missing" {
     if (isMissingConcept(item, conceptDisplays)) return "is-missing";
     return coverageOfItem(item, moduleLessons).covered ? "is-covered" : "is-uncovered";
@@ -331,7 +344,7 @@ export function SyllabusPanel({
             }}
             onDeleted={() => patchSyllabus(removeFnFor(kind)(syllabus, item.id))}
           >
-            {label}
+            {labelNode(item)}
           </ConceptQuickEdit>
         ) : renamingId === item.id ? (
           <input
@@ -495,7 +508,7 @@ export function SyllabusPanel({
                   title="Click to promote to Main"
                   onClick={() => patchSyllabus(promoteToMain(syllabus, item))}
                 >
-                  <span className="lesson-concept-label">{labelFor(item)}</span>
+                  <span className="lesson-concept-label">{labelNode(item)}</span>
                 </button>
               ))
             )}
@@ -507,7 +520,7 @@ export function SyllabusPanel({
             ) : (
               reviewed.map((item) => (
                 <span key={item.id} className="lesson-concept-chip is-covered syllabus-chip">
-                  <span className="lesson-concept-label">{labelFor(item)}</span>
+                  <span className="lesson-concept-label">{labelNode(item)}</span>
                 </span>
               ))
             )}
