@@ -524,6 +524,19 @@ proposal doc's aspirations.
   `.lesson-concepts-row[data-roles-uniform="true"]` (set from the tagged
   concepts' resolved roles) hides them when every chip would show the same
   dot.
+- **Linked concept pills stack English over Spanish** (owner, 2026-09-16):
+  every pill backed by a curriculum concept — the syllabus card, a lesson's
+  Covers field compact chips, and the "Add from Level…" picker rows — renders
+  the English target as a full-ink 12px top line and the Spanish below it as
+  an 11px `var(--muted-foreground)` line (`ConceptPillLabel`,
+  `concept-pill-label.tsx`), replacing the old one-line `spanish → english`
+  with the `→` CSS `::before`. No arrow. The level dot and the remove ×
+  stay pinned to the top (English) line (`.lesson-concept-chip:has(.lesson-
+  concept-pill-label)` switches the chip to `align-items: flex-start`);
+  `[bracketed]` placeholders recede on both lines. A freehand pill (no
+  concept) stays single-line plain text. Learner-facing pills
+  (`components/learner/concept-pills.tsx`) are unaffected — separate
+  component, separate audience.
 - **Module syllabus pills** (round 2, item A — `syllabus-panel.tsx`): Main/
   Review group by part of speech under `.syllabus-pos-eyebrow` headings in a
   fixed order (`syllabus-groups.ts`); grouping is render-only, so drag and
