@@ -1,0 +1,5 @@
+# Q&N fold: tags from the folded frames that describe the infinitive row itself. Spanish/English/role are the live values.
+# id	spanish	english	role	collections-to-add	reason
+nk4hb2zaok	poder [hacer algo] (permiso)	can [do something]	Unranked	grammar:ability	merge collections from folded question/negation frames
+jwk81y46bp	no poder [hacer algo]	can't [do something]	Unranked	grammar:ability	merge collections from folded question/negation frames
+ipa706hrsh	poder [hacer algo] (condicional)	could [do something]	Unranked	grammar:permission	merge collections from folded question/negation frames

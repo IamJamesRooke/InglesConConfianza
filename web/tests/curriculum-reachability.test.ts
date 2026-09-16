@@ -236,7 +236,7 @@ const EXPECTED_FAMILY_STRUCTURE: Record<string, Array<[string, number]>> = {
     ["Verb complements", 8],
     ["Tense & auxiliary patterns", 3],
   ],
-  "questions-negation": [["Question & negative patterns", 6]],
+  "questions-negation": [["Question & negative patterns", 2]],
   imperatives: [["Command types", 4]],
   collocations: [["Verb groups", 5]],
 };

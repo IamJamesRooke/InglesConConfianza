@@ -227,7 +227,7 @@
         "audit:reviewed",
         "topic:map-querer"
       ],
-      "curriculumRole": "Unranked"
+      "curriculumRole": "Trash"
     },
     {
       "id": "tbpj623d3b",
@@ -14183,7 +14183,8 @@
         "topic:verb-modal-ability",
         "topic:vp-bare-inf",
         "topic:map-poder",
-        "topic:verb-system"
+        "topic:verb-system",
+        "grammar:ability"
       ],
       "curriculumRole": "Unranked"
     },
@@ -14214,7 +14215,8 @@
         "topic:verb-modal-ability",
         "topic:vp-bare-inf",
         "topic:map-poder",
-        "topic:verb-system"
+        "topic:verb-system",
+        "grammar:ability"
       ],
       "curriculumRole": "Unranked"
     },
@@ -14543,7 +14545,7 @@
         "topic:map-poder",
         "topic:verb-system"
       ],
-      "curriculumRole": "Unranked"
+      "curriculumRole": "Trash"
     },
     {
       "id": "o9amfhzn7k",
@@ -14590,7 +14592,8 @@
         "topic:map-poder",
         "topic:verb-system",
         "topic:verb-pattern",
-        "topic:vp-bare-inf"
+        "topic:vp-bare-inf",
+        "grammar:permission"
       ],
       "curriculumRole": "Unranked"
     },
@@ -14647,7 +14650,7 @@
         "topic:map-haber",
         "topic:verb-system"
       ],
-      "curriculumRole": "Unranked"
+      "curriculumRole": "Trash"
     },
     {
       "id": "3qq5q3d71a",
@@ -14782,7 +14785,7 @@
         "topic:enmap-you",
         "topic:verb-system"
       ],
-      "curriculumRole": "Unranked"
+      "curriculumRole": "Trash"
     },
     {
       "id": "7hwvhzgxxt",
@@ -14811,7 +14814,7 @@
         "topic:enmap-you",
         "topic:verb-system"
       ],
-      "curriculumRole": "Unranked"
+      "curriculumRole": "Trash"
     },
     {
       "id": "jdd2lebx6x",
@@ -14836,7 +14839,7 @@
         "topic:map-poder",
         "topic:verb-system"
       ],
-      "curriculumRole": "Unranked"
+      "curriculumRole": "Trash"
     },
     {
       "id": "g06ovsd470",
@@ -14861,7 +14864,7 @@
         "topic:map-poder",
         "topic:verb-system"
       ],
-      "curriculumRole": "Unranked"
+      "curriculumRole": "Trash"
     },
     {
       "id": "oy4fp397cg",
@@ -14888,7 +14891,7 @@
         "topic:map-poder",
         "topic:verb-system"
       ],
-      "curriculumRole": "Unranked"
+      "curriculumRole": "Trash"
     },
     {
       "id": "zgny1ugayh",
@@ -14921,7 +14924,7 @@
         "topic:enmap-you",
         "topic:verb-system"
       ],
-      "curriculumRole": "Unranked"
+      "curriculumRole": "Trash"
     },
     {
       "id": "wgqppszkg9",
@@ -15337,7 +15340,7 @@
         "topic:map-poder",
         "topic:verb-system"
       ],
-      "curriculumRole": "Unranked"
+      "curriculumRole": "Trash"
     },
     {
       "id": "3lk22b2pth",
@@ -20095,7 +20098,7 @@
         "topic:map-deber",
         "topic:verb-system"
       ],
-      "curriculumRole": "Unranked"
+      "curriculumRole": "Trash"
     },
     {
       "id": "eemg8n6ho5",
@@ -33365,7 +33368,7 @@
         "audit:reviewed",
         "topic:verb-wishes"
       ],
-      "curriculumRole": "Unranked"
+      "curriculumRole": "Trash"
     },
     {
       "id": "gejgahqn6v",
@@ -36364,7 +36367,7 @@
         "topic:enmap-for",
         "topic:enmap-you"
       ],
-      "curriculumRole": "Unranked"
+      "curriculumRole": "Trash"
     },
     {
       "id": "a4g0kqya37",
@@ -74468,7 +74471,7 @@
         "topic:vp-bare-inf",
         "topic:enmap-you"
       ],
-      "curriculumRole": "Unranked"
+      "curriculumRole": "Trash"
     },
     {
       "id": "mk6oc0jtgw",
@@ -74491,7 +74494,7 @@
         "audit:reviewed",
         "topic:vp-bare-inf"
       ],
-      "curriculumRole": "Unranked"
+      "curriculumRole": "Trash"
     },
     {
       "id": "0krc7ykvx4",
@@ -74514,7 +74517,7 @@
         "audit:reviewed",
         "topic:vp-bare-inf"
       ],
-      "curriculumRole": "Unranked"
+      "curriculumRole": "Trash"
     },
     {
       "id": "m5xw7iodne",
@@ -74536,7 +74539,7 @@
         "audit:reviewed",
         "topic:vp-bare-inf"
       ],
-      "curriculumRole": "Unranked"
+      "curriculumRole": "Trash"
     },
     {
       "id": "bt7rdzvto5",
@@ -74559,7 +74562,7 @@
         "audit:reviewed",
         "topic:vp-bare-inf"
       ],
-      "curriculumRole": "Unranked"
+      "curriculumRole": "Trash"
     },
     {
       "id": "azpvrshi2u",
@@ -74579,7 +74582,7 @@
         "audit:reviewed",
         "topic:vp-bare-inf"
       ],
-      "curriculumRole": "Unranked"
+      "curriculumRole": "Trash"
     },
     {
       "id": "nescdc4of4",
@@ -76514,7 +76517,7 @@
         "topic:vp-bare-inf",
         "topic:enmap-you"
       ],
-      "curriculumRole": "Unranked"
+      "curriculumRole": "Trash"
     },
     {
       "id": "jgfakbesvj",
@@ -76536,7 +76539,7 @@
         "topic:verb-creation-hacer",
         "topic:vp-bare-inf"
       ],
-      "curriculumRole": "Unranked"
+      "curriculumRole": "Trash"
     },
     {
       "id": "zctehn9sxz",
@@ -76558,7 +76561,7 @@
         "topic:verb-creation-hacer",
         "topic:vp-bare-inf"
       ],
-      "curriculumRole": "Unranked"
+      "curriculumRole": "Trash"
     },
     {
       "id": "2uzud05u1l",
@@ -76582,7 +76585,7 @@
         "topic:verb-wishes",
         "topic:vp-bare-inf"
       ],
-      "curriculumRole": "Unranked"
+      "curriculumRole": "Trash"
     },
     {
       "id": "mrssm64iu9",
@@ -76604,7 +76607,7 @@
         "audit:reviewed",
         "topic:vp-bare-inf"
       ],
-      "curriculumRole": "Unranked"
+      "curriculumRole": "Trash"
     },
     {
       "id": "rz2ue36k0f",
@@ -76626,7 +76629,7 @@
         "audit:reviewed",
         "topic:vp-bare-inf"
       ],
-      "curriculumRole": "Unranked"
+      "curriculumRole": "Trash"
     },
     {
       "id": "c4ekkqs73f",
@@ -76647,7 +76650,7 @@
         "qn:emphatic",
         "audit:reviewed"
       ],
-      "curriculumRole": "Unranked"
+      "curriculumRole": "Trash"
     },
     {
       "id": "xvgmxfgcrd",
@@ -76669,7 +76672,7 @@
         "qn:emphatic",
         "audit:reviewed"
       ],
-      "curriculumRole": "Unranked"
+      "curriculumRole": "Trash"
     },
     {
       "id": "lr3gy47etf",
@@ -76751,7 +76754,7 @@
         "topic:enmap-you",
         "topic:verb-system"
       ],
-      "curriculumRole": "Unranked"
+      "curriculumRole": "Trash"
     },
     {
       "id": "lh84ieti4z",
@@ -77137,7 +77140,7 @@
         "topic:map-tener",
         "topic:enmap-you"
       ],
-      "curriculumRole": "Unranked"
+      "curriculumRole": "Trash"
     },
     {
       "id": "zugopbh0jt",
@@ -77519,7 +77522,7 @@
         "audit:reviewed",
         "topic:verb-wishes"
       ],
-      "curriculumRole": "Unranked"
+      "curriculumRole": "Trash"
     },
     {
       "id": "spnqzmy3g5",
@@ -77573,7 +77576,7 @@
         "topic:map-estar",
         "topic:verb-system"
       ],
-      "curriculumRole": "Unranked"
+      "curriculumRole": "Trash"
     },
     {
       "id": "jsajob6okd",
@@ -77631,7 +77634,7 @@
         "topic:vp-full-inf",
         "topic:map-ir"
       ],
-      "curriculumRole": "Unranked"
+      "curriculumRole": "Trash"
     },
     {
       "id": "2g4mul96oa",
@@ -77683,7 +77686,7 @@
         "topic:vp-full-inf",
         "topic:map-ir"
       ],
-      "curriculumRole": "Unranked"
+      "curriculumRole": "Trash"
     },
     {
       "id": "rzbd2v6ygo",
@@ -77802,7 +77805,7 @@
         "topic:vp-bare-inf",
         "topic:enmap-you"
       ],
-      "curriculumRole": "Unranked"
+      "curriculumRole": "Trash"
     },
     {
       "id": "84arllzyhs",
@@ -77832,7 +77835,7 @@
         "topic:map-poder",
         "topic:verb-system"
       ],
-      "curriculumRole": "Unranked"
+      "curriculumRole": "Trash"
     },
     {
       "id": "78zjjk2mwo",
@@ -77863,7 +77866,7 @@
         "topic:enmap-you",
         "topic:verb-system"
       ],
-      "curriculumRole": "Unranked"
+      "curriculumRole": "Trash"
     },
     {
       "id": "5unz3dwyz7",
@@ -77954,7 +77957,7 @@
         "topic:enmap-you",
         "topic:verb-system"
       ],
-      "curriculumRole": "Unranked"
+      "curriculumRole": "Trash"
     },
     {
       "id": "m2op0ycc10",
@@ -77980,7 +77983,7 @@
         "topic:vp-bare-inf",
         "topic:enmap-you"
       ],
-      "curriculumRole": "Unranked"
+      "curriculumRole": "Trash"
     },
     {
       "id": "di2yhfha43",
@@ -78005,7 +78008,7 @@
         "topic:verb-creation-hacer",
         "topic:vp-bare-inf"
       ],
-      "curriculumRole": "Unranked"
+      "curriculumRole": "Trash"
     },
     {
       "id": "qoxz39dr3t",
@@ -78032,7 +78035,7 @@
         "topic:vp-bare-inf",
         "topic:enmap-you"
       ],
-      "curriculumRole": "Unranked"
+      "curriculumRole": "Trash"
     },
     {
       "id": "yjkuu2ysaa",
@@ -78057,7 +78060,7 @@
         "audit:reviewed",
         "topic:vp-bare-inf"
       ],
-      "curriculumRole": "Unranked"
+      "curriculumRole": "Trash"
     },
     {
       "id": "4ybycrtvck",
@@ -94103,7 +94106,7 @@
         "audit:reviewed",
         "topic:verb-eating-drinking"
       ],
-      "curriculumRole": "Unranked"
+      "curriculumRole": "Trash"
     },
     {
       "id": "4e8vpd4tbg",
@@ -94125,7 +94128,7 @@
         "audit:reviewed",
         "topic:verb-eating-drinking"
       ],
-      "curriculumRole": "Unranked"
+      "curriculumRole": "Trash"
     },
     {
       "id": "zkkcxirv4g",
@@ -94150,7 +94153,7 @@
         "topic:map-ir",
         "topic:enmap-go"
       ],
-      "curriculumRole": "Unranked"
+      "curriculumRole": "Trash"
     },
     {
       "id": "9hsbrn2qzb",
@@ -94170,7 +94173,7 @@
         "audit:reviewed",
         "topic:map-ser"
       ],
-      "curriculumRole": "Unranked"
+      "curriculumRole": "Trash"
     },
     {
       "id": "6a2v9efdpz",
@@ -94190,7 +94193,7 @@
         "audit:reviewed",
         "topic:map-ser"
       ],
-      "curriculumRole": "Unranked"
+      "curriculumRole": "Trash"
     },
     {
       "id": "waj96uzzcf",
@@ -94210,7 +94213,7 @@
         "audit:reviewed",
         "topic:map-estar"
       ],
-      "curriculumRole": "Unranked"
+      "curriculumRole": "Trash"
     },
     {
       "id": "5tbq59flnh",
@@ -94230,7 +94233,7 @@
         "audit:reviewed",
         "topic:map-estar"
       ],
-      "curriculumRole": "Unranked"
+      "curriculumRole": "Trash"
     },
     {
       "id": "3ymcnkevwg",
@@ -94272,7 +94275,7 @@
         "audit:reviewed",
         "topic:map-haber"
       ],
-      "curriculumRole": "Unranked"
+      "curriculumRole": "Trash"
     },
     {
       "id": "l0ff67q199",
@@ -94293,7 +94296,7 @@
         "audit:reviewed",
         "topic:verb-eating-drinking"
       ],
-      "curriculumRole": "Unranked"
+      "curriculumRole": "Trash"
     },
     {
       "id": "7zuboxokm5",
@@ -94314,7 +94317,7 @@
         "audit:reviewed",
         "topic:verb-eating-drinking"
       ],
-      "curriculumRole": "Unranked"
+      "curriculumRole": "Trash"
     },
     {
       "id": "1m68s37p22",
@@ -94338,7 +94341,7 @@
         "topic:map-ir",
         "topic:enmap-go"
       ],
-      "curriculumRole": "Unranked"
+      "curriculumRole": "Trash"
     },
     {
       "id": "9814unz0vu",
@@ -94357,7 +94360,7 @@
         "audit:reviewed",
         "topic:map-ser"
       ],
-      "curriculumRole": "Unranked"
+      "curriculumRole": "Trash"
     },
     {
       "id": "yet9gjs718",
@@ -94376,7 +94379,7 @@
         "audit:reviewed",
         "topic:map-estar"
       ],
-      "curriculumRole": "Unranked"
+      "curriculumRole": "Trash"
     },
     {
       "id": "t1monumdj4",
@@ -94398,7 +94401,7 @@
         "audit:reviewed",
         "topic:verb-eating-drinking"
       ],
-      "curriculumRole": "Unranked"
+      "curriculumRole": "Trash"
     },
     {
       "id": "aq0gtmpie2",
@@ -94420,7 +94423,7 @@
         "audit:reviewed",
         "topic:verb-knowing"
       ],
-      "curriculumRole": "Unranked"
+      "curriculumRole": "Trash"
     },
     {
       "id": "362prshjtp",
@@ -94445,7 +94448,7 @@
         "topic:map-ir",
         "topic:enmap-go"
       ],
-      "curriculumRole": "Unranked"
+      "curriculumRole": "Trash"
     },
     {
       "id": "i53efix8bb",
@@ -94485,7 +94488,7 @@
         "audit:reviewed",
         "topic:map-estar"
       ],
-      "curriculumRole": "Unranked"
+      "curriculumRole": "Trash"
     },
     {
       "id": "vuym0ms6tf",
@@ -94508,7 +94511,7 @@
         "audit:reviewed",
         "topic:verb-wishes"
       ],
-      "curriculumRole": "Unranked"
+      "curriculumRole": "Trash"
     },
     {
       "id": "do26qqvb93",
