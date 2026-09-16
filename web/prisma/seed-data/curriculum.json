@@ -11984,7 +11984,7 @@
         "audit:reviewed",
         "topic:enmap-how"
       ],
-      "curriculumRole": "Unranked"
+      "curriculumRole": "Trash"
     },
     {
       "id": "98imhq1xe7",
@@ -17030,7 +17030,7 @@
         "topic:map-de",
         "topic:verb-following-continuing"
       ],
-      "curriculumRole": "Unranked"
+      "curriculumRole": "Trash"
     },
     {
       "id": "fzb5re8glc",
@@ -22074,8 +22074,8 @@
     },
     {
       "id": "kjs3avsme6",
-      "spanish": "supe [algo]",
-      "english": "found out [something]",
+      "spanish": "saber [algo] (pretérito)",
+      "english": "to find out [something]",
       "example": {
         "spanish": "Ayer supe la verdad.",
         "english": "Yesterday I found out the truth."
@@ -24683,7 +24683,7 @@
     },
     {
       "id": "2oiqu0kcxf",
-      "spanish": "solía [hacer algo]",
+      "spanish": "soler [hacer algo] (pasado)",
       "english": "used to [do something]",
       "example": {
         "spanish": "Solíamos vivir cerca.",
@@ -24702,7 +24702,7 @@
     },
     {
       "id": "li9fwc94cq",
-      "spanish": "solía [hacer algo]",
+      "spanish": "soler [hacer algo] (pasado)",
       "english": "would [do something]",
       "example": {
         "spanish": "De niños, solíamos jugar afuera.",
