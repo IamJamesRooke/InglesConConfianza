@@ -54,7 +54,7 @@ ever overwritten. Owner's P2–P5 rows (20) are untouched.
 
 ## The generic verb and its objects — 5 items
 
-23. **do** — `1qz4qeh9oi` hacer → do · `qt9aqatj4f` hacer → to do · `v6srxq2n55` hacer → do (bare, after *can*)
+23. **do** — `qt9aqatj4f` hacer → to do · `1qz4qeh9oi` hacer [una tarea o actividad] → to do [a task or activity] (bare *do* after *can* is a lesson rule, not a row)
 24. **make** — `m9dfm9pbq2` hacer → make
 25. **it** — `xd9c671eit` lo → it · `m3zbdhcenj` la → it · `laabqgv17t` ello → it
 25a. **it to me / you / him / her / them / us** (double object pronouns, added 2026-09-16) — `knfzocl6m7` me lo · `ohbx808u3h` me la → it to me · `ws5e8hqv64` te lo · `5rjv2vtt6u` te la → it to you · `ge9f76wp4z` se lo · `g3k2zlui7p` se la → it to him · `86jcbmbst8` se lo · `gc5vlve96x` se la → it to her · `du9wo0vtqs` se lo · `o2oa6l0fs1` se la → it to them · `4fe6qe8w78` nos lo · `k5fke5m2q6` nos la → it to us
