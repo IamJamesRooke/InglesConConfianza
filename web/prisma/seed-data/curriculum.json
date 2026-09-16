@@ -73765,12 +73765,12 @@
         "form:full-infinitive",
         "es:para",
         "en:to",
-        "pos:preposition",
         "topic:en-multi-sense",
         "topic:verb-pattern",
         "audit:reviewed",
         "topic:vp-full-inf",
-        "topic:enmap-to"
+        "topic:enmap-to",
+        "pos:verb"
       ],
       "curriculumRole": "P1"
     },
@@ -96122,9 +96122,9 @@
         "form:full-infinitive",
         "es:para",
         "en:order",
-        "pos:preposition",
         "topic:verb-pattern",
-        "topic:vp-full-inf"
+        "topic:vp-full-inf",
+        "pos:verb"
       ],
       "curriculumRole": "P2"
     },

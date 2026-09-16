@@ -10,11 +10,14 @@ export const verbsTopic: CurriculumTopic = {
   // exclusions send the rest to their own pages: `topic:verb-system` (ser /
   // estar / haber / hay / modals) -> Special Verbs; `topic:cognate` ->
   // Cognates (by spelling pattern); `topic:phrasal-verb` -> the two Phrasal
-  // Verbs pages (by root, by particle).
+  // Verbs pages (by root, by particle). A fourth keeps the two purpose rows
+  // `para [hacer algo] → to / in order to` (pos:verb so the syllabus files them
+  // with the other infinitive patterns) on Verb Patterns only.
   baseExclusions: [
     { collection: "topic:verb-system", unlessRole: [] },
     { collection: "topic:cognate", unlessRole: [] },
     { collection: "topic:phrasal-verb", unlessRole: [] },
+    { collection: "construction:map-para-full-infinitive", unlessRole: [] },
   ],
   facetButtons: [
     // Communication

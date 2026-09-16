@@ -41,6 +41,7 @@ ever overwritten. Owner's P2–P5 rows (20) are untouched.
 13. **would like** — `9jt3xxrxse` gustaría [hacer] · `fr2zv8cgr5` gustaría [algo] · `dvodf0y7wx` quisiera [algo] · `dnwd7gmll5` quisiera [hacer]
 14. **like** — `1uo0obtd8h` me gusta [algo] → I like · `mowb8a6hvx` me gusta [hacer] → I like to
 15. **know** — `3wtzllym25` saber [algo] · `manx93glfl` saber que · `ahq54carab` saber si
+15a. **to / in order to** (purpose, infinitive pattern — added 2026-09-16) — `zxp06uqig0` para [hacer algo] → to [do something] · `at8dkibi7m` para [hacer algo] → in order [to do something]
 
 ## Being and being able — 7 items
 
@@ -67,7 +68,6 @@ ever overwritten. Owner's P2–P5 rows (20) are untouched.
 28. **and** `qxku96zu9e` · 29. **or** `eiiegq2s5o` · 30. **but** `s08z927piv` · 31. **because** `wjbh6m5ek1` ·
 32. **if** `v3wnwpk0qj` · 33. **that** `9qaylitnlb` que (cláusula) → that · 34. **when** `71u0miv5rm` ·
 35. **so / then** `u109gx9ehn` así que → so · `rakstubyz7` entonces → then
-35a. **in order to** (purpose, added 2026-09-16) — `at8dkibi7m` para [hacer algo] → in order [to do something]
 
 Rules (ser/estar → one *be*; contractions; *to* after want/need/have/going; bare verb
 after *can*; object pronoun after the verb) are taught inside lessons, not stored as
@@ -90,7 +90,7 @@ rows.
 
 ---
 
-**51 items + 25a/25b/35a (added 2026-09-16) · ~116 rows (infinitives only).** Rules are taught inside lessons, never
+**51 items + 15a/25a/25b (added 2026-09-16) · ~116 rows (infinitives only).** Rules are taught inside lessons, never
 stored as rows (see the note under Connectors).
 
 ## Already covered by the three existing lessons

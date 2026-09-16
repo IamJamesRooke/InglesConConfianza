@@ -1,0 +1,4 @@
+# Both para [hacer algo] purpose rows get pos:verb; roles are the live values. verbs.ts excludes construction:map-para-full-infinitive so they stay on Verb Patterns.
+# id	spanish	english	role	collections-to-add	reason
+zxp06uqig0	para [hacer algo]	to [do something]	P1	pos:verb	syllabus files it under Verbs with the other [hacer algo] patterns (owner option 1)
+at8dkibi7m	para [hacer algo]	in order [to do something]	P2	pos:verb	syllabus files it under Verbs with the other [hacer algo] patterns (owner option 1)
