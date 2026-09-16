@@ -1,12 +1,17 @@
 #!/usr/bin/env node
-// Lint for src/styles/lesson-builder/*.css (Phase 3a — see
-// docs/design/lesson-builder-rebuild.md Phase 3, docs/design/lesson-builder.md
-// §5). Fails the build on:
+// Lint for src/styles/**/*.css and src/app/globals.css (Phase 3a covered
+// only styles/lesson-builder/*.css — see docs/design/lesson-builder-rebuild.md
+// Phase 3, docs/design/lesson-builder.md §5; extended to the whole
+// stylesheet tree per docs/engineering/cleanup-plan.md section D, after a
+// three-way cascade across globals.css/learner-foundations-home.css/
+// practice-responsive-overrides.css showed import order silently deciding
+// which of several duplicate declarations won). Fails the build on:
 //   (a) a top-level selector declared more than once in the same file —
 //       media-query overrides are fine (they're a different nesting level
 //       and are expected to re-target a selector deliberately).
 //   (b) `!important` anywhere outside print.css.
-//   (c) a stylesheet under styles/lesson-builder/ that nothing imports.
+//   (c) a stylesheet under src/styles/ (or src/app/globals.css) that
+//       nothing imports.
 // Warns (does not fail) on:
 //   (d) a class used in a lesson-builder .tsx file with no matching rule in
 //       any lesson-builder stylesheet. Noisy by nature (Tailwind utilities,
@@ -21,6 +26,8 @@ import { fileURLToPath } from "node:url";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const CSS_DIR = path.join(ROOT, "src", "styles", "lesson-builder");
+const STYLES_DIR = path.join(ROOT, "src", "styles");
+const GLOBALS_CSS = path.join(ROOT, "src", "app", "globals.css");
 const SRC_DIR = path.join(ROOT, "src");
 
 let failed = false;
@@ -74,45 +81,38 @@ function parseRules(stripped) {
   return rules;
 }
 
-// Split a selector list on top-level commas only — a comma inside :is(...),
-// :where(...), :not(...), etc. does not start a new selector.
-function splitSelectorList(prelude) {
-  const parts = [];
-  let depth = 0;
-  let buf = "";
-  for (const ch of prelude) {
-    if (ch === "(") depth++;
-    if (ch === ")") depth--;
-    if (ch === "," && depth === 0) {
-      parts.push(buf);
-      buf = "";
-    } else {
-      buf += ch;
-    }
-  }
-  parts.push(buf);
-  return parts;
-}
-
 const cssFiles = readdirSync(CSS_DIR)
   .filter((f) => f.endsWith(".css"))
   .sort();
 
+// Every stylesheet under src/styles/ (recursively) plus src/app/globals.css —
+// the full set (c) and the duplicate-selector/!important checks (a)/(b) now
+// run against, not just styles/lesson-builder/.
+const allStyleFiles = [
+  ...listFilesRecursive(STYLES_DIR, [".css"]),
+  GLOBALS_CSS,
+].sort();
+
 // --- (a) duplicate top-level selectors, (b) !important -------------------
-for (const file of cssFiles) {
-  const full = path.join(CSS_DIR, file);
+for (const full of allStyleFiles) {
+  const file = path.relative(ROOT, full);
+  const baseName = path.basename(full);
   const source = readFileSync(full, "utf8");
 
   const stripped = stripComments(source);
   const rules = parseRules(stripped);
+  // Compare whole selector-list preludes verbatim, not split into individual
+  // comma parts: a rule legitimately reuses one selector inside a bigger
+  // group (e.g. ".a, .b { color: red }" alongside ".a { width: 1px }") —
+  // that's normal authoring, not the cascade-order bug this check exists
+  // for. The bug is the *same* selector (or selector list) declared twice,
+  // which relies on file/import order to pick a winner.
   const topLevelCounts = new Map();
   for (const rule of rules) {
     if (rule.depth !== 0 || !rule.prelude || rule.prelude.startsWith("@")) continue;
-    for (const part of splitSelectorList(rule.prelude)) {
-      const sel = part.trim().replace(/\s+/g, " ");
-      if (!sel) continue;
-      topLevelCounts.set(sel, (topLevelCounts.get(sel) ?? 0) + 1);
-    }
+    const sel = rule.prelude.trim().replace(/\s+/g, " ");
+    if (!sel) continue;
+    topLevelCounts.set(sel, (topLevelCounts.get(sel) ?? 0) + 1);
   }
   for (const [sel, count] of topLevelCounts) {
     if (count > 1) {
@@ -120,30 +120,68 @@ for (const file of cssFiles) {
     }
   }
 
-  if (file !== "print.css" && /!important/.test(stripped)) {
-    const strippedLines = stripped.split("\n");
-    strippedLines.forEach((line, idx) => {
-      if (line.includes("!important")) {
-        fail(`${file}:${idx + 1}: "!important" is only allowed in print.css.`);
+  if (baseName !== "print.css" && /!important/.test(stripped)) {
+    // Also allow !important inside an explicit
+    // `@media (prefers-reduced-motion: reduce) { ... }` block — the one
+    // place it's load-bearing (forcing off animation/transition/scroll
+    // that would otherwise come from an inline style or a more specific
+    // rule), not a specificity workaround.
+    const reducedMotionRanges = [];
+    const mediaRe = /@media\s*\(\s*prefers-reduced-motion\s*:\s*reduce\s*\)\s*\{/g;
+    let mm;
+    while ((mm = mediaRe.exec(stripped))) {
+      let depth = 1;
+      let i = mm.index + mm[0].length;
+      while (i < stripped.length && depth > 0) {
+        if (stripped[i] === "{") depth++;
+        else if (stripped[i] === "}") depth--;
+        i++;
       }
-    });
+      reducedMotionRanges.push([mm.index, i]);
+    }
+    const inReducedMotionBlock = (offset) =>
+      reducedMotionRanges.some(([start, end]) => offset >= start && offset < end);
+
+    const lineStarts = [0];
+    for (let i = 0; i < stripped.length; i++) {
+      if (stripped[i] === "\n") lineStarts.push(i + 1);
+    }
+    const impRe = /!important/g;
+    let im;
+    while ((im = impRe.exec(stripped))) {
+      if (inReducedMotionBlock(im.index)) continue;
+      const lineNum = lineStarts.filter((s) => s <= im.index).length;
+      fail(
+        `${file}:${lineNum}: "!important" is only allowed in print.css or inside an "@media (prefers-reduced-motion: reduce)" block.`,
+      );
+    }
   }
 }
 
-// --- (c) every stylesheet under styles/lesson-builder/ is imported -------
+// --- (c) every stylesheet under src/styles/ (and globals.css) is imported -
 const allSourceFiles = listFilesRecursive(SRC_DIR, [".ts", ".tsx", ".mjs", ".js"]);
 const importedCssPaths = new Set();
 for (const file of allSourceFiles) {
   const text = readFileSync(file, "utf8");
-  const re = /import\s+["']([^"']*lesson-builder\/[a-zA-Z0-9-]+\.css)["']/g;
+  const re = /import\s+["']([^"']+\.css)["']/g;
   let m;
   while ((m = re.exec(text))) {
-    importedCssPaths.add(path.basename(m[1]));
+    // Resolve relative to the importing file so "./x.css" and "@/styles/x.css"
+    // both normalize to a path under SRC_DIR comparable to allStyleFiles.
+    let importPath = m[1];
+    if (importPath.startsWith("@/")) {
+      importPath = path.join(SRC_DIR, importPath.slice(2));
+    } else if (importPath.startsWith(".")) {
+      importPath = path.resolve(path.dirname(file), importPath);
+    } else {
+      continue; // bare/package import (e.g. "tailwindcss"), not ours to check
+    }
+    importedCssPaths.add(importPath);
   }
 }
-for (const file of cssFiles) {
-  if (!importedCssPaths.has(file)) {
-    fail(`${file}: not imported anywhere (checked *.ts/*.tsx/*.mjs/*.js under src/).`);
+for (const full of allStyleFiles) {
+  if (!importedCssPaths.has(full)) {
+    fail(`${path.relative(ROOT, full)}: not imported anywhere (checked *.ts/*.tsx/*.mjs/*.js under src/).`);
   }
 }
 

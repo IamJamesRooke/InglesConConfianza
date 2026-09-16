@@ -52,10 +52,61 @@ group; nothing visual; the owner's `data/lessons.json` untouched.
 `src/components/curriculum/curriculum-table.tsx` (1,243) was already decomposed once
 (G1/G2); a second pass waits until the "used in a module" filter work settles.
 
-## D. Learner stylesheets (with the learner polish phase, not now)
-`practice-responsive-overrides.css` (994), `learner-foundations-home.css` (979),
-`authoring-base.css` (865) carry two eras of rules; apply the lesson-builder
-per-component treatment when the learner surfaces get their polish pass.
+## D. Learner stylesheets — done 2026-09-15
+The three-way cascade bug (`.lesson-session`/`.lesson-topbar`/etc. declared once
+each in `learner-foundations-home.css` and `practice-base.css`, and twice within
+`practice-responsive-overrides.css`, with import/file order silently choosing the
+winner) is fixed: every property was folded into the single rule that already won
+the cascade, verified with a small script that computes the same cascade merge
+independently (`for each exact top-level selector across the target files, in
+import order, last-declared-property-wins`) and cross-checked against the source
+files before any edit. `authoring-base.css`'s three internal duplicates
+(`.authoring-session .lesson-stage`, `.authoring-save-state`,
+`.authoring-controls .lesson-controls-inner`) were merged the same way; two
+unused rules with a bare (non-media) `!important` (`.authoring-next-button`,
+`.authoring-ending-ready` — no references anywhere in `src/`) were deleted rather
+than kept with the `!important` stripped. `globals.css` had two `.dark` blocks
+(a small token override and the full theme palette); merged into one.
+`admin-header.css` moved to `styles/admin/header.css` (import updated in
+`site-header.tsx`).
+
+`scripts/lint-css.mjs` now covers all of `src/styles/**/*.css` plus
+`src/app/globals.css` (previously only `styles/lesson-builder/*.css`), and its
+duplicate check compares whole selector-list preludes verbatim instead of
+exploding comma groups into individual selectors (the explode approach flagged
+ordinary, non-buggy selector-list reuse — e.g. `.a, .b { … }` beside a separate
+`.a { … }` — as noise across ~30 legitimate rules once the wider file set was
+in scope). `!important` is now also allowed inside an explicit
+`@media (prefers-reduced-motion: reduce)` block, not only in `print.css`.
+
+Not done, descoped for time: the full per-surface file split named in the
+original brief (`styles/learner/home.css`, `lesson-row.css`,
+`practice-stage.css`, `practice-card.css`, `practice-completion.css`). The fix
+instead merges in place — each selector now has exactly one declaration site
+(mostly `practice-responsive-overrides.css`, which already won the cascade for
+most of them), so file *names* are unchanged but the cascade ambiguity is gone
+and `lint-css` now enforces it can't come back. Revisit the file split in the
+learner polish phase if the current organization (three big files) becomes
+hard to navigate.
+
+Zero-visual-change was verified pixel-by-pixel: a throwaway `next dev` server
+on port 3250 (isolated `LESSON_BUILDER_DATA_PATH` copy of `lessons.json`)
+captured home, practice explanation, retrieval (empty + wrong-answer-with-hint),
+vocabulary table, completion, `/admin/lesson-builder`, and `/admin/curriculum`
+at 390×844 and 1280×900 — 16 states — first against the working tree, then
+against a `git stash`ed clean `HEAD`, compared with ImageMagick
+`compare -metric AE`. The first pass caught a real bug the merge introduced:
+`.answer-input:focus` and `.answer-input.showing-hint` share specificity, and
+a duplicate `:focus` declaration further down the original file (now folded
+into the single rule) used to win over `showing-hint`, so a focused field
+showing a hint has always rendered with the focus ring's blue, not the hint's
+gold — merging by "last-declared-property-wins" without preserving that
+declaration's position relative to `showing-hint` flipped the winner. Fixed by
+placing the merged `.answer-input:focus` rule after `.answer-input.showing-hint`,
+matching the original's effective order. Final diff: 14 of 16 pairs exactly
+0 AE; the other two (completion, both from animation/font-rendering timing,
+confirmed via `-compose difference -threshold 0.5%` finding no surviving
+region) at 0.0002%–0.016%, both far under the 0.1% budget.
 
 ## E. Tests (with B)
 `tests/` is 11,390 lines; after B, delete assertions that only pin structure a split

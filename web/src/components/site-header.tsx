@@ -6,7 +6,7 @@ import { BrandMark } from "@/components/brand-mark";
 import { usePathname } from "next/navigation";
 import type { ReactNode } from "react";
 import { useState } from "react";
-import "@/styles/admin-header.css";
+import "@/styles/admin/header.css";
 
 const internalLinks = [
   { href: "/admin/lesson-builder", label: "Lessons" },

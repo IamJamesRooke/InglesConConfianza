@@ -1,55 +1,93 @@
 /* Practice: one clear thought, one clear action, one shared success state. */
+/* .lesson-session / .lesson-topbar / .learner-icon-button / .lesson-stage:
+   the full shell, folded in from learner-foundations-home.css (structural
+   properties) and this file's own later "theme" section (color
+   properties) — those were three separate declarations of the same
+   selectors relying on import/file order to pick a winner. Each selector
+   below is now declared exactly once, holding the values that previously
+   won the cascade. */
 .lesson-session {
+  --radius: 1rem;
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  display: flex;
+  flex-direction: column;
+  height: 100dvh;
+  outline: none;
   color: var(--foreground);
-  /* A deeper, unmistakably blue canvas so white cards genuinely lift off it. */
-  background:
-    radial-gradient(
-      120% 90% at 50% -10%,
-      color-mix(in oklch, var(--primary) 17%, var(--background)),
-      transparent 62%
-    ),
-    color-mix(in oklch, var(--primary) 13%, var(--background));
+  background: var(--background);
   font-family: var(--font-geist), ui-sans-serif, system-ui, sans-serif;
 }
 .lesson-topbar {
-  min-height: 92px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  flex-shrink: 0;
+  width: 100%;
   padding: 18px max(32px, calc((100% - 1130px) / 2));
+  background: linear-gradient(
+    110deg,
+    var(--brand-primary-hover),
+    var(--primary)
+  );
+  border-bottom: 1px solid var(--border);
+  min-height: 92px;
   border-color: transparent;
-  background: var(--card);
-  box-shadow: var(--shadow-sm);
+  box-shadow: 0 8px 24px color-mix(in oklch, var(--primary) 28%, transparent);
+  color: var(--primary-foreground);
 }
 .learner-icon-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 48px;
   height: 48px;
+  flex-shrink: 0;
   color: var(--muted-foreground);
-  border-color: var(--border);
+  border: 1px solid var(--border);
   border-radius: var(--radius-lg);
+  transition: background 180ms;
+  border-color: var(--border);
   background: var(--card);
 }
 .learner-icon-button:hover {
   color: var(--foreground);
   background: var(--muted);
 }
+.lesson-topbar-title {
+  min-width: 0;
+  flex: 1;
+}
 .lesson-topbar-title p {
-  color: var(--muted-foreground);
   font-size: 14px;
+  color: var(--muted-foreground);
+  line-height: 1.5;
 }
 .lesson-topbar-title h1 {
+  font-size: 20px;
+  line-height: 1.5;
+  font-weight: 700;
   margin-top: 3px;
   color: var(--foreground);
   font-family: var(--lesson-display);
-  font-size: 20px;
-  font-weight: 700;
 }
 .lesson-step-count {
-  color: var(--muted-foreground);
   font-size: 15px;
+  white-space: nowrap;
+  color: var(--muted-foreground);
+  flex-shrink: 0;
 }
 .lesson-step-count strong {
   color: var(--foreground);
 }
 .lesson-topbar .lesson-top-progress {
+  position: absolute;
+  left: 0;
+  bottom: -1px;
   height: 6px;
+  border-radius: 0;
   color: var(--primary);
   background: var(--muted);
 }
@@ -63,6 +101,10 @@
   background: var(--primary);
 }
 .lesson-stage {
+  min-height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   padding: clamp(32px, 6vh, 64px) 24px;
 }
 
@@ -133,6 +175,7 @@
 
 /* --- Sentence builder: one calm card, blanks flow left-to-right --- */
 .sentence-practice {
+  width: 100%;
   max-width: 44rem;
 }
 .sentence-practice.vocabulary-practice {
@@ -153,6 +196,7 @@
   text-transform: uppercase;
 }
 .sentence-prompt {
+  margin: 0 auto;
   max-width: 36rem;
 }
 .sentence-prompt p {
@@ -212,9 +256,6 @@
 .lesson-session .single-answer .answer-piece {
   flex: none;
   width: 100%;
-}
-.lesson-session .vocabulary-practice .answer-piece {
-  max-width: none;
 }
 /* The Spanish word anchors each blank — Spanish-flag red, reads like a heading. */
 .answer-source,
@@ -279,11 +320,18 @@
   font-size: 27px;
 }
 .answer-input {
+  display: block;
+  width: 100%;
+  min-width: 0;
+  transition:
+    border-color 160ms,
+    background 160ms,
+    box-shadow 160ms;
   padding: 12px 16px;
   border: 2px solid var(--input);
   border-radius: var(--radius-md);
   color: var(--lesson-hl-en);
-  background: var(--card);
+  background: var(--surface-writing);
   font-family: var(--lesson-display);
   font-size: 24px;
   font-weight: 600;
@@ -302,11 +350,6 @@
   font-size: 18px;
   font-weight: 400;
 }
-.answer-input:focus {
-  border-color: var(--primary);
-  outline: 4px solid color-mix(in oklch, var(--primary) 20%, transparent);
-  outline-offset: 2px;
-}
 .lesson-session .answer-piece:focus-within .answer-field {
   transform: scale(1.02);
   transition: transform 140ms ease-out;
@@ -323,6 +366,18 @@
 .answer-input.showing-hint {
   border-color: var(--hint);
   background: color-mix(in oklch, var(--hint) 14%, var(--card));
+}
+/* .answer-input:focus is declared here, after .answer-input.showing-hint,
+   because a duplicate declaration used to exist further down this file
+   (folded in here) that came after showing-hint in the cascade — so a
+   focused field showing a hint has always rendered with the focus ring's
+   blue, not the hint's gold. Keeping this position preserves that existing
+   (equal-specificity, source-order-decided) behavior exactly. */
+.answer-input:focus {
+  border-color: var(--primary);
+  outline: 4px solid color-mix(in oklch, var(--primary) 20%, transparent);
+  outline-offset: 2px;
+  outline-color: color-mix(in oklch, var(--primary) 25%, transparent);
 }
 /* Shows the learner's own attempt against the closest accepted answer,
    character by character — only while a hint is explicitly requested. */
@@ -471,26 +526,34 @@
   box-shadow: 0 0 0 5px var(--card);
 }
 .lesson-controls {
-  min-height: 88px;
+  flex-shrink: 0;
   padding: 16px 32px;
+  transition: background 200ms;
+  min-height: 88px;
   border-color: transparent;
   background: var(--card);
   box-shadow: 0 -2px 10px color-mix(in oklch, var(--primary) 8%, transparent);
 }
 .lesson-controls.ready {
-  border-color: color-mix(in oklch, var(--success) 24%, var(--border));
-  background: color-mix(in oklch, var(--success) 8%, var(--card));
+  border-color: var(--success);
+  background: var(--state-success-soft);
 }
 .lesson-controls-inner {
   display: grid;
+  align-items: center;
+  gap: 24px;
+  margin: auto;
   grid-template-columns: 1fr auto 1fr;
   max-width: 1100px;
-  gap: 24px;
 }
 .lesson-controls .previous-step {
   justify-self: start;
 }
 .lesson-feedback {
+  flex: 1;
+  display: flex;
+  gap: 9px;
+  align-items: center;
   justify-self: center;
   color: var(--success-foreground);
   font-size: 18px;
@@ -514,7 +577,7 @@
   box-shadow: 0 3px 0 color-mix(in oklch, var(--primary) 72%, black);
 }
 .lesson-session .learner-button.success {
-  color: var(--primary-foreground);
+  color: var(--success-contrast);
   background: var(--success);
   box-shadow: 0 3px 0 color-mix(in oklch, var(--success) 72%, black);
 }
@@ -523,11 +586,6 @@
   background: var(--muted);
   box-shadow: none;
   opacity: 0.65;
-}
-.lesson-session .completion-seal {
-  color: var(--success-foreground);
-  background: color-mix(in oklch, var(--success) 15%, var(--card));
-  box-shadow: 0 0 0 7px color-mix(in oklch, var(--success) 6%, var(--card));
 }
 .lesson-session .lesson-celebration .learner-eyebrow {
   color: var(--primary);
@@ -706,19 +764,9 @@
 }
 
 /* Representative learner surface for the shared semantic theme. Keep the
-   canvas neutral and let the dark primary navigation carry the hierarchy. */
-.lesson-session {
-  background: var(--background);
-}
-.lesson-topbar {
-  color: var(--primary-foreground);
-  background: linear-gradient(
-    110deg,
-    var(--brand-primary-hover),
-    var(--primary)
-  );
-  box-shadow: 0 8px 24px color-mix(in oklch, var(--primary) 28%, transparent);
-}
+   canvas neutral and let the dark primary navigation carry the hierarchy.
+   (.lesson-session and .lesson-topbar's own background/color/box-shadow are
+   set once, above, with these values already folded in.) */
 .lesson-topbar-title p,
 .lesson-topbar-title h1,
 .lesson-step-count,
@@ -753,13 +801,8 @@
   background: var(--surface-writing);
   box-shadow: 0 18px 42px color-mix(in oklch, var(--ink-deep) 14%, transparent);
 }
-.answer-input {
-  background: var(--surface-writing);
-}
-.answer-input:focus {
-  border-color: var(--primary);
-  outline-color: color-mix(in oklch, var(--primary) 25%, transparent);
-}
+/* (.answer-input and .answer-input:focus's surface-writing background and
+   outline-color are set once, above, with these values already folded in.) */
 .answer-hint-toggle,
 .answer-hint {
   border-color: color-mix(in oklch, var(--hint) 72%, var(--ink-deep));
@@ -771,16 +814,8 @@
   color: var(--hint-foreground);
   fill: transparent;
 }
-.lesson-controls.ready {
-  border-color: var(--success);
-  background: var(--state-success-soft);
-}
 .lesson-session .learner-button.primary:hover {
   background: var(--brand-primary-hover);
-}
-.lesson-session .learner-button.success {
-  color: var(--success-contrast);
-  background: var(--success);
 }
 
 /* Completion keeps the existing flow, but gives the two essential signals—
@@ -790,13 +825,13 @@
   padding: clamp(2rem, 4vw, 3rem);
 }
 .lesson-session .completion-seal {
-  width: 92px;
-  height: 92px;
-  margin-bottom: 20px;
   color: var(--success-contrast);
   background: var(--success);
   box-shadow: 0 0 0 8px
     color-mix(in oklch, var(--success) 16%, var(--surface-writing));
+  width: 92px;
+  height: 92px;
+  margin-bottom: 20px;
 }
 .lesson-session .completion-seal svg {
   width: 46px;
@@ -842,6 +877,7 @@
   padding: 10px 18px;
 }
 .lesson-session .vocabulary-practice .answer-piece {
+  max-width: none;
   display: grid;
   grid-template-columns: minmax(0, 0.9fr) minmax(12rem, 1.1fr);
   align-items: center;

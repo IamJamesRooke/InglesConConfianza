@@ -1,7 +1,7 @@
 /* Authoring uses the learner canvas; these are the few controls added to it. */
 .authoring-session .lesson-stage {
   position: relative;
-  padding-top: 88px;
+  padding: 48px 40px;
 }
 .authoring-title p {
   display: flex;
@@ -41,6 +41,11 @@
   color: var(--muted-foreground);
   font-size: 12px;
   font-weight: 650;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  border: 0;
+  background: transparent;
 }
 .authoring-save-state.error {
   color: var(--destructive);
@@ -237,9 +242,6 @@
   align-self: stretch;
   border-radius: var(--radius-2xl);
 }
-.authoring-controls .lesson-controls-inner {
-  max-width: 1120px;
-}
 .authoring-add-step {
   display: flex;
   flex: 1;
@@ -340,9 +342,6 @@
   gap: 16px;
   padding-block: 16px;
 }
-.authoring-session .lesson-stage {
-  padding: 48px 40px;
-}
 .authoring-session .authoring-title p {
   display: block;
   gap: 0;
@@ -350,13 +349,6 @@
 .authoring-session .authoring-title input {
   margin-top: 0;
   font-size: 16px;
-}
-.authoring-save-state {
-  display: inline-flex;
-  align-items: center;
-  gap: 5px;
-  border: 0;
-  background: transparent;
 }
 .authoring-save-state:not(:disabled):hover {
   color: var(--foreground);
@@ -526,9 +518,6 @@
   border-color: var(--muted-foreground);
   background: var(--muted);
 }
-.authoring-next-button {
-  min-width: 146px !important;
-}
 .authoring-menu-anchor {
   position: relative;
 }
@@ -681,12 +670,6 @@
   padding: 7px 0;
   color: color-mix(in oklch, var(--hint) 72%, black);
   font-size: 13px;
-}
-.authoring-ending-ready {
-  display: flex;
-  justify-content: center;
-  gap: 7px;
-  color: var(--success-foreground) !important;
 }
 .authoring-ending .completion-action {
   margin: 25px auto 0;

@@ -194,11 +194,6 @@
   --lesson-hl-en: oklch(0.42 0.2 270);
 }
 
-.dark {
-  --lesson-hl-es: oklch(0.72 0.19 30);
-  --lesson-hl-en: oklch(0.72 0.17 270);
-}
-
 .concept-suggestion {
   --concept-priority: var(--priority-low);
   display: grid;
@@ -258,6 +253,8 @@
 }
 
 .dark {
+  --lesson-hl-es: oklch(0.72 0.19 30);
+  --lesson-hl-en: oklch(0.72 0.17 270);
   --background: oklch(0.16 0.014 285);
   --foreground: oklch(0.985 0 0);
   --card: oklch(0.205 0 0);
@@ -329,9 +326,8 @@
 .learner-header {
   --radius: 1.5rem;
 }
-.lesson-session {
-  --radius: 1rem;
-}
+/* .lesson-session's --radius: 1rem lives with the rest of its rule in
+   practice-responsive-overrides.css, its only other declaration site. */
 
 @media (prefers-reduced-motion: reduce) {
   .learner-enter {

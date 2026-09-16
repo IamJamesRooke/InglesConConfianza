@@ -39,21 +39,26 @@
 }
 .learner-header {
   border-bottom: 1px solid var(--border);
+  color: var(--foreground);
+  border-color: var(--border);
+  background: var(--background);
+  font-family: var(--font-sans);
 }
 .learner-header-inner {
-  min-height: 86px;
+  min-height: 72px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 24px;
 }
 .learner-brand {
-  display: flex;
+  display: inline-flex;
   align-items: center;
   gap: 12px;
   font-size: 21px;
   font-weight: 800;
   line-height: 1.15;
+  font-family: var(--font-display), var(--font-sans);
 }
 .learner-brand > span:last-child > span {
   display: block;
@@ -85,7 +90,9 @@
   left: 20px;
   z-index: 100;
   padding: 12px 20px;
-  background: white;
+  background: var(--primary);
+  color: var(--primary-foreground);
+  border-radius: var(--radius-md);
 }
 .learner-skip:focus {
   top: 12px;
@@ -175,21 +182,6 @@
 .learner-header .course-container {
   width: min(calc(100% - 64px), 1180px);
 }
-.learner-header {
-  color: var(--foreground);
-  border-color: var(--border);
-  background: var(--background);
-  font-family: var(--font-sans);
-}
-.learner-header-inner {
-  min-height: 72px;
-}
-.learner-brand {
-  display: inline-flex;
-  align-items: center;
-  gap: 12px;
-  font-family: var(--font-display), var(--font-sans);
-}
 .learner-brand-name {
   display: flex;
   flex-direction: column;
@@ -216,11 +208,6 @@
 }
 .course-feature h1 span {
   color: var(--primary);
-}
-.learner-skip {
-  color: var(--primary-foreground);
-  background: var(--primary);
-  border-radius: var(--radius-md);
 }
 .course-feature {
   position: relative;
@@ -894,86 +881,18 @@
   margin-top: 24px;
 }
 
-.lesson-session {
-  position: fixed;
-  inset: 0;
-  z-index: 50;
-  display: flex;
-  flex-direction: column;
-  height: 100dvh;
-  outline: none;
-}
-.lesson-topbar {
-  position: relative;
-  display: flex;
-  align-items: center;
-  gap: 24px;
-  flex-shrink: 0;
-  width: 100%;
-  padding: 24px max(28px, calc((100% - 1120px) / 2));
-  background: var(--card);
-  border-bottom: 1px solid var(--border);
-}
-.learner-icon-button {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 44px;
-  height: 44px;
-  flex-shrink: 0;
-  color: var(--muted-foreground);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-md);
-  transition: background 180ms;
-}
-.learner-icon-button:hover {
-  color: var(--foreground);
-  background: var(--muted);
-}
+/* The lesson-session shell, topbar, and stage are defined once, in
+   practice-responsive-overrides.css (imported after this file and after
+   practice-base.css, so it was already the cascade winner for every
+   property below — a prior duplicate declaration here and in
+   practice-responsive-overrides.css was merged into that single file to
+   remove the silent cascade dependency). */
 .learner-icon-button:disabled {
   opacity: 0.35;
-}
-.lesson-topbar-title {
-  min-width: 0;
-  flex: 1;
-}
-.lesson-topbar-title p {
-  font-size: 11px;
-  color: var(--muted-foreground);
-  line-height: 1.5;
-}
-.lesson-topbar-title h1 {
-  font-size: 16px;
-  line-height: 1.5;
-  font-weight: 650;
-  margin-top: 4px;
-}
-.lesson-step-count {
-  font-size: 13px;
-  white-space: nowrap;
-  color: var(--muted-foreground);
-  flex-shrink: 0;
-}
-.lesson-step-count strong {
-  color: var(--foreground);
-}
-.lesson-topbar .lesson-top-progress {
-  position: absolute;
-  left: 0;
-  bottom: -1px;
-  height: 3px;
-  border-radius: 0;
 }
 .lesson-scroll-area {
   flex: 1;
   overflow-y: auto;
   min-height: 0;
   overscroll-behavior: contain;
-}
-.lesson-stage {
-  min-height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 54px 32px;
 }
