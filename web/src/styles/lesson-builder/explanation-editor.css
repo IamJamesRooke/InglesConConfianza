@@ -72,16 +72,17 @@
 .lesson-document-explanation .practice-markdown-content :is(ol, ul) {
   text-align: left;
 }
-/* One visual language across the lesson document (owner, 2026-09-16): bold
-   ink for Spanish, italic theme blue for English, no underline, no red —
-   practice-responsive-overrides.css's shared `mark` rule is the one that
-   actually wins the cascade here (same selector specificity, imported
-   later), so these exist to keep this file's own reading of the mark
-   colors from contradicting it, not because they're load-bearing. */
+/* One visual language across the lesson document (owner, 2026-09-16, colour
+   restored 2026-09-16): bold `--lesson-hl-es` for Spanish, italic theme blue
+   for English, no underline — practice-responsive-overrides.css's shared
+   `mark` rule is the one that actually wins the cascade here (same selector
+   specificity, imported later), so these exist to keep this file's own
+   reading of the mark colors from contradicting it, not because they're
+   load-bearing. */
 .lesson-document-explanation mark[data-language="es"] {
   padding: 0;
   background: transparent;
-  color: var(--foreground);
+  color: var(--lesson-hl-es);
   font-weight: 700;
 }
 .lesson-document-explanation mark[data-language="en"] {

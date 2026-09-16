@@ -49,14 +49,15 @@
    active/editing pair fields below keep their own red/blue language ink.
    The resting English line now matches the explanation marks' theme-blue
    italic instead of a plain grey italic (owner, 2026-09-16 — "one visual
-   language" round). */
+   language" round), and the resting Spanish line matches the explanation
+   marks' `--lesson-hl-es` colour (colour restored 2026-09-16). */
 .lesson-document-sentence.resting .lesson-sentence-presentation {
   display: flex;
   flex-direction: column;
   gap: 2px;
 }
 .lesson-document-sentence.resting .lesson-sentence-composed[lang="es"] {
-  color: var(--foreground);
+  color: var(--lesson-hl-es);
   font-weight: 600;
   font-size: 17px;
 }

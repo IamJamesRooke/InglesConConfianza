@@ -607,15 +607,16 @@ proposal doc's aspirations.
   `.lesson-library` and to controls with no visible text) — the pre-existing
   page-wide "icon-only controls meet a minimum click-target size" test
   stays report-only, unchanged.
-- **One visual language for bilingual marks** (owner, 2026-09-16): a Spanish
-  `<mark data-language="es">` is bold ink with no underline and no red, an
-  English one is italic theme `--primary` blue with no underline
-  (`practice-responsive-overrides.css`'s shared `.learner-theme mark`/
-  `.practice-markdown-content mark` rule, mirrored in
-  `explanation-editor.css`); the resting sentence-slide's English line
-  (`sentence-presentation.css`'s `.lesson-document-sentence.resting
-  .lesson-sentence-composed[lang="en"]`) now matches that same theme-blue
-  italic instead of grey italic, while its Spanish line stays bold ink.
+- **One visual language for bilingual marks** (owner, 2026-09-16, colour
+  restored 2026-09-16): a Spanish `<mark data-language="es">` is bold
+  `var(--lesson-hl-es)` with no underline, an English one is italic theme
+  `--primary` blue with no underline (`practice-responsive-overrides.css`'s
+  shared `.learner-theme mark`/`.practice-markdown-content mark` rule,
+  mirrored in `explanation-editor.css`); the resting sentence-slide's English
+  line (`sentence-presentation.css`'s `.lesson-document-sentence.resting
+  .lesson-sentence-composed[lang="en"]`) matches that same theme-blue
+  italic, while its Spanish line matches the same `var(--lesson-hl-es)`
+  colour.
 
 ## 6. Owner decisions & rejected ideas
 

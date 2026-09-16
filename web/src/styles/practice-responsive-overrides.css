@@ -138,8 +138,9 @@
 }
 
 /* Bilingual highlight: language is told by weight/style + colour alone, no
-   underline and no red (owner, 2026-09-16 — "one visual language" round:
-   a Spanish mark is bold ink, an English mark is italic theme blue).
+   underline (owner, 2026-09-16 — "one visual language" round, colour
+   restored 2026-09-16: a Spanish mark is bold `--lesson-hl-es`, an English
+   mark is italic theme blue).
    Matches both the learner canvas and any PracticeMarkdown preview
    (e.g. the lesson builder), which renders outside .learner-theme. */
 .learner-theme mark,
@@ -154,7 +155,7 @@
 .learner-theme mark[data-language="es"],
 .practice-markdown-content mark.spanish,
 .practice-markdown-content mark[data-language="es"] {
-  color: var(--foreground);
+  color: var(--lesson-hl-es);
   font-weight: 700;
 }
 .learner-theme mark.english,
