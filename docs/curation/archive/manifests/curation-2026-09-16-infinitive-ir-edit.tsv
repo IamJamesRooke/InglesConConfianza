@@ -1,0 +1,5 @@
+# Infinitive normalization — ir: generic paradigm rows, infinitive uses, examples, merges.
+# id	spanish	english	role	collections-to-add	reason	[exSpanish	exEnglish]
+2iiyjrogmc	ir a [un lugar]	to go to [a place]	Unranked	contrast:confusable|contrast:voy-a-lugar-vs-voy-a-infinitivo|topic:confusable-verb|topic:location	merge collections from folded fragments
+38d1kfif1b	ir a [hacer algo]	to be going [to do something]	Unranked	grammar:past-plan|topic:vp-full-inf	merge collections from folded fragments
+0m0vzyyfd9	va a [hacer algo]	he/she/it is going [to do something]	Unranked		rewrite to infinitive use (was «va a [hacer algo] → is going [to do something]»)

@@ -11031,7 +11031,11 @@
         "topic:part-to",
         "topic:map-ir",
         "topic:enmap-to",
-        "topic:enmap-go"
+        "topic:enmap-go",
+        "contrast:confusable",
+        "contrast:voy-a-lugar-vs-voy-a-infinitivo",
+        "topic:confusable-verb",
+        "topic:location"
       ],
       "curriculumRole": "Unranked"
     },
@@ -11080,7 +11084,9 @@
         "topic:verb-pattern",
         "audit:reviewed",
         "topic:verb-movement-going",
-        "topic:map-ir"
+        "topic:map-ir",
+        "grammar:past-plan",
+        "topic:vp-full-inf"
       ],
       "curriculumRole": "Unranked"
     },
@@ -77639,7 +77645,7 @@
         "topic:vp-full-inf",
         "topic:map-ir"
       ],
-      "curriculumRole": "Unranked"
+      "curriculumRole": "Trash"
     },
     {
       "id": "ob3a6c4swk",
@@ -77689,7 +77695,7 @@
         "topic:vp-full-inf",
         "topic:map-ir"
       ],
-      "curriculumRole": "Unranked"
+      "curriculumRole": "Trash"
     },
     {
       "id": "wr8pbzbr3p",
@@ -77713,7 +77719,7 @@
         "topic:vp-full-inf",
         "topic:map-ir"
       ],
-      "curriculumRole": "Unranked"
+      "curriculumRole": "Trash"
     },
     {
       "id": "e6mo24dstx",
@@ -92186,7 +92192,7 @@
     {
       "id": "0m0vzyyfd9",
       "spanish": "va a [hacer algo]",
-      "english": "is going [to do something]",
+      "english": "he/she/it is going [to do something]",
       "example": {
         "spanish": "Ella va a estudiar esta noche.",
         "english": "She is going to study tonight."
@@ -92970,7 +92976,7 @@
         "topic:enmap-go",
         "topic:confusable-verb"
       ],
-      "curriculumRole": "Unranked"
+      "curriculumRole": "Trash"
     },
     {
       "id": "vlfntsr6mm",
@@ -92996,7 +93002,7 @@
         "topic:map-ir",
         "topic:enmap-go"
       ],
-      "curriculumRole": "Unranked"
+      "curriculumRole": "Trash"
     },
     {
       "id": "v9mrlosy7o",
@@ -93025,7 +93031,7 @@
         "topic:enmap-go",
         "topic:confusable-verb"
       ],
-      "curriculumRole": "Unranked"
+      "curriculumRole": "Trash"
     },
     {
       "id": "i0ipg114mg",
@@ -93051,7 +93057,7 @@
         "topic:map-ir",
         "topic:enmap-go"
       ],
-      "curriculumRole": "Unranked"
+      "curriculumRole": "Trash"
     },
     {
       "id": "m2cu1ggb78",
@@ -93077,7 +93083,7 @@
         "topic:map-ir",
         "topic:enmap-go"
       ],
-      "curriculumRole": "Unranked"
+      "curriculumRole": "Trash"
     },
     {
       "id": "iy31grrg95",
