@@ -1,17 +1,20 @@
 import { expect, test } from "./fixtures";
 
 // Auto-Covers (E5, see docs/design/lesson-builder-rebuild.md): a lesson whose
-// pairs already name a curriculum concept ("querer" / "to want", "hoy" /
-// "today") should offer it as a one-keystroke "Covers" suggestion instead of
-// making the teacher re-type it. See concept-suggestions.ts
+// pairs already name a curriculum concept ("querer" / "to want", "porque" /
+// "because") should offer it as a one-keystroke "Covers" suggestion instead
+// of making the teacher re-type it. See concept-suggestions.ts
 // (extractLessonPairTerms / matchPairTermsToConcepts) and the
-// /api/admin/curriculum/concepts/suggest route.
+// /api/admin/curriculum/concepts/suggest route. Both default pairs below are
+// Level 1 (P1) concepts, which always clear isSyllabusEligiblePairMatch's
+// filter — a fresh throwaway lesson belongs to no module syllabus, so a
+// non-P1 match (e.g. "hoy"/"today", Unranked) would never surface here.
 
 async function openLessonWithPairs(
   page: import("@playwright/test").Page,
   pairs: Array<[string, string]> = [
     ["querer", "to want"],
-    ["hoy", "today"],
+    ["porque", "because"],
   ],
 ) {
   await page.goto("/admin/lesson-builder");
@@ -37,9 +40,6 @@ async function openLessonWithPairs(
     if (index === pairs.length - 1) await englishField.blur();
   }
 
-  // Covers (Phase 3b) is a quiet line at rest — the suggestion chips only
-  // mount once it's expanded (click/focus), same as the tagged chips.
-  await row.locator("[data-covers-summary]").click();
   const coversInput = row.locator("[data-covers-for]");
   return { row, coversInput };
 }
@@ -51,14 +51,14 @@ test("pairs already naming a concept surface as one-keystroke Covers suggestions
   const { row, coversInput } = await openLessonWithPairs(page);
 
   // The suggest fetch is debounced 800ms after the pairs settle.
-  const suggestions = row.locator(".is-pair-suggestion");
+  const suggestions = row.locator(".lesson-concept-suggestion-ghost");
   await expect(suggestions).not.toHaveCount(0, { timeout: 5000 });
   const count = await suggestions.count();
   expect(count).toBeGreaterThanOrEqual(2);
 
   const labels = await suggestions.allTextContents();
   expect(labels.some((label) => /want/i.test(label))).toBe(true);
-  expect(labels.some((label) => /today/i.test(label))).toBe(true);
+  expect(labels.some((label) => /because/i.test(label))).toBe(true);
 
   await page.screenshot({ path: testInfo.outputPath("covers-suggested-760.png") });
 
@@ -66,10 +66,10 @@ test("pairs already naming a concept surface as one-keystroke Covers suggestions
   await coversInput.click();
   await coversInput.press("Control+Enter");
   await expect(suggestions).toHaveCount(0);
-  const tagged = row.locator(".lesson-concept-chip:not(.is-pair-suggestion)");
+  const tagged = row.locator(".lesson-concept-chip");
   const taggedLabels = await tagged.allTextContents();
   expect(taggedLabels.some((label) => /want/i.test(label))).toBe(true);
-  expect(taggedLabels.some((label) => /today/i.test(label))).toBe(true);
+  expect(taggedLabels.some((label) => /because/i.test(label))).toBe(true);
 });
 
 // Owner report (2026-09-15): "I want to do something today." suggested
@@ -87,7 +87,7 @@ test("owner-report lesson never suggests a loose substring/prefix hit like 'repa
     ["hoy", "today"],
   ]);
 
-  const suggestions = row.locator(".is-pair-suggestion");
+  const suggestions = row.locator(".lesson-concept-suggestion-ghost");
   await expect(suggestions).not.toHaveCount(0, { timeout: 5000 });
 
   const labels = await suggestions.allTextContents();
@@ -100,7 +100,7 @@ test("dismissing a suggestion sticks for the rest of the session, not for the le
   await page.setViewportSize({ width: 1280, height: 900 });
   const { row } = await openLessonWithPairs(page);
 
-  const suggestions = row.locator(".is-pair-suggestion");
+  const suggestions = row.locator(".lesson-concept-suggestion-ghost");
   await expect(suggestions).not.toHaveCount(0, { timeout: 5000 });
   const before = await suggestions.count();
 
@@ -111,10 +111,7 @@ test("dismissing a suggestion sticks for the rest of the session, not for the le
   await expect(suggestions).toHaveCount(before - 1);
 
   await page.reload();
-  // Covers (Phase 3b) collapses to its quiet line again on reload — expand
-  // it before checking suggestions.
-  await row.locator("[data-covers-summary]").click();
-  const suggestionsAfterReload = row.locator(".is-pair-suggestion");
+  const suggestionsAfterReload = row.locator(".lesson-concept-suggestion-ghost");
   await expect(suggestionsAfterReload).not.toHaveCount(0, { timeout: 5000 });
   const labelsAfterReload = await suggestionsAfterReload.allTextContents();
   expect(labelsAfterReload).not.toContain(dismissedLabel);

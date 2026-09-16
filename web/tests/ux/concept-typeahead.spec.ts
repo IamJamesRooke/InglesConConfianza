@@ -13,9 +13,6 @@ async function openLessonWithCoversField(page: import("@playwright/test").Page) 
   const id = await title.getAttribute("data-lesson-title");
   await title.press("Enter");
   const row = page.locator(`[data-lesson-row="${id}"]`);
-  // Covers (Phase 3b) is a quiet line at rest — click it to expand the full
-  // chips/typeahead field before interacting with the input.
-  await row.locator("[data-covers-summary]").click();
   const input = row.locator('[data-covers-for]');
   return { row, input };
 }

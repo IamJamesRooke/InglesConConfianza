@@ -22,11 +22,8 @@ test("lesson builder page has no serious/critical accessibility violations", asy
   const title = page.locator("[data-lesson-title]").last();
   await title.fill("ux-check: a11y seed");
 
-  // Covers (Phase 3b) is a quiet line at rest — expand it before scanning
-  // so its chip/typeahead markup is in the audit too.
-  await page.locator("[data-covers-summary]").last().click();
   const conceptInput = page
-    .locator('input[placeholder="Add concept…"], input[placeholder="+ concept"]')
+    .locator('input[placeholder="Add concept…"]')
     .last();
   await conceptInput.click();
   await conceptInput.fill("poder");

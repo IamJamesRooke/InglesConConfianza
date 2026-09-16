@@ -6,14 +6,18 @@ import { useEffect, useState } from "react";
 
 import {
   conceptPriority,
+  isSyllabusEligiblePairMatch,
   type LessonConceptSuggestion,
   type PairConceptMatch,
 } from "@/lib/lesson-builder/concept-suggestions";
+import type { SyllabusMarkers } from "@/lib/lesson-builder/builder-context";
 import type { ConceptDisplayLookup, LessonConcept } from "@/lib/lesson-builder/types";
 import { createId } from "@/lib/lesson-builder/utils";
 
 const PAIR_SUGGESTION_DEBOUNCE_MS = 800;
-const MAX_PAIR_SUGGESTIONS = 8;
+// Ghost-text suggestions on the Covers line (§5, 2026-09-16): capped at four
+// visible so the row never grows into a second block of chip-like noise.
+const MAX_PAIR_SUGGESTIONS = 4;
 
 // Dismissed auto-Covers suggestions, per lesson, for this tab's session only
 // — never written into the lesson data. Keyed by lesson id (`coversFor`).
@@ -55,6 +59,7 @@ export function usePairSuggestions({
   open,
   onAdd,
   recordDisplay,
+  syllabusMarkers,
 }: {
   coversFor?: string;
   pairTerms?: string[];
@@ -62,6 +67,10 @@ export function usePairSuggestions({
   open: boolean;
   onAdd: (concept: LessonConcept) => void;
   recordDisplay: (conceptId: string, display: ConceptDisplayLookup[string]) => void;
+  // Gates which pair-derived matches are even eligible (see
+  // isSyllabusEligiblePairMatch) — a Level 1 concept always qualifies;
+  // anything else must already be in this lesson's module syllabus.
+  syllabusMarkers?: SyllabusMarkers;
 }) {
   const [pairMatches, setPairMatches] = useState<PairConceptMatch[]>([]);
   const [dismissed, setDismissed] = useState<Set<string>>(() =>
@@ -112,7 +121,10 @@ export function usePairSuggestions({
     });
     return [...byId.values()]
       .filter(
-        (match) => !alreadyAdded.has(match.concept.id) && !dismissed.has(match.concept.id),
+        (match) =>
+          !alreadyAdded.has(match.concept.id) &&
+          !dismissed.has(match.concept.id) &&
+          isSyllabusEligiblePairMatch(match, syllabusMarkers),
       )
       .sort((left, right) => {
         const priorityDiff =
@@ -211,7 +223,7 @@ export function PairSuggestionChips({
           tabIndex={0}
           className={
             variant === "compact"
-              ? "lesson-concept-chip is-pair-suggestion"
+              ? "lesson-concept-suggestion-ghost"
               : "group inline-flex items-center gap-2 rounded-xl border border-dashed px-3 py-1.5 text-xs text-muted-foreground"
           }
           title={`Named by this lesson's pairs — ${match.term}`}
@@ -226,8 +238,14 @@ export function PairSuggestionChips({
             }
           }}
         >
-          <Plus className="size-3" aria-hidden="true" />
-          <span className={variant === "compact" ? "lesson-concept-label" : "grid text-left leading-tight"}>
+          {variant === "compact" ? (
+            <span className="lesson-concept-suggestion-ghost-plus" aria-hidden="true">
+              +
+            </span>
+          ) : (
+            <Plus className="size-3" aria-hidden="true" />
+          )}
+          <span className={variant === "compact" ? "lesson-concept-suggestion-ghost-label" : "grid text-left leading-tight"}>
             {match.concept.english}
           </span>
           <button
@@ -238,7 +256,7 @@ export function PairSuggestionChips({
               onDismiss(match.concept.id);
             }}
             aria-label={`Dismiss suggestion ${match.concept.english}`}
-            className={variant === "compact" ? "lesson-concept-remove" : "text-current/60 transition hover:text-[var(--destructive)]"}
+            className={variant === "compact" ? "lesson-concept-suggestion-ghost-dismiss" : "text-current/60 transition hover:text-[var(--destructive)]"}
           >
             <X className="size-3" aria-hidden="true" />
           </button>

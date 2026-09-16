@@ -4,6 +4,7 @@ import test from "node:test";
 import {
   conceptPriority,
   extractLessonPairTerms,
+  isSyllabusEligiblePairMatch,
   matchPairTermsToConcepts,
   suggestConceptsForLesson,
   type PairMatchCandidate,
@@ -287,4 +288,39 @@ test("example-sentence matches are capped at 3 per lesson", () => {
 
   const matches = matchPairTermsToConcepts(["pan", "vive", "trabajo", "dia"], candidates);
   assert.equal(matches.length, 3);
+});
+
+// Owner report (2026-09-16): a sentence pair's incidental noun ("egg") must
+// never become a Covers suggestion just because it happens to name some
+// low-priority concept in the curriculum. Only a Level 1 (P1) concept, or a
+// concept already in this lesson's own module syllabus (main or review), is
+// eligible.
+test("isSyllabusEligiblePairMatch: a Level 1 (P1) concept is always eligible, syllabus or not", () => {
+  const match = { term: "algo", concept: { id: "c-algo", spanish: "algo", english: "something", role: "P1" } };
+  assert.equal(isSyllabusEligiblePairMatch(match), true);
+  assert.equal(
+    isSyllabusEligiblePairMatch(match, { mainOfModule: new Set(), inSyllabusUncovered: new Set() }),
+    true,
+  );
+});
+
+test("isSyllabusEligiblePairMatch: a non-P1 concept is dropped with no syllabus context", () => {
+  const match = { term: "egg", concept: { id: "c-egg", spanish: "huevo", english: "egg", role: "P4" } };
+  assert.equal(isSyllabusEligiblePairMatch(match), false);
+  assert.equal(
+    isSyllabusEligiblePairMatch(match, { mainOfModule: new Set(), inSyllabusUncovered: new Set() }),
+    false,
+  );
+});
+
+test("isSyllabusEligiblePairMatch: a non-P1 concept is eligible once it's in this module's main or review syllabus", () => {
+  const match = { term: "egg", concept: { id: "c-egg", spanish: "huevo", english: "egg", role: "P4" } };
+  assert.equal(
+    isSyllabusEligiblePairMatch(match, { mainOfModule: new Set(["c-egg"]), inSyllabusUncovered: new Set() }),
+    true,
+  );
+  assert.equal(
+    isSyllabusEligiblePairMatch(match, { mainOfModule: new Set(), inSyllabusUncovered: new Set(["c-egg"]) }),
+    true,
+  );
 });

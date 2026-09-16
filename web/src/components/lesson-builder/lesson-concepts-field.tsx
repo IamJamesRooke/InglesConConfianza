@@ -1,13 +1,7 @@
 "use client";
 
 import { X } from "lucide-react";
-import {
-  useEffect,
-  useRef,
-  useState,
-  type FocusEvent,
-  type Ref,
-} from "react";
+import { useState, type Ref } from "react";
 
 import { ConceptPillLabel } from "@/components/lesson-builder/concept-pill-label";
 import { ConceptQuickEdit, type ConceptDraft } from "@/components/lesson-builder/concept-quick-edit";
@@ -18,9 +12,7 @@ import {
   usePairSuggestions,
 } from "@/components/lesson-builder/concept-suggestion-chips";
 import { ConceptTypeahead } from "@/components/lesson-builder/concept-typeahead";
-import { CoversSummary } from "@/components/lesson-builder/covers-summary";
 import { renderConceptLabel } from "@/lib/lesson-builder/concept-label";
-import { isFocusStillInside } from "@/lib/lesson-builder/focus";
 import { conceptKey } from "@/lib/lesson-builder/lesson-file";
 import type { SyllabusMarkers } from "@/lib/lesson-builder/builder-context";
 import type { LessonConceptSuggestion } from "@/lib/lesson-builder/concept-suggestions";
@@ -107,34 +99,6 @@ export function LessonConceptsField({
   // suggestions can refetch "once on open" (see usePairSuggestions below).
   const [typeaheadOpen, setTypeaheadOpen] = useState(false);
 
-  // Covers as one quiet line (§5): the lesson's own "Covers" field (compact
-  // variant + coversFor) collapses to a summary line at rest — the full
-  // chips/typeahead/suggestions only mount once that line is focused or
-  // clicked. Never applies to the module Key Concepts field (no coversFor)
-  // or the block/inline variants, which stay expanded as before.
-  const collapsible = variant === "compact" && Boolean(coversFor);
-  const [expanded, setExpanded] = useState(false);
-  const coversWrapRef = useRef<HTMLDivElement | null>(null);
-
-  function openCovers() {
-    setExpanded(true);
-  }
-
-  function collapseIfFocusLeft(event: FocusEvent<HTMLDivElement>) {
-    if (!collapsible) return;
-    // A `data-keymap-ignore` portal (the concept quick-edit popover opened
-    // from one of this field's own chips) renders outside this wrapper's
-    // DOM subtree even though focusing it isn't a real departure — see
-    // `isFocusStillInside`.
-    if (isFocusStillInside(event.relatedTarget, event.currentTarget)) return;
-    setExpanded(false);
-  }
-
-  useEffect(() => {
-    if (!collapsible || !expanded) return;
-    coversWrapRef.current?.querySelector<HTMLInputElement>("input[data-covers-for]")?.focus();
-  }, [collapsible, expanded]);
-
   function recordDisplay(conceptId: string, display: ConceptDisplayLookup[string]) {
     setLocalDisplays((current) => ({ ...current, [conceptId]: display }));
     onDisplayChange?.(conceptId, display);
@@ -152,6 +116,7 @@ export function LessonConceptsField({
       open: typeaheadOpen,
       onAdd,
       recordDisplay,
+      syllabusMarkers,
     });
 
   function addSuggestion(suggestion: LessonConceptSuggestion) {
@@ -173,24 +138,8 @@ export function LessonConceptsField({
     .filter((role): role is string => role !== null);
   const rolesUniform = new Set(conceptRoles).size <= 1;
 
-  if (collapsible && !expanded) {
-    const terms = concepts.map((concept) => {
-      const display = concept.conceptId
-        ? localDisplays[concept.conceptId] ?? conceptDisplays[concept.conceptId]
-        : undefined;
-      return display?.english ?? concept.label;
-    });
-    return (
-      <div ref={coversWrapRef} onBlur={collapseIfFocusLeft}>
-        <CoversSummary terms={terms} onOpen={openCovers} />
-      </div>
-    );
-  }
-
   return (
     <div
-      ref={collapsible ? coversWrapRef : undefined}
-      onBlur={collapsible ? collapseIfFocusLeft : undefined}
       className={
         variant === "inline" || variant === "compact"
           ? ""

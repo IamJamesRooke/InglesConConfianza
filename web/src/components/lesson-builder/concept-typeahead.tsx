@@ -204,9 +204,11 @@ export function ConceptTypeahead({
           showPopover ? `${listboxId}-option-${highlight}` : undefined
         }
         placeholder={
-          concepts.length === 0
-            ? variant === "compact" ? "Add concept…" : "Type a concept, e.g. querer, poder, hablar…"
-            : variant === "compact" ? "+ concept" : "Add another…"
+          variant === "compact"
+            ? "Add concept…"
+            : concepts.length === 0
+              ? "Type a concept, e.g. querer, poder, hablar…"
+              : "Add another…"
         }
         onFocus={() => setOpen(true)}
         onBlur={() => {

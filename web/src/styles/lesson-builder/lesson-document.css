@@ -40,7 +40,7 @@
    static container avoids that.) */
 .lesson-document-tags {
   margin: 20px 0 0;
-  padding-left: 9px;
+  padding-left: 13px;
 }
 .lesson-document > div:first-child > div > span:first-child {
   font-size: 9px;

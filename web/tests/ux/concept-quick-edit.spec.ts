@@ -25,9 +25,8 @@ test("Covers pill: clicking into the popover's English field keeps it open; Canc
   await title.press("Enter");
   const row = page.locator(`[data-lesson-row="${lessonId}"]`);
 
-  // Expand Covers and tag one real concept so its chip carries a
-  // ConceptQuickEdit trigger (a freehand chip has no curriculum row to edit).
-  await row.locator("[data-covers-summary]").click();
+  // Tag one real concept so its chip carries a ConceptQuickEdit trigger
+  // (a freehand chip has no curriculum row to edit).
   const coversInput = row.locator("[data-covers-for]");
   await coversInput.click();
   await coversInput.fill("if");

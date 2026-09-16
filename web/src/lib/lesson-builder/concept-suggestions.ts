@@ -150,6 +150,26 @@ export type PairConceptMatch = {
   concept: PairMatchCandidate;
 };
 
+// Auto-Covers eligibility (owner report, 2026-09-16): a sentence pair names
+// all sorts of incidental nouns ("egg" in an example sentence) that aren't
+// worth surfacing as a Covers suggestion. A pair-derived match is only
+// offered when its concept is Level 1 (highest-leverage, taught early
+// regardless of module) or already part of *this* lesson's own module
+// syllabus (main or review) — everything else is dropped. Suggestions from
+// the explanation-marks path (pair-proposals.ts) are unaffected; this only
+// gates the sentence-pair-term path (matchPairTermsToConcepts above).
+export function isSyllabusEligiblePairMatch(
+  match: PairConceptMatch,
+  syllabusSets?: { mainOfModule: Set<string>; inSyllabusUncovered: Set<string> },
+): boolean {
+  if (match.concept.role === "P1") return true;
+  if (!syllabusSets) return false;
+  return (
+    syllabusSets.mainOfModule.has(match.concept.id) ||
+    syllabusSets.inSyllabusUncovered.has(match.concept.id)
+  );
+}
+
 const LEADING_SUBJECT_PRONOUNS = new Set(["i", "you", "he", "she", "it", "we", "they"]);
 
 // Full normalization for *matching*: drop bracket placeholders and their

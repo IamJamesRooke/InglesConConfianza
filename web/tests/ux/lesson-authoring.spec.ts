@@ -124,12 +124,8 @@ test("keyboard-only lesson authoring produces the expected structure", async ({
   await page.keyboard.type("stem-changing");
 
   // Concept search: infinitive form should resolve to a linked concept.
-  // Covers (Phase 3b) is a quiet line at rest — expand it first.
-  await page.locator("[data-lesson-row] [data-covers-summary]").last().click();
   const conceptInput = page
-    .locator(
-      '[data-lesson-row] input[placeholder="Add concept…"], [data-lesson-row] input[placeholder="+ concept"]',
-    )
+    .locator('[data-lesson-row] input[placeholder="Add concept…"]')
     .last();
   await conceptInput.click();
   await conceptInput.fill("poder");
