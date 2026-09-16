@@ -20,6 +20,7 @@ import {
 import { ConceptTypeahead } from "@/components/lesson-builder/concept-typeahead";
 import { CoversSummary } from "@/components/lesson-builder/covers-summary";
 import { renderConceptLabel } from "@/lib/lesson-builder/concept-label";
+import { isFocusStillInside } from "@/lib/lesson-builder/focus";
 import { conceptKey } from "@/lib/lesson-builder/lesson-file";
 import type { SyllabusMarkers } from "@/lib/lesson-builder/builder-context";
 import type { LessonConceptSuggestion } from "@/lib/lesson-builder/concept-suggestions";
@@ -121,8 +122,11 @@ export function LessonConceptsField({
 
   function collapseIfFocusLeft(event: FocusEvent<HTMLDivElement>) {
     if (!collapsible) return;
-    const next = event.relatedTarget as Node | null;
-    if (next && event.currentTarget.contains(next)) return;
+    // A `data-keymap-ignore` portal (the concept quick-edit popover opened
+    // from one of this field's own chips) renders outside this wrapper's
+    // DOM subtree even though focusing it isn't a real departure — see
+    // `isFocusStillInside`.
+    if (isFocusStillInside(event.relatedTarget, event.currentTarget)) return;
     setExpanded(false);
   }
 

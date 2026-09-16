@@ -32,6 +32,24 @@ function resolveFieldElement(
   );
 }
 
+// Shared "did focus really leave this wrapper" check. A `createPortal`
+// popover (the concept quick-edit dialog, the keyboard-help dialog, the
+// pair-field autocomplete while its own popover is open — everything that
+// already carries `data-keymap-ignore`) renders outside the DOM subtree of
+// whatever wrapper a caller is watching, even though the teacher never left
+// it conceptually. Every place that would otherwise collapse a field,
+// deselect the shared editing selection, or run `leaveSlide` on blur must
+// treat "focus landed inside a `[data-keymap-ignore]` element" the same as
+// "focus is still inside the wrapper" — this is the one predicate all of
+// them share, so a new popover only has to carry the attribute, not teach
+// every blur handler about itself.
+export function isFocusStillInside(target: EventTarget | null, wrapper: Node): boolean {
+  if (!(target instanceof Node)) return false;
+  if (wrapper.contains(target)) return true;
+  const el = target instanceof HTMLElement ? target : target.parentElement;
+  return el ? el.closest("[data-keymap-ignore]") !== null : false;
+}
+
 // Modules aren't part of `EditingSelection` (Phase 1 keeps selection to
 // title/block/field within a lesson), so Ctrl+Alt+M's "focus the active
 // module's name" goes through this narrow sibling helper instead of a bare

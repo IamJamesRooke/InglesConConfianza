@@ -27,7 +27,7 @@ import {
   type EditingSelection,
 } from "@/lib/lesson-builder/editing";
 import { dispatchKeymap, fieldSelectionForBlock } from "@/lib/lesson-builder/keymap";
-import { rememberFocus, restoreRememberedFocus } from "@/lib/lesson-builder/focus";
+import { isFocusStillInside, rememberFocus, restoreRememberedFocus } from "@/lib/lesson-builder/focus";
 import type { Lesson, LessonFile, LessonModule } from "@/lib/lesson-builder/types";
 
 // The single open-lesson id survives reloads so a teacher returns to where
@@ -332,7 +332,10 @@ function LessonLibraryInner(props: Props) {
         // same-block signal exists only to protect the *unresolved* case
         // just below (a control that unmounts itself as a direct result of
         // its own click), not to veto a `relatedTarget` we actually have.
-        if (root!.contains(next)) return;
+        // A `[data-keymap-ignore]` portal (the concept quick-edit dialog,
+        // etc.) renders outside `root`'s DOM subtree even though it isn't a
+        // real departure — see `isFocusStillInside`.
+        if (isFocusStillInside(next, root!)) return;
         dispatchDepsRef.current.editing.setSelection({ kind: "none" }, { reason: "blur" });
         return;
       }

@@ -2,7 +2,7 @@
 
 import { X } from "lucide-react";
 import { useRouter } from "next/navigation";
-import { useEffect, useState, type ReactNode } from "react";
+import { useEffect, useRef, useState, type ReactNode } from "react";
 import { createPortal } from "react-dom";
 
 import { COLLECTION_FACETS } from "@/lib/curriculum/collections";
@@ -62,6 +62,7 @@ export function ConceptQuickEdit({
   onDeleted?: () => void;
 }) {
   const router = useRouter();
+  const triggerRef = useRef<HTMLButtonElement | null>(null);
   const [open, setOpen] = useState(false);
   const [form, setForm] = useState<ConceptDraft | null>(initial ?? null);
   const [saving, setSaving] = useState(false);
@@ -100,6 +101,19 @@ export function ConceptQuickEdit({
     // (which clears `error` and bumps this) re-runs the fetch above, since
     // `form` staying null after a failed load wouldn't otherwise change.
   }, [open, form, conceptId, vocab.length, loadAttempt]);
+
+  // The popover closing (Cancel/Save/Delete/Escape/backdrop) must hand focus
+  // back to the pill that opened it — the trigger `<button>` never unmounts,
+  // so this can focus it synchronously rather than through `focus.ts`'s
+  // retry machinery (that's only needed for targets that don't exist yet).
+  // Without this, whichever wrapper the pill lives in sees focus land on
+  // `document.body` (the popover's own unmount takes DOM focus with it) and
+  // can misread that as "focus left," e.g. `lesson-library.tsx`'s
+  // `onFocusOut` running `leaveSlide` on the slide the pill belongs to.
+  function closePopover() {
+    setOpen(false);
+    triggerRef.current?.focus();
+  }
 
   function patch<K extends keyof ConceptDraft>(key: K, value: ConceptDraft[K]) {
     setForm((current) => (current ? { ...current, [key]: value } : current));
@@ -151,7 +165,7 @@ export function ConceptQuickEdit({
         } | null;
         throw new Error(body?.error ?? "Unable to save.");
       }
-      setOpen(false);
+      closePopover();
       onSaved?.(form);
       router.refresh();
     } catch (caught) {
@@ -170,7 +184,7 @@ export function ConceptQuickEdit({
         { method: "DELETE" },
       );
       if (!response.ok) throw new Error("Unable to delete.");
-      setOpen(false);
+      closePopover();
       onDeleted?.();
       router.refresh();
     } catch (caught) {
@@ -184,6 +198,7 @@ export function ConceptQuickEdit({
   return (
     <>
       <button
+        ref={triggerRef}
         type="button"
         onClick={() => {
           setForm(initial ?? null);
@@ -209,7 +224,13 @@ export function ConceptQuickEdit({
             data-keymap-ignore
             onMouseDown={(event) => {
               if (event.target === event.currentTarget && !saving)
-                setOpen(false);
+                closePopover();
+            }}
+            onKeyDown={(event) => {
+              if (event.key === "Escape" && !saving) {
+                event.stopPropagation();
+                closePopover();
+              }
             }}
           >
           <div className="max-h-[88vh] w-full max-w-lg overflow-y-auto rounded-2xl border border-border bg-popover p-5 text-popover-foreground shadow-2xl">
@@ -427,7 +448,7 @@ export function ConceptQuickEdit({
                   <div className="flex gap-2">
                     <button
                       type="button"
-                      onClick={() => setOpen(false)}
+                      onClick={() => closePopover()}
                       disabled={saving}
                       className="rounded-lg px-3 py-2 text-sm font-semibold text-muted-foreground transition hover:bg-muted hover:text-foreground disabled:opacity-50"
                     >
