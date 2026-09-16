@@ -44,7 +44,7 @@
         "topic:vp-full-inf",
         "topic:map-querer"
       ],
-      "curriculumRole": "Unranked"
+      "curriculumRole": "P1"
     },
     {
       "id": "z3i6f8s1or",
@@ -68,7 +68,7 @@
         "topic:vp-obj-complement",
         "topic:map-querer"
       ],
-      "curriculumRole": "Unranked"
+      "curriculumRole": "P2"
     },
     {
       "id": "5hlohr9z3f",
@@ -617,7 +617,7 @@
         "audit:reviewed",
         "topic:verb-depending-fitting"
       ],
-      "curriculumRole": "Unranked"
+      "curriculumRole": "P1"
     },
     {
       "id": "1eotkqfnjg",
@@ -637,7 +637,7 @@
         "topic:vp-full-inf",
         "topic:verb-depending-fitting"
       ],
-      "curriculumRole": "Unranked"
+      "curriculumRole": "P1"
     },
     {
       "id": "qvltvv56qd",
@@ -663,7 +663,7 @@
         "topic:map-que",
         "topic:verb-depending-fitting"
       ],
-      "curriculumRole": "Unranked"
+      "curriculumRole": "P2"
     },
     {
       "id": "5dd27yg0l5",
@@ -14270,7 +14270,7 @@
         "topic:map-poder",
         "topic:verb-system"
       ],
-      "curriculumRole": "Unranked"
+      "curriculumRole": "P2"
     },
     {
       "id": "a1eubfzyp5",
@@ -19381,7 +19381,7 @@
         "topic:verb-thinking-opinions",
         "topic:enmap-that"
       ],
-      "curriculumRole": "Unranked"
+      "curriculumRole": "P1"
     },
     {
       "id": "1cgmo681z0",
@@ -24921,7 +24921,7 @@
         "topic:map-tener",
         "topic:enmap-have"
       ],
-      "curriculumRole": "Unranked"
+      "curriculumRole": "P1"
     },
     {
       "id": "ccrgp9wvgz",
@@ -24983,7 +24983,7 @@
         "topic:enmap-have",
         "topic:verb-possession-having"
       ],
-      "curriculumRole": "Unranked"
+      "curriculumRole": "P1"
     },
     {
       "id": "8zgoedsnqi",
@@ -28278,7 +28278,7 @@
         "topic:confusable-possessive",
         "topic:multi-sense"
       ],
-      "curriculumRole": "Unranked"
+      "curriculumRole": "P1"
     },
     {
       "id": "63ojew9r4f",
@@ -28647,7 +28647,7 @@
         "topic:en-multi-sense",
         "audit:reviewed"
       ],
-      "curriculumRole": "Unranked"
+      "curriculumRole": "P1"
     },
     {
       "id": "a29elmu22c",
@@ -33714,7 +33714,7 @@
         "en:because",
         "audit:reviewed"
       ],
-      "curriculumRole": "Unranked"
+      "curriculumRole": "P1"
     },
     {
       "id": "9sl36wwkry",
@@ -33908,7 +33908,7 @@
         "topic:en-multi-sense",
         "audit:reviewed"
       ],
-      "curriculumRole": "Unranked"
+      "curriculumRole": "P1"
     },
     {
       "id": "kxitvfhebx",
@@ -35386,7 +35386,7 @@
         "en:but",
         "audit:reviewed"
       ],
-      "curriculumRole": "Unranked"
+      "curriculumRole": "P1"
     },
     {
       "id": "8aag559cpt",
@@ -35495,7 +35495,7 @@
         "en:and",
         "audit:reviewed"
       ],
-      "curriculumRole": "Unranked"
+      "curriculumRole": "P1"
     },
     {
       "id": "j0cpc9akol",
@@ -57963,7 +57963,7 @@
         "topic:fem-a",
         "topic:objects-misc-language"
       ],
-      "curriculumRole": "Unranked"
+      "curriculumRole": "P1"
     },
     {
       "id": "u8ffmygjqi",
@@ -73765,7 +73765,7 @@
         "topic:vp-full-inf",
         "topic:enmap-to"
       ],
-      "curriculumRole": "Unranked"
+      "curriculumRole": "P1"
     },
     {
       "id": "z36ytmaalw",
@@ -75496,7 +75496,7 @@
         "en:or",
         "audit:reviewed"
       ],
-      "curriculumRole": "Unranked"
+      "curriculumRole": "P1"
     },
     {
       "id": "7d1mtpky92",
@@ -75553,7 +75553,7 @@
         "topic:map-que",
         "topic:enmap-that"
       ],
-      "curriculumRole": "Unranked"
+      "curriculumRole": "P1"
     },
     {
       "id": "71u0miv5rm",
@@ -88865,7 +88865,7 @@
         "audit:reviewed",
         "grammar:indef-pronoun-thing"
       ],
-      "curriculumRole": "Unranked"
+      "curriculumRole": "P1"
     },
     {
       "id": "5xzf7m11n9",
@@ -89305,7 +89305,7 @@
         "audit:reviewed",
         "topic:map-que"
       ],
-      "curriculumRole": "Unranked"
+      "curriculumRole": "P2"
     },
     {
       "id": "afcxrbizh3",
@@ -89330,7 +89330,7 @@
         "topic:map-que",
         "topic:enmap-you"
       ],
-      "curriculumRole": "Unranked"
+      "curriculumRole": "P2"
     },
     {
       "id": "t4uaqoddu8",
@@ -91431,7 +91431,7 @@
         "topic:quant-some-any-no",
         "topic:confusable-determiner"
       ],
-      "curriculumRole": "Unranked"
+      "curriculumRole": "P1"
     },
     {
       "id": "1gq5hjnrzn",
@@ -91453,7 +91453,7 @@
         "audit:reviewed",
         "topic:quant-some-any-no"
       ],
-      "curriculumRole": "Unranked"
+      "curriculumRole": "P2"
     },
     {
       "id": "ob5wvw1ip2",
@@ -95669,7 +95669,7 @@
         "topic:multi-sense",
         "topic:en-multi-sense"
       ],
-      "curriculumRole": "Unranked"
+      "curriculumRole": "P1"
     },
     {
       "id": "k2de4sfdxf",
@@ -95691,7 +95691,7 @@
         "topic:multi-sense",
         "topic:en-multi-sense"
       ],
-      "curriculumRole": "Unranked"
+      "curriculumRole": "P1"
     },
     {
       "id": "knfzocl6m7",
@@ -96119,7 +96119,7 @@
         "topic:verb-pattern",
         "topic:vp-full-inf"
       ],
-      "curriculumRole": "P1"
+      "curriculumRole": "P2"
     },
     {
       "id": "ohbx808u3h",
