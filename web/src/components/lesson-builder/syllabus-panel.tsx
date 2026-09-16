@@ -549,8 +549,15 @@ export function SyllabusPanel({
       </button>
       {/* An always-empty bar on a module with no lessons yet is pure
           discouragement — the summary line already says 0/23. It appears as
-          soon as the module has its first lesson (owner, 2026-09-16). */}
-      {moduleLessons.length > 0 && (
+          soon as the module has its first lesson (owner, 2026-09-16). The
+          track still occupies its 3px while idle (`visibility: hidden`, not
+          unmounted): dropping it from the layout made the whole lesson list
+          jump 3px the moment the module got its first lesson, which is both
+          a visible twitch and enough to move a hover target out from under
+          a stationary pointer mid-click. */}
+      {moduleLessons.length === 0 ? (
+        <div className="syllabus-card-progress is-idle" aria-hidden="true" />
+      ) : (
         <div
           className="syllabus-card-progress"
           role="progressbar"
