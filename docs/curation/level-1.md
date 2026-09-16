@@ -46,8 +46,8 @@ ever overwritten. Owner's P2–P5 rows (20) are untouched.
 
 16. **be able** — `mxguwwzrxk` poder → to be able to (constructible form)
 17. **can** — `0zuw37lnfv` puedo → can (the surprise, right after 16)
-18. **be** (ser) — `e923e43ero` ser → to be · `othawv9u0f` ser [identidad] → be [a teacher] · `46elg5u15i` [ser] [adjetivo] → be [adjective] · `2z3yhpg9ve` ser de → be from
-19. **be** (estar) — `k2de4sfdxf` estar → to be · `nqyror4j5f` estar [en un estado] → be [tired] · `obf74hel79` estar [en un lugar] → be [at home]
+18. **be** (ser) — `e923e43ero` ser → to be · `othawv9u0f` ser [una identidad] → be [a teacher] · `46elg5u15i` ser [adjetivo] → be [adjective] · `2z3yhpg9ve` ser de → be from
+19. **be** (estar) — `k2de4sfdxf` estar → to be · `nqyror4j5f` estar [en un estado] → be [tired] · `obf74hel79` estar [en un lugar] → to be [at a place] (e.g. *at home*)
 20. **going to** — `38d1kfif1b` ir a [hacer algo] → be going to
 21. **go** (somewhere) — `2iiyjrogmc` ir a [un lugar] → go to · `k9y5vq9p06` ir a casa → go home
 22. **there is / there are** — `nuo847x66j` hay → there is · `54mbh87vk1` hay → there are · `cp5hmttaq2` there's
@@ -57,6 +57,8 @@ ever overwritten. Owner's P2–P5 rows (20) are untouched.
 23. **do** — `1qz4qeh9oi` hacer → do · `qt9aqatj4f` hacer → to do · `v6srxq2n55` hacer → do (bare, after *can*)
 24. **make** — `m9dfm9pbq2` hacer → make
 25. **it** — `xd9c671eit` lo → it · `m3zbdhcenj` la → it · `laabqgv17t` ello → it
+25a. **it to me / you / him / her / them / us** (double object pronouns, added 2026-09-16) — `knfzocl6m7` me lo · `ohbx808u3h` me la → it to me · `ws5e8hqv64` te lo · `5rjv2vtt6u` te la → it to you · `ge9f76wp4z` se lo · `g3k2zlui7p` se la → it to him · `86jcbmbst8` se lo · `gc5vlve96x` se la → it to her · `du9wo0vtqs` se lo · `o2oa6l0fs1` se la → it to them · `4fe6qe8w78` nos lo · `k5fke5m2q6` nos la → it to us
+25b. **them to me / you / him / her / them / us** (added 2026-09-16) — `va0wfudwcj` me los · `r0b54rizoi` me las → them to me · `1yk5ktm4jl` te los · `hfuumpl2vx` te las → them to you · `x5pkxmcecr` se los · `qvk1zk9dbe` se las → them to him · `6jcz5yebmi` se los · `mvfjpg7o2k` se las → them to her · `rwriwshljz` se los · `pdt0xrbw2s` se las → them to them · `sae5tfzpd6` nos los · `s60wzu69pz` nos las → them to us
 26. **something** — `nqv2w27jgr` algo → something
 27. **thing** — `tzymzgnepe` [la] cosa → thing
 
@@ -65,6 +67,7 @@ ever overwritten. Owner's P2–P5 rows (20) are untouched.
 28. **and** `qxku96zu9e` · 29. **or** `eiiegq2s5o` · 30. **but** `s08z927piv` · 31. **because** `wjbh6m5ek1` ·
 32. **if** `v3wnwpk0qj` · 33. **that** `9qaylitnlb` que (cláusula) → that · 34. **when** `71u0miv5rm` ·
 35. **so / then** `u109gx9ehn` así que → so · `rakstubyz7` entonces → then
+35a. **in order to** (purpose, added 2026-09-16) — `at8dkibi7m` para [hacer algo] → in order [to do something]
 
 Rules (ser/estar → one *be*; contractions; *to* after want/need/have/going; bare verb
 after *can*; object pronoun after the verb) are taught inside lessons, not stored as
@@ -87,7 +90,7 @@ rows.
 
 ---
 
-**51 items · ~91 rows (infinitives only).** Rules are taught inside lessons, never
+**51 items + 25a/25b/35a (added 2026-09-16) · ~116 rows (infinitives only).** Rules are taught inside lessons, never
 stored as rows (see the note under Connectors).
 
 ## Already covered by the three existing lessons
