@@ -115,6 +115,26 @@ test("pieces speak on correct, then the full sentence once, with a speaker chip 
   await expect(chip).toBeVisible();
   await expect(chip).toContainText(/USA|UK/);
 
+  // Help (owner, 2026-09-17): Alt+H puts the answer for the piece the
+  // learner is on into the speaker's bubble and has the speaker say it — the
+  // field itself is never filled in, and there is no lightbulb.
+  await page.locator('[data-piece-index="0"]').press("Alt+h");
+  const bubble = page.locator(".speaker-chip-bubble");
+  await expect(bubble).toHaveText("I want");
+  await expect(page.locator('[data-piece-index="0"]')).toHaveValue("");
+  await expect(page.locator(".stage-hint-toggle")).toHaveCount(0);
+  await page.waitForFunction(
+    () =>
+      (
+        window as unknown as { __speechCalls: Array<{ text: string }> }
+      ).__speechCalls.some((call) => call.text === "I want"),
+  );
+  await page.evaluate(() => {
+    (
+      window as unknown as { __speechCalls: Array<{ text: string }> }
+    ).__speechCalls.length = 0;
+  });
+
   // Each piece keeps a stable data-piece-index regardless of whether it's
   // currently rendered as an input (pending/active) or a span (finished) —
   // see docs/design/student-experience.md, "L2b — the sentence stage".

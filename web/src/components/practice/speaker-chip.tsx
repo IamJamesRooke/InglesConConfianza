@@ -26,7 +26,20 @@ export function SpeakerChip({
   speakingText: string | null;
   variant?: "inline" | "stage";
 }) {
-  if (!speaker) return null;
+  // No speaker on this device (no clips, no voices): a hint still has to be
+  // readable, so its text shows in a plain bubble with no avatar and no audio
+  // (owner, 2026-09-17). Nothing else ever sets bubble text without a
+  // speaker, so the bubble only appears for hints in that case.
+  if (!speaker)
+    return speakingText ? (
+      <div className={`speaker-chip ${variant === "stage" ? "stage" : ""} speakerless`}>
+        <div className="speaker-chip-body">
+          <div className="speaker-chip-bubble" role="status" aria-live="polite">
+            {speakingText}
+          </div>
+        </div>
+      </div>
+    ) : null;
   return (
     <SpeakerAvatarChip
       key={speaker.id}
@@ -88,5 +101,34 @@ function SpeakerAvatarChip({
         ) : null}
       </div>
     </div>
+  );
+}
+
+/**
+ * "Pista" — the one help control on a lesson slide, a quiet text button under
+ * the speaker's flag/label (it replaced the amber lightbulb everywhere on
+ * 2026-09-17). `Alt+H` in a field does the same thing. Using it puts the
+ * answer for the piece the learner is on in the speaker's bubble and has the
+ * speaker say it; the field is never filled in, there is no penalty and there
+ * is no limit.
+ */
+export function HintButton({
+  onShowHint,
+  disabled,
+}: {
+  onShowHint: () => void;
+  disabled?: boolean;
+}) {
+  return (
+    <button
+      type="button"
+      className="stage-hint-button"
+      onMouseDown={(event) => event.preventDefault()}
+      onClick={onShowHint}
+      disabled={disabled}
+      title="Escuchar la respuesta (Alt+H)"
+    >
+      Pista
+    </button>
   );
 }

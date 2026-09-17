@@ -516,3 +516,88 @@ from a throwaway spec (deleted after) on `UX_CHECK_PORT=3221`:
 claude-1000/lesson-v2-speaker-390.png` (sentence slide, speaker row visible
 at rest after 1.5s). `tsconfig.json`'s auto-added UX-check path entries were
 reverted after each run.
+
+## 2026-09-17 — Lesson v3 (owner round: composition, hints, the missed completion)
+
+**Two actors from 768px, not 1024.** At ~950px the owner saw a stretched
+phone layout: full-width card, speaker stranded under it, action in the far
+corner. The stage's two-column media query now starts at `768px`
+(`practice-responsive-overrides.css`, the "sentence slide as a sentence being
+assembled" block). The card is capped at **720** (`--practice-column: 720px`)
+and the speaker column (210) + gap (28) + card are centred on the canvas as
+one group (`.sentence-stage { max-width: calc(720px + 210px + 28px) }`).
+
+**Where the block sits.** One rule for every slide: `.lesson-stage` has
+64px/112px block padding and gives its first/last child `margin-top: auto` /
+`margin-bottom: auto`. Free space is shared top and bottom, and the deeper
+bottom padding biases a short slide to ~40% of the viewport height; when the
+slide is taller than the canvas the auto margins collapse and it starts at
+64px and scrolls (a long vocabulary table never begins below the fold). The
+112px bottom padding is the footer's 88px min-height + 24px, so the last
+table row is never hidden behind the (still transparent) footer. Completion
+keeps its top-of-canvas read (`.lesson-stage-complete > :first-child
+{ margin-top: 0 }`).
+
+**Explanations.** A single-line explanation is a card that fits its own text
+(`width: fit-content`, max 720, centred) at `--t-sentence`; anything that
+wraps is a 720-wide left-aligned card at `clamp(20px, 2vw, 26px)`.
+`ExplanationStep`'s `data-wraps` rule decides, unchanged.
+
+**Marks lose their italics.** A Spanish mark is bold `--lesson-hl-es`, an
+English mark is bold `--lesson-hl-en` — same weight, no italics, no
+underline. Updated in the shared learner/`practice-markdown` rule and in the
+builder's own copy (`lesson-builder/explanation-editor.css`), so the
+authoring canvas reads the same as the lesson.
+
+**Hints are the speaker now.** The lightbulb is gone from sentence slides and
+from table rows, and so are the amber hint field and the "Pista: …" diff bar
+(`.stage-hint-toggle`, `.stage-hint`, `.answer-hint-toggle`, `.answer-diff*`,
+`.answer-input.showing-hint`, `.stage-en-input[data-state="hint"]`, plus the
+now-dead `diffChars`/`pickClosestAnswer` helpers). In their place, a quiet
+text button **"Pista"** (`--t-ui`, `--ink-muted`, underline on hover) sits
+under the speaker's flag/label, in the speaker column of both the sentence
+stage and the vocabulary table. Using it — or `Alt+H`, or Enter/Tab on an
+unanswered piece — puts the answer for the active piece (or the focused table
+row) in the speaker's bubble **and** has the current speaker say it
+(`speak()`), for ~4s, after which the bubble returns to whatever it was
+showing (or hides if it had nothing). The field is never filled in, there is
+no penalty (a used hint no longer blocks `isComplete`) and there is no limit.
+With no speaker available on the device, `SpeakerChip` renders the hint text
+in a plain bubble with no avatar and no audio.
+
+**Vocabulary rows.** The row grid lost its third "hint button" column, which
+only existed on the focused row and made that row's field narrower than the
+rest; every row's field is now the same width, focused or not.
+
+**Back.** The quiet back icon is positioned against the footer itself —
+24px from the left, vertically centred with the primary button — instead of
+riding the centred button row inward. In a dev build Next's own
+dev-indicator portal still sits in that corner and swallows synthetic
+pointer events (the learner-polish spec dispatches the click instead of
+pressing it); the portal does not exist in a production build.
+
+**The "old" completion screen.** Nothing in `src/` renders it: the eyebrow /
+check glyph / "Lección completada" / "Tu progreso está guardado" / "Inicio"
+markup was deleted wholesale in `20965ff6` (Completion v2) and a new unit
+test now walks `src/` and fails if either string comes back. What was really
+missing was the path: `resumeStepIndex` returned 0 for a lesson with
+`completedAt`, so **reopening a finished lesson silently restarted it** and
+the completion screen was unreachable once a lesson was done. It now returns
+`blocks.length`, so reopening lands on the v2 completion screen (replay, next
+lesson or the module's sentences, one CTA, "Reiniciar esta lección" to start
+over). The screen the owner photographed was the pre-`20965ff6` bundle still
+being served by a stale dev server.
+
+Verified with `npm run test:unit` (386/386), `npx eslint` on the touched
+files, `npx tsc --noEmit`, `npm run lint` (incl. CSS lint), `npm run
+lint:dead` (no new findings), `tests/ux/speech.spec.ts` (2/2, extended:
+`Alt+H` shows and speaks the hint without filling the field) and
+`tests/ux/learner-polish.spec.ts` (the keyboard-answers case now passes —
+its stale `.answer-piece` locators were pointing at the retired grid card;
+the vocabulary-height case still fails its `< 420` assertion, as it already
+did on a clean stash of this work, though this round brings it from 606px
+down to 514px). Screenshots from a throwaway spec (deleted after) on
+`UX_CHECK_PORT=3219`: `/tmp/claude-1000/lesson-v3-960.png`,
+`/tmp/claude-1000/explanation-v3-1280.png`,
+`/tmp/claude-1000/completion-v3-reopen-1280.png`,
+`/tmp/claude-1000/vocab-v3-1280.png`.

@@ -143,11 +143,21 @@ export function resetLessonProgress(lessonIds: string[]) {
   window.dispatchEvent(new Event(progressEvent));
 }
 
+/**
+ * Where reopening a lesson puts the learner. A lesson already finished
+ * reopens on its completion screen — the sentence they built, the replay,
+ * the next lesson and "Reiniciar esta lección" (docs/design/learner-direction.md,
+ * COMPLETION). It used to silently restart such a lesson at step 0, which
+ * made the completion screen unreachable once a lesson was done: the only
+ * way back into it was to finish the lesson again. Resetting from that
+ * screen is what starts it over.
+ */
 export function resumeStepIndex(
   blocks: { id: string }[],
   entry?: LessonProgressEntry,
 ) {
-  if (entry?.completedAt || !entry?.stepId) return 0;
+  if (entry?.completedAt) return blocks.length;
+  if (!entry?.stepId) return 0;
   return Math.max(
     0,
     blocks.findIndex((block) => block.id === entry.stepId),

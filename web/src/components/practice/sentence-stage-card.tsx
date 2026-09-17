@@ -1,15 +1,14 @@
 "use client";
-import { Info, Lightbulb } from "lucide-react";
+import { Info } from "lucide-react";
 import type { CSSProperties } from "react";
 import { Fragment } from "react";
 import { PracticeMarkdown } from "@/components/practice/practice-markdown";
-import { SpeakerChip } from "@/components/practice/speaker-chip";
+import { HintButton, SpeakerChip } from "@/components/practice/speaker-chip";
 import {
   blankChars,
   useSentencePractice,
 } from "@/components/practice/use-sentence-practice";
 import type { SentenceBlock } from "@/lib/lesson-builder/types";
-import { diffChars, pickClosestAnswer } from "@/lib/lesson-builder/utils";
 import type { Speaker } from "@/lib/learner/speech";
 
 /**
@@ -52,7 +51,7 @@ export function SentenceStageCard({
     answers,
     correctAnswers,
     matchedAnswers,
-    helpedBlockIndex,
+    hintedBlockIndex,
     focusedBlockIndex,
     setFocusedBlockIndex,
     inputRefs,
@@ -69,13 +68,13 @@ export function SentenceStageCard({
     onSpeakerChange,
   });
   // The piece the learner is on: whatever is focused, else the first one
-  // still unanswered. Drives line 1's highlight and where the hint's
-  // lightbulb sits.
+  // still unanswered. Drives line 1's highlight and which answer the
+  // speaker's "Pista" says out loud.
   const firstUnanswered = correctAnswers.findIndex((correct) => !correct);
   const activeIndex =
     focusedBlockIndex !== null ? focusedBlockIndex : firstUnanswered;
-  const helpedBlock =
-    helpedBlockIndex === null ? null : testableBlocks[helpedBlockIndex];
+  const hintedBlock =
+    hintedBlockIndex === null ? null : testableBlocks[hintedBlockIndex];
 
   if (languageBlocks.length === 0)
     return (
@@ -93,6 +92,10 @@ export function SentenceStageCard({
             speaker={speaker}
             speakingText={speakingText}
             variant="stage"
+          />
+          <HintButton
+            onShowHint={() => showHelp(activeIndex)}
+            disabled={activeIndex < 0}
           />
         </div>
         <div className="stage-column">
@@ -126,20 +129,6 @@ export function SentenceStageCard({
                     {index > 0 ? " " : null}
                     <span className="stage-es" data-state={state}>
                       {languageBlock.spanish}
-                      {state === "active" &&
-                        focusedBlockIndex === testableIndex &&
-                        helpedBlockIndex !== testableIndex && (
-                          <button
-                            type="button"
-                            className="stage-hint-toggle"
-                            onMouseDown={(event) => event.preventDefault()}
-                            onClick={() => showHelp(testableIndex)}
-                            aria-label={`Mostrar la respuesta de ${languageBlock.spanish || "esta parte"}`}
-                            title="Mostrar la respuesta (Alt+H)"
-                          >
-                            <Lightbulb size={20} aria-hidden="true" />
-                          </button>
-                        )}
                     </span>
                   </Fragment>
                 );
@@ -162,9 +151,7 @@ export function SentenceStageCard({
                       </span>
                     </Fragment>
                   );
-                const isCorrect =
-                  correctAnswers[testableIndex] &&
-                  helpedBlockIndex !== testableIndex;
+                const isCorrect = correctAnswers[testableIndex];
                 const isEditing = focusedBlockIndex === testableIndex;
                 // A finished piece not currently being re-edited is plain
                 // text — a normal word followed by a normal space, not an
@@ -219,13 +206,7 @@ export function SentenceStageCard({
                       type="text"
                       data-practice-answer
                       data-piece-index={testableIndex}
-                      data-state={
-                        isCorrect
-                          ? "done"
-                          : helpedBlockIndex === testableIndex
-                            ? "hint"
-                            : "blank"
-                      }
+                      data-state={isCorrect ? "done" : "blank"}
                       autoFocus={testableIndex === 0}
                       value={answers[testableIndex] ?? ""}
                       onChange={(event) =>
@@ -256,37 +237,9 @@ export function SentenceStageCard({
               })}
             </p>
             <span className="sr-only" role="status">
-              {helpedBlock
-                ? `Pista: ${helpedBlock.acceptedAnswers[0]}`
-                : activeIndex >= 0
-                  ? ""
-                  : "Frase completa"}
+              {hintedBlock ? "" : activeIndex >= 0 ? "" : "Frase completa"}
             </span>
           </div>
-          {helpedBlock && helpedBlockIndex !== null && (
-            <p className="stage-hint" aria-live="polite">
-              <span className="stage-hint-label">Pista:</span>{" "}
-              {diffChars(
-                answers[helpedBlockIndex] ?? "",
-                pickClosestAnswer(
-                  answers[helpedBlockIndex] ?? "",
-                  helpedBlock.acceptedAnswers,
-                ),
-              ).map((part, partIndex) =>
-                part.type === "equal" ? (
-                  <span key={partIndex}>{part.value}</span>
-                ) : part.type === "insert" ? (
-                  <ins key={partIndex} className="answer-diff-insert">
-                    {part.value}
-                  </ins>
-                ) : (
-                  <del key={partIndex} className="answer-diff-delete">
-                    {part.value}
-                  </del>
-                ),
-              )}
-            </p>
-          )}
           {languageBlocks.some((languageBlock) =>
             languageBlock.callout?.trim(),
           ) && (

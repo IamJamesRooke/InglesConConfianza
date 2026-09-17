@@ -1,14 +1,13 @@
 "use client";
-import { Check, Info, Lightbulb } from "lucide-react";
+import { Check, Info } from "lucide-react";
 import type { CSSProperties } from "react";
 import { PracticeMarkdown } from "@/components/practice/practice-markdown";
-import { SpeakerChip } from "@/components/practice/speaker-chip";
+import { HintButton, SpeakerChip } from "@/components/practice/speaker-chip";
 import {
   answerMinChars,
   useSentencePractice,
 } from "@/components/practice/use-sentence-practice";
 import type { SentenceBlock } from "@/lib/lesson-builder/types";
-import { diffChars, pickClosestAnswer } from "@/lib/lesson-builder/utils";
 import type { Speaker } from "@/lib/learner/speech";
 
 /**
@@ -38,7 +37,6 @@ export function SentencePracticeCard({
     answers,
     correctAnswers,
     isComplete,
-    helpedBlockIndex,
     focusedBlockIndex,
     setFocusedBlockIndex,
     inputRefs,
@@ -55,6 +53,12 @@ export function SentencePracticeCard({
     onSpeakerChange,
   });
   const isSingleLanguageBlock = testableBlocks.length === 1;
+  // Which row "Pista" speaks: the focused one, else the first row still
+  // unanswered.
+  const hintIndex =
+    focusedBlockIndex !== null
+      ? focusedBlockIndex
+      : correctAnswers.findIndex((correct) => !correct);
   const isVocabulary = sentence.layout === "vocabulary_table";
   const hasAuthoredPrompt = Boolean(
     sentence.promptLabel.trim() || sentence.promptText?.trim(),
@@ -117,19 +121,18 @@ export function SentencePracticeCard({
               return (
                 <div
                   key={languageBlock.id}
-                  className={`answer-piece ${correctAnswers[languageBlockIndex] && helpedBlockIndex !== languageBlockIndex ? "correct" : ""}`}
+                  className={`answer-piece ${correctAnswers[languageBlockIndex] ? "correct" : ""}`}
                 >
                   <span className="answer-source">
                     {languageBlock.spanish}
-                    {correctAnswers[languageBlockIndex] &&
-                      helpedBlockIndex !== languageBlockIndex && (
-                        <Check
-                          className="answer-source-check"
-                          size={16}
-                          strokeWidth={3.5}
-                          aria-hidden="true"
-                        />
-                      )}
+                    {correctAnswers[languageBlockIndex] && (
+                      <Check
+                        className="answer-source-check"
+                        size={16}
+                        strokeWidth={3.5}
+                        aria-hidden="true"
+                      />
+                    )}
                   </span>
                   <div
                     className="answer-field"
@@ -169,11 +172,13 @@ export function SentencePracticeCard({
                       }
                       onFocus={() => setFocusedBlockIndex(languageBlockIndex)}
                       onBlur={(event) => {
+                        // Keep the row "focused" while the learner reaches
+                        // for the speaker's Pista button — that button is
+                        // what decides which row's answer gets spoken.
                         if (
-                          isVocabulary &&
                           event.relatedTarget instanceof HTMLElement &&
                           event.relatedTarget.classList.contains(
-                            "answer-hint-toggle",
+                            "stage-hint-button",
                           )
                         )
                           return;
@@ -190,24 +195,17 @@ export function SentencePracticeCard({
                       autoCorrect="off"
                       spellCheck={false}
                       lang="en"
-                      className={`answer-input ${helpedBlockIndex === languageBlockIndex ? "showing-hint" : ""}`}
+                      className="answer-input"
                     />
-                    {isVocabulary &&
-                      correctAnswers[languageBlockIndex] &&
-                      helpedBlockIndex !== languageBlockIndex && (
-                        <span
-                          className="answer-completed-text"
-                          aria-hidden="true"
-                        >
-                          {answers[languageBlockIndex]}
-                        </span>
-                      )}
+                    {isVocabulary && correctAnswers[languageBlockIndex] && (
+                      <span className="answer-completed-text" aria-hidden="true">
+                        {answers[languageBlockIndex]}
+                      </span>
+                    )}
                     <span className="sr-only" role="status">
-                      {helpedBlockIndex === languageBlockIndex
-                        ? `Pista: ${languageBlock.acceptedAnswers[0]}`
-                        : correctAnswers[languageBlockIndex]
-                          ? `Respuesta aceptada: ${answers[languageBlockIndex]}`
-                          : ""}
+                      {correctAnswers[languageBlockIndex]
+                        ? `Respuesta aceptada: ${answers[languageBlockIndex]}`
+                        : ""}
                     </span>
                   </div>
                   {languageBlock.callout?.trim() && (
@@ -216,50 +214,6 @@ export function SentencePracticeCard({
                       <span>{languageBlock.callout}</span>
                     </p>
                   )}
-                  {helpedBlockIndex === languageBlockIndex && (
-                    <p className="answer-diff" aria-live="polite">
-                      <span className="answer-diff-label">Pista:</span>{" "}
-                      {diffChars(
-                        answers[languageBlockIndex] ?? "",
-                        pickClosestAnswer(
-                          answers[languageBlockIndex] ?? "",
-                          languageBlock.acceptedAnswers,
-                        ),
-                      ).map((part, partIndex) =>
-                        part.type === "equal" ? (
-                          <span key={partIndex}>{part.value}</span>
-                        ) : part.type === "insert" ? (
-                          <ins key={partIndex} className="answer-diff-insert">
-                            {part.value}
-                          </ins>
-                        ) : (
-                          <del key={partIndex} className="answer-diff-delete">
-                            {part.value}
-                          </del>
-                        ),
-                      )}
-                    </p>
-                  )}
-                  {focusedBlockIndex === languageBlockIndex &&
-                    !correctAnswers[languageBlockIndex] &&
-                    helpedBlockIndex !== languageBlockIndex && (
-                      <button
-                        type="button"
-                        className="answer-hint-toggle"
-                        onMouseDown={(event) => event.preventDefault()}
-                        onFocus={() => setFocusedBlockIndex(languageBlockIndex)}
-                        onBlur={() =>
-                          setFocusedBlockIndex((current) =>
-                            current === languageBlockIndex ? null : current,
-                          )
-                        }
-                        onClick={() => showHelp(languageBlockIndex)}
-                        aria-label={`Mostrar la respuesta de ${languageBlock.spanish || `bloque ${languageBlockIndex + 1}`}`}
-                        title="Mostrar la respuesta (Alt+H)"
-                      >
-                        <Lightbulb size={20} aria-hidden="true" />
-                      </button>
-                    )}
                 </div>
               );
             })}
@@ -296,6 +250,10 @@ export function SentencePracticeCard({
               speaker={speaker}
               speakingText={speakingText}
               variant="stage"
+            />
+            <HintButton
+              onShowHint={() => showHelp(hintIndex)}
+              disabled={hintIndex < 0}
             />
           </div>
           <div className="stage-column">{cardBody}</div>

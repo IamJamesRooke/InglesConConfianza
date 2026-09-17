@@ -37,12 +37,17 @@ test("resume follows stable block IDs when lessons are reordered and restarts mi
   const blocks = [{ id: "new" }, { id: "a" }, { id: "b" }];
   assert.equal(resumeStepIndex(blocks, { stepId: "a" }), 1);
   assert.equal(resumeStepIndex(blocks, { stepId: "deleted" }), 0);
+  assert.equal(resumeStepIndex(blocks, undefined), 0);
+});
+
+test("reopening a finished lesson lands on its completion screen, not back at step 0", () => {
+  const blocks = [{ id: "new" }, { id: "a" }, { id: "b" }];
   assert.equal(
     resumeStepIndex(blocks, {
       stepId: "b",
       completedAt: "2026-09-04T12:00:00Z",
     }),
-    0,
+    blocks.length,
   );
 });
 

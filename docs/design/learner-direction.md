@@ -76,30 +76,41 @@ and the one action.
 
 1. **Status strip, 48px** (56 desktop): purple, icon-only close left, mute right, 4px
    progress fill along the bottom edge. No title, no counter.
-2. **The stage** (centred column, max 760 desktop, gutters 20 phone; sits at ~30% from
-   the top, not dead centre):
-   - **Explanation slide**: white card; text at body size (22/19), left-aligned when
-     it wraps, centred only when it is one line; marks in flag red / Union Jack blue,
-     bold Spanish, italic English. A single-line explanation may go to sentence size.
+2. **The stage** (centred column, card max 720, gutters 20 phone; a short slide's
+   content block sits at ~40% of the viewport height, and a slide taller than the
+   canvas starts at 64px and scrolls instead):
+   - **Explanation slide**: white card. One line: the card fits its text
+     (`width: fit-content`, max 720, centred) at sentence size. More than one line:
+     max 720, left-aligned, at `clamp(20px, 2vw, 26px)`. Marks are flag red / Union
+     Jack blue and **both bold, same weight — no italics** (owner, 2026-09-17).
    - **Sentence slide**: instruction (if any) as a muted body line above the card.
      White card with two lines at sentence size: the Spanish sentence as prose (active
      piece in flag red bold, done pieces ink, pending `--ink-muted`), and the English
      sentence assembling beneath it (done words in purple 600, the active piece an
-     inline field in the flow, pending pieces as underlines sized to the word). Hint
-     icon: purple outline, at the end of the active Spanish piece. Nothing else in
-     the card.
-   - **Speaker**: desktop, a column to the left of the card: 72px round portrait,
-     flag + label beneath, bubble pointing at the card; phone, a row under the card
-     with a 48px portrait. No bubble until the first words; then it keeps the last
-     thing said. Bubble at UI-label size, white, hairline, 12px radius.
+     inline field in the flow, pending pieces as underlines sized to the word).
+     Nothing else in the card — no hint icon (see **Help** below).
+   - **Speaker**: the two-actor composition starts at **768px** (owner, 2026-09-17 —
+     at ~950px the one-column stack read as a stretched phone layout): a column to
+     the left of the card with a 72px round portrait, flag + label beneath, bubble
+     pointing at the card, the card capped at 720 and the whole group centred;
+     below 768 it is a row under the card with a 48px portrait. No bubble until the
+     first words; then it keeps the last thing said. Bubble at UI-label size, white, hairline, 12px radius.
    - **Vocabulary table**: same card, rows of Spanish (sentence size) → inline field,
-     hairline between rows, hint at the row end.
+     hairline between rows. Every row's field is the same width, focused or not, and
+     the stage's bottom padding clears the footer so the last row is never hidden
+     behind it.
+   - **Help**: one quiet text button, "Pista", under the speaker's flag/label — no
+     lightbulb anywhere, no amber hint bar (owner, 2026-09-17). It puts the answer
+     for the active piece (or focused table row) in the speaker's bubble and has the
+     speaker say it for ~4s, then the bubble goes back to what it was showing. The
+     field is never filled in; no penalty, no limit; `Alt+H` does the same. With no
+     speaker on the device, the bubble shows the text without audio.
 3. **The action**: a single primary button, 56px tall, purple, white text, 8px
    radius: "Continuar →" / "Vamos a practicar →" / "Terminar lección →". Phone: in
    the footer thumb zone, full width minus gutters, only when there is something to
    do (never an empty bar; sentence slides show it once complete). Desktop: centred
-   under the stage. Back is a quiet icon, bottom-left, only when going back is
-   possible.
+   under the stage. Back is a quiet icon 24px from the left of the footer, vertically
+   centred with the primary button, only when going back is possible.
 
 Success = the word settling into place (150 ms ease-out from tint field to purple
 text) and the speaker saying it. No check glyphs, no colour flash of the footer, no
@@ -107,6 +118,7 @@ sound effects beyond the voice.
 
 ## COMPLETION — "you said that"
 
+0. Reopening a lesson that is already finished lands here, not back at slide one.
 1. Status strip stays (progress full).
 2. Stack, centred, largest first: the final English sentence at hero size (36/56)
    in ink with a **replay** button beside it; the Spanish beneath at body muted;
@@ -125,6 +137,7 @@ fade + rise. All ease-out. `prefers-reduced-motion`: opacity only, 1 ms.
 
 ## What this removes from today
 
-Lesson-name eyebrow on slides, all check glyphs, the amber lightbulb, the green
+Lesson-name eyebrow on slides, all check glyphs, the amber lightbulb and its hint
+bar, italic English marks, the green
 footer/button, module counters, durations, "Empieza aquí" labels, concept chips,
 per-row reset on the home, the completion concept cards and the three-button row.

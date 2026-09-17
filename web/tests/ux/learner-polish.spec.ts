@@ -186,17 +186,19 @@ test("vocabulary rows stay compact through completion and ordinary sentences rem
       .evaluate((input) => getComputedStyle(input).borderTopColor),
   ).toBe("rgba(0, 0, 0, 0)");
 
-  // Tab on a wrong/incomplete answer must not advance past it — it reveals
-  // the hint diff and keeps focus in place instead of letting the learner
-  // skip an unanswered row.
+  // Tab on a wrong/incomplete answer must not advance past it — it speaks
+  // the answer through the speaker and keeps focus in place instead of
+  // letting the learner skip an unanswered row. There is no lightbulb and no
+  // amber hint field any more (owner, 2026-09-17): the answer appears in the
+  // speaker's bubble, and the field is left exactly as the learner left it.
   await page.keyboard.press("Tab");
   await expect(inputs.nth(1)).toBeFocused();
-  await expect(page.locator(".answer-diff")).toBeVisible();
-  // The row's mouse-reachable hint button is still available directly.
-  const help = page.getByRole("button", {
-    name: /Mostrar la respuesta de tener muchas ganas/,
-  });
-  await expect(help).toHaveCount(0); // hidden while the hint diff is showing
+  await expect(page.locator(".answer-diff")).toHaveCount(0);
+  await expect(page.locator(".speaker-chip-bubble")).toContainText(
+    "to really want to do something important",
+  );
+  await expect(inputs.nth(1)).toHaveValue("");
+  await expect(page.locator(".answer-hint-toggle")).toHaveCount(0);
 
   await inputs.nth(1).fill("to really want to do something important");
   await inputs.nth(2).fill("to be able");
@@ -330,39 +332,48 @@ test("learner answer keys reveal help without navigation, focus theft, or lost d
   }
   await input.focus();
 
+  const bubble = page.locator(".speaker-chip-bubble");
   await input.dispatchEvent("keydown", {
     key: "Enter",
     code: "Enter",
     isComposing: true,
     bubbles: true,
   });
-  await expect(input).not.toHaveClass(/showing-hint/);
+  await expect(bubble).toHaveCount(0);
   await expect(step).toHaveAttribute("value", "1");
 
+  // Help (Enter, Tab or Alt+H on an unanswered piece) shows the answer in the
+  // speaker's bubble and never fills the field in (owner, 2026-09-17).
   await input.fill("to");
-  const piece = input.locator("xpath=ancestor::*[contains(@class, 'answer-piece')]");
-  const heightBeforeHint = (await piece.boundingBox())!.height;
+  // The ordinary sentence slide is the L2b stage card, not the old grid of
+  // `.answer-piece` blocks — asking for help must not resize it.
+  const card = page.locator(".stage-card");
+  const heightBeforeHint = (await card.boundingBox())!.height;
   await input.press("Enter");
   await expect(input).toBeFocused();
   await expect(input).toHaveValue("to");
-  await expect(input).toHaveClass(/showing-hint/);
-  expect(Math.abs((await piece.boundingBox())!.height - heightBeforeHint)).toBeLessThan(
+  await expect(bubble).toBeVisible();
+  expect(Math.abs((await card.boundingBox())!.height - heightBeforeHint)).toBeLessThan(
     2,
   );
   await expect(step).toHaveAttribute("value", "1");
 
   await input.fill("to d");
-  await expect(input).not.toHaveClass(/showing-hint/);
   await input.press("Tab");
-  await expect(input).toHaveClass(/showing-hint/);
   // Tab must not advance past a wrong/incomplete answer to the next block —
-  // it reveals the hint and keeps focus right here.
+  // it gives the answer through the speaker and keeps focus right here.
   await expect(input).toBeFocused();
   await expect(input).toHaveValue("to d");
 
   await input.focus();
   await input.fill("partial attempt");
-  await page.getByRole("button", { name: "Paso anterior" }).click();
+  // dispatchEvent, not click(): back now sits 24px from the left edge of the
+  // footer (owner, 2026-09-17), which in a dev build is exactly where Next's
+  // own dev-indicator portal sits and swallows synthetic pointer events. The
+  // portal does not exist in a production build.
+  await page
+    .getByRole("button", { name: "Paso anterior" })
+    .dispatchEvent("click");
   await page.getByRole("button", { name: /Vamos a practicar/ }).click();
   await expect(input).toHaveValue("partial attempt");
 

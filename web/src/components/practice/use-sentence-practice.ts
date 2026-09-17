@@ -12,6 +12,7 @@ import {
 import {
   availableSpeakers,
   pickSpeaker,
+  speak,
   speakAwaitingEnd,
   speakSentenceAfterPiece,
   stopSpeaking,
@@ -87,14 +88,20 @@ export function useSentencePractice({
   const [answers, setAnswers] = useState<string[]>(() =>
     testableBlocks.map((_, index) => initialAnswers?.[index] ?? ""),
   );
-  const [helpedBlockIndex, setHelpedBlockIndex] = useState<number | null>(null);
+  const [hintedBlockIndex, setHintedBlockIndex] = useState<number | null>(null);
   const [focusedBlockIndex, setFocusedBlockIndex] = useState<number | null>(
     null,
   );
   const inputRefs = useRef<Array<HTMLInputElement | null>>([]);
   const helpTimerRef = useRef<number | null>(null);
   const [speaker, setSpeaker] = useState<Speaker | null>(null);
-  const [speakingText, setSpeakingText] = useState<string | null>(null);
+  // Two sources for the speaker's bubble: whatever was last spoken as part of
+  // the sentence, and a hint that takes over the bubble for a few seconds and
+  // then hands it straight back (owner, 2026-09-17 — the lightbulb and the
+  // amber hint bar are gone; the speaker is the hint).
+  const [spokenText, setSpokenText] = useState<string | null>(null);
+  const [hintText, setHintText] = useState<string | null>(null);
+  const speakingText = hintText ?? spokenText;
   const spokeCompleteRef = useRef(false);
   // Tracks the in-flight speech promise for whichever piece most recently
   // turned correct, so the full-sentence sequencing below can wait for the
@@ -122,31 +129,17 @@ export function useSentencePractice({
       languageBlock.acceptedAnswers,
     ),
   );
+  // No penalty: asking for help never holds the slide back (methodology,
+  // "Questions and answers"). The learner still has to type the answer — the
+  // hint only says it out loud — so completion is decided by the answers alone.
   const isComplete =
-    helpedBlockIndex === null &&
-    testableBlocks.length > 0 &&
-    correctAnswers.every(Boolean);
+    testableBlocks.length > 0 && correctAnswers.every(Boolean);
   const clearHelpTimer = useCallback(() => {
     if (helpTimerRef.current !== null) {
       window.clearTimeout(helpTimerRef.current);
       helpTimerRef.current = null;
     }
   }, []);
-  // Reveals a hint as a diff of the learner's own attempt against the
-  // closest accepted answer — never rewrites what they typed. Auto-hides
-  // after a few seconds, or as soon as they type again (see updateAnswer),
-  // whichever comes first.
-  const showHelp = useCallback(
-    (languageBlockIndex: number) => {
-      clearHelpTimer();
-      setHelpedBlockIndex(languageBlockIndex);
-      helpTimerRef.current = window.setTimeout(() => {
-        setHelpedBlockIndex(null);
-        helpTimerRef.current = null;
-      }, 3500);
-    },
-    [clearHelpTimer],
-  );
   useEffect(() => {
     onCompletionChange?.(isComplete);
     if (
@@ -169,7 +162,7 @@ export function useSentencePractice({
           speaker,
           {
             onStart: () => {
-              if (!cancelled) setSpeakingText(full);
+              if (!cancelled) setSpokenText(full);
             },
           },
           { isCancelled: () => cancelled },
@@ -215,10 +208,34 @@ export function useSentencePractice({
     };
   }, [sentence.id]);
 
+  /**
+   * Help, the owner's 2026-09-17 shape: the answer for the piece the learner
+   * is on appears in the speaker's bubble and is spoken by that speaker, for
+   * ~4s, and then the bubble goes back to whatever it was showing (or hides
+   * again if it had nothing). The field is never filled in for them, there is
+   * no penalty, and it can be used as often as they like (methodology,
+   * "Questions and answers"). With no speaker available on the device, the
+   * bubble still shows the text — there is just no audio.
+   */
+  function showHelp(languageBlockIndex: number) {
+    const answer = testableBlocks[languageBlockIndex]?.acceptedAnswers[0]?.trim();
+    if (!answer) return;
+    clearHelpTimer();
+    setHintedBlockIndex(languageBlockIndex);
+    setHintText(answer);
+    void speak(answer, speaker);
+    helpTimerRef.current = window.setTimeout(() => {
+      setHintedBlockIndex(null);
+      setHintText(null);
+      helpTimerRef.current = null;
+    }, 4000);
+  }
+
   function updateAnswer(answer: string, languageBlockIndex: number) {
-    if (helpedBlockIndex === languageBlockIndex) {
+    if (hintedBlockIndex === languageBlockIndex) {
       clearHelpTimer();
-      setHelpedBlockIndex(null);
+      setHintedBlockIndex(null);
+      setHintText(null);
     }
     const nextAnswers = [...answers];
     nextAnswers[languageBlockIndex] = answer;
@@ -234,7 +251,7 @@ export function useSentencePractice({
         // (see SpeakerChip) — no onEnd reset here. speakAwaitingEnd()
         // interrupts whatever piece was still playing (see speak()) and its
         // promise is what the full-sentence effect above waits on.
-        setSpeakingText(pieceEnglish);
+        setSpokenText(pieceEnglish);
         pieceSpeechRef.current = speakAwaitingEnd(pieceEnglish, speaker);
       }
     }
@@ -272,7 +289,7 @@ export function useSentencePractice({
       event.preventDefault();
       if (
         !correctAnswers[languageBlockIndex] ||
-        helpedBlockIndex === languageBlockIndex
+        hintedBlockIndex === languageBlockIndex
       )
         showHelp(languageBlockIndex);
       return;
@@ -307,7 +324,7 @@ export function useSentencePractice({
     correctAnswers,
     matchedAnswers,
     isComplete,
-    helpedBlockIndex,
+    hintedBlockIndex,
     focusedBlockIndex,
     setFocusedBlockIndex,
     inputRefs,

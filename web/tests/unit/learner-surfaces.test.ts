@@ -1,5 +1,5 @@
 import assert from "node:assert/strict";
-import { readFileSync } from "node:fs";
+import { readdirSync, readFileSync } from "node:fs";
 import test from "node:test";
 import { createElement } from "react";
 import { renderToStaticMarkup } from "react-dom/server";
@@ -407,7 +407,7 @@ test("the vocabulary table on the stage uses the two-actor composition, not a ce
   assert.match(html, /vocabulary-practice/);
 });
 
-test("the hint affordance is a --primary outline icon on the learner side, never the amber --hint token", () => {
+test("help is the speaker's quiet Pista button — no lightbulb, no amber hint bar anywhere on the learner side", () => {
   const css = readFileSync(
     new URL(
       "../../src/styles/practice-responsive-overrides.css",
@@ -415,17 +415,81 @@ test("the hint affordance is a --primary outline icon on the learner side, never
     ),
     "utf8",
   );
-  const stageHintBlock =
-    css.match(/\.stage-hint-toggle\s*\{([^}]*)\}/)?.[1] ?? "";
-  assert.match(stageHintBlock, /color:\s*var\(--primary\)/);
-  assert.doesNotMatch(stageHintBlock, /var\(--hint\)/);
-  const answerHintToggleBlock =
-    css.match(/\.answer-hint-toggle\s*\{([^}]*)\}/)?.[1] ?? "";
-  assert.doesNotMatch(answerHintToggleBlock, /var\(--hint\)/);
-  const answerHintToggleSvgBlock =
-    css.match(/\.answer-hint-toggle svg\s*\{([^}]*)\}/)?.[1] ?? "";
-  assert.match(answerHintToggleSvgBlock, /color:\s*var\(--primary\)/);
-  assert.doesNotMatch(answerHintToggleSvgBlock, /var\(--hint\)/);
+  // The lightbulb toggles and the old hint field/diff are gone (owner,
+  // 2026-09-17 — hints are spoken by the speaker and shown in its bubble).
+  for (const gone of [
+    ".stage-hint-toggle",
+    ".answer-hint-toggle",
+    ".answer-diff",
+    ".answer-input.showing-hint",
+    '.stage-en-input[data-state="hint"]',
+  ])
+    assert.equal(css.includes(gone), false, `${gone} should be gone`);
+  const hintButtonBlock =
+    css.match(/\.stage-hint-button\s*\{([^}]*)\}/)?.[1] ?? "";
+  assert.match(hintButtonBlock, /color:\s*var\(--ink-muted\)/);
+  assert.doesNotMatch(hintButtonBlock, /var\(--hint\)/);
+
+  const stageCard = readFileSync(
+    new URL(
+      "../../src/components/practice/sentence-stage-card.tsx",
+      import.meta.url,
+    ),
+    "utf8",
+  );
+  const tableCard = readFileSync(
+    new URL(
+      "../../src/components/practice/sentence-practice-card.tsx",
+      import.meta.url,
+    ),
+    "utf8",
+  );
+  for (const source of [stageCard, tableCard]) {
+    assert.equal(source.includes("Lightbulb"), false);
+    assert.equal(source.includes("answer-diff"), false);
+    assert.match(source, /HintButton/);
+  }
+});
+
+test("English marks are bold like Spanish marks, never italic", () => {
+  for (const file of [
+    "../../src/styles/practice-responsive-overrides.css",
+    "../../src/styles/lesson-builder/explanation-editor.css",
+  ]) {
+    const css = readFileSync(new URL(file, import.meta.url), "utf8");
+    const englishMark = css
+      .split(/\}/)
+      .filter((rule) => /mark(\.english|\[data-language="en"\])/.test(rule))
+      .join("\n");
+    assert.match(englishMark, /font-weight:\s*700/);
+    assert.doesNotMatch(englishMark, /font-style:\s*italic/);
+  }
+});
+
+test("the retired completion screen's copy is gone from the whole app", () => {
+  const root = new URL("../../src/", import.meta.url);
+  const offenders: string[] = [];
+  const walk = (directory: URL) => {
+    for (const entry of readdirSync(directory, { withFileTypes: true })) {
+      const child = new URL(
+        entry.name + (entry.isDirectory() ? "/" : ""),
+        directory,
+      );
+      if (entry.isDirectory()) {
+        walk(child);
+        continue;
+      }
+      if (!/\.(tsx?|css)$/.test(entry.name)) continue;
+      const text = readFileSync(child, "utf8");
+      if (
+        text.includes("Lección completada") ||
+        text.includes("Tu progreso está guardado")
+      )
+        offenders.push(child.pathname);
+    }
+  };
+  walk(root);
+  assert.deepEqual(offenders, []);
 });
 
 test("explanations left-align once the authored text is longer than one line", () => {
