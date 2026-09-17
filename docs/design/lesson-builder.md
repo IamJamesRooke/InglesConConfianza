@@ -634,6 +634,41 @@ proposal doc's aspirations.
   of colouring them like marks (50b4c5bf, c9df1e8f) was reverted the same
   day it shipped; see "Resting pair typography" above.
 
+- **Header polish round (owner, 2026-09-16, cosmetic lane)**: five small
+  fixes to the module list's top chrome.
+  - Syllabus coverage meter moved off the card's bottom edge (where it used
+    to cross the rounded corner at narrow widths) into a small `60×3px`
+    fully-rounded inline meter right after the "Main 7/37 · Review 0/0 ·
+    Also taught 0" summary text, in the collapsed header
+    (`.syllabus-card-meter`/`.syllabus-card-meter-fill`, replacing
+    `.syllabus-card-progress`).
+  - `.lesson-library-module-pill` (Published/Free) toned down: text at 75%
+    `--primary-foreground`, border at 35% (55% when `aria-pressed`),
+    letter-spacing `0.04em`; `.lesson-library-module-description-row` is now
+    `align-items: baseline` so the pills sit on the same text baseline as
+    the description placeholder.
+  - `.lesson-library-module`'s own border removed; `.lesson-library-module-meta`
+    (header) now borders itself in its own fill colour so it bleeds cleanly
+    to the card edge, and `.lesson-library-list` (body) carries the hairline
+    border instead (bottom/left/right, `border-radius: 0 0 14px 14px`) —
+    fixes the double-edge the header used to show against the card's
+    lighter-blue outline.
+  - Lesson row indent: `.lesson-document-drag` (the drag handle) is now
+    `position: absolute`, hover/`:focus-within`-only via `visibility`
+    (not just `opacity`, so it's not hit-testable while hidden), taking no
+    layout space at rest. `.lesson-library-row-head` padding-left dropped
+    `28px → 18px` so the chevron sits close to flush in the row's own
+    padding and the title starts ~44px in (was ~90px).
+  - `SyllabusPanel` moved from its own rounded card above the module card
+    into the module card itself, as a square full-width band between the
+    header and the lesson list (`header → syllabus band → lesson rows →
+    Add lesson`); `.syllabus-card` lost its own `border-radius`/`box-shadow`
+    and now borders like `.lesson-library-list` does (hairline,
+    `border-top: 0`). `tests/ux/geometry-corners.spec.ts`'s dedicated
+    `.syllabus-card` corner check was retired as moot (no radius left to
+    violate); the `.lesson-library`-rooted walk still covers the module
+    card's own corners, which the band now sits inside.
+
 ## 6. Owner decisions & rejected ideas
 
 These were explicitly settled or explicitly rejected. Do not re-propose them

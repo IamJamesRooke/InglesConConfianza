@@ -17,8 +17,15 @@
    with no border of its own, so it never draws a visible extra divider.)
    The first row paints no border-top of its own either, so it never
    overlaps the module header's own rounded top join above it. */
+/* Body hairline: the card's own border used to run the full height on all
+   four sides, which also drew as a thin ring around the header's saturated
+   fill above (lesson-library.css's .lesson-library-module-meta now owns
+   its own border, matching its own colour, instead). This is the real
+   hairline the owner wants kept, scoped to the body only. */
 .lesson-library-list {
+  border: 1px solid color-mix(in oklch, var(--primary) 30%, var(--border));
   border-top: 0;
+  border-radius: 0 0 14px 14px;
 }
 .lesson-library-row {
   position: relative;
@@ -98,10 +105,11 @@
 }
 
 .lesson-library-row-head {
+  position: relative;
   display: flex;
   min-height: 44px;
   align-items: center;
-  padding: 5px 14px 5px 28px;
+  padding: 5px 14px 5px 18px;
   gap: 3px;
   background: color-mix(in oklch, var(--background) 48%, var(--surface-writing));
 }
@@ -165,13 +173,41 @@
 /* LessonDragHandle (lesson-document.tsx) — the row's own drag handle,
    doubling as the row-number badge via .lesson-library-number. Not the
    slide drag handle inside the open document (that one has no shared
-   class with this). */
+   class with this).
+
+   Hover/focus-only, absolutely positioned near the row's own left edge
+   instead of reserving inline flex space (owner round: "lesson row
+   indent") — the chevron now sits close to flush left in the row's own
+   padding instead of being pushed in by this handle's width, so the title
+   starts ~44px in instead of ~90px. At rest this handle takes no layout
+   space; when revealed it sits just inside the row (never bleeding past
+   the row's own box, so hovering it keeps the row's own `:hover` alive —
+   see below), overlapping the chevron's own left edge slightly, which is
+   fine since the two are mutually exclusive actions and only one is ever
+   revealed by design at rest.
+
+   Uses `visibility`, not just `opacity`: an opacity-0 element (the pattern
+   `.lesson-library-row-icons` uses) stays hit-testable at rest, which is
+   fine for a cluster that sits fully inside the row, but this handle sits
+   ahead of the row's normal content, where an invisible-but-clickable/
+   draggable target would be a stray trap for the pointer. `visibility:
+   hidden` removes it from hit-testing (and from Tab) until the row
+   reveals it. */
 .lesson-document-drag {
-  display: grid;
-  width: 32px;
-  height: 32px;
-  cursor: grab;
-  place-items: center;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  visibility: hidden;
+}
+.lesson-library-row:hover .lesson-document-drag,
+.lesson-library-row:focus-within .lesson-document-drag {
+  visibility: visible;
+}
+@media (hover: none), (pointer: coarse) {
+  .lesson-document-drag {
+    visibility: visible;
+  }
 }
 .lesson-document-drag:hover,
 .lesson-document-drag:focus-visible {

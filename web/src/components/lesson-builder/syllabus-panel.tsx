@@ -571,32 +571,26 @@ export function SyllabusPanel({
           {unrankedCount > 0 && ` · ${unrankedCount} unranked`}
           {warningCount > 0 && <span className="syllabus-card-warning-count"> · ⚠ {warningCount}</span>}
         </span>
-      </button>
-      {/* An always-empty bar on a module with no lessons yet is pure
-          discouragement — the summary line already says 0/23. It appears as
-          soon as the module has its first lesson (owner, 2026-09-16). The
-          track still occupies its 3px while idle (`visibility: hidden`, not
-          unmounted): dropping it from the layout made the whole lesson list
-          jump 3px the moment the module got its first lesson, which is both
-          a visible twitch and enough to move a hover target out from under
-          a stationary pointer mid-click. */}
-      {moduleLessons.length === 0 ? (
-        <div className="syllabus-card-progress is-idle" aria-hidden="true" />
-      ) : (
-        <div
-          className="syllabus-card-progress"
+        {/* Inline meter, not an edge track: an always-empty meter on a
+            module with no lessons yet is pure discouragement — the summary
+            line already says 0/23. It stays mounted at `visibility: hidden`
+            while idle (owner, 2026-09-16) rather than being unmounted, so
+            the header's width doesn't shift the moment the module gets its
+            first lesson. */}
+        <span
+          className={`syllabus-card-meter${moduleLessons.length === 0 ? " is-idle" : ""}`}
           role="progressbar"
           aria-valuenow={totalCovered}
           aria-valuemin={0}
           aria-valuemax={totalItems}
           aria-label="Syllabus coverage"
         >
-          <div
-            className="syllabus-card-progress-fill"
+          <span
+            className="syllabus-card-meter-fill"
             style={{ width: `${totalItems === 0 ? 0 : Math.round((totalCovered / totalItems) * 100)}%` }}
           />
-        </div>
-      )}
+        </span>
+      </button>
 
       {open && (
         <div className="syllabus-card-body">

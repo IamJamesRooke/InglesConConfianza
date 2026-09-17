@@ -36,7 +36,6 @@
 
 .lesson-library-module {
   overflow: visible;
-  border: 1px solid color-mix(in oklch, var(--primary) 30%, var(--border));
   border-radius: 14px;
   background: var(--surface-writing);
   box-shadow: 0 1px 3px color-mix(in oklch, var(--foreground) 8%, transparent);
@@ -50,7 +49,6 @@
   grid-template-columns: minmax(0, 1fr);
   gap: 1px;
   padding: 8px 16px;
-  border-bottom: 0;
   /* Corner fix (diagnostic root cause 3): matches .lesson-library-module's
      own 14px radius exactly. This used to read 13px here, one px short of
      the card's own curve — the visible seam this task's ONE allowed visual
@@ -60,6 +58,14 @@
      escape the card (typeahead popover, quick-edit modal, HUD) is at risk. */
   border-radius: 14px 14px 0 0;
   background: var(--brand-primary-hover);
+  /* Border colour equal to the header's own fill: the card used to carry a
+     single lighter-blue 1px border all the way around, which read as a
+     hairline ring around this saturated header (a double edge). Matching
+     the header's own colour here makes it bleed cleanly to the card's
+     edge; the body below (.lesson-library-list) carries the real hairline
+     instead. */
+  border: 1px solid var(--brand-primary-hover);
+  border-bottom: 0;
 }
 .lesson-library-module-line {
   display: flex;
@@ -95,7 +101,7 @@
    end (moved off the title line, owner round: "module header", item 5). */
 .lesson-library-module-description-row {
   display: flex;
-  align-items: center;
+  align-items: baseline;
   gap: 8px;
 }
 .lesson-library-module-description {
@@ -131,12 +137,12 @@
    owner round: "module header", item 5. */
 .lesson-library-module-pill {
   padding: 2px 7px;
-  border: 1px solid color-mix(in oklch, var(--primary-foreground) 50%, transparent);
+  border: 1px solid color-mix(in oklch, var(--primary-foreground) 35%, transparent);
   border-radius: 999px;
-  color: var(--primary-foreground);
+  color: color-mix(in oklch, var(--primary-foreground) 75%, transparent);
   font-size: 11px;
   font-weight: 650;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
   white-space: nowrap;
 }
@@ -145,6 +151,9 @@
 }
 .lesson-library-module-pill:hover {
   background: color-mix(in oklch, var(--primary-foreground) 17%, transparent);
+}
+.lesson-library-module-pill[aria-pressed="true"] {
+  border-color: color-mix(in oklch, var(--primary-foreground) 55%, transparent);
 }
 .lesson-library-module-delete {
   display: grid;

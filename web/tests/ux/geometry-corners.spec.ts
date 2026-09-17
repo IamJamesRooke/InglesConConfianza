@@ -230,11 +230,13 @@ for (const width of [760, 1280]) {
     const moduleResult = await findCornerViolations(page, ".lesson-library");
     expect(moduleResult.violations, JSON.stringify(moduleResult.violations)).toEqual([]);
 
-    const syllabusCard = page.locator(".syllabus-card").first();
-    if (await syllabusCard.count()) {
-      const syllabusResult = await findCornerViolations(page, ".syllabus-card");
-      expect(syllabusResult.violations, JSON.stringify(syllabusResult.violations)).toEqual([]);
-    }
+    // `.syllabus-card` used to be its own rounded card and got its own
+    // corner-walk here; it now lives as a square full-width band inside
+    // `.lesson-library-module` (owner, round: "syllabus inside the module
+    // card") and carries no border-radius of its own, so that dedicated
+    // check is moot — coverage of the module card's own corners (which the
+    // syllabus band sits inside) continues via the `.lesson-library` walk
+    // above, which already traverses into the band as a descendant.
 
     // Also check with the second (currently-open, currently-last) row
     // collapsed too — a closed row sitting directly over the card's

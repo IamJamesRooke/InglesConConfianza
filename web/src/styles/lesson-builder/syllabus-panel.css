@@ -1,12 +1,15 @@
-/* Owner: syllabus-panel.tsx — the module's Syllabus card (own card above
-   the module's lesson-list card), its collapsed header + progress bar, the
-   two wrapped Main/Review chip lists, the Also-taught/Reviewed derived
-   lines, and "Copy as text". Blue theme, no redesign. */
+/* Owner: syllabus-panel.tsx — the module's Syllabus band, living inside the
+   module card itself: header (title, description, Published/Free, trash) →
+   syllabus band → lesson rows → Add lesson (owner round: "syllabus inside
+   the module card", 2026-09-16). It used to be its own rounded card sitting
+   above the module card; now it's a full-width square band between the two,
+   so it carries no border-radius or box-shadow of its own — the module
+   card's own header/list already own the rounded top/bottom corners — just
+   a bottom hairline to separate it from the lesson rows below. */
 .syllabus-card {
   border: 1px solid color-mix(in oklch, var(--primary) 30%, var(--border));
-  border-radius: 14px;
+  border-top: 0;
   background: var(--surface-writing);
-  box-shadow: 0 1px 3px color-mix(in oklch, var(--foreground) 8%, transparent);
 }
 
 .syllabus-card-header {
@@ -15,7 +18,6 @@
   gap: 6px;
   width: 100%;
   padding: 8px 12px;
-  border-radius: 14px 14px 0 0;
   background: color-mix(in oklch, var(--primary) 8%, transparent);
   color: var(--foreground);
   text-align: left;
@@ -40,27 +42,25 @@
   font-weight: 600;
 }
 
-.syllabus-card-progress {
+/* Inline coverage meter, next to the summary text (not an edge track along
+   the card's bottom, which used to cross the rounded corner at narrow
+   widths). Fixed small size so it reads as a glyph, not a second bar. */
+.syllabus-card-meter {
+  display: inline-block;
+  flex-shrink: 0;
+  width: 60px;
   height: 3px;
-  background: var(--muted);
+  border-radius: 999px;
   overflow: hidden;
+  background: var(--muted);
 }
-/* Corner fix, same technique used for .lesson-library-module's header/body
-   (lesson-library.css/lesson-row.css): when the card is collapsed, this
-   progress strip is the card's own last child and its square corners drew
-   straight across the card's rounded bottom. `:last-child` keeps this
-   inert once the card is open (`.syllabus-card-body` then owns the bottom
-   edge instead). Already `overflow: hidden`, so the radius also clips the
-   fill bar underneath it into the same curve. */
-.syllabus-card-progress:last-child {
-  border-radius: 0 0 14px 14px;
-}
-/* Idle (module with no lessons): the track holds its 3px but paints
-   nothing, so adding the first lesson doesn't shift the page. */
-.syllabus-card-progress.is-idle {
+/* Idle (module with no lessons): the meter stays mounted but paints
+   nothing, so adding the first lesson doesn't shift the header. */
+.syllabus-card-meter.is-idle {
   visibility: hidden;
 }
-.syllabus-card-progress-fill {
+.syllabus-card-meter-fill {
+  display: block;
   height: 100%;
   background: var(--primary);
   transition: width 0.2s ease;

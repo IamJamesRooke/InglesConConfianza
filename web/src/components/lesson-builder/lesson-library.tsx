@@ -424,15 +424,6 @@ function LessonLibraryInner(props: Props) {
 
               return (
                 <Fragment key={module.id}>
-                  <SyllabusPanel
-                    module={module}
-                    moduleIndex={moduleIndex}
-                    modules={props.modules}
-                    lessons={props.lessons}
-                    conceptDisplays={props.builder.conceptDisplays}
-                    onDisplayChange={props.builder.recordConceptDisplay}
-                    onChangeModule={props.onChangeModule}
-                  />
                   <section
                     className="lesson-library-module"
                     onDragOver={(event) => {
@@ -541,6 +532,16 @@ function LessonLibraryInner(props: Props) {
                         </span>
                       </div>
                     </div>
+
+                    <SyllabusPanel
+                      module={module}
+                      moduleIndex={moduleIndex}
+                      modules={props.modules}
+                      lessons={props.lessons}
+                      conceptDisplays={props.builder.conceptDisplays}
+                      onDisplayChange={props.builder.recordConceptDisplay}
+                      onChangeModule={props.onChangeModule}
+                    />
 
                     <div className="lesson-library-list">
                       {moduleLessons.map((lesson, lessonIndex) => (
