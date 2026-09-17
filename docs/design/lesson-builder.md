@@ -669,6 +669,41 @@ proposal doc's aspirations.
     violate); the `.lesson-library`-rooted walk still covers the module
     card's own corners, which the band now sits inside.
 
+- **Module description input is regular weight, italic only as a
+  placeholder** (owner, 2026-09-16, cosmetic lane): `.lesson-library-
+  module-description`'s own `font-style: italic` was dropped from the input
+  itself — it now lives only on `.lesson-library-module-description::
+  placeholder`, so a teacher's typed description renders upright and the
+  italic reads purely as "nothing written yet," matching every other
+  placeholder in the builder.
+- **One left spine** (owner, 2026-09-16, cosmetic lane): `--module-spine`
+  (`16px`, set on `.lesson-library-module`, matching `.lesson-library-
+  module-meta`'s own `padding-left`) is now the shared left inset for the
+  syllabus band's chevron (`.syllabus-card-header`'s `padding-left`), the
+  lesson row's chevron (`.lesson-library-row-head`'s `padding-left`,
+  including its own `max-width: 900px` override), and the resting
+  explanation block's own inner padding (`.lesson-document-block`'s
+  `padding-left`, layered on top of `.lesson-document`'s separate 52px/20px
+  gutter reserved for the seam's "+" circle — untouched, since that
+  geometry is load-bearing for `slide-insert-control.css`). Measured at
+  760px: the module title, the syllabus chevron, and the lesson-row
+  chevron's own button box all now share `left: 41px` (card edge + 16px).
+- **Coverage meter moved to the band's right end** (owner, 2026-09-16,
+  cosmetic lane): `.syllabus-card-meter` gained `margin-left: auto` and
+  grew from `60×3px` to `96×4px`, pushing it to the far right of the
+  collapsed syllabus band's flex row; the `Main N/N · Review N/N · Also
+  taught N` summary text stays exactly where it was, immediately after the
+  title.
+- **Narrow "Modules" disclosure drops the module name** (owner, 2026-09-16,
+  cosmetic lane): under 900px, `ModuleNavigatorDisclosure`
+  (`module-navigator-disclosure.tsx`) now renders only "Modules" and the
+  chevron — the active module's name used to render inline
+  (`.module-navigator-disclosure-active`, now deleted from
+  `module-navigator.css`) but duplicated the module card's own title right
+  below it. The name stays in the button's `aria-label` (`"Modules — <name>,
+  expand/collapse"`) for screen readers, who don't get that title as a
+  visual confirmation.
+
 ## 6. Owner decisions & rejected ideas
 
 These were explicitly settled or explicitly rejected. Do not re-propose them

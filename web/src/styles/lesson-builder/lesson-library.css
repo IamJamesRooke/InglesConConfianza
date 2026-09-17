@@ -35,6 +35,15 @@
 }
 
 .lesson-library-module {
+  /* One left spine: the header's own padding-left (below, on
+     .lesson-library-module-meta) is the single source of truth for where
+     the module title's text starts. The syllabus band's chevron
+     (syllabus-panel.css), the lesson row's chevron (lesson-row.css
+     .lesson-library-row-head), and the resting explanation block's own
+     left padding (lesson-document.css .lesson-document-block) all read
+     this custom property instead of carrying their own hand-tuned value,
+     so the three stay in lockstep with the header if it ever changes. */
+  --module-spine: 16px;
   overflow: visible;
   border-radius: 14px;
   background: var(--surface-writing);
@@ -114,7 +123,6 @@
   background: transparent;
   color: color-mix(in oklch, var(--primary-foreground) 85%, transparent);
   font-size: 12px;
-  font-style: italic;
   outline: none;
 }
 .lesson-library-module-description::placeholder {
@@ -352,7 +360,10 @@
    scale; the matching lesson-row-head trim lives in lesson-row.css. */
 @media (max-width: 900px) {
   .lesson-library-module-meta {
-    padding: 3px 12px;
+    /* Left stays on --module-spine (lesson-library.css, .lesson-library-module)
+       even at this trimmed width, so the title's left edge doesn't drift
+       out of line with the syllabus/row chevrons below it. */
+    padding: 3px 12px 3px var(--module-spine, 12px);
     gap: 2px;
   }
   .lesson-library-module-title {

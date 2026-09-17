@@ -430,8 +430,10 @@
    module"/save+undo row) plus the module header card consumed 408px
    (45.3%) of the viewport before the first slide was visible, and there
    was no way to collapse it. Below 900px the rail becomes a sticky,
-   one-row "Modules ▾" disclosure showing the active module's name; the
-   full rail (search, module list, add-module, save/undo) renders
+   one-row "Modules ▾" disclosure (owner, 2026-09-16: label only — the
+   active module's name moved out of this button since the module card's
+   own title already shows it, and stays only in the button's aria-label);
+   the full rail (search, module list, add-module, save/undo) renders
    underneath only while that disclosure is open. Above 900px both new
    elements are inert: the disclosure button is hidden and the collapsible
    body is always shown, `data-open` or not. */
@@ -474,13 +476,6 @@
     align-items: baseline;
     gap: 6px;
     overflow: hidden;
-  }
-  .module-navigator-disclosure-active {
-    overflow: hidden;
-    color: var(--muted-foreground);
-    font-weight: 600;
-    white-space: nowrap;
-    text-overflow: ellipsis;
   }
   .module-navigator-disclosure-chevron {
     flex-shrink: 0;

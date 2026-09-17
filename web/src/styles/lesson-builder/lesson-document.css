@@ -69,7 +69,12 @@
      keeps a permanent horizontal gutter for the slide-action icons below —
      reserved space, but width only, never height, so content never runs
      underneath them regardless of hover/focus state. */
-  padding: 6px 54px 6px 8px;
+  /* One left spine: same custom property as the syllabus band's and lesson
+     row's chevrons (lesson-library.css, on .lesson-library-module). This is
+     the block's own inner padding, layered on top of .lesson-document's
+     wider 52px/20px left gutter (reserved for the seam's hover-revealed "+"
+     circle, slide-insert-control.css) — not a replacement for it. */
+  padding: 6px 54px 6px var(--module-spine, 8px);
   border-radius: 6px;
   outline: none;
   transition:

@@ -17,7 +17,9 @@
   align-items: center;
   gap: 6px;
   width: 100%;
-  padding: 8px 12px;
+  /* One left spine: chevron starts at the same x as the module title's
+     left edge (--module-spine, set on .lesson-library-module). */
+  padding: 8px 12px 8px var(--module-spine, 12px);
   background: color-mix(in oklch, var(--primary) 8%, transparent);
   color: var(--foreground);
   text-align: left;
@@ -42,14 +44,17 @@
   font-weight: 600;
 }
 
-/* Inline coverage meter, next to the summary text (not an edge track along
-   the card's bottom, which used to cross the rounded corner at narrow
-   widths). Fixed small size so it reads as a glyph, not a second bar. */
+/* Coverage meter, pinned to the right end of the collapsed band (not an
+   edge track along the card's bottom, which used to cross the rounded
+   corner at narrow widths, and not immediately after the summary text,
+   which read as part of the sentence). `margin-left: auto` on this flex
+   child pushes it to the header's far right; the summary text stays put. */
 .syllabus-card-meter {
   display: inline-block;
   flex-shrink: 0;
-  width: 60px;
-  height: 3px;
+  margin-left: auto;
+  width: 96px;
+  height: 4px;
   border-radius: 999px;
   overflow: hidden;
   background: var(--muted);
