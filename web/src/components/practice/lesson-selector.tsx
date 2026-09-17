@@ -19,6 +19,7 @@ import {
 } from "react";
 import { ExplanationStep } from "@/components/practice/explanation-step";
 import { SentencePracticeCard } from "@/components/practice/sentence-practice-card";
+import { learnerLabel } from "@/lib/learner/presentation";
 import {
   readProgress,
   resumeStepIndex,
@@ -433,8 +434,8 @@ function CompletionConcepts({
     <div className="completion-concepts" aria-label="Lo que aprenderás">
       {concepts.map((concept) => (
         <div className="completion-concept" key={concept.id}>
-          <strong lang="en">{concept.english}</strong>
-          <span lang="es">{concept.spanish}</span>
+          <strong lang="en">{learnerLabel(concept.english)}</strong>
+          <span lang="es">{learnerLabel(concept.spanish)}</span>
         </div>
       ))}
     </div>

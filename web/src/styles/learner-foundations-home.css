@@ -38,10 +38,10 @@
   margin-inline: auto;
 }
 .learner-header {
-  border-bottom: 1px solid var(--border);
   color: var(--foreground);
-  border-color: var(--border);
-  background: var(--background);
+  /* White strip over the tinted lavender canvas — no hairline; the tint
+     shift below is separation enough. */
+  background: var(--surface-writing);
   font-family: var(--font-sans);
 }
 .learner-header-inner {
@@ -207,7 +207,7 @@
   color: var(--primary);
 }
 .course-feature h1 span {
-  color: var(--primary);
+  color: var(--on-hero-muted);
 }
 .course-feature {
   position: relative;
@@ -219,9 +219,12 @@
   margin-top: 32px;
   padding: 56px;
   overflow: hidden;
-  border: 1px solid var(--border);
   border-radius: var(--radius-2xl);
-  background: color-mix(in oklch, var(--primary) 4%, var(--card));
+  background: linear-gradient(
+    135deg,
+    var(--hero-gradient-from),
+    var(--hero-gradient-to)
+  );
   box-shadow: var(--shadow-lg);
 }
 .course-feature::before {
@@ -232,7 +235,7 @@
   background:
     radial-gradient(
       80% 130% at 100% 0%,
-      color-mix(in oklch, var(--primary) 12%, transparent),
+      color-mix(in oklch, white 22%, transparent),
       transparent 60%
     );
   pointer-events: none;
@@ -246,9 +249,13 @@
   font-weight: 700;
   letter-spacing: 0.12em;
 }
+.course-feature .learner-eyebrow {
+  color: var(--on-hero-muted);
+  margin-bottom: 8px;
+}
 .course-feature h1 {
-  color: var(--foreground);
-  font-size: clamp(40px, 4vw, 56px);
+  color: var(--on-hero);
+  font-size: clamp(40px, 4vw, 48px);
   font-weight: 720;
   letter-spacing: -0.05em;
   line-height: 1;
@@ -257,8 +264,8 @@
 .course-promise {
   max-width: 42ch;
   margin-top: 18px;
-  color: var(--secondary-foreground);
-  font-size: 16px;
+  color: var(--on-hero-muted);
+  font-size: 20px;
   line-height: 1.6;
 }
 .featured-lesson {
@@ -267,94 +274,6 @@
   align-items: flex-start;
   gap: 10px;
   margin-top: 24px;
-}
-.feature-meta {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 6px 8px;
-  margin: 0;
-  color: var(--secondary-foreground);
-  font-size: 13px;
-  font-weight: 500;
-}
-.feature-meta strong {
-  color: var(--foreground);
-  font-weight: 650;
-}
-.feature-meta-lesson {
-  flex-basis: 100%;
-  margin-bottom: 2px;
-  color: var(--muted-foreground);
-  font-size: 11px;
-  font-weight: 750;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-}
-.featured-learn {
-  margin-top: 24px;
-}
-.featured-learn .learner-eyebrow {
-  margin-bottom: 10px;
-  color: var(--secondary-foreground);
-}
-.featured-learn .learner-concepts {
-  margin-top: 0;
-}
-.learner-concepts {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  margin-top: 18px;
-}
-.learner-concepts.compact {
-  gap: 6px;
-  margin-top: 8px;
-}
-.learner-concept {
-  display: inline-grid;
-  min-width: 138px;
-  padding: 7px 10px;
-  border: 1px solid var(--border);
-  border-radius: var(--radius-lg);
-  background: color-mix(in oklch, var(--card) 78%, transparent);
-  line-height: 1.25;
-  text-align: center;
-}
-.learner-concept strong {
-  color: var(--foreground);
-  font-size: 13px;
-  font-weight: 680;
-}
-.learner-concept span {
-  margin-top: 3px;
-  color: var(--muted-foreground);
-  font-size: 11px;
-  font-weight: 500;
-}
-.course-feature .learner-concept {
-  min-width: 0;
-  padding: 10px 15px;
-  border-color: color-mix(in oklch, var(--primary) 12%, var(--border));
-  background: var(--card);
-  box-shadow: var(--shadow-sm);
-}
-.course-feature .learner-concept strong {
-  color: var(--primary);
-  font-size: 14px;
-}
-.course-feature .learner-concept span {
-  font-size: 12px;
-}
-.learner-concept-more {
-  display: inline-flex;
-  align-items: center;
-  padding: 8px 12px;
-  border: 1px dashed var(--border);
-  border-radius: var(--radius-lg);
-  color: var(--muted-foreground);
-  font-size: 12px;
-  font-weight: 700;
 }
 .course-feature-demo {
   align-self: center;
@@ -368,55 +287,17 @@
   letter-spacing: 0.1em;
   text-transform: uppercase;
 }
-.course-progress-panel {
-  padding: 32px 34px;
-  border: 1px solid var(--border);
-  border-radius: var(--radius-xl);
-  background: var(--card);
-  box-shadow: var(--shadow-md);
-}
-.progress-panel-module {
-  margin-top: 4px;
-  color: var(--foreground);
-  font-size: 20px;
-  font-weight: 700;
-  letter-spacing: -0.02em;
-}
-.progress-panel-bar {
-  margin-top: 18px;
-  height: 8px;
-  border-radius: 999px;
-  background: var(--secondary);
-  overflow: hidden;
-}
-.progress-panel-bar > span {
-  display: block;
-  height: 100%;
-  min-width: 8px;
-  border-radius: 999px;
-  background: var(--primary);
-  transition: width 400ms ease;
-}
-.progress-panel-count {
-  margin-top: 10px;
-  color: var(--secondary-foreground);
-  font-size: 13px;
-}
-.progress-panel-count strong {
-  color: var(--foreground);
-  font-weight: 700;
-}
 .demo-phrase {
   display: grid;
   gap: 10px;
   padding: 36px;
-  border: 1px solid color-mix(in oklch, var(--primary) 14%, var(--border));
+  border: 1px solid var(--border);
   border-radius: var(--radius-xl);
-  background: var(--card);
+  background: var(--surface-writing);
   box-shadow: var(--shadow-md);
 }
 .demo-phrase strong {
-  color: var(--primary);
+  color: var(--ink-deep);
   font-size: clamp(30px, 2.6vw, 40px);
   font-weight: 750;
   letter-spacing: -0.03em;
@@ -430,38 +311,50 @@
   min-height: 50px;
   padding-inline: 22px;
 }
+/* The hero's single CTA sits on the gradient: white pill, brand-primary
+   text — never purple-on-purple — so it unmistakably reads as the action.
+   Hover lifts (shadow + translate) instead of shifting toward the
+   background colour. */
+.course-feature .learner-button.primary {
+  padding: 14px 24px;
+  border-radius: 12px;
+  color: var(--cta-on-hero-fg);
+  background: var(--cta-on-hero-bg);
+  font-size: 16px;
+  font-weight: 700;
+  box-shadow: var(--shadow-cta);
+  transition:
+    transform 150ms,
+    box-shadow 150ms;
+}
+.course-feature .learner-button.primary:hover {
+  color: var(--cta-on-hero-fg);
+  background: var(--cta-on-hero-bg);
+  box-shadow: var(--shadow-cta-hover);
+  transform: translateY(-1px);
+}
 .course-journey {
-  padding-block: 70px 58px;
+  padding-block: 64px;
 }
 .course-journey-heading {
-  display: flex;
-  align-items: end;
-  justify-content: space-between;
-  gap: 28px;
   padding-bottom: 24px;
   border-bottom: 1px solid var(--border);
 }
 .course-journey-heading h2 {
-  margin-top: 5px;
   color: var(--foreground);
   font-size: 30px;
   font-weight: 700;
   letter-spacing: -0.035em;
   line-height: 1.2;
 }
-.course-progress-summary {
-  color: var(--muted-foreground);
-  font-size: 13px;
-}
-.course-progress-summary strong {
-  color: var(--foreground);
-  font-size: 16px;
-}
 .course-curriculum {
   display: grid;
   grid-template-columns: 270px minmax(0, 1fr);
   gap: 58px;
   padding-block: 30px 0;
+}
+.course-curriculum.single-module {
+  grid-template-columns: minmax(0, 1fr);
 }
 .section-label {
   display: flex;
@@ -525,8 +418,8 @@
   background: var(--primary);
 }
 .module-tab.complete .module-symbol {
-  color: var(--primary);
-  border-color: var(--primary);
+  color: var(--success);
+  border-color: var(--success);
   background: var(--card);
 }
 .module-tab-copy {
@@ -570,11 +463,6 @@
   gap: 24px;
   min-height: 60px;
 }
-.module-heading-actions {
-  display: grid;
-  justify-items: end;
-  gap: 8px;
-}
 .module-heading .learner-eyebrow {
   color: var(--muted-foreground);
 }
@@ -605,16 +493,6 @@
 }
 .module-progress {
   margin-block: 14px 0;
-}
-.module-learn {
-  margin-top: 20px;
-}
-.module-learn .learner-eyebrow {
-  margin-bottom: 8px;
-  color: var(--muted-foreground);
-}
-.module-learn .learner-concepts {
-  margin-top: 0;
 }
 .lesson-list {
   display: grid;
@@ -653,29 +531,6 @@
   padding: 17px 10px;
   border-radius: inherit;
 }
-.lesson-copy > .learner-concepts {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 6px;
-  margin-top: 8px;
-}
-.lesson-copy .learner-concept {
-  min-width: 0;
-  padding: 4px 9px;
-  border: 0;
-  border-radius: var(--radius-md);
-  background: var(--muted);
-  text-align: left;
-}
-.lesson-copy .learner-concept strong {
-  font-size: 12px;
-  color: var(--foreground);
-}
-.lesson-copy .learner-concept span {
-  margin-top: 1px;
-  font-size: 10px;
-  color: var(--muted-foreground);
-}
 .lesson-progress-options {
   display: flex;
   align-items: center;
@@ -708,7 +563,6 @@
 }
 .lesson-number,
 .lesson-copy > span,
-.lesson-copy .lesson-meta,
 .next-module,
 .course-footer,
 .course-empty p,
@@ -742,28 +596,10 @@
   font-size: 13px;
   line-height: 1.5;
 }
-.lesson-copy .lesson-meta {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 5px;
-  margin-top: 5px;
-  font-size: 11px;
-}
-.lesson-state {
-  margin-left: 10px;
-  font-weight: 650;
-}
-.lesson-repasar {
-  margin-left: 6px;
-  font-weight: 650;
-  color: var(--primary);
-}
-.lesson-state,
-.lesson-row.complete .lesson-number,
-.lesson-row.complete .lesson-action,
-.module-finish {
-  color: var(--primary);
+/* Completed rows get a quiet success check on the number glyph only — the
+   row surface itself stays neutral (see globals.css comment on --success). */
+.lesson-row.complete .lesson-number {
+  color: var(--success);
 }
 .lesson-action {
   display: flex;
@@ -800,7 +636,11 @@
   align-items: center;
   gap: 10px;
   margin-top: 20px;
+  color: var(--foreground);
   font-size: 13px;
+}
+.module-finish svg {
+  color: var(--success);
 }
 .next-module {
   display: flex;

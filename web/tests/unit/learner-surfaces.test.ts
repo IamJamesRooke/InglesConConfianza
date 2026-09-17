@@ -5,6 +5,7 @@ import { renderToStaticMarkup } from "react-dom/server";
 import { LessonDashboard } from "../../src/components/learner/lesson-dashboard";
 import { PracticeMarkdown } from "../../src/components/practice/practice-markdown";
 import { SentencePracticeCard } from "../../src/components/practice/sentence-practice-card";
+import { learnerLabel } from "../../src/lib/learner/presentation";
 import {
   isAnswerAccepted,
   normalizeAnswer,
@@ -16,8 +17,8 @@ const lesson = {
   moduleLessonNumber: 1,
   name: "Hello James!",
   previewText: "Hola James!",
+  outcomeEnglish: "Hello James!",
   stepCount: 4,
-  concepts: [],
 };
 const modules = [
   {
@@ -25,7 +26,6 @@ const modules = [
     name: "Tu primera conversación",
     kind: "onboarding" as const,
     lessonCount: 1,
-    concepts: [],
     lessons: [lesson],
   },
   {
@@ -33,10 +33,39 @@ const modules = [
     name: "Planes de todos los días",
     kind: "course" as const,
     lessonCount: 1,
-    concepts: [],
     lessons: [{ ...lesson, id: "tomorrow", name: "Tomorrow", stepCount: 0 }],
   },
 ];
+
+test("learnerLabel strips curriculum bracket notation into plain words", () => {
+  assert.equal(learnerLabel("[the] day"), "the day");
+  assert.equal(learnerLabel("[el] día"), "el día");
+  assert.equal(
+    learnerLabel("[to do something] on purpose"),
+    "to do something on purpose",
+  );
+  assert.equal(learnerLabel("hello"), "hello");
+});
+
+test("a single-module course hides the module rail but still lists its lessons", () => {
+  const html = renderToStaticMarkup(
+    createElement(LessonDashboard, { modules: [modules[0]] }),
+  );
+  assert.doesNotMatch(html, /role="tablist"/);
+  assert.match(html, /Tu primera conversación/);
+});
+
+test("the hero and lesson row carry no concept chips, minute counts, or status labels", () => {
+  const html = renderToStaticMarkup(
+    createElement(LessonDashboard, { modules }),
+  );
+  assert.doesNotMatch(html, /learner-concept|Vas a aprender/);
+  assert.doesNotMatch(html, /\bmin\b/);
+  assert.doesNotMatch(html, /Completada|Repasar|Omitir módulo|Reiniciar módulo/);
+  // "Empieza aquí" is a legitimate first-visit hero eyebrow now — just not
+  // the old lesson-row status label.
+  assert.match(html, /class="learner-eyebrow">Empieza aquí/);
+});
 
 test("public course renders lesson destinations without any admin navigation", () => {
   const html = renderToStaticMarkup(

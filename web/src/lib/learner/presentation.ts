@@ -1,8 +1,13 @@
 import type { LessonBlock } from "../lesson-builder/types";
 import { isMeaningfulLanguageBlock } from "../lesson-builder/utils";
 
-export function lessonMinutes(stepCount: number) {
-  return Math.max(1, Math.ceil(stepCount / 3));
+/**
+ * Curriculum notation brackets an optional/implied word — `[the] day`,
+ * `[el] día` — to document it for authors and curation. Learners should
+ * never see the brackets: render the words plainly, `the day` / `el día`.
+ */
+export function learnerLabel(text: string): string {
+  return text.replace(/\[([^\]]*)\]/g, "$1").replace(/\s+/g, " ").trim();
 }
 
 export function lessonOutcome(blocks: LessonBlock[]) {

@@ -1,14 +1,8 @@
 /**
  * Shared shape of the learner dashboard's props, used by `LessonDashboard` and
- * the presentation pieces it composes (`ConceptPills`, `LessonRow`). The server
- * component in `src/app/page.tsx` builds these objects structurally.
+ * the presentation pieces it composes (`LessonRow`). The server component in
+ * `src/app/page.tsx` builds these objects structurally.
  */
-
-export type LearnerConcept = {
-  id: string;
-  spanish: string;
-  english: string;
-};
 
 export type LearnerLesson = {
   id: string;
@@ -16,8 +10,9 @@ export type LearnerLesson = {
   moduleLessonNumber: number;
   name: string | null;
   previewText: string;
+  /** The lesson's final built sentence in English (falls back to `name`). */
+  outcomeEnglish: string;
   stepCount: number;
-  concepts: LearnerConcept[];
 };
 
 export type LearnerModule = {

@@ -126,6 +126,10 @@
   /* #6600b8 on white: 9.29:1 */
   --brand-primary-hover: oklch(0.42 0.24 300);
   --brand-on-primary: #ffffff;
+  /* #af0acc — vivid magenta-purple, the far end of the hero gradient.
+     White text on it: 6.85:1 at solid white, 5.17:1 at 90% white (see
+     --on-hero-muted); both clear AA 4.5:1. */
+  --brand-primary-vivid: oklch(0.55 0.26 320);
   /* #da2751 on white: 4.79:1 */
   --brand-accent: oklch(0.58 0.21 15);
   /* #bd003a on white: 6.52:1 */
@@ -146,11 +150,13 @@
   /* #890120 on white: 10.02:1 */
   --state-danger: oklch(0.4 0.16 20);
   --state-danger-soft: #fce8ec;
-  /* #fbf9fe: faint cool-lavender canvas */
-  --canvas-warm: oklch(0.985 0.006 300);
+  /* #f6efff: clearly lavender canvas so white cards visibly pop.
+     --ink-muted on it: 5.90:1, --ink-deep on it: 15.60:1. */
+  --canvas-warm: oklch(0.965 0.03 300);
   --surface-writing: #ffffff;
-  /* #f2edfc: soft lavender tint for tinted bands/hover washes */
-  --surface-subtle: oklch(0.955 0.02 300);
+  /* #eee6ff: soft lavender tint for tinted bands/hover washes (also used by
+     the builder). --ink-muted on it: 5.49:1, --ink-deep on it: 14.52:1. */
+  --surface-subtle: oklch(0.94 0.035 300);
   /* #1d162a on white: 17.46:1 */
   --ink-deep: oklch(0.22 0.04 300);
   /* #605a6c on white: 6.61:1, on surface-subtle: 5.77:1 */
@@ -222,6 +228,22 @@
      #6928b0 on white: 8.28:1, on surface-subtle: 7.23:1. */
   --lesson-hl-es: oklch(0.55 0.21 25);
   --lesson-hl-en: oklch(0.45 0.2 300);
+  /* Learner hero surface — a saturated brand-primary -> vivid-magenta
+     gradient (see product-vision.md §3 "vibrant"). --on-hero is solid
+     white for the headline; --on-hero-muted is white at 90% for the
+     sub-line, both checked against both gradient stops above. */
+  --hero-gradient-from: var(--brand-primary);
+  --hero-gradient-to: var(--brand-primary-vivid);
+  --on-hero: #ffffff;
+  --on-hero-muted: color-mix(in oklch, white 90%, var(--brand-primary-vivid));
+  /* The hero's call-to-action must never be purple-on-purple: white pill,
+     brand-primary text, so it reads as THE action against the gradient. */
+  --cta-on-hero-bg: #ffffff;
+  --cta-on-hero-fg: var(--brand-primary);
+  --shadow-cta: 0 10px 24px oklch(0.32 0.2 300 / 0.35),
+    0 2px 6px oklch(0.32 0.2 300 / 0.22);
+  --shadow-cta-hover: 0 14px 32px oklch(0.32 0.2 300 / 0.42),
+    0 4px 10px oklch(0.32 0.2 300 / 0.26);
 }
 
 .concept-suggestion {

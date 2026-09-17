@@ -81,3 +81,40 @@ Generation prompt:
 > No text, no lettering, no logos, no speech bubbles, no gradients, no floating
 > blobs, no border, no UI mockup. This is a quiet course cover illustration, not a
 > children's cartoon.
+
+## 2026-09-17 L0b/L1 — vibrant surfaces, one message per zone
+
+Owner complaint: the home read as grey (grey header, a hairline, grey body) with
+no vibrancy despite the purple palette landing in 1ac33c29. Two changes:
+
+**L0b — colour lives on surfaces.** `--canvas-warm` and `--surface-subtle` in
+`globals.css` gained enough chroma to read as lavender against white cards
+(`--ink-muted` stays ≥4.5:1 on both). The hero is now a saturated
+`--brand-primary` → `--brand-primary-vivid` (new token, magenta-purple)
+gradient at 135°, white headline/eyebrow, white-90% sub-line
+(`--on-hero`/`--on-hero-muted`). The hero's single CTA is a white pill with
+`--brand-primary` text (`--cta-on-hero-bg`/`--cta-on-hero-fg`,
+`--shadow-cta`/`--shadow-cta-hover`) — never purple-on-purple — and lifts on
+hover instead of shifting colour. The promise card inside the hero stays a
+plain white card with ink text so the English sentence stays the loudest
+thing on the surface. The learner header lost its bottom hairline and is now
+a plain white strip over the tinted canvas. "Completed" state (module tabs,
+lesson rows) now colors only the check glyph with `--success`; it never fills
+a whole row or tab surface.
+
+**L1 — the home shows one message per zone, nothing else.** The hero is
+eyebrow ("Empieza aquí" / "Tu próxima lección") + headline ("Habla inglés. Con
+confianza." first visit, "Sigamos." returning) + one button + the promise card
+("Vas a poder decir" + the next lesson's final English sentence + its Spanish
+line). Removed from the home: the "Vas a aprender" concept chips and their
+`+N` overflow, the "MÓDULO · LECCIÓN" line, the "· N min" clock line, the "TU
+CURSO" eyebrow and the "N de N lecciones completas" counter, "Omitir módulo" /
+"Reiniciar módulo" (the underlying progress functions stay; per-lesson
+skip/reset stays). The module rail (left-hand list of module tabs) is hidden
+entirely when the course has one module. A lesson row is now just: number,
+English title, Spanish line, one play/replay affordance, a quiet success
+check when done. `concept-pills.tsx` was deleted (unused after the cut,
+confirmed with `npm run lint:dead`). Curriculum bracket notation
+(`[the] day`, `[el] día`) is stripped to plain words on every learner surface
+via `learnerLabel()` in `src/lib/learner/presentation.ts`, applied to the
+practice-completion concept list.

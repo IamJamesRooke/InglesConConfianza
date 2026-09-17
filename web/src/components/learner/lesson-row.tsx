@@ -1,9 +1,7 @@
-import { Check, Clock3, Play, RotateCcw, SkipForward } from "lucide-react";
+import { Check, Play, RotateCcw, SkipForward } from "lucide-react";
 import Link from "next/link";
 
-import { ConceptPills } from "@/components/learner/concept-pills";
 import type { LearnerLesson } from "@/components/learner/types";
-import { lessonMinutes } from "@/lib/learner/presentation";
 import type { LessonProgressEntry } from "@/lib/learner/progress";
 
 /**
@@ -28,13 +26,6 @@ export function LessonRow({
   const complete = Boolean(progress?.completedAt);
   const hasProgress = Boolean(progress?.completedAt || progress?.lastOpenedAt);
   const available = lesson.stepCount > 0;
-  const state = complete
-    ? "Completada"
-    : available
-      ? progress?.lastOpenedAt
-        ? "En curso"
-        : ""
-      : "Próximamente";
   const content = (
     <>
       <span className="lesson-number" aria-hidden="true">
@@ -45,25 +36,13 @@ export function LessonRow({
         )}
       </span>
       <span className="lesson-copy">
-        <strong>{lesson.name || `Lección ${lesson.lessonNumber}`}</strong>
-        <span>
+        <strong lang="en">
+          {lesson.name || `Lección ${lesson.lessonNumber}`}
+        </strong>
+        <span lang="es">
           {available
             ? lesson.previewText
             : "Una nueva conversación, muy pronto."}
-        </span>
-        {available && <ConceptPills concepts={lesson.concepts} compact />}
-        <span className="lesson-meta">
-          {available && (
-            <>
-              <Clock3 size={13} aria-hidden="true" />{" "}
-              {lessonMinutes(lesson.stepCount)} min
-            </>
-          )}
-          {state && <span className="lesson-state">{state}</span>}
-          {complete && <span className="lesson-repasar">Repasar</span>}
-          {isNext && !state && (
-            <span className="lesson-state">Empieza aquí</span>
-          )}
         </span>
       </span>
       {available && (
