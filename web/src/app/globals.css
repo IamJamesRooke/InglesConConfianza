@@ -227,12 +227,15 @@
   --sidebar-accent-foreground: oklch(0.24 0.07 195);
   --sidebar-border: oklch(0.88 0.018 85);
   --sidebar-ring: oklch(0.62 0.19 285);
-  /* Bilingual ink: warm red-coral for español, brand purple for English.
-     Used for the sentence-builder labels and the [[es:]]/[[en:]] highlights.
-     #d01c29 on white: 5.41:1, on surface-subtle: 4.72:1.
-     #6928b0 on white: 8.28:1, on surface-subtle: 7.23:1. */
-  --lesson-hl-es: oklch(0.55 0.21 25);
-  --lesson-hl-en: oklch(0.45 0.2 300);
+  /* Bilingual ink: flag colours. Spanish-flag red for español, Union Jack
+     royal blue for English (dialed lighter than #012169 so italic text
+     stays legible). Used for the sentence-builder labels and the
+     [[es:]]/[[en:]] highlights.
+     es #bb061e on white: 6.65:1, on surface-subtle: 5.51:1.
+     en #123eb2 on white: 8.91:1, on surface-subtle: 7.38:1.
+     en hue (264) vs --brand-primary purple hue (300): 36° apart. */
+  --lesson-hl-es: oklch(0.5 0.2 25);
+  --lesson-hl-en: oklch(0.42 0.19 264);
   /* Learner hero surface — a saturated brand-primary -> vivid-magenta
      gradient (see product-vision.md §3 "vibrant"). --on-hero is solid
      white for the headline; --on-hero-muted is white at 90% for the
@@ -310,10 +313,10 @@
 }
 
 .dark {
-  /* Same purple-palette hues as :root (no separate dark design — see
+  /* Same flag-colour hues as :root (no separate dark design — see
      docs/design/lesson-builder.md §5 "Palette") so these don't drift. */
-  --lesson-hl-es: oklch(0.55 0.21 25);
-  --lesson-hl-en: oklch(0.45 0.2 300);
+  --lesson-hl-es: oklch(0.5 0.2 25);
+  --lesson-hl-en: oklch(0.42 0.19 264);
   --background: oklch(0.16 0.014 285);
   --foreground: oklch(0.985 0 0);
   --card: oklch(0.205 0 0);

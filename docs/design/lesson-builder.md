@@ -734,10 +734,12 @@ proposal doc's aspirations.
   ONLY place colour values may live — `scripts/lint-css.mjs` fails the
   build on any literal hex/rgb/hsl/oklch/color() elsewhere. Brand is a
   saturated purple (`--brand-primary`) with a warm coral `--brand-accent`;
-  surfaces/ink/border are lavender-tinted; `--lesson-hl-es` (coral) and
-  `--lesson-hl-en` (purple) both hold ≥4.5:1 on white and on
-  `--surface-subtle`. No dark theme redesign — `.dark` reuses the same
-  hues so it can't drift.
+  surfaces/ink/border are lavender-tinted; `--lesson-hl-es` (Spanish-flag
+  red) and `--lesson-hl-en` (Union Jack royal blue, lightened from
+  #012169 for italic legibility) both hold ≥4.5:1 on white and on
+  `--surface-subtle`, and en-blue's hue sits 36° from `--brand-primary`
+  purple. No dark theme redesign — `.dark` reuses the same hues so it
+  can't drift.
 
 ## 6. Owner decisions & rejected ideas
 
