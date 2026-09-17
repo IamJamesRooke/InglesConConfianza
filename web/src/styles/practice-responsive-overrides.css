@@ -222,6 +222,23 @@
   line-height: 1.3;
   font-weight: 600;
 }
+/* The success check moves inline right after the Spanish sentence prompt
+   (item 4b) — a centered row, the check vertically centered 4px to its
+   right. When there's no sentence prompt at all, the check instead renders
+   inside .answer-grid, positioned at its top-right corner (see
+   .sentence-success-card below). */
+.sentence-prompt-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  margin: 0 auto;
+  max-width: 36rem;
+}
+.sentence-prompt-row .sentence-prompt {
+  margin: 0;
+  max-width: none;
+}
 .answer-grid {
   position: relative;
   display: flex;
@@ -538,14 +555,15 @@
   font-weight: 500;
   line-height: 1.4;
 }
-/* Speech: speaker chip sits bottom-left of the sentence card column, below
-   the answer grid and above the (transparent, fixed) footer. See
+/* Speech: speaker chip + bubble sit left-aligned under the card, 12px below
+   it, persistent for the whole slide (rendered as soon as a speaker is
+   picked, never unmounted for state changes within the slide). See
    docs/design/speech.md. */
 .speaker-chip {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 10px;
-  margin-top: 18px;
+  margin-top: 12px;
   max-width: 100%;
 }
 .speaker-chip-avatar {
@@ -556,7 +574,7 @@
 }
 .speaker-chip-body {
   display: grid;
-  gap: 2px;
+  gap: 4px;
   min-width: 0;
 }
 .speaker-chip-label {
@@ -566,29 +584,58 @@
   text-transform: uppercase;
   color: var(--muted-foreground);
 }
+/* A real speech bubble: white, hairline border, small tail towards the
+   avatar, 12px radius. Always visible on a sentence/table slide — a quiet
+   "…" before anything's spoken, the spoken text while speaking, and it
+   keeps showing that text afterward (never clears). */
 .speaker-chip-bubble {
-  min-height: 1.2em;
-  font-size: 14px;
+  position: relative;
+  min-height: 1.4em;
+  width: fit-content;
+  max-width: 100%;
+  padding: 8px 12px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--card);
+  box-shadow: var(--shadow-sm);
   color: var(--foreground);
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
+  font-size: 15px;
+  line-height: 1.35;
+  overflow-wrap: anywhere;
+}
+.speaker-chip-bubble::before {
+  content: "";
+  position: absolute;
+  top: 12px;
+  left: -5px;
+  width: 9px;
+  height: 9px;
+  border-left: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  background: var(--card);
+  transform: rotate(45deg);
+}
+.speaker-chip-bubble-placeholder {
+  opacity: 0.6;
 }
 @media (max-width: 760px) {
   .speaker-chip-avatar {
     width: 32px;
     height: 32px;
   }
+  .speaker-chip-bubble {
+    white-space: normal;
+  }
 }
-/* L2a success signal: one small purple check beside the prompt — no green
-   circle, no footer recolour. Positioned on the card, near the prompt/cue
-   text at its top edge; fades in with the same pop used elsewhere. */
+/* L2a success signal: one small purple check — no green circle, no footer
+   recolour. Item 4b: inline right after the sentence prompt text when one's
+   authored (.sentence-success-inline, in normal flow, 4px gap via the row's
+   gap); otherwise inside the card's own top-right padding
+   (.sentence-success-card). Fades in with the same pop used elsewhere. */
 .sentence-success {
-  position: absolute;
-  top: -10px;
-  right: -10px;
   display: grid;
   place-items: center;
+  flex-shrink: 0;
   width: 28px;
   height: 28px;
   border-radius: 999px;
@@ -596,6 +643,11 @@
   background: var(--card);
   box-shadow: var(--shadow-card);
   animation: learner-pop 220ms ease-out both;
+}
+.sentence-success-card {
+  position: absolute;
+  top: 10px;
+  right: 10px;
 }
 /* L2a footer: transparent over the canvas at all times — success never
    recolours it. When there's no available action (a sentence slide before

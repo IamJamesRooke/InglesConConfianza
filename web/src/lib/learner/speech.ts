@@ -412,11 +412,27 @@ function speakWithSynthesis(
 }
 
 /**
+ * Stops whatever's currently playing or queued — an in-flight clip and any
+ * synthesis utterance. Exported for callers that need to silence speech
+ * outright rather than start something new (a fast typer moving past a
+ * piece before it's spoken, advancing the slide, or unmounting the practice
+ * card). See docs/design/speech.md.
+ */
+export function stopSpeaking(): void {
+  stopClipPlayback();
+  getSynth()?.cancel();
+}
+
+/**
  * Speaks one piece of text with the given speaker. Prefers a generated clip
  * for that exact speaker; if the clip is missing for that speaker (even if
  * another speaker has one), falls back to the browser voice — never plays
  * a clip in the wrong accent for the shown avatar. Resolves silently on any
  * failure; never throws.
+ *
+ * Always interrupts whatever's still playing first (clip or synthesis) — a
+ * newly correct piece never queues up behind one still being spoken; a fast
+ * typer just hears the latest piece. See docs/design/speech.md.
  */
 export async function speak(
   text: string,
@@ -425,11 +441,11 @@ export async function speak(
 ): Promise<void> {
   const trimmed = text.trim();
   if (!trimmed || isMuted()) return;
+  stopSpeaking();
   try {
     if (speaker) {
       const clipUrl = await clipUrlFor(trimmed, speaker.id);
       if (clipUrl) {
-        stopClipPlayback();
         const audio = new Audio(clipUrl);
         currentAudio = audio;
         audio.onplay = () => callbacks?.onStart?.();
@@ -449,15 +465,93 @@ export async function speak(
 }
 
 /**
- * Speaks a full sentence, first cancelling any queued/playing speech (piece
- * utterances or a previous clip) so the sentence never overlaps them.
+ * Speaks a full sentence. `speak()` itself already interrupts anything still
+ * playing, so this is the same call under a name that reads better at call
+ * sites — kept as its own export since callers rely on it as "the sentence
+ * always wins" regardless of how `speak()`'s internals evolve.
  */
 export async function speakSentence(
   text: string,
   speaker: Speaker | null,
   callbacks?: SpeakCallbacks,
 ): Promise<void> {
-  stopClipPlayback();
-  getSynth()?.cancel();
   return speak(text, speaker, callbacks);
+}
+
+function delay(ms: number): Promise<void> {
+  return new Promise((resolve) => {
+    const setter =
+      typeof window !== "undefined"
+        ? window.setTimeout.bind(window)
+        : setTimeout;
+    setter(resolve, ms);
+  });
+}
+
+// A safety net only — real speech (clip or synthesis) ends well under this,
+// so it only fires when something was interrupted before it could report
+// its own end (see speak()'s interrupt-on-new-piece behaviour above).
+const PIECE_END_SAFETY_MS = 2500;
+
+/**
+ * Speaks text and resolves once it's done: either its own end/error fires,
+ * or — if that never happens (e.g. this speech is itself interrupted by a
+ * later piece before it can report its end) — a safety timeout elapses, so
+ * a caller awaiting this never hangs.
+ */
+export function speakAwaitingEnd(
+  text: string,
+  speaker: Speaker | null,
+  callbacks?: SpeakCallbacks,
+): Promise<void> {
+  return new Promise((resolve) => {
+    let settled = false;
+    const setter =
+      typeof window !== "undefined"
+        ? window.setTimeout.bind(window)
+        : setTimeout;
+    const clearer =
+      typeof window !== "undefined"
+        ? window.clearTimeout.bind(window)
+        : clearTimeout;
+    const finish = () => {
+      if (settled) return;
+      settled = true;
+      resolve();
+    };
+    const timer = setter(finish, PIECE_END_SAFETY_MS);
+    void speak(text, speaker, {
+      onStart: () => callbacks?.onStart?.(),
+      onEnd: () => {
+        clearer(timer);
+        callbacks?.onEnd?.();
+        finish();
+      },
+    });
+  });
+}
+
+/**
+ * Sequences "last piece already speaking -> pause -> full sentence" (see
+ * docs/design/speech.md item 1): waits for `piecePromise` to settle (the
+ * caller's `speakAwaitingEnd()` result for the last piece — pass
+ * `Promise.resolve()` if it already finished by the time this runs), pauses
+ * ~500ms so the two never blur together, then speaks the full sentence.
+ * `speakSentence` still wins over anything else playing regardless.
+ *
+ * `isCancelled` is checked right before the sentence would start (after the
+ * piece and the pause) so a caller that's moved on — advanced the slide,
+ * unmounted — can skip it outright rather than have it start late.
+ */
+export async function speakSentenceAfterPiece(
+  piecePromise: Promise<void>,
+  fullText: string,
+  speaker: Speaker | null,
+  callbacks?: SpeakCallbacks,
+  options?: { pauseMs?: number; isCancelled?: () => boolean },
+): Promise<void> {
+  await piecePromise;
+  await delay(options?.pauseMs ?? 500);
+  if (options?.isCancelled?.()) return;
+  return speakSentence(fullText, speaker, callbacks);
 }

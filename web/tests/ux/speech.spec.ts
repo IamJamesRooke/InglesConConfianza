@@ -61,7 +61,9 @@ test("pieces speak on correct, then the full sentence once, with a speaker chip 
   );
 
   await page.addInitScript(() => {
-    (window as unknown as { __speechCalls: string[] }).__speechCalls = [];
+    (
+      window as unknown as { __speechCalls: Array<{ text: string; t: number }> }
+    ).__speechCalls = [];
     class FakeUtterance {
       text: string;
       onstart: (() => void) | null = null;
@@ -86,9 +88,11 @@ test("pieces speak on correct, then the full sentence once, with a speaker chip 
       value: {
         getVoices: () => voices,
         speak: (utterance: FakeUtterance) => {
-          (window as unknown as { __speechCalls: string[] }).__speechCalls.push(
-            utterance.text,
-          );
+          (
+            window as unknown as {
+              __speechCalls: Array<{ text: string; t: number }>;
+            }
+          ).__speechCalls.push({ text: utterance.text, t: Date.now() });
           utterance.onstart?.();
           utterance.onend?.();
         },
@@ -101,6 +105,8 @@ test("pieces speak on correct, then the full sentence once, with a speaker chip 
 
   await page.goto(`/practice?lesson=${speechLesson.id}`);
 
+  // The chip is visible from the moment the slide appears — before any
+  // answer is typed (item 2, docs/design/speech.md).
   const chip = page.locator(".speaker-chip-label");
   await expect(chip).toBeVisible();
   await expect(chip).toContainText(/USA|UK/);
@@ -115,17 +121,31 @@ test("pieces speak on correct, then the full sentence once, with a speaker chip 
   await expect(page.locator(".sentence-success")).toBeVisible();
 
   await page.waitForFunction(
-    () => (window as unknown as { __speechCalls: string[] }).__speechCalls.length >= 4,
+    () =>
+      (window as unknown as { __speechCalls: Array<{ text: string }> })
+        .__speechCalls.length >= 4,
   );
   const calls = await page.evaluate(
-    () => (window as unknown as { __speechCalls: string[] }).__speechCalls,
+    () =>
+      (
+        window as unknown as {
+          __speechCalls: Array<{ text: string; t: number }>;
+        }
+      ).__speechCalls,
   );
-  expect(calls).toEqual([
+  expect(calls.map((call) => call.text)).toEqual([
     "I want",
     "to know",
     "something.",
     "I want to know something.",
   ]);
+  // The full sentence is spoken strictly after the last piece, and only
+  // after the ~500ms pause (item 1, docs/design/speech.md) — not
+  // immediately, which would cut the last piece off mid-word.
+  const lastPieceTime = calls[2].t;
+  const sentenceTime = calls[3].t;
+  expect(sentenceTime).toBeGreaterThan(lastPieceTime);
+  expect(sentenceTime - lastPieceTime).toBeGreaterThanOrEqual(400);
 
   const cleanup = await request.delete(
     `/api/admin/lesson-builder/lessons/${speechLesson.id}`,

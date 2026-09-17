@@ -1,4 +1,5 @@
 import assert from "node:assert/strict";
+import { setImmediate as flushMicrotasks } from "node:timers/promises";
 import test from "node:test";
 
 import {
@@ -12,7 +13,10 @@ import {
   setMuted,
   SPEAKER_ROSTER,
   speak,
+  speakAwaitingEnd,
   speakSentence,
+  speakSentenceAfterPiece,
+  stopSpeaking,
 } from "../../src/lib/learner/speech";
 
 type FakeVoice = { name: string; lang: string };
@@ -113,7 +117,8 @@ function withStubbedGlobals<T>(
     .then(run)
     .finally(() => {
       resetSpeechCaches();
-      if (originalWindow) Object.defineProperty(globalThis, "window", originalWindow);
+      if (originalWindow)
+        Object.defineProperty(globalThis, "window", originalWindow);
       else Reflect.deleteProperty(globalThis, "window");
       if (originalUtterance !== undefined)
         (globalThis as Record<string, unknown>).SpeechSynthesisUtterance =
@@ -151,7 +156,23 @@ test("pickSpeaker is deterministic per seed and respects a single available spea
   assert.equal(pickSpeaker("anything", []), null);
 });
 
-test("speakSentence cancels the queue before speaking so pieces never overlap it", async () => {
+test("speakSentence still wins over anything else playing", async () => {
+  const { synth, spoken } = makeSynth([
+    { name: "Google US English", lang: "en-US" },
+  ]);
+  await withStubbedGlobals({ synth }, async () => {
+    const speaker = SPEAKER_ROSTER.find((s) => s.id === "us-man")!;
+    await speak("piece one", speaker);
+    await speak("piece two", speaker);
+    await speakSentence("full sentence", speaker);
+    assert.equal(spoken.length, 3);
+    assert.equal((spoken[2] as FakeUtterance).text, "full sentence");
+  });
+});
+
+// Item 5(a): a newly correct piece interrupts whatever is still playing
+// rather than queuing up behind it — a fast typer never hears pieces stack.
+test("a newly correct piece interrupts whatever is still playing rather than queuing", async () => {
   const { synth, spoken, cancelCount } = makeSynth([
     { name: "Google US English", lang: "en-US" },
   ]);
@@ -159,16 +180,120 @@ test("speakSentence cancels the queue before speaking so pieces never overlap it
     const speaker = SPEAKER_ROSTER.find((s) => s.id === "us-man")!;
     await speak("piece one", speaker);
     await speak("piece two", speaker);
-    assert.equal(cancelCount(), 0);
-    await speakSentence("full sentence", speaker);
-    assert.equal(cancelCount(), 1);
-    assert.equal(spoken.length, 3);
-    assert.equal((spoken[2] as FakeUtterance).text, "full sentence");
+    await speak("piece three", speaker);
+    // Every speak() call stops whatever might still be mid-air first.
+    assert.equal(cancelCount(), 3);
+    assert.deepEqual(
+      spoken.map((u) => (u as FakeUtterance).text),
+      ["piece one", "piece two", "piece three"],
+    );
   });
 });
 
+// Item 5(c): advancing the slide or unmounting the practice card cancels any
+// speech in flight — stopSpeaking() is what that cleanup calls.
+test("stopSpeaking silences in-flight synthesis so advancing/unmounting cancels playback", async () => {
+  const { synth, cancelCount } = makeSynth([
+    { name: "Google US English", lang: "en-US" },
+  ]);
+  await withStubbedGlobals({ synth }, async () => {
+    const speaker = SPEAKER_ROSTER.find((s) => s.id === "us-man")!;
+    await speak("piece one", speaker);
+    const before = cancelCount();
+    stopSpeaking();
+    assert.equal(cancelCount(), before + 1);
+  });
+});
+
+test("speakSentenceAfterPiece waits for the piece, pauses ~500ms, then speaks the sentence in order", async (t) => {
+  const { synth, spoken } = makeSynth([
+    { name: "Google US English", lang: "en-US" },
+  ]);
+  t.mock.timers.enable({ apis: ["setTimeout"] });
+  try {
+    await withStubbedGlobals(
+      {
+        synth,
+        // A real fetch() to /audio/manifest.json relies on real timers
+        // internally (undici connect/keep-alive timers) and would hang
+        // forever once global timers are mocked — stub it out like the
+        // other manifest tests do.
+        fetchImpl: (async () =>
+          new Response("not found", {
+            status: 404,
+          })) as unknown as typeof fetch,
+      },
+      async () => {
+        const speaker = SPEAKER_ROSTER.find((s) => s.id === "us-man")!;
+        await speak("I want", speaker);
+        await speak("to do", speaker);
+        const piece = speakAwaitingEnd("something", speaker);
+        await piece;
+        assert.deepEqual(
+          spoken.map((u) => (u as FakeUtterance).text),
+          ["I want", "to do", "something"],
+        );
+        const sequence = speakSentenceAfterPiece(
+          piece,
+          "I want to do something",
+          speaker,
+        );
+        // Let the sequencing function run up to its pause (`await
+        // piecePromise` then `delay()` registering its timer) before
+        // ticking — otherwise the tick below fires before that timer even
+        // exists. A real setImmediate (not the mocked setTimeout) flushes
+        // the pending microtasks without advancing the virtual clock.
+        await flushMicrotasks();
+        // The pause hasn't elapsed yet — the sentence must not have spoken.
+        t.mock.timers.tick(499);
+        await flushMicrotasks();
+        assert.equal(spoken.length, 3);
+        t.mock.timers.tick(1);
+        await sequence;
+        assert.deepEqual(
+          spoken.map((u) => (u as FakeUtterance).text),
+          ["I want", "to do", "something", "I want to do something"],
+        );
+      },
+    );
+  } finally {
+    t.mock.timers.reset();
+  }
+});
+
+test("speakSentenceAfterPiece skips the sentence when cancelled during the pause", async (t) => {
+  const { synth, spoken } = makeSynth([
+    { name: "Google US English", lang: "en-US" },
+  ]);
+  t.mock.timers.enable({ apis: ["setTimeout"] });
+  try {
+    await withStubbedGlobals({ synth }, async () => {
+      const speaker = SPEAKER_ROSTER.find((s) => s.id === "us-man")!;
+      let cancelled = false;
+      const sequence = speakSentenceAfterPiece(
+        Promise.resolve(),
+        "full sentence",
+        speaker,
+        undefined,
+        { isCancelled: () => cancelled },
+      );
+      cancelled = true;
+      // Let it reach the pause's timer registration before ticking past it
+      // (see the previous test's comment on flushMicrotasks).
+      await flushMicrotasks();
+      t.mock.timers.tick(500);
+      await sequence;
+      assert.equal(spoken.length, 0);
+    });
+  } finally {
+    t.mock.timers.reset();
+  }
+});
+
 test("mute state persists and silences speak() without touching the synth", async () => {
-  const { synth, spoken } = makeSynth([{ name: "Google US English", lang: "en-US" }]);
+  const { synth, spoken } = makeSynth([
+    { name: "Google US English", lang: "en-US" },
+  ]);
   const data = new Map<string, string>();
   await withStubbedGlobals({ synth, localStorageData: data }, async () => {
     assert.equal(isMuted(), false);
@@ -186,13 +311,10 @@ test("mute state persists and silences speak() without touching the synth", asyn
 
 test("mute state tolerates blocked storage without throwing", async () => {
   const { synth } = makeSynth([]);
-  await withStubbedGlobals(
-    { synth, blockStorage: true },
-    async () => {
-      assert.doesNotThrow(() => setMuted(true));
-      assert.equal(isMuted(), false);
-    },
-  );
+  await withStubbedGlobals({ synth, blockStorage: true }, async () => {
+    assert.doesNotThrow(() => setMuted(true));
+    assert.equal(isMuted(), false);
+  });
 });
 
 test("manifest lookup resolves a clip URL only for a speaker the manifest lists, and null when absent", async () => {

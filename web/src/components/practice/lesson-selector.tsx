@@ -395,21 +395,9 @@ function LessonSession({
               </div>
             </div>
           ) : block?.type === "explanation" ? (
-            <>
-              {stepIndex === 0 && (
-                <p className="practice-lesson-eyebrow">
-                  {lesson.name || `Lección ${lesson.lessonNumber}`}
-                </p>
-              )}
-              <ExplanationStep markdown={block.contentMarkdown} />
-            </>
+            <ExplanationStep markdown={block.contentMarkdown} />
           ) : block?.type === "sentence" ? (
             <>
-              {stepIndex === 0 && (
-                <p className="practice-lesson-eyebrow">
-                  {lesson.name || `Lección ${lesson.lessonNumber}`}
-                </p>
-              )}
               <SentencePracticeCard
                 sentence={block}
                 onCompletionChange={setSentenceComplete}

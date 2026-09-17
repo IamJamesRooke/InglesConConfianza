@@ -3,9 +3,13 @@
 import type { Speaker } from "@/lib/learner/speech";
 
 /**
- * Small cartoon avatar + accent label/flag + a speech bubble that shows
- * whatever text this speaker is currently reading. Hidden entirely when no
- * speaker is available on this device (see docs/design/speech.md).
+ * Small cartoon avatar + accent label/flag + a speech bubble. Persistent for
+ * the whole slide — rendered as soon as a speaker is picked (before any
+ * answer), never unmounted for state changes within the slide. The bubble
+ * itself is always visible on a sentence/table slide: a quiet "…" before
+ * anything's spoken, the text while speaking, and it keeps showing that text
+ * afterward rather than clearing. Hidden entirely only when no speaker is
+ * available on this device at all (see docs/design/speech.md).
  */
 export function SpeakerChip({
   speaker,
@@ -31,9 +35,13 @@ export function SpeakerChip({
         <span className="speaker-chip-label">
           <span aria-hidden="true">{speaker.flag}</span> {speaker.label}
         </span>
-        <span className="speaker-chip-bubble" role="status" aria-live="polite">
-          {speakingText ?? ""}
-        </span>
+        <div className="speaker-chip-bubble" role="status" aria-live="polite">
+          {speakingText || (
+            <span className="speaker-chip-bubble-placeholder" aria-hidden="true">
+              …
+            </span>
+          )}
+        </div>
       </div>
     </div>
   );

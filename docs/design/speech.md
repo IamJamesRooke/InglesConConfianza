@@ -8,13 +8,26 @@
 ## What the learner experiences
 
 - On a sentence slide, each piece is spoken the moment it turns correct: *I want* …
-  *to do* … *something* … *with you*.
-- When the last piece lands, the queue is cleared and the whole sentence is spoken once,
-  naturally: *I want to do something with you.*
-- A **speaker** is shown on the slide: a small cartoon avatar, a country label with its
-  flag (**USA** 🇺🇸, **UK** 🇬🇧), and a speech bubble that shows the text being spoken.
+  *to do* … *something* … *with you*. A newly correct piece always interrupts
+  whichever piece is still playing rather than queuing behind it — a fast typer just
+  hears the latest one, never a stack of overlapping/queued pieces.
+- When the last piece lands, it's spoken normally (not cut off): the card waits for
+  that piece to finish (or, if the learner's typing had already moved past it, for
+  whatever's still playing to be interrupted), pauses briefly (~500ms) so the piece and
+  the sentence never blur together, then speaks the whole sentence once, naturally:
+  *I want to do something with you.* If the learner advances the slide or the card
+  unmounts before the sentence plays, it's cancelled outright — speech never blocks
+  progression, and the "Continue" action is enabled as soon as the sentence is correct
+  regardless of what's still playing.
+- A **speaker** is shown on the slide, persistently: a small cartoon avatar, a country
+  label with its flag (**USA** 🇺🇸, **UK** 🇬🇧), and a speech bubble — rendered as soon
+  as a speaker is picked (before any answer is typed), staying mounted for the whole
+  slide rather than popping in and out on state changes. The bubble is always visible
+  on a sentence/table slide: a quiet "…" before anything's spoken, the text being
+  spoken while speaking, and it keeps showing that text afterward (it doesn't clear).
   The speaker is chosen at random per sentence slide (not per piece), and the same
-  speaker reads every piece and the full sentence of that slide.
+  speaker reads every piece and the full sentence of that slide. Vocabulary tables show
+  the same persistent chip.
 - The completion screen shows the lesson's final sentence with a replay button, read by
   the speaker of that last slide.
 - A mute toggle lives in the practice header; the choice is remembered on the device.

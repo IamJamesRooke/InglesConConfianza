@@ -15,8 +15,9 @@ import {
 import {
   availableSpeakers,
   pickSpeaker,
-  speak,
-  speakSentence,
+  speakAwaitingEnd,
+  speakSentenceAfterPiece,
+  stopSpeaking,
   type Speaker,
 } from "@/lib/learner/speech";
 
@@ -81,6 +82,11 @@ export function SentencePracticeCard({
   const [speaker, setSpeaker] = useState<Speaker | null>(null);
   const [speakingText, setSpeakingText] = useState<string | null>(null);
   const spokeCompleteRef = useRef(false);
+  // Tracks the in-flight speech promise for whichever piece most recently
+  // turned correct, so the full-sentence sequencing below can wait for the
+  // *last* piece to actually finish (or be interrupted) before pausing and
+  // speaking the sentence. See docs/design/speech.md item 1.
+  const pieceSpeechRef = useRef<Promise<void>>(Promise.resolve());
   const onSpeakerChangeRef = useRef(onSpeakerChange);
   useEffect(() => {
     onSpeakerChangeRef.current = onSpeakerChange;
@@ -123,19 +129,28 @@ export function SentencePracticeCard({
       spokeCompleteRef.current = true;
       const full = sentenceEnglishText(languageBlocks);
       if (full) {
-        // This effect reacts to `isComplete` turning true (an external
-        // signal derived from user input via updatePreviewAnswer), not to
-        // synchronize render state, so a direct setState here is intended.
-        // eslint-disable-next-line react-hooks/set-state-in-effect
-        setSpeakingText(full);
-        void speakSentence(full, speaker, {
-          onEnd: () => setSpeakingText((current) => (current === full ? null : current)),
-        });
+        let cancelled = false;
+        // Wait for the last piece to finish (or be interrupted), pause
+        // briefly, then speak the whole sentence — never cut the last piece
+        // off mid-word. `isCancelled` lets the learner moving on during the
+        // wait (advancing, unmounting) skip the sentence outright rather
+        // than have it start late. See docs/design/speech.md item 1.
+        void speakSentenceAfterPiece(pieceSpeechRef.current, full, speaker, {
+          onStart: () => {
+            if (!cancelled) setSpeakingText(full);
+          },
+        }, { isCancelled: () => cancelled });
+        return () => {
+          cancelled = true;
+        };
       }
     }
     if (!isComplete) spokeCompleteRef.current = false;
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isComplete, onCompletionChange]);
+  // Advancing the slide or unmounting the card cancels any speech in flight
+  // — audio never blocks progression and never lingers into the next slide.
+  useEffect(() => () => stopSpeaking(), []);
   useEffect(
     () => () => {
       clearHelpTimer();
@@ -180,13 +195,12 @@ export function SentencePracticeCard({
     if (isCorrect && !wasCorrect) {
       const pieceEnglish = languageBlock.acceptedAnswers[0]?.trim();
       if (pieceEnglish) {
+        // The bubble keeps showing this text after it finishes speaking
+        // (see SpeakerChip) — no onEnd reset here. speakAwaitingEnd()
+        // interrupts whatever piece was still playing (see speak()) and its
+        // promise is what the full-sentence effect above waits on.
         setSpeakingText(pieceEnglish);
-        void speak(pieceEnglish, speaker, {
-          onEnd: () =>
-            setSpeakingText((current) =>
-              current === pieceEnglish ? null : current,
-            ),
-        });
+        pieceSpeechRef.current = speakAwaitingEnd(pieceEnglish, speaker);
       }
     }
     if (isCorrect && languageBlockIndex < testableBlocks.length - 1)
@@ -200,6 +214,18 @@ export function SentencePracticeCard({
   const hasAuthoredPrompt = Boolean(
     sentence.promptLabel.trim() || sentence.promptText?.trim(),
   );
+  const hasSentencePromptText = Boolean(sentence.promptText?.trim());
+  const renderSuccessCheck = (variantClassName: string) =>
+    isComplete && (
+      <span
+        className={`sentence-success ${variantClassName}`}
+        role="status"
+        aria-live="polite"
+        aria-label="¡Correcto!"
+      >
+        <Check size={16} strokeWidth={3} aria-hidden="true" />
+      </span>
+    );
   return (
     <div
       className={`sentence-practice learner-enter ${isSingleLanguageBlock ? "single-answer" : ""} ${isVocabulary ? "vocabulary-practice" : ""}`}
@@ -209,9 +235,12 @@ export function SentencePracticeCard({
           <PracticeMarkdown markdown={sentence.promptLabel} variant="eyebrow" />
         </div>
       )}
-      {sentence.promptText?.trim() && (
-        <div className="sentence-prompt">
-          <PracticeMarkdown markdown={sentence.promptText} variant="prompt" />
+      {hasSentencePromptText && (
+        <div className="sentence-prompt-row">
+          <div className="sentence-prompt">
+            <PracticeMarkdown markdown={sentence.promptText} variant="prompt" />
+          </div>
+          {renderSuccessCheck("sentence-success-inline")}
         </div>
       )}
       {languageBlocks.length > 0 ? (
@@ -219,6 +248,8 @@ export function SentencePracticeCard({
           <div
             className={`answer-grid ${hasAuthoredPrompt ? "has-prompt" : ""}`}
           >
+            {!hasSentencePromptText &&
+              renderSuccessCheck("sentence-success-card")}
             {languageBlocks.map((languageBlock) => {
               const testableIndex = testableIndexById.get(languageBlock.id);
               // E8 "given" piece: shown, never tested — static text, no
@@ -427,16 +458,6 @@ export function SentencePracticeCard({
               );
             })}
           </div>
-          {isComplete && (
-            <span
-              className="sentence-success"
-              role="status"
-              aria-live="polite"
-              aria-label="¡Correcto!"
-            >
-              <Check size={16} strokeWidth={3} aria-hidden="true" />
-            </span>
-          )}
           <SpeakerChip speaker={speaker} speakingText={speakingText} />
         </>
       ) : (
