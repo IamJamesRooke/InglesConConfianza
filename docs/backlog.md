@@ -80,6 +80,16 @@ A module of kind `onboarding` before Confianza I, run once, all learner text in 
    explanation; an image only if doing isn't enough.
 4. **"Tu primera frase"** — a two-minute real lesson so onboarding ends with a win.
 
+Owner's additional thoughts (2026-09-17, to be planned together before execution):
+- **Open with a promise, not a warning.** The first screen should excite: this course
+  comes from 14+ years of doing one thing — taking students from zero to conversational —
+  and within an hour they will produce things students with years of classes still get
+  wrong (e.g. *I want you to come here*, where learners say *I want that you come here*).
+  The pre-alpha/localStorage notice comes after the promise, not before it.
+- **Follow the order even if it feels easy.** Explain that lessons are hand-curated and
+  each assumes mastery of what came before; experienced learners should still go in
+  order — the early lessons plant patterns later lessons build on.
+
 Builder work implied: slide types *notice* (heading, body, optional image, optional
 acknowledgement) and *name capture*; a `{name}` variable token in pieces (learner
 substitutes, builder shows a chip); optional image on notice/explanation slides with
