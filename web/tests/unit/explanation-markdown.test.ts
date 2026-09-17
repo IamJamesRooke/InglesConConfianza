@@ -250,3 +250,15 @@ test("E1 stays neutral when the right side isn't English", () => {
   assert.equal(planned("El libro es rojo."), null);
   assert.equal(planned("no hay pivote aquí"), null);
 });
+
+test("a null/empty bridge attribute (Tiptap default) serializes without a |bridge suffix", () => {
+  const doc = {
+    type: "doc",
+    content: [{ type: "paragraph", content: [
+      { type: "text", text: "Quiero", marks: [{ type: "lang", attrs: { language: "es", bridge: null } }] },
+      { type: "text", text: " es " },
+      { type: "text", text: "I want", marks: [{ type: "lang", attrs: { language: "en", bridge: "" } }] },
+    ] }],
+  };
+  assert.equal(serializeExplanationDoc(doc as never), "[[es:Quiero]] es [[en:I want]]");
+});

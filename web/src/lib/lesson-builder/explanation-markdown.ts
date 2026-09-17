@@ -203,7 +203,7 @@ function markOrder(mark: PMMark): number {
 function sameMark(a: PMMark, b: PMMark): boolean {
   if (a.type !== b.type) return false;
   if (a.type === "lang" && b.type === "lang") {
-    return a.attrs.language === b.attrs.language && a.attrs.bridge === b.attrs.bridge;
+    return a.attrs.language === b.attrs.language && (a.attrs.bridge || undefined) === (b.attrs.bridge || undefined);
   }
   return true;
 }
@@ -252,7 +252,9 @@ function serializeInline(content: PMInline[]): string {
     else if (mark.type === "italic") out += wrapTrimmed(inner, "*", "*");
     else {
       const open = mark.attrs.language === "es" ? "[[es:" : "[[en:";
-      const close = mark.attrs.bridge !== undefined ? `|${mark.attrs.bridge}]]` : "]]";
+      // The editor stores an absent bridge as null (Tiptap attribute default) —
+      // any empty value means "no bridge", never a literal `|null`.
+      const close = mark.attrs.bridge ? `|${mark.attrs.bridge}]]` : "]]";
       out += wrapTrimmed(inner, open, close);
     }
     i = j;
