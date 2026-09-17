@@ -496,13 +496,15 @@
   font-weight: 600;
   color: var(--muted-foreground);
 }
-.course-footer > a {
+/* The footer's feedback trigger is a <button class="muted-link"> from
+   FeedbackSheet (src/components/learner/feedback-sheet.tsx), not an <a>. */
+.course-footer > button {
   margin-top: 32px;
   font-size: var(--t-ui);
   color: var(--primary);
   text-decoration: none;
 }
-.course-footer > a:hover {
+.course-footer > button:hover {
   text-decoration: underline;
 }
 

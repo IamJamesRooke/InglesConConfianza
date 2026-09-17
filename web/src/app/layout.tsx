@@ -24,6 +24,7 @@ import "../styles/lesson-builder/editing-hud.css";
 import "../styles/lesson-builder/print.css";
 import "../styles/practice-completion.css";
 import "../styles/practice-responsive-overrides.css";
+import "../styles/feedback-sheet.css";
 
 const geist = Geist({
   subsets: ["latin"],

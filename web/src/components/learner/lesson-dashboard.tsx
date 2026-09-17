@@ -4,6 +4,7 @@ import { ArrowRight, BookOpen } from "lucide-react";
 import Link from "next/link";
 import { useEffect, useSyncExternalStore } from "react";
 
+import { FeedbackSheet } from "@/components/learner/feedback-sheet";
 import { LessonRow } from "@/components/learner/lesson-row";
 import type {
   LearnerLesson,
@@ -163,7 +164,15 @@ export function LessonDashboard({
 
         <footer className="course-footer">
           <span>Inglés con Confianza.</span>
-          <a href="#feedback">¿Qué te pareció?</a>
+          <FeedbackSheet
+            context={{
+              lessonId: null,
+              lessonName: null,
+              slideIndex: null,
+              slideKind: "home",
+              slideText: null,
+            }}
+          />
         </footer>
       </div>
     </main>

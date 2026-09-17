@@ -18,6 +18,7 @@ import {
 } from "react";
 import { ExplanationStep } from "@/components/practice/explanation-step";
 import { SentencePracticeCard } from "@/components/practice/sentence-practice-card";
+import { FeedbackSheet } from "@/components/learner/feedback-sheet";
 import { SentenceStageCard } from "@/components/practice/sentence-stage-card";
 import {
   completionSentenceSize,
@@ -126,6 +127,33 @@ function LessonSession({
   const complete = stepIndex >= totalSteps;
   const block = lesson.blocks[stepIndex];
   const outcome = complete ? lessonOutcome(lesson.blocks) : null;
+  // Feedback context (docs/backlog.md "Per-slide feedback"): the current
+  // slide's kind and a plain-text rendering of what it shows, so a note
+  // sent from the sheet lands with enough context to act on.
+  const feedbackSlideKind = complete
+    ? "completion"
+    : block?.type ?? "unknown";
+  const feedbackSlideText = complete
+    ? outcome
+      ? `${outcome.spanish} / ${outcome.english}`
+      : null
+    : block?.type === "explanation"
+      ? block.contentMarkdown
+      : block?.type === "sentence"
+        ? block.languageBlocks
+            .map(
+              (languageBlock) =>
+                `${languageBlock.spanish} / ${languageBlock.acceptedAnswers[0] ?? ""}`,
+            )
+            .join("; ")
+        : null;
+  const feedbackContext = {
+    lessonId: lesson.id,
+    lessonName: lesson.name,
+    slideIndex: complete ? totalSteps : stepIndex,
+    slideKind: feedbackSlideKind,
+    slideText: feedbackSlideText,
+  };
   const nextLesson = lessons
     .slice(completionCursor + 1)
     .find(
@@ -454,9 +482,9 @@ function LessonSession({
               </div>
 
               <div className="completion-footer-links">
-                <a className="muted-link" href="#feedback">
-                  ¿Qué te pareció?
-                </a>
+                <FeedbackSheet
+                  context={{ ...feedbackContext, slideKind: "completion" }}
+                />
                 <button
                   type="button"
                   className="muted-link completion-reset"
@@ -525,6 +553,11 @@ function LessonSession({
             >
               <ArrowLeft size={20} aria-hidden="true" />
             </button>
+            <FeedbackSheet
+              context={feedbackContext}
+              triggerLabel="¿Algo que corregir?"
+              triggerClassName="feedback-trigger"
+            />
             <div className="lesson-feedback" role="status" />
             {advanceButton(
               `${block?.type === "sentence" && !sentenceComplete ? "awaiting-answer" : ""} ${

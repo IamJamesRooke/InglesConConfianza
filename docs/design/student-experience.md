@@ -647,3 +647,35 @@ the manifest and clip bytes (so the same markdown can carry a bridge for
 the screenshot too), asserting one clip request on slide open and a second,
 fresh one on pressing "Escuchar", and that the bridge renders. Screenshot:
 `/tmp/claude-1000/explanation-audio-1280.png` (`UX_CHECK_PORT=3221`).
+
+## 2026-09-17 — Feedback
+
+Per-slide feedback (`docs/backlog.md` "Per-slide feedback"). One component,
+`src/components/learner/feedback-sheet.tsx`, is shared by three triggers:
+
+- The practice footer's quiet "¿Algo que corregir?" text button — desktop:
+  left side, next to the back icon; phone: its own row above the primary
+  button, never competing with it.
+- The completion screen's existing "¿Qué te pareció?" link.
+- The home footer's "¿Qué te pareció?" link.
+
+Tapping either opens a sheet that slides up from the bottom (240ms
+ease-out, instant under `prefers-reduced-motion`): a textarea ("Cuéntame
+qué está mal o qué mejorarías."), an optional "¿Quién eres? (opcional)"
+field remembered on the device (`localStorage icc.feedback.who`), and
+"Enviar" / "Cancelar". Escape closes it (captured ahead of the lesson
+session's own Escape-closes-lesson handler, so the sheet never lets that
+fire while open). Sending posts the current slide's context — lesson id/
+name, slide index, kind, and a plain-text rendering of what the slide
+shows — to `POST /api/feedback` (`docs/engineering/feedback.md`), then
+shows "¡Gracias! Anotado." for 2 seconds before closing. A failed request
+shows "No se pudo enviar. Inténtalo otra vez." inline; no browser dialogs
+are used anywhere in the flow.
+
+Verified with `npm run test:unit` (406/406, 8 new validator cases), `npx
+eslint` on the touched files, `npx tsc --noEmit`, `npm run lint` (incl. CSS
+lint, no new findings), and a new `tests/ux/feedback.spec.ts`
+(`UX_CHECK_PORT=3222`) that opens the sheet from the practice footer,
+submits with `POST /api/feedback` mocked via `page.route`, and asserts the
+request body and the thanks state. Screenshot:
+`/tmp/claude-1000/feedback-390.png`.

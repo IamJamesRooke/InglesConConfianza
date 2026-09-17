@@ -50,3 +50,6 @@ next-env.d.ts
 # generated database client
 /src/generated/prisma
 .cscratch/
+
+# local per-slide feedback capture (see docs/engineering/feedback.md)
+/data/feedback.jsonl
