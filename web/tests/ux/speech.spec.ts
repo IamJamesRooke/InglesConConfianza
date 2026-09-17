@@ -1,9 +1,11 @@
 import { expect, test } from "./fixtures";
 
 // Speech feature (docs/design/speech.md): pieces speak as they turn correct,
-// on the default L2b assembling-sentence stage — each piece is an inline
-// input in the English line, and a finished piece carries data-state="done".
-// then the full sentence speaks once. `window.speechSynthesis` is stubbed via
+// on the default L2b assembling-sentence stage — each piece in the English
+// line carries a stable data-piece-index whether it's still an input
+// (pending/active) or has become a finished span, and either way it carries
+// data-state="done" once correct. Then the full sentence speaks once.
+// `window.speechSynthesis` is stubbed via
 // addInitScript so no real audio ever plays; the generated-clip manifest is
 // blocked so the stub always wins over any real /public/audio clips.
 const speechLesson = {
@@ -113,17 +115,19 @@ test("pieces speak on correct, then the full sentence once, with a speaker chip 
   await expect(chip).toBeVisible();
   await expect(chip).toContainText(/USA|UK/);
 
-  const inputs = page.locator("[data-practice-answer]");
-  await inputs.nth(0).fill("I want");
-  await expect(inputs.nth(1)).toBeFocused();
-  await inputs.nth(1).fill("to know");
-  await expect(inputs.nth(2)).toBeFocused();
-  await inputs.nth(2).fill("something.");
+  // Each piece keeps a stable data-piece-index regardless of whether it's
+  // currently rendered as an input (pending/active) or a span (finished) —
+  // see docs/design/student-experience.md, "L2b — the sentence stage".
+  await page.locator('[data-piece-index="0"]').fill("I want");
+  await expect(page.locator('[data-piece-index="1"]')).toBeFocused();
+  await page.locator('[data-piece-index="1"]').fill("to know");
+  await expect(page.locator('[data-piece-index="2"]')).toBeFocused();
+  await page.locator('[data-piece-index="2"]').fill("something.");
 
   // L2b: no success check any more — the three finished words standing in
   // the English line are the signal (docs/design/student-experience.md).
   await expect(
-    page.locator('.stage-line-en input[data-state="done"]'),
+    page.locator('.stage-line-en [data-state="done"]'),
   ).toHaveCount(3);
 
   await page.waitForFunction(
@@ -205,15 +209,14 @@ test("with no synthesis voices but a real clip manifest, clips play and the chip
   await expect(chip).toBeVisible();
   await expect(chip).toContainText(/USA|UK/);
 
-  const inputs = page.locator("[data-practice-answer]");
-  await inputs.nth(0).fill("I want");
-  await expect(inputs.nth(1)).toBeFocused();
-  await inputs.nth(1).fill("to know");
-  await expect(inputs.nth(2)).toBeFocused();
-  await inputs.nth(2).fill("something.");
+  await page.locator('[data-piece-index="0"]').fill("I want");
+  await expect(page.locator('[data-piece-index="1"]')).toBeFocused();
+  await page.locator('[data-piece-index="1"]').fill("to know");
+  await expect(page.locator('[data-piece-index="2"]')).toBeFocused();
+  await page.locator('[data-piece-index="2"]').fill("something.");
 
   await expect(
-    page.locator('.stage-line-en input[data-state="done"]'),
+    page.locator('.stage-line-en [data-state="done"]'),
   ).toHaveCount(3);
 
   // Three piece clips plus one full-sentence clip.

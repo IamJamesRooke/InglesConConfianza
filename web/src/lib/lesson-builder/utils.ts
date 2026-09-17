@@ -19,17 +19,30 @@ function expandLegacyAlternates(acceptedAnswers: string[]): string[] {
   );
 }
 
+/** The accepted answer (canonical spelling/casing) that `answer` matches,
+ * case-insensitively and including legacy semicolon-joined alternates, or
+ * `null` if none match. This is the display text for a finished piece — the
+ * learner's own casing/spacing is only used for matching, never shown. */
+export function matchedAcceptedAnswer(
+  answer: string,
+  acceptedAnswers: string[],
+): string | null {
+  const normalizedAnswer = normalizeAnswer(answer);
+  if (!normalizedAnswer) return null;
+  return (
+    expandLegacyAlternates(acceptedAnswers).find(
+      (acceptedAnswer) => normalizeAnswer(acceptedAnswer) === normalizedAnswer,
+    ) ?? null
+  );
+}
+
 /** Whether `answer` matches one of `acceptedAnswers`, case-insensitively and
  * including legacy semicolon-joined alternates. Empty input never matches. */
 export function isAnswerAccepted(
   answer: string,
   acceptedAnswers: string[],
 ): boolean {
-  const normalizedAnswer = normalizeAnswer(answer);
-  if (!normalizedAnswer) return false;
-  return expandLegacyAlternates(acceptedAnswers).some(
-    (acceptedAnswer) => normalizeAnswer(acceptedAnswer) === normalizedAnswer,
-  );
+  return matchedAcceptedAnswer(answer, acceptedAnswers) !== null;
 }
 
 /** A language block is "real" only if it has a Spanish prompt or at least one

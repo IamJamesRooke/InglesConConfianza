@@ -5,7 +5,6 @@ import { Fragment } from "react";
 import { PracticeMarkdown } from "@/components/practice/practice-markdown";
 import { SpeakerChip } from "@/components/practice/speaker-chip";
 import {
-  answerMinChars,
   blankChars,
   useSentencePractice,
 } from "@/components/practice/use-sentence-practice";
@@ -19,13 +18,15 @@ import type { Speaker } from "@/lib/learner/speech";
  *
  * Line 1 is the Spanish sentence as prose — the piece being typed is
  * highlighted, finished pieces settle back to ink, pieces still to come are
- * muted. Line 2 is the English sentence growing in place: finished pieces
- * are plain words, the piece being typed is an inline input sitting exactly
- * where its word will land, and pieces still to come are blank underlines
- * sized to their answer. Every blank is a real input all along (styled as a
- * blank until it's focused, as a word once it's right), so Tab/Enter/click
- * progression, hints and answer matching are exactly the behaviour of the
- * older grid card — all of it shared through useSentencePractice.
+ * muted. Line 2 is the English sentence growing in place: pieces still to
+ * come and the piece being typed are inline inputs (blank underlines sized
+ * to their answer until answered), and a finished piece is a plain `<span>`
+ * carrying the accepted answer it matched (canonical casing, not the
+ * learner's raw typing) at normal inter-word spacing — no input, so no
+ * caret-reserve gap. Clicking or tabbing into a finished word swaps it back
+ * to an input so the learner can still fix it. Tab/Enter/click progression,
+ * hints and answer matching are exactly the behaviour of the older grid
+ * card — all of it shared through useSentencePractice.
  *
  * There is no whole-sentence success check and no per-piece check: a word
  * standing finished in `--primary` is the signal, plus the speaker's bubble
@@ -50,6 +51,7 @@ export function SentenceStageCard({
     testableIndexById,
     answers,
     correctAnswers,
+    matchedAnswers,
     helpedBlockIndex,
     focusedBlockIndex,
     setFocusedBlockIndex,
@@ -66,7 +68,6 @@ export function SentenceStageCard({
     onAnswersChange,
     onSpeakerChange,
   });
-  const isSingleLanguageBlock = testableBlocks.length === 1;
   // The piece the learner is on: whatever is focused, else the first one
   // still unanswered. Drives line 1's highlight and where the hint's
   // lightbulb sits.
@@ -163,6 +164,50 @@ export function SentenceStageCard({
                 const isCorrect =
                   correctAnswers[testableIndex] &&
                   helpedBlockIndex !== testableIndex;
+                const isEditing = focusedBlockIndex === testableIndex;
+                // A finished piece not currently being re-edited is plain
+                // text — a normal word followed by a normal space, not an
+                // input carrying its field-sizing caret reserve. Clicking or
+                // tabbing into it swaps it back to an input (below) so the
+                // learner can still fix it.
+                if (isCorrect && !isEditing) {
+                  const canonical =
+                    matchedAnswers[testableIndex] ??
+                    languageBlock.acceptedAnswers[0] ??
+                    "";
+                  return (
+                    <Fragment key={languageBlock.id}>
+                      {index > 0 ? " " : null}
+                      <span
+                        className="stage-en stage-en-done"
+                        data-piece-index={testableIndex}
+                        data-state="done"
+                        role="button"
+                        tabIndex={0}
+                        onClick={() => {
+                          setFocusedBlockIndex(testableIndex);
+                          window.setTimeout(
+                            () => inputRefs.current[testableIndex]?.focus(),
+                            0,
+                          );
+                        }}
+                        onKeyDown={(event) => {
+                          if (event.key !== "Enter" && event.key !== " ")
+                            return;
+                          event.preventDefault();
+                          setFocusedBlockIndex(testableIndex);
+                          window.setTimeout(
+                            () => inputRefs.current[testableIndex]?.focus(),
+                            0,
+                          );
+                        }}
+                        aria-label={`Editar traducción de ${languageBlock.spanish || `bloque ${testableIndex + 1}`}`}
+                      >
+                        {canonical}
+                      </span>
+                    </Fragment>
+                  );
+                }
                 return (
                   <Fragment key={languageBlock.id}>
                     {index > 0 ? " " : null}
@@ -172,6 +217,7 @@ export function SentenceStageCard({
                       }}
                       type="text"
                       data-practice-answer
+                      data-piece-index={testableIndex}
                       data-state={
                         isCorrect
                           ? "done"
@@ -201,10 +247,6 @@ export function SentenceStageCard({
                       style={
                         {
                           "--blank-chars": blankChars(languageBlock),
-                          "--answer-chars": answerMinChars(
-                            languageBlock,
-                            isSingleLanguageBlock,
-                          ),
                         } as CSSProperties
                       }
                     />

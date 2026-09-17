@@ -259,6 +259,42 @@ test("the L2b stage card renders both sentence lines, one inline input per teste
   assert.match(html, /stage-instruction/);
 });
 
+test("a finished stage piece displays the canonical accepted answer, not the learner's raw typing", () => {
+  const html = renderToStaticMarkup(
+    createElement(SentenceStageCard, {
+      sentence: {
+        id: "s3",
+        type: "sentence",
+        promptLabel: "",
+        promptText: "",
+        helperText: "",
+        answerFeedback: null,
+        languageBlocks: [
+          {
+            id: "l1",
+            spanish: "Quiero",
+            callout: null,
+            acceptedAnswers: ["I want"],
+          },
+          {
+            id: "l2",
+            spanish: "saber",
+            callout: null,
+            acceptedAnswers: ["to know"],
+          },
+        ],
+      },
+      initialAnswers: ["i want", ""],
+    }),
+  );
+  // Matched lowercase, but the finished piece shows the canonical casing —
+  // as a span, not an input, so it sits at normal word spacing.
+  assert.match(html, /<span class="stage-en stage-en-done"[^>]*>I want<\/span>/);
+  assert.doesNotMatch(html, />i want</);
+  // The still-pending second piece stays an input; only one input remains.
+  assert.equal((html.match(/<input/g) ?? []).length, 1);
+});
+
 test("explanations left-align once the authored text is longer than one line", () => {
   assert.equal(explanationWraps("Esto es corto."), false);
   assert.equal(

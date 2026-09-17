@@ -6,6 +6,7 @@ import type { LanguageBlock, SentenceBlock } from "@/lib/lesson-builder/types";
 import {
   isAnswerAccepted,
   isMeaningfulLanguageBlock,
+  matchedAcceptedAnswer,
   sentenceEnglishText,
 } from "@/lib/lesson-builder/utils";
 import {
@@ -110,6 +111,16 @@ export function useSentencePractice({
         answers[languageBlockIndex] ?? "",
         languageBlock.acceptedAnswers,
       ),
+  );
+  // The accepted answer each correct piece actually matched — its canonical
+  // spelling/casing, not the learner's raw typing. A finished piece displays
+  // this, never `answers[i]` directly (see docs/design/student-experience.md,
+  // "L2b — the sentence stage").
+  const matchedAnswers = testableBlocks.map((languageBlock, languageBlockIndex) =>
+    matchedAcceptedAnswer(
+      answers[languageBlockIndex] ?? "",
+      languageBlock.acceptedAnswers,
+    ),
   );
   const isComplete =
     helpedBlockIndex === null &&
@@ -281,6 +292,7 @@ export function useSentencePractice({
     testableIndexById,
     answers,
     correctAnswers,
+    matchedAnswers,
     isComplete,
     helpedBlockIndex,
     focusedBlockIndex,

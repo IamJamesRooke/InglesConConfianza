@@ -1250,11 +1250,16 @@
   color: var(--foreground);
   font-weight: 600;
 }
+/* Pending-blank width tracks word width, not a full character cell per
+   glyph (0.62ch), floored at 3ch so a one-letter answer still reads as a
+   blank — this is what lets a long sentence wrap phrase-by-phrase on a
+   phone instead of one blank per line. Focus widens it by 1ch of caret
+   room, same formula. */
 .stage-en-input {
   display: inline-block;
   field-sizing: content;
-  width: calc(var(--blank-chars, 3) * 1ch);
-  min-width: calc(var(--blank-chars, 3) * 1ch);
+  width: max(3ch, calc(var(--blank-chars, 3) * 0.62ch));
+  min-width: max(3ch, calc(var(--blank-chars, 3) * 0.62ch));
   max-width: 100%;
   padding: 0 1px;
   border: 0;
@@ -1273,7 +1278,7 @@
   /* The underline and tint are the focus indicator — one ring, no outline
      stacked on top of a border. */
   outline: none;
-  min-width: calc(var(--answer-chars, 6) * 1ch);
+  min-width: max(3ch, calc(var(--blank-chars, 3) * 0.62ch + 1ch));
   border-bottom-color: var(--primary);
   background: color-mix(in oklch, var(--primary) 8%, transparent);
 }
@@ -1281,17 +1286,33 @@
   border-bottom-color: var(--hint);
   background: color-mix(in oklch, var(--hint) 16%, transparent);
 }
-/* Answered: the input reads as a plain word in the sentence — no blank, no
-   check (the word itself is the signal). */
+/* A piece re-focused for editing after already being correct (rare —
+   the finished word is normally the .stage-en-done span below): same look
+   as done, still an input while it's being retyped. */
 .stage-en-input[data-state="done"] {
   min-width: 0;
-  /* `field-sizing: content` reserves about 1em past the text for the caret
-     (measured in Chromium at both prompt sizes). Finished words pull that
-     back so the sentence reads with single spaces; a blank keeps it, so a
-     focused field never overlaps the blank after it. */
-  margin-inline-end: -0.9em;
   border-bottom-color: transparent;
   background: transparent;
+}
+/* Finished piece: a plain word in the text flow, not an input — no caret
+   reserve, so it sits at ordinary inter-word spacing. Same font metrics as
+   the input it replaces (font: inherit, padding 0) so there is no layout
+   jump on the swap either way. Focusable so Tab still reaches it to edit. */
+.stage-en-done {
+  display: inline;
+  padding: 0;
+  border: 0;
+  border-radius: 3px;
+  background: transparent;
+  color: var(--primary);
+  font: inherit;
+  font-weight: 700;
+  cursor: text;
+}
+.stage-en-done:hover,
+.stage-en-done:focus-visible {
+  outline: none;
+  background: color-mix(in oklch, var(--primary) 8%, transparent);
 }
 .stage-hint {
   margin-top: 10px;
