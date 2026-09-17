@@ -25,6 +25,25 @@
   font-size: 13px;
   margin-bottom: 34px;
 }
+.completion-final-sentence {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin: -18px auto 34px;
+  color: var(--foreground);
+  font-size: 17px;
+  font-weight: 600;
+}
+.completion-final-sentence .completion-replay {
+  width: 36px;
+  height: 36px;
+  color: var(--primary);
+  background: var(--muted);
+}
+.completion-final-sentence .completion-replay:hover {
+  background: var(--surface-subtle);
+}
 .completion-actions {
   display: flex;
   gap: 12px;

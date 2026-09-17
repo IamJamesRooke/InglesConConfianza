@@ -75,6 +75,9 @@
   border-radius: 999px;
   color: var(--primary-foreground);
 }
+.lesson-topbar .lesson-mute-toggle {
+  margin-left: auto;
+}
 .lesson-topbar .learner-icon-button:hover {
   color: var(--primary-foreground);
   background: color-mix(in oklch, var(--primary-foreground) 18%, transparent);
@@ -534,6 +537,48 @@
   font-size: 14px;
   font-weight: 500;
   line-height: 1.4;
+}
+/* Speech: speaker chip sits bottom-left of the sentence card column, below
+   the answer grid and above the (transparent, fixed) footer. See
+   docs/design/speech.md. */
+.speaker-chip {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 18px;
+  max-width: 100%;
+}
+.speaker-chip-avatar {
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  border-radius: 999px;
+}
+.speaker-chip-body {
+  display: grid;
+  gap: 2px;
+  min-width: 0;
+}
+.speaker-chip-label {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--muted-foreground);
+}
+.speaker-chip-bubble {
+  min-height: 1.2em;
+  font-size: 14px;
+  color: var(--foreground);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+@media (max-width: 760px) {
+  .speaker-chip-avatar {
+    width: 32px;
+    height: 32px;
+  }
 }
 /* L2a success signal: one small purple check beside the prompt — no green
    circle, no footer recolour. Positioned on the card, near the prompt/cue

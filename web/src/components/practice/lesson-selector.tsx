@@ -5,7 +5,10 @@ import {
   ArrowRight,
   Check,
   Home,
+  Play,
   SkipForward,
+  Volume2,
+  VolumeX,
   X,
 } from "lucide-react";
 import { useRouter } from "next/navigation";
@@ -18,13 +21,20 @@ import {
 } from "react";
 import { ExplanationStep } from "@/components/practice/explanation-step";
 import { SentencePracticeCard } from "@/components/practice/sentence-practice-card";
-import { learnerLabel } from "@/lib/learner/presentation";
+import { learnerLabel, lessonOutcome } from "@/lib/learner/presentation";
 import {
   readProgress,
   resumeStepIndex,
   saveLessonProgress,
   skipLesson,
 } from "@/lib/learner/progress";
+import {
+  isMuted,
+  setMuted,
+  speakSentence,
+  subscribeMuted,
+  type Speaker,
+} from "@/lib/learner/speech";
 import type { LessonBlock } from "@/lib/lesson-builder/types";
 
 export type PracticeLesson = {
@@ -101,11 +111,18 @@ function LessonSession({
   const [completionCursor, setCompletionCursor] = useState(() =>
     lessons.findIndex((item) => item.id === lesson.id),
   );
+  const [lastSpeaker, setLastSpeaker] = useState<Speaker | null>(null);
+  const muted = useSyncExternalStore(
+    subscribeMuted,
+    isMuted,
+    () => false,
+  );
   const sectionRef = useRef<HTMLElement>(null);
   const contentRef = useRef<HTMLDivElement>(null);
   const totalSteps = lesson.blocks.length;
   const complete = stepIndex >= totalSteps;
   const block = lesson.blocks[stepIndex];
+  const outcome = complete ? lessonOutcome(lesson.blocks) : null;
   const nextLesson = lessons
     .slice(completionCursor + 1)
     .find(
@@ -276,6 +293,20 @@ function LessonSession({
           value={complete ? totalSteps : stepIndex}
           max={totalSteps || 1}
         />
+        <button
+          type="button"
+          className="learner-icon-button lesson-mute-toggle"
+          onClick={() => setMuted(!muted)}
+          aria-label={muted ? "Activar sonido" : "Silenciar sonido"}
+          title={muted ? "Activar sonido" : "Silenciar sonido"}
+          aria-pressed={muted}
+        >
+          {muted ? (
+            <VolumeX size={20} aria-hidden="true" />
+          ) : (
+            <Volume2 size={20} aria-hidden="true" />
+          )}
+        </button>
       </header>
 
       <div ref={contentRef} className="lesson-scroll-area">
@@ -295,6 +326,22 @@ function LessonSession({
               <p className="completion-saved-note">
                 Tu progreso está guardado.
               </p>
+              {outcome && (
+                <p className="completion-final-sentence">
+                  <span lang="en">{outcome.english}</span>
+                  <button
+                    type="button"
+                    className="learner-icon-button completion-replay"
+                    onClick={() =>
+                      void speakSentence(outcome.english, lastSpeaker)
+                    }
+                    aria-label="Escuchar la frase final"
+                    title="Escuchar la frase final"
+                  >
+                    <Play size={18} aria-hidden="true" />
+                  </button>
+                </p>
+              )}
               {nextLesson && !onCloseLesson ? (
                 <div className="completion-next">
                   <h2>Siguiente lección</h2>
@@ -373,6 +420,7 @@ function LessonSession({
                     [block.id]: answers,
                   }))
                 }
+                onSpeakerChange={setLastSpeaker}
               />
             </>
           ) : null}

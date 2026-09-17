@@ -318,21 +318,21 @@ test("learner answer keys reveal help without navigation, focus theft, or lost d
   await page.goto(`/practice?lesson=${keyboardLesson.id}`);
   await page.getByRole("button", { name: /Vamos a practicar/ }).click();
   const input = page.getByRole("textbox", { name: "Traducción de hacer" });
-  const step = page.locator(".lesson-step-count");
+  const step = page.locator(".lesson-top-progress");
   await expect(input).toBeFocused();
-  await expect(step).toContainText("2");
+  await expect(step).toHaveAttribute("value", "1");
 
   for (const key of ["ArrowLeft", "ArrowRight"]) {
     await page.keyboard.press(key);
     await expect(input).toBeFocused();
-    await expect(step).toContainText("2");
+    await expect(step).toHaveAttribute("value", "1");
   }
 
   // Arrows never drive slide navigation even outside a text field.
   await page.getByRole("button", { name: "Paso anterior" }).focus();
   for (const key of ["ArrowLeft", "ArrowRight"]) {
     await page.keyboard.press(key);
-    await expect(step).toContainText("2");
+    await expect(step).toHaveAttribute("value", "1");
   }
   await input.focus();
 
@@ -343,7 +343,7 @@ test("learner answer keys reveal help without navigation, focus theft, or lost d
     bubbles: true,
   });
   await expect(input).not.toHaveClass(/showing-hint/);
-  await expect(step).toContainText("2");
+  await expect(step).toHaveAttribute("value", "1");
 
   await input.fill("to");
   const piece = input.locator("xpath=ancestor::*[contains(@class, 'answer-piece')]");
@@ -355,7 +355,7 @@ test("learner answer keys reveal help without navigation, focus theft, or lost d
   expect(Math.abs((await piece.boundingBox())!.height - heightBeforeHint)).toBeLessThan(
     2,
   );
-  await expect(step).toContainText("2");
+  await expect(step).toHaveAttribute("value", "1");
 
   await input.fill("to d");
   await expect(input).not.toHaveClass(/showing-hint/);

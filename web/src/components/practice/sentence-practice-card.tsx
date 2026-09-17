@@ -3,13 +3,22 @@ import { Check, Info, Lightbulb } from "lucide-react";
 import type { CSSProperties } from "react";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { PracticeMarkdown } from "@/components/practice/practice-markdown";
+import { SpeakerChip } from "@/components/practice/speaker-chip";
 import type { LanguageBlock, SentenceBlock } from "@/lib/lesson-builder/types";
 import {
   diffChars,
   isAnswerAccepted,
   isMeaningfulLanguageBlock,
   pickClosestAnswer,
+  sentenceEnglishText,
 } from "@/lib/lesson-builder/utils";
+import {
+  availableSpeakers,
+  pickSpeaker,
+  speak,
+  speakSentence,
+  type Speaker,
+} from "@/lib/learner/speech";
 
 // The answer field grows to fit whatever the learner types (`field-sizing:
 // content`, see practice-responsive-overrides.css), but that alone doesn't
@@ -36,11 +45,13 @@ export function SentencePracticeCard({
   onCompletionChange,
   initialAnswers,
   onAnswersChange,
+  onSpeakerChange,
 }: {
   sentence: SentenceBlock;
   onCompletionChange?: (isComplete: boolean) => void;
   initialAnswers?: string[];
   onAnswersChange?: (answers: string[]) => void;
+  onSpeakerChange?: (speaker: Speaker | null) => void;
 }) {
   // Dangling fully-blank language blocks are authoring debris, not real
   // questions — drop them before anything derives indices, progression, or
@@ -67,6 +78,13 @@ export function SentencePracticeCard({
   );
   const inputRefs = useRef<Array<HTMLInputElement | null>>([]);
   const helpTimerRef = useRef<number | null>(null);
+  const [speaker, setSpeaker] = useState<Speaker | null>(null);
+  const [speakingText, setSpeakingText] = useState<string | null>(null);
+  const spokeCompleteRef = useRef(false);
+  const onSpeakerChangeRef = useRef(onSpeakerChange);
+  useEffect(() => {
+    onSpeakerChangeRef.current = onSpeakerChange;
+  }, [onSpeakerChange]);
   const correctAnswers = testableBlocks.map(
     (languageBlock, languageBlockIndex) =>
       isAnswerAccepted(
@@ -101,6 +119,22 @@ export function SentencePracticeCard({
   );
   useEffect(() => {
     onCompletionChange?.(isComplete);
+    if (isComplete && !spokeCompleteRef.current && sentence.layout !== "vocabulary_table") {
+      spokeCompleteRef.current = true;
+      const full = sentenceEnglishText(languageBlocks);
+      if (full) {
+        // This effect reacts to `isComplete` turning true (an external
+        // signal derived from user input via updatePreviewAnswer), not to
+        // synchronize render state, so a direct setState here is intended.
+        // eslint-disable-next-line react-hooks/set-state-in-effect
+        setSpeakingText(full);
+        void speakSentence(full, speaker, {
+          onEnd: () => setSpeakingText((current) => (current === full ? null : current)),
+        });
+      }
+    }
+    if (!isComplete) spokeCompleteRef.current = false;
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isComplete, onCompletionChange]);
   useEffect(
     () => () => {
@@ -111,6 +145,25 @@ export function SentencePracticeCard({
   useEffect(() => {
     const timer = window.setTimeout(() => inputRefs.current[0]?.focus(), 0);
     return () => window.clearTimeout(timer);
+  }, [sentence.id]);
+  // One speaker per slide, chosen deterministically from the block id so it
+  // doesn't reshuffle on every re-render — see docs/design/speech.md.
+  useEffect(() => {
+    let cancelled = false;
+    spokeCompleteRef.current = false;
+    availableSpeakers()
+      .then((speakers) => {
+        if (cancelled) return;
+        const picked = pickSpeaker(sentence.id, speakers);
+        setSpeaker(picked);
+        onSpeakerChangeRef.current?.(picked);
+      })
+      .catch(() => {
+        if (!cancelled) setSpeaker(null);
+      });
+    return () => {
+      cancelled = true;
+    };
   }, [sentence.id]);
   function updatePreviewAnswer(answer: string, languageBlockIndex: number) {
     if (helpedBlockIndex === languageBlockIndex) {
@@ -123,6 +176,19 @@ export function SentencePracticeCard({
     onAnswersChange?.(nextAnswers);
     const languageBlock = testableBlocks[languageBlockIndex];
     const isCorrect = isAnswerAccepted(answer, languageBlock.acceptedAnswers);
+    const wasCorrect = correctAnswers[languageBlockIndex];
+    if (isCorrect && !wasCorrect) {
+      const pieceEnglish = languageBlock.acceptedAnswers[0]?.trim();
+      if (pieceEnglish) {
+        setSpeakingText(pieceEnglish);
+        void speak(pieceEnglish, speaker, {
+          onEnd: () =>
+            setSpeakingText((current) =>
+              current === pieceEnglish ? null : current,
+            ),
+        });
+      }
+    }
     if (isCorrect && languageBlockIndex < testableBlocks.length - 1)
       window.setTimeout(
         () => inputRefs.current[languageBlockIndex + 1]?.focus(),
@@ -371,6 +437,7 @@ export function SentencePracticeCard({
               <Check size={16} strokeWidth={3} aria-hidden="true" />
             </span>
           )}
+          <SpeakerChip speaker={speaker} speakingText={speakingText} />
         </>
       ) : (
         <p className="rounded-lg border border-dashed border-border bg-background px-4 py-6 text-center text-sm font-medium text-destructive">

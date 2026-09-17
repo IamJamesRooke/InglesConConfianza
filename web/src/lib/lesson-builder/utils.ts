@@ -45,6 +45,22 @@ export function isMeaningfulLanguageBlock(languageBlock: {
   );
 }
 
+/** The full English sentence a set of language blocks spell out together —
+ * each meaningful block's first accepted answer, joined with spaces. Shared
+ * by the learner speech feature (speaks the full sentence on completion)
+ * and scripts/generate-audio.ts (collects text to synthesize). */
+export function sentenceEnglishText(
+  languageBlocks: Array<{ spanish: string; acceptedAnswers: string[] }>,
+): string {
+  return languageBlocks
+    .filter(isMeaningfulLanguageBlock)
+    .map((block) => block.acceptedAnswers[0]?.trim() ?? "")
+    .filter(Boolean)
+    .join(" ")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
 export type DiffPart = { value: string; type: "equal" | "insert" | "delete" };
 
 /**

@@ -59,6 +59,19 @@ without touching code (same path, same size).
 - Later backend: `speak()` first checks `/audio/<hash>.mp3` (generated at build); absent →
   browser synthesis. Not built now.
 
+## Generating clips
+
+`npm run audio:generate` (`web/scripts/generate-audio.ts`) reads `data/lessons.json`,
+collects every tested piece's first accepted answer and every ordinary sentence's full
+English (vocabulary tables never contribute a "full sentence"), and calls Google Cloud
+Text-to-Speech for each speaker (`us-man` → `en-US-Neural2-D`, `uk-woman` →
+`en-GB-Neural2-A`, MP3, speaking rate 0.95). Clips are written to
+`web/public/audio/<speakerId>/<sha1(text)>.mp3` (only when missing) and
+`web/public/audio/manifest.json` is rewritten to `{ "<sha1>": ["us-man", "uk-woman"] }`.
+Without `GOOGLE_TTS_API_KEY` set, the script prints what it would generate and exits 0 —
+the app works with no key and no clips at all, falling back to browser synthesis.
+Generated clips are deploy assets and stay committed (small; not gitignored).
+
 ## Not in scope now
 
 Recording, cloud voices, per-piece speaker changes, speed control, Spanish speech,
