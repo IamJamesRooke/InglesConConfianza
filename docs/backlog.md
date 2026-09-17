@@ -38,6 +38,54 @@ Each step has a gate; nothing below a gate starts until it passes.
 Deliberate non-goals for the MVP: user accounts, server-side progress, spaced
 repetition, a public admin.
 
+## Learner polish and pre-alpha ship (owner, 2026-09-17) — the active sequence
+
+Builder is "good enough"; the pre-alpha ships ONE larger Confianza I lesson. Palette is
+purple, tokens only (`web/src/app/globals.css`, CSS lint enforces no literals elsewhere).
+Cosmetic work: lint + one screenshot; behaviour: unit + one spec; the full gate only on
+the owner's say-so.
+
+- [x] L0 palette · L0b colour on surfaces · L1 home (one message per zone, no plumbing)
+- [x] L2a practice frame (one typeface, thin header + progress bar, one card width)
+- [x] Speech: browser synthesis + Google clips, USA/UK speakers (`docs/design/speech.md`)
+- [ ] L2b sentence slide (check beside the sentence, headline prompt, hint outside the field,
+      no layout jump) · table slide at reading size · explanation marks loudest
+- [ ] L2c completion: the sentence you built, "Esto ya lo puedes decir", replay, one action
+- [ ] L1 leftover: drop the "0 / 2" on the module header
+- [ ] Per-slide feedback: quiet "¿Algo que corregir?" in the practice footer → small field →
+      one serverless function → a Google Sheet row (lesson, slide, slide text, device,
+      optional "¿quién eres?"); completion keeps a general "¿Qué te pareció?"
+- [ ] L4 craft: favicon/app icon, manifest, loading/empty/error states, focus rings,
+      transitions, reduced motion
+- [ ] Onboarding (below)
+- [ ] Admin guard (env secret on `/admin` + `/api/admin`), deploy shape: static learner site
+      with lessons + audio bundled + one feedback function on Vercel; admin local only;
+      README + `.env.example`
+- [ ] Full gate (with permission) → deploy → friends
+
+### Onboarding (thinking only, 2026-09-17 — not started)
+
+A module of kind `onboarding` before Confianza I, run once, all learner text in Spanish (tú).
+
+1. **"Antes de empezar"** — a *notice* slide: pre-alpha; progress lives only in this
+   browser and clearing browser data erases it; an "Entiendo" checkbox gates Continue
+   (stored on device); "tu opinión importa" pointing at the per-slide comment button.
+2. **"Hola, mi nombre es…"** — a *name-capture* slide ("¿Cómo te llamas?", stored on
+   device as `icc.learner.name`), then "Hola, mi nombre es [name]" → "Hello, my name is
+   [name]" with the name as a given piece from that variable; `{name}` usable in any
+   later piece.
+3. **"Así escribimos"** — how typing works here: capital at the start, full stop at the
+   end, apostrophes ("I'm"), accents don't matter in prompts, hints/help never punished.
+   Taught by doing: two or three tiny sentence slides that need punctuation + one
+   explanation; an image only if doing isn't enough.
+4. **"Tu primera frase"** — a two-minute real lesson so onboarding ends with a win.
+
+Builder work implied: slide types *notice* (heading, body, optional image, optional
+acknowledgement) and *name capture*; a `{name}` variable token in pieces (learner
+substitutes, builder shows a chip); optional image on notice/explanation slides with
+files kept in the repo; one script-mode line per new type. Feedback consolidation = the
+Google Sheet above.
+
 ## Milestone: Pre-curation readiness
 
 - [x] Retire obsolete migration and prototype surfaces, remove unused assets and loaders, align product documentation and metadata, preserve guarded concept inserts, and prepare exact role filtering for database curation.
