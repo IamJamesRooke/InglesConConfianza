@@ -54,6 +54,12 @@ Voice availability differs per device — some report no `speechSynthesis` voice
 
 ## Avatars
 
+**Owner (2026-09-17):** the avatars must be *attractive, distinct people*, and bigger
+(72px at desktop, 48px on phone) — not generic busts. The UK woman and the USA man must
+read as two different characters (face shape, hair, skin tone, clothing colour). No
+bubble at rest: the bubble appears with the first words and then keeps the last thing
+said; never a "…" typing indicator.
+
 `web/public/speakers/<id>.svg`: flat cartoon busts, two or three palette tones each,
 128×128, no text inside the image (the label is HTML so it can be translated/styled).
 The MVP avatars are hand-drawn SVGs; they can be replaced by commissioned art later
