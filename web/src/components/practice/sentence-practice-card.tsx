@@ -23,12 +23,14 @@ export function SentencePracticeCard({
   initialAnswers,
   onAnswersChange,
   onSpeakerChange,
+  onHintsUsedChange,
 }: {
   sentence: SentenceBlock;
   onCompletionChange?: (isComplete: boolean) => void;
   initialAnswers?: string[];
   onAnswersChange?: (answers: string[]) => void;
   onSpeakerChange?: (speaker: Speaker | null) => void;
+  onHintsUsedChange?: (count: number) => void;
 }) {
   const {
     languageBlocks,
@@ -51,6 +53,7 @@ export function SentencePracticeCard({
     onCompletionChange,
     onAnswersChange,
     onSpeakerChange,
+    onHintsUsedChange,
   });
   const isSingleLanguageBlock = testableBlocks.length === 1;
   // Which row "Pista" speaks: the focused one, else the first row still

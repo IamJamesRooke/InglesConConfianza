@@ -4,15 +4,34 @@ import test from "node:test";
 import { validateFeedbackPayload } from "../../src/lib/feedback/validate";
 
 const basePayload = {
+  moduleId: "module_1",
+  moduleName: "Módulo 1",
   lessonId: "lesson_1",
   lessonName: "Lección 1",
   slideIndex: 2,
+  slideCount: 5,
   slideKind: "sentence",
-  slideText: "Quiero saber algo. / I want to know something.",
+  slideId: "block_1",
+  slide: {
+    instruction: "Completa la frase.",
+    pieces: [
+      { spanish: "Quiero saber algo.", acceptedAnswers: ["I want to know something."], given: false },
+    ],
+  },
+  answers: [{ index: 0, typed: "I want to know something.", correct: true }],
+  hintsUsed: 1,
+  secondsOnSlide: 12,
+  muted: false,
+  speakerId: "us-man",
+  progress: { lessonsCompleted: 1, lessonsTotal: 10 },
+  viewport: { w: 1280, h: 800 },
+  language: "es-CO",
+  pointer: "mouse",
   message: "El botón de continuar no responde en móvil.",
   who: "Ana",
   page: "/practice?lesson=lesson_1",
   userAgent: "test-agent",
+  appVersion: "abc1234",
   at: "2026-09-17T00:00:00.000Z",
 };
 
@@ -28,6 +47,21 @@ test("accepts a well-formed payload and trims message/who", () => {
   assert.equal(result.value.who, "Ana");
   assert.equal(result.value.lessonId, "lesson_1");
   assert.equal(result.value.slideIndex, 2);
+  assert.equal(result.value.moduleId, "module_1");
+  assert.equal(result.value.slideCount, 5);
+  assert.deepEqual(result.value.answers, [
+    { index: 0, typed: "I want to know something.", correct: true },
+  ]);
+  assert.equal(result.value.hintsUsed, 1);
+  assert.equal(result.value.secondsOnSlide, 12);
+  assert.equal(result.value.muted, false);
+  assert.equal(result.value.speakerId, "us-man");
+  assert.deepEqual(result.value.progress, { lessonsCompleted: 1, lessonsTotal: 10 });
+  assert.deepEqual(result.value.viewport, { w: 1280, h: 800 });
+  assert.equal(result.value.language, "es-CO");
+  assert.equal(result.value.pointer, "mouse");
+  assert.equal(result.value.appVersion, "abc1234");
+  assert.deepEqual(result.value.slide, basePayload.slide);
 });
 
 test("rejects an empty message", () => {
@@ -75,14 +109,42 @@ test("coerces missing contextual fields to nulls/defaults instead of rejecting",
   assert.equal(result.value.lessonId, null);
   assert.equal(result.value.lessonName, null);
   assert.equal(result.value.slideIndex, null);
-  assert.equal(result.value.slideText, null);
+  assert.equal(result.value.slide, null);
   assert.equal(result.value.slideKind, "unknown");
   assert.equal(result.value.page, "");
   assert.equal(result.value.userAgent, "");
+  assert.equal(result.value.appVersion, "dev");
+  assert.equal(result.value.answers.length, 0);
+  assert.equal(result.value.progress, null);
+  assert.equal(result.value.viewport, null);
+  assert.equal(result.value.pointer, null);
   assert.equal(typeof result.value.at, "string");
 });
 
 test("rejects a non-object body", () => {
   const result = validateFeedbackPayload("not an object");
   assert.equal(result.ok, false);
+});
+
+test("rejects a slide snapshot over 8KB serialized", () => {
+  const result = validateFeedbackPayload({
+    ...basePayload,
+    slide: { markdown: "a".repeat(9 * 1024) },
+  });
+  assert.equal(result.ok, false);
+});
+
+test("accepts a slide snapshot at the 8KB boundary and drops malformed answer entries", () => {
+  const result = validateFeedbackPayload({
+    ...basePayload,
+    slide: { markdown: "a" },
+    answers: [
+      { index: 0, typed: "hi", correct: true },
+      { typed: "no index" },
+      "not an object",
+    ],
+  });
+  assert.equal(result.ok, true);
+  if (!result.ok) return;
+  assert.deepEqual(result.value.answers, [{ index: 0, typed: "hi", correct: true }]);
 });

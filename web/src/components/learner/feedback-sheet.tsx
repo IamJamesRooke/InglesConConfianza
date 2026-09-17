@@ -1,24 +1,80 @@
 "use client";
 
-import { useCallback, useEffect, useRef, useState } from "react";
+import { MessageCircle } from "lucide-react";
+import {
+  forwardRef,
+  useCallback,
+  useEffect,
+  useImperativeHandle,
+  useRef,
+  useState,
+} from "react";
+import { isMuted } from "@/lib/learner/speech";
 
 // Per-slide feedback (docs/backlog.md "Per-slide feedback",
-// docs/design/learner-direction.md, docs/engineering/feedback.md). Shared by
-// the practice footer ("¿Algo que corregir?"), the completion screen and the
-// home footer (both "¿Qué te pareció?") — only the trigger label/class and
-// the slide context passed in differ.
+// docs/design/learner-direction.md, docs/engineering/feedback.md). One
+// floating pill (bottom-right, every learner screen) opens the same sheet —
+// see FeedbackPill below. The context prop carries everything the
+// coordinator needs to triage a note without asking; most of it (device,
+// timing, mute state) is filled in here at submit time rather than threaded
+// through as props.
 
 const WHO_STORAGE_KEY = "icc.feedback.who";
 
+export type FeedbackAnswerEntry = {
+  index: number;
+  typed: string;
+  correct: boolean;
+};
+
+/**
+ * Everything a caller (LessonSession, LessonDashboard) assembles ahead of
+ * time. Answers/hints/slide content are read off the current slide; the
+ * rest (device info, mute state, timing, page/at) is computed by this
+ * component itself at submit time, since none of it needs to live in the
+ * caller's render state.
+ */
 export type FeedbackContext = {
+  moduleId: string | null;
+  moduleName: string | null;
   lessonId: string | null;
   lessonName: string | null;
   slideIndex: number | null;
+  slideCount: number | null;
   slideKind: string;
-  slideText: string | null;
+  slideId: string | null;
+  slide: Record<string, unknown> | null;
+  answers: FeedbackAnswerEntry[];
+  hintsUsed: number | null;
+  // Epoch ms the current slide became active — secondsOnSlide is derived
+  // from this at submit time, so nothing has to re-render every second.
+  slideStartedAt: number | null;
+  speakerId: string | null;
+  progress: { lessonsCompleted: number; lessonsTotal: number } | null;
+};
+
+export const EMPTY_FEEDBACK_CONTEXT: FeedbackContext = {
+  moduleId: null,
+  moduleName: null,
+  lessonId: null,
+  lessonName: null,
+  slideIndex: null,
+  slideCount: null,
+  slideKind: "unknown",
+  slideId: null,
+  slide: null,
+  answers: [],
+  hintsUsed: null,
+  slideStartedAt: null,
+  speakerId: null,
+  progress: null,
 };
 
 type SendState = "idle" | "sending" | "sent" | "error";
+
+/** Imperative handle so another trigger (the home footer's "Comentar" link)
+ * can open this same sheet instance instead of duplicating it. */
+export type FeedbackSheetHandle = { open: () => void };
 
 function readStoredWho(): string {
   try {
@@ -38,15 +94,23 @@ function storeWho(value: string) {
   }
 }
 
-export function FeedbackSheet({
-  context,
-  triggerLabel = "¿Qué te pareció?",
-  triggerClassName = "muted-link",
-}: {
+function currentPointer(): "touch" | "mouse" | null {
+  try {
+    if (typeof window.matchMedia !== "function") return null;
+    return window.matchMedia("(pointer: coarse)").matches ? "touch" : "mouse";
+  } catch {
+    return null;
+  }
+}
+
+export const FeedbackSheet = forwardRef<FeedbackSheetHandle, {
   context: FeedbackContext;
-  triggerLabel?: string;
-  triggerClassName?: string;
-}) {
+  pillVariant?: "default" | "practice";
+  // The pill renders by default; a caller with its own trigger elsewhere on
+  // the page (the home footer's "Comentar" link) can hide it and drive the
+  // sheet through the imperative handle instead.
+  hidePill?: boolean;
+}>(function FeedbackSheet({ context, pillVariant = "default", hidePill = false }, ref) {
   const [open, setOpen] = useState(false);
   const [message, setMessage] = useState("");
   const [who, setWho] = useState("");
@@ -64,6 +128,8 @@ export function FeedbackSheet({
     setState("idle");
     setOpen(true);
   }, []);
+
+  useImperativeHandle(ref, () => ({ open: openSheet }), [openSheet]);
 
   useEffect(() => {
     if (!open) return;
@@ -96,20 +162,38 @@ export function FeedbackSheet({
     if (!message.trim() || state === "sending") return;
     setState("sending");
     storeWho(who.trim());
+    const secondsOnSlide =
+      context.slideStartedAt != null
+        ? Math.max(0, Math.round((Date.now() - context.slideStartedAt) / 1000))
+        : null;
     try {
       const response = await fetch("/api/feedback", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
+          moduleId: context.moduleId,
+          moduleName: context.moduleName,
           lessonId: context.lessonId,
           lessonName: context.lessonName,
           slideIndex: context.slideIndex,
+          slideCount: context.slideCount,
           slideKind: context.slideKind,
-          slideText: context.slideText,
+          slideId: context.slideId,
+          slide: context.slide,
+          answers: context.answers,
+          hintsUsed: context.hintsUsed,
+          secondsOnSlide,
+          muted: isMuted(),
+          speakerId: context.speakerId,
+          progress: context.progress,
+          viewport: { w: window.innerWidth, h: window.innerHeight },
+          userAgent: window.navigator.userAgent,
+          language: window.navigator.language || null,
+          pointer: currentPointer(),
+          appVersion: process.env.NEXT_PUBLIC_APP_VERSION || "dev",
           message: message.trim(),
           who: who.trim() || undefined,
           page: window.location.pathname + window.location.search,
-          userAgent: window.navigator.userAgent,
           at: new Date().toISOString(),
         }),
       });
@@ -122,13 +206,23 @@ export function FeedbackSheet({
 
   return (
     <>
-      <button
-        type="button"
-        className={triggerClassName}
-        onClick={openSheet}
-      >
-        {triggerLabel}
-      </button>
+      {!hidePill && (
+        <button
+          type="button"
+          className={`feedback-pill${
+            pillVariant === "practice" ? " feedback-pill--practice" : ""
+          }${open ? " feedback-pill--hidden" : ""}`}
+          onClick={openSheet}
+          aria-label="Comentar"
+          aria-hidden={open}
+          tabIndex={open ? -1 : 0}
+        >
+          <MessageCircle size={20} aria-hidden="true" />
+          <span className="feedback-pill-label" aria-hidden="true">
+            Comentar
+          </span>
+        </button>
+      )}
       {open && (
         <div className="feedback-sheet-overlay" onClick={close}>
           <div
@@ -136,6 +230,7 @@ export function FeedbackSheet({
             role="dialog"
             aria-modal="true"
             aria-labelledby="feedback-sheet-title"
+            aria-describedby="feedback-sheet-help"
             onClick={(event) => event.stopPropagation()}
           >
             {state === "sent" ? (
@@ -147,6 +242,10 @@ export function FeedbackSheet({
                 <h2 id="feedback-sheet-title" className="feedback-sheet-title">
                   ¿Algo que corregir o mejorar?
                 </h2>
+                <p id="feedback-sheet-help" className="feedback-sheet-help">
+                  Dime qué viste y qué esperabas. Cada comentario mejora la
+                  lección.
+                </p>
                 <textarea
                   ref={textareaRef}
                   className="feedback-sheet-textarea"
@@ -162,7 +261,10 @@ export function FeedbackSheet({
                     className="feedback-sheet-who-input"
                     value={who}
                     maxLength={80}
-                    onChange={(event) => setWho(event.target.value)}
+                    onChange={(event) => {
+                      setWho(event.target.value);
+                      storeWho(event.target.value.trim());
+                    }}
                   />
                 </label>
                 {state === "error" && (
@@ -194,4 +296,4 @@ export function FeedbackSheet({
       )}
     </>
   );
-}
+});

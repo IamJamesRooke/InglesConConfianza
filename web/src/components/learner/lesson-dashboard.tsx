@@ -2,9 +2,14 @@
 
 import { ArrowRight, BookOpen } from "lucide-react";
 import Link from "next/link";
-import { useEffect, useSyncExternalStore } from "react";
+import { useEffect, useRef, useSyncExternalStore } from "react";
 
-import { FeedbackSheet } from "@/components/learner/feedback-sheet";
+import { BrandMark } from "@/components/brand-mark";
+import {
+  EMPTY_FEEDBACK_CONTEXT,
+  FeedbackSheet,
+  type FeedbackSheetHandle,
+} from "@/components/learner/feedback-sheet";
 import { LessonRow } from "@/components/learner/lesson-row";
 import type {
   LearnerLesson,
@@ -38,6 +43,7 @@ export function LessonDashboard({
   modules: LearnerModule[];
   initialModuleId?: string | null;
 }) {
+  const feedbackSheetRef = useRef<FeedbackSheetHandle>(null);
   const progress = useSyncExternalStore(
     subscribeToProgress,
     readProgress,
@@ -162,19 +168,39 @@ export function LessonDashboard({
           </section>
         )}
 
-        <footer className="course-footer">
-          <span>Inglés con Confianza.</span>
-          <FeedbackSheet
-            context={{
-              lessonId: null,
-              lessonName: null,
-              slideIndex: null,
-              slideKind: "home",
-              slideText: null,
-            }}
-          />
+        <footer className="site-footer">
+          <div className="site-footer-top">
+            <div className="site-footer-brand">
+              <div className="site-footer-brand-row">
+                <BrandMark size={28} />
+                <span className="site-footer-name">Inglés con Confianza</span>
+              </div>
+              <p className="site-footer-tagline">
+                Inglés para hispanohablantes, una frase real a la vez.
+              </p>
+            </div>
+            <nav className="site-footer-links" aria-label="Enlaces del pie de página">
+              <Link href="/">Inicio</Link>
+              <button type="button" onClick={() => feedbackSheetRef.current?.open()}>
+                Comentar
+              </button>
+              <a href="#">Sobre el curso</a>
+            </nav>
+          </div>
+          <p className="site-footer-copyright">
+            © 2026 Inglés con Confianza · Hecho en Bogotá
+          </p>
         </footer>
       </div>
+      <FeedbackSheet
+        ref={feedbackSheetRef}
+        context={{
+          ...EMPTY_FEEDBACK_CONTEXT,
+          slideKind: "home",
+          slide: { nextLessonId: nextLesson?.id ?? null },
+          progress: { lessonsCompleted: completed, lessonsTotal: available.length },
+        }}
+      />
     </main>
   );
 }

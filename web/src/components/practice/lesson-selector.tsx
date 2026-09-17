@@ -18,7 +18,11 @@ import {
 } from "react";
 import { ExplanationStep } from "@/components/practice/explanation-step";
 import { SentencePracticeCard } from "@/components/practice/sentence-practice-card";
-import { FeedbackSheet } from "@/components/learner/feedback-sheet";
+import {
+  EMPTY_FEEDBACK_CONTEXT,
+  FeedbackSheet,
+  type FeedbackAnswerEntry,
+} from "@/components/learner/feedback-sheet";
 import { SentenceStageCard } from "@/components/practice/sentence-stage-card";
 import {
   completionSentenceSize,
@@ -39,6 +43,10 @@ import {
   type Speaker,
 } from "@/lib/learner/speech";
 import type { LessonBlock } from "@/lib/lesson-builder/types";
+import {
+  isAnswerAccepted,
+  isMeaningfulLanguageBlock,
+} from "@/lib/lesson-builder/utils";
 
 export type PracticeLesson = {
   id: string;
@@ -113,6 +121,12 @@ function LessonSession({
   );
   const [lastSpeaker, setLastSpeaker] = useState<Speaker | null>(null);
   const [confirmingReset, setConfirmingReset] = useState(false);
+  // Feedback metadata only (docs/engineering/feedback.md): a running count
+  // of hint reveals on the current slide, and when the slide became active
+  // (secondsOnSlide is derived from this at submit time by FeedbackSheet
+  // itself). Both reset whenever the slide changes.
+  const [hintsUsedOnSlide, setHintsUsedOnSlide] = useState(0);
+  const [slideStartedAt, setSlideStartedAt] = useState(() => Date.now());
   const muted = useSyncExternalStore(
     subscribeMuted,
     isMuted,
@@ -124,32 +138,76 @@ function LessonSession({
   const complete = stepIndex >= totalSteps;
   const block = lesson.blocks[stepIndex];
   const outcome = complete ? lessonOutcome(lesson.blocks) : null;
-  // Feedback context (docs/backlog.md "Per-slide feedback"): the current
-  // slide's kind and a plain-text rendering of what it shows, so a note
-  // sent from the sheet lands with enough context to act on.
+  // Feedback context (docs/engineering/feedback.md): everything the sheet
+  // needs to triage a note without asking — where the learner is, what the
+  // slide shows, and what they'd typed on it. Assembled fresh on every
+  // render (cheap: no fetch, just derived from state already in scope);
+  // FeedbackSheet fills in device/timing details itself at submit time.
   const feedbackSlideKind = complete
     ? "completion"
-    : block?.type ?? "unknown";
-  const feedbackSlideText = complete
+    : (block?.type ?? "unknown");
+  const feedbackTestableBlocks =
+    block?.type === "sentence"
+      ? block.languageBlocks.filter(
+          (languageBlock) =>
+            isMeaningfulLanguageBlock(languageBlock) && !languageBlock.given,
+        )
+      : [];
+  const feedbackAnswers: FeedbackAnswerEntry[] = complete
+    ? []
+    : feedbackTestableBlocks.map((languageBlock, index) => {
+        const typed = draftAnswers[block!.id]?.[index] ?? "";
+        return {
+          index,
+          typed,
+          correct: isAnswerAccepted(typed, languageBlock.acceptedAnswers),
+        };
+      });
+  const feedbackSlide: Record<string, unknown> | null = complete
     ? outcome
-      ? `${outcome.spanish} / ${outcome.english}`
+      ? {
+          finalSentenceEnglish: outcome.english,
+          finalSentenceSpanish: outcome.spanish,
+        }
       : null
     : block?.type === "explanation"
-      ? block.contentMarkdown
+      ? { markdown: block.contentMarkdown }
       : block?.type === "sentence"
-        ? block.languageBlocks
-            .map(
-              (languageBlock) =>
-                `${languageBlock.spanish} / ${languageBlock.acceptedAnswers[0] ?? ""}`,
-            )
-            .join("; ")
+        ? {
+            instruction: block.promptText || block.promptLabel || null,
+            pieces: block.languageBlocks.map((languageBlock) => ({
+              spanish: languageBlock.spanish,
+              acceptedAnswers: languageBlock.acceptedAnswers,
+              given: languageBlock.given === true,
+            })),
+          }
         : null;
+  const availableLessonsForProgress = lessons.filter(
+    (item) => item.blocks.length > 0,
+  );
+  const lessonProgressSnapshot = readProgress();
+  const lessonsCompleted = availableLessonsForProgress.filter(
+    (item) => lessonProgressSnapshot[item.id]?.completedAt,
+  ).length;
   const feedbackContext = {
+    ...EMPTY_FEEDBACK_CONTEXT,
+    moduleId: lesson.moduleId ?? null,
+    moduleName: lesson.moduleName ?? null,
     lessonId: lesson.id,
     lessonName: lesson.name,
     slideIndex: complete ? totalSteps : stepIndex,
+    slideCount: totalSteps,
     slideKind: feedbackSlideKind,
-    slideText: feedbackSlideText,
+    slideId: complete ? "completion" : (block?.id ?? null),
+    slide: feedbackSlide,
+    answers: feedbackAnswers,
+    hintsUsed: complete ? null : hintsUsedOnSlide,
+    slideStartedAt,
+    speakerId: lastSpeaker?.id ?? null,
+    progress: {
+      lessonsCompleted,
+      lessonsTotal: availableLessonsForProgress.length,
+    },
   };
   // Module completion (direction, COMPLETION item 2): every lesson sharing
   // this one's moduleId, in course order. The completed/reopened lesson's
@@ -209,6 +267,8 @@ function LessonSession({
 
   const previous = useCallback(() => {
     setSentenceComplete(false);
+    setHintsUsedOnSlide(0);
+    setSlideStartedAt(Date.now());
     setStepIndex((index) => Math.max(0, index - 1));
   }, []);
 
@@ -223,6 +283,8 @@ function LessonSession({
       });
     }
     setSentenceComplete(false);
+    setHintsUsedOnSlide(0);
+    setSlideStartedAt(Date.now());
     setStepIndex(next);
   }, [canAdvance, lesson.id, onCloseLesson, stepIndex, totalSteps]);
 
@@ -479,9 +541,6 @@ function LessonSession({
               </div>
 
               <div className="completion-footer-links">
-                <FeedbackSheet
-                  context={{ ...feedbackContext, slideKind: "completion" }}
-                />
                 <button
                   type="button"
                   className="muted-link completion-reset"
@@ -510,6 +569,7 @@ function LessonSession({
                     }))
                   }
                   onSpeakerChange={setLastSpeaker}
+                  onHintsUsedChange={setHintsUsedOnSlide}
                 />
               ) : (
                 <SentencePracticeCard
@@ -523,6 +583,7 @@ function LessonSession({
                     }))
                   }
                   onSpeakerChange={setLastSpeaker}
+                  onHintsUsedChange={setHintsUsedOnSlide}
                 />
               )}
               {/* Desktop: the primary action appears centred under the
@@ -550,11 +611,6 @@ function LessonSession({
             >
               <ArrowLeft size={20} aria-hidden="true" />
             </button>
-            <FeedbackSheet
-              context={feedbackContext}
-              triggerLabel="¿Algo que corregir?"
-              triggerClassName="feedback-trigger"
-            />
             <div className="lesson-feedback" role="status" />
             {advanceButton(
               `${block?.type === "sentence" && !sentenceComplete ? "awaiting-answer" : ""} ${
@@ -566,6 +622,14 @@ function LessonSession({
           </div>
         </footer>
       )}
+
+      {/* One floating pill for the whole session — sits above the footer
+          zone on an in-progress slide, plain bottom-right on completion
+          (which has no footer). See docs/engineering/feedback.md. */}
+      <FeedbackSheet
+        context={feedbackContext}
+        pillVariant={complete ? "default" : "practice"}
+      />
     </section>
   );
 

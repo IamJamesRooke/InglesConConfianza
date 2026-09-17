@@ -679,3 +679,83 @@ lint, no new findings), and a new `tests/ux/feedback.spec.ts`
 submits with `POST /api/feedback` mocked via `page.route`, and asserts the
 request body and the thanks state. Screenshot:
 `/tmp/claude-1000/feedback-390.png`.
+
+## 2026-09-17 — Feedback: floating pill, rich metadata, and a real footer
+
+Three changes, all owner-directed:
+
+**One floating pill, not three text links.** The practice footer's "¿Algo
+que corregir?" and both "¿Qué te pareció?" links (completion, home) are
+gone. In their place: one pill, bottom-right, on every learner screen —
+`--primary` fill, white `MessageCircle` icon + "Comentar", 48px tall,
+24px radius, `--shadow-cta`, 200ms hover lift. On a practice slide it sits
+16px above the footer's action zone so it never overlaps "Continuar"; the
+completion screen has no footer, so it sits plain bottom-right there, same
+as home. Below 768px it collapses to a 48px round icon-only button
+(`aria-label="Comentar"`), 16px from the corner. While the sheet itself is
+open the pill fades out (150ms, instant under `prefers-reduced-motion`) —
+it used to sit visually under the sheet's Cancel button. The sheet's own
+copy didn't change ("¿Algo que corregir o mejorar?" already read that way);
+one new line was added under the title: "Dime qué viste y qué esperabas.
+Cada comentario mejora la lección." The "¿Quién eres?" field now saves to
+`localStorage` on every keystroke (not just on submit) and is re-read every
+time the sheet opens, so a name typed once actually persists across
+sessions — the field had been observed empty on a later visit despite
+having been filled in before. "Enviar" is enabled the moment the message
+has one non-space character, and reads visibly disabled (`opacity: 0.5`)
+before that. On the home page, `LessonDashboard` was rebuilt with a real
+site footer (`.site-footer` in `learner-foundations-home.css`): a hairline
+top border, brand mark + name + tagline on the left, a small "Inicio /
+Comentar / Sobre el curso" link row on the right (stacked under on phone),
+and a copyright line across the bottom. Its "Comentar" link opens the same
+pill's sheet instance via an imperative handle
+(`FeedbackSheetHandle`/`useImperativeHandle`) rather than duplicating the
+dialog.
+
+**Rich metadata so the coordinator can triage without asking.** The
+payload (`docs/engineering/feedback.md` has the full field table) grew
+from lesson/slide/message/who/page/userAgent/at to also carry: module id/
+name, slide count, a stable slide id; a `slide` snapshot of what was
+actually on screen (markdown for an explanation, Spanish→accepted pieces
+for a sentence/table, the final sentence for completion, the next lesson
+id for home); an `answers` array of what the learner had typed on this
+slide and whether each piece was correct; a running `hintsUsed` count for
+the slide (new counter in `useSentencePractice`, reported up via
+`onHintsUsedChange`); `secondsOnSlide` (derived from a `slideStartedAt`
+timestamp reset on `previous`/`advance`, not from an effect — computed
+once at submit rather than re-rendering on a tick); `muted`/`speakerId`;
+course `progress`; and device info (`viewport`, `language`, `pointer`,
+alongside the existing `userAgent`). `appVersion` is the build's short git
+sha, wired in `next.config.ts` (`git rev-parse --short HEAD`, falling back
+to `"dev"`) as `NEXT_PUBLIC_APP_VERSION`. `slide`/`answers`/etc. are
+assembled by the caller (`LessonSession` or `LessonDashboard`) into a
+`FeedbackContext` object; the device/timing fields are filled in by
+`FeedbackSheet` itself at submit time, not threaded through as props.
+Validation (`validateFeedbackPayload`) still only hard-rejects on
+`message`/`who` length and now also rejects a `slide` snapshot over 8KB
+serialized; every other field is coerced to a safe default rather than
+failing the request.
+
+**Triage report.** `npm run feedback:report [path]`
+(`scripts/feedback-report.ts`, grouping/rendering logic in
+`src/lib/feedback/report.ts`) reads `data/feedback.jsonl` by default and
+prints a Markdown report grouped by module → lesson → slide, each slide
+showing its own text and every note left on it (who/when/device/answers/
+hints/message), ending with a notes-per-lesson table and a top-slides-by-
+note-count table. (Feedback storage is moving to Postgres with an
+`/admin/feedback` page in a later session; the Google Sheet / Apps Script
+path in `docs/engineering/feedback.md` is superseded by that, and this
+report stays JSONL-only until the DB reader lands alongside it.)
+
+Verified with `npm run test:unit` (407/407 — 2 new validator cases, 4 new
+grouping/rendering cases for the report), `npx eslint` on the touched
+files, `npx tsc --noEmit`, `npm run lint` (incl. CSS lint, no new
+findings), `npm run lint:dead` (no new findings), and
+`tests/ux/feedback.spec.ts` rewritten for the pill (`UX_CHECK_PORT=3226`):
+opens the sheet from the floating "Comentar" pill on a sentence slide after
+typing the one correct piece and pressing Alt+H once, submits with
+`POST /api/feedback` mocked, and asserts `slide.pieces`,
+`answers[0].correct === true`, `hintsUsed === 1`, `slideCount`, and
+`viewport` on the captured request body. Screenshots:
+`/tmp/claude-1000/feedback-pill-1280.png` (practice slide, pill visible)
+and `/tmp/claude-1000/footer-1280.png` (home site footer).

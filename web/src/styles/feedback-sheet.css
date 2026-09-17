@@ -1,43 +1,79 @@
 /* Per-slide feedback sheet (docs/design/learner-direction.md,
-   docs/engineering/feedback.md). Shared by the practice footer's "¿Algo que
-   corregir?" and the completion/home "¿Qué te pareció?" triggers — see
-   src/components/learner/feedback-sheet.tsx. Colour comes entirely from the
-   shared tokens defined in src/app/globals.css (repo rule: colour literals
-   only there). */
+   docs/engineering/feedback.md). One floating pill, bottom-right, on every
+   learner screen — see src/components/learner/feedback-sheet.tsx. Colour
+   comes entirely from the shared tokens defined in src/app/globals.css
+   (repo rule: colour literals only there). */
 
-/* The practice-footer trigger: a quiet text link, never competing with the
-   primary action. Desktop: left side, next to the back icon (48px icon at
-   left:24px, so this sits just past it). Phone: stacked above the primary
-   button instead (see the max-width override below). */
-.feedback-trigger {
-  position: absolute;
-  left: 84px;
-  top: 50%;
-  transform: translateY(-50%);
-  padding: 0;
+.feedback-pill {
+  position: fixed;
+  right: 16px;
+  bottom: 16px;
+  z-index: 70;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  height: 48px;
+  padding: 0 20px;
   border: 0;
-  background: none;
-  color: var(--muted-foreground);
+  border-radius: 24px;
+  background: var(--primary);
+  color: var(--primary-foreground);
   font: inherit;
   font-size: var(--t-ui, 16px);
+  font-weight: 600;
   cursor: pointer;
-  text-decoration: none;
-  white-space: nowrap;
+  box-shadow: var(--shadow-cta);
+  transition:
+    transform 200ms ease-out,
+    box-shadow 200ms ease-out;
 }
-.feedback-trigger:hover,
-.feedback-trigger:focus-visible {
-  color: var(--foreground);
-  text-decoration: underline;
+.feedback-pill:hover,
+.feedback-pill:focus-visible {
+  box-shadow: var(--shadow-cta-hover);
+  transform: translateY(-2px);
+}
+.feedback-pill svg {
+  flex-shrink: 0;
+}
+/* Hidden while the sheet itself is open — it sat under the sheet's Cancel
+   area otherwise. Fades rather than disappears instantly, and stays out of
+   the tab order (aria-hidden + tabIndex -1, set alongside this class). */
+.feedback-pill--hidden {
+  opacity: 0;
+  pointer-events: none;
+  transition:
+    opacity 150ms ease-out,
+    transform 200ms ease-out,
+    box-shadow 200ms ease-out;
 }
 
-@media (max-width: 760px) {
-  .feedback-trigger {
-    position: static;
-    display: block;
-    width: 100%;
-    transform: none;
-    text-align: center;
-    margin-bottom: 10px;
+/* On a practice slide the footer (.lesson-controls, ~88px tall) is fixed to
+   the bottom of the stage — the pill sits 16px clear of it so it never
+   overlaps the primary action. */
+.feedback-pill--practice {
+  bottom: 104px;
+}
+
+@media (max-width: 767px) {
+  .feedback-pill {
+    width: 48px;
+    height: 48px;
+    padding: 0;
+    border-radius: 999px;
+    justify-content: center;
+  }
+  .feedback-pill-label {
+    display: none;
+  }
+  .feedback-pill--practice {
+    bottom: 96px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .feedback-pill,
+  .feedback-pill--hidden {
+    transition: none;
   }
 }
 
@@ -84,6 +120,12 @@
   font-size: var(--t-body);
   font-weight: 600;
   color: var(--foreground);
+}
+
+.feedback-sheet-help {
+  margin: 0 0 4px;
+  font-size: 14px;
+  color: var(--muted-foreground);
 }
 
 .feedback-sheet-textarea {
@@ -140,6 +182,10 @@
   min-width: 140px;
   border-radius: 8px;
   font-size: var(--t-ui, 16px);
+}
+.feedback-sheet-send:disabled {
+  opacity: 0.5;
+  cursor: default;
 }
 .feedback-sheet-cancel {
   padding: 0;

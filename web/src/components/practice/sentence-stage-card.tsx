@@ -37,12 +37,14 @@ export function SentenceStageCard({
   initialAnswers,
   onAnswersChange,
   onSpeakerChange,
+  onHintsUsedChange,
 }: {
   sentence: SentenceBlock;
   onCompletionChange?: (isComplete: boolean) => void;
   initialAnswers?: string[];
   onAnswersChange?: (answers: string[]) => void;
   onSpeakerChange?: (speaker: Speaker | null) => void;
+  onHintsUsedChange?: (count: number) => void;
 }) {
   const {
     languageBlocks,
@@ -66,6 +68,7 @@ export function SentenceStageCard({
     onCompletionChange,
     onAnswersChange,
     onSpeakerChange,
+    onHintsUsedChange,
   });
   // The piece the learner is on: whatever is focused, else the first one
   // still unanswered. Drives line 1's highlight and which answer the

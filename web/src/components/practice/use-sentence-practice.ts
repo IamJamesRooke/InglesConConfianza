@@ -62,12 +62,17 @@ export function useSentencePractice({
   onCompletionChange,
   onAnswersChange,
   onSpeakerChange,
+  onHintsUsedChange,
 }: {
   sentence: SentenceBlock;
   initialAnswers?: string[];
   onCompletionChange?: (isComplete: boolean) => void;
   onAnswersChange?: (answers: string[]) => void;
   onSpeakerChange?: (speaker: Speaker | null) => void;
+  // Feedback metadata only (docs/engineering/feedback.md): a running count
+  // of hint reveals on this slide, reported on every change so a caller
+  // (LessonSession) can read it without owning the hint mechanics itself.
+  onHintsUsedChange?: (count: number) => void;
 }) {
   // Dangling fully-blank language blocks are authoring debris, not real
   // questions — drop them before anything derives indices, progression, or
@@ -89,6 +94,7 @@ export function useSentencePractice({
     testableBlocks.map((_, index) => initialAnswers?.[index] ?? ""),
   );
   const [hintedBlockIndex, setHintedBlockIndex] = useState<number | null>(null);
+  const [hintsUsedCount, setHintsUsedCount] = useState(0);
   const [focusedBlockIndex, setFocusedBlockIndex] = useState<number | null>(
     null,
   );
@@ -112,6 +118,20 @@ export function useSentencePractice({
   useEffect(() => {
     onSpeakerChangeRef.current = onSpeakerChange;
   }, [onSpeakerChange]);
+  const onHintsUsedChangeRef = useRef(onHintsUsedChange);
+  useEffect(() => {
+    onHintsUsedChangeRef.current = onHintsUsedChange;
+  }, [onHintsUsedChange]);
+  // hintsUsedCount itself starts at 0 and only this hook instance ever sets
+  // it — a fresh sentence gets a fresh instance (the card is remounted by
+  // key={block.id} in LessonSession), so there's nothing to reset here.
+  // Reported to the caller from a plain effect, not from inside the
+  // setHintsUsedCount updater — an updater can run during React's render
+  // phase, and calling a different component's setState from there trips
+  // "Cannot update a component while rendering a different component".
+  useEffect(() => {
+    onHintsUsedChangeRef.current?.(hintsUsedCount);
+  }, [hintsUsedCount]);
   const correctAnswers = testableBlocks.map(
     (languageBlock, languageBlockIndex) =>
       isAnswerAccepted(
@@ -224,6 +244,7 @@ export function useSentencePractice({
     setHintedBlockIndex(languageBlockIndex);
     setHintText(answer);
     void speak(answer, speaker);
+    setHintsUsedCount((count) => count + 1);
     helpTimerRef.current = window.setTimeout(() => {
       setHintedBlockIndex(null);
       setHintText(null);
@@ -325,6 +346,7 @@ export function useSentencePractice({
     matchedAnswers,
     isComplete,
     hintedBlockIndex,
+    hintsUsedCount,
     focusedBlockIndex,
     setFocusedBlockIndex,
     inputRefs,

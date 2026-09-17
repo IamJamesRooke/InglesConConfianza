@@ -483,29 +483,71 @@
 }
 
 /* ---------- Footer ---------- */
-.course-footer {
+/* A proper site footer (owner, 2026-09-17) — restrained, one hairline
+   border, no other decoration. Brand + tagline left, a small link row
+   right (stacks under on phone), a copyright line across the bottom. */
+.site-footer {
+  margin-top: 48px;
+  border-top: 1px solid var(--border);
+  padding-block: 32px;
+}
+@media (min-width: 900px) {
+  .site-footer {
+    padding-block: 48px;
+  }
+}
+.site-footer-top {
   display: flex;
   flex-direction: column;
+  gap: 24px;
+}
+@media (min-width: 700px) {
+  .site-footer-top {
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 32px;
+  }
+}
+.site-footer-brand-row {
+  display: inline-flex;
   align-items: center;
-  margin-top: 48px;
-  padding-top: 24px;
-  text-align: center;
+  gap: 10px;
 }
-.course-footer > span:first-child {
-  font-size: 13px;
-  font-weight: 600;
-  color: var(--muted-foreground);
-}
-/* The footer's feedback trigger is a <button class="muted-link"> from
-   FeedbackSheet (src/components/learner/feedback-sheet.tsx), not an <a>. */
-.course-footer > button {
-  margin-top: 32px;
+.site-footer-name {
   font-size: var(--t-ui);
-  color: var(--primary);
-  text-decoration: none;
+  font-weight: 600;
+  color: var(--foreground);
 }
-.course-footer > button:hover {
+.site-footer-tagline {
+  margin: 8px 0 0;
+  font-size: var(--t-ui);
+  color: var(--ink-muted, var(--muted-foreground));
+}
+.site-footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 24px;
+  font-size: var(--t-ui);
+}
+.site-footer-links a,
+.site-footer-links button {
+  padding: 0;
+  border: 0;
+  background: none;
+  font: inherit;
+  color: var(--foreground);
+  text-decoration: none;
+  cursor: pointer;
+}
+.site-footer-links a:hover,
+.site-footer-links button:hover {
   text-decoration: underline;
+}
+.site-footer-copyright {
+  margin: 32px 0 0;
+  font-size: var(--t-eyebrow);
+  color: var(--ink-muted, var(--muted-foreground));
 }
 
 
