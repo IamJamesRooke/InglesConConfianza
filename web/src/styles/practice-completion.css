@@ -10,13 +10,17 @@
 .completion-sentence-group {
   margin-bottom: 48px;
 }
+/* The replay button sits inline right after the sentence text — 8px gap,
+   vertically centred with it — not stretched to the row's far end (owner
+   screenshot, 2026-09-17): `inline-flex` + `max-width: 100%` sizes the row
+   to its content instead of the full centred column. */
 .completion-final-row {
-  display: flex;
-  align-items: flex-start;
-  gap: 12px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  max-width: 100%;
 }
 .completion-sentence-en {
-  flex: 1;
   min-width: 0;
   margin: 0;
   color: var(--foreground);
@@ -43,7 +47,6 @@
 }
 .completion-replay {
   flex: none;
-  margin-top: 8px;
   color: var(--primary);
 }
 .completion-sentence-es {

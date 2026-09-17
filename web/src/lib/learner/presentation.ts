@@ -29,6 +29,35 @@ export function lessonOutcome(blocks: LessonBlock[]) {
   };
 }
 
+/**
+ * Which completion view a finished (or reopened) lesson gets — direction,
+ * docs/design/learner-direction.md's COMPLETION section, item 2: the
+ * module-end list ("LO QUE YA PUEDES DECIR") shows only when the lesson is
+ * the LAST lesson of its module. Every other lesson gets that module's next
+ * lesson as a "SIGUIENTE" card, regardless of whether later lessons in the
+ * module already happen to be complete — completion status never decides
+ * this, only position.
+ *
+ * `moduleLessons` is every lesson that shares the finished lesson's module
+ * (course order), and `lessonIndex` is where the finished lesson sits in
+ * that list. A lesson with no practice content (`blocks.length === 0`,
+ * e.g. a placeholder) is skipped when looking for the next one to hand off
+ * to, the same way the old lookup skipped empty lessons.
+ */
+export type CompletionView<T> =
+  | { kind: "next"; lesson: T }
+  | { kind: "module" };
+
+export function completionView<T extends { blocks: unknown[] }>(
+  lessonIndex: number,
+  moduleLessons: T[],
+): CompletionView<T> {
+  const next = moduleLessons
+    .slice(lessonIndex + 1)
+    .find((item) => item.blocks.length > 0);
+  return next ? { kind: "next", lesson: next } : { kind: "module" };
+}
+
 export type CompletionSentenceSize = "hero" | "sentence" | "body";
 
 /**

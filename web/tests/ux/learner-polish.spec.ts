@@ -382,3 +382,92 @@ test("learner answer keys reveal help without navigation, focus theft, or lost d
   );
   expect(cleanup.ok()).toBeTruthy();
 });
+
+function moduleCompletionLesson(id: string, spanish: string, answer: string) {
+  return {
+    id,
+    name: id,
+    concepts: [],
+    blocks: [
+      {
+        id: `${id}_block`,
+        type: "sentence" as const,
+        promptLabel: "",
+        promptText: "",
+        helperText: "",
+        answerFeedback: null,
+        languageBlocks: [
+          {
+            id: `${id}_lang`,
+            spanish,
+            callout: null,
+            acceptedAnswers: [answer],
+          },
+        ],
+      },
+    ],
+  };
+}
+
+test("with every lesson in a module already complete, reopening an earlier one still hands off to the next — only the last lesson shows the module list", async ({
+  page,
+  request,
+}) => {
+  const courseResponse = await request.get("/api/admin/lesson-builder/lessons");
+  const course = (await courseResponse.json()) as {
+    modules: Array<{ id: string }>;
+  };
+  const moduleId = course.modules[0].id;
+
+  const lessons = [
+    moduleCompletionLesson("lesson_mc_1", "uno", "one"),
+    moduleCompletionLesson("lesson_mc_2", "dos", "two"),
+    moduleCompletionLesson("lesson_mc_3", "tres", "three"),
+    moduleCompletionLesson("lesson_mc_4", "cuatro", "four"),
+  ];
+  for (const lesson of lessons) {
+    const response = await request.put(
+      `/api/admin/lesson-builder/lessons/${lesson.id}`,
+      { data: { lesson, moduleId } },
+    );
+    expect(response.ok()).toBeTruthy();
+  }
+
+  // Mark every lesson in the module complete directly in localStorage —
+  // the bug this reproduces only shows up once every lesson is done.
+  await page.goto("/");
+  await page.evaluate((ids: string[]) => {
+    const completedAt = new Date().toISOString();
+    const progress = Object.fromEntries(
+      ids.map((id) => [id, { completedAt }]),
+    );
+    window.localStorage.setItem("icc.lessonProgress.v1", JSON.stringify(progress));
+  }, lessons.map((lesson) => lesson.id));
+
+  // Reopening lesson 1 (not the module's last lesson) must show the next
+  // lesson card, not the module-end list, even though every lesson —
+  // including the ones after it — is already complete.
+  await page.goto(`/practice?lesson=${lessons[0].id}`);
+  await expect(page.locator(".lesson-celebration")).toBeVisible();
+  await expect(page.getByText("Siguiente", { exact: true })).toBeVisible();
+  await expect(page.getByText("Lo que ya puedes decir")).toHaveCount(0);
+  await expect(
+    page.getByRole("button", { name: "Siguiente lección" }),
+  ).toBeVisible();
+
+  // The module's actual last lesson gets the module-end list and "Volver
+  // al inicio" instead.
+  await page.goto(`/practice?lesson=${lessons[3].id}`);
+  await expect(page.locator(".lesson-celebration")).toBeVisible();
+  await expect(page.getByText("Lo que ya puedes decir")).toBeVisible();
+  await expect(
+    page.getByRole("button", { name: "Volver al inicio" }),
+  ).toBeVisible();
+
+  for (const lesson of lessons) {
+    const response = await request.delete(
+      `/api/admin/lesson-builder/lessons/${lesson.id}`,
+    );
+    expect(response.ok()).toBeTruthy();
+  }
+});

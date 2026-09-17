@@ -22,6 +22,7 @@ import { FeedbackSheet } from "@/components/learner/feedback-sheet";
 import { SentenceStageCard } from "@/components/practice/sentence-stage-card";
 import {
   completionSentenceSize,
+  completionView,
   lessonOutcome,
 } from "@/lib/learner/presentation";
 import {
@@ -110,10 +111,6 @@ function LessonSession({
   const [draftAnswers, setDraftAnswers] = useState<Record<string, string[]>>(
     {},
   );
-  // Where this lesson sits in the course order — the skip-ahead affordance
-  // that used to move this forward is gone (direction: no skip), so it's a
-  // plain lookup now, not state.
-  const completionCursor = lessons.findIndex((item) => item.id === lesson.id);
   const [lastSpeaker, setLastSpeaker] = useState<Speaker | null>(null);
   const [confirmingReset, setConfirmingReset] = useState(false);
   const muted = useSyncExternalStore(
@@ -154,32 +151,32 @@ function LessonSession({
     slideKind: feedbackSlideKind,
     slideText: feedbackSlideText,
   };
-  const nextLesson = lessons
-    .slice(completionCursor + 1)
-    .find(
-      (item) =>
-        item.blocks.length > 0 && !readProgress()[item.id]?.completedAt,
-    );
+  // Module completion (direction, COMPLETION item 2): every lesson sharing
+  // this one's moduleId, in course order. The completed/reopened lesson's
+  // position within that list — not completion status — decides which view
+  // this is: the module-end list only when it's the module's last lesson.
+  const moduleLessons = lessons.filter((item) =>
+    lesson.moduleId ? item.moduleId === lesson.moduleId : true,
+  );
+  const lessonIndexInModule = moduleLessons.findIndex(
+    (item) => item.id === lesson.id,
+  );
+  const view = completionView(lessonIndexInModule, moduleLessons);
   // The completion screen's "next lesson" card only makes sense outside the
   // Lesson Builder's own preview (onCloseLesson), which is only ever handed
   // a single lesson and has no real course to advance into.
-  const showNextLesson = Boolean(nextLesson) && !onCloseLesson;
+  const showNextLesson = view.kind === "next" && !onCloseLesson;
+  const nextLesson = view.kind === "next" ? view.lesson : undefined;
   const nextLessonOutcome = nextLesson ? lessonOutcome(nextLesson.blocks) : null;
-  // Module completion (direction, COMPLETION item 2): every lesson sharing
-  // this one's moduleId, in course order, each reduced to its own final
-  // sentence. Shown only once there's no next lesson to hand off to.
-  const moduleOutcomes = showNextLesson
-    ? []
-    : lessons
-        .filter(
-          (item) =>
-            item.blocks.length > 0 &&
-            (lesson.moduleId ? item.moduleId === lesson.moduleId : true),
-        )
-        .flatMap((item) => {
-          const moduleOutcome = lessonOutcome(item.blocks);
-          return moduleOutcome ? [{ id: item.id, ...moduleOutcome }] : [];
-        });
+  const moduleOutcomes =
+    view.kind === "module"
+      ? moduleLessons
+          .filter((item) => item.blocks.length > 0)
+          .flatMap((item) => {
+            const moduleOutcome = lessonOutcome(item.blocks);
+            return moduleOutcome ? [{ id: item.id, ...moduleOutcome }] : [];
+          })
+      : [];
   const resetThisLesson = useCallback(() => {
     if (!confirmingReset) {
       setConfirmingReset(true);

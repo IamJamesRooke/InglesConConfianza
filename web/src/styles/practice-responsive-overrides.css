@@ -981,10 +981,14 @@
 .lesson-session .completion-cta {
   width: 100%;
 }
-@media (min-width: 760px) {
+/* Direction: full-width only on phone (<768) — at desktop it's centred at
+   its natural width under the stack (owner screenshot, 2026-09-17: it was
+   stretching edge to edge at 950px). */
+@media (min-width: 768px) {
   .lesson-session .completion-cta {
+    align-self: center;
     width: auto;
-    min-width: 280px;
+    min-width: 240px;
   }
 }
 

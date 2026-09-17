@@ -9,6 +9,7 @@ import { SentencePracticeCard } from "../../src/components/practice/sentence-pra
 import { SentenceStageCard } from "../../src/components/practice/sentence-stage-card";
 import {
   completionSentenceSize,
+  completionView,
   explanationPlainText,
   explanationWraps,
   learnerLabel,
@@ -66,6 +67,47 @@ test("completionSentenceSize buckets the final sentence by word count", () => {
     ),
     "body",
   ); // 12 words
+});
+
+test("completionView shows the next lesson for any lesson but the module's last, regardless of completion", () => {
+  const moduleLessons = [
+    { id: "l1", blocks: [{}] },
+    { id: "l2", blocks: [{}] },
+    { id: "l3", blocks: [{}] },
+    { id: "l4", blocks: [{}] },
+  ];
+  // Reopening lesson 1 with every lesson in the module already complete must
+  // still hand off to lesson 2 — completion status never decides this, only
+  // position (owner screenshot, 2026-09-17: it wrongly showed the module list).
+  assert.deepEqual(completionView(0, moduleLessons), {
+    kind: "next",
+    lesson: moduleLessons[1],
+  });
+  assert.deepEqual(completionView(1, moduleLessons), {
+    kind: "next",
+    lesson: moduleLessons[2],
+  });
+  // The module's last lesson always gets the module-end list.
+  assert.deepEqual(completionView(3, moduleLessons), { kind: "module" });
+});
+
+test("completionView skips a contentless placeholder lesson when looking for the next one", () => {
+  const moduleLessons = [
+    { id: "l1", blocks: [{}] },
+    { id: "l2", blocks: [] },
+    { id: "l3", blocks: [{}] },
+  ];
+  assert.deepEqual(completionView(0, moduleLessons), {
+    kind: "next",
+    lesson: moduleLessons[2],
+  });
+  // The empty placeholder itself is skipped, but l3 past it still counts.
+  assert.deepEqual(completionView(1, moduleLessons), {
+    kind: "next",
+    lesson: moduleLessons[2],
+  });
+  // Nothing with content left after this one: module-end.
+  assert.deepEqual(completionView(2, moduleLessons), { kind: "module" });
 });
 
 test("a single-module course hides module chrome but still lists its lessons", () => {
