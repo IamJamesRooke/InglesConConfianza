@@ -69,7 +69,7 @@ the owner's say-so.
 - [x] Admin guard (env secret on `/admin` + `/api/admin`), deploy shape: static learner site
       with lessons + audio bundled + one feedback function on Vercel; admin local only;
       README + `.env.example`
-- [ ] Full gate (with permission) → final polish (2026-09-18) → deploy on **Netlify** (owner decision 2026-09-17; update docs/engineering/deploy.md from Vercel to Netlify) → friends
+- [ ] Full gate (with permission) → final polish (2026-09-18) → deploy on **Vercel** (recommended over Netlify 2026-09-17: first-party Next.js 16 support, free tier; docs/engineering/deploy.md already describes it) → friends
 - [ ] Feedback storage: parked (owner 2026-09-17) — plan agreed in principle: Postgres table + /admin/feedback page + Neon free tier; decide Neon vs GitHub Issues before building
 - [x] Admin consistency pass (shared card/button recipes, tokens) · README · design research + direction + mockups (`docs/design/learner-direction.md`)
 
