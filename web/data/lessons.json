@@ -6,7 +6,11 @@
       "name": "Confianza I",
       "description": "This is a description of the course.",
       "lessonIds": [
-        "lesson_37a043bb-5f8b-4c82-835b-6c7b3c2b9170"
+        "lesson_37a043bb-5f8b-4c82-835b-6c7b3c2b9170",
+        "lesson_55508bfe-4ae0-4159-89ae-3f904786f9a0",
+        "lesson_fdffd06d-bf96-471c-a0a2-c5ab1f1ebfae",
+        "lesson_941c0ba3-54c4-435b-9eaa-870ee4f33bd6",
+        "lesson_f3b54ccd-4e19-4d1a-a7b1-3816935ca78e"
       ],
       "syllabus": {
         "main": [
@@ -194,6 +198,86 @@
             "id": "syllabus_item_ddd17a78-a9ad-40f1-878e-5d4a377b700c",
             "conceptId": "qt9aqatj4f",
             "label": "hacer"
+          },
+          {
+            "id": "syllabus_item_cd8ed232-98ef-4575-a3ba-662138ab9a2a",
+            "conceptId": "5c41gd4gqg",
+            "label": "[el] día"
+          },
+          {
+            "id": "syllabus_item_fdd708ac-968b-4e94-8a45-e50d4eae30da",
+            "conceptId": "rf7wttxz5x",
+            "label": "hoy"
+          },
+          {
+            "id": "syllabus_item_69c3b311-20ab-4a70-980b-d7a14ac94906",
+            "conceptId": "ovnw5edm1p",
+            "label": "con"
+          },
+          {
+            "id": "syllabus_item_e833882f-218e-4fd2-9ffb-0a09a773c3d1",
+            "conceptId": "93wmoiwink",
+            "label": "estoy"
+          },
+          {
+            "id": "syllabus_item_1571a66c-ce9c-4f87-9eda-6e1d5182dad6",
+            "conceptId": "b5c13zo3bg",
+            "label": "soy"
+          },
+          {
+            "id": "syllabus_item_1ccade5a-7eac-49e4-bef6-f0db347946bb",
+            "conceptId": "0rv1zmpu5c",
+            "label": "eres"
+          },
+          {
+            "id": "syllabus_item_6c3d4e67-5c1a-4045-a2c2-87ed996d7c10",
+            "conceptId": "0k44vohfn6",
+            "label": "estás"
+          },
+          {
+            "id": "syllabus_item_2a93ab6e-dc1b-4336-a74d-fb333b406ac3",
+            "conceptId": "rh4yfb08hn",
+            "label": "voy a [hacer algo]"
+          },
+          {
+            "id": "syllabus_item_c7dcdbbe-2b5d-42af-97a0-1b8ca68bd9b5",
+            "conceptId": "0lbant78ng",
+            "label": "vas a [hacer algo]"
+          },
+          {
+            "id": "syllabus_item_0800e28c-7526-4985-8b90-e681e1ba0fb0",
+            "conceptId": "gdwcgcevlo",
+            "label": "aquí"
+          },
+          {
+            "id": "syllabus_item_2b55a5ae-c339-4592-93d0-88dd0d6178ed",
+            "conceptId": "avrqqne85a",
+            "label": "acá"
+          },
+          {
+            "id": "syllabus_item_632d0337-b1e4-4512-8acb-357a70dd99df",
+            "conceptId": "wyrj7k8thq",
+            "label": "allí"
+          },
+          {
+            "id": "syllabus_item_66e72433-da0b-4ef7-aaec-927adf360810",
+            "conceptId": "0srx55tuxj",
+            "label": "ahí"
+          },
+          {
+            "id": "syllabus_item_b107d336-5ce4-4c84-944b-2ec0163d8ae3",
+            "conceptId": "2iiyjrogmc",
+            "label": "ir"
+          },
+          {
+            "id": "syllabus_item_71829dae-3ef8-49e6-9753-6cb63945308d",
+            "conceptId": "xkdwzc4mi7",
+            "label": "venir"
+          },
+          {
+            "id": "syllabus_item_efa17ecd-3d62-4fad-9cb9-2e347c7e3c18",
+            "conceptId": "rnldlhmpop",
+            "label": "contigo"
           }
         ],
         "review": []
@@ -202,20 +286,24 @@
     {
       "id": "module_381e1ecb-431a-4a34-bf52-1cdfeb28e013",
       "name": "Confianza II",
+      "access": "free",
       "lessonIds": [],
       "syllabus": {
         "main": [],
         "review": []
-      }
+      },
+      "status": "draft"
     },
     {
       "id": "module_300e6c91-2b5d-403c-a487-68fd5ce9b133",
       "name": "Confianza III",
+      "access": "free",
       "lessonIds": [],
       "syllabus": {
         "main": [],
         "review": []
-      }
+      },
+      "status": "draft"
     }
   ],
   "lessons": [
@@ -497,6 +585,1048 @@
           ]
         }
       ]
+    },
+    {
+      "id": "lesson_55508bfe-4ae0-4159-89ae-3f904786f9a0",
+      "name": "I want to do something with you today.",
+      "concepts": [
+        {
+          "id": "lesson_concept_d832f15e-4fae-487f-91ef-e141c4e4c4e4",
+          "conceptId": "5c41gd4gqg",
+          "label": "día"
+        },
+        {
+          "id": "lesson_concept_e79bab13-f496-4cf8-b6a7-0ff551da7703",
+          "conceptId": "rf7wttxz5x",
+          "label": "hoy"
+        },
+        {
+          "id": "lesson_concept_f57f567f-efc4-41f4-8777-bc0525ba8399",
+          "conceptId": "ovnw5edm1p",
+          "label": "con"
+        },
+        {
+          "id": "lesson_concept_2acfa3e2-839b-4941-8260-f53bd239c593",
+          "conceptId": "lse8dx7tet",
+          "label": "conmigo"
+        },
+        {
+          "id": "lesson_concept_39e4a90a-b457-411a-8801-1e54b9b43f5d",
+          "conceptId": "qt9aqatj4f",
+          "label": "hacer"
+        },
+        {
+          "id": "lesson_concept_9fff1382-acff-452f-906e-1516e7e1f240",
+          "conceptId": "rnldlhmpop",
+          "label": "contigo"
+        }
+      ],
+      "blocks": [
+        {
+          "id": "block_a779061b-fa3e-46f6-a8e6-c2d3406a5b8a",
+          "type": "explanation",
+          "contentMarkdown": "[[es:con]] es [[en:with]]"
+        },
+        {
+          "id": "block_425a4cc4-0582-43ea-b1c3-229709195f05",
+          "type": "sentence",
+          "promptLabel": "",
+          "promptText": "",
+          "helperText": "",
+          "answerFeedback": null,
+          "languageBlocks": [
+            {
+              "id": "lang_52573d03-75d2-4232-bcf6-5c5b29159970",
+              "spanish": "con",
+              "callout": null,
+              "acceptedAnswers": [
+                "with"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "block_4c4360e4-f0ac-4888-870a-0f5dc6e2bab3",
+          "type": "explanation",
+          "contentMarkdown": "[[es:contigo]] es [[en:with you]]"
+        },
+        {
+          "id": "block_92977da1-7f88-48e5-9833-a612ef23c298",
+          "type": "sentence",
+          "promptLabel": "",
+          "promptText": "",
+          "helperText": "",
+          "answerFeedback": null,
+          "languageBlocks": [
+            {
+              "id": "lang_9a498606-e178-440a-9f05-e22b35008ffc",
+              "spanish": "contigo",
+              "callout": null,
+              "acceptedAnswers": [
+                "with you"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "block_b1ec47e2-b76f-4c7a-9e08-76646fe8e6d4",
+          "type": "sentence",
+          "promptLabel": "",
+          "promptText": "",
+          "helperText": "",
+          "answerFeedback": null,
+          "languageBlocks": [
+            {
+              "id": "lang_0100addd-2b29-4631-bbe5-1deecb275423",
+              "spanish": "Quiero",
+              "callout": null,
+              "acceptedAnswers": [
+                "I want"
+              ]
+            },
+            {
+              "id": "lang_d7b03e11-8487-499d-bf5d-04662cbe7b50",
+              "spanish": "hacer",
+              "callout": null,
+              "acceptedAnswers": [
+                "to do"
+              ]
+            },
+            {
+              "id": "lang_c334fb9b-7e34-4adc-b800-79778ba740da",
+              "spanish": "algo",
+              "callout": null,
+              "acceptedAnswers": [
+                "something"
+              ]
+            },
+            {
+              "id": "lang_fc44b217-4a17-4dfa-a728-1189e006a3e9",
+              "spanish": "contigo.",
+              "callout": null,
+              "acceptedAnswers": [
+                "with you."
+              ]
+            }
+          ]
+        },
+        {
+          "id": "block_4c99e946-cea6-4d5f-9d6b-8a3b0c63c1b3",
+          "type": "explanation",
+          "contentMarkdown": "[[es:día]] es [[en:day]]"
+        },
+        {
+          "id": "block_3745ea8d-94ca-432d-b66d-84c779b9a435",
+          "type": "sentence",
+          "promptLabel": "",
+          "promptText": "",
+          "helperText": "",
+          "answerFeedback": null,
+          "languageBlocks": [
+            {
+              "id": "lang_ade1e9a4-ccf8-405d-aa8a-8fc2a95f033f",
+              "spanish": "día",
+              "callout": null,
+              "acceptedAnswers": [
+                "day"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "block_12961640-fcae-49cb-9100-4f3006ac2873",
+          "type": "explanation",
+          "contentMarkdown": "[[es:hoy]] es [[en:today]]"
+        },
+        {
+          "id": "block_fa5159f9-3a03-4a1c-ad06-77fc063943e3",
+          "type": "sentence",
+          "promptLabel": "",
+          "promptText": "",
+          "helperText": "",
+          "answerFeedback": null,
+          "languageBlocks": [
+            {
+              "id": "lang_65cc7140-e031-4dab-abe0-b01f05d44b8e",
+              "spanish": "hoy",
+              "callout": null,
+              "acceptedAnswers": [
+                "today"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "block_45a77cf1-0aa9-4456-baed-c0fb1b9a2839",
+          "type": "sentence",
+          "layout": "vocabulary_table",
+          "promptLabel": "",
+          "promptText": "Veamos la diferencia.",
+          "helperText": "",
+          "answerFeedback": null,
+          "languageBlocks": [
+            {
+              "id": "lang_ef6ef350-204e-4c4f-92c4-604e539aac39",
+              "spanish": "día",
+              "callout": null,
+              "acceptedAnswers": [
+                "day"
+              ]
+            },
+            {
+              "id": "lang_7c536cb1-99c9-4c5a-a0ed-522a8b5b7e87",
+              "spanish": "hoy",
+              "callout": null,
+              "acceptedAnswers": [
+                "today"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "block_263cdbe9-8aa6-49cb-a526-bfe03f8daa2f",
+          "type": "sentence",
+          "promptLabel": "",
+          "promptText": "",
+          "helperText": "",
+          "answerFeedback": null,
+          "languageBlocks": [
+            {
+              "id": "lang_4725c9a9-6192-4aa6-8858-20d0508c320d",
+              "spanish": "Quiero",
+              "callout": null,
+              "acceptedAnswers": [
+                "I want"
+              ]
+            },
+            {
+              "id": "lang_a354606a-7235-49a1-b9cc-18dcd1f3a305",
+              "spanish": "hacer",
+              "callout": null,
+              "acceptedAnswers": [
+                "to do"
+              ]
+            },
+            {
+              "id": "lang_b1012270-c8e3-4f5a-9490-d0ddc38622a9",
+              "spanish": "algo",
+              "callout": null,
+              "acceptedAnswers": [
+                "something"
+              ]
+            },
+            {
+              "id": "lang_7b561683-5eba-43fb-a4c1-5674a4d4f374",
+              "spanish": "contigo",
+              "callout": null,
+              "acceptedAnswers": [
+                "with you"
+              ]
+            },
+            {
+              "id": "lang_cd74e728-a0bc-4a98-9174-e4be9a932afc",
+              "spanish": "hoy.",
+              "callout": null,
+              "acceptedAnswers": [
+                "today."
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "lesson_fdffd06d-bf96-471c-a0a2-c5ab1f1ebfae",
+      "name": "I want to know if you want to do something with me today.",
+      "concepts": [
+        {
+          "id": "lesson_concept_1555f5f6-ac8d-46cc-a84c-71288c6eb226",
+          "conceptId": "vk5arw3nk6",
+          "label": "sí"
+        },
+        {
+          "id": "lesson_concept_d4208b69-1efe-4546-b5e0-17bf9efe4fc5",
+          "conceptId": "v3wnwpk0qj",
+          "label": "si"
+        },
+        {
+          "id": "lesson_concept_395c3c5c-9de7-4bfb-96f5-20775d451ac9",
+          "conceptId": "lse8dx7tet",
+          "label": "conmigo"
+        },
+        {
+          "id": "lesson_concept_52727b43-724f-4a48-b96a-090f7a944622",
+          "conceptId": "pwos1qqc4i",
+          "label": "saber"
+        },
+        {
+          "id": "lesson_concept_af83694e-d7e1-450b-8107-747b6a5920b5",
+          "conceptId": "rnldlhmpop",
+          "label": "contigo"
+        },
+        {
+          "id": "lesson_concept_17df012f-5506-4ade-801f-762a6f32963d",
+          "conceptId": "ovnw5edm1p",
+          "label": "con"
+        },
+        {
+          "id": "lesson_concept_8e62b21b-69eb-4d0b-a7d9-96a4c201a659",
+          "conceptId": "df1fa2p3xy",
+          "label": "querer [hacer algo]"
+        }
+      ],
+      "blocks": [
+        {
+          "id": "block_b050b70e-0bfc-42d2-96c6-9ff156320145",
+          "type": "explanation",
+          "contentMarkdown": "[[es:quieres]] o [[es:tú quieres]] es [[en:you want]]"
+        },
+        {
+          "id": "block_5a7cac21-4e95-4271-9ea4-a000b42f440c",
+          "type": "sentence",
+          "promptLabel": "",
+          "promptText": "",
+          "helperText": "",
+          "answerFeedback": null,
+          "languageBlocks": [
+            {
+              "id": "lang_7cd19534-9052-4060-b12d-e959206f8382",
+              "spanish": "tú quieres",
+              "callout": null,
+              "acceptedAnswers": [
+                "you want"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "block_b272ea1a-3487-492f-92ca-d3a3331c0cbd",
+          "type": "sentence",
+          "promptLabel": "",
+          "promptText": "",
+          "helperText": "",
+          "answerFeedback": null,
+          "languageBlocks": [
+            {
+              "id": "lang_ea40ae1e-9eac-4879-b1e5-9d7535607907",
+              "spanish": "Quieres",
+              "callout": null,
+              "acceptedAnswers": [
+                "You want"
+              ]
+            },
+            {
+              "id": "lang_ce025949-a3e6-4586-8e32-e0abe7e13fbc",
+              "spanish": "hacer",
+              "callout": null,
+              "acceptedAnswers": [
+                "to do"
+              ]
+            },
+            {
+              "id": "lang_db22f8e6-91b5-41f7-9ad8-bb5f6fa3b393",
+              "spanish": "algo.",
+              "callout": null,
+              "acceptedAnswers": [
+                "something."
+              ]
+            }
+          ]
+        },
+        {
+          "id": "block_ed8a63fe-a9c0-4135-892e-cc9430d52392",
+          "type": "explanation",
+          "contentMarkdown": "[[es:conmigo]] es [[en:with me]]"
+        },
+        {
+          "id": "block_2a8d7561-8248-4350-9b35-42a9b544ee20",
+          "type": "sentence",
+          "promptLabel": "",
+          "promptText": "",
+          "helperText": "",
+          "answerFeedback": null,
+          "languageBlocks": [
+            {
+              "id": "lang_2444df5c-7285-4dcf-9e41-b64bc82089d4",
+              "spanish": "conmigo",
+              "callout": null,
+              "acceptedAnswers": [
+                "with me"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "block_e6380da7-272c-4722-87e6-f7ed00d3d1f9",
+          "type": "sentence",
+          "promptLabel": "",
+          "promptText": "",
+          "helperText": "",
+          "answerFeedback": null,
+          "languageBlocks": [
+            {
+              "id": "lang_85f54342-1ea1-4273-9bde-c3602cf9f64e",
+              "spanish": "Quieres",
+              "callout": null,
+              "acceptedAnswers": [
+                "You want"
+              ]
+            },
+            {
+              "id": "lang_0c66042e-235e-48e9-b88f-7ccab0711c57",
+              "spanish": "hacer",
+              "callout": null,
+              "acceptedAnswers": [
+                "to do"
+              ]
+            },
+            {
+              "id": "lang_957dfba4-afc0-465a-bb91-c2c14a171270",
+              "spanish": "algo",
+              "callout": null,
+              "acceptedAnswers": [
+                "something"
+              ]
+            },
+            {
+              "id": "lang_dc314a88-819a-4feb-8c4c-409a8a3f16e2",
+              "spanish": "conmigo.",
+              "callout": null,
+              "acceptedAnswers": [
+                "with me."
+              ]
+            }
+          ]
+        },
+        {
+          "id": "block_71501cd0-e838-4715-bdb6-79b782bfb65d",
+          "type": "explanation",
+          "contentMarkdown": "[[es:saber]] es [[en:to know,]] pronunciado *no*"
+        },
+        {
+          "id": "block_d68865d1-be1d-4cff-b4aa-7efa35e10d92",
+          "type": "sentence",
+          "promptLabel": "",
+          "promptText": "",
+          "helperText": "",
+          "answerFeedback": null,
+          "languageBlocks": [
+            {
+              "id": "lang_df7f2a58-4886-4d7f-acaf-4a65d721bc4c",
+              "spanish": "saber",
+              "callout": null,
+              "acceptedAnswers": [
+                "to know"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "block_ac4ea756-e191-4254-bd9e-b28a41186c22",
+          "type": "sentence",
+          "promptLabel": "",
+          "promptText": "",
+          "helperText": "",
+          "answerFeedback": null,
+          "languageBlocks": [
+            {
+              "id": "lang_2d40edc7-98fd-4c95-ba36-1bbf52c69202",
+              "spanish": "Quiero",
+              "callout": null,
+              "acceptedAnswers": [
+                "I want"
+              ]
+            },
+            {
+              "id": "lang_eb563de6-5104-4ff5-b919-0e4874cd805d",
+              "spanish": "saber",
+              "callout": null,
+              "acceptedAnswers": [
+                "to know"
+              ]
+            },
+            {
+              "id": "lang_20bf875a-4994-4769-8a7f-73b33f153cba",
+              "spanish": "algo.",
+              "callout": null,
+              "acceptedAnswers": [
+                "something."
+              ]
+            }
+          ]
+        },
+        {
+          "id": "block_bb603d5e-523c-40d4-ad5a-a8dc9dae6475",
+          "type": "explanation",
+          "contentMarkdown": "[[es:sí]], con tilde, es [[en:yes]]"
+        },
+        {
+          "id": "block_98a37b47-31a5-423e-b587-cdfc4525cb78",
+          "type": "sentence",
+          "promptLabel": "",
+          "promptText": "",
+          "helperText": "",
+          "answerFeedback": null,
+          "languageBlocks": [
+            {
+              "id": "lang_e3bf2667-01c7-41d5-8843-06b161782ee5",
+              "spanish": "sí",
+              "callout": null,
+              "acceptedAnswers": [
+                "yes"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "block_8dbe854d-8a81-494c-ab1e-8e6b41ab21e6",
+          "type": "explanation",
+          "contentMarkdown": "[[es:Si]], sin tilde, es [[en:if]]."
+        },
+        {
+          "id": "block_f2e4b9e9-64ff-4d94-95bb-21823b992030",
+          "type": "sentence",
+          "promptLabel": "",
+          "promptText": "",
+          "helperText": "",
+          "answerFeedback": null,
+          "languageBlocks": [
+            {
+              "id": "lang_177b9859-e7bc-45e4-b4f9-a185d486077f",
+              "spanish": "si",
+              "callout": null,
+              "acceptedAnswers": [
+                "if"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "block_189dcc4f-8079-40dc-8206-79311ae2d567",
+          "type": "sentence",
+          "layout": "vocabulary_table",
+          "promptLabel": "",
+          "promptText": "Presta atención.",
+          "helperText": "",
+          "answerFeedback": null,
+          "languageBlocks": [
+            {
+              "id": "lang_a5b812a0-441b-4246-bc4d-10908fc04d2a",
+              "spanish": "sí",
+              "callout": "sí, CON tilde",
+              "acceptedAnswers": [
+                "yes"
+              ]
+            },
+            {
+              "id": "lang_30ecf274-262f-4b03-9077-1a27cba16a4c",
+              "spanish": "si",
+              "callout": "si, SIN tilde",
+              "acceptedAnswers": [
+                "if"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "block_dcb3252b-1e16-47e0-81d3-159b2af6e504",
+          "type": "sentence",
+          "promptLabel": "",
+          "promptText": "",
+          "helperText": "",
+          "answerFeedback": null,
+          "languageBlocks": [
+            {
+              "id": "lang_d51fce6d-e431-4d84-9feb-aafeb58eaa87",
+              "spanish": "Quiero",
+              "callout": null,
+              "acceptedAnswers": [
+                "I want"
+              ]
+            },
+            {
+              "id": "lang_1550dfb0-f9b4-437d-af08-5468f8fcf3a7",
+              "spanish": "saber",
+              "callout": null,
+              "acceptedAnswers": [
+                "to know"
+              ]
+            },
+            {
+              "id": "lang_22a9b014-4e57-4d47-a6e5-3dcfc283af24",
+              "spanish": "si..",
+              "callout": null,
+              "acceptedAnswers": [
+                "if"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "block_bd924b4b-a352-49ff-a9fe-62f3f18ec5c1",
+          "type": "sentence",
+          "promptLabel": "",
+          "promptText": "Una frase más larga.",
+          "helperText": "",
+          "answerFeedback": null,
+          "languageBlocks": [
+            {
+              "id": "lang_ef43f516-7cfb-44a5-a534-89391b8e36a2",
+              "spanish": "Quiero",
+              "callout": null,
+              "acceptedAnswers": [
+                "I want"
+              ]
+            },
+            {
+              "id": "lang_c08232c4-1965-46da-bc44-95f2e17c7873",
+              "spanish": "saber",
+              "callout": null,
+              "acceptedAnswers": [
+                "to know"
+              ]
+            },
+            {
+              "id": "lang_ef363859-207e-4d2c-9a42-63319ca441e4",
+              "spanish": "si",
+              "callout": null,
+              "acceptedAnswers": [
+                "if"
+              ]
+            },
+            {
+              "id": "lang_a4ecb656-cb35-49e9-8fc3-fa3bed108f54",
+              "spanish": "quieres",
+              "callout": null,
+              "acceptedAnswers": [
+                "you want"
+              ]
+            },
+            {
+              "id": "lang_c31d4753-e34d-4400-b425-4a919d174b20",
+              "spanish": "hacer",
+              "callout": null,
+              "acceptedAnswers": [
+                "to do"
+              ]
+            },
+            {
+              "id": "lang_9344d94c-8712-4a09-a3ef-3dfedd076045",
+              "spanish": "algo",
+              "callout": null,
+              "acceptedAnswers": [
+                "something"
+              ]
+            },
+            {
+              "id": "lang_caefa3dd-3e5e-448f-824b-c66499fe3a3d",
+              "spanish": "conmigo",
+              "callout": null,
+              "acceptedAnswers": [
+                "with me"
+              ]
+            },
+            {
+              "id": "lang_a40317ea-d88e-4cf2-9e2e-2c3486657b55",
+              "spanish": "hoy.",
+              "callout": null,
+              "acceptedAnswers": [
+                "today."
+              ]
+            }
+          ]
+        },
+        {
+          "id": "block_e9712b2b-2a00-44c1-931f-a6905d06bf58",
+          "type": "sentence",
+          "promptLabel": "",
+          "promptText": "",
+          "helperText": "",
+          "answerFeedback": null,
+          "languageBlocks": [
+            {
+              "id": "lang_d0d2a772-0d1f-489c-9ba7-78fcae452f38",
+              "spanish": "Sí,",
+              "callout": "No olvides el COMA.",
+              "acceptedAnswers": [
+                "Yes,"
+              ]
+            },
+            {
+              "id": "lang_df50d408-9fee-491c-ba71-c99dc1725c45",
+              "spanish": "quiero",
+              "callout": null,
+              "acceptedAnswers": [
+                "I want"
+              ]
+            },
+            {
+              "id": "lang_2394ad46-a78e-45ab-9035-39cbe97b6a46",
+              "spanish": "hacer",
+              "callout": null,
+              "acceptedAnswers": [
+                "to do"
+              ]
+            },
+            {
+              "id": "lang_4a3c3afc-e6a9-4eb2-aecc-0efe7404bdf2",
+              "spanish": "algo",
+              "callout": null,
+              "acceptedAnswers": [
+                "something"
+              ]
+            },
+            {
+              "id": "lang_d651e6d1-9299-42ac-86ec-05c976f422be",
+              "spanish": "contigo.",
+              "callout": null,
+              "acceptedAnswers": [
+                "with you."
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "lesson_941c0ba3-54c4-435b-9eaa-870ee4f33bd6",
+      "name": "I want to know if you want to go there with me tonight.",
+      "concepts": [
+        {
+          "id": "lesson_concept_3194d018-5bde-4f60-9fbf-e06b203c730a",
+          "conceptId": "wyrj7k8thq",
+          "label": "allí"
+        },
+        {
+          "id": "lesson_concept_fde7cce7-f533-4ee4-847e-7b66cbe1b3b9",
+          "conceptId": "0srx55tuxj",
+          "label": "ahí"
+        },
+        {
+          "id": "lesson_concept_b570b9c8-8624-4ed8-9967-1914d0178a15",
+          "conceptId": "rwj2zcgfcm",
+          "label": "[la] noche"
+        },
+        {
+          "id": "lesson_concept_a50d0444-22ef-4937-9a9e-3ee09949126d",
+          "conceptId": "v2bifwqn7l",
+          "label": "esta noche"
+        },
+        {
+          "id": "lesson_concept_d9a5ec6b-9348-4089-8758-8ae1b09985da",
+          "conceptId": "2iiyjrogmc",
+          "label": "ir"
+        },
+        {
+          "id": "lesson_concept_5e94a7bb-cd1c-4113-8045-751fd0b2d467",
+          "conceptId": "df1fa2p3xy",
+          "label": "querer [hacer algo]"
+        },
+        {
+          "id": "lesson_concept_4f13f6e9-c700-4b00-8dd9-40dd98d36f0a",
+          "conceptId": "rnldlhmpop",
+          "label": "contigo"
+        },
+        {
+          "id": "lesson_concept_afeda1bd-de47-496e-bf01-ea8f9f5382e4",
+          "conceptId": "lse8dx7tet",
+          "label": "conmigo"
+        }
+      ],
+      "blocks": [
+        {
+          "id": "block_52639fb9-0930-421f-b928-eed1ed86f16e",
+          "type": "explanation",
+          "contentMarkdown": "[[es:ir]] es [[en:to go]]"
+        },
+        {
+          "id": "block_0b79ad04-0a40-4278-aeb9-cf718aa3f332",
+          "type": "sentence",
+          "promptLabel": "",
+          "promptText": "",
+          "helperText": "",
+          "answerFeedback": null,
+          "languageBlocks": [
+            {
+              "id": "lang_75981d39-9867-4599-b49b-939e09f337fb",
+              "spanish": "ir",
+              "callout": null,
+              "acceptedAnswers": [
+                "to go"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "block_2ce46ad8-1b6f-4876-888d-c7800cae0c9b",
+          "type": "sentence",
+          "promptLabel": "",
+          "promptText": "",
+          "helperText": "",
+          "answerFeedback": null,
+          "languageBlocks": [
+            {
+              "id": "lang_026ab4b5-1044-4853-931d-d7525fa401ef",
+              "spanish": "Quiero",
+              "callout": null,
+              "acceptedAnswers": [
+                "I want"
+              ]
+            },
+            {
+              "id": "lang_b4a613e1-a544-46f8-8c0d-0c0c4ea01542",
+              "spanish": "ir...",
+              "callout": null,
+              "acceptedAnswers": [
+                "to go"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "block_b18455ac-0908-4124-8bf7-e5e155e5f080",
+          "type": "explanation",
+          "contentMarkdown": "[[es:allí]] o [[es:allá]] es [[en:there]]"
+        },
+        {
+          "id": "block_9025e63d-c02d-4c55-9c0c-0fa1f9e6857d",
+          "type": "sentence",
+          "layout": "vocabulary_table",
+          "promptLabel": "",
+          "promptText": "",
+          "helperText": "",
+          "answerFeedback": null,
+          "languageBlocks": [
+            {
+              "id": "lang_67e82669-7af3-42f1-811f-b3453f9a56aa",
+              "spanish": "allí",
+              "callout": null,
+              "acceptedAnswers": [
+                "there"
+              ]
+            },
+            {
+              "id": "lang_e30579af-c58a-4d45-a4cb-242bce7d4fa3",
+              "spanish": "allá",
+              "callout": "Son iguales. Tienen la misma traducción.",
+              "acceptedAnswers": [
+                "there"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "block_eea7a9b5-54a3-4cec-b753-c6aa0936a45e",
+          "type": "sentence",
+          "promptLabel": "",
+          "promptText": "",
+          "helperText": "",
+          "answerFeedback": null,
+          "languageBlocks": [
+            {
+              "id": "lang_cc6a766b-bdb9-4dfe-83a6-1e5142f03b9e",
+              "spanish": "Quiero",
+              "callout": null,
+              "acceptedAnswers": [
+                "I want"
+              ]
+            },
+            {
+              "id": "lang_ee0032c5-ca44-43b4-b123-431ee5d62862",
+              "spanish": "ir",
+              "callout": null,
+              "acceptedAnswers": [
+                "to go"
+              ]
+            },
+            {
+              "id": "lang_8fc7c135-3936-4f6a-939b-fa28c820e224",
+              "spanish": "allá",
+              "callout": null,
+              "acceptedAnswers": [
+                "there"
+              ]
+            },
+            {
+              "id": "lang_8392c62f-3067-4e0f-9359-877786fe5456",
+              "spanish": "contigo.",
+              "callout": null,
+              "acceptedAnswers": [
+                "with you."
+              ]
+            }
+          ]
+        },
+        {
+          "id": "block_086c8783-7b76-483b-b579-56dcc1068199",
+          "type": "explanation",
+          "contentMarkdown": "[[es:noche]] es [[en:night]]"
+        },
+        {
+          "id": "block_a27d50bc-ac9a-4b3b-9632-10db9aaa3f16",
+          "type": "sentence",
+          "promptLabel": "",
+          "promptText": "",
+          "helperText": "",
+          "answerFeedback": null,
+          "languageBlocks": [
+            {
+              "id": "lang_1e16fd9a-1f81-492d-b5da-c0d5d855ce01",
+              "spanish": "noche",
+              "callout": null,
+              "acceptedAnswers": [
+                "night"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "block_f1636fd7-12b5-4310-bfb6-9d2e1e4c4fef",
+          "type": "explanation",
+          "contentMarkdown": "[[es:esta noche]] es [[en:tonight]]\n\nSi ya has estudiado inglés en el pasado, la tentación es decir [[en:this night]], pero es poco común."
+        },
+        {
+          "id": "block_1c21b12a-1291-4dd8-b614-c93423f64724",
+          "type": "sentence",
+          "promptLabel": "",
+          "promptText": "",
+          "helperText": "",
+          "answerFeedback": null,
+          "languageBlocks": [
+            {
+              "id": "lang_7d4de454-4818-4faa-b910-1e2e5f941889",
+              "spanish": "esta noche",
+              "callout": null,
+              "acceptedAnswers": [
+                "tonight"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "block_29bc17a3-1516-4118-a89b-2f467366c144",
+          "type": "sentence",
+          "layout": "vocabulary_table",
+          "promptLabel": "",
+          "promptText": "Repasemos los elementos de tiempo.",
+          "helperText": "",
+          "answerFeedback": null,
+          "languageBlocks": [
+            {
+              "id": "lang_a3fa1fda-ec62-4d66-93e5-f85bccc8fcc7",
+              "spanish": "día",
+              "callout": null,
+              "acceptedAnswers": [
+                "day"
+              ]
+            },
+            {
+              "id": "lang_e393c442-8959-40be-8132-e1a72fd00fae",
+              "spanish": "hoy",
+              "callout": null,
+              "acceptedAnswers": [
+                "today"
+              ]
+            },
+            {
+              "id": "lang_ee031b99-7262-4391-a51c-f899dc91df88",
+              "spanish": "noche",
+              "callout": null,
+              "acceptedAnswers": [
+                "night"
+              ]
+            },
+            {
+              "id": "lang_6f2048cc-c0b2-4983-a3e3-08e4126d6f76",
+              "spanish": "esta noche",
+              "callout": null,
+              "acceptedAnswers": [
+                "tonight"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "block_fc0cf5e8-3762-48a6-aff1-94d0f57aed34",
+          "type": "sentence",
+          "promptLabel": "",
+          "promptText": "Un reto más grande.",
+          "helperText": "",
+          "answerFeedback": null,
+          "languageBlocks": [
+            {
+              "id": "lang_5117d97a-7eea-4eb6-a60b-e0feb5e5fb67",
+              "spanish": "Quiero",
+              "callout": null,
+              "acceptedAnswers": [
+                "I want"
+              ]
+            },
+            {
+              "id": "lang_69b87b03-d401-4418-be76-9faceb064370",
+              "spanish": "saber",
+              "callout": null,
+              "acceptedAnswers": [
+                "to know"
+              ]
+            },
+            {
+              "id": "lang_1be0166a-450a-414a-a60d-c52820e4d40e",
+              "spanish": "si",
+              "callout": null,
+              "acceptedAnswers": [
+                "if"
+              ]
+            },
+            {
+              "id": "lang_276ec7d3-d095-4f3e-8602-fa9bcc446390",
+              "spanish": "quieres",
+              "callout": null,
+              "acceptedAnswers": [
+                "you want"
+              ]
+            },
+            {
+              "id": "lang_3ef080df-30a5-44f5-b60c-a0b2e9c08b39",
+              "spanish": "ir",
+              "callout": null,
+              "acceptedAnswers": [
+                "to go"
+              ]
+            },
+            {
+              "id": "lang_d56c870d-7d41-4bd3-b19f-448264d82918",
+              "spanish": "allá",
+              "callout": null,
+              "acceptedAnswers": [
+                "there"
+              ]
+            },
+            {
+              "id": "lang_b8a3c83d-45d1-4a2c-88a1-3300a10e97eb",
+              "spanish": "conmigo",
+              "callout": null,
+              "acceptedAnswers": [
+                "with me"
+              ]
+            },
+            {
+              "id": "lang_ddfd545c-5f3c-41d1-940d-6c9edf060d4f",
+              "spanish": "esta noche.",
+              "callout": null,
+              "acceptedAnswers": [
+                "tonight."
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "lesson_f3b54ccd-4e19-4d1a-a7b1-3816935ca78e",
+      "name": "I want to know if you want to come here tomorrow.",
+      "concepts": [],
+      "blocks": []
     }
   ]
 }
