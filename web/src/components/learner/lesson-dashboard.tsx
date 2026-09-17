@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useEffect, useRef, useSyncExternalStore } from "react";
 
 import { BrandMark } from "@/components/brand-mark";
+import { ConfirmResetButton } from "@/components/learner/confirm-reset-button";
 import {
   EMPTY_FEEDBACK_CONTEXT,
   FeedbackSheet,
@@ -18,6 +19,7 @@ import type {
 import {
   nextLessonToStudy,
   readProgress,
+  resetLessonProgress,
   serverProgress,
   subscribeToProgress,
 } from "@/lib/learner/progress";
@@ -87,6 +89,7 @@ export function LessonDashboard({
               lesson={lesson}
               progress={progress[lesson.id]}
               isNext={lesson.id === nextLesson?.id && !courseComplete}
+              onReset={(lessonId) => resetLessonProgress([lessonId])}
             />
           ))}
         </ol>
@@ -100,22 +103,30 @@ export function LessonDashboard({
         {nextLesson ? (
           <section className="hero-card learner-enter" aria-label="Tu próxima lección">
             <p className="learner-eyebrow hero-eyebrow">
-              {hasActivity ? "Tu próxima lección" : "Empieza aquí"}
+              {courseComplete
+                ? "Repasa"
+                : hasActivity
+                  ? "Tu próxima lección"
+                  : "Empieza aquí"}
             </p>
             <h1 className="hero-line">
-              {hasActivity
-                ? nextModule?.name || moduleLabel(modules, nextModuleIndex)
-                : (
-                  <>
-                    Habla inglés. Con confianza
-                    <span aria-hidden="true">.</span>
-                  </>
-                )}
+              {courseComplete ? (
+                "Todo listo."
+              ) : hasActivity ? (
+                nextModule?.name || moduleLabel(modules, nextModuleIndex)
+              ) : (
+                <>
+                  Habla inglés. Con confianza
+                  <span aria-hidden="true">.</span>
+                </>
+              )}
             </h1>
             <p className="hero-subcopy">
-              {hasActivity
-                ? nextModule?.description || "Sigamos donde lo dejaste."
-                : "Aprende paso a paso y construye frases que puedes usar desde hoy."}
+              {courseComplete
+                ? "Vuelve a cualquier lección cuando quieras."
+                : hasActivity
+                  ? nextModule?.description || "Sigamos donde lo dejaste."
+                  : "Aprende paso a paso y construye frases que puedes usar desde hoy."}
             </p>
             <div className="hero-promise">
               <p className="learner-eyebrow hero-promise-eyebrow">
@@ -132,7 +143,11 @@ export function LessonDashboard({
               href={`/practice?lesson=${encodeURIComponent(nextLesson.id)}`}
               className="hero-cta"
             >
-              {hasActivity ? "Continuar" : "Empezar"}
+              {courseComplete
+                ? "Repasar desde el inicio"
+                : hasActivity
+                  ? "Continuar"
+                  : "Empezar"}
               <ArrowRight size={18} aria-hidden="true" />
             </Link>
           </section>
@@ -158,9 +173,25 @@ export function LessonDashboard({
                     className="path-module"
                     aria-labelledby={`module-${module.id}-title`}
                   >
-                    <h3 id={`module-${module.id}-title`} className="path-module-title">
-                      {module.name || moduleLabel(modules, modules.indexOf(module))}
-                    </h3>
+                    <div className="path-module-heading">
+                      <h3 id={`module-${module.id}-title`} className="path-module-title">
+                        {module.name || moduleLabel(modules, modules.indexOf(module))}
+                      </h3>
+                      {module.lessons.some(
+                        (lesson) => progress[lesson.id]?.completedAt,
+                      ) ? (
+                        <ConfirmResetButton
+                          className="path-module-reset"
+                          label="Reiniciar módulo"
+                          confirmLabel="¿Seguro? Reiniciar"
+                          onConfirm={() =>
+                            resetLessonProgress(
+                              module.lessons.map((lesson) => lesson.id),
+                            )
+                          }
+                        />
+                      ) : null}
+                    </div>
                     {pathRows(module.lessons)}
                   </section>
                 ))
@@ -185,6 +216,14 @@ export function LessonDashboard({
           <p className="site-footer-copyright">
             © 2026 Inglés con Confianza · Hecho en Bogotá
           </p>
+          <ConfirmResetButton
+            className="site-footer-reset"
+            label="Reiniciar todo el progreso"
+            confirmLabel="¿Seguro? Reiniciar todo"
+            onConfirm={() =>
+              resetLessonProgress(lessons.map((lesson) => lesson.id))
+            }
+          />
         </div>
       </footer>
       <FeedbackSheet

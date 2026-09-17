@@ -457,23 +457,23 @@ proposal doc's aspirations.
   This is the *editing*-field/explanation-mark treatment; resting sentence
   presentation and vocabulary-table rows use a different, settled palette
   (below).
-- **Resting pair typography** (round 2, item C — owner-decided, no longer an
-  A/B; colour reverted 2026-09-16, see the "One visual language" bullet
-  below): a composed sentence slide's own two lines
+- **Resting pair typography** (round 2, item C; colour rule rewritten
+  2026-09-17 — **colour is language**, and the document shows the author what
+  the learner will see, so the 2026-09-16 "both lines plain ink" treatment is
+  retired): a composed sentence slide's own two lines
   (`.lesson-document-sentence.resting .lesson-sentence-composed[lang="es"|
-  "en"]`) are both plain ink `var(--foreground)` — Spanish `font-weight: 700;
-  font-size: 17px`, English `font-style: italic; font-weight: 400; font-size:
-  17px` (same size as Spanish, not smaller) — with 6px between pairs and 2px
-  between a pair's own two lines. A vocabulary table's own unfocused rows use
-  a separate, still-two-tone selector — vocabulary tables never get the
-  `.resting` class (there's no separate resting/editing presentation for a
-  table, per `sentence-editor.tsx`) — so the equivalent selector is
-  `.lesson-document-sentence.vocab-table .lesson-document-piece:not(.active)
-  .lesson-document-language-field[data-language="es"|"en"] > textarea`:
-  Spanish `color: var(--foreground); font-weight: 600; font-size: 17px`,
-  English `color: var(--muted-foreground); font-style: italic; font-size:
-  15px`, unchanged. Editing fields, explanation marks, and the active
-  vocab-table row keep the always-on red/blue ink from the bullet above.
+  "en"]`) are Spanish `color: var(--lesson-hl-es); font-weight: 700;
+  font-size: 17px` and English `color: var(--lesson-hl-en); font-weight: 600;
+  font-size: 17px` — same size, **no italics anywhere** — with 6px between
+  pairs and 2px between a pair's own two lines. A vocabulary table's own
+  unfocused rows follow the same rule through a separate selector — tables
+  never get the `.resting` class (there's no separate resting/editing
+  presentation for a table, per `sentence-editor.tsx`) — at
+  `.lesson-sentence-presentation-row span[lang="es"|"en"]`: Spanish
+  `var(--lesson-hl-es)` 600/17px, English `var(--lesson-hl-en)` 600/15px.
+  Editing fields, explanation marks, and the active vocab-table row keep the
+  same always-on red/blue ink from the bullet above — one palette everywhere,
+  matching docs/design/learner-direction.md's "Colour, by role".
 - **Hint input shown only on demand**: an empty hint no longer renders
   under every active pair. The input (`.lesson-document-hint-pill-input`)
   renders only when the pair already has a stored hint (`piece.callout !==
@@ -645,13 +645,13 @@ proposal doc's aspirations.
   underline, an English one is italic theme `--primary` blue with no
   underline (`practice-responsive-overrides.css`'s shared `.learner-theme
   mark`/`.practice-markdown-content mark` rule, mirrored in
-  `explanation-editor.css`) — this is a *mark-only* treatment. The resting
-  sentence-slide's own two lines do **not** borrow it: both are plain ink
-  `var(--foreground)` (`sentence-presentation.css`'s
-  `.lesson-document-sentence.resting .lesson-sentence-composed[lang="es"|
-  "en"]`) — Spanish bold, English italic, same size — the one-day experiment
-  of colouring them like marks (50b4c5bf, c9df1e8f) was reverted the same
-  day it shipped; see "Resting pair typography" above.
+  `explanation-editor.css`).
+
+  **Superseded 2026-09-17**: the treatment is no longer mark-only. Colour is
+  language everywhere — a resting sentence slide's two lines and a vocabulary
+  table's rows carry the same red/blue as the marks, and no line is italic;
+  see "Resting pair typography" above and
+  docs/design/learner-direction.md's "Colour, by role".
 
 - **Header polish round (owner, 2026-09-16, cosmetic lane)**: five small
   fixes to the module list's top chrome.

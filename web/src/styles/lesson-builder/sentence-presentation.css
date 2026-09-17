@@ -44,32 +44,29 @@
   white-space: normal;
 }
 
-/* Resting pair typography — the owner-decided calm treatment. Only the
-   *resting* presentation (this slide not active) reads this way; the
-   active/editing pair fields below keep their own red/blue language ink.
-   Both lines are plain ink (`--foreground`), not the red/blue mark colours
-   — those are reserved for marks inside explanations (owner, 2026-09-16 —
-   reverted the "one visual language" colour experiment from 50b4c5bf/
-   c9df1e8f). Spanish is bold, English is italic, both at the same size. */
+/* Resting pair typography. Owner rule, 2026-09-17: colour IS language, and
+   the document must show the author what the learner will see — Spanish in
+   flag red and bold, English in Union Jack blue, no italics anywhere. (This
+   supersedes the 2026-09-16 "both lines plain ink" treatment; purple is
+   chrome and actions only, on both sides of the app.) */
 .lesson-document-sentence.resting .lesson-sentence-presentation {
   display: flex;
   flex-direction: column;
   gap: 2px;
 }
 .lesson-document-sentence.resting .lesson-sentence-composed[lang="es"] {
-  color: var(--foreground);
+  color: var(--lesson-hl-es);
   font-weight: 700;
   font-size: 17px;
 }
 .lesson-document-sentence.resting .lesson-sentence-composed[lang="en"] {
-  color: var(--foreground);
-  font-style: italic;
-  font-weight: 400;
+  color: var(--lesson-hl-en);
+  font-style: normal;
+  font-weight: 600;
   font-size: 17px;
 }
-/* E8 "given" piece at rest: normal weight (not italic, like the rest of
-   the English line) with a subtle dotted underline — shown to the student,
-   never tested, so it must read as calmer than an actual answer. */
+/* E8 "given" piece at rest: a subtle dotted underline — shown to the
+   student, never tested, so it must read as calmer than an actual answer. */
 .lesson-document-sentence.resting .lesson-sentence-composed[lang="en"] span[data-given="true"] {
   font-style: normal;
   text-decoration: underline dotted;
@@ -105,14 +102,17 @@
 .lesson-sentence-presentation-row:last-child {
   border-bottom: 0;
 }
+/* The vocabulary table at rest follows the same rule as the pairs above:
+   Spanish red, English blue, no italics (owner, 2026-09-17). */
 .lesson-sentence-presentation-row span[lang="es"] {
-  color: var(--foreground);
+  color: var(--lesson-hl-es);
   font-weight: 600;
   font-size: 17px;
 }
 .lesson-sentence-presentation-row span[lang="en"] {
-  color: var(--muted-foreground);
-  font-style: italic;
+  color: var(--lesson-hl-en);
+  font-style: normal;
+  font-weight: 600;
   font-size: 15px;
 }
 /* A row's authored hint reuses the read-only pill sentence pairs use at

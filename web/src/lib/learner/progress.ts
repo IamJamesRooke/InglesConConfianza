@@ -144,19 +144,22 @@ export function resetLessonProgress(lessonIds: string[]) {
 }
 
 /**
- * Where reopening a lesson puts the learner. A lesson already finished
- * reopens on its completion screen — the sentence they built, the replay,
- * the next lesson and "Reiniciar esta lección" (docs/design/learner-direction.md,
- * COMPLETION). It used to silently restart such a lesson at step 0, which
- * made the completion screen unreachable once a lesson was done: the only
- * way back into it was to finish the lesson again. Resetting from that
- * screen is what starts it over.
+ * Where reopening a lesson puts the learner. A finished lesson reopens from
+ * its FIRST slide, for review (docs/teaching-methodology.md;
+ * docs/design/student-experience.md, "Completed lessons reopen from the
+ * beginning for review"; docs/design/learner-direction.md, COMPLETION item
+ * 0). Landing straight on the completion screen instead — briefly the
+ * behaviour here — meant that once a learner had finished a module every
+ * entry point (the home CTA, every done path row) dropped them on a
+ * "well done" screen and the course read as broken (owner, 2026-09-17).
+ * Reviewing never rewrites the completion record: finishing the lesson
+ * again simply reaches the completion screen the normal way.
  */
 export function resumeStepIndex(
   blocks: { id: string }[],
   entry?: LessonProgressEntry,
 ) {
-  if (entry?.completedAt) return blocks.length;
+  if (entry?.completedAt) return 0;
   if (!entry?.stepId) return 0;
   return Math.max(
     0,
@@ -172,12 +175,12 @@ export function nextLessonToStudy<T extends { id: string; stepCount: number }>(
   const unfinished = available.filter(
     (lesson) => !progress[lesson.id]?.completedAt,
   );
-  const recentlyOpened = unfinished
-    .filter((lesson) => progress[lesson.id]?.lastOpenedAt)
-    .sort(
-      (a, b) =>
-        Date.parse(progress[b.id].lastOpenedAt!) -
-        Date.parse(progress[a.id].lastOpenedAt!),
-    );
-  return recentlyOpened[0] ?? unfinished[0] ?? available[0];
+  // The first unfinished lesson, in course order — the home's hero names
+  // that one lesson and nothing else (owner, 2026-09-17: picking the most
+  // recently *opened* unfinished lesson instead could send "Continuar"
+  // backwards to a lesson the learner had wandered into). With every lesson
+  // finished there is nothing left to study: the caller (LessonDashboard)
+  // switches the hero to its "Todo listo." review state, and this returns
+  // lesson 1, which is where "Repasar desde el inicio" goes.
+  return unfinished[0] ?? available[0];
 }

@@ -467,9 +467,14 @@ test("help is the speaker's quiet Pista button — no lightbulb, no amber hint b
     '.stage-en-input[data-state="hint"]',
   ])
     assert.equal(css.includes(gone), false, `${gone} should be gone`);
+  // Owner, 2026-09-17: "Pista" has to look pressable — a small ghost button
+  // (hairline border, ink text, 8px radius, 28px tall), not a line of text.
   const hintButtonBlock =
     css.match(/\.stage-hint-button\s*\{([^}]*)\}/)?.[1] ?? "";
-  assert.match(hintButtonBlock, /color:\s*var\(--ink-muted\)/);
+  assert.match(hintButtonBlock, /color:\s*var\(--foreground\)/);
+  assert.match(hintButtonBlock, /border:\s*1px solid var\(--border\)/);
+  assert.match(hintButtonBlock, /border-radius:\s*8px/);
+  assert.match(hintButtonBlock, /height:\s*28px/);
   assert.doesNotMatch(hintButtonBlock, /var\(--hint\)/);
 
   const stageCard = readFileSync(

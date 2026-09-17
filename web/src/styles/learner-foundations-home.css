@@ -332,7 +332,7 @@
   margin-top: 24px;
 }
 .path-module-title {
-  margin: 0 0 16px;
+  margin: 0;
   color: var(--foreground);
   font-size: var(--t-body);
   font-weight: 600;
@@ -360,8 +360,12 @@
 }
 .path-row {
   position: relative;
+  display: flex;
+  align-items: center;
 }
 .path-row-link {
+  flex: 1 1 auto;
+  min-width: 0;
   display: flex;
   gap: 16px;
   align-items: flex-start;
@@ -464,6 +468,84 @@
   background: var(--surface-writing);
   border: 1px solid var(--border);
 }
+/* A finished row says what reopening it does — it replays from slide one
+   (docs/design/learner-direction.md, COMPLETION item 0) — where an
+   unfinished row shows nothing. */
+.path-row-review {
+  flex: none;
+  align-self: center;
+  margin-left: auto;
+  color: var(--muted-foreground);
+}
+.path-row-review + .path-row-arrow {
+  margin-left: 8px;
+}
+/* Reset lives outside the row's anchor so it can never navigate. Quiet
+   until the row is hovered or something inside it takes focus; always
+   visible where there is no hover (touch, phone) — owner, 2026-09-17. */
+.path-row-reset {
+  flex: none;
+  margin-left: 12px;
+  padding: 6px 8px;
+  border: 0;
+  border-radius: 8px;
+  background: none;
+  color: var(--muted-foreground);
+  font: inherit;
+  font-size: var(--t-eyebrow);
+  font-weight: 650;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: opacity 200ms ease-out;
+}
+.path-row-reset:hover {
+  color: var(--foreground);
+  text-decoration: underline;
+}
+@media (hover: hover) {
+  .path-row-reset {
+    opacity: 0;
+  }
+  .path-row:hover .path-row-reset,
+  .path-row:focus-within .path-row-reset {
+    opacity: 1;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .path-row-reset {
+    transition: none;
+  }
+}
+.path-row.path-row-card .path-row-reset {
+  margin-right: 12px;
+}
+.path-module-heading {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+.path-module-reset {
+  flex: none;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--muted-foreground);
+  font: inherit;
+  font-size: var(--t-eyebrow);
+  font-weight: 650;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  white-space: nowrap;
+  cursor: pointer;
+}
+.path-module-reset:hover {
+  color: var(--foreground);
+  text-decoration: underline;
+}
 .path-row-copy {
   display: grid;
   gap: 2px;
@@ -523,6 +605,22 @@
   margin: 32px 0 0;
   font-size: var(--t-eyebrow);
   color: color-mix(in oklch, var(--primary-foreground) 70%, transparent);
+}
+/* Testers reset progress constantly (owner, 2026-09-17) — a quiet link in
+   the footer, never a browser dialog: it asks once inline instead. */
+.site-footer-reset {
+  margin-top: 12px;
+  padding: 0;
+  border: 0;
+  background: none;
+  font: inherit;
+  font-size: var(--t-eyebrow);
+  color: color-mix(in oklch, var(--primary-foreground) 70%, transparent);
+  cursor: pointer;
+}
+.site-footer-reset:hover {
+  color: var(--primary-foreground);
+  text-decoration: underline;
 }
 
 

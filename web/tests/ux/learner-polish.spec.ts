@@ -383,6 +383,26 @@ test("learner answer keys reveal help without navigation, focus theft, or lost d
   expect(cleanup.ok()).toBeTruthy();
 });
 
+/** Play a one-sentence lesson to its completion screen. A finished lesson
+ * now reopens at slide one for review (owner, 2026-09-17), so reaching the
+ * completion screen means answering the sentence — at desktop the visible
+ * action is the copy under the composition, on a phone the one in the
+ * footer, hence the `:visible` filter. */
+async function playToCompletion(
+  page: import("@playwright/test").Page,
+  lessonId: string,
+  answer: string,
+) {
+  await page.goto(`/practice?lesson=${lessonId}`);
+  await page.locator(".stage-en-input").first().waitFor();
+  await page.locator(".stage-en-input").first().fill(answer);
+  await page
+    .locator('button:has-text("Terminar lección"):visible')
+    .first()
+    .click();
+  await page.locator(".lesson-celebration").waitFor();
+}
+
 function moduleCompletionLesson(id: string, spanish: string, answer: string) {
   return {
     id,
@@ -409,7 +429,7 @@ function moduleCompletionLesson(id: string, spanish: string, answer: string) {
   };
 }
 
-test("with every lesson in a module already complete, reopening an earlier one still hands off to the next — only the last lesson shows the module list", async ({
+test("a finished lesson reopens for review, and replaying an earlier one still hands off to the next — only the last lesson shows the module list", async ({
   page,
   request,
 }) => {
@@ -444,10 +464,14 @@ test("with every lesson in a module already complete, reopening an earlier one s
     window.localStorage.setItem("icc.lessonProgress.v1", JSON.stringify(progress));
   }, lessons.map((lesson) => lesson.id));
 
-  // Reopening lesson 1 (not the module's last lesson) must show the next
+  // A finished lesson reopens at slide one for review (owner, 2026-09-17),
+  // so the completion screen is reached by playing it again.
+  await expect(page.locator(".lesson-celebration")).toHaveCount(0);
+
+  // Finishing lesson 1 (not the module's last lesson) must show the next
   // lesson card, not the module-end list, even though every lesson —
   // including the ones after it — is already complete.
-  await page.goto(`/practice?lesson=${lessons[0].id}`);
+  await playToCompletion(page, lessons[0].id, "one");
   await expect(page.locator(".lesson-celebration")).toBeVisible();
   await expect(page.getByText("Siguiente", { exact: true })).toBeVisible();
   await expect(page.getByText("Lo que ya puedes decir")).toHaveCount(0);
@@ -457,7 +481,7 @@ test("with every lesson in a module already complete, reopening an earlier one s
 
   // The module's actual last lesson gets the module-end list and "Volver
   // al inicio" instead.
-  await page.goto(`/practice?lesson=${lessons[3].id}`);
+  await playToCompletion(page, lessons[3].id, "four");
   await expect(page.locator(".lesson-celebration")).toBeVisible();
   await expect(page.getByText("Lo que ya puedes decir")).toBeVisible();
   await expect(
@@ -518,14 +542,13 @@ test("no learner screen scrolls sideways, and the completion stack stays a centr
   for (const size of OVERFLOW_WIDTHS) {
     await page.setViewportSize(size);
 
-    // A slide (the sentence stage) and both completion views.
-    await page.goto(`/practice?lesson=${lessons[0].id}`);
-    await page.locator(".lesson-celebration").waitFor();
+    // Both completion views (a finished lesson replays for review, so each
+    // one is played through to get there).
+    await playToCompletion(page, lessons[0].id, "one");
     await expectNoSidewaysScroll(page, `completion-next @ ${size.width}`);
     await expectCentredCompletion(page, size.width);
 
-    await page.goto(`/practice?lesson=${lessons[1].id}`);
-    await page.locator(".lesson-celebration").waitFor();
+    await playToCompletion(page, lessons[1].id, "two");
     await expectNoSidewaysScroll(page, `completion-module @ ${size.width}`);
     await expectCentredCompletion(page, size.width);
 
@@ -558,16 +581,28 @@ async function expectNoSidewaysScroll(
         offenders.push(`${element.tagName.toLowerCase()}.${className.trim()}`);
       }
     }
+    const pillElement = document.querySelector(".feedback-pill");
+    const pillBox = pillElement?.getBoundingClientRect();
     return {
       innerWidth,
       scrollWidth: document.documentElement.scrollWidth,
       offenders: offenders.slice(0, 5),
+      pill: pillBox ? { left: pillBox.left, right: pillBox.right } : null,
     };
   });
   expect(
     measured.scrollWidth,
     `${label}: scrollWidth ${measured.scrollWidth} > innerWidth ${measured.innerWidth}; offenders: ${measured.offenders.join(", ")}`,
   ).toBeLessThanOrEqual(measured.innerWidth);
+  // The floating "Comentar" pill is the one thing pinned to the right edge,
+  // so it is the first casualty of any sideways overflow (owner screenshot,
+  // 2026-09-17: its right third off-screen at ~950).
+  const pill = measured.pill;
+  expect(pill, `${label}: no feedback pill`).not.toBeNull();
+  expect(pill!.right, `${label}: pill right ${pill!.right}`).toBeLessThanOrEqual(
+    measured.innerWidth,
+  );
+  expect(pill!.left, `${label}: pill left ${pill!.left}`).toBeGreaterThanOrEqual(0);
 }
 
 async function expectCentredCompletion(

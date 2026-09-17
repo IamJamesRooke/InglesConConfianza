@@ -1,5 +1,5 @@
 "use client";
-import { Check, Info } from "lucide-react";
+import { Info } from "lucide-react";
 import type { CSSProperties } from "react";
 import { PracticeMarkdown } from "@/components/practice/practice-markdown";
 import { HintButton, SpeakerChip } from "@/components/practice/speaker-chip";
@@ -38,7 +38,6 @@ export function SentencePracticeCard({
     testableIndexById,
     answers,
     correctAnswers,
-    isComplete,
     focusedBlockIndex,
     setFocusedBlockIndex,
     inputRefs,
@@ -67,17 +66,6 @@ export function SentencePracticeCard({
     sentence.promptLabel.trim() || sentence.promptText?.trim(),
   );
   const hasSentencePromptText = Boolean(sentence.promptText?.trim());
-  const renderSuccessCheck = (variantClassName: string) =>
-    isComplete && (
-      <span
-        className={`sentence-success ${variantClassName}`}
-        role="status"
-        aria-live="polite"
-        aria-label="¡Correcto!"
-      >
-        <Check size={16} strokeWidth={3} aria-hidden="true" />
-      </span>
-    );
   const cardBody = (
     <div
       className={`sentence-practice learner-enter ${isSingleLanguageBlock ? "single-answer" : ""} ${isVocabulary ? "vocabulary-practice" : ""}`}
@@ -92,7 +80,6 @@ export function SentencePracticeCard({
           <div className="sentence-prompt">
             <PracticeMarkdown markdown={sentence.promptText} variant="prompt" />
           </div>
-          {renderSuccessCheck("sentence-success-inline")}
         </div>
       )}
       {languageBlocks.length > 0 ? (
@@ -100,8 +87,6 @@ export function SentencePracticeCard({
           <div
             className={`answer-grid ${hasAuthoredPrompt ? "has-prompt" : ""}`}
           >
-            {!hasSentencePromptText &&
-              renderSuccessCheck("sentence-success-card")}
             {languageBlocks.map((languageBlock) => {
               const testableIndex = testableIndexById.get(languageBlock.id);
               // E8 "given" piece: shown, never tested — static text, no
@@ -128,14 +113,6 @@ export function SentencePracticeCard({
                 >
                   <span className="answer-source">
                     {languageBlock.spanish}
-                    {correctAnswers[languageBlockIndex] && (
-                      <Check
-                        className="answer-source-check"
-                        size={16}
-                        strokeWidth={3.5}
-                        aria-hidden="true"
-                      />
-                    )}
                   </span>
                   <div
                     className="answer-field"

@@ -1,6 +1,7 @@
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 
+import { ConfirmResetButton } from "@/components/learner/confirm-reset-button";
 import type { LearnerLesson } from "@/components/learner/types";
 import type { LessonProgressEntry } from "@/lib/learner/progress";
 
@@ -17,10 +18,12 @@ export function LessonRow({
   lesson,
   progress,
   isNext,
+  onReset,
 }: {
   lesson: LearnerLesson;
   progress?: LessonProgressEntry;
   isNext: boolean;
+  onReset?: (lessonId: string) => void;
 }) {
   const complete = Boolean(progress?.completedAt);
   const available = lesson.stepCount > 0;
@@ -42,6 +45,9 @@ export function LessonRow({
             : "Una nueva conversación, muy pronto."}
         </span>
       </span>
+      {complete ? (
+        <span className="learner-eyebrow path-row-review">Repasar</span>
+      ) : null}
       {available ? (
         <ArrowRight
           className="path-row-arrow"
@@ -65,6 +71,15 @@ export function LessonRow({
       ) : (
         <div className="path-row-link path-row-static">{content}</div>
       )}
+      {complete && onReset ? (
+        <ConfirmResetButton
+          className="path-row-reset"
+          label="Reiniciar"
+          confirmLabel="¿Seguro? Reiniciar"
+          ariaLabel={`Reiniciar ${lesson.name || `lección ${lesson.moduleLessonNumber}`}`}
+          onConfirm={() => onReset(lesson.id)}
+        />
+      ) : null}
     </li>
   );
 }

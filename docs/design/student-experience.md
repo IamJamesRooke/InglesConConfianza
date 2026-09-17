@@ -588,6 +588,14 @@ lesson or the module's sentences, one CTA, "Reiniciar esta lección" to start
 over). The screen the owner photographed was the pre-`20965ff6` bundle still
 being served by a stale dev server.
 
+**Reversed, 2026-09-17.** That landing rule was wrong in practice: once a
+learner had finished a module, *every* entry point — the home's "Continuar",
+every done row in the path — opened a "well done" screen, and the course read
+as broken. `resumeStepIndex` returns 0 for a finished lesson again, which is
+what the rule at the top of this document (and the methodology) always said:
+a finished lesson **reopens from its first slide for review**, keeps its
+completion record, and reaches its completion screen again at the end.
+
 Verified with `npm run test:unit` (386/386), `npx eslint` on the touched
 files, `npx tsc --noEmit`, `npm run lint` (incl. CSS lint), `npm run
 lint:dead` (no new findings), `tests/ux/speech.spec.ts` (2/2, extended:

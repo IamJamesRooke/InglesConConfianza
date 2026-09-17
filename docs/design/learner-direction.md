@@ -37,10 +37,15 @@ for the home grid.
 
 - Canvas: `--canvas-warm` lavender tint. Cards: white, 16px radius, 1px `--border`,
   `--shadow-card`. Never a tinted card.
-- Saturated purple only on: the hero gradient, the one CTA, the progress fill, the
-  finished English words, the focus ring. Nowhere else.
-- Spanish marks: flag red. English marks: Union Jack blue. Success glyph: `--success`.
-  No other hue on a screen.
+- **Colour is language** (owner, 2026-09-17, supersedes "finished English words are
+  purple"): every piece of Spanish the learner is translating is flag red
+  (`--lesson-hl-es`) and bold; every English answer is Union Jack blue
+  (`--lesson-hl-en`) and bold. That holds for marks inside explanations, the
+  sentence stage's two lines, and the vocabulary table.
+- Saturated purple is chrome and action only: the hero gradient, the status strip,
+  the one CTA, the progress fill, the focus ring. Nowhere in the language itself.
+- No success glyph anywhere in practice — the colour settling and the speaker are
+  the success signal. No other hue on a screen.
 - Text on white: ink. Secondary: `--ink-muted`. On purple: white / white 85%.
 
 ## HOME — "your next sentence"
@@ -86,21 +91,30 @@ and the one action.
    - **Sentence slide**: instruction (if any) as a muted body line above the card.
      White card with two lines at sentence size: the Spanish sentence as prose (active
      piece in flag red bold, done pieces ink, pending `--ink-muted`), and the English
-     sentence assembling beneath it (done words in purple 600, the active piece an
-     inline field in the flow, pending pieces as underlines sized to the word).
+     sentence assembling beneath it. Line 1 is all flag red and bold — the active
+     piece carries a 2px red underline rather than a colour change, pieces still to
+     come sit at 60% of the same red, a `given` piece is plain ink. Line 2 is Union
+     Jack blue 600 as it fills in; an empty blank is a `--border` underline sized to
+     the word, and the active piece is an inline field in the flow, also blue.
      Nothing else in the card — no hint icon (see **Help** below).
-   - **Speaker**: the two-actor composition starts at **768px** (owner, 2026-09-17 —
-     at ~950px the one-column stack read as a stretched phone layout): a column to
-     the left of the card with a 72px round portrait, flag + label beneath, bubble
-     pointing at the card, the card capped at 720 and the whole group centred;
-     below 768 it is a row under the card with a 48px portrait. No bubble until the
+   - **Speaker**: the two-actor composition starts at **1024px** (owner, 2026-09-17 —
+     it briefly started at 768, where a portrait beside a box read as a portrait
+     stuck in the corner): a 200px column to the left of the card with a 64px round
+     portrait, flag + label beneath, bubble pointing at the card, 24px to the card,
+     the card capped at 720 and the whole group centred with equal air either side
+     (the one action is centred under the group, not under the card); below 1024 it
+     is a row under the card with a 48px portrait. No bubble until the
      first words; then it keeps the last thing said. Bubble at UI-label size, white, hairline, 12px radius.
-   - **Vocabulary table**: same card, rows of Spanish (sentence size) → inline field,
-     hairline between rows. Every row's field is the same width, focused or not, and
+   - **Vocabulary table**: same card, rows of Spanish (sentence size, flag red bold)
+     → inline field whose answer is Union Jack blue bold, the row being answered
+     marked by an underline under its Spanish prompt, hairline between rows. Every row's field is the same width, focused or not, and
      the stage's bottom padding clears the footer so the last row is never hidden
      behind it.
-   - **Help**: one quiet text button, "Pista", under the speaker's flag/label — no
-     lightbulb anywhere, no amber hint bar (owner, 2026-09-17). It puts the answer
+   - **Help**: one small ghost button, "Pista" — hairline `--border`, ink text at
+     `--t-eyebrow` (not uppercase), 8px radius, 28px tall, `--surface-subtle` on
+     hover. Under the speaker's flag/label in the column at 1024+, at the end of the
+     speaker row below that. No lightbulb anywhere, no amber hint bar (owner,
+     2026-09-17). It puts the answer
      for the active piece (or focused table row) in the speaker's bubble and has the
      speaker say it for ~4s, then the bubble goes back to what it was showing. The
      field is never filled in; no penalty, no limit; `Alt+H` does the same. With no
@@ -112,13 +126,16 @@ and the one action.
    under the stage. Back is a quiet icon 24px from the left of the footer, vertically
    centred with the primary button, only when going back is possible.
 
-Success = the word settling into place (150 ms ease-out from tint field to purple
-text) and the speaker saying it. No check glyphs, no colour flash of the footer, no
-sound effects beyond the voice.
+Success = the word settling into place (150 ms ease-out from tint field to blue
+text) and the speaker saying it. No check glyphs anywhere — not beside a vocabulary
+row, not beside the instruction — no colour flash of the footer, no sound effects
+beyond the voice.
 
 ## COMPLETION — "you said that"
 
-0. Reopening a lesson that is already finished lands here, not back at slide one.
+0. A finished lesson reopens from its first slide for review; the completion
+   screen is reached again at the end (docs/teaching-methodology.md;
+   docs/design/student-experience.md).
 1. Status strip stays (progress full).
 2. Stack, centred, largest first: the final English sentence at hero size (36/56)
    in ink with a **replay** button beside it; the Spanish beneath at body muted;

@@ -331,11 +331,9 @@
   line-height: 1.3;
   font-weight: 600;
 }
-/* The success check moves inline right after the Spanish sentence prompt
-   (item 4b) — a centered row, the check vertically centered 4px to its
-   right. When there's no sentence prompt at all, the check instead renders
-   inside .answer-grid, positioned at its top-right corner (see
-   .sentence-success-card below). */
+/* The instruction row. It used to carry a purple check once the card was
+   answered; every check glyph is gone from practice (owner, 2026-09-17 —
+   colour and the speaker are the success signal). */
 .sentence-prompt-row {
   display: flex;
   align-items: center;
@@ -408,13 +406,6 @@
 }
 .single-answer .answer-source {
   text-align: center;
-}
-/* Correct: a small check tucked right against the Spanish word. */
-.answer-source-check {
-  display: inline-block;
-  margin-left: 6px;
-  vertical-align: -2px;
-  color: var(--primary);
 }
 /* E8 "given" piece: shown to the learner, never tested — same Spanish
    heading as a real blank, but the English is static text (no input, no
@@ -661,28 +652,6 @@
   .speaker-chip-bubble {
     white-space: normal;
   }
-}
-/* L2a success signal: one small purple check — no green circle, no footer
-   recolour. Item 4b: inline right after the sentence prompt text when one's
-   authored (.sentence-success-inline, in normal flow, 4px gap via the row's
-   gap); otherwise inside the card's own top-right padding
-   (.sentence-success-card). Fades in with the same pop used elsewhere. */
-.sentence-success {
-  display: grid;
-  place-items: center;
-  flex-shrink: 0;
-  width: 28px;
-  height: 28px;
-  border-radius: 999px;
-  color: var(--primary);
-  background: var(--card);
-  box-shadow: var(--shadow-card);
-  animation: learner-pop 220ms ease-out both;
-}
-.sentence-success-card {
-  position: absolute;
-  top: 10px;
-  right: 10px;
 }
 /* L2a footer: transparent over the canvas at all times — success never
    recolours it. When there's no available action (a sentence slide before
@@ -1028,14 +997,13 @@
 .lesson-session .vocabulary-practice .answer-source {
   min-width: 0;
   margin: 0;
-  color: var(--foreground);
+  /* Colour = language (owner, 2026-09-17): the Spanish prompt is flag red
+     and bold here too, not ink. */
+  color: var(--lesson-hl-es);
   font-size: var(--practice-prompt-size);
   font-weight: 700;
   line-height: 1.35;
   overflow-wrap: anywhere;
-}
-.lesson-session .vocabulary-practice .answer-source-check {
-  color: var(--success);
 }
 .lesson-session .vocabulary-practice .answer-field-sizer {
   max-width: none;
@@ -1054,14 +1022,22 @@
 /* One focus ring, not a ring stacked on a recoloured border. */
 .lesson-session .vocabulary-practice .answer-input:focus {
   outline: none;
-  border-color: var(--primary);
+  border-color: var(--lesson-hl-en);
+}
+/* Owner rule, 2026-09-17 (colour = language): the row being answered is
+   marked on its Spanish prompt — an underline in the same flag red — not by
+   recolouring anything to purple. */
+.lesson-session .vocabulary-practice .answer-piece:focus-within .answer-source {
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 4px;
 }
 .lesson-session .vocabulary-practice .answer-piece:focus-within .answer-field {
   transform: none;
 }
 .lesson-session .vocabulary-practice .answer-piece.correct .answer-input {
   border-color: transparent;
-  color: var(--foreground);
+  color: var(--lesson-hl-en);
   background: transparent;
   box-shadow: none;
 }
@@ -1071,7 +1047,9 @@
   display: block;
   min-height: 42px;
   padding: 9px 12px;
-  color: var(--foreground);
+  /* The answer is English: Union Jack blue, like every other answered
+     word (owner, 2026-09-17). */
+  color: var(--lesson-hl-en);
   font-size: var(--practice-prompt-size);
   font-weight: 650;
   line-height: 1.35;
@@ -1145,14 +1123,17 @@
   flex-direction: column;
   gap: 18px;
 }
-/* Phone: the card comes first, the speaker (and its "Pista" button) sits
-   under it. */
+/* Below 1024: the card comes first and the speaker is a row under it — the
+   portrait, its bubble, and "Pista" at the end of the row (owner,
+   2026-09-17: at ~980 the two-actor column read as "a portrait stuck in the
+   corner next to a box"). */
 .stage-speaker {
   order: 2;
   display: flex;
-  flex-direction: column;
-  gap: 6px;
-  align-items: flex-start;
+  flex-direction: row;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
 }
 .stage-column {
   order: 1;
@@ -1198,24 +1179,30 @@
 .stage-line-en {
   margin-top: 12px;
 }
-/* Line 1: the Spanish sentence. The piece being typed is marked; finished
-   pieces settle back to ordinary ink; pieces still to come stay muted.
-   A `given` piece is plain ink and is never the active one. */
+/* Line 1: the Spanish sentence. Owner rule, 2026-09-17 — in practice colour
+   IS language: everything the learner is translating is flag red and bold,
+   whatever its state. The piece being typed is marked by a 2px red underline
+   instead of a colour switch; pieces still to come are the same red at 60%;
+   a `given` piece (shown, never tested) is plain ink. Purple is left to
+   chrome and the one action. */
 .stage-es {
-  transition: color 160ms;
+  color: var(--lesson-hl-es);
+  font-weight: 700;
+  transition: opacity 160ms;
 }
 .stage-es[data-state="pending"] {
-  color: var(--ink-muted);
-  font-weight: 500;
+  opacity: 0.6;
 }
-.stage-es[data-state="done"],
+.stage-es[data-state="done"] {
+  opacity: 1;
+}
 .stage-es[data-state="given"] {
   color: var(--foreground);
   font-weight: 500;
 }
 .stage-es[data-state="active"] {
-  color: var(--lesson-hl-es);
-  font-weight: 800;
+  opacity: 1;
+  border-bottom: 2px solid var(--lesson-hl-es);
 }
 /* Line 2: the English sentence being built. Every piece is an input all
    along — a blank underline until it's answered, the finished word after —
@@ -1243,10 +1230,12 @@
   max-width: 100%;
   padding: 0 1px;
   border: 0;
+  /* An empty blank is a neutral hairline; what the learner types is
+     English, so it is Union Jack blue (owner, 2026-09-17). */
   border-bottom: 2px solid var(--border);
   border-radius: 0;
   background: transparent;
-  color: var(--primary);
+  color: var(--lesson-hl-en);
   font: inherit;
   font-weight: 700;
   vertical-align: baseline;
@@ -1259,8 +1248,8 @@
      stacked on top of a border. */
   outline: none;
   min-width: max(3ch, calc(var(--blank-chars, 3) * 0.62ch + 1ch));
-  border-bottom-color: var(--primary);
-  background: color-mix(in oklch, var(--primary) 8%, transparent);
+  border-bottom-color: var(--lesson-hl-en);
+  background: color-mix(in oklch, var(--lesson-hl-en) 8%, transparent);
 }
 /* A piece re-focused for editing after already being correct (rare —
    the finished word is normally the .stage-en-done span below): same look
@@ -1280,7 +1269,7 @@
    replacing any check glyph. */
 @keyframes stage-word-settle {
   from {
-    background: color-mix(in oklch, var(--primary) 18%, transparent);
+    background: color-mix(in oklch, var(--lesson-hl-en) 18%, transparent);
   }
   to {
     background: transparent;
@@ -1296,16 +1285,16 @@
   border: 0;
   border-radius: 3px;
   background: transparent;
-  color: var(--primary);
+  color: var(--lesson-hl-en);
   font: inherit;
-  font-weight: 700;
+  font-weight: 600;
   cursor: text;
   animation: stage-word-settle 150ms ease-out both;
 }
 .stage-en-done:hover,
 .stage-en-done:focus-visible {
   outline: none;
-  background: color-mix(in oklch, var(--primary) 8%, transparent);
+  background: color-mix(in oklch, var(--lesson-hl-en) 8%, transparent);
 }
 .stage-notes {
   display: grid;
@@ -1315,21 +1304,37 @@
 /* Help lives on the speaker (owner, 2026-09-17): a quiet text button under
    the flag/label — no lightbulb, no amber field. Using it puts the answer in
    the bubble and has the speaker say it; `Alt+H` in a field does the same. */
+/* It has to look pressable (owner, 2026-09-17): a small ghost button, not a
+   line of text. At the end of the speaker row below 1024; under the
+   flag/label in the speaker column above it. */
 .stage-hint-button {
-  align-self: flex-start;
-  margin-top: 2px;
-  padding: 2px 0;
-  border: 0;
+  flex: none;
+  margin-left: auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 28px;
+  padding-inline: 12px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
   background: none;
-  color: var(--ink-muted);
+  color: var(--foreground);
   font: inherit;
-  font-size: var(--t-ui);
-  font-weight: 600;
+  font-size: var(--t-eyebrow);
+  font-weight: 650;
+  text-transform: none;
+  letter-spacing: 0;
+  white-space: nowrap;
   cursor: pointer;
+  transition: background 180ms;
 }
 .stage-hint-button:hover:not(:disabled) {
-  color: var(--foreground);
-  text-decoration: underline;
+  background: var(--surface-subtle);
+}
+@media (prefers-reduced-motion: reduce) {
+  .stage-hint-button {
+    transition: none;
+  }
 }
 .stage-hint-button:focus-visible {
   outline: 3px solid color-mix(in oklch, var(--primary) 38%, transparent);
@@ -1350,9 +1355,11 @@
    No bubble at rest (the component renders it only once something has been
    spoken). */
 .speaker-chip.stage {
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 8px;
+  flex: 1 1 auto;
+  min-width: 0;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
   margin-top: 0;
 }
 .speaker-chip.stage .speaker-chip-avatar {
@@ -1375,13 +1382,14 @@
   font-weight: 600;
 }
 
-/* Two actors from 768px up (owner, 2026-09-17): at ~950px the phone stack
-   read as a stretched phone layout — full-width card, speaker stranded
-   bottom-left. The speaker column and the 720 card are centred on the stage
-   as one group. */
-@media (min-width: 768px) {
+/* Two actors from 1024px up (owner, 2026-09-17 — it first started at 768,
+   where the portrait-beside-a-box read as a stranded corner portrait; below
+   1024 the speaker is a row under the card instead). A 200px speaker column,
+   a 64px portrait, 24px to the card, and the whole group centred on the
+   stage with equal air either side. */
+@media (min-width: 1024px) {
   .sentence-stage {
-    max-width: calc(720px + 210px + 28px);
+    max-width: calc(720px + 200px + 24px);
     margin-inline: auto;
   }
   .stage-column {
@@ -1391,24 +1399,38 @@
   .stage-composition {
     flex-direction: row;
     align-items: flex-start;
-    gap: 28px;
+    gap: 24px;
   }
   .stage-speaker {
     order: 0;
     flex: 0 0 auto;
-    width: 210px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    width: 200px;
     padding-top: 8px;
+  }
+  .speaker-chip.stage {
+    flex: none;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+  /* Back under the flag/label, not pushed to the end of a row. */
+  .stage-hint-button {
+    margin-left: 0;
+    margin-top: 2px;
   }
   .stage-column {
     flex: 1 1 auto;
     min-width: 0;
   }
   .speaker-chip.stage .speaker-chip-avatar {
-    width: 72px;
-    height: 72px;
+    width: 64px;
+    height: 64px;
   }
   .speaker-chip.stage .speaker-chip-bubble {
-    max-width: 210px;
+    max-width: 200px;
   }
   /* Tail on the right edge, pointing at the card. */
   .speaker-chip.stage .speaker-chip-bubble::before {
