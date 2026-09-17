@@ -50,10 +50,13 @@ the owner's say-so.
 - [x] Speech: browser synthesis + Google clips, USA/UK speakers (`docs/design/speech.md`)
 - [ ] L2b sentence slide (check beside the sentence, headline prompt, hint outside the field,
       no layout jump) · table slide at reading size · explanation marks loudest
-- [ ] Explanation voice track: one clip per explanation via Google SSML voice switching —
-      a Latin American Spanish voice reads the prose, the USA man's voice reads every
-      `en` mark ("HACER es TO DO"); source of truth = the builder's marks; auto-plays on
-      slide entry (mute honoured), replay control on the card, "listen" button in the
+- [ ] Explanation voice track (owner 2026-09-17): ONE American voice reads the whole
+      explanation, Spanish included ("gringo accent is fine"); an `en` mark may carry a
+      pronunciation bridge `[[en:different|DIFF-rent]]` (one field in the mark popover,
+      shown small to the learner) and is then spoken as: word normally · pause · each
+      hyphen chunk with a pause, capitalised chunk stressed; marks without a bridge are
+      read plainly (no automatic syllabification — dictionary syllables ≠ spoken ones);
+      auto-plays on slide entry (mute honoured), replay on the card, "listen" in the
       builder; keyed by text like the other clips (`docs/design/speech.md`)
 - [ ] L2c completion: the sentence you built, "Esto ya lo puedes decir", replay, one action
 - [ ] L1 leftover: drop the "0 / 2" on the module header
