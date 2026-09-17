@@ -94,6 +94,10 @@ Owner's additional thoughts (2026-09-17, to be planned together before execution
   and within an hour they will produce things students with years of classes still get
   wrong (e.g. *I want you to come here*, where learners say *I want that you come here*).
   The pre-alpha/localStorage notice comes after the promise, not before it.
+- **Best with a keyboard.** Say so plainly (a phone works, but a laptop or a phone with a
+  keyboard makes the typing rhythm feel like a conversation).
+- **Say the answers out loud.** Explain why speaking each answer as you type it matters
+  for pronunciation and recall; voice recognition may come later.
 - **Follow the order even if it feels easy.** Explain that lessons are hand-curated and
   each assumes mastery of what came before; experienced learners should still go in
   order — the early lessons plant patterns later lessons build on.
