@@ -1,32 +1,83 @@
-# Ingles Con Confianza
+# Inglés con Confianza
 
-Ingles Con Confianza is an English-learning application for Spanish-speaking adults. It combines the owner's teaching methodology with a queryable Spanish-first curriculum, a handcrafted Lesson Builder, and an interactive Practice experience.
+## What the project is
 
-The project is currently entering curriculum curation. All former curriculum source folders have been captured in PostgreSQL and retired. The next objective is to make the database selective and consistent, then use it to build the first production course module.
+Inglés con Confianza is an English-learning application for Spanish-speaking adults. It helps learners turn familiar Spanish ideas into useful English sentences through short explanations, immediate practice, and cumulative sentence building.
 
-## Product shape
+The learner experience focuses on production rather than recognition. Lessons ask for English, give non-punitive feedback and help, and finish by showing the learner a sentence they can now say. The project is currently preparing a pre-alpha with one larger Confianza I lesson while the owner continues curating the Level 1 curriculum.
 
-- PostgreSQL stores canonical curriculum concepts, collections, review history, and immutable source provenance.
-- Lesson Builder stores handcrafted lessons in `web/data/lessons.json` while the lesson contract continues to be proven through real authoring.
-- Practice renders the same lesson model used by author previews.
-- Curriculum, lesson composition, and future learner history remain separate data boundaries.
+## Local setup
 
-## Start here
+Requirements:
 
-- [Product brief](docs/product-brief.md)
-- [Active backlog](docs/backlog.md)
-- [Teaching methodology](docs/teaching-methodology.md)
-- [Curriculum database contract](docs/curriculum-database.md)
-- [Project timeline](docs/history/project-timeline.md)
-- [Web application setup](web/README.md)
+- Node.js `24` (`.nvmrc`; `web/package.json` requires `>=24 <25`)
+- Docker with Docker Compose, for local PostgreSQL
 
-## Technology
+From the repository root:
 
-The application uses Next.js, React, TypeScript, Tailwind CSS, PostgreSQL, and Prisma. Curriculum writes are protected by relational constraints and transactional workflows; immutable snapshots support reproducible database bootstrap and exact parity verification.
+```sh
+cd web
+npm install
+cp .env.example .env
+npm run db:up
+```
 
-## Current priorities
+Set these variables in `web/.env` as needed. Use local or private values; do not commit the file.
 
-1. Remove low-value and malformed curriculum concepts, merge duplicates, normalize retained mappings, simplify collections, and make `core` and `supporting` genuinely selective.
-2. Build Module 1 as a sequence of short, first-attempt-answerable lessons and validate it end to end in Lesson Builder and Practice.
+| Variable | Purpose |
+| --- | --- |
+| `DATABASE_URL` | PostgreSQL connection URL used by Prisma and curriculum features. |
+| `LESSON_BUILDER_DATA_PATH` | Optional path to a lessons JSON file; useful for isolated checks or alternate local data. |
+| `GOOGLE_TTS_API_KEY` | Optional Google Cloud Text-to-Speech key for generating audio clips. |
 
-Detailed commands and local setup are documented in [`web/README.md`](web/README.md).
+The learner app can use browser speech when no Google TTS key or generated clips are available. Keep PostgreSQL running when using curriculum search and authoring features.
+
+## Running
+
+From `web/`:
+
+```sh
+npm run dev
+```
+
+- Learner site: [http://localhost:3000/](http://localhost:3000/)
+- Lesson Builder: [http://localhost:3000/admin/lesson-builder](http://localhost:3000/admin/lesson-builder)
+- Curriculum admin: [http://localhost:3000/admin/curriculum](http://localhost:3000/admin/curriculum)
+
+## Checks
+
+Run from `web/`:
+
+```sh
+npm run lint
+npm run test:unit
+npm run ux:check
+npm run build
+```
+
+`ux:check` starts its own isolated server on a separate port and uses a throwaway lessons file; it does not use the owner's live authoring data.
+
+## Generating audio
+
+From `web/`:
+
+```sh
+npm run audio:generate
+```
+
+The command reads authored lessons, generates missing clips for the configured speakers when `GOOGLE_TTS_API_KEY` is available, and writes them under `web/public/audio`. Generated clips and the audio manifest are deploy assets and are committed to the repository. Without the key, the command reports what it would generate and the app falls back to browser speech.
+
+## Repository map
+
+| Path | Contents |
+| --- | --- |
+| `docs/` | Product, teaching, curriculum, design, and engineering documentation. |
+| `web/src/app` | Next.js routes, pages, and API handlers. |
+| `web/src/components` | Shared learner, practice, and admin UI components. |
+| `web/src/lib` | Server and client application logic, including curriculum and lesson-builder code. |
+| `web/data/lessons.json` | Handcrafted Lesson Builder store. Do not edit it by hand. |
+| `web/prisma` | Prisma schema, migrations, seeds, and curriculum snapshots for PostgreSQL. |
+
+## Deploy shape (planned)
+
+The planned pre-alpha deployment is a read-only learner site with lessons and generated audio bundled at build time. The admin remains local-only: author, commit, and redeploy. One feedback function will collect learner feedback without making the admin public. Learner progress remains local to the browser; accounts and server-side learner history are not part of this shape.
