@@ -799,6 +799,13 @@ proposal doc's aspirations.
     `authoring-base.css`'s `.authoring-*` classes are effectively dead
     outside `explanation-editor.tsx` (protected by the explanation-block
     rule above) and were not exercised by any current admin page.
+  - Site footer (2026-09-17): the dark `--ink-deep` band is now one shared
+    component, `src/components/site-footer.tsx` (styles in
+    `src/styles/site-footer.css`, imported from the root layout), rendered
+    on the learner home and after every `/admin` page's content via
+    `src/app/admin/layout.tsx` — never on `/practice`. `variant="admin"`
+    swaps the learner reset control for a muted "Admin · Inglés con
+    Confianza" line and links to Lessons/Coverage/Curriculum.
 
 ## 6. Owner decisions & rejected ideas
 

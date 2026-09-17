@@ -4,7 +4,6 @@ import { ArrowRight, BookOpen } from "lucide-react";
 import Link from "next/link";
 import { useEffect, useRef, useSyncExternalStore } from "react";
 
-import { BrandMark } from "@/components/brand-mark";
 import { ConfirmResetButton } from "@/components/learner/confirm-reset-button";
 import {
   EMPTY_FEEDBACK_CONTEXT,
@@ -12,6 +11,7 @@ import {
   type FeedbackSheetHandle,
 } from "@/components/learner/feedback-sheet";
 import { LessonRow } from "@/components/learner/lesson-row";
+import { SiteFooter } from "@/components/site-footer";
 import type {
   LearnerLesson,
   LearnerModule,
@@ -200,32 +200,10 @@ export function LessonDashboard({
         )}
 
       </div>
-      {/* Owner, 2026-09-17: a distinct dark band, full-bleed edge to edge with
-          its content inside the same 1120 column as the rest of the home. No
-          link row (Inicio/Comentar/Sobre el curso earned nothing) and no
-          hairline — the band itself is the separation. */}
-      <footer className="site-footer">
-        <div className="site-footer-inner">
-          <div className="site-footer-brand-row">
-            <BrandMark size={28} />
-            <span className="site-footer-name">Inglés con Confianza</span>
-          </div>
-          <p className="site-footer-tagline">
-            Inglés para hispanohablantes, una frase real a la vez.
-          </p>
-          <p className="site-footer-copyright">
-            © 2026 Inglés con Confianza · Hecho en Bogotá
-          </p>
-          <ConfirmResetButton
-            className="site-footer-reset"
-            label="Reiniciar todo el progreso"
-            confirmLabel="¿Seguro? Reiniciar todo"
-            onConfirm={() =>
-              resetLessonProgress(lessons.map((lesson) => lesson.id))
-            }
-          />
-        </div>
-      </footer>
+      <SiteFooter
+        variant="learner"
+        onResetAll={() => resetLessonProgress(lessons.map((lesson) => lesson.id))}
+      />
       <FeedbackSheet
         ref={feedbackSheetRef}
         context={{

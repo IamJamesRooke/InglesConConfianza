@@ -566,63 +566,9 @@
   line-height: 1.4;
 }
 
-/* ---------- Footer ---------- */
-/* Owner, 2026-09-17: a distinct dark band closing the page — full-bleed
-   edge to edge, its content inside the same 1120 column, 48px padding-block,
-   no hairline and no link row. Colour comes from the shared tokens
-   (repo rule: colour literals only in globals.css). */
-.site-footer {
-  margin-top: 48px;
-  padding-block: 48px;
-  background: var(--ink-deep);
-  color: var(--primary-foreground);
-}
-.site-footer-inner {
-  width: min(calc(100% - 40px), 1120px);
-  margin-inline: auto;
-}
-@media (min-width: 900px) {
-  .site-footer-inner {
-    width: min(calc(100% - 96px), 1120px);
-  }
-}
-.site-footer-brand-row {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-}
-.site-footer-name {
-  font-size: var(--t-ui);
-  font-weight: 600;
-  color: var(--primary-foreground);
-}
-.site-footer-tagline {
-  margin: 12px 0 0;
-  font-size: var(--t-ui);
-  color: color-mix(in oklch, var(--primary-foreground) 70%, transparent);
-}
-.site-footer-copyright {
-  margin: 32px 0 0;
-  font-size: var(--t-eyebrow);
-  color: color-mix(in oklch, var(--primary-foreground) 70%, transparent);
-}
-/* Testers reset progress constantly (owner, 2026-09-17) — a quiet link in
-   the footer, never a browser dialog: it asks once inline instead. */
-.site-footer-reset {
-  margin-top: 12px;
-  padding: 0;
-  border: 0;
-  background: none;
-  font: inherit;
-  font-size: var(--t-eyebrow);
-  color: color-mix(in oklch, var(--primary-foreground) 70%, transparent);
-  cursor: pointer;
-}
-.site-footer-reset:hover {
-  color: var(--primary-foreground);
-  text-decoration: underline;
-}
-
+/* Footer rules moved to src/styles/site-footer.css (owner, 2026-09-17):
+   the footer is now a shared component (src/components/site-footer.tsx)
+   rendered on the learner home and every /admin page. */
 
 /* The lesson-session shell, topbar, and stage are defined once, in
    practice-responsive-overrides.css (imported after this file and after
