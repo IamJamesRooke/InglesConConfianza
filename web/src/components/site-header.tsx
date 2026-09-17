@@ -144,16 +144,8 @@ function LearnerHeader() {
           className="learner-brand"
           aria-label="Inglés con Confianza"
         >
-          <BrandMark size={38} />
-          <span className="learner-brand-name">
-            <span className="brand-pre">Inglés con</span>
-            <span className="brand-word">
-              Confianza
-              <span aria-hidden="true" className="brand-dot">
-                .
-              </span>
-            </span>
-          </span>
+          <BrandMark size={28} />
+          <span className="learner-brand-name">Inglés con Confianza</span>
         </Link>
       </div>
     </header>

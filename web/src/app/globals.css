@@ -252,6 +252,17 @@
     0 2px 6px oklch(0.32 0.2 300 / 0.22);
   --shadow-cta-hover: 0 14px 32px oklch(0.32 0.2 300 / 0.42),
     0 4px 10px oklch(0.32 0.2 300 / 0.26);
+
+  /* Learner type scale — docs/design/learner-direction.md's table, fluid
+     between the phone (390) and desktop (1280) reference widths so the home
+     and lesson session share one set of names instead of each hand-rolling
+     breakpoint overrides. */
+  --t-hero: clamp(36px, 27.24px + 2.247vw, 56px);
+  --t-sentence: clamp(26px, 22.49px + 0.899vw, 34px);
+  --t-section: clamp(22px, 19.37px + 0.674vw, 28px);
+  --t-body: clamp(19px, 17.69px + 0.337vw, 22px);
+  --t-ui: clamp(16px, 15.56px + 0.112vw, 17px);
+  --t-eyebrow: clamp(11px, 10.56px + 0.112vw, 12px);
 }
 
 .concept-suggestion {

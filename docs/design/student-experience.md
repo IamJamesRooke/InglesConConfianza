@@ -250,3 +250,55 @@ Verified with `npm run test:unit` (366/366), `npx eslint` on the touched
 files, `npx tsc --noEmit`, `npm run lint`, and `tests/ux/speech.spec.ts`
 (2/2, its selectors updated for the inline inputs). Screenshots came from a
 throwaway spec, deleted after the run.
+
+## Home v2 (direction build) — September 17, 2026
+
+The home (`/`) was rebuilt from `docs/design/learner-direction.md`'s HOME
+section and the owner-approved mockup (artboards 1–2), replacing the
+module-rail/tabs dashboard entirely.
+
+**Header** (`site-header.tsx`'s `LearnerHeader`) is now 56px, brand mark +
+single-line "Inglés con Confianza" only, no border, no stacked pre/word
+lines. The dead `.brand-mark`/`.brand-mark-dot` CSS (an unused leftover, not
+the `BrandMark` component) was removed with it.
+
+**Hero card**: 24px radius, purple→magenta gradient, 24px padding phone /
+32px desktop, laid out with CSS grid areas (`eyebrow`/`hero`/`subcopy`/
+`promise`/`cta`) so the DOM order (needed for the promise card to fall
+between subcopy and CTA on phone) differs from the visual order on desktop
+(promise card as its own right-hand column) without JS. First visit: eyebrow
+"Empieza aquí", hero "Habla inglés. Con confianza.", a static sub-copy line.
+Returning: eyebrow "Tu próxima lección", hero is the next lesson's module
+name, sub-copy is that module's description or "Sigamos donde lo dejaste."
+The promise card is a plain white card (no shadow) with the next lesson's
+final English sentence at sentence size and its Spanish beneath, muted. CTA
+is a full-width white pill, purple text, 56px tall, "Empezar →" /
+"Continuar →".
+
+**Path**: one section titled "Tu recorrido". A single module renders its
+lessons flat with no sub-heading, rail, or tabs. Several modules get the
+module name as a plain `<h3>` above their own rows (still under the one "Tu
+recorrido" title) — `?module=` scrolls to and focuses that module's section
+via `id="module-<id>"` instead of driving a tab. Rows are a vertical path (a
+2px purple track, 12px nodes: filled = done, ring = next, hairline = later);
+the next lesson's row is a white card (16px radius, hairline border,
+`--shadow-card`); every other row is plain. No durations, no counters, no
+skip, no reset — the per-row "Reiniciar"/"Omitir" controls are gone; reset
+is deferred to a future completion-screen task.
+
+**Type scale**: `--t-hero` (36→56), `--t-sentence` (26→34), `--t-section`
+(22→28), `--t-body` (19→22), `--t-ui` (16→17), `--t-eyebrow` (11→12) added
+to `globals.css` as fluid `clamp()`s between the 390px and 1280px reference
+widths, so the lesson session can reuse the same names later.
+
+**Owner tweak verified**: at 390×844 first visit, the first path row
+("Lección 1") starts at y≈713px — well above the 844px fold — confirmed via
+a throwaway Playwright spec's `boundingBox()` (deleted after the run).
+
+Verified with `npx tsx --test tests/unit/learner-surfaces.test.ts` (19/19,
+assertions rewritten for the new markup — no more module tabs/`aria-selected`
+to assert on), `npx tsc --noEmit`, `npm run lint` (incl. CSS lint), and
+`npm run lint:dead` (clean of the removed classes/components). Screenshots
+came from a throwaway spec on an isolated `UX_CHECK_PORT=3215` server,
+deleted after the run; `tsconfig.json`'s auto-added UX-check path entries
+were reverted.

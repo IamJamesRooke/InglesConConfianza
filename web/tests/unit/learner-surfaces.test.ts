@@ -53,12 +53,16 @@ test("learnerLabel strips curriculum bracket notation into plain words", () => {
   assert.equal(learnerLabel("hello"), "hello");
 });
 
-test("a single-module course hides the module rail but still lists its lessons", () => {
+test("a single-module course hides module chrome but still lists its lessons", () => {
   const html = renderToStaticMarkup(
     createElement(LessonDashboard, { modules: [modules[0]] }),
   );
+  // One module = no module rail, no tabs, no sub-heading — a flat path
+  // straight under "Tu recorrido".
   assert.doesNotMatch(html, /role="tablist"/);
-  assert.match(html, /Tu primera conversación/);
+  assert.doesNotMatch(html, /path-module-title/);
+  assert.match(html, /Tu recorrido/);
+  assert.match(html, /Hello James!/);
 });
 
 test("the hero and lesson row carry no concept chips, minute counts, or status labels", () => {
@@ -70,7 +74,11 @@ test("the hero and lesson row carry no concept chips, minute counts, or status l
   assert.doesNotMatch(html, /Completada|Repasar|Omitir módulo|Reiniciar módulo/);
   // "Empieza aquí" is a legitimate first-visit hero eyebrow now — just not
   // the old lesson-row status label.
-  assert.match(html, /class="learner-eyebrow">Empieza aquí/);
+  assert.match(html, /learner-eyebrow hero-eyebrow">Empieza aquí/);
+  // Several modules do get their name as a plain section title above their
+  // rows — no rail, no tabs, no per-module progress counters.
+  assert.match(html, /path-module-title">Tu primera conversación/);
+  assert.match(html, /path-module-title">Planes de todos los días/);
 });
 
 test("public course renders lesson destinations without any admin navigation", () => {
@@ -83,15 +91,19 @@ test("public course renders lesson destinations without any admin navigation", (
     html,
     /href="\/admin|Lesson Builder|Curriculum|Concepts Taught/,
   );
-  assert.match(html, /aria-selected="true"/);
+  // No module tabs at all — the next lesson's row is a plain white card.
+  assert.doesNotMatch(html, /role="tab"/);
+  assert.match(html, /path-row path-row-card/);
 });
 
 test("an explicit module selection survives page load and unavailable lessons have no practice link", () => {
   const html = renderToStaticMarkup(
     createElement(LessonDashboard, { modules, initialModuleId: "plans" }),
   );
-  assert.match(html, /aria-labelledby="module-tab-plans"/);
-  assert.match(html, /Próximamente/);
+  // `?module=` targets a real section id the effect can scroll/focus to —
+  // static markup can't assert the scroll itself, just that the anchor exists.
+  assert.match(html, /id="module-plans"/);
+  assert.match(html, /Una nueva conversación, muy pronto\./);
   assert.doesNotMatch(html, /href="\/practice\?lesson=tomorrow"/);
 });
 

@@ -1,8 +1,8 @@
 "use client";
 
-import { ArrowDown, ArrowRight, BookOpen, Check, CheckCheck } from "lucide-react";
+import { ArrowRight, BookOpen } from "lucide-react";
 import Link from "next/link";
-import { useRef, useState, useSyncExternalStore } from "react";
+import { useEffect, useSyncExternalStore } from "react";
 
 import { LessonRow } from "@/components/learner/lesson-row";
 import type {
@@ -12,9 +12,7 @@ import type {
 import {
   nextLessonToStudy,
   readProgress,
-  resetLessonProgress,
   serverProgress,
-  skipLesson,
   subscribeToProgress,
 } from "@/lib/learner/progress";
 
@@ -24,6 +22,14 @@ function moduleLabel(modules: LearnerModule[], index: number) {
     : `Módulo ${modules.slice(0, index + 1).filter((module) => module.kind !== "onboarding").length}`;
 }
 
+/**
+ * Home — "your next sentence" (docs/design/learner-direction.md). One
+ * promise (the hero) and a path (the lesson list). No module rail, no
+ * tabs, no per-row skip/reset: a single module renders its lessons flat
+ * under "Tu recorrido"; several modules get their name as a sub-heading
+ * above their own rows, in course order. `?module=` still lands you on
+ * that module by scrolling/focusing its section.
+ */
 export function LessonDashboard({
   modules,
   initialModuleId = null,
@@ -36,113 +42,92 @@ export function LessonDashboard({
     readProgress,
     serverProgress,
   );
-  const [selectedId, setSelectedId] = useState(initialModuleId);
-  const [resetTarget, setResetTarget] = useState<{
-    label: string;
-    lessonIds: string[];
-    scope: "lesson" | "module";
-  } | null>(null);
-  const moduleButtons = useRef<Array<HTMLButtonElement | null>>([]);
   const lessons = modules.flatMap((module) => module.lessons);
   const available = lessons.filter((lesson) => lesson.stepCount > 0);
   const completed = available.filter(
     (lesson) => progress[lesson.id]?.completedAt,
   ).length;
   const nextLesson = nextLessonToStudy(lessons, progress);
-  const nextModule = modules.find((module) =>
+  const nextModuleIndex = modules.findIndex((module) =>
     module.lessons.some((lesson) => lesson.id === nextLesson?.id),
   );
-  const selected =
-    modules.find((module) => module.id === selectedId) ??
-    nextModule ??
-    modules[0];
-  const courseComplete = available.length > 0 && completed === available.length;
-  const moduleAvailable =
-    selected?.lessons.filter((lesson) => lesson.stepCount > 0) ?? [];
-  const moduleCompleted = moduleAvailable.filter(
-    (lesson) => progress[lesson.id]?.completedAt,
-  ).length;
-  const selectedIndex = modules.indexOf(selected);
+  const nextModule = nextModuleIndex >= 0 ? modules[nextModuleIndex] : undefined;
   const hasActivity = available.some(
     (lesson) =>
-      progress[lesson.id]?.lastOpenedAt ||
-      progress[lesson.id]?.completedAt,
+      progress[lesson.id]?.lastOpenedAt || progress[lesson.id]?.completedAt,
   );
-  const showModuleRail = modules.length > 1;
+  const courseComplete = available.length > 0 && completed === available.length;
+  const modulesWithLessons = modules.filter(
+    (module) => module.lessons.length > 0,
+  );
+  const showModuleSections = modulesWithLessons.length > 1;
 
-  function resetLesson(lesson: LearnerLesson) {
-    setResetTarget({
-      label: lesson.name || `Lección ${lesson.lessonNumber}`,
-      lessonIds: [lesson.id],
-      scope: "lesson",
-    });
-  }
+  useEffect(() => {
+    if (!initialModuleId) return;
+    const section = document.getElementById(`module-${initialModuleId}`);
+    section?.scrollIntoView({ behavior: "smooth", block: "start" });
+    section?.focus({ preventScroll: true });
+  }, [initialModuleId]);
 
-  function selectModule(index: number) {
-    setSelectedId(modules[index].id);
-    const url = new URL(window.location.href);
-    url.searchParams.set("module", modules[index].id);
-    window.history.replaceState(null, "", url);
+  function pathRows(rowLessons: LearnerLesson[]) {
+    return (
+      <div className="path-track-wrap">
+        <div className="path-track" aria-hidden="true" />
+        <ol className="path-list">
+          {rowLessons.map((lesson) => (
+            <LessonRow
+              key={lesson.id}
+              lesson={lesson}
+              progress={progress[lesson.id]}
+              isNext={lesson.id === nextLesson?.id && !courseComplete}
+            />
+          ))}
+        </ol>
+      </div>
+    );
   }
 
   return (
     <main id="main-content" tabIndex={-1} className="learner-theme course-home">
       <div className="course-container">
         {nextLesson ? (
-          <section
-            className="course-feature learner-enter"
-            aria-label="Tu próxima lección"
-          >
-            <div className="course-feature-content">
-              <p className="learner-eyebrow">
-                {hasActivity ? "Tu próxima lección" : "Empieza aquí"}
-              </p>
-              <h1>
-                {hasActivity ? (
+          <section className="hero-card learner-enter" aria-label="Tu próxima lección">
+            <p className="learner-eyebrow hero-eyebrow">
+              {hasActivity ? "Tu próxima lección" : "Empieza aquí"}
+            </p>
+            <h1 className="hero-line">
+              {hasActivity
+                ? nextModule?.name || moduleLabel(modules, nextModuleIndex)
+                : (
                   <>
-                    Sigamos<span aria-hidden="true">.</span>
-                  </>
-                ) : (
-                  <>
-                    Habla inglés.
-                    <br />
-                    Con confianza<span aria-hidden="true">.</span>
+                    Habla inglés. Con confianza
+                    <span aria-hidden="true">.</span>
                   </>
                 )}
-              </h1>
-              {!hasActivity && (
-                <p className="course-promise">
-                  Aprende paso a paso y construye frases que puedes usar desde
-                  hoy.
-                </p>
-              )}
-              <div className="featured-lesson">
-                <Link
-                  href={`/practice?lesson=${encodeURIComponent(nextLesson.id)}`}
-                  className="learner-button primary"
-                >
-                  {courseComplete
-                    ? "Volver a practicar"
-                    : progress[nextLesson.id]?.lastOpenedAt
-                      ? "Continuar lección"
-                      : completed
-                        ? "Empezar siguiente lección"
-                        : "Empezar mi primera lección"}
-                  <ArrowRight size={18} aria-hidden="true" />
-                </Link>
-              </div>
+            </h1>
+            <p className="hero-subcopy">
+              {hasActivity
+                ? nextModule?.description || "Sigamos donde lo dejaste."
+                : "Aprende paso a paso y construye frases que puedes usar desde hoy."}
+            </p>
+            <div className="hero-promise">
+              <p className="learner-eyebrow hero-promise-eyebrow">
+                Vas a poder decir
+              </p>
+              <p className="hero-promise-en" lang="en">
+                {nextLesson.outcomeEnglish || "I can speak English."}
+              </p>
+              <p className="hero-promise-es" lang="es">
+                {nextLesson.previewText || "Puedo hablar inglés."}
+              </p>
             </div>
-            <div className="course-feature-demo" aria-hidden="true">
-              <div className="demo-phrase">
-                <p className="demo-label">Vas a poder decir</p>
-                <strong lang="en">
-                  {nextLesson.outcomeEnglish || "I can speak English."}
-                </strong>
-                <span lang="es">
-                  {nextLesson.previewText || "Puedo hablar inglés."}
-                </span>
-              </div>
-            </div>
+            <Link
+              href={`/practice?lesson=${encodeURIComponent(nextLesson.id)}`}
+              className="hero-cta"
+            >
+              {hasActivity ? "Continuar" : "Empezar"}
+              <ArrowRight size={18} aria-hidden="true" />
+            </Link>
           </section>
         ) : (
           <section className="course-empty">
@@ -152,231 +137,35 @@ export function LessonDashboard({
           </section>
         )}
 
-        {selected && (
-          <section
-            className="course-journey"
-            aria-labelledby="course-journey-title"
-          >
-            <div className="course-journey-heading">
-              <h2 id="course-journey-title">Tu recorrido</h2>
-            </div>
-            <div
-              className={`course-curriculum ${showModuleRail ? "" : "single-module"}`}
-            >
-              {showModuleRail && (
-                <aside className="module-navigation">
-                  <div className="section-label">
-                    <h3>Módulos</h3>
-                    <span>{modules.length}</span>
-                  </div>
-                  <div
-                    role="tablist"
-                    aria-label="Módulos del curso"
-                    className="module-tabs"
+        {modulesWithLessons.length > 0 && (
+          <section className="course-path" aria-labelledby="course-path-title">
+            <h2 id="course-path-title" className="path-title">
+              Tu recorrido
+            </h2>
+            {showModuleSections
+              ? modulesWithLessons.map((module) => (
+                  <section
+                    key={module.id}
+                    id={`module-${module.id}`}
+                    tabIndex={-1}
+                    className="path-module"
+                    aria-labelledby={`module-${module.id}-title`}
                   >
-                    {modules.map((module, index) => {
-                      const ready = module.lessons.filter(
-                        (lesson) => lesson.stepCount > 0,
-                      );
-                      const done = ready.filter(
-                        (lesson) => progress[lesson.id]?.completedAt,
-                      ).length;
-                      const isDone = ready.length > 0 && done === ready.length;
-                      return (
-                        <button
-                          key={module.id}
-                          ref={(node) => {
-                            moduleButtons.current[index] = node;
-                          }}
-                          type="button"
-                          role="tab"
-                          id={`module-tab-${module.id}`}
-                          aria-controls="module-lessons"
-                          aria-selected={selected.id === module.id}
-                          tabIndex={selected.id === module.id ? 0 : -1}
-                          className={`module-tab ${selected.id === module.id ? "selected" : ""} ${isDone ? "complete" : ""}`}
-                          onClick={() => selectModule(index)}
-                          onKeyDown={(event) => {
-                            let target = index;
-                            if (
-                              event.key === "ArrowRight" ||
-                              event.key === "ArrowDown"
-                            )
-                              target = (index + 1) % modules.length;
-                            else if (
-                              event.key === "ArrowLeft" ||
-                              event.key === "ArrowUp"
-                            )
-                              target =
-                                (index - 1 + modules.length) % modules.length;
-                            else if (event.key === "Home") target = 0;
-                            else if (event.key === "End")
-                              target = modules.length - 1;
-                            else return;
-                            event.preventDefault();
-                            selectModule(target);
-                            moduleButtons.current[target]?.focus();
-                          }}
-                        >
-                          <span className="module-symbol" aria-hidden="true">
-                            {isDone ? (
-                              <Check size={20} />
-                            ) : (
-                              String(
-                                modules
-                                  .slice(0, index + 1)
-                                  .filter((item) => item.kind !== "onboarding")
-                                  .length,
-                              ).padStart(2, "0")
-                            )}
-                          </span>
-                          <span className="module-tab-copy">
-                            <span className="module-label">
-                              {moduleLabel(modules, index)}
-                            </span>
-                            <strong>
-                              {module.name || moduleLabel(modules, index)}
-                            </strong>
-                            <span className="module-count">
-                              {ready.length
-                                ? `${done} de ${ready.length} completas`
-                                : "Próximamente"}
-                            </span>
-                          </span>
-                          <ArrowRight
-                            className="module-arrow"
-                            size={16}
-                            aria-hidden="true"
-                          />
-                        </button>
-                      );
-                    })}
-                  </div>
-                </aside>
-              )}
-
-              <section
-                id="module-lessons"
-                role="tabpanel"
-                aria-labelledby={showModuleRail ? `module-tab-${selected.id}` : undefined}
-                tabIndex={0}
-                className="module-lessons"
-                key={selected.id}
-              >
-                <div className="module-heading">
-                  <div>
-                    <p className="learner-eyebrow">
-                      {moduleLabel(modules, selectedIndex)}
-                    </p>
-                    <h2>
-                      {selected.name || moduleLabel(modules, selectedIndex)}
-                    </h2>
-                    {selected.description && (
-                      <p className="module-description">
-                        {selected.description}
-                      </p>
-                    )}
-                  </div>
-                </div>
-                <progress
-                  className="module-progress"
-                  aria-label="Progreso del módulo"
-                  value={moduleCompleted}
-                  max={moduleAvailable.length || 1}
-                />
-                <ol className="lesson-list">
-                  {selected.lessons.map((lesson) => (
-                    <LessonRow
-                      key={lesson.id}
-                      lesson={lesson}
-                      progress={progress[lesson.id]}
-                      isNext={lesson.id === nextLesson?.id && !courseComplete}
-                      onSkip={() => skipLesson(lesson.id)}
-                      onReset={() => resetLesson(lesson)}
-                    />
-                  ))}
-                </ol>
-                {selected.lessons.length === 0 && (
-                  <p className="module-empty">
-                    Las lecciones de este módulo estarán disponibles pronto.
-                  </p>
-                )}
-                {moduleAvailable.length > 0 &&
-                  moduleCompleted === moduleAvailable.length && (
-                    <p className="module-finish">
-                      <CheckCheck size={19} aria-hidden="true" /> Módulo
-                      completo. Cada frase cuenta.
-                    </p>
-                  )}
-                {showModuleRail && selectedIndex < modules.length - 1 && (
-                  <button
-                    type="button"
-                    className="next-module"
-                    onClick={() => {
-                      selectModule(selectedIndex + 1);
-                      moduleButtons.current[selectedIndex + 1]?.focus();
-                    }}
-                  >
-                    Siguiente módulo
-                    <ArrowDown size={16} aria-hidden="true" />
-                  </button>
-                )}
-              </section>
-            </div>
+                    <h3 id={`module-${module.id}-title`} className="path-module-title">
+                      {module.name || moduleLabel(modules, modules.indexOf(module))}
+                    </h3>
+                    {pathRows(module.lessons)}
+                  </section>
+                ))
+              : pathRows(modulesWithLessons[0]?.lessons ?? [])}
           </section>
         )}
+
         <footer className="course-footer">
           <span>Inglés con Confianza.</span>
-          <span>Una conversación a la vez.</span>
+          <a href="#feedback">¿Qué te pareció?</a>
         </footer>
       </div>
-      {resetTarget && (
-        <div
-          className="progress-dialog-backdrop"
-          role="presentation"
-          onMouseDown={(event) => {
-            if (event.target === event.currentTarget) setResetTarget(null);
-          }}
-          onKeyDown={(event) => {
-            if (event.key === "Escape") setResetTarget(null);
-          }}
-        >
-          <section
-            className="progress-dialog"
-            role="dialog"
-            aria-modal="true"
-            aria-labelledby="progress-dialog-title"
-          >
-            <p className="learner-eyebrow">Volver a empezar</p>
-            <h2 id="progress-dialog-title">¿Reiniciar {resetTarget.label}?</h2>
-            <p>
-              {resetTarget.scope === "module"
-                ? "Se borrará el progreso de todas las lecciones de este módulo."
-                : "Volverás al primer paso de esta lección."}
-            </p>
-            <div className="progress-dialog-actions">
-              <button
-                type="button"
-                className="learner-button text-button"
-                onClick={() => setResetTarget(null)}
-              >
-                Cancelar
-              </button>
-              <button
-                type="button"
-                className="learner-button primary"
-                autoFocus
-                onClick={() => {
-                  resetLessonProgress(resetTarget.lessonIds);
-                  setResetTarget(null);
-                }}
-              >
-                Sí, reiniciar
-              </button>
-            </div>
-          </section>
-        </div>
-      )}
     </main>
   );
 }
