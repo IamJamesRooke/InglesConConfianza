@@ -14,8 +14,8 @@ lessons. Levels are the existing enum: P1–P5 = Level 1–5 (no migration; exte
 
 **Merge with the owner's hand-set levels (2026-09-15):** the live DB already had 35 rows
 at P1 set by hand while authoring. 25 of them are in this list; the other 10 are kept as
-the owner's call and are Level 1 too: `gbsx4jxjdu` decir que → say that ·
-`wd6uku1ojd` creer que → think that · `96zmjpedzq` nos → us · `mbu3bynmc3` lo → him ·
+the owner's call and are Level 1 too: `gbsx4jxjdu` decir que → say that (plain `2l2o3127tw` decir → to say, added 2026-09-17) ·
+`wd6uku1ojd` creer que → think that (plain `cq5ysgdyub` creer → to believe, added 2026-09-17) · `96zmjpedzq` nos → us · `mbu3bynmc3` lo → him ·
 `7poocn5na8` la → her · `5cest1aute` los → them · `zf3sq9mld5` las → them ·
 `wsttz3une0` a [un lugar] → to [a place] · `5c41gd4gqg` día → day · `vk5arw3nk6` sí → yes.
 The manifest only touches rows that were `Unranked` (76 rows); no hand-set level is
@@ -34,23 +34,24 @@ ever overwritten. Owner's P2–P5 rows (20) are untouched.
 
 ## Wanting, needing, having — 7 items
 
-9. **want** — `w7bu9jslac` querer [algo] · `df1fa2p3xy` querer [hacer algo]
-10. **need** — `wyhk5xpxou` necesitar [algo] · `1eotkqfnjg` necesitar [hacer algo]
-11. **have** — `wwwc8jugby` tener [algo]
+9. **want** — `01hm375mdu` querer → to want · `w7bu9jslac` querer [algo] · `df1fa2p3xy` querer [hacer algo]
+10. **need** — `f3o71mif8n` necesitar → to need · `wyhk5xpxou` necesitar [algo] · `1eotkqfnjg` necesitar [hacer algo]
+11. **have** — `ar0yqtr048` tener → to have · `wwwc8jugby` tener [algo]
 12. **have to** — `7s7vnrgxud` tener que [hacer algo]
 13. **would like** — `9jt3xxrxse` gustaría [hacer] · `fr2zv8cgr5` gustaría [algo] · `dvodf0y7wx` quisiera [algo] · `dnwd7gmll5` quisiera [hacer]
-14. **like** — `1uo0obtd8h` me gusta [algo] → I like · `mowb8a6hvx` me gusta [hacer] → I like to
-15. **know** — `3wtzllym25` saber [algo] · `manx93glfl` saber que · `ahq54carab` saber si
+14. **like** — `4gc8apuw8u` gustar → to like · `1uo0obtd8h` me gusta [algo] → I like · `mowb8a6hvx` me gusta [hacer] → I like to
+15. **know** — `pwos1qqc4i` saber → to know · `3wtzllym25` saber [algo] · `manx93glfl` saber que · `ahq54carab` saber si
 15a. **to / in order to** (purpose: preposition *para* + infinitive, not a connector — added 2026-09-16) — `zxp06uqig0` para [hacer algo] → to [do something] · `at8dkibi7m` para [hacer algo] → in order [to do something]
 
 ## Being and being able — 7 items
 
-16. **be able** — `mxguwwzrxk` poder → to be able to (constructible form)
+16. **be able** — `m77q5ltq6x` poder → to be able to · `mxguwwzrxk` poder [hacer algo] → to be able [to do something] (constructible form)
 17. **can** — `0zuw37lnfv` puedo → can (the surprise, right after 16)
 18. **be** (ser) — `e923e43ero` ser → to be · `othawv9u0f` ser [una identidad] → be [a teacher] · `46elg5u15i` ser [adjetivo] → be [adjective] · `2z3yhpg9ve` ser de → be from
 19. **be** (estar) — `k2de4sfdxf` estar → to be · `nqyror4j5f` estar [en un estado] → be [tired] · `obf74hel79` estar [en un lugar] → to be [at a place] (e.g. *at home*)
 20. **going to** — `38d1kfif1b` ir a [hacer algo] → be going to
-21. **go** (somewhere) — `2iiyjrogmc` ir a [un lugar] → go to · `k9y5vq9p06` ir a casa → go home
+21. **go** (somewhere) — `2iiyjrogmc` ir → to go · `k9y5vq9p06` ir a casa → go home
+21a. **come** (added 2026-09-17) — `xkdwzc4mi7` venir → to come
 22. **there is / there are** — `nuo847x66j` hay → there is · `54mbh87vk1` hay → there are · `cp5hmttaq2` there's
 
 ## The generic verb and its objects — 5 items
@@ -90,7 +91,7 @@ rows.
 
 ---
 
-**51 items + 15a/25a/25b (added 2026-09-16) · ~116 rows (infinitives only).** Rules are taught inside lessons, never
+**51 items + 15a/25a/25b (2026-09-16) + 21a (2026-09-17) · ~125 rows (infinitives only).** Rules are taught inside lessons, never
 stored as rows (see the note under Connectors).
 
 ## Already covered by the three existing lessons

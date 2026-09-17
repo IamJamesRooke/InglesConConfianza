@@ -1,0 +1,4 @@
+# Follow-up to the plain-infinitive add: venir and tener carry topic:en-multi-sense, so they need their English Mappings group.
+# id	spanish	english	role	collections-to-add	reason
+xkdwzc4mi7	venir	to come	P1	topic:enmap-come	English Mappings group for come (reachability)
+ar0yqtr048	tener	to have	P1	topic:enmap-have	English Mappings group for have (reachability)

@@ -96266,6 +96266,172 @@
         "en:us"
       ],
       "curriculumRole": "P1"
+    },
+    {
+      "id": "xkdwzc4mi7",
+      "spanish": "venir",
+      "english": "to come",
+      "example": {
+        "spanish": "Vengo mañana.",
+        "english": "I'm coming tomorrow."
+      },
+      "collections": [
+        "pos:verb",
+        "es:venir",
+        "en:come",
+        "topic:multi-sense",
+        "topic:en-multi-sense",
+        "topic:verb-movement-going",
+        "topic:enmap-come"
+      ],
+      "curriculumRole": "P1"
+    },
+    {
+      "id": "01hm375mdu",
+      "spanish": "querer",
+      "english": "to want",
+      "example": {
+        "spanish": "Quiero un café.",
+        "english": "I want a coffee."
+      },
+      "collections": [
+        "pos:verb",
+        "es:querer",
+        "en:want",
+        "topic:multi-sense",
+        "topic:en-multi-sense",
+        "topic:map-querer",
+        "topic:verb-feelings-love-like"
+      ],
+      "curriculumRole": "P1"
+    },
+    {
+      "id": "f3o71mif8n",
+      "spanish": "necesitar",
+      "english": "to need",
+      "example": {
+        "spanish": "Necesito ayuda.",
+        "english": "I need help."
+      },
+      "collections": [
+        "pos:verb",
+        "es:necesitar",
+        "en:need",
+        "topic:verb-depending-fitting"
+      ],
+      "curriculumRole": "P1"
+    },
+    {
+      "id": "ar0yqtr048",
+      "spanish": "tener",
+      "english": "to have",
+      "example": {
+        "spanish": "Tengo tiempo.",
+        "english": "I have time."
+      },
+      "collections": [
+        "pos:verb",
+        "es:tener",
+        "en:have",
+        "topic:multi-sense",
+        "topic:en-multi-sense",
+        "topic:map-tener",
+        "topic:verb-possession-having",
+        "topic:enmap-have"
+      ],
+      "curriculumRole": "P1"
+    },
+    {
+      "id": "pwos1qqc4i",
+      "spanish": "saber",
+      "english": "to know",
+      "example": {
+        "spanish": "Lo sé.",
+        "english": "I know."
+      },
+      "collections": [
+        "pos:verb",
+        "es:saber",
+        "en:know",
+        "topic:multi-sense",
+        "topic:en-multi-sense",
+        "topic:verb-knowing"
+      ],
+      "curriculumRole": "P1"
+    },
+    {
+      "id": "m77q5ltq6x",
+      "spanish": "poder",
+      "english": "to be able to",
+      "example": {
+        "spanish": "Espero poder ir.",
+        "english": "I hope to be able to go."
+      },
+      "collections": [
+        "pos:verb",
+        "es:poder",
+        "en:able",
+        "topic:multi-sense",
+        "topic:en-multi-sense",
+        "topic:map-poder",
+        "topic:verb-system",
+        "topic:verb-modal-ability"
+      ],
+      "curriculumRole": "P1"
+    },
+    {
+      "id": "4gc8apuw8u",
+      "spanish": "gustar",
+      "english": "to like",
+      "example": {
+        "spanish": "Me gusta el café.",
+        "english": "I like coffee."
+      },
+      "collections": [
+        "pos:verb",
+        "es:gustar",
+        "en:like",
+        "topic:en-multi-sense",
+        "topic:verb-feelings-love-like"
+      ],
+      "curriculumRole": "P1"
+    },
+    {
+      "id": "cq5ysgdyub",
+      "spanish": "creer",
+      "english": "to believe",
+      "example": {
+        "spanish": "Te creo.",
+        "english": "I believe you."
+      },
+      "collections": [
+        "pos:verb",
+        "es:creer",
+        "en:believe",
+        "topic:multi-sense",
+        "topic:en-multi-sense",
+        "topic:verb-thinking-opinions"
+      ],
+      "curriculumRole": "P1"
+    },
+    {
+      "id": "2l2o3127tw",
+      "spanish": "decir",
+      "english": "to say",
+      "example": {
+        "spanish": "Digo que sí.",
+        "english": "I say yes."
+      },
+      "collections": [
+        "pos:verb",
+        "es:decir",
+        "en:say",
+        "topic:multi-sense",
+        "topic:en-multi-sense",
+        "topic:map-decir",
+        "topic:verb-communication-saying"
+      ],
+      "curriculumRole": "P1"
     }
   ]
 }

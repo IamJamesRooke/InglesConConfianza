@@ -1,0 +1,11 @@
+# Plain «X → to X» rows for every Level 1 verb (owner 2026-09-17: typeahead offered only bracketed/phrasal venir rows). Level 1, first-person examples, siblings' tags.
+# spanish	english	exSpanish	exEnglish	role	collections
+venir	to come	Vengo mañana.	I'm coming tomorrow.	P1	pos:verb|es:venir|en:come|topic:multi-sense|topic:en-multi-sense|topic:verb-movement-going
+querer	to want	Quiero un café.	I want a coffee.	P1	pos:verb|es:querer|en:want|topic:multi-sense|topic:en-multi-sense|topic:map-querer|topic:verb-feelings-love-like
+necesitar	to need	Necesito ayuda.	I need help.	P1	pos:verb|es:necesitar|en:need|topic:verb-depending-fitting
+tener	to have	Tengo tiempo.	I have time.	P1	pos:verb|es:tener|en:have|topic:multi-sense|topic:en-multi-sense|topic:map-tener|topic:verb-possession-having
+saber	to know	Lo sé.	I know.	P1	pos:verb|es:saber|en:know|topic:multi-sense|topic:en-multi-sense|topic:verb-knowing
+poder	to be able to	Espero poder ir.	I hope to be able to go.	P1	pos:verb|es:poder|en:able|topic:multi-sense|topic:en-multi-sense|topic:map-poder|topic:verb-system|topic:verb-modal-ability
+gustar	to like	Me gusta el café.	I like coffee.	P1	pos:verb|es:gustar|en:like|topic:en-multi-sense|topic:verb-feelings-love-like
+creer	to believe	Te creo.	I believe you.	P1	pos:verb|es:creer|en:believe|topic:multi-sense|topic:en-multi-sense|topic:verb-thinking-opinions
+decir	to say	Digo que sí.	I say yes.	P1	pos:verb|es:decir|en:say|topic:multi-sense|topic:en-multi-sense|topic:map-decir|topic:verb-communication-saying
