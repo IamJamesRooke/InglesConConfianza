@@ -1,6 +1,4 @@
 .learner-theme {
-  --lesson-display: var(--font-display), var(--font-geist), ui-sans-serif,
-    system-ui, sans-serif;
   color: var(--foreground);
   background: var(--background);
   font-family: var(--font-geist), ui-sans-serif, system-ui, sans-serif;
@@ -58,7 +56,6 @@
   font-size: 21px;
   font-weight: 800;
   line-height: 1.15;
-  font-family: var(--font-display), var(--font-sans);
 }
 .learner-brand > span:last-child > span {
   display: block;
@@ -74,7 +71,6 @@
   border-radius: 28%;
   background: var(--primary);
   color: var(--primary-foreground);
-  font-family: var(--font-display), var(--font-sans);
   font-weight: 800;
   line-height: 1;
   letter-spacing: -0.04em;

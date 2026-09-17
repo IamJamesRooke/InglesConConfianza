@@ -4,7 +4,6 @@ import {
   ArrowLeft,
   ArrowRight,
   Check,
-  CheckCheck,
   Home,
   SkipForward,
   X,
@@ -263,30 +262,14 @@ function LessonSession({
           aria-label="Volver a mis lecciones"
           title="Volver a mis lecciones"
         >
-          <X size={21} aria-hidden="true" />
+          <X size={20} aria-hidden="true" />
         </button>
-        <div className="lesson-topbar-title">
-          <p>
-            {lesson.moduleName || "Tu curso de inglés"}
-            <span>
-              {" "}
-              · Lección {lesson.moduleLessonNumber ?? lesson.lessonNumber}
-            </span>
-          </p>
-          <h1 id="practice-lesson-title">
-            {lesson.name || `Lección ${lesson.lessonNumber}`}
-          </h1>
-        </div>
-        <span className="lesson-step-count">
-          {complete ? (
-            <CheckCheck size={22} aria-label="Lección completa" />
-          ) : (
-            <>
-              <strong>{stepIndex + 1}</strong>
-              <span> / {totalSteps}</span>
-            </>
-          )}
-        </span>
+        {/* The lesson name/number lives off-screen for the dialog's
+            aria-labelledby — it's shown on-canvas only on the first slide
+            and on completion (see the eyebrow below), not repeated here. */}
+        <h1 id="practice-lesson-title" className="sr-only">
+          {lesson.name || `Lección ${lesson.lessonNumber}`}
+        </h1>
         <progress
           className="lesson-top-progress"
           aria-label="Progreso de la lección"
@@ -302,6 +285,9 @@ function LessonSession({
               className="lesson-celebration learner-enter"
               aria-live="polite"
             >
+              <p className="practice-lesson-eyebrow">
+                {lesson.name || `Lección ${lesson.lessonNumber}`}
+              </p>
               <div className="completion-seal">
                 <Check size={34} strokeWidth={2.5} aria-hidden="true" />
               </div>
@@ -362,27 +348,39 @@ function LessonSession({
               </div>
             </div>
           ) : block?.type === "explanation" ? (
-            <ExplanationStep markdown={block.contentMarkdown} />
+            <>
+              {stepIndex === 0 && (
+                <p className="practice-lesson-eyebrow">
+                  {lesson.name || `Lección ${lesson.lessonNumber}`}
+                </p>
+              )}
+              <ExplanationStep markdown={block.contentMarkdown} />
+            </>
           ) : block?.type === "sentence" ? (
-            <SentencePracticeCard
-              sentence={block}
-              onCompletionChange={setSentenceComplete}
-              initialAnswers={draftAnswers[block.id]}
-              onAnswersChange={(answers) =>
-                setDraftAnswers((current) => ({
-                  ...current,
-                  [block.id]: answers,
-                }))
-              }
-            />
+            <>
+              {stepIndex === 0 && (
+                <p className="practice-lesson-eyebrow">
+                  {lesson.name || `Lección ${lesson.lessonNumber}`}
+                </p>
+              )}
+              <SentencePracticeCard
+                sentence={block}
+                onCompletionChange={setSentenceComplete}
+                initialAnswers={draftAnswers[block.id]}
+                onAnswersChange={(answers) =>
+                  setDraftAnswers((current) => ({
+                    ...current,
+                    [block.id]: answers,
+                  }))
+                }
+              />
+            </>
           ) : null}
         </div>
       </div>
 
       {!complete && (
-        <footer
-          className={`lesson-controls ${sentenceComplete ? "ready" : ""}`}
-        >
+        <footer className="lesson-controls">
           <div className="lesson-controls-inner">
             <button
               type="button"
@@ -397,7 +395,7 @@ function LessonSession({
             <div className="lesson-feedback" role="status" />
             <button
               type="button"
-              className={`learner-button ${sentenceComplete ? "success" : "primary"} ${block?.type === "sentence" && !sentenceComplete ? "awaiting-answer" : ""}`}
+              className={`learner-button primary ${block?.type === "sentence" && !sentenceComplete ? "awaiting-answer" : ""}`}
               disabled={!canAdvance}
               onClick={advance}
             >

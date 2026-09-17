@@ -214,6 +214,11 @@
     0 4px 12px oklch(0.2 0.01 260 / 0.08), 0 2px 4px oklch(0.2 0.01 260 / 0.05);
   --shadow-lg:
     0 16px 40px oklch(0.2 0.01 260 / 0.1), 0 4px 12px oklch(0.2 0.01 260 / 0.06);
+  /* L2a practice frame: the one card shadow used by the practice canvas
+     (explanation + sentence cards) — a quieter, warmer shadow than
+     --shadow-lg, tuned to the lavender canvas rather than neutral grey. */
+  --shadow-card:
+    0 10px 30px oklch(0.3 0.05 300 / 0.12), 0 2px 8px oklch(0.3 0.05 300 / 0.07);
   --sidebar: oklch(0.955 0.018 85);
   --sidebar-foreground: oklch(0.2 0.025 260);
   --sidebar-primary: oklch(0.55 0.22 285);

@@ -362,16 +362,14 @@ export function SentencePracticeCard({
             })}
           </div>
           {isComplete && (
-            <p
+            <span
               className="sentence-success"
               role="status"
               aria-live="polite"
               aria-label="¡Correcto!"
             >
-              <span className="sentence-success-mark" aria-hidden="true">
-                <Check size={24} strokeWidth={3.25} />
-              </span>
-            </p>
+              <Check size={16} strokeWidth={3} aria-hidden="true" />
+            </span>
           )}
         </>
       ) : (

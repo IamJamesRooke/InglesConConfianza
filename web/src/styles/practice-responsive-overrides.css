@@ -6,8 +6,16 @@
    selectors relying on import/file order to pick a winner. Each selector
    below is now declared exactly once, holding the values that previously
    won the cascade. */
+/* L2a type scale + shared column width — sizing tokens only, no colour
+   literals (those stay in globals.css per the CSS lint). Phone override
+   lives in this file's existing <=760px media block, below. */
 .lesson-session {
   --radius: 1rem;
+  --practice-column: 760px;
+  --practice-prompt-size: 28px;
+  --practice-explanation-size: 20px;
+  --practice-label-size: 14px;
+  --practice-eyebrow-size: 11px;
   position: fixed;
   inset: 0;
   z-index: 50;
@@ -17,26 +25,30 @@
   outline: none;
   color: var(--foreground);
   background: var(--background);
-  font-family: var(--font-geist), ui-sans-serif, system-ui, sans-serif;
+  font-family: var(--font-sans);
 }
+/* L2a: a thin, quiet header — no lesson title, no "n / N" counter, no
+   halo/shadow underneath it. Just the close control and a real progress
+   bar running along its bottom edge. 48px tall, 56px from 1024px up. */
 .lesson-topbar {
   position: relative;
   display: flex;
   align-items: center;
-  gap: 24px;
+  gap: 12px;
   flex-shrink: 0;
   width: 100%;
-  padding: 18px max(32px, calc((100% - 1130px) / 2));
-  background: linear-gradient(
-    110deg,
-    var(--brand-primary-hover),
-    var(--primary)
-  );
-  border-bottom: 1px solid var(--border);
-  min-height: 92px;
-  border-color: transparent;
-  box-shadow: 0 8px 24px color-mix(in oklch, var(--primary) 28%, transparent);
+  height: 48px;
+  padding-inline: 12px;
+  background: var(--primary);
+  border: 0;
+  box-shadow: none;
   color: var(--primary-foreground);
+}
+@media (min-width: 1024px) {
+  .lesson-topbar {
+    height: 56px;
+    padding-inline: 20px;
+  }
 }
 .learner-icon-button {
   display: flex;
@@ -46,95 +58,106 @@
   height: 48px;
   flex-shrink: 0;
   color: var(--muted-foreground);
-  border: 1px solid var(--border);
+  border: 0;
   border-radius: var(--radius-lg);
+  background: none;
   transition: background 180ms;
-  border-color: var(--border);
-  background: var(--card);
 }
 .learner-icon-button:hover {
   color: var(--foreground);
   background: var(--muted);
 }
-.lesson-topbar-title {
-  min-width: 0;
-  flex: 1;
+/* The header's close button: icon only, no box, a 40px hit area centered
+   in the 48/56px bar, white on the purple header. */
+.lesson-topbar .learner-icon-button {
+  width: 40px;
+  height: 40px;
+  border-radius: 999px;
+  color: var(--primary-foreground);
 }
-.lesson-topbar-title p {
-  font-size: 14px;
-  color: var(--muted-foreground);
-  line-height: 1.5;
-}
-.lesson-topbar-title h1 {
-  font-size: 20px;
-  line-height: 1.5;
-  font-weight: 700;
-  margin-top: 3px;
-  color: var(--foreground);
-  font-family: var(--lesson-display);
-}
-.lesson-step-count {
-  font-size: 15px;
-  white-space: nowrap;
-  color: var(--muted-foreground);
-  flex-shrink: 0;
-}
-.lesson-step-count strong {
-  color: var(--foreground);
+.lesson-topbar .learner-icon-button:hover {
+  color: var(--primary-foreground);
+  background: color-mix(in oklch, var(--primary-foreground) 18%, transparent);
 }
 .lesson-topbar .lesson-top-progress {
   position: absolute;
   left: 0;
-  bottom: -1px;
-  height: 6px;
+  bottom: 0;
+  width: 100%;
+  height: 4px;
   border-radius: 0;
-  color: var(--primary);
-  background: var(--muted);
+  color: var(--primary-foreground);
+  background: color-mix(in oklch, var(--primary-foreground) 25%, transparent);
 }
 .lesson-session .lesson-top-progress::-webkit-progress-bar {
-  background: var(--muted);
+  background: color-mix(in oklch, var(--primary-foreground) 25%, transparent);
 }
 .lesson-session .lesson-top-progress::-webkit-progress-value {
-  background: var(--primary);
+  background: var(--primary-foreground);
+  transition: width 240ms;
 }
 .lesson-session .lesson-top-progress::-moz-progress-bar {
-  background: var(--primary);
+  background: var(--primary-foreground);
 }
+/* Canvas: content centers around ~40% from the top rather than dead
+   centre, in a single column shared by every slide type. */
 .lesson-stage {
   min-height: 100%;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  padding: clamp(32px, 6vh, 64px) 24px;
+  justify-content: flex-start;
+  padding: clamp(56px, 20vh, 180px) 24px clamp(32px, 6vh, 64px);
+}
+/* The lesson name, shown only on the first slide's canvas and on
+   completion — nowhere else (see item 2, header no longer carries it). */
+.practice-lesson-eyebrow {
+  margin-bottom: 14px;
+  color: var(--ink-muted);
+  font-size: var(--practice-eyebrow-size);
+  font-weight: 750;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  text-align: center;
 }
 
-/* --- Explanation: one centered card, comfortable measure, big friendly type --- */
+/* --- Explanation: one centered card, comfortable measure, big friendly type ---
+   L2a: one shared card width/padding/shadow across every slide type (see
+   .sentence-practice and .answer-grid below, which now match). */
 .lesson-explanation {
   width: 100%;
-  max-width: 38rem;
-  padding: clamp(2.25rem, 4vw, 3.5rem);
+  max-width: var(--practice-column);
+  padding: 32px;
   border: 1px solid var(--border);
-  border-radius: var(--radius-xl);
+  border-radius: 16px;
   background: var(--card);
-  box-shadow: var(--shadow-lg);
+  box-shadow: var(--shadow-card);
   text-align: center;
 }
 .lesson-explanation :is(p, li) {
   color: var(--foreground);
-  font-family: var(--lesson-display);
-  font-size: clamp(1.5rem, 1.15rem + 1.1vw, 1.9rem);
-  line-height: 1.55;
+  font-size: var(--practice-explanation-size);
+  line-height: 1.5;
   font-weight: 500;
 }
 .lesson-explanation :is(h1, h2, h3) {
   color: var(--foreground);
-  font-family: var(--lesson-display);
-  font-size: clamp(1.9rem, 1.4rem + 1.8vw, 2.5rem);
+  font-size: clamp(1.5rem, 1.2rem + 1.2vw, 1.9rem);
   line-height: 1.25;
   font-weight: 700;
 }
 .lesson-explanation strong {
   font-weight: 700;
+}
+/* Single-line explanations read fine centered; once a paragraph wraps to a
+   second line, ragged centered edges are harder to read, so it switches to
+   left-aligned (owner spec: "left-aligned when it wraps beyond one line").
+   Toggled by ExplanationStep, which measures the rendered text. */
+.lesson-explanation[data-wraps="true"] {
+  text-align: left;
+}
+.lesson-explanation[data-wraps="true"] :is(h1, h2, h3) {
+  text-align: left;
 }
 
 /* Bilingual highlight: language is told by weight/style + colour alone, no
@@ -166,16 +189,13 @@
   font-style: italic;
 }
 
-/* --- Sentence builder: one calm card, blanks flow left-to-right --- */
+/* --- Sentence builder: one calm card, blanks flow left-to-right ---
+   L2a: one width across slide types — the same column as .lesson-explanation,
+   not a per-type max-width. */
 .sentence-practice {
+  position: relative;
   width: 100%;
-  max-width: 44rem;
-}
-.sentence-practice.vocabulary-practice {
-  max-width: 44rem;
-}
-.sentence-practice.single-answer {
-  max-width: 30rem;
+  max-width: var(--practice-column);
 }
 .sentence-prompt-label {
   margin-bottom: 8px;
@@ -195,12 +215,12 @@
 .sentence-prompt p {
   text-align: center;
   color: var(--foreground);
-  font-family: var(--lesson-display);
-  font-size: clamp(1.4rem, 1.15rem + 0.9vw, 1.75rem);
-  line-height: 1.45;
+  font-size: var(--practice-prompt-size);
+  line-height: 1.3;
   font-weight: 600;
 }
 .answer-grid {
+  position: relative;
   display: flex;
   flex-flow: row wrap;
   justify-content: flex-start;
@@ -209,11 +229,11 @@
   width: fit-content;
   max-width: 100%;
   margin-inline: auto;
-  padding: clamp(22px, 3vw, 34px);
+  padding: 32px;
   border: 1px solid var(--border);
-  border-radius: var(--radius-xl);
+  border-radius: 16px;
   background: var(--card);
-  box-shadow: var(--shadow-lg);
+  box-shadow: var(--shadow-card);
 }
 .answer-grid.has-prompt {
   margin-top: 24px;
@@ -238,13 +258,9 @@
   flex-wrap: nowrap;
   align-items: stretch;
 }
-.single-answer .answer-grid {
-  width: min(26rem, 100%);
-  padding: clamp(26px, 4vw, 38px);
-}
-.vocabulary-practice .answer-grid {
-  width: min(42rem, 100%);
-}
+/* No per-type widths (L2a): single-answer and vocabulary cards size like
+   every other card — fit-content up to the shared column, not a fixed
+   width of their own. */
 .lesson-session .vocabulary-practice .answer-piece,
 .lesson-session .single-answer .answer-piece {
   flex: none;
@@ -257,7 +273,6 @@
   max-width: 26rem;
   margin-bottom: 5px;
   color: var(--lesson-hl-es);
-  font-family: var(--lesson-display);
   font-size: clamp(1.25rem, 1.05rem + 0.5vw, 1.5rem);
   font-weight: 700;
   line-height: 1.3;
@@ -279,7 +294,6 @@
   display: block;
   padding: 12px 16px;
   color: var(--muted-foreground);
-  font-family: var(--lesson-display);
   font-size: 24px;
   font-weight: 600;
   font-style: italic;
@@ -307,7 +321,6 @@
   padding: 12px 16px;
   border: 2px solid transparent;
   white-space: pre;
-  font-family: var(--lesson-display);
   font-size: 24px;
   font-weight: 600;
   line-height: 1.5;
@@ -325,7 +338,6 @@
   border-radius: var(--radius-md);
   color: var(--lesson-hl-en);
   background: var(--surface-writing);
-  font-family: var(--lesson-display);
   font-size: 24px;
   font-weight: 600;
 }
@@ -523,35 +535,33 @@
   font-weight: 500;
   line-height: 1.4;
 }
-/* The payoff — just a checkmark. Any words come from the author's feedback. */
+/* L2a success signal: one small purple check beside the prompt — no green
+   circle, no footer recolour. Positioned on the card, near the prompt/cue
+   text at its top edge; fades in with the same pop used elsewhere. */
 .sentence-success {
-  display: flex;
-  justify-content: center;
-  margin: 14px auto 0;
-  animation: learner-pop 220ms ease-out both;
-}
-.sentence-success-mark {
+  position: absolute;
+  top: -10px;
+  right: -10px;
   display: grid;
   place-items: center;
-  width: 44px;
-  height: 44px;
+  width: 28px;
+  height: 28px;
   border-radius: 999px;
-  color: var(--success-contrast);
-  background: var(--success);
-  box-shadow: 0 0 0 5px var(--card);
+  color: var(--primary);
+  background: var(--card);
+  box-shadow: var(--shadow-card);
+  animation: learner-pop 220ms ease-out both;
 }
+/* L2a footer: transparent over the canvas at all times — success never
+   recolours it. When there's no available action (a sentence slide before
+   it's answered) the right-hand button is removed from flow entirely, so
+   there is never a visible empty bar. */
 .lesson-controls {
   flex-shrink: 0;
   padding: 16px 32px;
-  transition: background 200ms;
   min-height: 88px;
-  border-color: transparent;
-  background: var(--card);
-  box-shadow: 0 -2px 10px color-mix(in oklch, var(--primary) 8%, transparent);
-}
-.lesson-controls.ready {
-  border-color: var(--success);
-  background: var(--state-success-soft);
+  background: transparent;
+  box-shadow: none;
 }
 .lesson-controls-inner {
   display: grid;
@@ -579,22 +589,19 @@
   min-height: 58px;
   justify-self: end;
   border-radius: var(--radius-lg);
-  font-family: var(--lesson-display);
   font-size: 20px;
   font-weight: 700;
 }
+/* No available action yet (sentence slide, unanswered) — the button leaves
+   the flow entirely rather than reserving an empty slot, so the transparent
+   footer shows nothing on the right (never an empty bar). */
 .lesson-controls .learner-button.awaiting-answer {
-  visibility: hidden;
+  display: none;
 }
 .lesson-session .learner-button.primary {
   color: var(--primary-foreground);
   background: var(--primary);
   box-shadow: 0 3px 0 color-mix(in oklch, var(--primary) 72%, black);
-}
-.lesson-session .learner-button.success {
-  color: var(--success-contrast);
-  background: var(--success);
-  box-shadow: 0 3px 0 color-mix(in oklch, var(--success) 72%, black);
 }
 .lesson-session .learner-button:disabled {
   color: var(--muted-foreground);
@@ -630,6 +637,13 @@
   }
 }
 @media (max-width: 760px) {
+  .lesson-session {
+    /* .lesson-stage's own side padding (20px at <=480px, see below) is the
+       phone gutter — the column itself just fills the rest of the width. */
+    --practice-column: 100%;
+    --practice-prompt-size: 22px;
+    --practice-explanation-size: 18px;
+  }
   .course-container {
     width: calc(100% - 40px);
   }
@@ -679,17 +693,8 @@
     padding: 16px 20px 20px;
     gap: 14px;
   }
-  .lesson-topbar-title h1 {
-    font-size: 14px;
-  }
-  .lesson-topbar-title p {
-    font-size: 10px;
-  }
-  .lesson-topbar-title p > span {
-    display: block;
-  }
   .lesson-stage {
-    padding: 36px 24px;
+    padding: 36px 20px;
   }
   .lesson-controls {
     padding: 14px 20px max(14px, env(safe-area-inset-bottom));
@@ -736,12 +741,7 @@
   }
   .lesson-topbar {
     gap: 12px;
-    padding-inline: 16px;
-  }
-  .lesson-topbar .learner-icon-button {
-    width: 36px;
-    height: 36px;
-    border: 0;
+    padding-inline: 12px;
   }
   .lesson-stage {
     padding: 32px 20px;
@@ -785,39 +785,12 @@
    canvas neutral and let the dark primary navigation carry the hierarchy.
    (.lesson-session and .lesson-topbar's own background/color/box-shadow are
    set once, above, with these values already folded in.) */
-.lesson-topbar-title p,
-.lesson-topbar-title h1,
-.lesson-step-count,
-.lesson-step-count strong {
-  color: var(--primary-foreground);
-}
-.lesson-topbar-title p,
-.lesson-step-count {
-  opacity: 0.84;
-}
-.lesson-topbar .learner-icon-button {
-  border-color: color-mix(in oklch, var(--primary-foreground) 38%, transparent);
-  color: var(--primary-foreground);
-  background: color-mix(in oklch, var(--primary-foreground) 12%, transparent);
-}
-.lesson-topbar .learner-icon-button:hover {
-  color: var(--primary-foreground);
-  background: color-mix(in oklch, var(--primary-foreground) 22%, transparent);
-}
-.lesson-topbar .lesson-top-progress,
-.lesson-session .lesson-top-progress::-webkit-progress-bar {
-  background: color-mix(in oklch, var(--primary-foreground) 24%, transparent);
-}
-.lesson-session .lesson-top-progress::-webkit-progress-value,
-.lesson-session .lesson-top-progress::-moz-progress-bar {
-  background: var(--primary-foreground);
-}
 .lesson-explanation,
 .answer-grid,
 .lesson-celebration {
-  border: 1px solid color-mix(in oklch, var(--primary) 28%, var(--border));
+  border: 1px solid var(--border);
   background: var(--surface-writing);
-  box-shadow: 0 18px 42px color-mix(in oklch, var(--ink-deep) 14%, transparent);
+  box-shadow: var(--shadow-card);
 }
 /* (.answer-input and .answer-input:focus's surface-writing background and
    outline-color are set once, above, with these values already folded in.) */
@@ -858,7 +831,6 @@
 .lesson-session .completion-status {
   margin-bottom: 22px;
   color: var(--foreground);
-  font-family: var(--lesson-display);
   font-size: clamp(1.5rem, 1.2rem + 1vw, 1.9rem);
   font-weight: 850;
   line-height: 1.2;
@@ -911,7 +883,6 @@
   min-width: 0;
   margin: 0;
   color: var(--foreground);
-  font-family: var(--lesson-display);
   font-size: 1rem;
   font-weight: 700;
   line-height: 1.35;
@@ -950,7 +921,6 @@
   min-height: 42px;
   padding: 9px 12px;
   color: var(--foreground);
-  font-family: var(--lesson-display);
   font-size: 1.05rem;
   font-weight: 650;
   line-height: 1.35;

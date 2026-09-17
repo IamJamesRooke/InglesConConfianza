@@ -118,3 +118,71 @@ confirmed with `npm run lint:dead`). Curriculum bracket notation
 (`[the] day`, `[el] día`) is stripped to plain words on every learner surface
 via `learnerLabel()` in `src/lib/learner/presentation.ts`, applied to the
 practice-completion concept list.
+
+## 2026-09-17 L2a — the practice frame (every slide inherits this)
+
+Owner complaint, from desktop screenshots of `/practice`: a second display
+font (Baloo 2) on top of Geist, an 80px purple header with a blurred halo,
+a boxed close button, the lesson name and a "1 / 14" counter repeated on
+every slide, a white progress streak that was hard to see on purple, and a
+footer that turned green (surface + button) on a correct answer. Fixes:
+
+**One typeface.** Baloo 2 and `--font-display` are gone — removed from
+`layout.tsx` and every `font-family: var(--lesson-display)` /
+`var(--font-display)` rule in `learner-foundations-home.css` and
+`practice-responsive-overrides.css`. Practice text now takes its size and
+weight from the type scale below, on `--font-sans` (Geist) only.
+
+**Thin header.** `.lesson-topbar` is 48px tall (56px at ≥1024px),
+`--primary` surface, no border/halo/shadow. The close button is icon-only —
+no box, a 40px hit area — and white. No lesson title, no "n / N" counter.
+A real `<progress>` bar sits on the header's bottom edge: 4px tall, track
+white-25% (`color-mix` on `--primary-foreground`), fill white-100%,
+`transition: width 240ms` (killed under `prefers-reduced-motion`, already
+global). The lesson name moved out of the header entirely: it now shows
+once, as an 11px/0.12em-tracked `--ink-muted` eyebrow (`.practice-lesson-
+eyebrow`) above the canvas on the first slide only, and again on the
+completion screen — nowhere else.
+
+**Transparent footer, one action.** `.lesson-controls` has no surface or
+box-shadow of its own — it's transparent over the canvas at every state,
+including success (no more green fill + green button variant). It shows a
+quiet back icon on the left and, when one exists, exactly one primary
+button on the right ("Vamos a practicar →" / "Continuar →"); with no
+available action (an unanswered sentence slide) that button is `display:
+none`, so there is never a visible empty bar.
+
+**Success = one purple check.** The old 44px green circle under the card
+is gone. `SentencePracticeCard` now renders one small `--primary` check
+(`.sentence-success`, 28px) beside the prompt, top-right of the card, on a
+white disc with `--shadow-card`. The per-blank check next to each correct
+Spanish word (`--primary` fill tint on the field) is unchanged.
+
+**Canvas and one card width.** `.lesson-stage` centers its column at ~20%
+top padding rather than dead center (`padding-top: clamp(56px, 20vh,
+180px)`), so slides read lighter. Every slide type now shares one column
+width (`--practice-column`: 760px desktop, 100% of the stage's own 20px
+phone gutter below), replacing the old per-type max-widths (38rem
+explanation / 44rem sentence / 30rem single-answer / 42rem vocabulary).
+Both the explanation card and the answer-grid card are white, 16px radius,
+`--border` hairline, `--shadow-card` (new token in `globals.css`), 32px
+padding (20px on phone) — one card style everywhere.
+
+**Type scale**, as CSS custom properties on `.lesson-session` (sizing only,
+no colour literals — those still live only in `globals.css`):
+`--practice-prompt-size` 28px→22px, `--practice-explanation-size`
+20px→18px, `--practice-label-size` 14px (already matched, unchanged),
+`--practice-eyebrow-size` 11px, all switching at the file's existing
+`max-width: 760px` breakpoint. The explanation body switches from centered
+to left-aligned once a paragraph or list item actually wraps to a second
+line (`ExplanationStep` measures rendered height vs. line-height with a
+`ResizeObserver` and sets `data-wraps` — single-line explanations stay
+centered).
+
+Not touched: the sentence card's internal blank/vocabulary-row styling,
+hints, and the rest of the completion screen — those are the next
+sessions' scope. Verified with `npm run lint` (CSS + ESLint), `npx tsc
+--noEmit`, `tests/unit/learner-surfaces.test.ts` (12/12), and a throwaway
+Playwright spec (deleted after) screenshotting the first explanation slide
+and an answered sentence slide at 1280×900 and 390×844 — no Playwright
+suite run beyond that one spec.
