@@ -15,6 +15,11 @@ export type Speaker = {
   lang: string;
   genderHint: "male" | "female";
   voiceNames: string[];
+  // Ordered candidate avatar files, most-preferred first — the chip renders
+  // the first one that loads (see SpeakerChip's <img onError> fallback
+  // chain). A real portrait PNG (dropped in by the owner, no code change)
+  // takes priority over the hand-drawn SVG placeholder.
+  avatarSrcs: string[];
 };
 
 // Order matters only as the fallback iteration order when nothing else
@@ -33,6 +38,7 @@ export const SPEAKER_ROSTER: Speaker[] = [
       "Alex",
       "Fred",
     ],
+    avatarSrcs: ["/speakers/us-man.png", "/speakers/us-man.svg"],
   },
   {
     id: "uk-woman",
@@ -48,6 +54,7 @@ export const SPEAKER_ROSTER: Speaker[] = [
       "Serena",
       "Daniel",
     ],
+    avatarSrcs: ["/speakers/uk-woman.png", "/speakers/uk-woman.svg"],
   },
 ];
 

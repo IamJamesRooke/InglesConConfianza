@@ -574,11 +574,20 @@
   margin-top: 12px;
   max-width: 100%;
 }
+/* Circular mask so a square portrait PNG crops cleanly (object-position:
+   center top favours the face over the shoulders/chest of a bust-style
+   crop); the ring + soft shadow read the same whether the source is a
+   photographic portrait or the hand-drawn SVG placeholder. */
 .speaker-chip-avatar {
   flex-shrink: 0;
   width: 40px;
   height: 40px;
   border-radius: 999px;
+  object-fit: cover;
+  object-position: center top;
+  box-shadow:
+    0 0 0 2px var(--card),
+    var(--shadow-sm);
 }
 .speaker-chip-body {
   display: grid;

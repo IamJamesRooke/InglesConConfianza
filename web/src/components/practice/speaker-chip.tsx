@@ -1,5 +1,7 @@
 "use client";
 
+import { useState } from "react";
+
 import type { Speaker } from "@/lib/learner/speech";
 
 /**
@@ -25,21 +27,55 @@ export function SpeakerChip({
   variant?: "inline" | "stage";
 }) {
   if (!speaker) return null;
+  return (
+    <SpeakerAvatarChip
+      key={speaker.id}
+      speaker={speaker}
+      speakingText={speakingText}
+      variant={variant}
+    />
+  );
+}
+
+/**
+ * Split out so the `useState` tracking which candidate avatar file to try
+ * next can key off `speaker.id` via React's own remount-on-key-change
+ * (the parent renders this with `key={speaker.id}`) — a new speaker always
+ * starts back at candidate 0.
+ */
+function SpeakerAvatarChip({
+  speaker,
+  speakingText,
+  variant,
+}: {
+  speaker: Speaker;
+  speakingText: string | null;
+  variant: "inline" | "stage";
+}) {
+  const [candidateIndex, setCandidateIndex] = useState(0);
   const size = variant === "stage" ? 72 : 40;
+  const src =
+    speaker.avatarSrcs[candidateIndex] ??
+    speaker.avatarSrcs[speaker.avatarSrcs.length - 1];
   return (
     <div
       className={`speaker-chip ${variant === "stage" ? "stage" : ""}`}
       aria-label={`Voz: ${speaker.label}`}
     >
       {/* eslint-disable-next-line @next/next/no-img-element -- a small
-          local SVG avatar; next/image's optimizer adds no value here and
-          isn't used elsewhere in this codebase. */}
+          local avatar (portrait PNG or SVG fallback); next/image's optimizer
+          adds no value here and isn't used elsewhere in this codebase. */}
       <img
         className="speaker-chip-avatar"
-        src={`/speakers/${speaker.id}.svg`}
+        src={src}
         alt=""
         width={size}
         height={size}
+        onError={() =>
+          setCandidateIndex((index) =>
+            index + 1 < speaker.avatarSrcs.length ? index + 1 : index,
+          )
+        }
       />
       <div className="speaker-chip-body">
         <span className="speaker-chip-label">

@@ -79,6 +79,15 @@ inside the image (the label is HTML so it can be translated/styled).
 The MVP avatars are hand-drawn SVGs; they can be replaced by commissioned art later
 without touching code (same path, same size).
 
+**Real portraits (owner-supplied, no code change needed):** drop `us-man.png` /
+`uk-woman.png` (512×512, square bust) into `web/public/speakers/` — the chip renders
+the first candidate file that loads for each speaker (`us-man.png`, then
+`us-man.svg`; same for `uk-woman`) via an `<img>` `onError` fallback chain, no
+existence probing. The avatar renders in a circular mask (`object-fit: cover`,
+`object-position: center top`, so a square portrait crops to the face) with a 2px
+ring in the card colour and the chip's existing soft shadow; sizes are unchanged
+(72px on the stage, 48px on phone, 40px inline).
+
 ## Code shape
 
 - `web/src/lib/learner/speech.ts`: `listSpeakers()`, `pickSpeaker(seed)`, `speak(text, speaker)`,
