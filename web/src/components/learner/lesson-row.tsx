@@ -1,3 +1,4 @@
+import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 
 import type { LearnerLesson } from "@/components/learner/types";
@@ -41,6 +42,13 @@ export function LessonRow({
             : "Una nueva conversación, muy pronto."}
         </span>
       </span>
+      {available ? (
+        <ArrowRight
+          className="path-row-arrow"
+          size={18}
+          aria-hidden="true"
+        />
+      ) : null}
     </>
   );
   return (

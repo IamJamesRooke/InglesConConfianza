@@ -365,6 +365,52 @@
   align-items: flex-start;
   padding: 16px 0 16px 28px;
   color: inherit;
+  position: relative;
+  cursor: pointer;
+}
+.path-row-link::before {
+  content: "";
+  position: absolute;
+  inset: 4px -12px;
+  border-radius: 12px;
+  background: transparent;
+  transition: background 200ms ease-out;
+  pointer-events: none;
+  z-index: 0;
+}
+.path-row-link:hover::before,
+.path-row-link:focus-visible::before {
+  background: color-mix(in oklch, var(--card) 70%, transparent);
+}
+.path-row-link > * {
+  position: relative;
+  z-index: 1;
+}
+.path-row-link:hover .path-row-title,
+.path-row-link:focus-visible .path-row-title {
+  color: var(--primary);
+}
+.path-row-arrow {
+  flex-shrink: 0;
+  align-self: center;
+  margin-left: auto;
+  color: var(--primary);
+  opacity: 0;
+  transform: translateX(-6px);
+  transition:
+    opacity 200ms ease-out,
+    transform 200ms ease-out;
+}
+.path-row-link:hover .path-row-arrow,
+.path-row-link:focus-visible .path-row-arrow {
+  opacity: 1;
+  transform: translateX(0);
+}
+@media (prefers-reduced-motion: reduce) {
+  .path-row-link::before,
+  .path-row-arrow {
+    transition-duration: 0s;
+  }
 }
 .path-row.path-row-card {
   margin: 4px 0;
@@ -372,9 +418,18 @@
   border: 1px solid var(--border);
   background: var(--surface-writing);
   box-shadow: var(--shadow-card);
+  transition: box-shadow 200ms ease-out;
+}
+.path-row.path-row-card:hover,
+.path-row.path-row-card:has(.path-row-link:focus-visible) {
+  box-shadow: var(--shadow-card-hover);
 }
 .path-row.path-row-card .path-row-link {
   padding: 20px 20px 20px 44px;
+}
+.path-row.path-row-card .path-row-link::before {
+  inset: 0;
+  border-radius: 16px;
 }
 .path-row.path-row-card .path-node {
   left: 20px;
@@ -383,6 +438,9 @@
 .path-row.unavailable {
   color: var(--muted-foreground);
   opacity: 0.72;
+}
+.path-row.unavailable .path-row-link {
+  cursor: default;
 }
 .path-node {
   position: absolute;
@@ -427,23 +485,25 @@
 /* ---------- Footer ---------- */
 .course-footer {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
   align-items: center;
-  gap: 20px;
   margin-top: 48px;
   padding-top: 24px;
-  font-size: 13px;
-  color: var(--muted-foreground);
+  text-align: center;
 }
 .course-footer > span:first-child {
+  font-size: 13px;
   font-weight: 600;
+  color: var(--muted-foreground);
 }
 .course-footer > a {
-  color: var(--muted-foreground);
+  margin-top: 32px;
+  font-size: var(--t-ui);
+  color: var(--primary);
   text-decoration: none;
 }
 .course-footer > a:hover {
-  color: var(--foreground);
+  text-decoration: underline;
 }
 
 
