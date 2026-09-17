@@ -11007,11 +11007,11 @@
     },
     {
       "id": "2iiyjrogmc",
-      "spanish": "ir a [un lugar]",
-      "english": "to go to [a place]",
+      "spanish": "ir",
+      "english": "to go",
       "example": {
-        "spanish": "Voy a la oficina.",
-        "english": "I am going to the office."
+        "spanish": "Necesito ir a la oficina.",
+        "english": "I need to go to the office."
       },
       "collections": [
         "construction:prepositional-verb",
@@ -11037,7 +11037,7 @@
         "topic:confusable-verb",
         "topic:location"
       ],
-      "curriculumRole": "Unranked"
+      "curriculumRole": "P1"
     },
     {
       "id": "k9y5vq9p06",
@@ -31100,7 +31100,7 @@
         "audit:reviewed",
         "topic:enmap-with"
       ],
-      "curriculumRole": "Unranked"
+      "curriculumRole": "P1"
     },
     {
       "id": "kg63snjtds",
@@ -32667,7 +32667,7 @@
         "audit:reviewed",
         "topic:noun-time-days-periods"
       ],
-      "curriculumRole": "Unranked"
+      "curriculumRole": "P1"
     },
     {
       "id": "rf7wttxz5x",
@@ -32686,7 +32686,7 @@
         "audit:reviewed",
         "topic:adv-time-relative-day"
       ],
-      "curriculumRole": "Unranked"
+      "curriculumRole": "P1"
     },
     {
       "id": "uklvuftocv",
