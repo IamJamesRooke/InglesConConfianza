@@ -28,6 +28,13 @@ declare module "@tiptap/core" {
   }
 }
 
+// An `en` mark's optional pronunciation bridge (`different|DIFF-rent`) — see
+// docs/design/speech.md "Explanation voice track" and
+// explanation-markdown.ts. Stored as `data-bridge` so it survives the
+// markdown ⇄ ProseMirror round-trip through this schema unchanged; the
+// learner presentation strips it from what's displayed, a later session
+// shows it small.
+
 // Renders `<mark data-language="es|en">` so the existing
 // `.lesson-document-explanation mark` styling keeps working unchanged, and
 // so the learner-side renderer and this editor agree on the DOM shape.
@@ -51,6 +58,12 @@ const Lang = Mark.create({
         default: "es" as Language,
         parseHTML: (element) => element.getAttribute("data-language"),
         renderHTML: (attributes) => ({ "data-language": attributes.language }),
+      },
+      bridge: {
+        default: null as string | null,
+        parseHTML: (element) => element.getAttribute("data-bridge"),
+        renderHTML: (attributes) =>
+          attributes.bridge ? { "data-bridge": attributes.bridge } : {},
       },
     };
   },

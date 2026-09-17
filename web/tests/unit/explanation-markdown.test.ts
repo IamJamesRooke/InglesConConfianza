@@ -136,6 +136,46 @@ test("bold and a language mark can stack (nesting order is normalized, not lost)
   assert.equal(serializeExplanationDoc(parseExplanation(once)), once);
 });
 
+// ---- pronunciation bridges ----------------------------------------------
+
+test("an en mark with a pronunciation bridge round-trips byte-identically", () => {
+  const markdown = "[[es:diferente]] es [[en:different|DIFF-rent]]";
+  const doc = parseExplanation(markdown);
+  const marked = doc.content[0].content?.find(
+    (node) => node.type === "text" && node.text === "different",
+  ) as { marks?: PMMark[] } | undefined;
+  const langMark = marked?.marks?.find((mark) => mark.type === "lang");
+  assert.deepEqual(langMark, { type: "lang", attrs: { language: "en", bridge: "DIFF-rent" } });
+  assert.equal(serializeExplanationDoc(doc), markdown);
+});
+
+test("an en mark without a bridge has no bridge attr and round-trips as before", () => {
+  const markdown = "[[en:today]]";
+  const doc = parseExplanation(markdown);
+  const marked = doc.content[0].content?.[0] as { marks?: PMMark[] } | undefined;
+  const langMark = marked?.marks?.find((mark) => mark.type === "lang");
+  assert.deepEqual(langMark, { type: "lang", attrs: { language: "en" } });
+  assert.equal(serializeExplanationDoc(doc), markdown);
+});
+
+test("a bridge on an es mark is not special-cased (bridges are en-only)", () => {
+  // A stray "|" inside an es mark is just text — bridges only trigger on an
+  // English mark, per docs/design/speech.md.
+  const markdown = "[[es:día|no]]";
+  assert.equal(serializeExplanationDoc(parseExplanation(markdown)), markdown);
+});
+
+test("a bridge can nest inside bold, and a multi-word bridged phrase round-trips", () => {
+  const markdown = "[[en:**something**|SUM-thing]] and [[en:to do|too DOO]]";
+  assert.equal(serializeExplanationDoc(parseExplanation(markdown)), markdown);
+});
+
+test("an unterminated bridge does not throw", () => {
+  for (const markdown of ["[[en:x|Y", "[[en:x|", "[[en:|]]"]) {
+    assert.doesNotThrow(() => serializeExplanationDoc(parseExplanation(markdown)));
+  }
+});
+
 // ---- legacy inputs the previous editor accepted -------------------------
 // None of these are in the schema any more. They must flatten to plain text
 // rather than crashing or leaking their markers into the visible text.

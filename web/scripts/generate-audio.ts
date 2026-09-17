@@ -5,6 +5,7 @@ import { mkdir, readFile, writeFile } from "node:fs/promises";
 import path from "node:path";
 
 import type {
+  ExplanationBlock,
   LanguageBlock,
   Lesson,
   SentenceBlock,
@@ -14,6 +15,7 @@ import {
   sentenceEnglishText,
 } from "../src/lib/lesson-builder/utils";
 import type { SpeakerId } from "../src/lib/learner/speech";
+import { explanationToSsml } from "../src/lib/learner/explanation-ssml";
 
 // Generates browser-independent audio clips for every piece of English a
 // learner will hear, so speak() can prefer a real recording over the
@@ -32,6 +34,13 @@ const VOICES: Record<SpeakerId, { languageCode: string; name: string }> = {
 };
 
 const SPEAKING_RATE = 0.95;
+
+// The explanation voice track: ONE American voice reads the whole
+// explanation (Spanish included — a gringo accent is fine, owner decision).
+// See docs/design/speech.md "Explanation voice track" and
+// src/lib/learner/explanation-ssml.ts, which builds the SSML this sends.
+const EXPLANATION_VOICE = { languageCode: "en-US", name: "en-US-Neural2-D" };
+const EXPLANATIONS_DIR = path.join(AUDIO_DIR, "explanations");
 
 function sha1(text: string): string {
   return createHash("sha1").update(text, "utf8").digest("hex");
@@ -64,6 +73,22 @@ function collectTexts(lessons: Lesson[]): Set<string> {
     }
   }
   return texts;
+}
+
+/** Every distinct explanation block's markdown source (blank ones skipped —
+ * nothing to say). Keyed by the raw markdown itself; sha1(markdown) is the
+ * clip filename and manifest key, matching explanationClipUrl() in
+ * src/lib/learner/speech.ts. */
+function collectExplanations(lessons: Lesson[]): Set<string> {
+  const markdowns = new Set<string>();
+  for (const lesson of lessons) {
+    for (const block of lesson.blocks) {
+      if (block.type !== "explanation") continue;
+      const markdown = (block as ExplanationBlock).contentMarkdown?.trim();
+      if (markdown) markdowns.add((block as ExplanationBlock).contentMarkdown);
+    }
+  }
+  return markdowns;
 }
 
 async function fileExists(filePath: string): Promise<boolean> {
@@ -102,15 +127,46 @@ async function synthesize(
   return Buffer.from(body.audioContent, "base64");
 }
 
+async function synthesizeSsml(ssml: string, apiKey: string): Promise<Buffer> {
+  const response = await fetch(
+    `https://texttospeech.googleapis.com/v1/text:synthesize?key=${apiKey}`,
+    {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        input: { ssml },
+        voice: EXPLANATION_VOICE,
+        audioConfig: { audioEncoding: "MP3", speakingRate: SPEAKING_RATE },
+      }),
+    },
+  );
+  if (!response.ok) {
+    throw new Error(
+      `Google TTS request failed (${response.status}): ${await response.text()}`,
+    );
+  }
+  const body = (await response.json()) as { audioContent: string };
+  return Buffer.from(body.audioContent, "base64");
+}
+
+// Backward-compatible with the existing flat `{ "<sha1>": ["us-man", ...] }`
+// shape: the speaker map still lives at the top level, keyed by
+// sha1(spoken text); "explanations" is an additional top-level key, keyed
+// by sha1(explanation markdown source), so an old manifest (no
+// "explanations" key) still parses and just has no explanation clips.
+type Manifest = Record<string, SpeakerId[]> & { explanations?: Record<string, true> };
+
 async function main() {
   const raw = await readFile(LESSONS_PATH, "utf8");
   const data = JSON.parse(raw) as LessonsFile;
   const texts = collectTexts(data.lessons);
+  const explanations = collectExplanations(data.lessons);
   const speakerIds = Object.keys(VOICES) as SpeakerId[];
   const apiKey = process.env.GOOGLE_TTS_API_KEY;
 
   console.log(
-    `Collected ${texts.size} distinct English text(s) across ${speakerIds.length} speaker(s).`,
+    `Collected ${texts.size} distinct English text(s) across ${speakerIds.length} speaker(s), ` +
+      `and ${explanations.size} distinct explanation block(s).`,
   );
 
   if (!apiKey) {
@@ -129,6 +185,15 @@ async function main() {
         if (!exists) wouldGenerate += 1;
       }
     }
+    for (const markdown of explanations) {
+      const hash = sha1(markdown);
+      const clipPath = path.join(EXPLANATIONS_DIR, `${hash}.mp3`);
+      const exists = await fileExists(clipPath);
+      console.log(
+        `${exists ? "[exists]" : "[would generate]"} explanations/${hash}.mp3 <- "${markdown}"`,
+      );
+      if (!exists) wouldGenerate += 1;
+    }
     console.log(
       `Dry run complete: ${wouldGenerate} clip(s) would be generated. Set GOOGLE_TTS_API_KEY to actually generate audio.`,
     );
@@ -138,7 +203,7 @@ async function main() {
   const manifestRaw = (await fileExists(MANIFEST_PATH))
     ? await readFile(MANIFEST_PATH, "utf8")
     : "{}";
-  const manifest: Record<string, SpeakerId[]> = JSON.parse(manifestRaw || "{}");
+  const manifest: Manifest = JSON.parse(manifestRaw || "{}");
 
   let generated = 0;
   let skipped = 0;
@@ -162,10 +227,34 @@ async function main() {
     }
   }
 
+  let explanationsGenerated = 0;
+  let explanationsSkipped = 0;
+  let explanationsBytes = 0;
+  const explanationManifest = manifest.explanations ?? {};
+  for (const markdown of explanations) {
+    const hash = sha1(markdown);
+    const clipPath = path.join(EXPLANATIONS_DIR, `${hash}.mp3`);
+    if (await fileExists(clipPath)) {
+      explanationsSkipped += 1;
+    } else {
+      await mkdir(EXPLANATIONS_DIR, { recursive: true });
+      const ssml = explanationToSsml(markdown);
+      const audio = await synthesizeSsml(ssml, apiKey);
+      await writeFile(clipPath, audio);
+      explanationsGenerated += 1;
+      explanationsBytes += audio.byteLength;
+      console.log(`Generated explanations/${hash}.mp3 <- "${markdown}"`);
+    }
+    explanationManifest[hash] = true;
+  }
+  manifest.explanations = explanationManifest;
+
   await mkdir(AUDIO_DIR, { recursive: true });
   await writeFile(MANIFEST_PATH, JSON.stringify(manifest, null, 2));
   console.log(
-    `Done: ${generated} clip(s) generated, ${skipped} already present. Manifest written to ${MANIFEST_PATH}.`,
+    `Done: ${generated} clip(s) generated, ${skipped} already present. ` +
+      `Explanations: ${explanationsGenerated} clip(s) generated (${explanationsBytes} bytes), ` +
+      `${explanationsSkipped} already present. Manifest written to ${MANIFEST_PATH}.`,
   );
 }
 

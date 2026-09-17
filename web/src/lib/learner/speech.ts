@@ -229,7 +229,12 @@ export function subscribeMuted(listener: () => void): () => void {
 // load; an absent manifest (404 or malformed) means no clips, browser
 // synthesis only.
 
-type Manifest = Record<string, SpeakerId[]>;
+// The manifest also carries an `explanations` map (`{ "<sha1>": true }`,
+// keyed by the sha1 of the explanation's *markdown source*, not its spoken
+// text — see scripts/generate-audio.ts and docs/design/speech.md
+// "Explanation voice track"). Older manifests without that key still parse
+// fine: `explanationClipUrl` just finds nothing and resolves null.
+type Manifest = Record<string, SpeakerId[]> & { explanations?: Record<string, true> };
 let manifestPromise: Promise<Manifest | null> | null = null;
 
 async function loadManifest(): Promise<Manifest | null> {
@@ -251,8 +256,9 @@ async function manifestSpeakerIdSet(): Promise<Set<SpeakerId>> {
   const manifest = await loadManifest();
   const ids = new Set<SpeakerId>();
   if (!manifest) return ids;
-  for (const speakers of Object.values(manifest)) {
-    for (const id of speakers) ids.add(id);
+  for (const key of Object.keys(manifest)) {
+    if (key === "explanations") continue;
+    for (const id of manifest[key]) ids.add(id);
   }
   return ids;
 }
@@ -363,6 +369,23 @@ export async function clipUrlFor(
   const speakers = manifest[hash];
   if (!speakers?.includes(speaker)) return null;
   return `/audio/${speaker}/${hash}.mp3`;
+}
+
+/**
+ * Resolves the URL of a generated explanation-voice-track clip for this
+ * explanation's markdown, if the manifest lists one — for a future
+ * playback session to await, not called from any UI yet. One voice reads
+ * every explanation, so unlike `clipUrlFor` there's no per-speaker choice:
+ * the clip is keyed by `sha1(markdown)` (the authored source, bridges and
+ * all), matching how scripts/generate-audio.ts names the file. Never
+ * throws; resolves null on any absent manifest or clip.
+ */
+export async function explanationClipUrl(markdown: string): Promise<string | null> {
+  const manifest = await loadManifest();
+  if (!manifest?.explanations) return null;
+  const hash = await sha1(markdown);
+  if (!manifest.explanations[hash]) return null;
+  return `/audio/explanations/${hash}.mp3`;
 }
 
 // --- Speaking -------------------------------------------------------------

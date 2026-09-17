@@ -113,7 +113,70 @@ Without `GOOGLE_TTS_API_KEY` set, the script prints what it would generate and e
 the app works with no key and no clips at all, falling back to browser synthesis.
 Generated clips are deploy assets and stay committed (small; not gitignored).
 
+## Explanation voice track
+
+> Owner decision 2026-09-17. Generator half only (this section); playback (auto-play on
+> slide entry, replay button, "listen" in the builder) is a later session.
+
+Explanations are read too, but by a single narrator rather than the per-slide speaker
+roster: ONE American voice (`en-US-Neural2-D`, en-US) reads the whole explanation
+block, Spanish included — a gringo accent on the Spanish is fine, an explicit owner
+call, not a bug to fix later.
+
+**Pronunciation-bridge notation** — an `[[en:…]]` mark may additionally carry a
+respelling for the voice track: `[[en:different|DIFF-rent]]`. The `|bridge` suffix is
+data on the mark, not visible text; the learner-facing renderer strips it from what's
+displayed (a later session shows it small, per the backlog item). Marks without a
+bridge are read plainly, exactly like today.
+
+- `src/lib/lesson-builder/explanation-markdown.ts` parses/serializes the notation: the
+  `lang` mark's `attrs` gained an optional `bridge?: string`, set only for an `en` mark
+  that has a `|…` suffix immediately before its closing `]]` (nested bold/italic inside
+  the marked run still works; the bridge is captured after they close). Round-trips
+  byte-identically; unterminated bridges don't throw, matching the dialect's existing
+  half-typed-markup tolerance.
+- `src/lib/lesson-builder/explanation-schema.ts`: the Tiptap `Lang` mark gained a
+  matching `bridge` attribute (`data-bridge` in the DOM) purely so the attribute
+  survives `parseExplanation()` → `schema.nodeFromJSON()` → the editor unchanged; no
+  other schema behaviour changed.
+
+**SSML rules** (`explanationToSsml(markdown): string` in
+`src/lib/learner/explanation-ssml.ts`, a pure string builder — no network call):
+
+- Plain text and Spanish-marked text are emitted as-is (escaped).
+- An English mark with no bridge is emitted as plain escaped text too — same as
+  unmarked.
+- An English mark WITH a bridge becomes: the word, `<break time="350ms"/>`, then each
+  hyphen-separated chunk of the bridge joined by `<break time="200ms"/>`. A chunk
+  written in ALL CAPS (the stressed syllable) is wrapped in
+  `<emphasis level="strong">` and, like every chunk, lowercased first — most TTS
+  voices spell an all-caps chunk out letter-by-letter rather than saying it, so the
+  emphasis tag (not the casing) is what actually carries the stress.
+- Bold/italic marks carry no spoken meaning and are ignored.
+- A paragraph break becomes `<break time="500ms"/>`; a hard line break inside one
+  paragraph becomes a smaller `<break time="200ms"/>`.
+- `&`, `<`, `>`, `"`, `'` are XML-escaped.
+- The whole thing is wrapped in `<speak>…</speak>`.
+
+**Generator**: `scripts/generate-audio.ts` also collects every lesson's explanation
+blocks (`ExplanationBlock.contentMarkdown`, deduplicated by exact markdown source,
+blank ones skipped), builds each one's SSML, and calls Google TTS
+(`input: { ssml }`, voice `en-US-Neural2-D`, MP3, rate 0.95) into
+`public/audio/explanations/<sha1(markdown)>.mp3` — keyed by the **markdown source**,
+not the spoken text (unlike the per-speaker clips, which are keyed by spoken text).
+Only generates when the file is missing. The manifest gained an `explanations` map,
+`{ "<sha1>": true }`, alongside the existing per-speaker map — old manifests without
+that key still parse fine (no explanation clips, nothing else affected). Dry run
+(no `GOOGLE_TTS_API_KEY`) reports what it would generate for explanations exactly like
+it already does for speaker clips.
+
+`src/lib/learner/speech.ts` gained `explanationClipUrl(markdown): Promise<string|null>`
+— manifest-aware, resolves `/audio/explanations/<sha1>.mp3` when listed, else `null`.
+Never throws. Not called from any UI yet.
+
 ## Not in scope now
 
-Recording, cloud voices, per-piece speaker changes, speed control, Spanish speech,
-speaking explanations, pronunciation scoring.
+Recording, cloud voices, per-piece speaker changes, speed control, Spanish speech
+(for the per-slide speakers), pronunciation scoring, and — for the explanation voice
+track specifically — playback UI (auto-play, replay, builder "listen" button, showing
+the bridge small to the learner).

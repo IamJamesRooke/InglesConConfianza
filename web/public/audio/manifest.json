@@ -154,5 +154,25 @@
   "cd71db2d58384ccb41a28b47d5ee4f75268a2c2c": [
     "us-man",
     "uk-woman"
-  ]
+  ],
+  "explanations": {
+    "f7c27c2f50deeb349ce2833c1c30e2fae4feefeb": true,
+    "2d6fc6e0c4356bba8a439a128e96beeecf7985b3": true,
+    "eed79c3b506cf667b3d0d132c94557dff3f47fab": true,
+    "9317f227032a65fb2e5887451b52236537d3619d": true,
+    "d4c6b401e92d230168ea5a8b33a09238db55c3b1": true,
+    "2299fbc12c1e1609aff4aa8904223e3325fb462e": true,
+    "657688dcc7ed240405b6b231d6e1114ed083fcaf": true,
+    "1c8b9448bda4051f627721e3a1910f10b4d69f42": true,
+    "bd15b8b45603567a1e2797d6cac9bc00d104cc13": true,
+    "33842d7819ad77c3114d73e9f899cbf4d7ef35de": true,
+    "af03a716f2214f43dd0d65e4fadae1ff1df698a4": true,
+    "c06239cb5f9c7d981832a995645178da72093501": true,
+    "df9c45e51aa2f7445d310e7e761479dd8191ad06": true,
+    "e4f5c268561d37992d080aa0467b90e9cca95a1d": true,
+    "2898d33f12464eee7936d9928726cc3cee1a78bf": true,
+    "c201c0ce9d3c94d6b9b0e1f4d2e42b77df769cb1": true,
+    "fbe923d1103664fde783ce586640b629d89a1678": true,
+    "a0508875efc400ee5217f7c21aa7dec1e148e2c5": true
+  }
 }

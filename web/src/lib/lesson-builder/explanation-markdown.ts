@@ -3,6 +3,10 @@
 //   - paragraphs separated by a blank line ("\n\n")
 //   - **bold** / __bold__, *italic* / _italic_
 //   - [[es:…]] / [[en:…]] language marks (the dominant construct in real data)
+//   - an [[en:…]] mark may carry a pronunciation bridge, `[[en:different|DIFF-rent]]`
+//     — a learner-facing respelling spoken by the explanation voice track (see
+//     docs/design/speech.md "Explanation voice track"); the `|bridge` suffix is
+//     data on the mark, not visible text
 //   - hard line breaks: a lone "\n" inside a paragraph
 //
 // Ported from the Phase 2 Tiptap spike, where it was property-tested (2000+
@@ -19,7 +23,7 @@
 export type PMMark =
   | { type: "bold" }
   | { type: "italic" }
-  | { type: "lang"; attrs: { language: "es" | "en" } };
+  | { type: "lang"; attrs: { language: "es" | "en"; bridge?: string } };
 type PMTextNode = { type: "text"; text: string; marks?: PMMark[] };
 type PMHardBreak = { type: "hardBreak" };
 export type PMInline = PMTextNode | PMHardBreak;
@@ -66,7 +70,7 @@ function stripLegacyMarkup(paragraph: string): string {
 
 function tokenizeParagraph(source: string): Token[] {
   const tokens: Token[] = [];
-  const openStack: Array<{ closer: string; mark: PMMark["type"] }> = [];
+  const openStack: Array<{ closer: string; mark: PMMark["type"]; ref: PMMark }> = [];
   let index = 0;
   let buffer = "";
 
@@ -88,6 +92,27 @@ function tokenizeParagraph(source: string): Token[] {
     }
 
     const top = openStack[openStack.length - 1];
+
+    // A pronunciation bridge (`|BRIDGE`) is only meaningful directly inside
+    // an `en` language mark, right before its closing `]]` — it is data on
+    // the mark, not a nested inline construct, so it's captured raw (no
+    // further tokenizing) rather than going through the delimiter machinery.
+    if (
+      rest[0] === "|" &&
+      top &&
+      top.mark === "lang" &&
+      top.ref.type === "lang" &&
+      top.ref.attrs.language === "en" &&
+      top.ref.attrs.bridge === undefined
+    ) {
+      flushText();
+      const closeIndex = rest.indexOf("]]", 1);
+      const bridge = closeIndex === -1 ? rest.slice(1) : rest.slice(1, closeIndex);
+      top.ref.attrs.bridge = bridge;
+      index += 1 + bridge.length;
+      continue;
+    }
+
     if (top && rest.startsWith(top.closer)) {
       flushText();
       tokens.push({ kind: "close", mark: top.mark });
@@ -102,15 +127,16 @@ function tokenizeParagraph(source: string): Token[] {
       const mark = delimiter.mark();
       flushText();
       tokens.push({ kind: "open", mark });
-      openStack.push({ closer: mark.type === "lang" ? "]]" : matched, mark: mark.type });
+      openStack.push({ closer: mark.type === "lang" ? "]]" : matched, mark: mark.type, ref: mark });
       index += matched.length;
       continue;
     }
 
     if (matchesItalicOpen(rest)) {
       flushText();
-      tokens.push({ kind: "open", mark: { type: "italic" } });
-      openStack.push({ closer: rest[0], mark: "italic" });
+      const mark: PMMark = { type: "italic" };
+      tokens.push({ kind: "open", mark });
+      openStack.push({ closer: rest[0], mark: "italic", ref: mark });
       index += 1;
       continue;
     }
@@ -176,7 +202,9 @@ function markOrder(mark: PMMark): number {
 
 function sameMark(a: PMMark, b: PMMark): boolean {
   if (a.type !== b.type) return false;
-  if (a.type === "lang" && b.type === "lang") return a.attrs.language === b.attrs.language;
+  if (a.type === "lang" && b.type === "lang") {
+    return a.attrs.language === b.attrs.language && a.attrs.bridge === b.attrs.bridge;
+  }
   return true;
 }
 
@@ -222,7 +250,11 @@ function serializeInline(content: PMInline[]): string {
     const inner = serializeInline(run);
     if (mark.type === "bold") out += wrapTrimmed(inner, "**", "**");
     else if (mark.type === "italic") out += wrapTrimmed(inner, "*", "*");
-    else out += wrapTrimmed(inner, mark.attrs.language === "es" ? "[[es:" : "[[en:", "]]");
+    else {
+      const open = mark.attrs.language === "es" ? "[[es:" : "[[en:";
+      const close = mark.attrs.bridge !== undefined ? `|${mark.attrs.bridge}]]` : "]]";
+      out += wrapTrimmed(inner, open, close);
+    }
     i = j;
   }
   return out;
