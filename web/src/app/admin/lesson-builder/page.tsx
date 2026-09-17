@@ -32,7 +32,7 @@ export default function LessonBuilderPage() {
   }, [lessons]);
 
   const courseModules = useCourseModules(dispatch, lessonsRef);
-  const { modules, getSyllabusMarkers, updateModules } = courseModules;
+  const { modules, getSyllabusMarkers, getLessonReviewSplit, updateModules } = courseModules;
 
   const currentCourse = useMemo(
     () => ({ lessons, modules }),
@@ -84,6 +84,7 @@ export default function LessonBuilderPage() {
     conceptDisplays,
     recordConceptDisplay,
     getSyllabusMarkers,
+    getLessonReviewSplit,
     flushSave,
     createLesson: courseModules.createLesson,
     previewLessonWithFlush,

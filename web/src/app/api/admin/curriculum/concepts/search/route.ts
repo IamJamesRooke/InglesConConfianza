@@ -29,11 +29,13 @@ type Row = {
   curriculumRole: string;
   exampleSpanish: string;
   exampleEnglish: string;
-  // The concept's `pos:*`/`grammar:*`/`construction:*` collection names
-  // (null when it has none): the lesson builder's syllabus card groups its
-  // pills by the full set, and a pill added from this typeahead must be
-  // groupable immediately, without a page reload (concept-typeahead.tsx
-  // records it into the display lookup alongside spanish/english/role).
+  // The concept's `pos:*`/`grammar:*`/`construction:*` collection names,
+  // plus the two `topic:*` facets "Time and place" also reads (`topic:time`,
+  // `topic:noun-time-*`) — null when it has none of them: the lesson
+  // builder's syllabus card groups its pills by the full set, and a pill
+  // added from this typeahead must be groupable immediately, without a page
+  // reload (concept-typeahead.tsx records it into the display lookup
+  // alongside spanish/english/role).
   collections: string[] | null;
 };
 
@@ -58,7 +60,9 @@ export async function GET(request: Request) {
         WHERE cc.concept_id = curriculum_concepts.id
           AND (cc.collection_name LIKE 'pos:%'
             OR cc.collection_name LIKE 'grammar:%'
-            OR cc.collection_name LIKE 'construction:%')
+            OR cc.collection_name LIKE 'construction:%'
+            OR cc.collection_name = 'topic:time'
+            OR cc.collection_name LIKE 'topic:noun-time-%')
       ) AS "collections"
     FROM curriculum_concepts
     WHERE curriculum_role <> 'Trash'

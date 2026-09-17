@@ -256,6 +256,57 @@ export function alsoTaughtAndReviewed(
   return { alsoTaught, reviewed };
 }
 
+// --- Per-lesson Introduced / Reviewed --------------------------------------
+
+export type LessonReviewSplit = {
+  /** This lesson's own Covers concepts whose first-ever appearance in the
+   * course *is* this lesson. */
+  introduced: LessonConcept[];
+  /** This lesson's own Covers concepts that already appeared in some
+   * earlier lesson. */
+  reviewed: LessonConcept[];
+  /** True when the course taught anything at all before this lesson — a
+   * fresh course's first lesson has nothing to review yet, and that's not
+   * a warning; a later lesson with zero reviewed concepts is. */
+  priorConceptsExist: boolean;
+};
+
+/** Splits a lesson's own "Covers" concepts into Introduced/Reviewed — fully
+ * derived from lesson order, never a teacher choice, since reordering
+ * lessons must reshuffle the split automatically (owner, 2026-09-17). A
+ * freehand concept counts as reviewed when it names the same thing (see
+ * `freehandMatchesItem`) as anything taught earlier, linked or not. */
+export function introducedAndReviewedForLesson(
+  lesson: Lesson,
+  lessonId: string,
+  timeline: CourseTimeline,
+  conceptDisplays?: ConceptDisplayLookup,
+): LessonReviewSplit {
+  const step = timeline.order.find((entry) => entry.lessonId === lessonId);
+  const lessonNumber = step?.lessonNumber ?? Number.POSITIVE_INFINITY;
+
+  const priorItems: SyllabusItem[] = [];
+  for (const [key, entry] of timeline.entries) {
+    if (entry.firstTaughtLesson < lessonNumber) {
+      const item = timeline.labels.get(key);
+      if (item) priorItems.push(item);
+    }
+  }
+  const priorKeys = new Set(priorItems.map(conceptKey));
+
+  const introduced: LessonConcept[] = [];
+  const reviewed: LessonConcept[] = [];
+  for (const concept of lesson.concepts ?? []) {
+    const key = conceptKey(concept);
+    const seenBefore =
+      priorKeys.has(key) ||
+      priorItems.some((item) => freehandMatchesItem(concept, item, conceptDisplays));
+    (seenBefore ? reviewed : introduced).push(concept);
+  }
+
+  return { introduced, reviewed, priorConceptsExist: priorItems.length > 0 };
+}
+
 // --- Review priority ---------------------------------------------------
 
 export type ReviewCandidate = { item: SyllabusItem; priority: number };

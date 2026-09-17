@@ -17,6 +17,27 @@ export type LessonCourseDraft = {
 
 export type LessonSaveState = "loading" | "idle" | "saving" | "saved" | "error";
 
+// `recordConceptDisplay`'s dirty-check: a display is unchanged only when
+// every field it renders from matches, `collections` included — dropping
+// `collections` from this comparison was the concrete bug behind "an
+// accepted/quick-edited concept keeps its stale group until reload": once a
+// concept's spanish/english/role were already recorded (e.g. it's used
+// elsewhere in the file), a later record carrying a *different* collections
+// list — a fresh typeahead accept, or a quick-edit's saved tags — compared
+// equal on the other three fields and was silently discarded, so
+// syllabus-groups.ts kept grouping the pill by the old (or absent) facets.
+// Exported so the shape can be unit-tested without mounting the hook.
+export function conceptDisplaysEqual(
+  a: ConceptDisplayLookup[string] | undefined,
+  b: ConceptDisplayLookup[string],
+): boolean {
+  if (!a) return false;
+  if (a.spanish !== b.spanish || a.english !== b.english || a.role !== b.role) return false;
+  const left = a.collections ?? [];
+  const right = b.collections ?? [];
+  return left.length === right.length && left.every((value, index) => value === right[index]);
+}
+
 type LoadedLessonFile = LessonFile & {
   conceptDisplays?: ConceptDisplayLookup;
 };
@@ -350,9 +371,7 @@ export function useLessonPersistence({
   const recordConceptDisplay = useCallback(
     (conceptId: string, display: ConceptDisplayLookup[string]) => {
       setConceptDisplays((current) =>
-        current[conceptId]?.spanish === display.spanish &&
-        current[conceptId]?.english === display.english &&
-        current[conceptId]?.role === display.role
+        conceptDisplaysEqual(current[conceptId], display)
           ? current
           : { ...current, [conceptId]: display },
       );

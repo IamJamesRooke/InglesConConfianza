@@ -37,6 +37,7 @@ test("group order is fixed and ends in Untagged", () => {
       "Prepositions and phrases",
       "Time and place",
       "Things and describing words",
+      "Determiners",
       "Untagged",
     ],
   );
@@ -73,9 +74,19 @@ test("syllabusGroupOf resolves the owner's ten flagged rows", () => {
     syllabusGroupOf(["pos:pronoun", "grammar:indefinite-pronoun"]),
     "things",
   );
-  // [la] cosa, algún -> Things and describing words.
+  // [la] cosa -> Things and describing words.
   assert.equal(syllabusGroupOf(["pos:noun"]), "things");
-  assert.equal(syllabusGroupOf(["pos:determiner"]), "things");
+  // algún, alguna -> Determiners, despite carrying the same broad pos:*
+  // shape "cosa" does.
+  assert.equal(syllabusGroupOf(["pos:determiner"]), "determiners");
+  assert.equal(syllabusGroupOf(["pos:determiner", "grammar:quantifier"]), "determiners");
+  // día -> Time and place, despite carrying pos:noun like a plain noun.
+  assert.equal(
+    syllabusGroupOf(["pos:noun", "topic:noun-time-days-periods"]),
+    "time-place",
+  );
+  // hoy/mañana/ahora -> Time and place via topic:time, not pos:adverb alone.
+  assert.equal(syllabusGroupOf(["pos:adverb", "topic:time"]), "time-place");
   // a row with no facets -> Untagged.
   assert.equal(syllabusGroupOf([]), "untagged");
   assert.equal(syllabusGroupOf(undefined), "untagged");
@@ -87,9 +98,10 @@ test("syllabusGroupOf maps every known bare or prefixed token", () => {
   assert.equal(syllabusGroupOf("connector"), "connectors");
   assert.equal(syllabusGroupOf("preposition"), "prepositions");
   assert.equal(syllabusGroupOf("adverb"), "time-place");
-  for (const pos of ["noun", "adjective", "determiner", "number", "quantifier", "interjection"]) {
+  for (const pos of ["noun", "adjective", "number", "quantifier", "interjection"]) {
     assert.equal(syllabusGroupOf(pos), "things");
   }
+  assert.equal(syllabusGroupOf("determiner"), "determiners");
   assert.equal(syllabusGroupLabel(syllabusGroupOf("pos:pronoun")), "People");
 });
 

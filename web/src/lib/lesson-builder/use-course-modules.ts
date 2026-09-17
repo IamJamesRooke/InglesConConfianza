@@ -8,9 +8,11 @@ import type { UndoableAction } from "@/lib/lesson-builder/history";
 import {
   buildCourseTimeline,
   coverageOfItem,
+  introducedAndReviewedForLesson,
   knownSetAtLesson,
   moduleStartLesson,
   syllabusOf,
+  type LessonReviewSplit,
 } from "@/lib/lesson-builder/syllabus";
 import type { Lesson, LessonFile, LessonModule } from "@/lib/lesson-builder/types";
 import { createId } from "@/lib/lesson-builder/utils";
@@ -64,6 +66,19 @@ export function useCourseModules(
         .map((item) => item.conceptId!),
     );
     return { known, mainOfModule, inSyllabusUncovered };
+  }, [lessonsRef]);
+
+  // Introduced/Reviewed split for a lesson's own "Covers" pills (owner,
+  // 2026-09-17) — fully derived from course order, same "stable identity,
+  // live data" pattern as getSyllabusMarkers above.
+  const getLessonReviewSplit = useCallback((lessonId: string): LessonReviewSplit => {
+    const empty: LessonReviewSplit = { introduced: [], reviewed: [], priorConceptsExist: false };
+    const currentModules = modulesRef.current;
+    const currentLessons = lessonsRef.current;
+    const lesson = currentLessons.find((candidate) => candidate.id === lessonId);
+    if (!lesson) return empty;
+    const timeline = buildCourseTimeline(currentModules, currentLessons);
+    return introducedAndReviewedForLesson(lesson, lessonId, timeline);
   }, [lessonsRef]);
 
   const updateModules = useCallback((next: LessonModule[]) => {
@@ -279,6 +294,7 @@ export function useCourseModules(
     modules,
     modulesRef,
     getSyllabusMarkers,
+    getLessonReviewSplit,
     updateModules,
     createLesson,
     duplicateLesson,

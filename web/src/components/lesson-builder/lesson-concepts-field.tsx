@@ -1,6 +1,6 @@
 "use client";
 
-import { X } from "lucide-react";
+import { TriangleAlert, X } from "lucide-react";
 import { useState, type Ref } from "react";
 
 import { ConceptPillLabel } from "@/components/lesson-builder/concept-pill-label";
@@ -12,6 +12,7 @@ import { renderConceptLabel } from "@/lib/lesson-builder/concept-label";
 import { conceptKey } from "@/lib/lesson-builder/lesson-file";
 import type { SyllabusMarkers } from "@/lib/lesson-builder/builder-context";
 import type { LessonConceptSuggestion } from "@/lib/lesson-builder/concept-suggestions";
+import type { LessonReviewSplit } from "@/lib/lesson-builder/syllabus";
 import type {
   ConceptDisplayLookup,
   LessonConcept,
@@ -47,6 +48,7 @@ export function LessonConceptsField({
   missingConceptKeys,
   syllabusMarkers,
   hideChips,
+  reviewSplit,
 }: {
   concepts: LessonConcept[];
   onAdd: (concept: LessonConcept) => void;
@@ -83,6 +85,15 @@ export function LessonConceptsField({
   // field for its search-and-add input; when true, the plain inline chips
   // below are skipped (pair suggestions and the input still render).
   hideChips?: boolean;
+  // Owner, 2026-09-17: a lesson's own Covers pills split into "Introduced"
+  // (this lesson's first-ever teaching of the concept) and "Reviewed" (it
+  // already appeared earlier) — fully derived (`syllabus.ts`'s
+  // `introducedAndReviewedForLesson`), never a teacher choice. When given
+  // (with `coversLayout` — see below), replaces the single "Covers" eyebrow
+  // with these two; `concepts` itself is still the source of truth for
+  // add/remove/search (`alreadyAdded`, chip identity), this only changes how
+  // the same list is grouped for display.
+  reviewSplit?: LessonReviewSplit;
 }) {
   const [localDisplays, setLocalDisplays] = useState<ConceptDisplayLookup>({});
 
@@ -99,56 +110,24 @@ export function LessonConceptsField({
     });
   }
 
-  // Priority dots (§5): only shown when the lesson's own concepts don't all
-  // share one curriculum role — six identical dots say nothing.
-  const conceptRoles = concepts
-    .map((concept) =>
-      concept.conceptId
-        ? localDisplays[concept.conceptId]?.role ?? conceptDisplays[concept.conceptId]?.role ?? "Unranked"
-        : null,
-    )
-    .filter((role): role is string => role !== null);
-  const rolesUniform = new Set(conceptRoles).size <= 1;
-  // The lesson's own "Covers" block (compact, chips shown, tied to a lesson
-  // via `coversFor`) gets the end-step treatment (owner, 2026-09-17): a
-  // small-caps "Covers" eyebrow above the pills (same class the syllabus
-  // card's "Main teaching points" eyebrow uses) and the add-input on its own
-  // line below them. The syllabus panel's own embed of this field (compact,
-  // `hideChips`, no `coversFor`) is unaffected — different surface.
-  const coversLayout = variant === "compact" && !hideChips;
-  const typeahead = (
-    <ConceptTypeahead
-      concepts={concepts}
-      onAdd={onAdd}
-      onAdvance={onAdvance}
-      recordDisplay={recordDisplay}
-      coversFor={coversFor}
-      variant={variant}
-      inputRef={inputRef}
-      syllabusMarkers={syllabusMarkers}
-    />
-  );
+  // Priority dots (§5): only shown when a group's own concepts don't all
+  // share one curriculum role — six identical dots say nothing. Computed
+  // per rendered group (the flat list normally; each of Introduced/Reviewed
+  // separately when `reviewSplit` splits the display — owner, 2026-09-17)
+  // so one all-P1 "Introduced" row doesn't lose its dots just because a
+  // mixed-role concept sits in "Reviewed".
+  function rolesUniformOf(list: LessonConcept[]): boolean {
+    const roles = list
+      .map((concept) =>
+        concept.conceptId
+          ? localDisplays[concept.conceptId]?.role ?? conceptDisplays[concept.conceptId]?.role ?? "Unranked"
+          : null,
+      )
+      .filter((role): role is string => role !== null);
+    return new Set(roles).size <= 1;
+  }
 
-  return (
-    <div
-      className={
-        (variant === "inline" || variant === "compact"
-          ? ""
-          : "border-b border-border bg-card px-6 py-3") + (coversLayout ? " lesson-concepts-field" : "")
-      }
-    >
-      <ReviewSuggestions suggestions={suggestions} onAdd={addSuggestion} />
-      {coversLayout && <span className="syllabus-group-eyebrow lesson-concepts-eyebrow">Covers</span>}
-      <div
-        className={variant === "compact" ? "lesson-concepts-row" : "flex flex-wrap items-center gap-1.5"}
-        data-roles-uniform={rolesUniform ? "true" : undefined}
-      >
-        {label && (
-          <span className={variant === "compact" ? "lesson-concepts-label" : "text-[11px] font-semibold uppercase tracking-[0.12em] text-muted-foreground"}>
-            {label}
-          </span>
-        )}
-        {!hideChips && concepts.map((concept) => {
+  function renderChip(concept: LessonConcept) {
           const met = coveredConceptKeys?.has(conceptKey(concept)) ?? false;
           const display = concept.conceptId
             ? localDisplays[concept.conceptId] ?? conceptDisplays[concept.conceptId]
@@ -159,9 +138,10 @@ export function LessonConceptsField({
               spanish: draft.spanish,
               english: draft.english,
               role: draft.role,
-              // The quick-edit dialog never touches collections — keep the
-              // known ones so the syllabus card can still group this pill.
-              collections: display?.collections,
+              // The quick-edit dialog's "Tags" field edits collections too
+              // (concept-quick-edit.tsx) — carry the saved list forward so a
+              // tag added/removed there re-groups the pill immediately.
+              collections: draft.collections,
             };
             recordDisplay(concept.conceptId, nextDisplay);
             onRelabel(concept.id, draft.spanish);
@@ -257,10 +237,98 @@ export function LessonConceptsField({
               <X className="size-3" aria-hidden="true" />
             </button>
           </span>
-          );
-        })}
-        {!coversLayout && typeahead}
-      </div>
+    );
+  }
+
+  // The lesson's own "Covers" block (compact, chips shown, tied to a lesson
+  // via `coversFor`) gets the end-step treatment (owner, 2026-09-17): a
+  // small-caps eyebrow above the pills (same class the syllabus card's
+  // "Main teaching points" eyebrow uses) and the add-input on its own line
+  // below them. The syllabus panel's own embed of this field (compact,
+  // `hideChips`, no `coversFor`) is unaffected — different surface.
+  const coversLayout = variant === "compact" && !hideChips;
+  // When a review split is supplied, the single "Covers" eyebrow becomes
+  // two derived ones, "Introduced"/"Reviewed" — see the `reviewSplit` prop
+  // doc above. `concepts` itself stays the field's source of truth (search,
+  // add, remove); this only changes how it's grouped for display.
+  const showReviewSplit = coversLayout && Boolean(reviewSplit);
+  // A lesson with Covers concepts, in a course that has taught something
+  // before it, but reviewing none of it — the owner's ask (2026-09-17): "a
+  // teacher should always be reviewing old material."
+  const reviewWarning = Boolean(
+    showReviewSplit &&
+      reviewSplit &&
+      reviewSplit.priorConceptsExist &&
+      concepts.length > 0 &&
+      reviewSplit.reviewed.length === 0,
+  );
+  const typeahead = (
+    <ConceptTypeahead
+      concepts={concepts}
+      onAdd={onAdd}
+      onAdvance={onAdvance}
+      recordDisplay={recordDisplay}
+      coversFor={coversFor}
+      variant={variant}
+      inputRef={inputRef}
+      syllabusMarkers={syllabusMarkers}
+    />
+  );
+
+  return (
+    <div
+      className={
+        (variant === "inline" || variant === "compact"
+          ? ""
+          : "border-b border-border bg-card px-6 py-3") + (coversLayout ? " lesson-concepts-field" : "")
+      }
+    >
+      <ReviewSuggestions suggestions={suggestions} onAdd={addSuggestion} />
+      {showReviewSplit && reviewSplit ? (
+        <>
+          <span className="syllabus-group-eyebrow lesson-concepts-eyebrow">Introduced</span>
+          <div
+            className="lesson-concepts-row"
+            data-roles-uniform={rolesUniformOf(reviewSplit.introduced) ? "true" : undefined}
+          >
+            {reviewSplit.introduced.map(renderChip)}
+          </div>
+          <span className="syllabus-group-eyebrow lesson-concepts-eyebrow">
+            Reviewed
+            {reviewWarning && (
+              <span
+                className="lesson-concepts-review-warning"
+                title="This lesson doesn't review any earlier material — a lesson should always review something old."
+              >
+                <TriangleAlert size={11} aria-hidden="true" />
+                no review
+              </span>
+            )}
+          </span>
+          <div
+            className="lesson-concepts-row"
+            data-roles-uniform={rolesUniformOf(reviewSplit.reviewed) ? "true" : undefined}
+          >
+            {reviewSplit.reviewed.map(renderChip)}
+          </div>
+        </>
+      ) : (
+        <>
+          {coversLayout && <span className="syllabus-group-eyebrow lesson-concepts-eyebrow">Covers</span>}
+          <div
+            className={variant === "compact" ? "lesson-concepts-row" : "flex flex-wrap items-center gap-1.5"}
+            data-roles-uniform={rolesUniformOf(concepts) ? "true" : undefined}
+          >
+            {label && (
+              <span className={variant === "compact" ? "lesson-concepts-label" : "text-[11px] font-semibold uppercase tracking-[0.12em] text-muted-foreground"}>
+                {label}
+              </span>
+            )}
+            {!hideChips && concepts.map(renderChip)}
+            {!coversLayout && typeahead}
+          </div>
+        </>
+      )}
       {coversLayout && <div className="lesson-concepts-add-row">{typeahead}</div>}
     </div>
   );

@@ -36,6 +36,7 @@ import { useEffect, useRef, useState, type DragEvent, type KeyboardEvent } from 
 
 import { ConceptPillLabel } from "@/components/lesson-builder/concept-pill-label";
 import { ConceptQuickEdit } from "@/components/lesson-builder/concept-quick-edit";
+import { ConceptTypeahead } from "@/components/lesson-builder/concept-typeahead";
 import { LessonConceptsField } from "@/components/lesson-builder/lesson-concepts-field";
 import { AddFromLevelPicker } from "@/components/lesson-builder/syllabus-fill-picker";
 import { renderConceptLabel } from "@/lib/lesson-builder/concept-label";
@@ -423,9 +424,10 @@ export function SyllabusPanel({
                 spanish: draft.spanish,
                 english: draft.english,
                 role: draft.role,
-                // The quick-edit dialog doesn't touch collections; keeping
-                // the known ones stops the pill jumping to "Untagged".
-                collections: conceptDisplays[item.conceptId]?.collections,
+                // The quick-edit dialog's "Tags" field edits collections too
+                // — carry the saved list forward so a tag added/removed
+                // there re-groups the pill immediately, not on reload.
+                collections: draft.collections,
               });
               relabelItem(item.id, draft.spanish);
             }}
@@ -539,17 +541,23 @@ export function SyllabusPanel({
         ))}
         <div className="syllabus-chip-row" {...dropProps}>
           {kind === "review" && reviewSuggestions.map((item) => renderProposedChip(item))}
-          <LessonConceptsField
-            variant="compact"
-            label=""
-            hideChips
-            concepts={items}
-            conceptDisplays={conceptDisplays}
-            onAdd={(concept) => patchSyllabus(add(syllabus, concept))}
-            onRemove={(id) => patchSyllabus(removeFnFor(kind)(syllabus, id))}
-            onRelabel={relabelItem}
-            onDisplayChange={onDisplayChange}
-          />
+          {/* The Main list's own add control moved above the "Main teaching
+              points" eyebrow (round 3, item 1) — a full-width static input,
+              not this trailing compact one. Review keeps this small field
+              where it always was. */}
+          {kind === "review" && (
+            <LessonConceptsField
+              variant="compact"
+              label=""
+              hideChips
+              concepts={items}
+              conceptDisplays={conceptDisplays}
+              onAdd={(concept) => patchSyllabus(add(syllabus, concept))}
+              onRemove={(id) => patchSyllabus(removeFnFor(kind)(syllabus, id))}
+              onRelabel={relabelItem}
+              onDisplayChange={onDisplayChange}
+            />
+          )}
         </div>
       </>
     );
@@ -595,6 +603,20 @@ export function SyllabusPanel({
       {open && (
         <div className="syllabus-card-body">
           <div className="syllabus-group">
+            {/* The card's primary control (round 3, item 1): a full-width
+                static input, not the small trailing compact field Review
+                still uses below. Same search-and-accept flow as the Covers
+                field's "Add concept…" input; grouping/collections wiring is
+                unchanged — see recordConceptDisplay in
+                use-lesson-persistence.ts. */}
+            <div className="syllabus-main-add-row">
+              <ConceptTypeahead
+                concepts={syllabus.main}
+                onAdd={(concept) => patchSyllabus(addMainItem(syllabus, concept))}
+                recordDisplay={onDisplayChange}
+                variant="main-add"
+              />
+            </div>
             <span className="syllabus-group-eyebrow">Main teaching points</span>
             {renderList("main")}
           </div>

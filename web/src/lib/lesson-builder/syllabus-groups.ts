@@ -25,17 +25,21 @@
 // (the order a concept's collections are tested against each group's rule,
 // first match wins). Render order is owner-approved reading order: People,
 // Verbs, Sentence patterns, Connectors, Prepositions and phrases, Time and
-// place, Things and describing words, Untagged. Evaluation order instead
-// puts the three narrow, facet-specific groups — Sentence patterns,
-// Prepositions and phrases, Things and describing words — ahead of the
-// broad `pos:pronoun` catch-all (People), because rows like "que yo [haga
-// algo]" (`construction:object-control` + `pos:pronoun`), "conmigo"
-// (`grammar:prepositional-pronoun` + `pos:pronoun`) and "algo"
-// (`grammar:indefinite-pronoun` + `pos:pronoun`) all carry `pos:pronoun`
-// too and must be claimed by the narrower rule first. See
-// `EVALUATION_ORDER` below — it is declared explicitly and asserted equal
-// in length/membership to `SYLLABUS_GROUPS` by a unit test, so the two
-// orders can never silently drift apart.
+// place, Things and describing words, Determiners, Untagged. Evaluation
+// order instead puts the narrow, facet-specific groups — Sentence patterns,
+// Prepositions and phrases, Determiners, Time and place — ahead of the
+// broad `pos:noun`/`pos:pronoun` catch-alls (Things, People), because rows
+// like "que yo [haga algo]" (`construction:object-control` + `pos:pronoun`),
+// "conmigo" (`grammar:prepositional-pronoun` + `pos:pronoun`), "algo"
+// (`grammar:indefinite-pronoun` + `pos:pronoun`), "algún"/"alguna"
+// (`pos:determiner`, which would otherwise fall into Things' own
+// `pos:determiner` catch-all) and "día" (`pos:noun` +
+// `topic:noun-time-days-periods`, which would otherwise fall into Things'
+// `pos:noun` catch-all) all carry a broad-group facet too and must be
+// claimed by the narrower rule first. See `EVALUATION_ORDER` below — it is
+// declared explicitly and asserted equal in length/membership to
+// `SYLLABUS_GROUPS` by a unit test, so the two orders can never silently
+// drift apart.
 
 export type SyllabusGroupId =
   | "people"
@@ -45,6 +49,7 @@ export type SyllabusGroupId =
   | "prepositions"
   | "time-place"
   | "things"
+  | "determiners"
   | "untagged";
 
 type CollectionMatcher = (collections: ReadonlySet<string>) => boolean;
@@ -69,6 +74,18 @@ function collection(name: string): CollectionMatcher {
   return (collections) => collections.has(name);
 }
 
+// "Time and place" also claims any `topic:noun-time-*` facet (e.g. día's
+// `topic:noun-time-days-periods`) — a topic sub-namespace, not one fixed
+// collection name (Sets have no prefix lookup, hence the scan).
+function collectionPrefix(prefix: string): CollectionMatcher {
+  return (collections) => {
+    for (const value of collections) {
+      if (value.startsWith(prefix)) return true;
+    }
+    return false;
+  };
+}
+
 function anyOf(...matchers: CollectionMatcher[]): CollectionMatcher {
   return (collections) => matchers.some((matcher) => matcher(collections));
 }
@@ -88,31 +105,41 @@ export const SYLLABUS_GROUPS: readonly GroupDefinition[] = [
     label: "Prepositions and phrases",
     match: anyOf(pos("preposition"), collection("grammar:prepositional-pronoun")),
   },
-  { id: "time-place", label: "Time and place", match: pos("adverb") },
+  {
+    id: "time-place",
+    label: "Time and place",
+    match: anyOf(pos("adverb"), collection("topic:time"), collectionPrefix("topic:noun-time-")),
+  },
   {
     id: "things",
     label: "Things and describing words",
     match: anyOf(
       collection("grammar:indefinite-pronoun"),
-      anyPos(["noun", "adjective", "determiner", "number", "quantifier", "interjection"]),
+      anyPos(["noun", "adjective", "number", "quantifier", "interjection"]),
     ),
+  },
+  {
+    id: "determiners",
+    label: "Determiners",
+    match: anyOf(pos("determiner"), collection("grammar:quantifier")),
   },
   { id: "untagged", label: "Untagged", match: () => false },
 ];
 
 // Evaluation order — see the header comment. Narrow facet rules (patterns,
-// prepositions, things) are tested before the broad `pos:pronoun` catch-all
-// (people); the remaining groups keep render order since none of their
-// rules overlap. "untagged" is never matched directly — it is the fallback
-// when nothing else claims a concept.
+// prepositions, determiners, time-place) are tested before the broad
+// `pos:noun`/`pos:pronoun` catch-alls (things, people); the remaining groups
+// keep render order since none of their rules overlap. "untagged" is never
+// matched directly — it is the fallback when nothing else claims a concept.
 const EVALUATION_ORDER: readonly SyllabusGroupId[] = [
   "patterns",
   "prepositions",
+  "determiners",
+  "time-place",
   "things",
   "people",
   "verbs",
   "connectors",
-  "time-place",
 ];
 
 const GROUPS_BY_ID = new Map(SYLLABUS_GROUPS.map((group) => [group.id, group] as const));

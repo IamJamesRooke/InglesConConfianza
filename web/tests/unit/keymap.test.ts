@@ -61,6 +61,7 @@ function fakeActions(overrides: Partial<LessonBuilderActions> = {}): LessonBuild
     conceptDisplays: {},
     recordConceptDisplay: () => {},
     getSyllabusMarkers: () => ({ known: new Set(), mainOfModule: new Set(), inSyllabusUncovered: new Set() }),
+    getLessonReviewSplit: () => ({ introduced: [], reviewed: [], priorConceptsExist: false }),
     deletionUndo: null,
     newLesson: record("newLesson", () => "new-lesson"),
     previewLesson: record("previewLesson"),

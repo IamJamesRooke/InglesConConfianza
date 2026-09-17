@@ -70,13 +70,16 @@ order below, which differs from render order — see the file's header comment):
 4. **Connectors** — `pos:connector`.
 5. **Prepositions and phrases** — `pos:preposition` or `grammar:prepositional-pronoun`
    ("para mí", "conmigo").
-6. **Time and place** — `pos:adverb`.
+6. **Time and place** — `pos:adverb`, `topic:time` (hoy, mañana, ahora), or any
+   `topic:noun-time-*` facet (día → `topic:noun-time-days-periods`).
 7. **Things and describing words** — `grammar:indefinite-pronoun` ("algo") or
-   `pos:` noun/adjective/determiner/number/quantifier/interjection.
-8. **Untagged** — no recognised collection, or a freehand pill with no curriculum row.
+   `pos:` noun/adjective/number/quantifier/interjection.
+8. **Determiners** — `pos:determiner` or `grammar:quantifier` (algún, alguna).
+9. **Untagged** — no recognised collection, or a freehand pill with no curriculum row.
 
-Groups 3, 5 and 7 are evaluated before group 1, since several of their rows also carry
-`pos:pronoun` and would otherwise be misread as plain People.
+Groups 3, 5, 6 and 8 are evaluated before groups 1 and 7, since several of their rows
+also carry a broad `pos:pronoun`/`pos:noun` facet and would otherwise be misread as
+plain People/Things.
 
 ## Derivations (one pure module, `web/src/lib/lesson-builder/syllabus.ts`)
 

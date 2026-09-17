@@ -13,9 +13,30 @@
 }
 .lesson-concepts-eyebrow {
   /* .syllabus-group-eyebrow already sets size/weight/tracking/case/color —
-     this only adds the block-level layout the syllabus card gets for free
-     from its own flex-column parent. */
-  display: block;
+     this adds the block-level layout the syllabus card gets for free from
+     its own flex-column parent, plus room for the "no review" warning
+     (owner, 2026-09-17) to sit inline after "Reviewed" without wrapping
+     onto its own line. */
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+/* "A teacher should always be reviewing old material" (owner, 2026-09-17):
+   shown after the "Reviewed" eyebrow only when this lesson has Covers
+   concepts, the course has taught something before it, and none of that
+   earlier material is being reviewed here — never on a fresh course's
+   first lesson, which has nothing to review yet. Same `--destructive`
+   token the syllabus card's own warning count uses
+   (`.syllabus-card-warning-count`) — one visual language for "the teacher
+   should look at this." */
+.lesson-concepts-review-warning {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  color: var(--destructive);
+  font-weight: 600;
+  letter-spacing: normal;
+  text-transform: none;
 }
 .lesson-concepts-add-row {
   display: flex;

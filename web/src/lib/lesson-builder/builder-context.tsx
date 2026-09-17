@@ -3,6 +3,7 @@
 import { createContext, useContext, type ReactNode } from "react";
 
 import type { DocumentBlockType } from "@/components/lesson-builder/slide-insert-control";
+import type { LessonReviewSplit } from "@/lib/lesson-builder/syllabus";
 import type { ConceptDisplayLookup, LessonBlock, LessonConcept } from "@/lib/lesson-builder/types";
 
 // The Covers picker's module-syllabus markers for one lesson — see
@@ -28,6 +29,9 @@ export type LessonBuilderActions = {
   // every closed lesson row to re-render when unrelated content changes —
   // see the comment on `getSyllabusMarkers` in page.tsx.
   getSyllabusMarkers: (lessonId: string) => SyllabusMarkers;
+  // Introduced/Reviewed split for a lesson's own "Covers" pills (owner,
+  // 2026-09-17) — same stable-identity pattern as getSyllabusMarkers.
+  getLessonReviewSplit: (lessonId: string) => LessonReviewSplit;
   deletionUndo: { lessonId: string; label: string } | null;
   newLesson: (moduleId: string, insertionIndex?: number) => string;
   previewLesson: (lessonId: string) => void;

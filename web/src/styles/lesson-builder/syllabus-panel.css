@@ -83,6 +83,21 @@
   flex-direction: column;
   gap: 4px;
 }
+/* The card's primary add control (round 3, item 1): full pill-row width,
+   sitting above the "Main teaching points" eyebrow. Reuses the Covers
+   field's `.lesson-concept-add` (padding/radius/font/focus behaviour) but
+   keeps a visible hairline at rest instead of that field's fully borderless
+   resting state — this is the card's primary control, not a quiet trailing
+   add. Review keeps its own small trailing field (`.lesson-concept-add`
+   with no extra class) where it always was. */
+.syllabus-main-add-row {
+  display: flex;
+}
+.syllabus-main-add {
+  width: 100%;
+  min-height: 30px;
+  border-color: var(--border);
+}
 .syllabus-group-eyebrow {
   font-size: 11px;
   font-weight: 700;

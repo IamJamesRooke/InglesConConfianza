@@ -99,6 +99,7 @@ const stubBuilderActions: LessonBuilderActions = {
   conceptDisplays: {},
   recordConceptDisplay: () => {},
   getSyllabusMarkers: () => ({ known: new Set(), mainOfModule: new Set(), inSyllabusUncovered: new Set() }),
+  getLessonReviewSplit: () => ({ introduced: [], reviewed: [], priorConceptsExist: false }),
   deletionUndo: null,
   newLesson: () => "",
   previewLesson: noop,

@@ -71,10 +71,23 @@ interaction decision below is in service of those three goals, not of
 - **"Covers" concepts** (`Lesson.concepts: LessonConcept[]`) — curriculum
   concepts a lesson teaches, tagged by hand from the compact field under the
   slide list via `LessonConceptsField`, which always renders in full (see
-  §5, "Covers never collapses" and "Covers reads as the end step"). A small-
-  caps "Covers" eyebrow sits above the pills; the add-input sits on its own
-  line under them. One suggestion source feeds the field, and it never
-  writes to the lesson on its own:
+  §5, "Covers never collapses" and "Covers reads as the end step"). The same
+  flat list is displayed split into two **fully derived** groups — never a
+  teacher choice, since reordering lessons must reshuffle the split
+  automatically (owner, 2026-09-17): **Introduced** (this lesson is this
+  concept's first-ever appearance in the course) and **Reviewed** (it
+  already appeared in an earlier lesson) — `syllabus.ts`'s
+  `introducedAndReviewedForLesson`, fed by the same course-timeline
+  machinery (`buildCourseTimeline`) the module syllabus card's own "Also
+  taught"/"Reviewed" split uses, just applied per-lesson. A lesson with
+  Covers concepts, in a course that has taught something before it, but
+  reviewing none of it, shows a small "⚠ no review" warning next to the
+  "Reviewed" eyebrow — never on a fresh course's first lesson, which has
+  nothing to review yet (`priorConceptsExist`). One shared add-input still
+  tags into the flat list; the derived split decides which eyebrow a
+  concept lands under, and it moves automatically if the course changes
+  around it. One suggestion source feeds the field, and it never writes to
+  the lesson on its own:
   - **Suggested review** (amber, `Snowflake` icon, dashed pill) — cold
     concepts from earlier lessons that haven't reappeared recently
     (`suggestConceptsForLesson`, `concept-suggestions.ts`). This is module
@@ -523,14 +536,21 @@ proposal doc's aspirations.
   concept) stays single-line plain text. Learner-facing pills
   (`components/learner/concept-pills.tsx`) are unaffected — separate
   component, separate audience.
-- **Module syllabus pills** (round 2, item A — `syllabus-panel.tsx`; regrouped
-  2026-09-16): Main/Review group under `.syllabus-pos-eyebrow` headings in a
-  fixed order — People, Verbs, Sentence patterns, Connectors, Prepositions
-  and phrases, Time and place, Things and describing words, Untagged — each
-  a rule over a concept's full `pos:*`/`grammar:*`/`construction:*`
-  collection set with explicit match precedence, not just its first `pos:*`
-  token (`syllabus-groups.ts`); grouping is render-only, so drag and
-  `Ctrl Alt` moves still walk the flat list. Each pill carries the Covers
+- **Module syllabus pills** (round 2, item A — `syllabus-panel.tsx`;
+  regrouped 2026-09-16, ninth group added round 3): Main/Review group under
+  `.syllabus-pos-eyebrow` headings in a fixed order — People, Verbs,
+  Sentence patterns, Connectors, Prepositions and phrases, Time and place,
+  Things and describing words, Determiners, Untagged — each a rule over a
+  concept's full `pos:*`/`grammar:*`/`construction:*`/`topic:*` collection
+  set with explicit match precedence, not just its first `pos:*` token
+  (`syllabus-groups.ts`); grouping is render-only, so drag and `Ctrl Alt`
+  moves still walk the flat list. The Main list's own add control
+  (round 3, item 1) is a full-width static input above the "Main teaching
+  points" eyebrow (`.syllabus-main-add-row`/`.syllabus-main-add`), sharing
+  the Covers field's `.lesson-concept-add` sizing/focus behaviour but with a
+  visible hairline border at rest, not that field's fully borderless resting
+  state — it is the card's primary control; Review keeps its own small
+  trailing add field where it always was. Each pill carries the Covers
   field's 6px `role-*` level dot (hollow for Unranked), named in its `title`
   and in the card-foot legend; the header adds "· N unranked". `is-uncovered`
   is now a plain hairline (dashed = `is-missing`), `is-covered` adds a check,
@@ -697,6 +717,19 @@ proposal doc's aspirations.
   Covers field (`coversFor` set, `hideChips` absent); the syllabus panel's
   own embed of the same component (`hideChips`, no `coversFor`) is
   untouched.
+- **Covers splits into Introduced/Reviewed** (owner, 2026-09-17): when
+  `reviewSplit` is supplied (`lesson-document.tsx`, from
+  `actions.getLessonReviewSplit`), the single "Covers" eyebrow becomes two —
+  "Introduced" then "Reviewed" — each with its own pill row
+  (`.lesson-concepts-row`), priority dots suppressed independently per row
+  (`rolesUniformOf`, not the flat list's uniformity). The "Reviewed" eyebrow
+  carries a `TriangleAlert` + "no review" warning (`.lesson-concepts-review-
+  warning`, same `--destructive` token the syllabus card's own warning count
+  uses) when this lesson has Covers concepts, the course taught something
+  before it, and none of that is being reviewed here. One add-input still
+  serves both groups (`.lesson-concepts-add-row`, unchanged from the
+  end-step layout above) — a newly tagged concept lands under whichever
+  eyebrow the course timeline says it belongs to.
 
 ## 6. Owner decisions & rejected ideas
 
@@ -762,6 +795,22 @@ without a fresh, explicit ask:
   "Suggested review" chips (module planning, cold concepts from earlier
   lessons) are unaffected — they were never derived from this lesson's own
   pairs.
+- **Covers splits into "Introduced"/"Reviewed," fully derived, never a
+  teacher choice (owner, 2026-09-17).** "I think they should be only
+  derived, teacher doesn't decide if taught for first time, that's because
+  the order of lessons might change." — `introducedAndReviewedForLesson`
+  (`syllabus.ts`) computes the split from the course timeline every render;
+  there is no UI to override which bucket a concept lands in. "Reviewed
+  only has concepts IN THAT LESSON that were present any point earlier in
+  the course" — confirmed as the literal definition (not, e.g., "reviewed
+  at any point in the module" or "reviewed within N lessons"). "Maybe there
+  should be a warning. Because a teacher should always be reviewing old
+  material." — the "no review" warning (§5) is that ask; deliberately
+  gated off on a course's first lesson (nothing to review yet) rather than
+  firing everywhere. Autocomplete/"get suggestions" for which concepts to
+  add was explicitly deferred: "LATER we will think about some sort of
+  'get suggestions' or 'autopopulate' functionality, but for now, manual" —
+  consistent with the "nothing guesses" decision above; not scheduled.
 - **"New lesson like this one" (E7, "Duplicate structure") was removed
   2026-09-15: the owner found no use for it.** The action, its mutation,
   its header icon, and its tests are gone; "Duplicate lesson" (full copy)
@@ -879,3 +928,5 @@ statically or spin up their own isolated server against a throwaway file.
 | R2-C | Syllabus-card regrouping (owner screenshot, 2026-09-16): the old six `pos:*`-only groups (Pronouns/Verbs/Connectors/Prepositions,time,degree/Words/Untagged) dumped facet-tagged pronouns ("conmigo", "que yo [haga algo]", "algo") in with plain "yo"/"me". Replaced with eight groups — People, Verbs, Sentence patterns, Connectors, Prepositions and phrases, Time and place, Things and describing words, Untagged — matched against a concept's full `pos:*`/`grammar:*`/`construction:*` collection set with explicit evaluation precedence (`patterns`/`prepositions`/`things` tested before the broad `people` catch-all; see the header comment and `EVALUATION_ORDER` in `syllabus-groups.ts`). Chose the smaller of the two owner-offered options: widened what `readConceptDisplays`/the by-level and search routes select (all `pos:`/`grammar:`/`construction:` collections, not just the first `pos:`) rather than precomputing the group id server-side, so the existing isomorphic `syllabus-groups.ts` stays the single source of truth for both client and server callers. `ConceptDisplayLookup`/`ByLevelConcept`/the search route's `Row` all renamed `pos` → `collections: string[]`. | Sonnet | done (2026-09-16) |
 | QE1 | Fixed: focusing a field inside the `ConceptQuickEdit` popover (a `createPortal` dialog, `[data-keymap-ignore]`) closed the popover — every blur handler that watches "did focus leave X" only checked DOM containment, and the portal renders outside `X`'s subtree. `lesson-library.tsx`'s document-level `focusout` listener (the shared editing selection, `leaveSlide`) was the reproducible case for both a lesson's Covers pill and a module Syllabus-card pill; `LessonConceptsField`'s `collapseIfFocusLeft` had the same blind spot. Added one shared predicate, `isFocusStillInside` (`focus.ts`): true when the target is inside the wrapper *or* inside any `[data-keymap-ignore]` element. Both call sites now use it. The popover also returns focus to its trigger pill on every close path (Cancel/Save/Delete/Escape/backdrop, via a new `closePopover()`; Escape is now handled at all — it previously did nothing). | Sonnet | done (2026-09-16) |
 | NG1 | "Nothing guesses" (owner, 2026-09-17): removed every automatic guess inside the lesson document — E3 (pair proposals from explanation marks), E5b (pair-field curriculum autocomplete, `pair-field-autocomplete.tsx`, the search route's `scope=label`), and E5a's pair-derived Auto-Covers (`isSyllabusEligiblePairMatch`/`matchPairTermsToConcepts`/`extractLessonPairTerms`, the `/api/admin/curriculum/concepts/suggest` route) — deleted outright with their tests; "Suggested review" is unaffected (module planning, not pair-derived). The Covers typeahead (`concept-typeahead.tsx`) got stricter instead of removed: `Enter`/`Tab` with nothing explicitly arrowed-to link a concept only on an exact (accent/case-insensitive) match of the typed text against a loaded result's Spanish label, freehand otherwise. `syllabus.ts` coverage/also-taught/warnings tolerate a freehand label naming the same thing as a syllabus item under that normalisation (`freehandMatchesItem`, new optional `conceptDisplays` param on `coverageOfItem`/`alsoTaughtAndReviewed`). Covers block restyled as the lesson's end step: small-caps "Covers" eyebrow (reusing `.syllabus-group-eyebrow`), add-input on its own line, 12px gap above matching slide rhythm (was 20px). | Sonnet | done (2026-09-17) |
+| R3 | Round-3 syllabus card: (1) the Main list's own add control moved to a full-width static input above the "Main teaching points" eyebrow (`ConceptTypeahead`'s new `"main-add"` variant, `.syllabus-main-add-row`/`.syllabus-main-add`) — same Covers-field sizing/focus behaviour but a visible hairline at rest, since this is the card's primary control; Review is unchanged. (2) Fixed a real "stale group until reload" bug: `use-lesson-persistence.ts`'s `recordConceptDisplay` compared only spanish/english/role before skipping a display update, so a later record that changed only `collections` — a concept already known elsewhere in the file re-accepted here, or a quick-edit dialog's saved tags — compared equal and was silently dropped (new exported `conceptDisplaysEqual`, unit-tested); the two `ConceptQuickEdit` `onSaved` callers (`syllabus-panel.tsx`, `lesson-concepts-field.tsx`) also used to discard the dialog's saved `collections` outright and keep the old ones — now pass `draft.collections` through. (3) Ninth group **Determiners** (`pos:determiner` or `grammar:quantifier`), rendered after Things/before Untagged; **Time and place** widened to also claim `topic:time` and any `topic:noun-time-*` facet (día's `topic:noun-time-days-periods`); both evaluated before the broad Things/People catch-alls (`syllabus-groups.ts`). | Sonnet | done (2026-09-17) |
+| NG2 | Covers splits into derived "Introduced"/"Reviewed" (owner, 2026-09-17): `introducedAndReviewedForLesson` (`syllabus.ts`, unit-tested) reuses the course-timeline machinery `alsoTaughtAndReviewed` already had for the module level, applied per-lesson; `getLessonReviewSplit` threaded through `use-course-modules.ts` → `builder-context.tsx`/`use-builder-actions.ts` → `page.tsx` → `lesson-document.tsx`, same stable-identity pattern as `getSyllabusMarkers`. `LessonConceptsField` renders two eyebrows instead of one when `reviewSplit` is given, sharing the same chip renderer and add-input; a `TriangleAlert` "no review" warning shows on "Reviewed" when the lesson has Covers concepts, the course taught something earlier, and none of it is reviewed here. | Sonnet | done (2026-09-17) |

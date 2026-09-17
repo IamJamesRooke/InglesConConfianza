@@ -71,7 +71,10 @@ export function ConceptTypeahead({
   coversFor?: string;
   onAdvance?: () => void;
   recordDisplay: (conceptId: string, display: ConceptDisplayLookup[string]) => void;
-  variant: "block" | "inline" | "compact";
+  // "main-add" is the syllabus card's own full-width static add input (round
+  // 3, item 1) — same search/accept behaviour as "compact", just styled and
+  // sized as the card's primary control rather than a small trailing field.
+  variant: "block" | "inline" | "compact" | "main-add";
   inputRef?: Ref<HTMLInputElement>;
   syllabusMarkers?: SyllabusMarkers;
 }) {
@@ -193,7 +196,13 @@ export function ConceptTypeahead({
   return (
     <div
       ref={fieldWrapRef}
-      className={`${variant === "compact" ? "relative min-w-28 max-w-56" : "relative min-w-40 flex-1"}`}
+      className={`relative ${
+        variant === "compact"
+          ? "min-w-28 max-w-56"
+          : variant === "main-add"
+            ? "w-full"
+            : "min-w-40 flex-1"
+      }`}
     >
       <input
         ref={inputRef}
@@ -211,9 +220,11 @@ export function ConceptTypeahead({
         placeholder={
           variant === "compact"
             ? "Add concept…"
-            : concepts.length === 0
-              ? "Type a concept, e.g. querer, poder, hablar…"
-              : "Add another…"
+            : variant === "main-add"
+              ? "Add a teaching point…"
+              : concepts.length === 0
+                ? "Type a concept, e.g. querer, poder, hablar…"
+                : "Add another…"
         }
         onFocus={() => setOpen(true)}
         onBlur={() => {
@@ -296,9 +307,13 @@ export function ConceptTypeahead({
             }
           }
         }}
-        className={variant === "compact"
-          ? "lesson-concept-add"
-          : "w-full rounded-md border border-input bg-card px-2.5 py-1.5 text-sm text-foreground outline-none transition placeholder:text-muted-foreground focus:border-ring focus:ring-3 focus:ring-ring/30"}
+        className={
+          variant === "compact"
+            ? "lesson-concept-add"
+            : variant === "main-add"
+              ? "lesson-concept-add syllabus-main-add"
+              : "w-full rounded-md border border-input bg-card px-2.5 py-1.5 text-sm text-foreground outline-none transition placeholder:text-muted-foreground focus:border-ring focus:ring-3 focus:ring-ring/30"
+        }
       />
       {showPopover && (
         <ul

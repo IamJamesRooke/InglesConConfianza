@@ -5,6 +5,7 @@ import type { Dispatch } from "react";
 
 import type { DocumentBlockType } from "@/components/lesson-builder/lesson-document";
 import type { LessonBuilderActions, SyllabusMarkers } from "@/lib/lesson-builder/builder-context";
+import type { LessonReviewSplit } from "@/lib/lesson-builder/syllabus";
 import { focusSelection } from "@/lib/lesson-builder/focus";
 import {
   findRestoredFocusTarget,
@@ -32,6 +33,7 @@ export function useBuilderActions(params: {
   conceptDisplays: LessonBuilderActions["conceptDisplays"];
   recordConceptDisplay: LessonBuilderActions["recordConceptDisplay"];
   getSyllabusMarkers: (lessonId: string) => SyllabusMarkers;
+  getLessonReviewSplit: (lessonId: string) => LessonReviewSplit;
   flushSave: () => void;
   createLesson: (moduleId: string, insertionIndex?: number) => string;
   previewLessonWithFlush: (lessonId: string) => void;
@@ -47,6 +49,7 @@ export function useBuilderActions(params: {
     conceptDisplays,
     recordConceptDisplay,
     getSyllabusMarkers,
+    getLessonReviewSplit,
     flushSave,
     createLesson,
     previewLessonWithFlush,
@@ -317,6 +320,7 @@ export function useBuilderActions(params: {
       conceptDisplays,
       recordConceptDisplay,
       getSyllabusMarkers,
+      getLessonReviewSplit,
       deletionUndo,
       newLesson: createLesson,
       previewLesson: previewLessonWithFlush,
@@ -432,6 +436,7 @@ export function useBuilderActions(params: {
       conceptDisplays,
       recordConceptDisplay,
       getSyllabusMarkers,
+      getLessonReviewSplit,
       deletionUndo,
       createLesson,
       previewLessonWithFlush,

@@ -7,6 +7,7 @@ import {
   computeModuleWarnings,
   coverageOfItem,
   courseProgress,
+  introducedAndReviewedForLesson,
   isModuleDone,
   knownSetAtLesson,
   moduleBrief,
@@ -155,6 +156,73 @@ test("alsoTaughtAndReviewed: a freehand concept matching a main item is not also
   assert.deepEqual(
     m1.alsoTaught.map((i) => i.label),
     ["unrelated-word"],
+  );
+});
+
+test("introducedAndReviewedForLesson: first lesson introduces everything, nothing to review yet", () => {
+  const querer = concept("querer", "querer");
+  const comer = concept("comer", "comer");
+  const lessons = [lesson("l1", [querer, comer])];
+  const modules = [module("m1", ["l1"])];
+  const timeline = buildCourseTimeline(modules, lessons);
+
+  const split = introducedAndReviewedForLesson(lessons[0], "l1", timeline);
+  assert.deepEqual(split.introduced.map((i) => i.conceptId), ["querer", "comer"]);
+  assert.deepEqual(split.reviewed, []);
+  assert.equal(split.priorConceptsExist, false);
+});
+
+test("introducedAndReviewedForLesson: a later lesson splits by whether the concept appeared before it", () => {
+  const querer = concept("querer", "querer");
+  const comer = concept("comer", "comer");
+  const arete = concept("arete", "arete");
+  const lessons = [
+    lesson("l1", [querer]),
+    lesson("l2", [querer, comer, arete]), // querer reviewed, comer/arete new
+  ];
+  const modules = [module("m1", ["l1", "l2"])];
+  const timeline = buildCourseTimeline(modules, lessons);
+
+  const split = introducedAndReviewedForLesson(lessons[1], "l2", timeline);
+  assert.deepEqual(split.introduced.map((i) => i.conceptId).sort(), ["arete", "comer"]);
+  assert.deepEqual(split.reviewed.map((i) => i.conceptId), ["querer"]);
+  assert.equal(split.priorConceptsExist, true);
+});
+
+test("introducedAndReviewedForLesson: is derived from course order, not lesson-list order — reordering reshuffles it", () => {
+  const querer = concept("querer", "querer");
+  const comer = concept("comer", "comer");
+  const lessons = [lesson("l1", [querer]), lesson("l2", [comer, querer])];
+  const modules = [module("m1", ["l1", "l2"])];
+  const timeline = buildCourseTimeline(modules, lessons);
+  const before = introducedAndReviewedForLesson(lessons[1], "l2", timeline);
+  assert.deepEqual(before.reviewed.map((i) => i.conceptId), ["querer"]);
+
+  // Swap the two lessons' order — l2 (now first) must introduce both of its
+  // own concepts, since nothing precedes it anymore; no teacher input.
+  const reorderedModules = [module("m1", ["l2", "l1"])];
+  const reorderedTimeline = buildCourseTimeline(reorderedModules, lessons);
+  const after = introducedAndReviewedForLesson(lessons[1], "l2", reorderedTimeline);
+  assert.deepEqual(after.introduced.map((i) => i.conceptId).sort(), ["comer", "querer"]);
+  assert.deepEqual(after.reviewed, []);
+  assert.equal(after.priorConceptsExist, false);
+});
+
+test("introducedAndReviewedForLesson: a freehand concept is reviewed when it names an earlier linked concept", () => {
+  const querer = concept("c-querer", "querer [algo]");
+  const freehandAlgo: LessonConcept = { id: "lc_algo", conceptId: null, label: "algo" };
+  const lessons = [
+    lesson("l1", [{ id: "syl_algo", conceptId: "c-algo", label: "algo" }]),
+    lesson("l2", [querer, freehandAlgo]),
+  ];
+  const modules = [module("m1", ["l1", "l2"])];
+  const timeline = buildCourseTimeline(modules, lessons);
+
+  const split = introducedAndReviewedForLesson(lessons[1], "l2", timeline);
+  assert.deepEqual(split.introduced.map((i) => i.conceptId), ["c-querer"]);
+  assert.deepEqual(
+    split.reviewed.map((i) => i.label),
+    ["algo"],
   );
 });
 

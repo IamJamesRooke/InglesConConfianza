@@ -19,6 +19,7 @@ const GROUP_ORDER = [
   "Prepositions and phrases",
   "Time and place",
   "Things and describing words",
+  "Determiners",
   "Untagged",
 ];
 
@@ -185,6 +186,27 @@ test("a concept already in the syllabus at load groups by its curriculum facet, 
     .locator(".syllabus-pos-group")
     .filter({ has: page.locator(".syllabus-pos-eyebrow", { hasText: "People" }) });
   await expect(people.locator(".syllabus-chip")).toContainText("yo");
+  const untagged = card
+    .locator(".syllabus-pos-group")
+    .filter({ has: page.locator(".syllabus-pos-eyebrow", { hasText: "Untagged" }) });
+  await expect(untagged).toHaveCount(0);
+});
+
+// Round 3, item 2: accepting a typeahead result from the card's own add
+// input must group the new pill immediately — no reload — including when
+// the group comes from a `topic:*` facet rather than a `pos:*`/`grammar:*`
+// one (Time and place's día carve-out, syllabus-groups.ts).
+test("accepting 'día' from the add input groups it under Time and place without reload", async ({
+  page,
+}) => {
+  test.setTimeout(60_000);
+  const card = await openSyllabus(page);
+  await addConcept(page, card, "día");
+
+  const timePlace = card
+    .locator(".syllabus-pos-group")
+    .filter({ has: page.locator(".syllabus-pos-eyebrow", { hasText: "Time and place" }) });
+  await expect(timePlace.locator(".syllabus-chip")).toContainText("día");
   const untagged = card
     .locator(".syllabus-pos-group")
     .filter({ has: page.locator(".syllabus-pos-eyebrow", { hasText: "Untagged" }) });

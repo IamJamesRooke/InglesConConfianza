@@ -3,6 +3,7 @@ import test from "node:test";
 
 import {
   LessonPersistenceQueue,
+  conceptDisplaysEqual,
   type LessonCourseDraft,
   type LessonPersistenceTransport,
   type LessonSaveState,
@@ -187,4 +188,25 @@ test("deletion waits for a pending first save and then removes the saved lesson"
   assert.ok(result);
   assert.deepEqual(result.modules[0].lessonIds, []);
   assert.equal(queue.isDirty(course([], result.modules[0])), false);
+});
+
+// Regression: `recordConceptDisplay`'s dirty-check once compared only
+// spanish/english/role, so a later record for an already-known concept that
+// changed only `collections` (a fresh typeahead accept for a concept used
+// elsewhere in the file, or a quick-edit dialog's saved tags) compared equal
+// and was silently dropped — the pill kept its stale group until reload.
+test("conceptDisplaysEqual treats a changed collections list as a real change", () => {
+  const base = { spanish: "día", english: "day", role: "P1", collections: ["pos:noun"] };
+  assert.equal(conceptDisplaysEqual(undefined, base), false);
+  assert.equal(conceptDisplaysEqual(base, { ...base }), true);
+  assert.equal(
+    conceptDisplaysEqual(base, { ...base, collections: ["pos:noun", "topic:noun-time-days-periods"] }),
+    false,
+  );
+  assert.equal(conceptDisplaysEqual(base, { ...base, collections: undefined }), false);
+  assert.equal(
+    conceptDisplaysEqual({ ...base, collections: undefined }, { ...base, collections: [] }),
+    true,
+  );
+  assert.equal(conceptDisplaysEqual(base, { ...base, role: "P2" }), false);
 });

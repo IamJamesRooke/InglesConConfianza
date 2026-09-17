@@ -7,12 +7,14 @@ export type ConceptDisplay = {
   spanish: string;
   english: string;
   role: CurriculumRole;
-  // The concept's `pos:*`/`grammar:*`/`construction:*` collection names
-  // (e.g. `["pos:pronoun", "grammar:prepositional-pronoun"]`); absent when
-  // it has none of them. Read by the lesson builder's syllabus card to
-  // group its pills (src/lib/lesson-builder/syllabus-groups.ts), which
-  // needs the full set, not just the first `pos:*` collection, to tell
-  // e.g. "conmigo" (prepositional pronoun) apart from plain "yo".
+  // The concept's `pos:*`/`grammar:*`/`construction:*` collection names,
+  // plus the two `topic:*` facets the syllabus card's "Time and place" group
+  // also reads (`topic:time`, and any `topic:noun-time-*` sub-facet like
+  // día's `topic:noun-time-days-periods`) — absent when it has none of
+  // them. Read by the lesson builder's syllabus card to group its pills
+  // (src/lib/lesson-builder/syllabus-groups.ts), which needs the full set,
+  // not just the first `pos:*` collection, to tell e.g. "conmigo"
+  // (prepositional pronoun) apart from plain "yo".
   collections?: string[];
 };
 
@@ -33,6 +35,8 @@ export async function readConceptDisplays(conceptIds: string[]) {
             { collectionName: { startsWith: "pos:" } },
             { collectionName: { startsWith: "grammar:" } },
             { collectionName: { startsWith: "construction:" } },
+            { collectionName: "topic:time" },
+            { collectionName: { startsWith: "topic:noun-time-" } },
           ],
         },
         orderBy: { position: "asc" },

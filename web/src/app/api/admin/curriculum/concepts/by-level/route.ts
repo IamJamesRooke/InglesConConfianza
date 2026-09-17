@@ -42,7 +42,9 @@ export async function GET(request: Request) {
         WHERE cc.concept_id = curriculum_concepts.id
           AND (cc.collection_name LIKE 'pos:%'
             OR cc.collection_name LIKE 'grammar:%'
-            OR cc.collection_name LIKE 'construction:%')
+            OR cc.collection_name LIKE 'construction:%'
+            OR cc.collection_name = 'topic:time'
+            OR cc.collection_name LIKE 'topic:noun-time-%')
       ) AS "collections"
     FROM curriculum_concepts
     WHERE curriculum_role = ${role as CurriculumRole}
