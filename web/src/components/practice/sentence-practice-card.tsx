@@ -1,14 +1,36 @@
 "use client";
 import { Check, Info, Lightbulb } from "lucide-react";
+import type { CSSProperties } from "react";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { PracticeMarkdown } from "@/components/practice/practice-markdown";
-import type { SentenceBlock } from "@/lib/lesson-builder/types";
+import type { LanguageBlock, SentenceBlock } from "@/lib/lesson-builder/types";
 import {
   diffChars,
   isAnswerAccepted,
   isMeaningfulLanguageBlock,
   pickClosestAnswer,
 } from "@/lib/lesson-builder/utils";
+
+// The answer field grows to fit whatever the learner types (`field-sizing:
+// content`, see practice-responsive-overrides.css), but that alone doesn't
+// stop a first paint / non-supporting browser from clipping a long accepted
+// answer — so this floor is sized to the longest accepted answer (or the
+// Spanish prompt, if that's longer) plus 2ch of slack, and used both as the
+// CSS fallback width and the `min-width` under `field-sizing: content`.
+// Single-blank cards read wider (bigger type), so they get a slightly taller
+// floor to match the previous fixed 12rem look.
+function answerMinChars(
+  languageBlock: LanguageBlock,
+  isSingleLanguageBlock: boolean,
+): number {
+  const longest = Math.max(
+    languageBlock.spanish.trim().length,
+    ...languageBlock.acceptedAnswers.map((answer) => answer.trim().length),
+  );
+  const withSlack = longest + 2;
+  return isSingleLanguageBlock ? Math.max(withSlack, 13) : withSlack;
+}
+
 export function SentencePracticeCard({
   sentence,
   onCompletionChange,
@@ -167,14 +189,28 @@ export function SentencePracticeCard({
                         />
                       )}
                   </span>
-                  <div className="answer-field">
-                    <span className="answer-field-sizer" aria-hidden="true">
-                      {(languageBlock.spanish.trim().length >=
-                      (languageBlock.acceptedAnswers[0]?.trim().length ?? 0)
-                        ? languageBlock.spanish
-                        : languageBlock.acceptedAnswers[0]
-                      )?.trim() || languageBlock.spanish}
-                    </span>
+                  <div
+                    className="answer-field"
+                    style={
+                      isVocabulary
+                        ? undefined
+                        : ({
+                            "--answer-chars": answerMinChars(
+                              languageBlock,
+                              isSingleLanguageBlock,
+                            ),
+                          } as CSSProperties)
+                    }
+                  >
+                    {isVocabulary && (
+                      <span className="answer-field-sizer" aria-hidden="true">
+                        {(languageBlock.spanish.trim().length >=
+                        (languageBlock.acceptedAnswers[0]?.trim().length ?? 0)
+                          ? languageBlock.spanish
+                          : languageBlock.acceptedAnswers[0]
+                        )?.trim() || languageBlock.spanish}
+                      </span>
+                    )}
                     <input
                       ref={(element) => {
                         inputRefs.current[languageBlockIndex] = element;

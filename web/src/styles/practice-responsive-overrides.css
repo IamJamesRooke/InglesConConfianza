@@ -292,8 +292,12 @@
   position: relative;
   min-width: 0;
 }
-/* A hidden copy of the longer text gives the field its width and height;
-   the real input is overlaid on top. */
+/* Vocabulary rows only: the answer column's width comes from the grid track
+   (see the .vocabulary-practice .answer-piece grid below), not from content,
+   so a hidden copy of the longer text gives the row its natural height and
+   the real input is overlaid on top. Ordinary sentence/single-answer blanks
+   size the input itself directly (field-sizing: content, below) and don't
+   render this element at all. */
 .answer-field-sizer {
   display: block;
   visibility: hidden;
@@ -307,10 +311,6 @@
   font-size: 24px;
   font-weight: 600;
   line-height: 1.5;
-}
-.single-answer .answer-field-sizer {
-  min-width: 12rem;
-  font-size: 27px;
 }
 .answer-input {
   display: block;
@@ -337,6 +337,28 @@
 .single-answer .answer-input {
   text-align: center;
   font-size: 27px;
+}
+/* Sentence and single-answer blanks (never vocabulary rows, which keep the
+   hidden-sizer/absolute-overlay approach above): size the field to its own
+   rendered content instead of a character count, so a wide-glyph answer like
+   "to know" is never a hair narrower than the text it holds. `field-sizing:
+   content` (Chromium/Firefox) grows the input as the learner types; the
+   `width` fallback below is what non-supporting browsers (older Safari) use
+   instead, since field-sizing: content ignores the `width`/`min-width`
+   properties where it's supported. --answer-chars is set per field from the
+   longest accepted answer (or the Spanish prompt) + 2ch of slack, and the
+   36px accounts for this element's own padding + border, since box-sizing
+   is border-box project-wide. */
+.sentence-practice:not(.vocabulary-practice) .answer-input {
+  display: inline-block;
+  field-sizing: content;
+  width: calc(var(--answer-chars, 6) * 1ch + 36px);
+  min-width: calc(var(--answer-chars, 6) * 1ch + 36px);
+  max-width: 26rem;
+}
+.lesson-session .sentence-practice:not(.vocabulary-practice) .answer-input {
+  position: static;
+  inset: auto;
 }
 .answer-input::placeholder {
   color: var(--muted-foreground);
@@ -620,6 +642,9 @@
   .course-curriculum {
     display: block;
     padding-block: 28px;
+  }
+  .course-journey {
+    padding-block: 40px;
   }
   .module-navigation {
     margin-bottom: 28px;
