@@ -471,3 +471,113 @@ test("with every lesson in a module already complete, reopening an earlier one s
     expect(response.ok()).toBeTruthy();
   }
 });
+
+// Owner screenshot, 2026-09-17 (practice completion at ~910x800): the page
+// was wider than the viewport — the header's mute icon clipped at the right
+// edge, the completion stack pinned left instead of centred. Nothing on a
+// learner screen may scroll sideways, and the completion stack must stay a
+// centred 720 column at every width above the phone.
+const OVERFLOW_WIDTHS = [
+  { width: 390, height: 844 },
+  { width: 768, height: 900 },
+  { width: 910, height: 800 },
+  { width: 1280, height: 900 },
+];
+
+test("no learner screen scrolls sideways, and the completion stack stays a centred column", async ({
+  page,
+  request,
+}) => {
+  test.setTimeout(180_000);
+  const courseResponse = await request.get("/api/admin/lesson-builder/lessons");
+  const course = (await courseResponse.json()) as {
+    modules: Array<{ id: string }>;
+  };
+  const moduleId = course.modules[0].id;
+  const lessons = [
+    moduleCompletionLesson("lesson_ov_1", "uno", "one"),
+    moduleCompletionLesson("lesson_ov_2", "dos", "two"),
+  ];
+  for (const lesson of lessons) {
+    const response = await request.put(
+      `/api/admin/lesson-builder/lessons/${lesson.id}`,
+      { data: { lesson, moduleId } },
+    );
+    expect(response.ok()).toBeTruthy();
+  }
+
+  await page.goto("/");
+  await page.evaluate((ids: string[]) => {
+    const completedAt = new Date().toISOString();
+    window.localStorage.setItem(
+      "icc.lessonProgress.v1",
+      JSON.stringify(Object.fromEntries(ids.map((id) => [id, { completedAt }]))),
+    );
+  }, lessons.map((lesson) => lesson.id));
+
+  for (const size of OVERFLOW_WIDTHS) {
+    await page.setViewportSize(size);
+
+    // A slide (the sentence stage) and both completion views.
+    await page.goto(`/practice?lesson=${lessons[0].id}`);
+    await page.locator(".lesson-celebration").waitFor();
+    await expectNoSidewaysScroll(page, `completion-next @ ${size.width}`);
+    await expectCentredCompletion(page, size.width);
+
+    await page.goto(`/practice?lesson=${lessons[1].id}`);
+    await page.locator(".lesson-celebration").waitFor();
+    await expectNoSidewaysScroll(page, `completion-module @ ${size.width}`);
+    await expectCentredCompletion(page, size.width);
+
+    await page.goto("/");
+    await page.locator(".course-home").waitFor();
+    await expectNoSidewaysScroll(page, `home @ ${size.width}`);
+  }
+
+  for (const lesson of lessons) {
+    const response = await request.delete(
+      `/api/admin/lesson-builder/lessons/${lesson.id}`,
+    );
+    expect(response.ok()).toBeTruthy();
+  }
+});
+
+async function expectNoSidewaysScroll(
+  page: import("@playwright/test").Page,
+  label: string,
+) {
+  const measured = await page.evaluate(() => {
+    const innerWidth = window.innerWidth;
+    const offenders: string[] = [];
+    for (const element of Array.from(document.querySelectorAll("*"))) {
+      const box = element.getBoundingClientRect();
+      if (box.width === 0 && box.height === 0) continue;
+      if (box.right > innerWidth + 0.5 || box.left < -0.5) {
+        const className =
+          typeof element.className === "string" ? element.className : "";
+        offenders.push(`${element.tagName.toLowerCase()}.${className.trim()}`);
+      }
+    }
+    return {
+      innerWidth,
+      scrollWidth: document.documentElement.scrollWidth,
+      offenders: offenders.slice(0, 5),
+    };
+  });
+  expect(
+    measured.scrollWidth,
+    `${label}: scrollWidth ${measured.scrollWidth} > innerWidth ${measured.innerWidth}; offenders: ${measured.offenders.join(", ")}`,
+  ).toBeLessThanOrEqual(measured.innerWidth);
+}
+
+async function expectCentredCompletion(
+  page: import("@playwright/test").Page,
+  width: number,
+) {
+  const stack = await page.locator(".lesson-celebration").boundingBox();
+  expect(stack).not.toBeNull();
+  expect(stack!.width).toBeLessThanOrEqual(720);
+  if (width >= 768) {
+    expect(Math.abs(stack!.x - (width - stack!.width) / 2)).toBeLessThanOrEqual(2);
+  }
+}

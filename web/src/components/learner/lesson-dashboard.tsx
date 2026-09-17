@@ -168,30 +168,25 @@ export function LessonDashboard({
           </section>
         )}
 
-        <footer className="site-footer">
-          <div className="site-footer-top">
-            <div className="site-footer-brand">
-              <div className="site-footer-brand-row">
-                <BrandMark size={28} />
-                <span className="site-footer-name">Inglés con Confianza</span>
-              </div>
-              <p className="site-footer-tagline">
-                Inglés para hispanohablantes, una frase real a la vez.
-              </p>
-            </div>
-            <nav className="site-footer-links" aria-label="Enlaces del pie de página">
-              <Link href="/">Inicio</Link>
-              <button type="button" onClick={() => feedbackSheetRef.current?.open()}>
-                Comentar
-              </button>
-              <a href="#">Sobre el curso</a>
-            </nav>
+      </div>
+      {/* Owner, 2026-09-17: a distinct dark band, full-bleed edge to edge with
+          its content inside the same 1120 column as the rest of the home. No
+          link row (Inicio/Comentar/Sobre el curso earned nothing) and no
+          hairline — the band itself is the separation. */}
+      <footer className="site-footer">
+        <div className="site-footer-inner">
+          <div className="site-footer-brand-row">
+            <BrandMark size={28} />
+            <span className="site-footer-name">Inglés con Confianza</span>
           </div>
+          <p className="site-footer-tagline">
+            Inglés para hispanohablantes, una frase real a la vez.
+          </p>
           <p className="site-footer-copyright">
             © 2026 Inglés con Confianza · Hecho en Bogotá
           </p>
-        </footer>
-      </div>
+        </div>
+      </footer>
       <FeedbackSheet
         ref={feedbackSheetRef}
         context={{

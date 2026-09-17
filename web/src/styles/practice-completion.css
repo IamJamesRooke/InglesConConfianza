@@ -16,6 +16,7 @@
    to its content instead of the full centred column. */
 .completion-final-row {
   display: inline-flex;
+  text-align: left;
   align-items: center;
   gap: 8px;
   max-width: 100%;
@@ -73,6 +74,7 @@
 }
 .completion-next-card {
   padding: 20px;
+  text-align: left;
   border: 1px solid var(--border);
   border-radius: 16px;
   background: var(--surface-writing);

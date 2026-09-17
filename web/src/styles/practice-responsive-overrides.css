@@ -47,7 +47,11 @@
   flex-shrink: 0;
   width: 100%;
   height: 48px;
-  padding-inline: 12px;
+  /* One side gutter at every width above the small phone (owner screenshot,
+     2026-09-17: at ~910 the 12px gutter read as the mute icon being clipped
+     against the edge). 12px comes back below 480, where 20px would crowd
+     the bar. */
+  padding-inline: 20px;
   background: var(--primary);
   border: 0;
   box-shadow: none;
@@ -56,7 +60,6 @@
 @media (min-width: 1024px) {
   .lesson-topbar {
     height: 56px;
-    padding-inline: 20px;
   }
 }
 .learner-icon-button {
@@ -862,8 +865,12 @@
   .module-progress {
     margin-top: 16px;
   }
+  /* Status strip stays 48px on a phone (direction, "LESSON" item 1): only
+     the side gutter changes here. The old `padding: 16px 20px 20px` was a
+     leftover from the pre-L2a header — inside a fixed 48px bar it left a
+     12px content box, so the 40px icon buttons hung out of the strip and
+     their glyphs sat 2px above centre. */
   .lesson-topbar {
-    padding: 16px 20px 20px;
     gap: 14px;
   }
   /* One card recipe (direction, "Cards"): 32px padding desktop, 24px phone —

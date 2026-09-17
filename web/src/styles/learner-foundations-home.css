@@ -161,7 +161,9 @@
    durations/counters, no per-row skip/reset. */
 .course-home {
   min-height: calc(100dvh - 56px);
-  padding-bottom: 48px;
+  /* No bottom padding: the dark footer band closes the page edge to edge,
+     and its own 48px padding-block is the breathing room. */
+  padding-bottom: 0;
   color: var(--foreground);
   background: var(--background);
   font-family: var(--font-sans);
@@ -483,30 +485,23 @@
 }
 
 /* ---------- Footer ---------- */
-/* A proper site footer (owner, 2026-09-17) — restrained, one hairline
-   border, no other decoration. Brand + tagline left, a small link row
-   right (stacks under on phone), a copyright line across the bottom. */
+/* Owner, 2026-09-17: a distinct dark band closing the page — full-bleed
+   edge to edge, its content inside the same 1120 column, 48px padding-block,
+   no hairline and no link row. Colour comes from the shared tokens
+   (repo rule: colour literals only in globals.css). */
 .site-footer {
   margin-top: 48px;
-  border-top: 1px solid var(--border);
-  padding-block: 32px;
+  padding-block: 48px;
+  background: var(--ink-deep);
+  color: var(--primary-foreground);
+}
+.site-footer-inner {
+  width: min(calc(100% - 40px), 1120px);
+  margin-inline: auto;
 }
 @media (min-width: 900px) {
-  .site-footer {
-    padding-block: 48px;
-  }
-}
-.site-footer-top {
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
-}
-@media (min-width: 700px) {
-  .site-footer-top {
-    flex-direction: row;
-    align-items: flex-start;
-    justify-content: space-between;
-    gap: 32px;
+  .site-footer-inner {
+    width: min(calc(100% - 96px), 1120px);
   }
 }
 .site-footer-brand-row {
@@ -517,37 +512,17 @@
 .site-footer-name {
   font-size: var(--t-ui);
   font-weight: 600;
-  color: var(--foreground);
+  color: var(--primary-foreground);
 }
 .site-footer-tagline {
-  margin: 8px 0 0;
+  margin: 12px 0 0;
   font-size: var(--t-ui);
-  color: var(--ink-muted, var(--muted-foreground));
-}
-.site-footer-links {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px 24px;
-  font-size: var(--t-ui);
-}
-.site-footer-links a,
-.site-footer-links button {
-  padding: 0;
-  border: 0;
-  background: none;
-  font: inherit;
-  color: var(--foreground);
-  text-decoration: none;
-  cursor: pointer;
-}
-.site-footer-links a:hover,
-.site-footer-links button:hover {
-  text-decoration: underline;
+  color: color-mix(in oklch, var(--primary-foreground) 70%, transparent);
 }
 .site-footer-copyright {
   margin: 32px 0 0;
   font-size: var(--t-eyebrow);
-  color: var(--ink-muted, var(--muted-foreground));
+  color: color-mix(in oklch, var(--primary-foreground) 70%, transparent);
 }
 
 

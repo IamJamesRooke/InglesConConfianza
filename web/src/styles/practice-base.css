@@ -26,10 +26,13 @@
   min-width: 0;
 }
 /* Completion (direction, COMPLETION section): a quiet stack directly on the
-   canvas, left-aligned like the rest of the stage — not a card. The
-   `.lesson-session`-scoped max-width/centring override lives in
-   practice-responsive-overrides.css. */
+   canvas — not a card. Direction, COMPLETION item 2 is "Stack, centred": the
+   column was already centred (max-width/margin-inline live in
+   practice-responsive-overrides.css) but its text hugged the column's left
+   edge while the CTA was centred under it, which read as a stack pinned left
+   under a floating button (owner screenshot, 2026-09-17). */
 .lesson-celebration {
   width: 100%;
+  text-align: center;
 }
 
