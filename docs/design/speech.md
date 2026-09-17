@@ -115,8 +115,10 @@ Generated clips are deploy assets and stay committed (small; not gitignored).
 
 ## Explanation voice track
 
-> Owner decision 2026-09-17. Generator half only (this section); playback (auto-play on
-> slide entry, replay button, "listen" in the builder) is a later session.
+> Owner decision 2026-09-17. Generator half in this section; playback (auto-play on
+> slide entry, replay button, the bridge shown small, "listen" in the builder) is now
+> built too — see "Playback" below and `docs/design/student-experience.md`
+> "Explanation audio" for the learner-facing writeup.
 
 Explanations are read too, but by a single narrator rather than the per-slide speaker
 roster: ONE American voice (`en-US-Neural2-D`, en-US) reads the whole explanation
@@ -172,11 +174,40 @@ it already does for speaker clips.
 
 `src/lib/learner/speech.ts` gained `explanationClipUrl(markdown): Promise<string|null>`
 — manifest-aware, resolves `/audio/explanations/<sha1>.mp3` when listed, else `null`.
-Never throws. Not called from any UI yet.
+Never throws.
+
+**Playback** (`src/components/practice/explanation-step.tsx`): on mount, if
+`explanationClipUrl(markdown)` resolves a URL and speech isn't muted, a fresh
+`Audio(url)` plays once automatically — the learner has already interacted with the
+app to get here, so autoplay is allowed; a rejected `play()` is swallowed like every
+other speech path. A 40px "Escuchar" control (`Volume2`, top-right inside the card's
+own padding) replays it — always a new `Audio` instance per play, never reused, so a
+replay is a real new request and a subtle pulsing ring (reduced motion: none) can key
+off that instance's own `onplay`/`onended`. Leaving the slide (markdown changes, or
+the component unmounts) pauses whatever's currently playing. No clip → no control at
+all; this never falls back to browser synthesis, since a mixed-language explanation
+read by the wrong voice would be actively wrong, not lower quality. The mute toggle
+applies both to autoplay and, via `subscribeMuted`, stops a clip already playing the
+moment the learner mutes mid-explanation.
+
+The bridge itself is shown to the learner, small: `PracticeMarkdown`
+(`src/components/practice/practice-markdown.tsx`) splits an `en` mark's content on its
+last `|` (the bridge is always appended last, after any nested bold/italic closes) and
+renders the respelling in a `.practice-language-bridge` span — `--ink-muted`,
+`--t-eyebrow` size, not uppercase, no tracking — directly after the word, e.g.
+"different ·DIFF-rent". `es` marks are never split this way (a stray `|` there is just
+text).
+
+**Builder** (`src/components/lesson-builder/explanation-editor.tsx`,
+`explanation-commands.ts`): the mark popover gains a "Pronunciation" text field
+whenever the caret sits inside an `en` mark (selection or not); it reads/writes the
+`bridge` attribute via `setExplanationBridge`, which extends a collapsed caret to the
+whole marked word first. `lesson-document.tsx`'s per-slide hover icon cluster gains a
+"Listen" button (explanation slides only) that plays the clip if one exists, else
+shows a "Generate audio first (npm run audio:generate)" tooltip and stays disabled.
 
 ## Not in scope now
 
-Recording, cloud voices, per-piece speaker changes, speed control, Spanish speech
-(for the per-slide speakers), pronunciation scoring, and — for the explanation voice
-track specifically — playback UI (auto-play, replay, builder "listen" button, showing
-the bridge small to the learner).
+Recording, cloud voices, per-piece speaker changes, speed control, and Spanish speech
+(for the per-slide speakers and for explanations — the narrator reads Spanish text
+with a gringo accent on purpose, per the owner call above), and pronunciation scoring.

@@ -115,6 +115,27 @@ export function setExplanationLanguage(editor: Editor, language: Language | null
   });
 }
 
+/**
+ * Sets (or clears, with `bridge: null`) the pronunciation-bridge attribute
+ * on the `en` mark the caret is inside, or on a selection — see
+ * docs/design/speech.md "Explanation voice track" and the `Lang` mark's
+ * `bridge` attribute in explanation-schema.ts. `extendMarkRange` grows a
+ * collapsed caret to the mark's own boundaries first, so a bridge typed
+ * while the caret merely sits inside a marked word (no selection) still
+ * lands on the whole word, matching how the language chords already treat
+ * a collapsed caret. No-ops (returns false) when the caret/selection isn't
+ * inside an `en` mark at all.
+ */
+export function setExplanationBridge(editor: Editor, bridge: string | null): boolean {
+  if (!editor.isActive("lang", { language: "en" })) return false;
+  return editor
+    .chain()
+    .focus()
+    .extendMarkRange("lang")
+    .updateAttributes("lang", { bridge: bridge && bridge.trim() ? bridge.trim() : null })
+    .run();
+}
+
 /** Bold/italic, from the toolbar and from `Ctrl/⌘+B` / `Ctrl/⌘+I`. Tiptap's
  * Bold/Italic extensions bind `Mod-b`/`Mod-i` themselves, but the chord goes
  * through the shared KEYMAP instead, for the same reason the language chords

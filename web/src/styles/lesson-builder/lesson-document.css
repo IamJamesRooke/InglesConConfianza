@@ -165,6 +165,17 @@
 .lesson-document-block-actions button.danger:focus-visible {
   color: var(--destructive);
 }
+/* "Listen" (docs/design/speech.md "Explanation voice track"): disabled
+   until a generated clip exists for this explanation's exact markdown —
+   the title attribute carries the "generate audio first" hint. */
+.lesson-document-block-actions button:disabled {
+  cursor: default;
+  opacity: 0.45;
+}
+.lesson-document-block-actions button:disabled:hover {
+  color: var(--muted-foreground);
+  background: var(--surface-writing);
+}
 @media (hover: none), (pointer: coarse) {
   .lesson-document-block-actions {
     opacity: 1;

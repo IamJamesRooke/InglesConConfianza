@@ -437,6 +437,33 @@
   color: var(--primary-foreground);
   background: var(--primary);
 }
+/* Pronunciation field (docs/design/speech.md "Explanation voice track"):
+   shown in the same popover, on the same row when there's room (the
+   toolbar's own flex-wrap), when the caret sits inside an `en` mark. */
+.authoring-format-menu-bridge {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 0 4px;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--muted-foreground);
+}
+.authoring-format-menu-bridge input {
+  min-height: 22px;
+  width: 96px;
+  padding: 0 6px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: var(--card);
+  color: var(--foreground);
+  font-size: 11px;
+  font-weight: 600;
+}
+.authoring-format-menu-bridge input:focus-visible {
+  outline: 3px solid color-mix(in oklch, var(--primary) 32%, transparent);
+  outline-offset: 1px;
+}
 .authoring-controls {
   padding: 13px 32px;
 }

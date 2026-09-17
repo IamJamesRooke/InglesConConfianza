@@ -601,3 +601,49 @@ down to 514px). Screenshots from a throwaway spec (deleted after) on
 `/tmp/claude-1000/explanation-v3-1280.png`,
 `/tmp/claude-1000/completion-v3-reopen-1280.png`,
 `/tmp/claude-1000/vocab-v3-1280.png`.
+
+## 2026-09-17 — Explanation audio (playback)
+
+The generator half of the explanation voice track (one American narrator,
+`[[en:word|BRIDGE]]` pronunciation-bridge notation, SSML — see
+`docs/design/speech.md` "Explanation voice track") now has its playback half
+too.
+
+**Learner.** `ExplanationStep` checks `explanationClipUrl(markdown)` on
+mount; if a clip exists and speech isn't muted, it plays once automatically
+— the learner has already interacted with the app, so autoplay is allowed,
+and a rejected `play()` is swallowed silently like every other speech path.
+A 40px "Escuchar" control (`Volume2`, `--primary`, top-right inside the
+card's own padding) replays it, showing a subtle pulsing ring while it
+plays (`prefers-reduced-motion`: none). Each play — auto or replay — is a
+fresh `Audio` instance, so a replay is a real new request, not a re-trigger
+of a cached one. Leaving the slide pauses whatever's playing. No clip → no
+control at all; this never falls back to browser synthesis, since a
+mixed-language explanation read by the wrong voice would be actively wrong.
+The header's mute toggle silences both the autoplay and, live, a clip
+already playing.
+
+A bridged `en` mark's respelling is shown to the learner, small: quiet
+`--ink-muted` text at `--t-eyebrow` size (not uppercase, no tracking)
+directly after the word, e.g. "different ·DIFF-rent" — `PracticeMarkdown`
+splits the mark's content on its last `|` (the bridge is always appended
+last, after any nested bold/italic closes) rather than showing the raw
+`[[en:…|…]]` dialect.
+
+**Builder.** The mark popover gains a "Pronunciation" text field whenever
+the caret sits inside an `en` mark, selection or not — a plain input, not a
+chord, writing the `bridge` attribute on blur/Enter
+(`setExplanationBridge`, `explanation-commands.ts`). Each explanation
+slide's hover icon cluster gains a "Listen" button that plays the generated
+clip if one exists for that exact markdown, else stays disabled with a
+"Generate audio first (npm run audio:generate)" tooltip.
+
+Verified with `npm run test:unit` (386/386, unchanged — the new behaviour
+is UI-only, covered by the spec below rather than pure-function unit
+tests), `npx eslint` on the touched files, `npx tsc --noEmit`, `npm run
+lint` (incl. CSS lint, no new findings), `npm run lint:dead` (no new
+findings), and `tests/ux/speech.spec.ts` extended with a case that fakes
+the manifest and clip bytes (so the same markdown can carry a bridge for
+the screenshot too), asserting one clip request on slide open and a second,
+fresh one on pressing "Escuchar", and that the bridge renders. Screenshot:
+`/tmp/claude-1000/explanation-audio-1280.png` (`UX_CHECK_PORT=3221`).

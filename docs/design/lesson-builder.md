@@ -43,7 +43,15 @@ interaction decision below is in service of those three goals, not of
   - **Explanation** — a rich-text note (`ExplanationBlock.contentMarkdown`),
     edited in Tiptap/ProseMirror over a four-node, three-mark schema
     (`explanation-schema.ts`) and serialized to a constrained Markdown
-    dialect by `explanation-markdown.ts` (Phase 2, 2026-09-15).
+    dialect by `explanation-markdown.ts` (Phase 2, 2026-09-15). An `en` mark
+    can carry a pronunciation bridge for its generated voice-track clip
+    (`[[en:different|DIFF-rent]]`, the `Lang` mark's `bridge` attribute) —
+    edited via a "Pronunciation" field that appears in the mark popover
+    whenever the caret sits inside an `en` mark (see §5). Learners see it
+    rendered small after the word, never in the authored dialect's raw
+    brackets. See `docs/design/speech.md` "Explanation voice track" for the
+    generator/SSML side and `docs/design/student-experience.md`
+    "Explanation audio" for the learner-facing playback.
   - **Sentence** — a `SentenceBlock` with `layout` left as `"sentence"`
     (default): one or more **pairs**.
   - **Vocabulary table** — a `SentenceBlock` with `layout: "vocabulary_table"`:
@@ -349,7 +357,21 @@ proposal doc's aspirations.
   (`.lesson-document-block-actions`) sits absolutely positioned top-right,
   `opacity: 0` at rest, `opacity: 1` on slide `:hover` or `:focus-within`
   (always visible on touch/coarse pointers via a `(hover: none)` media
-  query). Not tied to entering editing.
+  query). Not tied to entering editing. An explanation slide gets a fourth,
+  leading icon here — "Listen" (`Volume2`) — that plays the explanation's
+  generated voice-track clip (`explanationClipUrl`, keyed by exact
+  markdown) when one exists; disabled with a "Generate audio first (npm run
+  audio:generate)" tooltip when it doesn't. Sentence/vocabulary slides never
+  get this icon.
+- **Pronunciation field**: the floating mark toolbar (`.authoring-format-
+  menu`, the Spanish/English/Normal/B/I buttons) also opens — with only the
+  Pronunciation field, no language/bold/italic buttons — when the caret
+  merely sits inside an existing `en` mark with nothing selected, not only
+  on a real selection. A plain text input, not a chord: it reads/writes the
+  `en` mark's `bridge` attribute on blur or Enter, extending a collapsed
+  caret to the whole marked word first (`setExplanationBridge`, mirroring
+  how the language chords already treat a collapsed caret as "the word
+  here").
 - **Insert "+" controls show nothing at rest, except one seam** (round 2,
   item A — tightened from the earlier "discoverable at rest everywhere"
   rule, which read as a ladder of dots down the whole left gutter on a

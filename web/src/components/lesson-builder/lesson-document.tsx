@@ -1,6 +1,6 @@
 "use client";
 
-import { Copy, GripVertical, Trash2, Undo2 } from "lucide-react";
+import { Copy, GripVertical, Trash2, Undo2, Volume2 } from "lucide-react";
 import { Fragment, useEffect, useRef, useState, type DragEvent } from "react";
 
 import { LessonConceptsField } from "@/components/lesson-builder/lesson-concepts-field";
@@ -20,6 +20,7 @@ import {
 } from "@/lib/lesson-builder/editing";
 import { fieldSelectionForBlock, selectionForNewBlock } from "@/lib/lesson-builder/keymap";
 import { useDragReorder } from "@/lib/lesson-builder/use-drag-reorder";
+import { explanationClipUrl } from "@/lib/learner/speech";
 import type { Lesson, LessonBlock } from "@/lib/lesson-builder/types";
 
 export type { DocumentBlockType } from "@/components/lesson-builder/slide-insert-control";
@@ -170,6 +171,9 @@ export function LessonDocument(props: Props) {
   function renderSlideActions(block: Lesson["blocks"][number], index: number) {
     return (
       <div className="lesson-document-block-actions">
+        {block.type === "explanation" && (
+          <ExplanationListenButton markdown={block.contentMarkdown} />
+        )}
         <button type="button" draggable aria-label={`Drag slide ${index + 1} to reorder`} title="Drag to reorder" onDragStart={(event) => drag.dragStart(event, dragScope, block.id)} onDragEnd={drag.reset}>
           <GripVertical size={13} aria-hidden="true" />
         </button>
@@ -319,6 +323,46 @@ export function LessonDocument(props: Props) {
         )}
       </div>
     </div>
+  );
+}
+
+// "Listen" (docs/design/speech.md "Explanation voice track"): plays this
+// explanation's generated clip if one exists for its exact markdown, else
+// tells the teacher how to make one. Resolved async per markdown change —
+// `undefined` (checking) disables the button rather than flashing the "no
+// clip" tooltip for a moment on every keystroke.
+function ExplanationListenButton({ markdown }: { markdown: string }) {
+  const [clipUrl, setClipUrl] = useState<string | null | undefined>(undefined);
+
+  useEffect(() => {
+    let cancelled = false;
+    // Clears a stale clip URL the instant the markdown changes, so the
+    // button never reads "Listen" for content that no longer matches any
+    // generated clip.
+    // eslint-disable-next-line react-hooks/set-state-in-effect
+    setClipUrl(undefined);
+    void explanationClipUrl(markdown).then((url) => {
+      if (!cancelled) setClipUrl(url);
+    });
+    return () => {
+      cancelled = true;
+    };
+  }, [markdown]);
+
+  return (
+    <button
+      type="button"
+      aria-label="Listen to this explanation's audio"
+      title={clipUrl ? "Listen" : "Generate audio first (npm run audio:generate)"}
+      disabled={!clipUrl}
+      data-has-clip={clipUrl ? "true" : "false"}
+      onClick={() => {
+        if (!clipUrl) return;
+        void new Audio(clipUrl).play().catch(() => {});
+      }}
+    >
+      <Volume2 size={13} aria-hidden="true" />
+    </button>
   );
 }
 

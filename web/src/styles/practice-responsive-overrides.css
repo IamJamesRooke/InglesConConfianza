@@ -176,6 +176,7 @@
    L2a: one shared card width/padding/shadow across every slide type (see
    .sentence-practice and .answer-grid below, which now match). */
 .lesson-explanation {
+  position: relative;
   width: 100%;
   max-width: var(--practice-column);
   padding: 32px;
@@ -184,6 +185,49 @@
   background: var(--card);
   box-shadow: var(--shadow-card);
   text-align: center;
+}
+/* Replay control (docs/design/speech.md "Explanation voice track"): sits
+   top-right INSIDE the card's own padding, a 40px hit area around the 24px
+   glyph. Only rendered when a generated clip exists for this explanation. */
+.lesson-explanation-replay {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border: 0;
+  border-radius: 999px;
+  color: var(--primary);
+  background: none;
+  transition: background 180ms;
+}
+.lesson-explanation-replay:hover {
+  background: var(--muted);
+}
+.lesson-explanation-replay:focus-visible {
+  outline: 3px solid color-mix(in oklch, var(--primary) 32%, transparent);
+  outline-offset: 1px;
+}
+/* A subtle pulsing ring while the clip plays — motion budget, ease-out,
+   never a bounce. */
+@keyframes lesson-explanation-replay-pulse {
+  0% {
+    box-shadow: 0 0 0 0 color-mix(in oklch, var(--primary) 35%, transparent);
+  }
+  100% {
+    box-shadow: 0 0 0 8px color-mix(in oklch, var(--primary) 0%, transparent);
+  }
+}
+.lesson-explanation-replay.playing {
+  animation: lesson-explanation-replay-pulse 1200ms ease-out infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+  .lesson-explanation-replay.playing {
+    animation: none;
+  }
 }
 .lesson-explanation :is(p, li) {
   color: var(--foreground);
@@ -242,6 +286,16 @@
   color: var(--lesson-hl-en);
   font-weight: 700;
   font-style: normal;
+}
+/* Pronunciation bridge (docs/design/speech.md "Explanation voice track"):
+   a quiet respelling after the word, inside the mark — not bold/coloured
+   like the word itself, not uppercase, no letter-spacing. */
+.practice-language-bridge {
+  color: var(--ink-muted);
+  font-size: var(--t-eyebrow);
+  font-weight: 500;
+  text-transform: none;
+  letter-spacing: normal;
 }
 
 /* --- Sentence builder: one calm card, blanks flow left-to-right ---

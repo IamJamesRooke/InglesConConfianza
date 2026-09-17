@@ -16,6 +16,7 @@ import { useEffect, useRef, useState } from "react";
 
 import {
   registerExplanationEditor,
+  setExplanationBridge,
   setExplanationLanguage,
   toggleExplanationMark,
   unregisterExplanationEditor,
@@ -116,6 +117,12 @@ export function EditablePracticeMarkdown({
   // content changes alike.
   const [isEmpty, setIsEmpty] = useState(!markdown.trim());
   const [hasSelection, setHasSelection] = useState(false);
+  // Whether the caret/selection is inside an `en` mark right now, and that
+  // mark's current bridge (if any) — mirrored from the editor the same way
+  // isEmpty/hasSelection are, since Tiptap doesn't re-render its React host
+  // on every transaction. Drives the Pronunciation field below.
+  const [englishMarkBridge, setEnglishMarkBridge] = useState<string | null>(null);
+  const [inEnglishMark, setInEnglishMark] = useState(false);
   // The markdown this editor last produced. An incoming `markdown` prop equal
   // to it is our own change coming back through the store — re-setting the
   // content then would throw the caret to the start on every keystroke.
@@ -157,6 +164,9 @@ export function EditablePracticeMarkdown({
     onTransaction({ editor: current }) {
       setIsEmpty(current.isEmpty);
       setHasSelection(!current.state.selection.empty);
+      const active = current.isActive("lang", { language: "en" });
+      setInEnglishMark(active);
+      setEnglishMarkBridge(active ? (current.getAttributes("lang").bridge ?? null) : null);
     },
     onFocus() {
       setIsActive(true);
@@ -205,49 +215,117 @@ export function EditablePracticeMarkdown({
       data-empty={isEmpty ? "true" : "false"}
     >
       <EditorContent editor={editor} />
-      {showSelectionMenu && isActive && hasSelection && editor && (
-        <FormatMenu editor={editor} />
+      {showSelectionMenu && isActive && (hasSelection || inEnglishMark) && editor && (
+        <FormatMenu
+          editor={editor}
+          hasSelection={hasSelection}
+          inEnglishMark={inEnglishMark}
+          bridge={englishMarkBridge}
+        />
       )}
     </div>
   );
 }
 
-// The floating toolbar, shown only while the editor holds focus *and* has a
-// real (non-empty) selection — the same rule the chords follow, so the two
-// never disagree about what "this" means.
-function FormatMenu({ editor }: { editor: Editor }) {
+// The floating toolbar, shown while the editor holds focus and either has a
+// real (non-empty) selection, or the caret merely sits inside an `en` mark
+// (so the Pronunciation field below is reachable without first selecting
+// the word — matching how the language chords already treat a collapsed
+// caret as "the word here").
+function FormatMenu({
+  editor,
+  hasSelection,
+  inEnglishMark,
+  bridge,
+}: {
+  editor: Editor;
+  hasSelection: boolean;
+  inEnglishMark: boolean;
+  bridge: string | null;
+}) {
   return (
     <div className="authoring-format-menu" role="toolbar" aria-label="Format explanation text">
-      <FormatButton
-        label="Spanish"
-        shortcut="Ctrl Alt S"
-        className="spanish"
-        onFormat={() => setExplanationLanguage(editor, "es")}
-      />
-      <FormatButton
-        label="English"
-        shortcut="Ctrl Alt E"
-        className="english"
-        onFormat={() => setExplanationLanguage(editor, "en")}
-      />
-      <FormatButton
-        label="Normal"
-        shortcut="Ctrl Alt N"
-        onFormat={() => setExplanationLanguage(editor, null)}
-      />
-      <FormatButton
-        label="B"
-        ariaLabel="Bold"
-        shortcut="Ctrl/⌘ B"
-        onFormat={() => toggleExplanationMark(editor, "bold")}
-      />
-      <FormatButton
-        label="I"
-        ariaLabel="Italic"
-        shortcut="Ctrl/⌘ I"
-        onFormat={() => toggleExplanationMark(editor, "italic")}
-      />
+      {hasSelection && (
+        <>
+          <FormatButton
+            label="Spanish"
+            shortcut="Ctrl Alt S"
+            className="spanish"
+            onFormat={() => setExplanationLanguage(editor, "es")}
+          />
+          <FormatButton
+            label="English"
+            shortcut="Ctrl Alt E"
+            className="english"
+            onFormat={() => setExplanationLanguage(editor, "en")}
+          />
+          <FormatButton
+            label="Normal"
+            shortcut="Ctrl Alt N"
+            onFormat={() => setExplanationLanguage(editor, null)}
+          />
+          <FormatButton
+            label="B"
+            ariaLabel="Bold"
+            shortcut="Ctrl/⌘ B"
+            onFormat={() => toggleExplanationMark(editor, "bold")}
+          />
+          <FormatButton
+            label="I"
+            ariaLabel="Italic"
+            shortcut="Ctrl/⌘ I"
+            onFormat={() => toggleExplanationMark(editor, "italic")}
+          />
+        </>
+      )}
+      {inEnglishMark && <PronunciationField editor={editor} bridge={bridge} />}
     </div>
+  );
+}
+
+// The respelling for the explanation voice track's SSML (docs/design/
+// speech.md "Explanation voice track", `[[en:word|BRIDGE]]` notation) — a
+// plain text input, not a chord: it's free text, not a toggle. ProseMirror
+// keeps its own selection in state independent of DOM focus, so clicking
+// into this field (which blurs the editor) doesn't lose track of which
+// word the bridge applies to — `commit()`'s `setExplanationBridge` call
+// re-focuses the editor and finds the same word via `extendMarkRange`.
+function PronunciationField({ editor, bridge }: { editor: Editor; bridge: string | null }) {
+  const [value, setValue] = useState(bridge ?? "");
+  const lastAppliedRef = useRef(bridge ?? "");
+
+  useEffect(() => {
+    // Syncs the field from the mark the caret just moved into; see the
+    // field's own comment above for why this can't just be initial state.
+    // eslint-disable-next-line react-hooks/set-state-in-effect
+    setValue(bridge ?? "");
+    lastAppliedRef.current = bridge ?? "";
+  }, [bridge]);
+
+  function commit(next: string) {
+    if (next === lastAppliedRef.current) return;
+    lastAppliedRef.current = next;
+    setExplanationBridge(editor, next || null);
+  }
+
+  return (
+    <label className="authoring-format-menu-bridge">
+      <span>Pronunciation</span>
+      <input
+        type="text"
+        value={value}
+        placeholder="DIFF-rent"
+        aria-label="Pronunciation respelling for the voice track"
+        onChange={(event) => setValue(event.target.value)}
+        onBlur={(event) => commit(event.target.value)}
+        onKeyDown={(event) => {
+          if (event.key === "Enter") {
+            event.preventDefault();
+            commit(value);
+          }
+        }}
+      />
+    </label>
   );
 }
 

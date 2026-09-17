@@ -125,6 +125,21 @@ function renderInlineMarkdown(text: string) {
     const languageMatch = /^\[\[(es|en):([\s\S]+)\]\]$/u.exec(part);
     if (languageMatch) {
       const language = languageMatch[1];
+      let inner = languageMatch[2];
+      // A pronunciation bridge (`different|DIFF-rent`, see
+      // docs/design/speech.md "Explanation voice track") is authored only
+      // on `en` marks, appended after any nested bold/italic closes and
+      // right before the mark's own closing `]]` — so the pipe, if any, is
+      // always the LAST one in the mark's content. `es` marks never get
+      // this treatment (a stray "|" there is just text).
+      let bridge: string | null = null;
+      if (language === "en") {
+        const pipeIndex = inner.lastIndexOf("|");
+        if (pipeIndex !== -1) {
+          bridge = inner.slice(pipeIndex + 1);
+          inner = inner.slice(0, pipeIndex);
+        }
+      }
       nodes.push(
         <mark
           key={`${part}-${partIndex}`}
@@ -134,7 +149,10 @@ function renderInlineMarkdown(text: string) {
             language === "es" ? "spanish" : "english"
           }`}
         >
-          {renderInlineMarkdown(languageMatch[2])}
+          {renderInlineMarkdown(inner)}
+          {bridge !== null && (
+            <span className="practice-language-bridge">{` ·${bridge}`}</span>
+          )}
         </mark>,
       );
       return;

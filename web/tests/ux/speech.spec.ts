@@ -1,3 +1,5 @@
+import { createHash } from "node:crypto";
+
 import { expect, test } from "./fixtures";
 
 // Speech feature (docs/design/speech.md): pieces speak as they turn correct,
@@ -246,6 +248,91 @@ test("with no synthesis voices but a real clip manifest, clips play and the chip
 
   const cleanup = await request.delete(
     `/api/admin/lesson-builder/lessons/${speechLesson.id}`,
+  );
+  expect(cleanup.ok()).toBeTruthy();
+});
+
+// Explanation voice track playback (docs/design/speech.md "Explanation
+// voice track"): auto-plays once on slide open, replays on the "Escuchar"
+// control, and shows a bridged [[en:word|BRIDGE]] mark's respelling small
+// beside the word. The manifest and clip bytes are both faked here rather
+// than relying on a real committed clip, so the same markdown can carry a
+// pronunciation bridge for the screenshot below — the manifest is keyed by
+// sha1(markdown), exactly like scripts/generate-audio.ts and
+// explanationClipUrl().
+const explanationMarkdown = "Se dice [[en:different|DIFF-rent]].";
+const explanationHash = createHash("sha1")
+  .update(explanationMarkdown, "utf8")
+  .digest("hex");
+const explanationLesson = {
+  id: "lesson_ux_explanation_audio",
+  name: "UX explanation audio",
+  concepts: [],
+  blocks: [
+    {
+      id: "block_ux_explanation_audio",
+      type: "explanation" as const,
+      contentMarkdown: explanationMarkdown,
+    },
+  ],
+};
+
+test("an explanation's clip auto-plays on open and replays on Escuchar, with the bridge shown small", async ({
+  page,
+  request,
+}) => {
+  const courseResponse = await request.get("/api/admin/lesson-builder/lessons");
+  const course = (await courseResponse.json()) as {
+    modules: Array<{ id: string }>;
+  };
+  const response = await request.put(
+    `/api/admin/lesson-builder/lessons/${explanationLesson.id}`,
+    { data: { lesson: explanationLesson, moduleId: course.modules[0].id } },
+  );
+  expect(response.ok()).toBeTruthy();
+
+  await page.setViewportSize({ width: 1280, height: 900 });
+
+  await page.route("**/audio/manifest.json", (route) =>
+    route.fulfill({
+      status: 200,
+      contentType: "application/json",
+      body: JSON.stringify({ explanations: { [explanationHash]: true } }),
+    }),
+  );
+
+  const clipRequests: string[] = [];
+  await page.route("**/audio/explanations/*.mp3", (route) => {
+    clipRequests.push(route.request().url());
+    // A tiny valid-enough response is not required — the assertion is on
+    // the request itself, and a failed decode still resolves the audio
+    // element's error handling silently, exactly like a real network hiccup.
+    route.fulfill({ status: 200, contentType: "audio/mpeg", body: Buffer.alloc(4) });
+  });
+
+  await page.goto(`/practice?lesson=${explanationLesson.id}`);
+
+  // One request the moment the slide opens (auto-play).
+  await expect.poll(() => clipRequests.length).toBeGreaterThanOrEqual(1);
+
+  const replay = page.getByRole("button", { name: "Escuchar" });
+  await expect(replay).toBeVisible();
+
+  const bridge = page.locator(".practice-language-bridge");
+  await expect(bridge).toBeVisible();
+  await expect(bridge).toContainText("DIFF-rent");
+
+  await page.screenshot({ path: "/tmp/claude-1000/explanation-audio-1280.png" });
+
+  const afterOpen = clipRequests.length;
+  await replay.click();
+  // A second, fresh request when the learner presses replay.
+  await expect
+    .poll(() => clipRequests.length)
+    .toBeGreaterThanOrEqual(afterOpen + 1);
+
+  const cleanup = await request.delete(
+    `/api/admin/lesson-builder/lessons/${explanationLesson.id}`,
   );
   expect(cleanup.ok()).toBeTruthy();
 });
