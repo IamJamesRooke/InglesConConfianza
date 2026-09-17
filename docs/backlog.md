@@ -50,6 +50,11 @@ the owner's say-so.
 - [x] Speech: browser synthesis + Google clips, USA/UK speakers (`docs/design/speech.md`)
 - [ ] L2b sentence slide (check beside the sentence, headline prompt, hint outside the field,
       no layout jump) · table slide at reading size · explanation marks loudest
+- [ ] Explanation voice track: one clip per explanation via Google SSML voice switching —
+      a Latin American Spanish voice reads the prose, the USA man's voice reads every
+      `en` mark ("HACER es TO DO"); source of truth = the builder's marks; auto-plays on
+      slide entry (mute honoured), replay control on the card, "listen" button in the
+      builder; keyed by text like the other clips (`docs/design/speech.md`)
 - [ ] L2c completion: the sentence you built, "Esto ya lo puedes decir", replay, one action
 - [ ] L1 leftover: drop the "0 / 2" on the module header
 - [ ] Per-slide feedback: quiet "¿Algo que corregir?" in the practice footer → small field →
