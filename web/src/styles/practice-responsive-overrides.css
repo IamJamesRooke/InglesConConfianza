@@ -472,7 +472,10 @@
   text-decoration-thickness: 2px;
   opacity: 0.75;
 }
-/* Per-blank hint: a small lightbulb badge on the block's top-right corner… */
+/* Per-blank hint: a small lightbulb badge on the block's top-right corner —
+   same table treatment: an on-palette --primary outline icon, transparent
+   fill, with a --surface-subtle circle on hover/focus, never the --hint
+   amber token (learner side, see docs item 4, 2026-09-17). */
 .answer-hint-toggle {
   position: absolute;
   top: -8px;
@@ -482,9 +485,9 @@
   place-items: center;
   width: 24px;
   height: 24px;
-  border: 1.5px solid color-mix(in oklch, var(--hint) 55%, var(--border));
+  border: 0;
   border-radius: 999px;
-  background: color-mix(in oklch, var(--hint) 22%, var(--card));
+  background: var(--card);
   box-shadow: 0 1px 4px color-mix(in oklch, var(--foreground) 12%, transparent);
   transition:
     background 140ms,
@@ -498,11 +501,11 @@
   }
 }
 .answer-hint-toggle svg {
-  color: var(--hint);
-  fill: color-mix(in oklch, var(--hint) 42%, transparent);
+  color: var(--primary);
+  fill: none;
 }
 .answer-hint-toggle:hover {
-  background: color-mix(in oklch, var(--hint) 42%, var(--card));
+  background: var(--surface-subtle);
   transform: scale(1.08);
 }
 /* Always-on author note under a block — points something out, no interaction. */
@@ -532,18 +535,18 @@
   gap: 8px;
   margin-top: 12px;
   padding: 9px 18px 9px 14px;
-  border: 1.5px solid color-mix(in oklch, var(--hint) 55%, transparent);
+  border: 1.5px solid color-mix(in oklch, var(--hint) 72%, var(--ink-deep));
   border-radius: 999px;
-  background: color-mix(in oklch, var(--hint) 24%, var(--card));
-  color: color-mix(in oklch, var(--hint) 78%, black);
+  background: var(--hint);
+  color: var(--hint-foreground);
   font-size: 16px;
   font-weight: 700;
 }
 .answer-hint svg {
   width: 21px;
   height: 21px;
-  color: var(--hint);
-  fill: color-mix(in oklch, var(--hint) 42%, transparent);
+  color: var(--hint-foreground);
+  fill: transparent;
 }
 .answer-hint:hover:not(:disabled) {
   border-color: var(--hint);
@@ -906,18 +909,12 @@
   box-shadow: var(--shadow-card);
 }
 /* (.answer-input and .answer-input:focus's surface-writing background and
-   outline-color are set once, above, with these values already folded in.) */
-.answer-hint-toggle,
-.answer-hint {
-  border-color: color-mix(in oklch, var(--hint) 72%, var(--ink-deep));
-  color: var(--hint-foreground);
-  background: var(--hint);
-}
-.answer-hint-toggle svg,
-.answer-hint svg {
-  color: var(--hint-foreground);
-  fill: transparent;
-}
+   outline-color are set once, above, with these values already folded in;
+   so are .answer-hint's border-color/color/background — the builder's own
+   "Answers & hint" pill keeps the --hint amber token — and .answer-hint
+   svg's color/fill. .answer-hint-toggle, the learner-facing icon, stays
+   on-palette [--primary] and needs no override here — see docs item 4,
+   2026-09-17.) */
 .lesson-session .learner-button.primary:hover {
   background: var(--brand-primary-hover);
 }
@@ -1078,7 +1075,7 @@
   transform: scale(1.05);
 }
 .lesson-session .vocabulary-practice .answer-hint-toggle:focus-visible {
-  outline: 3px solid color-mix(in oklch, var(--hint) 38%, transparent);
+  outline: 3px solid color-mix(in oklch, var(--primary) 38%, transparent);
   outline-offset: 2px;
 }
 @media (max-width: 480px) {
@@ -1226,25 +1223,30 @@
   font-weight: 800;
 }
 /* The hint sits at the end of the highlighted Spanish piece — never inside
-   the input. */
+   the input. On-palette: a --primary outline icon, transparent fill, with a
+   --surface-subtle circle appearing behind it on hover/focus (the learner
+   side no longer uses the --hint amber token — see docs item 4, 2026-09-17). */
 .stage-hint-toggle {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   margin-left: 6px;
-  padding: 0;
+  padding: 3px;
   border: 0;
+  border-radius: 999px;
   background: none;
-  color: var(--hint);
-  vertical-align: -3px;
+  color: var(--primary);
+  vertical-align: -5px;
   cursor: pointer;
+  transition: background 140ms;
 }
 .stage-hint-toggle:hover {
-  color: color-mix(in oklch, var(--hint) 72%, var(--ink-deep));
+  background: var(--surface-subtle);
 }
 .stage-hint-toggle:focus-visible {
-  outline: 3px solid color-mix(in oklch, var(--hint) 38%, transparent);
+  outline: 3px solid color-mix(in oklch, var(--primary) 38%, transparent);
   outline-offset: 2px;
-  border-radius: 6px;
+  background: var(--surface-subtle);
 }
 /* Line 2: the English sentence being built. Every piece is an input all
    along — a blank underline until it's answered, the finished word after —
@@ -1299,6 +1301,7 @@
    the finished word is normally the .stage-en-done span below): same look
    as done, still an input while it's being retyped. */
 .stage-en-input[data-state="done"] {
+  width: auto;
   min-width: 0;
   border-bottom-color: transparent;
   background: transparent;
@@ -1309,6 +1312,10 @@
    jump on the swap either way. Focusable so Tab still reaches it to edit. */
 .stage-en-done {
   display: inline;
+  width: auto;
+  max-width: none;
+  overflow: visible;
+  white-space: normal;
   padding: 0;
   border: 0;
   border-radius: 3px;

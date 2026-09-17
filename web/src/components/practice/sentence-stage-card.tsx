@@ -89,6 +89,7 @@ export function SentenceStageCard({
       <div className="stage-composition">
         <div className="stage-speaker">
           <SpeakerChip
+            key={sentence.id}
             speaker={speaker}
             speakingText={speakingText}
             variant="stage"

@@ -243,6 +243,19 @@ export function useSentencePractice({
         () => inputRefs.current[languageBlockIndex + 1]?.focus(),
         0,
       );
+    // The last piece has no next input to move focus to, so without this it
+    // never blurs — it stays rendered as the input (data-state="done")
+    // instead of swapping to the plain finished span, and that input's
+    // blank-sized width (from --blank-chars, floored to the *expected*
+    // answer's length) is narrower than the full typed text, so the browser
+    // scrolls the still-focused field to keep the caret visible and clips
+    // the leading characters ("I want" reads as "want"). Blurring it here
+    // forces the same input-to-span swap every other piece gets on advance.
+    else if (isCorrect && languageBlockIndex === testableBlocks.length - 1)
+      window.setTimeout(
+        () => inputRefs.current[languageBlockIndex]?.blur(),
+        0,
+      );
   }
 
   // Alt+H and Enter reveal the hint; forward Tab past a wrong/incomplete

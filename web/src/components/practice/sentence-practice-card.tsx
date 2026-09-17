@@ -72,7 +72,7 @@ export function SentencePracticeCard({
         <Check size={16} strokeWidth={3} aria-hidden="true" />
       </span>
     );
-  return (
+  const cardBody = (
     <div
       className={`sentence-practice learner-enter ${isSingleLanguageBlock ? "single-answer" : ""} ${isVocabulary ? "vocabulary-practice" : ""}`}
     >
@@ -258,14 +258,20 @@ export function SentencePracticeCard({
                         aria-label={`Mostrar la respuesta de ${languageBlock.spanish || `bloque ${languageBlockIndex + 1}`}`}
                         title="Mostrar la respuesta (Alt+H)"
                       >
-                        <Lightbulb size={15} aria-hidden="true" />
+                        <Lightbulb size={20} aria-hidden="true" />
                       </button>
                     )}
                 </div>
               );
             })}
           </div>
-          <SpeakerChip speaker={speaker} speakingText={speakingText} />
+          {!isVocabulary && (
+            <SpeakerChip
+              key={sentence.id}
+              speaker={speaker}
+              speakingText={speakingText}
+            />
+          )}
         </>
       ) : (
         <p className="rounded-lg border border-dashed border-border bg-background px-4 py-6 text-center text-sm font-medium text-destructive">
@@ -274,4 +280,29 @@ export function SentencePracticeCard({
       )}
     </div>
   );
+
+  // Vocabulary tables keep the table shape but sit in the same two-actor
+  // composition as ordinary sentence slides (speaker column left of the
+  // card at desktop, the group centred; card then speaker row on phone) —
+  // see docs/design/student-experience.md, "L2b — the sentence stage",
+  // item 3. Every other rendering (the older grid card behind
+  // `?layout=grid`) keeps its own flat layout, speaker chip included above.
+  if (isVocabulary)
+    return (
+      <div className="sentence-stage learner-enter">
+        <div className="stage-composition">
+          <div className="stage-speaker">
+            <SpeakerChip
+              key={sentence.id}
+              speaker={speaker}
+              speakingText={speakingText}
+              variant="stage"
+            />
+          </div>
+          <div className="stage-column">{cardBody}</div>
+        </div>
+      </div>
+    );
+
+  return cardBody;
 }

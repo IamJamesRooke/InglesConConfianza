@@ -1,4 +1,5 @@
 import assert from "node:assert/strict";
+import { readFileSync } from "node:fs";
 import test from "node:test";
 import { createElement } from "react";
 import { renderToStaticMarkup } from "react-dom/server";
@@ -293,6 +294,111 @@ test("a finished stage piece displays the canonical accepted answer, not the lea
   assert.doesNotMatch(html, />i want</);
   // The still-pending second piece stays an input; only one input remains.
   assert.equal((html.match(/<input/g) ?? []).length, 1);
+});
+
+test("a finished LAST stage piece (no next input to advance focus to) still renders as the full canonical span, not a lingering input", () => {
+  // Regression for the "I want" -> "want" clipping bug: the last testable
+  // piece has nowhere to move focus to on completion, so — before the fix —
+  // it never blurred and stayed rendered as `<input data-state="done">`,
+  // whose CSS width is sized to the *expected* answer's blank estimate
+  // (`--blank-chars`), narrower than the full typed text, so a still-focused
+  // input scrolls to keep the caret visible and clips the leading
+  // characters. A single-piece sentence (this test) or the last piece of a
+  // multi-piece one both hit this, since there's no next field either way.
+  const html = renderToStaticMarkup(
+    createElement(SentenceStageCard, {
+      sentence: {
+        id: "s4",
+        type: "sentence",
+        promptLabel: "",
+        promptText: "",
+        helperText: "",
+        answerFeedback: null,
+        languageBlocks: [
+          {
+            id: "l1",
+            spanish: "Quiero",
+            callout: null,
+            acceptedAnswers: ["I want"],
+          },
+        ],
+      },
+      initialAnswers: ["i want"],
+    }),
+  );
+  assert.match(html, /<span class="stage-en stage-en-done"[^>]*>I want<\/span>/);
+  assert.doesNotMatch(html, /<input/);
+});
+
+test("the finished-piece span and its transient 'done' input both drop width constraints in CSS (no clipping)", () => {
+  const css = readFileSync(
+    new URL(
+      "../../src/styles/practice-responsive-overrides.css",
+      import.meta.url,
+    ),
+    "utf8",
+  );
+  const doneSpanBlock = css.match(/\.stage-en-done\s*\{([^}]*)\}/)?.[1] ?? "";
+  assert.match(doneSpanBlock, /width:\s*auto/);
+  assert.doesNotMatch(doneSpanBlock, /overflow:\s*hidden/);
+  const maxWidthValues = [...doneSpanBlock.matchAll(/max-width:\s*([^;]+);/g)].map(
+    (matched) => matched[1],
+  );
+  assert.ok(maxWidthValues.every((value) => value === "none"));
+  const doneInputBlock =
+    css.match(/\.stage-en-input\[data-state="done"\]\s*\{([^}]*)\}/)?.[1] ??
+    "";
+  assert.match(doneInputBlock, /width:\s*auto/);
+});
+
+test("the vocabulary table on the stage uses the two-actor composition, not a centred card with the speaker below-left", () => {
+  const html = renderToStaticMarkup(
+    createElement(SentencePracticeCard, {
+      sentence: {
+        id: "s5",
+        type: "sentence",
+        layout: "vocabulary_table",
+        promptLabel: "",
+        promptText: "",
+        helperText: "",
+        answerFeedback: null,
+        languageBlocks: [
+          {
+            id: "l1",
+            spanish: "el gato",
+            callout: null,
+            acceptedAnswers: ["the cat"],
+          },
+        ],
+      },
+    }),
+  );
+  assert.match(html, /class="sentence-stage learner-enter"/);
+  assert.match(html, /class="stage-composition"/);
+  assert.match(html, /class="stage-speaker"/);
+  assert.match(html, /class="stage-column"/);
+  assert.match(html, /vocabulary-practice/);
+});
+
+test("the hint affordance is a --primary outline icon on the learner side, never the amber --hint token", () => {
+  const css = readFileSync(
+    new URL(
+      "../../src/styles/practice-responsive-overrides.css",
+      import.meta.url,
+    ),
+    "utf8",
+  );
+  const stageHintBlock =
+    css.match(/\.stage-hint-toggle\s*\{([^}]*)\}/)?.[1] ?? "";
+  assert.match(stageHintBlock, /color:\s*var\(--primary\)/);
+  assert.doesNotMatch(stageHintBlock, /var\(--hint\)/);
+  const answerHintToggleBlock =
+    css.match(/\.answer-hint-toggle\s*\{([^}]*)\}/)?.[1] ?? "";
+  assert.doesNotMatch(answerHintToggleBlock, /var\(--hint\)/);
+  const answerHintToggleSvgBlock =
+    css.match(/\.answer-hint-toggle svg\s*\{([^}]*)\}/)?.[1] ?? "";
+  assert.match(answerHintToggleSvgBlock, /color:\s*var\(--primary\)/);
+  assert.doesNotMatch(answerHintToggleSvgBlock, /var\(--hint\)/);
 });
 
 test("explanations left-align once the authored text is longer than one line", () => {
