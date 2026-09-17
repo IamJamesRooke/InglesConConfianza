@@ -31098,7 +31098,9 @@
         "topic:multi-sense",
         "topic:en-multi-sense",
         "audit:reviewed",
-        "topic:enmap-with"
+        "topic:enmap-with",
+        "pos:connector",
+        "grammar:sentence-structure"
       ],
       "curriculumRole": "P1"
     },
