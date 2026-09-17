@@ -730,6 +730,14 @@ proposal doc's aspirations.
   serves both groups (`.lesson-concepts-add-row`, unchanged from the
   end-step layout above) — a newly tagged concept lands under whichever
   eyebrow the course timeline says it belongs to.
+- **Palette** (owner, 2026-09-17, L0): `web/src/app/globals.css` is the
+  ONLY place colour values may live — `scripts/lint-css.mjs` fails the
+  build on any literal hex/rgb/hsl/oklch/color() elsewhere. Brand is a
+  saturated purple (`--brand-primary`) with a warm coral `--brand-accent`;
+  surfaces/ink/border are lavender-tinted; `--lesson-hl-es` (coral) and
+  `--lesson-hl-en` (purple) both hold ≥4.5:1 on white and on
+  `--surface-subtle`. No dark theme redesign — `.dark` reuses the same
+  hues so it can't drift.
 
 ## 6. Owner decisions & rejected ideas
 

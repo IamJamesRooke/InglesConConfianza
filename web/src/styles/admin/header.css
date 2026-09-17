@@ -6,13 +6,9 @@
 
 .admin-header {
   --admin-header-fg: var(--primary-foreground);
-  /* Muted-light label/inactive-link color. Same oklch value the app's own
-     .dark theme already uses for --muted-foreground (globals.css) — i.e. a
-     tone this design system already tuned for readable muted text on a
-     dark surface — borrowed here rather than duplicated as a fresh color.
-     Verified contrast against --ink-deep (#17213a): ~6.15:1, passing WCAG
-     AA (4.5:1) for normal text. */
-  --admin-header-fg-muted: oklch(0.708 0 0);
+  /* --admin-header-fg-muted itself is defined once in globals.css (shared
+     with editing-hud.css) so this literal isn't duplicated — consumed
+     directly below via var(--admin-header-fg-muted). */
   --admin-header-hover-wash: color-mix(in oklch, white 12%, transparent);
   --admin-header-active-wash: color-mix(in oklch, white 18%, transparent);
 

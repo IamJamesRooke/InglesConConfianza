@@ -395,7 +395,7 @@
 .authoring-mode-badge kbd {
   padding: 0 3px;
   border-radius: 3px;
-  background: rgb(255 255 255 / 24%);
+  background: color-mix(in oklch, var(--primary-foreground) 24%, transparent);
   font:
     650 9px ui-monospace,
     monospace;

@@ -158,6 +158,34 @@ for (const full of allStyleFiles) {
   }
 }
 
+// --- (e) no literal colour outside src/app/globals.css -------------------
+// L0 (docs/design/lesson-builder.md §5 "Palette"): globals.css is the only
+// place colour values may live. `color-mix(...)`/`color-mix(in oklch, ...)`
+// references to existing tokens are fine everywhere — this only catches an
+// actual literal color function/hex starting right after the boundary.
+// Lookaheads keep "color-mix(" (a function call, not a literal) from
+// tripping the bare "color(" check.
+const LITERAL_COLOR_RE =
+  /#[0-9a-fA-F]{3,8}\b|\brgba?\(|\bhsla?\(|\boklch\(|\boklab\(|\bcolor\((?!-mix)/g;
+for (const full of allStyleFiles) {
+  if (full === GLOBALS_CSS) continue;
+  const file = path.relative(ROOT, full);
+  const source = readFileSync(full, "utf8");
+  const stripped = stripComments(source);
+  const lineStarts = [0];
+  for (let i = 0; i < stripped.length; i++) {
+    if (stripped[i] === "\n") lineStarts.push(i + 1);
+  }
+  let cm;
+  LITERAL_COLOR_RE.lastIndex = 0;
+  while ((cm = LITERAL_COLOR_RE.exec(stripped))) {
+    const lineNum = lineStarts.filter((s) => s <= cm.index).length;
+    fail(
+      `${file}:${lineNum}: literal colour "${cm[0]}" found outside src/app/globals.css — use a token instead.`,
+    );
+  }
+}
+
 // --- (c) every stylesheet under src/styles/ (and globals.css) is imported -
 const allSourceFiles = listFilesRecursive(SRC_DIR, [".ts", ".tsx", ".mjs", ".js"]);
 const importedCssPaths = new Set();

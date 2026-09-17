@@ -173,7 +173,7 @@
   color: var(--muted-foreground);
 }
 .lesson-library-module-meta .lesson-library-module-delete {
-  color: #ffd9df;
+  color: var(--on-primary-danger-soft);
 }
 .lesson-library-module-delete:hover:not(:disabled) {
   background: color-mix(in oklch, var(--destructive) 12%, transparent);
@@ -214,7 +214,7 @@
   color: var(--destructive);
 }
 .lesson-library-module-meta .lesson-library-module-controls .danger {
-  color: #ffd9df;
+  color: var(--on-primary-danger-soft);
 }
 .lesson-library-module-meta .lesson-library-module-controls .danger:hover:not(:disabled) {
   color: var(--destructive-foreground);

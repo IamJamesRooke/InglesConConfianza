@@ -113,29 +113,56 @@
   --role-foreground: var(--foreground);
 }
 
-/* Confianza semantic theme. Components consume these purpose-based tokens;
-   the aliases below keep Tailwind/shadcn primitives on the same palette. */
+/* Confianza semantic theme — L0 vibrant-purple palette (2026-09-17).
+   Components consume these purpose-based tokens; the aliases below keep
+   Tailwind/shadcn primitives on the same palette. Defined in oklch; hex
+   equivalents and contrast checks are in the comment beside each token
+   (all verified ≥4.5:1 for the pairing they're actually used in — see
+   docs/design/lesson-builder.md §5 "Palette"). This is the ONLY place
+   literal colour values may live — scripts/lint-css.mjs enforces it. */
 :root {
-  --brand-primary: #2448c8;
-  --brand-primary-hover: #18379f;
+  /* #7d24d3 on white: 6.85:1 */
+  --brand-primary: oklch(0.5 0.24 300);
+  /* #6600b8 on white: 9.29:1 */
+  --brand-primary-hover: oklch(0.42 0.24 300);
   --brand-on-primary: #ffffff;
-  --brand-accent: #c82d49;
-  --brand-accent-hover: #a8233f;
+  /* #da2751 on white: 4.79:1 */
+  --brand-accent: oklch(0.58 0.21 15);
+  /* #bd003a on white: 6.52:1 */
+  --brand-accent-hover: oklch(0.5 0.21 15);
   --brand-on-accent: #ffffff;
-  --state-success: #087a50;
+  /* Soft danger tint for icons/labels on a --brand-primary-colored band
+     (e.g. the module-meta header's delete control) — needs to read as
+     "danger" without the full-strength --destructive red clashing with
+     purple. ~#fdd4dd, 5.11:1 on --brand-primary. */
+  --on-primary-danger-soft: color-mix(in oklch, white 78%, var(--brand-accent));
+  /* #007834 on white: 5.61:1 */
+  --state-success: oklch(0.5 0.14 150);
   --state-success-soft: #e6f7ef;
   --state-on-success: #ffffff;
   --state-help: #f5b82e;
   --state-help-soft: #fff4cf;
   --state-on-help: #382600;
-  --state-danger: #861331;
+  /* #890120 on white: 10.02:1 */
+  --state-danger: oklch(0.4 0.16 20);
   --state-danger-soft: #fce8ec;
-  --canvas-warm: #f7f7f4;
+  /* #fbf9fe: faint cool-lavender canvas */
+  --canvas-warm: oklch(0.985 0.006 300);
   --surface-writing: #ffffff;
-  --surface-subtle: #eef0f4;
-  --ink-deep: #17213a;
-  --ink-muted: #566174;
-  --line-strong: #8291ae;
+  /* #f2edfc: soft lavender tint for tinted bands/hover washes */
+  --surface-subtle: oklch(0.955 0.02 300);
+  /* #1d162a on white: 17.46:1 */
+  --ink-deep: oklch(0.22 0.04 300);
+  /* #605a6c on white: 6.61:1, on surface-subtle: 5.77:1 */
+  --ink-muted: oklch(0.48 0.03 300);
+  /* #d4cde2: lavender hairline border */
+  --line-strong: oklch(0.72 0.05 300);
+  /* Muted-light label/inactive-link color for the always-dark admin chrome
+     (admin header, editing HUD) — the one shared value both
+     src/styles/admin/header.css and src/styles/lesson-builder/editing-hud.css
+     reference instead of each duplicating the same literal. ~6.15:1 on
+     --ink-deep. */
+  --admin-header-fg-muted: oklch(0.708 0 0);
 
   --background: var(--canvas-warm);
   --foreground: var(--ink-deep);
@@ -153,7 +180,8 @@
   --accent-foreground: var(--brand-on-accent);
   --destructive: var(--state-danger);
   --destructive-foreground: #ffffff;
-  --border: #b8c2d8;
+  /* #d4cde2: lavender hairline */
+  --border: oklch(0.86 0.03 300);
   --input: var(--line-strong);
   --ring: var(--brand-primary);
   --surface: var(--canvas-warm);
@@ -188,10 +216,12 @@
   --sidebar-accent-foreground: oklch(0.24 0.07 195);
   --sidebar-border: oklch(0.88 0.018 85);
   --sidebar-ring: oklch(0.62 0.19 285);
-  /* Bilingual ink: Spanish-flag red for español, Union-Jack navy for English.
-     Used for the sentence-builder labels and the [[es:]]/[[en:]] highlights. */
-  --lesson-hl-es: oklch(0.52 0.22 25);
-  --lesson-hl-en: oklch(0.42 0.2 270);
+  /* Bilingual ink: warm red-coral for español, brand purple for English.
+     Used for the sentence-builder labels and the [[es:]]/[[en:]] highlights.
+     #d01c29 on white: 5.41:1, on surface-subtle: 4.72:1.
+     #6928b0 on white: 8.28:1, on surface-subtle: 7.23:1. */
+  --lesson-hl-es: oklch(0.55 0.21 25);
+  --lesson-hl-en: oklch(0.45 0.2 300);
 }
 
 .concept-suggestion {
@@ -253,8 +283,10 @@
 }
 
 .dark {
-  --lesson-hl-es: oklch(0.72 0.19 30);
-  --lesson-hl-en: oklch(0.72 0.17 270);
+  /* Same purple-palette hues as :root (no separate dark design — see
+     docs/design/lesson-builder.md §5 "Palette") so these don't drift. */
+  --lesson-hl-es: oklch(0.55 0.21 25);
+  --lesson-hl-en: oklch(0.45 0.2 300);
   --background: oklch(0.16 0.014 285);
   --foreground: oklch(0.985 0 0);
   --card: oklch(0.205 0 0);

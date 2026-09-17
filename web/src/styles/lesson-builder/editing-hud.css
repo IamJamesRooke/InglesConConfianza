@@ -8,13 +8,13 @@
    same --ink-deep/--primary-foreground/--hint tokens admin-header.css
    already uses for the always-dark admin chrome, so this stays correct in
    both light and dark theme without a --primary-foreground contrast trap
-   (--admin-header-fg-muted's oklch(0.708 0 0) is borrowed the same way
-   admin-header.css borrows it: the app's own .dark --muted-foreground
-   value, tuned for ~6.15:1 contrast on --ink-deep, used here unconditional
-   of theme since this bar is always the dark variant). */
+   (--admin-header-fg-muted is defined once in globals.css, shared with
+   admin-header.css: the app's own .dark --muted-foreground value, tuned
+   for ~6.15:1 contrast on --ink-deep, used here unconditional of theme
+   since this bar is always the dark variant). */
 .editing-hud {
   --hud-fg: var(--primary-foreground);
-  --hud-fg-muted: oklch(0.708 0 0);
+  --hud-fg-muted: var(--admin-header-fg-muted);
 
   position: sticky;
   bottom: 0;

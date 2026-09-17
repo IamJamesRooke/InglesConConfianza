@@ -39,9 +39,9 @@
   margin: 0;
   padding: 8px 12px;
   list-style: none;
-  border: 1px solid var(--destructive, #c0392b);
+  border: 1px solid var(--destructive);
   border-radius: 6px;
-  color: var(--destructive, #c0392b);
+  color: var(--destructive);
   font-size: 12px;
 }
 .lesson-script-view-errors li + li {
