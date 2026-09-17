@@ -7,6 +7,28 @@ import { PracticeMarkdown } from "@/components/practice/practice-markdown";
 import { explanationWraps } from "@/lib/learner/presentation";
 import { explanationClipUrl, isMuted, subscribeMuted } from "@/lib/learner/speech";
 
+/** sessionStorage key: once any explanation clip has played successfully in
+ * this document, later slides skip the expanded "Escuchar" cue even if a
+ * future auto-play were refused (it won't be, but be safe). */
+const AUDIO_ACTIVATED_KEY = "icc.audio.activated";
+
+function hasActivatedAudio(): boolean {
+  try {
+    return sessionStorage.getItem(AUDIO_ACTIVATED_KEY) === "1";
+  } catch {
+    return false;
+  }
+}
+
+function markAudioActivated() {
+  try {
+    sessionStorage.setItem(AUDIO_ACTIVATED_KEY, "1");
+  } catch {
+    // Ignore (private mode, storage disabled, etc.) — the cue simply keeps
+    // showing on later slides, which is harmless.
+  }
+}
+
 /**
  * An explanation slide. A single short line reads well centred and gets the
  * larger of the two fluid type sizes; anything that wraps switches to
@@ -23,17 +45,30 @@ import { explanationClipUrl, isMuted, subscribeMuted } from "@/lib/learner/speec
  * Playback (docs/design/speech.md "Explanation voice track"): when a
  * generated clip exists for this exact markdown and speech isn't muted, it
  * plays once automatically on mount — the learner has already interacted
- * with the app to get here, so autoplay is allowed; a rejected `play()`
- * (an autoplay-policy edge case) is swallowed, same as every other speech
- * path in this app. A small replay control lets the learner hear it again.
- * No clip → no control at all; this never falls back to browser synthesis,
- * since a mixed-language explanation read by the wrong voice would be
- * actively wrong, not just lower quality.
+ * with the app to get here, so autoplay is usually allowed. Opening or
+ * reloading the lesson page directly gives the document no user activation
+ * yet, though, and the browser refuses the auto `play()` — that refusal is
+ * tracked (`needsTap`), and the replay control expands into a small
+ * "Escuchar" pill with a gentle pulse so the feature doesn't look dead. The
+ * first explanation slide of a lesson always shows that expanded cue once,
+ * even when the auto-play does succeed, so a learner always sees it; after
+ * any clip has played successfully in this document that one-time cue is
+ * skipped for the rest of the session. No clip → no control at all; this
+ * never falls back to browser synthesis, since a mixed-language explanation
+ * read by the wrong voice would be actively wrong, not just lower quality.
  */
-export function ExplanationStep({ markdown }: { markdown: string }) {
+export function ExplanationStep({
+  markdown,
+  isFirstSlide = false,
+}: {
+  markdown: string;
+  isFirstSlide?: boolean;
+}) {
   const wraps = explanationWraps(markdown);
   const [clipUrl, setClipUrl] = useState<string | null>(null);
   const [playing, setPlaying] = useState(false);
+  const [needsTap, setNeedsTap] = useState(false);
+  const [activated, setActivated] = useState(() => hasActivatedAudio());
   // The clip currently playing (auto-play or a replay press) — always a
   // fresh `Audio` instance per play so a replay is a real new request, and
   // so leaving the slide has exactly one thing to stop.
@@ -62,17 +97,29 @@ export function ExplanationStep({ markdown }: { markdown: string }) {
     setPlaying(false);
   }
 
+  function handlePlaybackStarted() {
+    setNeedsTap(false);
+    if (!hasActivatedAudio()) {
+      markAudioActivated();
+      setActivated(true);
+    }
+  }
+
   function playClip(url: string) {
     stopClip();
     const audio = new Audio(url);
     currentClipRef.current = audio;
-    audio.onplay = () => setPlaying(true);
+    audio.onplay = () => {
+      setPlaying(true);
+      handlePlaybackStarted();
+    };
     audio.onended = () => setPlaying(false);
     audio.onpause = () => setPlaying(false);
     audio.onerror = () => setPlaying(false);
-    // Autoplay rejection (e.g. a stricter browser policy) is silent — the
-    // replay control is still there for the learner to press.
-    void audio.play().catch(() => {});
+    // Autoplay rejection (a stricter browser policy, most often no user
+    // activation on this document yet) is otherwise silent — track it so
+    // the replay control can surface itself instead of looking dead.
+    void audio.play().catch(() => setNeedsTap(true));
   }
 
   // Auto-play once the clip URL resolves, unless muted. Leaving the slide
@@ -99,6 +146,8 @@ export function ExplanationStep({ markdown }: { markdown: string }) {
     playClip(clipUrl);
   }
 
+  const showCue = !activated && (needsTap || isFirstSlide);
+
   return (
     <div
       className="lesson-explanation learner-enter"
@@ -107,12 +156,21 @@ export function ExplanationStep({ markdown }: { markdown: string }) {
       {clipUrl && (
         <button
           type="button"
-          className={`lesson-explanation-replay${playing ? " playing" : ""}`}
+          className={`lesson-explanation-replay${playing ? " playing" : ""}${
+            showCue ? " lesson-explanation-replay--cue" : ""
+          }`}
           onClick={replay}
           aria-label="Escuchar"
           title="Escuchar"
         >
-          <Volume2 size={24} aria-hidden="true" />
+          <Volume2
+            size={showCue ? 18 : 24}
+            aria-hidden="true"
+            className={showCue ? "lesson-explanation-replay-icon" : undefined}
+          />
+          {showCue && (
+            <span className="lesson-explanation-replay-label">Escuchar</span>
+          )}
         </button>
       )}
       <PracticeMarkdown markdown={markdown} />

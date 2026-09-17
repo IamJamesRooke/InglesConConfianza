@@ -232,6 +232,43 @@
     animation: none;
   }
 }
+/* Expanded "Escuchar" cue: shown when an auto-play was refused by the
+   browser's autoplay policy (no user activation yet on a directly opened or
+   reloaded lesson page), and once on the first explanation slide of a
+   lesson regardless, so the control never looks dead. Pressing it plays and
+   collapses it back to the icon-only circle. */
+.lesson-explanation-replay--cue {
+  top: 8px;
+  right: 8px;
+  width: auto;
+  height: 36px;
+  gap: 8px;
+  padding: 0 12px;
+  border-radius: 8px;
+  color: var(--primary);
+  background: var(--surface-subtle);
+  font: 600 var(--t-ui) / 1 inherit;
+}
+.lesson-explanation-replay-label {
+  white-space: nowrap;
+}
+@keyframes lesson-explanation-replay-icon-pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+.lesson-explanation-replay--cue .lesson-explanation-replay-icon {
+  animation: lesson-explanation-replay-icon-pulse 2s ease-in-out infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+  .lesson-explanation-replay--cue .lesson-explanation-replay-icon {
+    animation: none;
+  }
+}
 .lesson-explanation :is(p, li) {
   color: var(--foreground);
   font-size: var(--practice-explanation-size);

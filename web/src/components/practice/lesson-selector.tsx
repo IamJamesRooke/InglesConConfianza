@@ -554,7 +554,10 @@ function LessonSession({
               </div>
             </div>
           ) : block?.type === "explanation" ? (
-            <ExplanationStep markdown={block.contentMarkdown} />
+            <ExplanationStep
+              markdown={block.contentMarkdown}
+              isFirstSlide={stepIndex === 0}
+            />
           ) : block?.type === "sentence" ? (
             <>
               {useStage ? (
