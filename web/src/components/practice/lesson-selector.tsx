@@ -3,10 +3,7 @@
 import {
   ArrowLeft,
   ArrowRight,
-  Check,
-  Home,
-  Play,
-  SkipForward,
+  RotateCcw,
   Volume2,
   VolumeX,
   X,
@@ -22,12 +19,15 @@ import {
 import { ExplanationStep } from "@/components/practice/explanation-step";
 import { SentencePracticeCard } from "@/components/practice/sentence-practice-card";
 import { SentenceStageCard } from "@/components/practice/sentence-stage-card";
-import { learnerLabel, lessonOutcome } from "@/lib/learner/presentation";
+import {
+  completionSentenceSize,
+  lessonOutcome,
+} from "@/lib/learner/presentation";
 import {
   readProgress,
+  resetLessonProgress,
   resumeStepIndex,
   saveLessonProgress,
-  skipLesson,
 } from "@/lib/learner/progress";
 import {
   isMuted,
@@ -109,10 +109,12 @@ function LessonSession({
   const [draftAnswers, setDraftAnswers] = useState<Record<string, string[]>>(
     {},
   );
-  const [completionCursor, setCompletionCursor] = useState(() =>
-    lessons.findIndex((item) => item.id === lesson.id),
-  );
+  // Where this lesson sits in the course order — the skip-ahead affordance
+  // that used to move this forward is gone (direction: no skip), so it's a
+  // plain lookup now, not state.
+  const completionCursor = lessons.findIndex((item) => item.id === lesson.id);
   const [lastSpeaker, setLastSpeaker] = useState<Speaker | null>(null);
+  const [confirmingReset, setConfirmingReset] = useState(false);
   const muted = useSyncExternalStore(
     subscribeMuted,
     isMuted,
@@ -130,6 +132,37 @@ function LessonSession({
       (item) =>
         item.blocks.length > 0 && !readProgress()[item.id]?.completedAt,
     );
+  // The completion screen's "next lesson" card only makes sense outside the
+  // Lesson Builder's own preview (onCloseLesson), which is only ever handed
+  // a single lesson and has no real course to advance into.
+  const showNextLesson = Boolean(nextLesson) && !onCloseLesson;
+  const nextLessonOutcome = nextLesson ? lessonOutcome(nextLesson.blocks) : null;
+  // Module completion (direction, COMPLETION item 2): every lesson sharing
+  // this one's moduleId, in course order, each reduced to its own final
+  // sentence. Shown only once there's no next lesson to hand off to.
+  const moduleOutcomes = showNextLesson
+    ? []
+    : lessons
+        .filter(
+          (item) =>
+            item.blocks.length > 0 &&
+            (lesson.moduleId ? item.moduleId === lesson.moduleId : true),
+        )
+        .flatMap((item) => {
+          const moduleOutcome = lessonOutcome(item.blocks);
+          return moduleOutcome ? [{ id: item.id, ...moduleOutcome }] : [];
+        });
+  const resetThisLesson = useCallback(() => {
+    if (!confirmingReset) {
+      setConfirmingReset(true);
+      return;
+    }
+    resetLessonProgress([lesson.id]);
+    setConfirmingReset(false);
+    setDraftAnswers({});
+    setSentenceComplete(false);
+    setStepIndex(0);
+  }, [confirmingReset, lesson.id]);
   const canAdvance =
     !complete && (block?.type === "explanation" || sentenceComplete);
   // Vocabulary tables stay tables (SentencePracticeCard) — every ordinary
@@ -337,87 +370,102 @@ function LessonSession({
       </header>
 
       <div ref={contentRef} className="lesson-scroll-area">
-        <div className="lesson-stage" key={complete ? "complete" : block?.id}>
+        <div
+          className={`lesson-stage${complete ? " lesson-stage-complete" : ""}`}
+          key={complete ? "complete" : block?.id}
+        >
           {complete ? (
-            <div
-              className="lesson-celebration learner-enter"
-              aria-live="polite"
-            >
-              <p className="practice-lesson-eyebrow">
-                {lesson.name || `Lección ${lesson.lessonNumber}`}
-              </p>
-              <div className="completion-seal">
-                <Check size={34} strokeWidth={2.5} aria-hidden="true" />
-              </div>
-              <p className="completion-status">Lección completada</p>
-              <p className="completion-saved-note">
-                Tu progreso está guardado.
-              </p>
+            <div className="lesson-celebration learner-enter" aria-live="polite">
               {outcome && (
-                <p className="completion-final-sentence">
-                  <span lang="en">{outcome.english}</span>
-                  <button
-                    type="button"
-                    className="learner-icon-button completion-replay"
-                    onClick={() =>
-                      void speakSentence(outcome.english, lastSpeaker)
-                    }
-                    aria-label="Escuchar la frase final"
-                    title="Escuchar la frase final"
-                  >
-                    <Play size={18} aria-hidden="true" />
-                  </button>
-                </p>
-              )}
-              {nextLesson && !onCloseLesson ? (
-                <div className="completion-next">
-                  <h2>Siguiente lección</h2>
-                  <CompletionConcepts concepts={nextLesson.concepts} />
+                <div className="completion-sentence-group">
+                  <div className="completion-final-row">
+                    <p
+                      className="completion-sentence-en"
+                      data-size={completionSentenceSize(outcome.english)}
+                      lang="en"
+                    >
+                      {outcome.english}
+                    </p>
+                    <button
+                      type="button"
+                      className="learner-icon-button completion-replay"
+                      onClick={() =>
+                        void speakSentence(outcome.english, lastSpeaker)
+                      }
+                      aria-label="Escuchar la frase final"
+                      title="Escuchar la frase final"
+                    >
+                      <RotateCcw size={20} aria-hidden="true" />
+                    </button>
+                  </div>
+                  <p className="completion-sentence-es" lang="es">
+                    {outcome.spanish}
+                  </p>
+                  <p className="completion-tagline">
+                    Esto ya lo puedes decir.
+                  </p>
                 </div>
-              ) : null}
-              <div className="completion-actions" aria-label="Opciones">
-                {nextLesson && !onCloseLesson && (
-                  <button
-                    type="button"
-                    className="completion-action primary"
-                    onClick={() =>
-                      router.push(
-                        `/practice?lesson=${encodeURIComponent(nextLesson.id)}`,
-                      )
-                    }
-                    aria-label="Continuar a la siguiente lección"
-                    title="Siguiente lección"
-                  >
-                    <ArrowRight size={22} aria-hidden="true" />
-                    <span>Continuar</span>
-                  </button>
-                )}
-                {nextLesson && !onCloseLesson && (
-                  <button
-                    type="button"
-                    className="completion-action"
-                    onClick={() => {
-                      skipLesson(nextLesson.id);
-                      setCompletionCursor(
-                        lessons.findIndex((item) => item.id === nextLesson.id),
-                      );
-                    }}
-                    aria-label="Omitir la siguiente lección"
-                    title="Omitir lección"
-                  >
-                    <SkipForward size={21} aria-hidden="true" />
-                    <span>Omitir</span>
-                  </button>
-                )}
+              )}
+
+              <div className="completion-below">
+                {showNextLesson && nextLesson ? (
+                  <div className="completion-next-card">
+                    <p className="learner-eyebrow completion-eyebrow">Siguiente</p>
+                    <p className="completion-next-en" lang="en">
+                      {nextLessonOutcome?.english ||
+                        nextLesson.name ||
+                        `Lección ${nextLesson.lessonNumber}`}
+                    </p>
+                    {(nextLessonOutcome?.spanish || nextLesson.previewText) && (
+                      <p className="completion-next-es" lang="es">
+                        {nextLessonOutcome?.spanish || nextLesson.previewText}
+                      </p>
+                    )}
+                  </div>
+                ) : moduleOutcomes.length > 0 ? (
+                  <div className="completion-module-list">
+                    <p className="learner-eyebrow completion-eyebrow">Lo que ya puedes decir</p>
+                    {moduleOutcomes.map((item) => (
+                      <div className="completion-module-item" key={item.id}>
+                        <p className="completion-module-en" lang="en">
+                          {item.english}
+                        </p>
+                        <p className="completion-module-es" lang="es">
+                          {item.spanish}
+                        </p>
+                      </div>
+                    ))}
+                  </div>
+                ) : null}
                 <button
                   type="button"
-                  className="completion-action quiet"
-                  onClick={close}
-                  aria-label="Volver a mis lecciones"
-                  title="Inicio"
+                  className="learner-button primary completion-cta"
+                  onClick={() => {
+                    if (showNextLesson && nextLesson)
+                      router.push(
+                        `/practice?lesson=${encodeURIComponent(nextLesson.id)}`,
+                      );
+                    else close();
+                  }}
                 >
-                  <Home size={20} aria-hidden="true" />
-                  <span>Inicio</span>
+                  {showNextLesson ? "Siguiente lección" : "Volver al inicio"}
+                  <ArrowRight size={18} aria-hidden="true" />
+                </button>
+              </div>
+
+              <div className="completion-footer-links">
+                <a className="muted-link" href="#feedback">
+                  ¿Qué te pareció?
+                </a>
+                <button
+                  type="button"
+                  className="muted-link completion-reset"
+                  onClick={resetThisLesson}
+                  onBlur={() => setConfirmingReset(false)}
+                >
+                  {confirmingReset
+                    ? "¿Seguro? Reiniciar"
+                    : "Reiniciar esta lección"}
                 </button>
               </div>
             </div>
@@ -495,25 +543,5 @@ function LessonSession({
     sessionContent
   ) : (
     <main className="learner-theme">{sessionContent}</main>
-  );
-}
-
-function CompletionConcepts({
-  concepts,
-}: {
-  concepts: PracticeLesson["concepts"];
-}) {
-  if (concepts.length === 0)
-    return <span className="completion-review">Repaso</span>;
-
-  return (
-    <div className="completion-concepts" aria-label="Lo que aprenderás">
-      {concepts.map((concept) => (
-        <div className="completion-concept" key={concept.id}>
-          <strong lang="en">{learnerLabel(concept.english)}</strong>
-          <span lang="es">{learnerLabel(concept.spanish)}</span>
-        </div>
-      ))}
-    </div>
   );
 }

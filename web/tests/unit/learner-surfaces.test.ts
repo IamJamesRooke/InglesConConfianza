@@ -8,6 +8,7 @@ import { PracticeMarkdown } from "../../src/components/practice/practice-markdow
 import { SentencePracticeCard } from "../../src/components/practice/sentence-practice-card";
 import { SentenceStageCard } from "../../src/components/practice/sentence-stage-card";
 import {
+  completionSentenceSize,
   explanationPlainText,
   explanationWraps,
   learnerLabel,
@@ -51,6 +52,20 @@ test("learnerLabel strips curriculum bracket notation into plain words", () => {
     "to do something on purpose",
   );
   assert.equal(learnerLabel("hello"), "hello");
+});
+
+test("completionSentenceSize buckets the final sentence by word count", () => {
+  assert.equal(completionSentenceSize("I want to go home"), "hero"); // 5 words
+  assert.equal(
+    completionSentenceSize("I want to know if you want to go"),
+    "sentence",
+  ); // 9 words
+  assert.equal(
+    completionSentenceSize(
+      "I want to know if you want to go there with me",
+    ),
+    "body",
+  ); // 12 words
 });
 
 test("a single-module course hides module chrome but still lists its lessons", () => {

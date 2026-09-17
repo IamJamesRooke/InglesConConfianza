@@ -393,3 +393,126 @@ json`'s auto-added UX-check path entries were reverted after each run.
 Not touched: `practice-completion.css`, the completion branch of
 `LessonSession`, and everything under `src/components/learner/` — out of
 this task's scope by instruction.
+
+## 2026-09-17 — Completion v2 (direction build)
+
+Brought the COMPLETION screen (`LessonSession`'s `complete` branch in
+`src/components/practice/lesson-selector.tsx`) to
+`docs/design/learner-direction.md`'s COMPLETION section and the
+owner-approved mockup artboard 5. This was the one screen L2a/L2b/Home v2/
+Lesson v2 all deliberately skipped.
+
+**A quiet stack, not a card.** `.lesson-celebration` is no longer a bordered/
+shadowed box (`src/styles/practice-base.css` — its old
+`max-width/padding/border/border-radius/background/box-shadow/text-align:
+center` are gone, replaced by `width: 100%`; the `.lesson-session
+.lesson-celebration` override in `practice-responsive-overrides.css` now
+only sets `max-width: 720px; margin-inline: auto`). Text is left-aligned,
+largest first, directly on the canvas. The screen also starts near the top
+rather than the ~30% offset every other slide uses — a new
+`.lesson-stage-complete` modifier class (added by `LessonSelector` only in
+the `complete` branch) sets `padding-top: 64px` instead of the shared
+`clamp(64px, 30vh, 220px)`.
+
+**Removed:** the green check-circle seal, "LECCIÓN COMPLETADA" caps title,
+"Tu progreso está guardado." note, the concept-card grid (`CompletionConcepts`
+and its `.completion-concept(s)`/`.completion-review` CSS), the three-button
+row (Continuar/Omitir/Inicio and their `.completion-action*` CSS), and the
+lesson-name eyebrow that used to sit above the seal (the mockup goes
+straight from the status strip to the final sentence). `skipLesson` is no
+longer called from here (direction: no skip) — the function itself stays in
+`src/lib/learner/progress.ts`, still exercised by
+`tests/unit/learner-progress.test.ts`.
+
+**The final sentence, size-by-length (owner tweak).** The lesson's last
+sentence block's outcome (`lessonOutcome`, unchanged) renders at one of
+three sizes, chosen by `completionSentenceSize()` (new, in
+`src/lib/learner/presentation.ts`) counting words in the English text: `<=5`
+words → `--t-hero` (700 weight, the loudest step); 6–10 words → `--t-sentence`
+(600 weight); `>10` words → a fixed 22px/600 ("body-ish", not the fluid
+`--t-body` token — the direction calls out a fixed step here so a long
+sentence's size doesn't creep back up on a wide phone). The bucket is set as
+a `data-size` attribute on `.completion-sentence-en` and switched purely in
+CSS (`src/styles/practice-completion.css`) — no inline sizing. A **replay**
+icon button (`lucide-react`'s `RotateCcw`, replacing the old `Play` glyph —
+closer to the mockup's circular-arrow icon) sits beside it and speaks the
+sentence with the last slide's speaker, same `speakSentence` call as before.
+The Spanish line beneath is `--t-body`/`--ink-muted`; "Esto ya lo puedes
+decir." is `--t-ui`/600.
+
+**Next lesson or module completion.** `showNextLesson` gates on a real next
+lesson *and* not being the Lesson Builder's inline preview (which only ever
+gets a single lesson, so it never has a real "next" to hand off to). When
+true, a white card (`.completion-next-card`, 16px radius/hairline border/
+`--shadow-card`) shows an eyebrow "Siguiente", the next lesson's own
+`lessonOutcome` in English (`--t-ui`/600) and Spanish (`--t-body`/muted) —
+falling back to the lesson's name/number if it has no sentence block, since
+`previewText` is a Spanish-only field and was previously being read as an
+English fallback by mistake in an early draft of this change. When there's
+no next lesson (course end, or the builder preview), a `moduleOutcomes` list
+gathers every lesson sharing this one's `moduleId` (or, absent a
+`moduleId`, every lesson in the course) that has a sentence outcome, and
+stacks them 16px apart under an eyebrow "Lo que ya puedes decir"
+(`.completion-module-list`/`-item`/`-en`/`-es`). Both eyebrows share a new
+`.completion-eyebrow` class (explicit `color: var(--muted-foreground)`,
+rather than depending on the old, now-removed `.lesson-session
+.lesson-celebration .learner-eyebrow { color: var(--primary) }` rule, which
+would have made them purple).
+
+**The one action.** `.completion-cta` reuses `.learner-button.primary` for
+colour (the existing `.lesson-session .learner-button.primary` rule already
+covers any element with those two classes inside `.lesson-session`, not
+just the footer) and gets its own sizing rule (56px/8px radius/`--t-ui`
+weight 600 — the same numbers as the lesson's own primary action, just not
+scoped to `.lesson-controls`), full width on phone and auto-width (min
+280px) from 760px up. Label and destination: "Siguiente lección →" to the
+next lesson when one exists, else "Volver al inicio →" calling the same
+`close()` the header's X button uses.
+
+**Feedback and reset.** Below the CTA, small and centred: "¿Qué te
+pareció?" (an `#feedback` placeholder link) and "Reiniciar esta lección" — a
+real button now, wired to `resetLessonProgress()` (previously exported from
+`src/lib/learner/progress.ts` but never called from anywhere in the app). A
+`confirmingReset` state flips the label to "¿Seguro? Reiniciar" on first
+click (an inline confirm, no browser dialog) and resets on the second click,
+clearing this lesson's stored progress and local step/answer state so the
+learner lands back on the first slide. Losing focus (`onBlur`) reverts the
+confirm without resetting anything. Both links share a new `.muted-link`
+class (13px/`--muted-foreground`, `font: inherit` so the reset `<button>`
+matches the feedback `<a>`).
+
+**Motion.** The whole screen keeps the existing 240ms slide cross-fade via
+`.learner-enter`/`.lesson-session .learner-enter`. The final-sentence block
+additionally gets its own 300ms fade + 8px rise (`@keyframes completion-
+sentence-reveal`, applied to `.completion-sentence-group`), matching the
+direction's "completion sentence reveal 300ms" line as a distinct motion
+from the 240ms slide change. Being inside `.learner-theme`, it's covered by
+the existing reduced-motion rule that collapses all `.learner-theme`
+animation/transition durations to 1ms rather than disabling them outright.
+
+**Speaker-row check (LESSON, not COMPLETION).** Verified on a sentence slide
+at 390×844 on the isolated Playwright server: the speaker chip (48px
+portrait + flag/label) renders under the card within 1.5s at rest, before
+any input — `availableSpeakers()`'s manifest probe resolves because
+`public/audio/manifest.json` is a real committed file the isolated dev
+server serves like any other public asset; no fix was needed here.
+
+Verified with `npm run test:unit` (372/372 — added `completionSentenceSize`
+coverage in `tests/unit/learner-surfaces.test.ts`), `npx eslint` on the
+touched files, `npx tsc --noEmit`, `npm run lint` (incl. CSS lint, clean of
+new literal-colour findings), `npm run lint:dead` (no new findings — the
+three pre-existing unused-export/type hints are unrelated to this change),
+and `tests/ux/learner-polish.spec.ts` (its two completion assertions
+rewritten for the new markup — `.lesson-celebration`/`.completion-cta`
+instead of the removed "Lección completada" text and `.completion-actions`
+button). Note: this spec's other two cases (`table.boundingBox()` height and
+the keyboard-answers `piece.boundingBox()` timeout) were confirmed failing
+identically on a clean `git stash` of this change, on an unrelated port —
+pre-existing failures, not a regression from this task. Screenshots came
+from a throwaway spec (deleted after) on `UX_CHECK_PORT=3221`:
+`/tmp/claude-1000/completion-v2-390.png` (phone, 9-word sentence →
+`data-size="sentence"`), `/tmp/claude-1000/completion-v2-1280.png` (desktop,
+3-word sentence → `data-size="hero"`, real next-lesson card), `/tmp/
+claude-1000/lesson-v2-speaker-390.png` (sentence slide, speaker row visible
+at rest after 1.5s). `tsconfig.json`'s auto-added UX-check path entries were
+reverted after each run.

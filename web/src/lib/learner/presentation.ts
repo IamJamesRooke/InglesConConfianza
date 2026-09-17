@@ -29,6 +29,21 @@ export function lessonOutcome(blocks: LessonBlock[]) {
   };
 }
 
+export type CompletionSentenceSize = "hero" | "sentence" | "body";
+
+/**
+ * The completion screen's final-sentence size (owner tweak,
+ * docs/design/learner-direction.md's COMPLETION section): a short sentence
+ * gets the loudest hero size; past 10 words it steps down to a body-ish
+ * size so a long sentence never overflows a phone screen.
+ */
+export function completionSentenceSize(english: string): CompletionSentenceSize {
+  const wordCount = english.trim().split(/\s+/).filter(Boolean).length;
+  if (wordCount <= 5) return "hero";
+  if (wordCount <= 10) return "sentence";
+  return "body";
+}
+
 /** Roughly how many characters of an explanation fit on one rendered line
  * at the practice card's measure. Past this, the text is certain to wrap. */
 const EXPLANATION_SINGLE_LINE_CHARS = 60;

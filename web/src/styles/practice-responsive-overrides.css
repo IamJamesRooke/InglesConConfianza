@@ -119,6 +119,13 @@
   justify-content: flex-start;
   padding: clamp(64px, 30vh, 220px) 20px clamp(48px, 10vh, 96px);
 }
+/* Completion (direction, COMPLETION): the stack starts near the top of the
+   canvas, not at the ~30% offset every other slide uses — there's no single
+   card to centre, just a top-to-bottom read. */
+.lesson-stage.lesson-stage-complete {
+  justify-content: flex-start;
+  padding-top: 64px;
+}
 /* Direction ("Motion budget"): slide change is a 240ms cross-fade with an
    8px rise — scoped to lesson slides only (globals.css's own `.learner-enter`
    at 420ms/10px stays the shared default for the rest of the app, e.g. the
@@ -752,6 +759,22 @@
     transform: translateY(0);
   }
 }
+/* Direction ("Motion budget"): the completion sentence reveals with its own
+   300ms fade + rise — distinct from the 240ms slide cross-fade the
+   `.lesson-celebration` wrapper itself gets via `.learner-enter`. */
+@keyframes completion-sentence-reveal {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.completion-sentence-group {
+  animation: completion-sentence-reveal 300ms ease-out both;
+}
 .lesson-session .learner-button.primary {
   color: var(--primary-foreground);
   background: var(--primary);
@@ -763,9 +786,6 @@
   background: var(--muted);
   box-shadow: none;
   opacity: 0.65;
-}
-.lesson-session .lesson-celebration .learner-eyebrow {
-  color: var(--primary);
 }
 @keyframes learner-pop {
   from {
@@ -927,9 +947,6 @@
   .vocabulary-practice .answer-callout {
     grid-column: 1;
   }
-  .completion-actions {
-    flex-direction: column;
-  }
   .course-footer {
     font-size: 10px;
   }
@@ -940,8 +957,7 @@
    (.lesson-session and .lesson-topbar's own background/color/box-shadow are
    set once, above, with these values already folded in.) */
 .lesson-explanation,
-.answer-grid,
-.lesson-celebration {
+.answer-grid {
   border: 1px solid var(--border);
   background: var(--surface-writing);
   box-shadow: var(--shadow-card);
@@ -957,54 +973,24 @@
   background: var(--brand-primary-hover);
 }
 
-/* Completion keeps the existing flow, but gives the two essential signals—
-   success and returning home—clear visual weight at every viewport size. */
+/* Completion ("you said that" — docs/design/learner-direction.md,
+   COMPLETION): a quiet stack on the canvas, not a card. Full rule set lives
+   in practice-completion.css; this file keeps only what needs the
+   `.lesson-session` type-scale tokens and its `.learner-button`/motion
+   plumbing. */
 .lesson-session .lesson-celebration {
-  max-width: 36rem;
-  padding: clamp(2rem, 4vw, 3rem);
+  width: 100%;
+  max-width: 720px;
+  margin-inline: auto;
 }
-.lesson-session .completion-seal {
-  color: var(--success-contrast);
-  background: var(--success);
-  box-shadow: 0 0 0 8px
-    color-mix(in oklch, var(--success) 16%, var(--surface-writing));
-  width: 92px;
-  height: 92px;
-  margin-bottom: 20px;
+.lesson-session .completion-cta {
+  width: 100%;
 }
-.lesson-session .completion-seal svg {
-  width: 46px;
-  height: 46px;
-}
-.lesson-session .completion-status {
-  margin-bottom: 22px;
-  color: var(--foreground);
-  font-size: clamp(1.5rem, 1.2rem + 1vw, 1.9rem);
-  font-weight: 850;
-  line-height: 1.2;
-  letter-spacing: 0.045em;
-}
-.lesson-session .completion-actions {
-  margin-top: 22px;
-}
-.lesson-session .completion-action {
-  min-width: 148px;
-  border-radius: var(--radius-lg);
-}
-.lesson-session .completion-action.quiet {
-  color: var(--primary-foreground);
-  border-color: var(--primary);
-  background: var(--primary);
-  box-shadow: 0 3px 0 color-mix(in oklch, var(--primary) 72%, var(--ink-deep));
-}
-.lesson-session .completion-action.quiet:hover {
-  color: var(--primary-foreground);
-  border-color: var(--brand-primary-hover);
-  background: var(--brand-primary-hover);
-}
-.lesson-session .completion-action:focus-visible {
-  outline: 3px solid color-mix(in oklch, var(--primary) 32%, transparent);
-  outline-offset: 3px;
+@media (min-width: 760px) {
+  .lesson-session .completion-cta {
+    width: auto;
+    min-width: 280px;
+  }
 }
 
 /* Vocabulary tables are reference-like scan rows, not four oversized
@@ -1119,29 +1105,6 @@
   outline-offset: 2px;
 }
 @media (max-width: 480px) {
-  .lesson-session .lesson-celebration {
-    padding: 28px 20px;
-  }
-  .lesson-session .completion-seal {
-    width: 80px;
-    height: 80px;
-    margin-bottom: 18px;
-  }
-  .lesson-session .completion-seal svg {
-    width: 40px;
-    height: 40px;
-  }
-  .lesson-session .completion-status {
-    margin-bottom: 18px;
-    font-size: 1.35rem;
-  }
-  .lesson-session .completion-actions {
-    width: 100%;
-    margin-top: 18px;
-  }
-  .lesson-session .completion-action {
-    width: min(100%, 15rem);
-  }
   .lesson-session .vocabulary-practice .answer-piece {
     grid-template-columns: minmax(0, 1fr) auto;
     gap: 5px;

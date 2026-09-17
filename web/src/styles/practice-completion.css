@@ -3,139 +3,146 @@
    Not part of the lesson-builder admin UI — split out of the old
    lesson-library-document.css bundle, which had accumulated these unrelated
    learner/app-shell rules alongside the builder's own styles. */
-.completion-seal {
-  width: 68px;
-  height: 68px;
+
+/* Completion ("you said that" — docs/design/learner-direction.md,
+   COMPLETION section, and the owner-approved mockup artboard 5): a quiet
+   stack on the plain canvas, largest first — no card, no badge, no confetti. */
+.completion-sentence-group {
+  margin-bottom: 48px;
+}
+.completion-final-row {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50%;
-  margin: 0 auto 18px;
+  align-items: flex-start;
+  gap: 12px;
 }
-.completion-status {
-  color: var(--success-foreground);
-  font-size: 12px;
-  font-weight: 850;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  margin-bottom: 8px;
-}
-.completion-saved-note {
-  color: var(--muted-foreground);
-  font-size: 13px;
-  margin-bottom: 34px;
-}
-.completion-final-sentence {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  margin: -18px auto 34px;
+.completion-sentence-en {
+  flex: 1;
+  min-width: 0;
+  margin: 0;
   color: var(--foreground);
-  font-size: 17px;
+  overflow-wrap: break-word;
+}
+/* Owner tweak: size scales down with sentence length so a long sentence
+   never eats the phone — short sentences keep the full hero weight. */
+.completion-sentence-en[data-size="hero"] {
+  font-size: var(--t-hero);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.15;
+}
+.completion-sentence-en[data-size="sentence"] {
+  font-size: var(--t-sentence);
   font-weight: 600;
-}
-.completion-final-sentence .completion-replay {
-  width: 36px;
-  height: 36px;
-  color: var(--primary);
-  background: var(--muted);
-}
-.completion-final-sentence .completion-replay:hover {
-  background: var(--surface-subtle);
-}
-.completion-actions {
-  display: flex;
-  gap: 12px;
-  align-items: center;
-  justify-content: center;
-  margin-top: 34px;
-}
-.completion-next {
-  display: grid;
-  gap: 16px;
-  justify-items: center;
-  width: 100%;
-}
-.completion-next h2 {
-  color: var(--foreground);
-  font-size: 23px;
-  font-weight: 750;
-  line-height: 1.3;
-  letter-spacing: -0.02em;
-}
-.completion-concepts {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 12px;
-}
-.completion-concept {
-  display: grid;
-  gap: 5px;
-  min-width: 190px;
-  padding: 15px 20px;
-  border: 1px solid var(--border);
-  border-radius: var(--radius-lg);
-  background: var(--card);
-  text-align: center;
-}
-.completion-concept strong {
-  color: var(--foreground);
-  font-size: 17px;
-  line-height: 1.3;
-}
-.completion-concept span {
-  color: var(--muted-foreground);
-  font-size: 13px;
+  letter-spacing: -0.01em;
   line-height: 1.35;
 }
-.completion-action {
+.completion-sentence-en[data-size="body"] {
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 1.35;
+}
+.completion-replay {
+  flex: none;
+  margin-top: 8px;
+  color: var(--primary);
+}
+.completion-sentence-es {
+  margin: 16px 0 0;
+  color: var(--muted-foreground);
+  font-size: var(--t-body);
+  font-weight: 500;
+  line-height: 1.55;
+}
+.completion-tagline {
+  margin: 16px 0 0;
+  color: var(--foreground);
+  font-size: var(--t-ui);
+  font-weight: 600;
+}
+.completion-below {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+.completion-eyebrow {
+  margin: 0;
+  color: var(--muted-foreground);
+}
+.completion-next-card {
+  padding: 20px;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  background: var(--surface-writing);
+  box-shadow: var(--shadow-card);
+}
+.completion-next-en {
+  margin: 8px 0 0;
+  color: var(--foreground);
+  font-size: var(--t-ui);
+  font-weight: 600;
+  line-height: 1.35;
+}
+.completion-next-es {
+  margin: 4px 0 0;
+  color: var(--muted-foreground);
+  font-size: var(--t-body);
+  line-height: 1.4;
+}
+.completion-module-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.completion-module-item {
+  display: flex;
+  flex-direction: column;
+}
+.completion-module-en {
+  margin: 0;
+  color: var(--foreground);
+  font-size: var(--t-ui);
+  font-weight: 600;
+  line-height: 1.35;
+}
+.completion-module-es {
+  margin: 2px 0 0;
+  color: var(--muted-foreground);
+  font-size: var(--t-body);
+  line-height: 1.4;
+}
+/* Direction ("The action"): the same 56px/8px-radius/--t-ui-600 button as
+   the lesson's own primary action (.lesson-controls .learner-button in
+   practice-responsive-overrides.css) — colour comes from the shared
+   `.lesson-session .learner-button.primary` rule there. */
+.completion-cta {
   display: inline-flex;
-  height: 52px;
   align-items: center;
   justify-content: center;
-  color: var(--muted-foreground);
-  border: 1px solid var(--border);
-  border-radius: 50%;
-  background: var(--card);
-  gap: 9px;
-  min-width: 128px;
-  padding-inline: 20px;
-  font-size: 14px;
-  font-weight: 800;
-  transition:
-    color 160ms,
-    border-color 160ms,
-    background 160ms,
-    transform 160ms;
+  gap: 8px;
+  min-height: 56px;
+  border-radius: 8px;
+  font-size: var(--t-ui);
+  font-weight: 600;
 }
-.completion-action:hover {
-  color: var(--foreground);
-  border-color: color-mix(in oklch, var(--primary) 35%, var(--border));
-  background: var(--muted);
-  transform: translateY(-1px);
-}
-.completion-action.primary {
-  color: var(--primary-foreground);
-  border-color: var(--primary);
-  background: var(--primary);
-}
-.completion-action.quiet {
-  color: var(--muted-foreground);
-  border-color: transparent;
-  background: transparent;
-}
-.completion-review {
-  display: inline-flex;
-  min-height: 42px;
+.completion-footer-links {
+  display: flex;
   align-items: center;
-  padding-inline: 20px;
-  color: var(--secondary-foreground);
-  border-radius: 999px;
-  background: var(--secondary);
-  font-size: 14px;
-  font-weight: 750;
+  justify-content: center;
+  gap: 24px;
+  margin-top: 32px;
+}
+.muted-link {
+  padding: 0;
+  color: var(--muted-foreground);
+  font: inherit;
+  font-size: 13px;
+  background: none;
+  border: 0;
+  text-decoration: none;
+  cursor: pointer;
+}
+.muted-link:hover {
+  color: var(--foreground);
 }
 .lesson-loading {
   min-height: 100dvh;

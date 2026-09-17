@@ -225,14 +225,8 @@ test("vocabulary rows stay compact through completion and ordinary sentences rem
   ).toEqual([]);
 
   await page.getByRole("button", { name: "Terminar lección" }).click();
-  await expect(
-    page.getByText("Lección completada", { exact: true }),
-  ).toBeVisible();
-  await expect(
-    page
-      .locator(".completion-actions")
-      .getByRole("button", { name: "Volver a mis lecciones" }),
-  ).toBeVisible();
+  await expect(page.locator(".lesson-celebration")).toBeVisible();
+  await expect(page.locator(".completion-cta")).toBeVisible();
   await page.waitForTimeout(300);
   await page.screenshot({
     path: "/tmp/lesson-completion-after.png",
