@@ -48,9 +48,9 @@ the owner's say-so.
 - [x] L0 palette · L0b colour on surfaces · L1 home (one message per zone, no plumbing)
 - [x] L2a practice frame (one typeface, thin header + progress bar, one card width)
 - [x] Speech: browser synthesis + Google clips, USA/UK speakers (`docs/design/speech.md`)
-- [ ] L2b sentence slide (check beside the sentence, headline prompt, hint outside the field,
+- [x] L2b sentence slide (check beside the sentence, headline prompt, hint outside the field,
       no layout jump) · table slide at reading size · explanation marks loudest
-- [ ] Explanation voice track (owner 2026-09-17): ONE American voice reads the whole
+- [x] Explanation voice track (owner 2026-09-17): ONE American voice reads the whole
       explanation, Spanish included ("gringo accent is fine"); an `en` mark may carry a
       pronunciation bridge `[[en:different|DIFF-rent]]` (one field in the mark popover,
       shown small to the learner) and is then spoken as: word normally · pause · each
@@ -58,18 +58,19 @@ the owner's say-so.
       read plainly (no automatic syllabification — dictionary syllables ≠ spoken ones);
       auto-plays on slide entry (mute honoured), replay on the card, "listen" in the
       builder; keyed by text like the other clips (`docs/design/speech.md`)
-- [ ] L2c completion: the sentence you built, "Esto ya lo puedes decir", replay, one action
-- [ ] L1 leftover: drop the "0 / 2" on the module header
-- [ ] Per-slide feedback: quiet "¿Algo que corregir?" in the practice footer → small field →
+- [x] L2c completion: the sentence you built, "Esto ya lo puedes decir", replay, one action
+- [x] L1 leftover: drop the "0 / 2" on the module header
+- [x] Per-slide feedback: quiet "¿Algo que corregir?" in the practice footer → small field →
       one serverless function → a Google Sheet row (lesson, slide, slide text, device,
       optional "¿quién eres?"); completion keeps a general "¿Qué te pareció?"
 - [ ] L4 craft: favicon/app icon, manifest, loading/empty/error states, focus rings,
       transitions, reduced motion
 - [ ] Onboarding (below)
-- [ ] Admin guard (env secret on `/admin` + `/api/admin`), deploy shape: static learner site
+- [x] Admin guard (env secret on `/admin` + `/api/admin`), deploy shape: static learner site
       with lessons + audio bundled + one feedback function on Vercel; admin local only;
       README + `.env.example`
-- [ ] Full gate (with permission) → deploy → friends
+- [ ] Full gate (with permission) → deploy on Vercel → friends
+- [x] Admin consistency pass (shared card/button recipes, tokens) · README · design research + direction + mockups (`docs/design/learner-direction.md`)
 
 ### Onboarding (thinking only, 2026-09-17 — not started)
 
