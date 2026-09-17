@@ -145,7 +145,7 @@ export function CurriculumTableToolbar({
       </div>
 
       {levelChecklist && levelChecklist.total > 0 && (
-        <div className="mb-3 rounded-lg border border-border bg-card px-3 py-2 shadow-sm">
+        <div className="mb-3 rounded-[16px] border border-border bg-card px-3 py-2 shadow-[var(--shadow-card)]">
           <p className="text-xs font-medium text-muted-foreground">
             Level ≤ {levelChecklist.maxLevel} · taught {levelChecklist.taught} /{" "}
             {levelChecklist.total} concepts
@@ -171,7 +171,7 @@ export function CurriculumTableToolbar({
       )}
 
       {usageSummary && (
-        <div className="mb-3 rounded-lg border border-border bg-card px-3 py-2 shadow-sm">
+        <div className="mb-3 rounded-[16px] border border-border bg-card px-3 py-2 shadow-[var(--shadow-card)]">
           <p className="text-xs font-medium text-muted-foreground">
             {usageFilter === "used" ? "Used in a module" : "Never used"} — {usageSummary.used}{" "}
             {usageSummary.used === 1 ? "concept is" : "concepts are"} required by some module&rsquo;s
@@ -182,7 +182,7 @@ export function CurriculumTableToolbar({
 
       <form
         aria-busy={isNavigating}
-        className="lg:sticky lg:top-[57px] z-30 mb-3 grid gap-2 rounded-xl border border-border bg-card/95 p-3 shadow-sm backdrop-blur sm:grid-cols-2 xl:grid-cols-[minmax(0,1fr)_auto_auto]"
+        className="lg:sticky lg:top-[57px] z-30 mb-3 grid gap-2 rounded-[16px] border border-border bg-card/95 p-3 shadow-[var(--shadow-card)] backdrop-blur sm:grid-cols-2 xl:grid-cols-[minmax(0,1fr)_auto_auto]"
         onSubmit={(event) => {
           event.preventDefault();
           onSubmitSearch();

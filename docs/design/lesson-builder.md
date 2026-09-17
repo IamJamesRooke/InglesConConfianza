@@ -740,6 +740,43 @@ proposal doc's aspirations.
   `--surface-subtle`, and en-blue's hue sits 36° from `--brand-primary`
   purple. No dark theme redesign — `.dark` reuses the same hues so it
   can't drift.
+- **Site-wide consistency** (cosmetic lane, 2026-09-17): the admin (Lesson
+  Builder, `/admin/curriculum`, `/admin/coverage`, the admin header) now
+  shares the learner site's card recipe, button recipe, and focus/role
+  tokens instead of parallel one-off Tailwind hues — this is alignment, not
+  a builder redesign; the document/slide rules above are unchanged.
+  - Card/surface recipe applied to the curriculum table's desktop and
+    mobile-row containers, the topic sidebar (`curriculum-table-sidebar.tsx`),
+    the search/filter and level-progress bands (`curriculum-table-toolbar.tsx`),
+    the Coverage page's metric tiles and Teaching Review/matrix panels
+    (`coverage-matrix.tsx`), and the Covers "quick-edit" popover
+    (`concept-quick-edit.tsx`, `rounded-2xl`/`shadow-2xl` → `12px` radius +
+    `--shadow-card`, matching the popover recipe): white, hairline `--border`,
+    `--shadow-card`, 16px radius for cards / 12px for the popover.
+  - Buttons: the bulk-action bar's destructive action and the quick-edit
+    popover's "Yes, delete" confirm moved from a solid red fill to the
+    shared destructive recipe (`--destructive` text on white with a hairline
+    border); its tinted selection band moved from an ad hoc `bg-primary/5`
+    wash to `--surface-subtle`.
+  - Removed one-off hues: `coverage-matrix.tsx`'s priority badges
+    (`roleClasses`) now reuse the same `.role-P1`…`.role-Trash` tokens as
+    the curriculum table's own role select instead of a second, parallel
+    red/orange/amber/blue/slate scale; its "cold" badges map to
+    `--success`/`--muted`/`--hint`; its Requested/Trashed/Missing rails use
+    `--hint`/`--destructive` instead of raw `amber-*`/`red-*`; and
+    `concept-quick-edit.tsx`'s error text, unknown-facet tag, and
+    delete-confirm controls moved off raw `red-*`/`amber-*` onto
+    `--destructive`/`--hint`.
+  - Admin header: the active nav pill (`admin-header-nav-link-active`) now
+    fills with `--primary` instead of a plain white wash, so "what's
+    active" reads as the same purple as the learner site's one accent — the
+    header itself keeps its dark ink bar (deliberate admin/learner cue) and
+    its brand mark already matched the learner mark (same stones SVG, bare
+    variant).
+  - Left untouched (in scope for a future pass, not part of this round):
+    `authoring-base.css`'s `.authoring-*` classes are effectively dead
+    outside `explanation-editor.tsx` (protected by the explanation-block
+    rule above) and were not exercised by any current admin page.
 
 ## 6. Owner decisions & rejected ideas
 

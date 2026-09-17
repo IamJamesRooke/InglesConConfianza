@@ -233,7 +233,7 @@ export function ConceptQuickEdit({
               }
             }}
           >
-          <div className="max-h-[88vh] w-full max-w-lg overflow-y-auto rounded-2xl border border-border bg-popover p-5 text-popover-foreground shadow-2xl">
+          <div className="max-h-[88vh] w-full max-w-lg overflow-y-auto rounded-[12px] border border-border bg-popover p-5 text-popover-foreground shadow-[var(--shadow-card)]">
             <h2 className="text-lg font-semibold tracking-tight">
               Edit concept
             </h2>
@@ -245,7 +245,10 @@ export function ConceptQuickEdit({
                 // below, so a failed fetch left the popover stuck on
                 // "Loading…" forever with no way out but closing it.
                 <div className="mt-4 space-y-3">
-                  <p role="alert" className="text-sm font-medium text-red-600">
+                  <p
+                    role="alert"
+                    className="text-sm font-medium text-destructive"
+                  >
                     {error}
                   </p>
                   <button
@@ -343,7 +346,7 @@ export function ConceptQuickEdit({
                             key={tag}
                             className={`inline-flex items-center gap-1 rounded-full border px-2 py-0.5 text-xs font-medium ${
                               unknown
-                                ? "border-amber-300 bg-amber-50 text-amber-800"
+                                ? "border-[color-mix(in_oklch,var(--hint)_45%,var(--border))] bg-[color-mix(in_oklch,var(--hint)_16%,var(--card))] text-[color-mix(in_oklch,var(--hint)_72%,black)]"
                                 : "border-border bg-muted text-foreground"
                             }`}
                             title={
@@ -362,7 +365,7 @@ export function ConceptQuickEdit({
                                 )
                               }
                               aria-label={`Remove ${tag}`}
-                              className="text-current/60 hover:text-red-600"
+                              className="text-current/60 hover:text-destructive"
                             >
                               <X className="size-3" aria-hidden="true" />
                             </button>
@@ -409,7 +412,7 @@ export function ConceptQuickEdit({
                 {error && (
                   <p
                     role="alert"
-                    className="mt-3 text-sm font-medium text-red-600"
+                    className="mt-3 text-sm font-medium text-destructive"
                   >
                     {error}
                   </p>
@@ -418,12 +421,14 @@ export function ConceptQuickEdit({
                 <div className="mt-5 flex items-center justify-between gap-2">
                   {confirmingDelete ? (
                     <div className="flex items-center gap-2">
-                      <span className="text-xs text-red-700">Delete?</span>
+                      <span className="text-xs text-destructive">
+                        Delete?
+                      </span>
                       <button
                         type="button"
                         onClick={() => void remove()}
                         disabled={saving}
-                        className="rounded-md bg-red-600 px-2 py-1 text-xs font-semibold text-white transition hover:bg-red-700 disabled:opacity-50"
+                        className="rounded-lg border border-destructive bg-card px-2 py-1 text-xs font-semibold text-destructive transition hover:bg-destructive/10 disabled:opacity-50"
                       >
                         Yes, delete
                       </button>
@@ -440,7 +445,7 @@ export function ConceptQuickEdit({
                       type="button"
                       onClick={() => setConfirmingDelete(true)}
                       disabled={saving}
-                      className="text-xs font-medium text-red-600 transition hover:text-red-700 disabled:opacity-50"
+                      className="text-xs font-medium text-destructive transition hover:opacity-80 disabled:opacity-50"
                     >
                       Delete concept
                     </button>

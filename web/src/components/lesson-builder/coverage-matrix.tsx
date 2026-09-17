@@ -3,20 +3,21 @@ import Link from "next/link";
 import { ConceptQuickEdit } from "@/components/lesson-builder/concept-quick-edit";
 import type { CoverageReport } from "@/lib/lesson-builder/server/coverage-report";
 
+// Semantic tokens, not ad hoc hues: --success/--hint/--muted already carry
+// the "just taught / cooling / cold" meaning elsewhere in the app.
 function coldClasses(lessonsSinceLast: number) {
-  if (lessonsSinceLast === 0) return "bg-emerald-100 text-emerald-700";
-  if (lessonsSinceLast <= 2) return "bg-stone-100 text-stone-500";
-  return "bg-amber-100 text-amber-800";
+  if (lessonsSinceLast === 0)
+    return "bg-[color-mix(in_oklch,var(--success)_16%,var(--card))] text-[var(--success-foreground)]";
+  if (lessonsSinceLast <= 2) return "bg-muted text-muted-foreground";
+  return "bg-[var(--state-help-soft)] text-[color-mix(in_oklch,var(--hint)_72%,black)]";
 }
 
+// Reuses the same `.role-*` badge tokens as the curriculum table (see
+// globals.css) instead of a parallel, ad hoc colour scale — one priority
+// ladder for both surfaces. `line-through` is the only extra treatment
+// Trash needs here.
 function roleClasses(role: string) {
-  if (role === "P1") return "bg-red-100 text-red-700";
-  if (role === "P2") return "bg-orange-100 text-orange-800";
-  if (role === "P3") return "bg-amber-100 text-amber-800";
-  if (role === "P4") return "bg-blue-100 text-blue-800";
-  if (role === "P5") return "bg-slate-100 text-slate-600";
-  if (role === "Trash") return "bg-stone-200 text-stone-500 line-through";
-  return "bg-stone-100 text-stone-500";
+  return role === "Trash" ? "line-through" : "";
 }
 
 // The concept × lesson spiral matrix (coldest first) plus the Requested /
@@ -42,7 +43,7 @@ export function CoverageMatrix({ report }: { report: CoverageReport }) {
 
   return (
     <>
-      <section className="rounded-xl border border-border bg-card p-4 shadow-sm">
+      <section className="rounded-[16px] border border-border bg-card p-4 shadow-[var(--shadow-card)]">
         <h2 className="text-sm font-semibold text-foreground">
           Teaching Review
         </h2>
@@ -60,12 +61,12 @@ export function CoverageMatrix({ report }: { report: CoverageReport }) {
       </section>
 
       {report.concepts.length === 0 ? (
-        <p className="rounded-xl border border-border bg-card px-4 py-8 text-center text-sm text-muted-foreground">
+        <p className="rounded-[16px] border border-border bg-card px-4 py-8 text-center text-sm text-muted-foreground">
           No concepts linked yet. Add them under a lesson title in the Lesson
           Builder.
         </p>
       ) : (
-        <div className="w-fit max-w-full overflow-x-auto rounded-xl border border-border bg-card shadow-sm">
+        <div className="w-fit max-w-full overflow-x-auto rounded-[16px] border border-border bg-card shadow-[var(--shadow-card)]">
           <table className="border-collapse text-[13px]">
             <thead className="bg-muted text-xs text-muted-foreground">
               <tr>
@@ -109,16 +110,16 @@ export function CoverageMatrix({ report }: { report: CoverageReport }) {
                         className="group flex w-full items-center gap-2 rounded-md px-1 py-0.5 text-left transition hover:bg-muted"
                       >
                         <span
-                          className={`shrink-0 rounded px-1.5 py-0.5 text-[10px] font-semibold uppercase tracking-wide ${roleClasses(concept.role)}`}
+                          className={`role-${concept.role} shrink-0 rounded px-1.5 py-0.5 text-[10px] font-semibold uppercase tracking-wide bg-[var(--role-background)] text-[var(--role-foreground)] ${roleClasses(concept.role)}`}
                         >
                           {concept.role}
                         </span>
                         <span className="truncate">
-                          <span className="font-semibold text-stone-900">
+                          <span className="font-semibold text-foreground">
                             {concept.spanish}
                           </span>
-                          <span className="text-stone-400"> → </span>
-                          <span className="text-stone-600">
+                          <span className="text-muted-foreground"> → </span>
+                          <span className="text-muted-foreground">
                             {concept.english}
                           </span>
                         </span>
@@ -176,14 +177,14 @@ export function CoverageMatrix({ report }: { report: CoverageReport }) {
             {report.requested.map((entry) => (
               <span
                 key={entry.label}
-                className="inline-flex items-center gap-1 rounded-full border border-dashed border-amber-300 bg-amber-50 px-2.5 py-1 text-xs font-medium text-amber-800"
+                className="inline-flex items-center gap-1 rounded-full border border-dashed border-[color-mix(in_oklch,var(--hint)_45%,var(--border))] bg-[var(--state-help-soft)] px-2.5 py-1 text-xs font-medium text-[color-mix(in_oklch,var(--hint)_72%,black)]"
               >
                 {entry.label}
                 {entry.lessonNumbers.map((lessonNumber) => (
                   <Link
                     key={lessonNumber}
                     href={lessonHref(lessonNumber)}
-                    className="rounded px-1 text-amber-600 underline-offset-2 hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-300"
+                    className="rounded px-1 text-[color-mix(in_oklch,var(--hint)_72%,black)] underline-offset-2 hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--hint)]"
                   >
                     L{lessonNumber}
                   </Link>
@@ -196,14 +197,14 @@ export function CoverageMatrix({ report }: { report: CoverageReport }) {
 
       {report.trashed.length > 0 && (
         <section className="mt-8">
-          <h2 className="text-sm font-semibold uppercase tracking-wide text-red-700">
+          <h2 className="text-sm font-semibold uppercase tracking-wide text-destructive">
             References now marked trash ({report.trashed.length})
           </h2>
           <div className="mt-2 flex flex-wrap gap-2">
             {report.trashed.map((entry) => (
               <span
                 key={entry.conceptId}
-                className="inline-flex items-center gap-1 rounded-full border border-red-300 bg-red-50 px-2.5 py-1 text-xs font-medium text-red-700"
+                className="inline-flex items-center gap-1 rounded-full border border-destructive/30 bg-destructive/10 px-2.5 py-1 text-xs font-medium text-destructive"
               >
                 <ConceptQuickEdit
                   conceptId={entry.conceptId}
@@ -223,7 +224,7 @@ export function CoverageMatrix({ report }: { report: CoverageReport }) {
                   <Link
                     key={lessonNumber}
                     href={lessonHref(lessonNumber)}
-                    className="rounded px-1 text-red-500 underline-offset-2 hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-300"
+                    className="rounded px-1 text-destructive underline-offset-2 hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-destructive/40"
                   >
                     L{lessonNumber}
                   </Link>
@@ -236,7 +237,7 @@ export function CoverageMatrix({ report }: { report: CoverageReport }) {
 
       {report.missing.length > 0 && (
         <section className="mt-8">
-          <h2 className="text-sm font-semibold uppercase tracking-wide text-red-700">
+          <h2 className="text-sm font-semibold uppercase tracking-wide text-destructive">
             Missing — linked to a concept no longer in the catalog (
             {report.missing.length})
           </h2>
@@ -245,14 +246,14 @@ export function CoverageMatrix({ report }: { report: CoverageReport }) {
               <span
                 key={entry.conceptId}
                 title={entry.conceptId}
-                className="inline-flex items-center gap-1 rounded-full border border-red-300 bg-red-50 px-2.5 py-1 text-xs font-medium text-red-700"
+                className="inline-flex items-center gap-1 rounded-full border border-destructive/30 bg-destructive/10 px-2.5 py-1 text-xs font-medium text-destructive"
               >
                 {entry.label}
                 {entry.lessonNumbers.map((lessonNumber) => (
                   <Link
                     key={lessonNumber}
                     href={lessonHref(lessonNumber)}
-                    className="rounded px-1 text-red-500 underline-offset-2 hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-300"
+                    className="rounded px-1 text-destructive underline-offset-2 hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-destructive/40"
                   >
                     L{lessonNumber}
                   </Link>

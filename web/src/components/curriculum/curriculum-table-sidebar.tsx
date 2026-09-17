@@ -58,7 +58,7 @@ export function CurriculumTableSidebar({
       <aside
         className={`${
           sidebarOpen ? "lg:w-72 xl:w-80" : "lg:w-14"
-        } hidden h-[calc(100vh-5rem)] min-h-[560px] self-start overflow-hidden rounded-xl border border-border bg-card shadow-sm transition-[width] lg:sticky lg:top-16 lg:flex lg:flex-col`}
+        } hidden h-[calc(100vh-5rem)] min-h-[560px] self-start overflow-hidden rounded-[16px] border border-border bg-card shadow-[var(--shadow-card)] transition-[width] lg:sticky lg:top-16 lg:flex lg:flex-col`}
       >
         <div className="flex shrink-0 items-center justify-between border-b border-border px-3 py-3">
           {sidebarOpen && (
@@ -113,7 +113,7 @@ export function CurriculumTableSidebar({
           type="button"
           onClick={onToggleMobileTopics}
           aria-expanded={mobileTopicsOpen}
-          className="flex w-full items-center justify-between rounded-xl border border-border bg-card px-4 py-3 text-sm font-semibold shadow-sm"
+          className="flex w-full items-center justify-between rounded-[16px] border border-border bg-card px-4 py-3 text-sm font-semibold shadow-[var(--shadow-card)]"
         >
           <span className="flex items-center gap-2">
             <Menu className="size-4 text-primary" aria-hidden="true" />

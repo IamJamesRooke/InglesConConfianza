@@ -23,7 +23,7 @@ export function CurriculumBulkActionBar({
   onDeleteOrTrash: () => void;
 }) {
   return (
-    <div className="mb-3 flex items-center justify-between gap-3 rounded-lg border border-primary/20 bg-primary/5 px-4 py-2.5">
+    <div className="mb-3 flex items-center justify-between gap-3 rounded-lg border border-border bg-[var(--surface-subtle)] px-4 py-2.5">
       <p className="text-sm font-medium text-foreground">
         {selectedCount} concept{selectedCount === 1 ? "" : "s"} selected
       </p>
@@ -40,10 +40,10 @@ export function CurriculumBulkActionBar({
           type="button"
           onClick={onDeleteOrTrash}
           disabled={bulkDeleting}
-          className={`inline-flex items-center gap-1.5 rounded-md px-3 py-1.5 text-sm font-semibold transition hover:opacity-90 disabled:opacity-40 ${
+          className={`inline-flex items-center gap-1.5 rounded-md px-3 py-1.5 text-sm font-semibold transition disabled:opacity-40 ${
             selectedRole === "Trash"
-              ? "bg-destructive text-destructive-foreground"
-              : "bg-primary text-primary-foreground"
+              ? "border border-destructive bg-card text-destructive hover:bg-destructive/10"
+              : "bg-primary text-primary-foreground hover:opacity-90"
           }`}
         >
           <Trash2 className="size-3.5" aria-hidden="true" />

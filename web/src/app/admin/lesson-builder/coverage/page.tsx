@@ -43,7 +43,7 @@ export default async function CoveragePage() {
 
 function Metric({ label, value }: { label: string; value: number }) {
   return (
-    <div className="rounded-xl border border-border bg-card px-3 py-2 shadow-sm">
+    <div className="rounded-[16px] border border-border bg-card px-3 py-2 shadow-[var(--shadow-card)]">
       <p className="text-xl font-semibold tabular-nums text-foreground">
         {value}
       </p>

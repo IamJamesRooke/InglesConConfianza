@@ -10,7 +10,6 @@
      with editing-hud.css) so this literal isn't duplicated — consumed
      directly below via var(--admin-header-fg-muted). */
   --admin-header-hover-wash: color-mix(in oklch, white 12%, transparent);
-  --admin-header-active-wash: color-mix(in oklch, white 18%, transparent);
 
   background: var(--ink-deep);
   color: var(--admin-header-fg);
@@ -34,9 +33,13 @@
   color: var(--admin-header-fg);
   background: var(--admin-header-hover-wash);
 }
+/* Active nav pill uses the shared brand primary, same as the learner site's
+   one purple accent — the surrounding chrome stays the dark ink bar
+   (deliberate admin/learner cue, §5), but "what's active" reads as one
+   colour everywhere. */
 .admin-header-nav-link-active {
-  color: var(--admin-header-fg);
-  background: var(--admin-header-active-wash);
+  color: var(--primary-foreground);
+  background: var(--primary);
 }
 
 .admin-header-menu-button {

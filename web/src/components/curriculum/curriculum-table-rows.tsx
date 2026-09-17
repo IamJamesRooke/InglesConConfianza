@@ -89,7 +89,7 @@ export function CurriculumTableRows({
       <div
         ref={resultsScrollRef}
         inert={isNavigating ? true : undefined}
-        className={`hidden max-h-[calc(100vh-15.5rem)] min-h-72 overflow-auto rounded-xl border border-border bg-card shadow-sm transition-opacity sm:block ${
+        className={`hidden max-h-[calc(100vh-15.5rem)] min-h-72 overflow-auto rounded-[16px] border border-border bg-card shadow-[var(--shadow-card)] transition-opacity sm:block ${
           isNavigating ? "pointer-events-none opacity-60" : ""
         }`}
       >
@@ -255,7 +255,7 @@ export function CurriculumTableRows({
         {concepts.map((concept) => (
           <article
             key={concept.id}
-            className={`rounded-xl border bg-card p-3 shadow-sm ${
+            className={`rounded-[16px] border bg-card p-3 shadow-[var(--shadow-card)] ${
               detailConceptId === concept.id ? "border-primary/40" : "border-border"
             }`}
           >
@@ -304,7 +304,7 @@ export function CurriculumTableRows({
           </article>
         ))}
         {concepts.length === 0 && (
-          <div className="rounded-xl border border-border bg-card px-5 py-12 text-center text-sm text-muted-foreground">
+          <div className="rounded-[16px] border border-border bg-card px-5 py-12 text-center text-sm text-muted-foreground">
             <p>No concepts match these filters.</p>
             <button
               type="button"
