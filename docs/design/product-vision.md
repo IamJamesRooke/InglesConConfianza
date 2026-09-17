@@ -98,6 +98,11 @@ was authored without the distinction is exactly the kind of migration we should 
 
 ## 5. The three modules: what each should promise
 
+> **Owner decision 2026-09-17:** the pre-alpha ships ONE Confianza I lesson, deliberately
+> larger than the two-minute unit below, ending in a qualitative gain the learner can
+> feel. The short-lesson cadence remains the target for the full course; the sketch below
+> is kept for that, not for the pre-alpha.
+
 The spine is Level 1 (`../curation/level-1.md`): 45-odd items, verbs first, *I and you,
 affirmative, present or going-to*. Three modules of roughly 8 to 12 two-minute lessons
 each is enough to cover it with cumulative reuse. The proposal below is a sequencing
