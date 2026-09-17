@@ -170,21 +170,45 @@ function normalizeFreehandLabel(text: string): string {
     .toLowerCase();
 }
 
-// True when a freehand lesson concept (no conceptId) names the same thing as
-// `item` — either item's own (possibly freehand) label, or, when item is
-// linked, its recorded curriculum display's Spanish. Always false for a
-// linked lesson concept: those already compare by `conceptKey`.
+// Every text a concept could plausibly have been typed as: for a linked
+// concept, its recorded curriculum display's Spanish *and* English (a
+// freehand tag might have been typed in either language — the reported bug
+// was exactly this, an English "to do" not matching a linked concept whose
+// Spanish is "hacer"); for a freehand one (or a linked one with no display
+// loaded yet), just its own stored label.
+function candidateLabelsOf(
+  item: { conceptId: string | null; label: string },
+  conceptDisplays?: ConceptDisplayLookup,
+): string[] {
+  if (!item.conceptId) return [item.label];
+  const display = conceptDisplays?.[item.conceptId];
+  if (!display) return [item.label];
+  return [display.spanish, display.english].filter((text): text is string => Boolean(text));
+}
+
+// True when `concept` and `item` name the same thing even though they don't
+// share a `conceptKey` — i.e. at least one of them is freehand. Owner
+// report, 2026-09-17: a concept tagged freehand in one lesson (typed before
+// it was ever matched to the curriculum, or just never searched) and the
+// *same* concept tagged as a real linked curriculum row in another lesson
+// must still be recognized as the same thing in either direction — "to do"
+// showing as freehand in lesson 1 and linked in lesson 2 must not read as
+// two different concepts to the Introduced/Reviewed split just because the
+// freehand one happened to be typed second, and in whichever language it
+// was typed. Two linked concepts with different `conceptId`s are never
+// considered the same here — that's already `conceptKey`'s job, and two
+// different curriculum rows really are different concepts even if their
+// glosses overlap. Fully derived, case/accent/whitespace-insensitive
+// only — never fuzzy.
 function freehandMatchesItem(
   concept: { conceptId: string | null; label: string },
   item: { conceptId: string | null; label: string },
   conceptDisplays?: ConceptDisplayLookup,
 ): boolean {
-  if (concept.conceptId) return false;
-  const typed = normalizeFreehandLabel(concept.label);
-  if (!typed) return false;
-  if (normalizeFreehandLabel(item.label) === typed) return true;
-  const display = item.conceptId ? conceptDisplays?.[item.conceptId] : undefined;
-  return Boolean(display?.spanish && normalizeFreehandLabel(display.spanish) === typed);
+  if (concept.conceptId && item.conceptId) return false; // two real, distinct concepts
+  const conceptLabels = candidateLabelsOf(concept, conceptDisplays).map(normalizeFreehandLabel);
+  const itemLabels = candidateLabelsOf(item, conceptDisplays).map(normalizeFreehandLabel);
+  return conceptLabels.some((label) => label && itemLabels.includes(label));
 }
 
 // --- Coverage --------------------------------------------------------------

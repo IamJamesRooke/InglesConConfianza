@@ -113,6 +113,36 @@ test("coverageOfItem: freehand match is accent/case/whitespace-insensitive", () 
   assert.equal(coverageOfItem(item, lessons).covered, true);
 });
 
+// Owner report, 2026-09-17: "to do" should have shown as reviewed but
+// didn't, even after deleting and re-adding it. Root cause: the freehand
+// tolerance only worked in one direction (a freehand *lesson concept*
+// matching a linked syllabus item) — a *linked* lesson concept matching a
+// syllabus item that itself was tagged freehand fell through to a bare
+// conceptKey comparison, which never matches (a real conceptId vs a
+// lowercased label). Fixed by making the match direction-agnostic.
+test("coverageOfItem: a linked lesson concept covers a syllabus item that was itself tagged freehand", () => {
+  const freehandItem = { conceptId: null, label: "to do" };
+  const linkedConcept = { id: "lc_hacer", conceptId: "hacer-id", label: "hacer" };
+  const lessons = [lesson("l1", [linkedConcept], "Lesson one")];
+  const displays: ConceptDisplayLookup = {
+    "hacer-id": { spanish: "hacer", english: "to do", role: "P1" },
+  };
+  assert.equal(coverageOfItem(freehandItem, lessons, displays).covered, true);
+});
+
+// The exact owner-reported bug: a freehand tag typed in English ("to do")
+// must match a linked concept via its *English* display, not just Spanish —
+// the two languages a teacher might plausibly type a freehand label in.
+test("coverageOfItem: freehand tolerance checks a linked concept's English display too, not just Spanish", () => {
+  const freehandEnglish = { id: "lc_todo", conceptId: null, label: "to do" };
+  const linkedConcept = { id: "lc_hacer", conceptId: "hacer-id", label: "hacer" };
+  const lessons = [lesson("l1", [freehandEnglish], "Lesson one")];
+  const displays: ConceptDisplayLookup = {
+    "hacer-id": { spanish: "hacer", english: "to do", role: "P1" },
+  };
+  assert.equal(coverageOfItem(linkedConcept, lessons, displays).covered, true);
+});
+
 test("alsoTaughtAndReviewed: first-ever coverage not on main is also-taught; earlier coverage is reviewed", () => {
   const querer = concept("querer", "querer [algo]");
   const arete = concept("arete", "arete");
@@ -224,6 +254,32 @@ test("introducedAndReviewedForLesson: a freehand concept is reviewed when it nam
     split.reviewed.map((i) => i.label),
     ["algo"],
   );
+});
+
+// Owner-reported bug, 2026-09-17: "to do" should have shown as reviewed but
+// didn't, even after deleting and re-adding it. Reproduces the exact shape:
+// lesson one tags "to do" freehand (typed in English); lesson two tags the
+// real linked "hacer" concept (English display "to do") — must read as
+// reviewing lesson one's concept in *both* directions, and regardless of
+// which language each occurrence was typed in.
+test("introducedAndReviewedForLesson: a freehand English tag is reviewed by a later linked concept, and vice versa", () => {
+  const freehandToDo: LessonConcept = { id: "lc_todo", conceptId: null, label: "to do" };
+  const linkedHacer: LessonConcept = { id: "lc_hacer", conceptId: "hacer-id", label: "hacer" };
+  const displays: ConceptDisplayLookup = {
+    "hacer-id": { spanish: "hacer", english: "to do", role: "P1" },
+  };
+
+  const forward = [lesson("l1", [freehandToDo]), lesson("l2", [linkedHacer])];
+  const forwardTimeline = buildCourseTimeline([module("m1", ["l1", "l2"])], forward);
+  const forwardSplit = introducedAndReviewedForLesson(forward[1], "l2", forwardTimeline, displays);
+  assert.deepEqual(forwardSplit.reviewed.map((i) => i.id), ["lc_hacer"]);
+  assert.deepEqual(forwardSplit.introduced, []);
+
+  const reversed = [lesson("l1", [linkedHacer]), lesson("l2", [freehandToDo])];
+  const reversedTimeline = buildCourseTimeline([module("m1", ["l1", "l2"])], reversed);
+  const reversedSplit = introducedAndReviewedForLesson(reversed[1], "l2", reversedTimeline, displays);
+  assert.deepEqual(reversedSplit.reviewed.map((i) => i.id), ["lc_todo"]);
+  assert.deepEqual(reversedSplit.introduced, []);
 });
 
 test("module with zero lessons: 0/N derived coverage, not done unless it has no requirements", () => {
