@@ -62,14 +62,10 @@ export function LessonSelector({
   lessons,
   initialLessonId = null,
   onCloseLesson,
-  layout = "stage",
 }: {
   lessons: PracticeLesson[];
   initialLessonId?: string | null;
   onCloseLesson?: () => void;
-  /** `?layout=grid` renders the older grid-of-fields sentence card instead
-   * of the L2b assembling-sentence stage, for side-by-side comparison. */
-  layout?: "stage" | "grid";
 }) {
   const hydrated = useSyncExternalStore(
     subscribeHydration,
@@ -90,7 +86,6 @@ export function LessonSelector({
       lesson={lesson}
       lessons={lessons}
       onCloseLesson={onCloseLesson}
-      layout={layout}
     />
   );
 }
@@ -99,12 +94,10 @@ function LessonSession({
   lesson,
   lessons,
   onCloseLesson,
-  layout,
 }: {
   lesson: PracticeLesson;
   lessons: PracticeLesson[];
   onCloseLesson?: () => void;
-  layout: "stage" | "grid";
 }) {
   const router = useRouter();
   const [stepIndex, setStepIndex] = useState(() =>
@@ -139,12 +132,12 @@ function LessonSession({
     );
   const canAdvance =
     !complete && (block?.type === "explanation" || sentenceComplete);
-  // Vocabulary tables stay tables — only ordinary sentence slides get the
-  // L2b assembling-sentence stage.
+  // Vocabulary tables stay tables (SentencePracticeCard) — every ordinary
+  // sentence slide gets the L2b/direction assembling-sentence stage. The
+  // `?layout=grid` fallback that used to make this a runtime choice is gone
+  // (docs/design/learner-direction.md item 10).
   const useStage =
-    layout === "stage" &&
-    block?.type === "sentence" &&
-    block.layout !== "vocabulary_table";
+    block?.type === "sentence" && block.layout !== "vocabulary_table";
 
   const close = useCallback(() => {
     if (onCloseLesson) onCloseLesson();
@@ -299,7 +292,7 @@ function LessonSession({
   const sessionContent = (
     <section
       ref={sectionRef}
-      className={`learner-theme lesson-session ${layout === "stage" ? "stage-layout" : ""}`}
+      className="learner-theme lesson-session"
       role={onCloseLesson ? "dialog" : undefined}
       aria-modal={onCloseLesson ? "true" : undefined}
       aria-labelledby="practice-lesson-title"

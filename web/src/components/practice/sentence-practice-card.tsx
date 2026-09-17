@@ -14,10 +14,9 @@ import type { Speaker } from "@/lib/learner/speech";
 /**
  * The original grid-of-fields sentence card: one labelled blank per piece,
  * wrapping into rows. Superseded by SentenceStageCard (the assembling
- * sentence) and kept only behind `?layout=grid` so the owner can compare
- * the two side by side — and still used for vocabulary tables, which stay
- * tables. All answer/speech behaviour lives in useSentencePractice, shared
- * with the new card.
+ * sentence) for ordinary sentences; still used for vocabulary tables, which
+ * stay tables (docs/design/learner-direction.md item 10). All answer/speech
+ * behaviour lives in useSentencePractice, shared with the new card.
  */
 export function SentencePracticeCard({
   sentence,

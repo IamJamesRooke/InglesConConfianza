@@ -25,9 +25,6 @@ function first(value: string | string[] | undefined) {
 export default async function PracticePage({ searchParams }: PageProps) {
   const parameters = await searchParams;
   const selectedLessonId = first(parameters.lesson) ?? null;
-  // `?layout=grid` keeps the older grid-of-fields sentence card renderable
-  // for side-by-side comparison; the assembling-sentence stage is default.
-  const layout = first(parameters.layout) === "grid" ? "grid" : "stage";
   const course = await readCourseSummary();
   const newConceptIdsByLesson = new Map(
     await Promise.all(
@@ -93,7 +90,6 @@ export default async function PracticePage({ searchParams }: PageProps) {
     <LessonSelector
       lessons={lessonSummaries}
       initialLessonId={selectedLessonId}
-      layout={layout}
     />
   );
 }

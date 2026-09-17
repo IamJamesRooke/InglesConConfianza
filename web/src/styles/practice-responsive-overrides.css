@@ -11,15 +11,17 @@
    lives in this file's existing <=760px media block, below. */
 .lesson-session {
   --radius: 1rem;
-  --practice-column: 880px;
-  --practice-prompt-size: 28px;
-  /* L2b (owner: "look how SMALL that text is"): explanations scale with the
-     viewport instead of sitting at a fixed 20px. A single-line explanation
-     gets the larger step (see [data-wraps="false"] below). */
-  --practice-explanation-size: clamp(20px, 2.4vw, 32px);
-  --practice-explanation-single-size: clamp(24px, 3vw, 36px);
-  --practice-label-size: 14px;
-  --practice-eyebrow-size: 11px;
+  /* Direction (docs/design/learner-direction.md, "Stage column"): max 760
+     desktop, full width of the stage's own 20px phone gutter below. One
+     column width for every slide type — explanation, sentence, table. */
+  --practice-column: 760px;
+  --practice-prompt-size: var(--t-sentence);
+  /* Explanation body reads at --t-body; a single-line explanation may use
+     the larger --t-sentence step (see [data-wraps="false"] below). */
+  --practice-explanation-size: var(--t-body);
+  --practice-explanation-single-size: var(--t-sentence);
+  --practice-label-size: var(--t-ui);
+  --practice-eyebrow-size: var(--t-eyebrow);
   position: fixed;
   inset: 0;
   z-index: 50;
@@ -106,15 +108,33 @@
 .lesson-session .lesson-top-progress::-moz-progress-bar {
   background: var(--primary-foreground);
 }
-/* Canvas: content centers around ~40% from the top rather than dead
-   centre, in a single column shared by every slide type. */
+/* Canvas: one rule for every slide type, no per-type offset. The stage sits
+   at ~30% from the top rather than dead centre, with a 20px gutter on the
+   sides at any width (direction: "Stage column"). */
 .lesson-stage {
   min-height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  padding: clamp(56px, 20vh, 180px) 24px clamp(32px, 6vh, 64px);
+  padding: clamp(64px, 30vh, 220px) 20px clamp(48px, 10vh, 96px);
+}
+/* Direction ("Motion budget"): slide change is a 240ms cross-fade with an
+   8px rise — scoped to lesson slides only (globals.css's own `.learner-enter`
+   at 420ms/10px stays the shared default for the rest of the app, e.g. the
+   learner home). */
+@keyframes lesson-slide-enter {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.lesson-session .learner-enter {
+  animation: lesson-slide-enter 240ms ease-out both;
 }
 /* The lesson name, shown only on the first slide's canvas and on
    completion — nowhere else (see item 2, header no longer carries it). */
@@ -196,7 +216,7 @@
 .learner-theme mark[data-language="en"],
 .practice-markdown-content mark.english,
 .practice-markdown-content mark[data-language="en"] {
-  color: var(--primary);
+  color: var(--lesson-hl-en);
   font-style: italic;
 }
 
@@ -619,7 +639,7 @@
   background: var(--card);
   box-shadow: var(--shadow-sm);
   color: var(--foreground);
-  font-size: 15px;
+  font-size: var(--t-ui);
   line-height: 1.35;
   overflow-wrap: anywhere;
 }
@@ -701,13 +721,16 @@
   font-size: 18px;
   font-weight: 750;
 }
+/* Direction ("The action"): one primary button, 56px tall, 8px radius,
+   --t-ui text at weight 600 — not the lesson-builder's own --radius-lg
+   scale (1rem+), and not the previous fixed 20px/700 size. */
 .lesson-controls .learner-button {
   min-width: 220px;
-  min-height: 58px;
+  min-height: 56px;
   justify-self: end;
-  border-radius: var(--radius-lg);
-  font-size: 20px;
-  font-weight: 700;
+  border-radius: 8px;
+  font-size: var(--t-ui);
+  font-weight: 600;
 }
 /* No available action yet (sentence slide, unanswered) — the button leaves
    the flow entirely rather than reserving an empty slot, so the transparent
@@ -715,10 +738,25 @@
 .lesson-controls .learner-button.awaiting-answer {
   display: none;
 }
+/* Direction ("Motion budget"): the one action fades and rises 4px into
+   place, 200ms, whenever it appears — including the footer button's
+   display:none -> flex toggle from .awaiting-answer, and stage-continue's
+   mount once the sentence completes. */
+@keyframes button-appear {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 .lesson-session .learner-button.primary {
   color: var(--primary-foreground);
   background: var(--primary);
   box-shadow: 0 3px 0 color-mix(in oklch, var(--primary) 72%, black);
+  animation: button-appear 200ms ease-out both;
 }
 .lesson-session .learner-button:disabled {
   color: var(--muted-foreground);
@@ -755,10 +793,11 @@
 }
 @media (max-width: 760px) {
   .lesson-session {
-    /* .lesson-stage's own side padding (20px at <=480px, see below) is the
-       phone gutter — the column itself just fills the rest of the width. */
+    /* .lesson-stage's own 20px side padding (one rule, all widths) is the
+       phone gutter — the column itself just fills the rest of the width.
+       --practice-prompt-size stays var(--t-sentence): the fluid scale
+       already reaches its phone value below, no fixed override needed. */
     --practice-column: 100%;
-    --practice-prompt-size: 22px;
   }
   .course-container {
     width: calc(100% - 40px);
@@ -809,22 +848,36 @@
     padding: 16px 20px 20px;
     gap: 14px;
   }
-  .lesson-stage {
-    padding: 36px 20px;
+  /* One card recipe (direction, "Cards"): 32px padding desktop, 24px phone —
+     explanation, sentence stage and vocabulary table alike. */
+  .lesson-explanation,
+  .answer-grid,
+  .stage-card {
+    padding: 24px;
   }
   .lesson-controls {
     padding: 14px 20px max(14px, env(safe-area-inset-bottom));
   }
+  /* Direction ("The action"): phone gets the footer thumb zone — the one
+     primary button full width minus the 20px gutters, with a quiet back
+     icon pinned bottom-left instead of sharing the button's row. */
   .lesson-controls-inner {
-    gap: 14px;
+    position: relative;
+    display: block;
+    min-height: 56px;
   }
-  .lesson-controls .learner-button {
-    min-width: 160px;
-    font-size: 17px;
-    padding-inline: 14px;
+  .lesson-controls .previous-step {
+    position: absolute;
+    left: 0;
+    bottom: 0;
   }
   .lesson-feedback {
-    font-size: 14px;
+    display: none;
+  }
+  .lesson-controls .learner-button {
+    display: flex;
+    width: 100%;
+    min-width: 0;
   }
   .lesson-position {
     font-size: 11px;
@@ -859,23 +912,8 @@
     gap: 12px;
     padding-inline: 12px;
   }
-  .lesson-stage {
-    padding: 32px 20px;
-  }
-  .lesson-feedback {
-    justify-content: center;
-    font-size: 12px;
-    gap: 4px;
-  }
   .lesson-position {
     display: none;
-  }
-  .lesson-controls-inner {
-    gap: 8px;
-  }
-  .lesson-controls .learner-button {
-    min-width: 0;
-    max-width: 175px;
   }
   .lesson-controls .learner-button svg {
     width: 16px;
@@ -972,9 +1010,11 @@
 /* Vocabulary tables are reference-like scan rows, not four oversized
    sentence cards. These rules are deliberately scoped away from ordinary
    sentence activities. */
+/* Direction ("Vocabulary table"): same card as every other slide — the
+   32px/24px padding above is inherited, not overridden — rows carry their
+   own internal spacing and hairlines below. */
 .lesson-session .vocabulary-practice .answer-grid {
   gap: 0;
-  padding: 10px 18px;
 }
 .lesson-session .vocabulary-practice .answer-piece {
   max-width: none;
@@ -1102,9 +1142,6 @@
   .lesson-session .completion-action {
     width: min(100%, 15rem);
   }
-  .lesson-session .vocabulary-practice .answer-grid {
-    padding: 8px 14px;
-  }
   .lesson-session .vocabulary-practice .answer-piece {
     grid-template-columns: minmax(0, 1fr) auto;
     gap: 5px;
@@ -1123,31 +1160,26 @@
     grid-column: 1 / span 2;
   }
 }
+/* Direction ("Motion budget"): reduced motion keeps opacity only, collapsed
+   to an imperceptible 1ms — not a hard `none`, which would make elements
+   (the finished word, the appearing button) pop with no transition at all. */
 @media (prefers-reduced-motion: reduce) {
   .learner-theme *,
   .learner-theme *::before,
   .learner-theme *::after {
-    animation: none !important;
-    transition: none !important;
+    animation-duration: 1ms !important;
+    animation-delay: 0ms !important;
+    transition-duration: 1ms !important;
     scroll-behavior: auto !important;
   }
 }
 
 /* ===================================================================== */
-/* L2b: the sentence slide as a sentence being assembled (default), and   */
-/* the two-actor stage it sits in. The older grid card above is still     */
-/* rendered for vocabulary tables and behind `?layout=grid`.              */
-/* See docs/design/student-experience.md, "L2b sentence stage".           */
+/* The sentence slide as a sentence being assembled, and the two-actor    */
+/* stage it sits in. The older grid card above is still rendered for      */
+/* vocabulary tables. See docs/design/learner-direction.md, "LESSON".     */
 /* ===================================================================== */
 
-/* The group — speaker + card — is what's centred, at roughly a third from
-   the top: centred inside a canvas whose bottom padding is deliberately
-   deeper than its top. `safe` keeps a tall composition reachable instead of
-   clipping its head. */
-.stage-layout .lesson-stage {
-  justify-content: safe center;
-  padding: 24px 24px 26vh;
-}
 .sentence-stage {
   width: 100%;
   max-width: var(--practice-column);
@@ -1177,27 +1209,29 @@
 }
 /* The authored instruction ("Un reto más grande.") is a quiet line above the
    card, not a second headline. */
+/* Direction ("Sentence slide"): the instruction is a muted body line above
+   the card, not a label-sized caption. */
 .stage-instruction :is(p, h1, h2, h3) {
   margin-bottom: 10px;
   color: var(--ink-muted);
-  font-size: var(--practice-label-size);
-  font-weight: 600;
-  line-height: 1.4;
+  font-size: var(--t-body);
+  font-weight: 500;
+  line-height: 1.55;
   text-align: left;
 }
 .stage-card {
-  padding: 28px 32px;
+  padding: 32px;
   border: 1px solid var(--border);
   border-radius: 16px;
   background: var(--surface-writing);
   box-shadow: var(--shadow-card);
 }
-/* Both lines are prose that wraps; 1.6 leaves room for the inline inputs to
-   sit on the baseline without shifting the line box as they grow. */
+/* Both lines are prose that wraps, at --t-sentence / line-height 1.35
+   (direction, "Sentence slide"). */
 .stage-line {
   margin: 0;
   font-size: var(--practice-prompt-size);
-  line-height: 1.6;
+  line-height: 1.35;
   font-weight: 600;
 }
 .stage-line-en {
@@ -1255,7 +1289,7 @@
    turning correct never moves the text. */
 .stage-en {
   font-size: var(--practice-prompt-size);
-  line-height: 1.6;
+  line-height: 1.35;
 }
 .stage-en.given {
   color: var(--foreground);
@@ -1310,6 +1344,17 @@
    reserve, so it sits at ordinary inter-word spacing. Same font metrics as
    the input it replaces (font: inherit, padding 0) so there is no layout
    jump on the swap either way. Focusable so Tab still reaches it to edit. */
+/* Direction ("Motion budget"): the word settling — a 150ms ease-out fade
+   from a tinted field to plain purple text — is the only success signal,
+   replacing any check glyph. */
+@keyframes stage-word-settle {
+  from {
+    background: color-mix(in oklch, var(--primary) 18%, transparent);
+  }
+  to {
+    background: transparent;
+  }
+}
 .stage-en-done {
   display: inline;
   width: auto;
@@ -1324,6 +1369,7 @@
   font: inherit;
   font-weight: 700;
   cursor: text;
+  animation: stage-word-settle 150ms ease-out both;
 }
 .stage-en-done:hover,
 .stage-en-done:focus-visible {
@@ -1364,7 +1410,7 @@
   height: 48px;
 }
 .speaker-chip.stage .speaker-chip-bubble {
-  font-size: 16px;
+  font-size: var(--t-ui);
 }
 .stage-continue {
   display: none;
@@ -1373,21 +1419,10 @@
 }
 .stage-continue .learner-button {
   min-width: 220px;
-  min-height: 58px;
-  border-radius: var(--radius-lg);
-  font-size: 20px;
-  font-weight: 700;
-}
-
-@media (max-width: 480px) {
-  /* Phone: give the sentence every pixel of width it can have, so fewer
-     blanks are pushed onto a line of their own. */
-  .stage-layout .lesson-stage {
-    padding-inline: 14px;
-  }
-  .stage-card {
-    padding: 20px 18px;
-  }
+  min-height: 56px;
+  border-radius: 8px;
+  font-size: var(--t-ui);
+  font-weight: 600;
 }
 
 @media (min-width: 1024px) {

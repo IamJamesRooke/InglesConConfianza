@@ -302,3 +302,94 @@ to assert on), `npx tsc --noEmit`, `npm run lint` (incl. CSS lint), and
 came from a throwaway spec on an isolated `UX_CHECK_PORT=3215` server,
 deleted after the run; `tsconfig.json`'s auto-added UX-check path entries
 were reverted.
+
+## 2026-09-17 — Lesson v2 (direction build)
+
+Brought the LESSON screen (explanation, sentence, vocabulary-table slides)
+to `docs/design/learner-direction.md` and the owner-approved mockup
+artboards 3/4/6. Mostly alignment on top of L2a/L2b, not a rewrite:
+
+**One card recipe.** `.lesson-explanation`, `.answer-grid` (sentence and
+vocabulary table) and `.stage-card` now share the same padding rule — 32px
+desktop, 24px phone (added at the file's existing 760px breakpoint) — on
+top of the white/16px-radius/hairline-border/`--shadow-card` they already
+shared. The vocabulary table's own tighter padding override is gone; its
+rows keep their own internal spacing/hairlines.
+
+**Stage column, one rule.** `--practice-column` is 760px (was 880px),
+matching the direction's "max 760 desktop" instead of the L2a-era width. The
+per-type `.stage-layout .lesson-stage` override (a second, diverging
+top-offset/gutter rule only sentence slides got) is deleted; `.lesson-stage`
+alone now positions every slide type at `clamp(64px, 30vh, 220px)` from the
+top with a 20px gutter at any width, so there is exactly one "where does the
+stage sit" rule, not two. The `stage-layout` CSS class and the `layout`
+prop that toggled it (`LessonSelector`/`LessonSession`) are gone.
+
+**`?layout=grid` removed.** The query param that let `/practice` render the
+older grid-of-fields sentence card for ordinary sentences is gone from
+`practice/page.tsx`; `LessonSelector` no longer takes a `layout` prop.
+`SentencePracticeCard` (the grid card) still renders — it's what vocabulary
+tables use — just no longer reachable for an ordinary sentence slide.
+`npm run lint:dead` stayed clean (nothing new to remove: the component's
+non-vocabulary branches are unreachable in production now, but the class
+names/strings they still reference aren't tracked by knip).
+
+**Type scale converged, not redefined.** `--t-hero`/`--t-sentence`/
+`--t-section`/`--t-body`/`--t-ui`/`--t-eyebrow` already existed in
+`globals.css` (added by the concurrent learner-home session, this file's
+"Type scale" section above) by the time this task's CSS edits landed, so
+`practice-base.css` consumes them instead of defining its own — the
+`--practice-*` sizing tokens on `.lesson-session` now alias them
+(`--practice-prompt-size: var(--t-sentence)`, `--practice-explanation-size:
+var(--t-body)`, a single-line explanation's `--practice-explanation-single-
+size: var(--t-sentence)`, `--practice-label-size`/`--practice-eyebrow-size:
+var(--t-ui)`/`var(--t-eyebrow)`), replacing several fixed-px values (28px
+prompt size, 14px label size, a 20–32px explanation clamp) and one phone
+override (`--practice-prompt-size: 22px` at ≤760px) that would otherwise
+have fought the fluid scale.
+
+**Marks fixed to the direction's colours.** An English `[[en:…]]` mark was
+rendering in `--primary` (purple); the direction calls for Union Jack blue,
+so `.learner-theme mark.english` / `[data-language="en"]` now use
+`--lesson-hl-en` (already the token used everywhere else — lesson builder,
+authoring — for the same purpose). Spanish marks were already correct
+(`--lesson-hl-es`, bold).
+
+**Sentence stage line-height** dropped from 1.6 to 1.35 (`.stage-line`,
+`.stage-en`) to match the direction's sentence-size spec.
+
+**The action.** The one primary button (footer + `.stage-continue`) is now
+56px tall / 8px radius / `--t-ui` weight 600 text, replacing a 58px/
+`--radius-lg` (~16px)/20px-weight-700 button that came from the lesson
+builder's own button scale. Phone gets the footer thumb zone: the button is
+full width minus the 20px gutters and the quiet back icon moves out of the
+row to sit absolutely at the footer's bottom-left, instead of both sharing a
+three-column grid that shrank the button to ~160px.
+
+**Motion**, all newly scoped inside `.lesson-session` so the learner home's
+own animations (420ms `.learner-enter`, defined in `globals.css`) are
+untouched: slide change is a 240ms/8px-rise cross-fade
+(`@keyframes lesson-slide-enter`, applied via `.lesson-session
+.learner-enter`); the primary button fades/rises 4px over 200ms whenever it
+appears (`@keyframes button-appear`, on `.lesson-session .learner-button.
+primary` — covers both the footer's `display:none → flex` toggle and
+`.stage-continue`'s mount); a finished English word settles from a tinted
+background to plain text over 150ms (`@keyframes stage-word-settle`, on
+`.stage-en-done` — there was already no check glyph to replace, L2b removed
+those). `prefers-reduced-motion` no longer hard-disables animation/
+transition (`none !important`) — direction asks for "opacity only, 1ms", so
+durations collapse to 1ms instead, keeping the fade but removing the
+perceptible motion.
+
+Verified with `npm run test:unit` (371/371), `npx eslint` on the touched
+files, `npx tsc --noEmit`, `npm run lint` (incl. CSS lint), `npm run
+lint:dead` (no new findings), and `tests/ux/speech.spec.ts` (2/2, no
+selector changes needed). Screenshots came from a throwaway spec (deleted
+after) on `UX_CHECK_PORT=3216`: `/tmp/claude-1000/explanation-v2-390.png`,
+`/tmp/claude-1000/lesson-v2-390.png` (half-answered), `/tmp/claude-1000/
+lesson-v2-1280.png` (complete, desktop two-actor composition). `tsconfig.
+json`'s auto-added UX-check path entries were reverted after each run.
+
+Not touched: `practice-completion.css`, the completion branch of
+`LessonSession`, and everything under `src/components/learner/` — out of
+this task's scope by instruction.

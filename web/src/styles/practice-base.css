@@ -1,3 +1,10 @@
+/* Learner type scale (docs/design/learner-direction.md, "Type scale") now
+   lives in src/app/globals.css's :root — the learner-home build defined
+   --t-hero/--t-sentence/--t-section/--t-body/--t-ui/--t-eyebrow there first,
+   so this file consumes those names instead of redefining them (this file
+   loads after globals.css, and a second definition here would have silently
+   won and drifted from the home's values). */
+
 /* Lesson explanation and bilingual-highlight base layout. The sentence
    builder, controls, feedback, and answer fields are defined once, in
    practice-responsive-overrides.css (imported after this file, so it was
