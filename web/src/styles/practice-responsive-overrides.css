@@ -11,9 +11,13 @@
    lives in this file's existing <=760px media block, below. */
 .lesson-session {
   --radius: 1rem;
-  --practice-column: 760px;
+  --practice-column: 880px;
   --practice-prompt-size: 28px;
-  --practice-explanation-size: 20px;
+  /* L2b (owner: "look how SMALL that text is"): explanations scale with the
+     viewport instead of sitting at a fixed 20px. A single-line explanation
+     gets the larger step (see [data-wraps="false"] below). */
+  --practice-explanation-size: clamp(20px, 2.4vw, 32px);
+  --practice-explanation-single-size: clamp(24px, 3vw, 36px);
   --practice-label-size: 14px;
   --practice-eyebrow-size: 11px;
   position: fixed;
@@ -159,7 +163,11 @@
 .lesson-explanation[data-wraps="true"] {
   text-align: left;
 }
-.lesson-explanation[data-wraps="true"] :is(h1, h2, h3) {
+/* PracticeMarkdown puts `text-center` on its own wrapper for the explanation
+   variant, which used to win over the inherited alignment above — so a
+   wrapped explanation stayed centred even when data-wraps was "true". */
+.lesson-explanation[data-wraps="true"] .practice-markdown-content,
+.lesson-explanation[data-wraps="true"] :is(h1, h2, h3, p, li) {
   text-align: left;
 }
 
@@ -739,7 +747,6 @@
        phone gutter — the column itself just fills the rest of the width. */
     --practice-column: 100%;
     --practice-prompt-size: 22px;
-    --practice-explanation-size: 18px;
   }
   .course-container {
     width: calc(100% - 40px);
@@ -966,7 +973,9 @@
 .lesson-session .vocabulary-practice .answer-piece {
   max-width: none;
   display: grid;
-  grid-template-columns: minmax(0, 0.9fr) minmax(12rem, 1.1fr);
+  /* Third column: the hint button, which sits outside the field rather
+     than floating inside it (L2b). */
+  grid-template-columns: minmax(0, 0.9fr) minmax(12rem, 1.1fr) auto;
   align-items: center;
   gap: 8px 18px;
   min-height: 62px;
@@ -980,7 +989,7 @@
   min-width: 0;
   margin: 0;
   color: var(--foreground);
-  font-size: 1rem;
+  font-size: var(--practice-prompt-size);
   font-weight: 700;
   line-height: 1.35;
   overflow-wrap: anywhere;
@@ -991,16 +1000,21 @@
 .lesson-session .vocabulary-practice .answer-field-sizer {
   max-width: none;
   min-width: 0;
-  padding: 8px 38px 8px 12px;
-  font-size: 1.05rem;
+  padding: 8px 12px;
+  font-size: var(--practice-prompt-size);
   line-height: 1.35;
   white-space: nowrap;
 }
 .lesson-session .vocabulary-practice .answer-input {
   min-height: 42px;
-  padding: 8px 38px 8px 12px;
-  font-size: 1.05rem;
+  padding: 8px 12px;
+  font-size: var(--practice-prompt-size);
   line-height: 1.35;
+}
+/* One focus ring, not a ring stacked on a recoloured border. */
+.lesson-session .vocabulary-practice .answer-input:focus {
+  outline: none;
+  border-color: var(--primary);
 }
 .lesson-session .vocabulary-practice .answer-piece:focus-within .answer-field {
   transform: none;
@@ -1018,7 +1032,7 @@
   min-height: 42px;
   padding: 9px 12px;
   color: var(--foreground);
-  font-size: 1.05rem;
+  font-size: var(--practice-prompt-size);
   font-weight: 650;
   line-height: 1.35;
   overflow-wrap: anywhere;
@@ -1038,7 +1052,7 @@
   visibility: hidden;
 }
 .lesson-session .vocabulary-practice :is(.answer-note, .answer-diff) {
-  grid-column: 2;
+  grid-column: 2 / span 2;
   margin-top: 0;
 }
 .lesson-session .vocabulary-practice .answer-note {
@@ -1046,14 +1060,13 @@
   background: var(--state-help-soft);
 }
 .lesson-session .vocabulary-practice .answer-hint-toggle {
-  top: 50%;
-  right: 9px;
+  position: static;
   width: 30px;
   height: 30px;
-  transform: translateY(-50%);
+  transform: none;
 }
 .lesson-session .vocabulary-practice .answer-hint-toggle:hover {
-  transform: translateY(-50%) scale(1.05);
+  transform: scale(1.05);
 }
 .lesson-session .vocabulary-practice .answer-hint-toggle:focus-visible {
   outline: 3px solid color-mix(in oklch, var(--hint) 38%, transparent);
@@ -1087,7 +1100,7 @@
     padding: 8px 14px;
   }
   .lesson-session .vocabulary-practice .answer-piece {
-    grid-template-columns: minmax(0, 1fr);
+    grid-template-columns: minmax(0, 1fr) auto;
     gap: 5px;
     min-height: 0;
     padding: 11px 2px;
@@ -1101,7 +1114,7 @@
     overflow-wrap: anywhere;
   }
   .lesson-session .vocabulary-practice :is(.answer-note, .answer-diff) {
-    grid-column: 1;
+    grid-column: 1 / span 2;
   }
 }
 @media (prefers-reduced-motion: reduce) {
@@ -1112,4 +1125,279 @@
     transition: none !important;
     scroll-behavior: auto !important;
   }
+}
+
+/* ===================================================================== */
+/* L2b: the sentence slide as a sentence being assembled (default), and   */
+/* the two-actor stage it sits in. The older grid card above is still     */
+/* rendered for vocabulary tables and behind `?layout=grid`.              */
+/* See docs/design/student-experience.md, "L2b sentence stage".           */
+/* ===================================================================== */
+
+/* The group — speaker + card — is what's centred, at roughly a third from
+   the top: centred inside a canvas whose bottom padding is deliberately
+   deeper than its top. `safe` keeps a tall composition reachable instead of
+   clipping its head. */
+.stage-layout .lesson-stage {
+  justify-content: safe center;
+  padding: 24px 24px 26vh;
+}
+.sentence-stage {
+  width: 100%;
+  max-width: var(--practice-column);
+}
+.stage-composition {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+/* Phone: the card comes first, the speaker sits under it. */
+.stage-speaker {
+  order: 2;
+}
+.stage-column {
+  order: 1;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+.stage-eyebrow p {
+  margin-bottom: 6px;
+  color: var(--muted-foreground);
+  font-size: var(--practice-eyebrow-size);
+  font-weight: 750;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+/* The authored instruction ("Un reto más grande.") is a quiet line above the
+   card, not a second headline. */
+.stage-instruction :is(p, h1, h2, h3) {
+  margin-bottom: 10px;
+  color: var(--ink-muted);
+  font-size: var(--practice-label-size);
+  font-weight: 600;
+  line-height: 1.4;
+  text-align: left;
+}
+.stage-card {
+  padding: 28px 32px;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  background: var(--surface-writing);
+  box-shadow: var(--shadow-card);
+}
+/* Both lines are prose that wraps; 1.6 leaves room for the inline inputs to
+   sit on the baseline without shifting the line box as they grow. */
+.stage-line {
+  margin: 0;
+  font-size: var(--practice-prompt-size);
+  line-height: 1.6;
+  font-weight: 600;
+}
+.stage-line-en {
+  margin-top: 12px;
+}
+/* Line 1: the Spanish sentence. The piece being typed is marked; finished
+   pieces settle back to ordinary ink; pieces still to come stay muted.
+   A `given` piece is plain ink and is never the active one. */
+.stage-es {
+  transition: color 160ms;
+}
+.stage-es[data-state="pending"] {
+  color: var(--ink-muted);
+  font-weight: 500;
+}
+.stage-es[data-state="done"],
+.stage-es[data-state="given"] {
+  color: var(--foreground);
+  font-weight: 500;
+}
+.stage-es[data-state="active"] {
+  color: var(--lesson-hl-es);
+  font-weight: 800;
+}
+/* The hint sits at the end of the highlighted Spanish piece — never inside
+   the input. */
+.stage-hint-toggle {
+  display: inline-flex;
+  align-items: center;
+  margin-left: 6px;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--hint);
+  vertical-align: -3px;
+  cursor: pointer;
+}
+.stage-hint-toggle:hover {
+  color: color-mix(in oklch, var(--hint) 72%, var(--ink-deep));
+}
+.stage-hint-toggle:focus-visible {
+  outline: 3px solid color-mix(in oklch, var(--hint) 38%, transparent);
+  outline-offset: 2px;
+  border-radius: 6px;
+}
+/* Line 2: the English sentence being built. Every piece is an input all
+   along — a blank underline until it's answered, the finished word after —
+   so clicking a blank or a finished word just focuses it, and Tab/Enter
+   progression is unchanged. The input and the word share font metrics, so
+   turning correct never moves the text. */
+.stage-en {
+  font-size: var(--practice-prompt-size);
+  line-height: 1.6;
+}
+.stage-en.given {
+  color: var(--foreground);
+  font-weight: 600;
+}
+.stage-en-input {
+  display: inline-block;
+  field-sizing: content;
+  width: calc(var(--blank-chars, 3) * 1ch);
+  min-width: calc(var(--blank-chars, 3) * 1ch);
+  max-width: 100%;
+  padding: 0 1px;
+  border: 0;
+  border-bottom: 2px solid var(--border);
+  border-radius: 0;
+  background: transparent;
+  color: var(--primary);
+  font: inherit;
+  font-weight: 700;
+  vertical-align: baseline;
+  transition:
+    border-color 160ms,
+    background 160ms;
+}
+.stage-en-input:focus {
+  /* The underline and tint are the focus indicator — one ring, no outline
+     stacked on top of a border. */
+  outline: none;
+  min-width: calc(var(--answer-chars, 6) * 1ch);
+  border-bottom-color: var(--primary);
+  background: color-mix(in oklch, var(--primary) 8%, transparent);
+}
+.stage-en-input[data-state="hint"] {
+  border-bottom-color: var(--hint);
+  background: color-mix(in oklch, var(--hint) 16%, transparent);
+}
+/* Answered: the input reads as a plain word in the sentence — no blank, no
+   check (the word itself is the signal). */
+.stage-en-input[data-state="done"] {
+  min-width: 0;
+  /* `field-sizing: content` reserves about 1em past the text for the caret
+     (measured in Chromium at both prompt sizes). Finished words pull that
+     back so the sentence reads with single spaces; a blank keeps it, so a
+     focused field never overlaps the blank after it. */
+  margin-inline-end: -0.9em;
+  border-bottom-color: transparent;
+  background: transparent;
+}
+.stage-hint {
+  margin-top: 10px;
+  padding: 8px 12px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--card);
+  font-size: var(--practice-label-size);
+  font-weight: 500;
+  line-height: 1.4;
+}
+.stage-hint-label {
+  font-weight: 750;
+  color: var(--hint-foreground);
+}
+.stage-notes {
+  display: grid;
+  gap: 6px;
+  margin-top: 10px;
+}
+/* Speech: the speaker is one of two actors on the stage — a bigger avatar
+   with its flag/label under it, and a bubble pointing right, at the card.
+   No bubble at rest (the component renders it only once something has been
+   spoken). */
+.speaker-chip.stage {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  margin-top: 0;
+}
+.speaker-chip.stage .speaker-chip-avatar {
+  width: 48px;
+  height: 48px;
+}
+.speaker-chip.stage .speaker-chip-bubble {
+  font-size: 16px;
+}
+.stage-continue {
+  display: none;
+  justify-content: center;
+  margin-top: 28px;
+}
+.stage-continue .learner-button {
+  min-width: 220px;
+  min-height: 58px;
+  border-radius: var(--radius-lg);
+  font-size: 20px;
+  font-weight: 700;
+}
+
+@media (max-width: 480px) {
+  /* Phone: give the sentence every pixel of width it can have, so fewer
+     blanks are pushed onto a line of their own. */
+  .stage-layout .lesson-stage {
+    padding-inline: 14px;
+  }
+  .stage-card {
+    padding: 20px 18px;
+  }
+}
+
+@media (min-width: 1024px) {
+  /* Two actors: the speaker on the left, the card on the right. */
+  .stage-composition {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 28px;
+  }
+  .stage-speaker {
+    order: 0;
+    flex: 0 0 auto;
+    width: 210px;
+    padding-top: 8px;
+  }
+  .stage-column {
+    flex: 1 1 auto;
+    min-width: 0;
+  }
+  .speaker-chip.stage .speaker-chip-avatar {
+    width: 72px;
+    height: 72px;
+  }
+  .speaker-chip.stage .speaker-chip-bubble {
+    max-width: 210px;
+  }
+  /* Tail on the right edge, pointing at the card. */
+  .speaker-chip.stage .speaker-chip-bubble::before {
+    left: auto;
+    right: -5px;
+    border: 0;
+    border-right: 1px solid var(--border);
+    border-top: 1px solid var(--border);
+  }
+  /* The primary action appears under the composition; the footer copy is
+     hidden at this width, so only one instance is visible. */
+  .stage-continue {
+    display: flex;
+  }
+  .lesson-controls .learner-button.stage-duplicated {
+    display: none;
+  }
+}
+
+/* Explanations: a single line reads well centred and takes the larger of
+   the two fluid sizes; anything that wraps goes left-aligned at the
+   ordinary size (ExplanationStep decides, from the authored text). */
+.lesson-explanation[data-wraps="false"] :is(p, li) {
+  font-size: var(--practice-explanation-single-size);
 }

@@ -1,46 +1,24 @@
 "use client";
 import { Check, Info, Lightbulb } from "lucide-react";
 import type { CSSProperties } from "react";
-import { useCallback, useEffect, useRef, useState } from "react";
 import { PracticeMarkdown } from "@/components/practice/practice-markdown";
 import { SpeakerChip } from "@/components/practice/speaker-chip";
-import type { LanguageBlock, SentenceBlock } from "@/lib/lesson-builder/types";
 import {
-  diffChars,
-  isAnswerAccepted,
-  isMeaningfulLanguageBlock,
-  pickClosestAnswer,
-  sentenceEnglishText,
-} from "@/lib/lesson-builder/utils";
-import {
-  availableSpeakers,
-  pickSpeaker,
-  speakAwaitingEnd,
-  speakSentenceAfterPiece,
-  stopSpeaking,
-  type Speaker,
-} from "@/lib/learner/speech";
+  answerMinChars,
+  useSentencePractice,
+} from "@/components/practice/use-sentence-practice";
+import type { SentenceBlock } from "@/lib/lesson-builder/types";
+import { diffChars, pickClosestAnswer } from "@/lib/lesson-builder/utils";
+import type { Speaker } from "@/lib/learner/speech";
 
-// The answer field grows to fit whatever the learner types (`field-sizing:
-// content`, see practice-responsive-overrides.css), but that alone doesn't
-// stop a first paint / non-supporting browser from clipping a long accepted
-// answer — so this floor is sized to the longest accepted answer (or the
-// Spanish prompt, if that's longer) plus 2ch of slack, and used both as the
-// CSS fallback width and the `min-width` under `field-sizing: content`.
-// Single-blank cards read wider (bigger type), so they get a slightly taller
-// floor to match the previous fixed 12rem look.
-function answerMinChars(
-  languageBlock: LanguageBlock,
-  isSingleLanguageBlock: boolean,
-): number {
-  const longest = Math.max(
-    languageBlock.spanish.trim().length,
-    ...languageBlock.acceptedAnswers.map((answer) => answer.trim().length),
-  );
-  const withSlack = longest + 2;
-  return isSingleLanguageBlock ? Math.max(withSlack, 13) : withSlack;
-}
-
+/**
+ * The original grid-of-fields sentence card: one labelled blank per piece,
+ * wrapping into rows. Superseded by SentenceStageCard (the assembling
+ * sentence) and kept only behind `?layout=grid` so the owner can compare
+ * the two side by side — and still used for vocabulary tables, which stay
+ * tables. All answer/speech behaviour lives in useSentencePractice, shared
+ * with the new card.
+ */
 export function SentencePracticeCard({
   sentence,
   onCompletionChange,
@@ -54,161 +32,29 @@ export function SentencePracticeCard({
   onAnswersChange?: (answers: string[]) => void;
   onSpeakerChange?: (speaker: Speaker | null) => void;
 }) {
-  // Dangling fully-blank language blocks are authoring debris, not real
-  // questions — drop them before anything derives indices, progression, or
-  // rendering from this list. See isMeaningfulLanguageBlock.
-  const languageBlocks = sentence.languageBlocks.filter(
-    isMeaningfulLanguageBlock,
-  );
-  // E8 "given" pieces (shown, not tested) are rendered inline (below) but
-  // never drive answer state, progression, or completion — every index
-  // below (answers, correctAnswers, inputRefs, help/focus) is scoped to
-  // this testable-only subset, not the full `languageBlocks` list.
-  const testableBlocks = languageBlocks.filter(
-    (languageBlock) => !languageBlock.given,
-  );
-  const testableIndexById = new Map(
-    testableBlocks.map((languageBlock, index) => [languageBlock.id, index]),
-  );
-  const [answers, setAnswers] = useState<string[]>(() =>
-    testableBlocks.map((_, index) => initialAnswers?.[index] ?? ""),
-  );
-  const [helpedBlockIndex, setHelpedBlockIndex] = useState<number | null>(null);
-  const [focusedBlockIndex, setFocusedBlockIndex] = useState<number | null>(
-    null,
-  );
-  const inputRefs = useRef<Array<HTMLInputElement | null>>([]);
-  const helpTimerRef = useRef<number | null>(null);
-  const [speaker, setSpeaker] = useState<Speaker | null>(null);
-  const [speakingText, setSpeakingText] = useState<string | null>(null);
-  const spokeCompleteRef = useRef(false);
-  // Tracks the in-flight speech promise for whichever piece most recently
-  // turned correct, so the full-sentence sequencing below can wait for the
-  // *last* piece to actually finish (or be interrupted) before pausing and
-  // speaking the sentence. See docs/design/speech.md item 1.
-  const pieceSpeechRef = useRef<Promise<void>>(Promise.resolve());
-  const onSpeakerChangeRef = useRef(onSpeakerChange);
-  useEffect(() => {
-    onSpeakerChangeRef.current = onSpeakerChange;
-  }, [onSpeakerChange]);
-  const correctAnswers = testableBlocks.map(
-    (languageBlock, languageBlockIndex) =>
-      isAnswerAccepted(
-        answers[languageBlockIndex] ?? "",
-        languageBlock.acceptedAnswers,
-      ),
-  );
-  const isComplete =
-    helpedBlockIndex === null &&
-    testableBlocks.length > 0 &&
-    correctAnswers.every(Boolean);
-  const clearHelpTimer = useCallback(() => {
-    if (helpTimerRef.current !== null) {
-      window.clearTimeout(helpTimerRef.current);
-      helpTimerRef.current = null;
-    }
-  }, []);
-  // Reveals a hint as a diff of the learner's own attempt against the
-  // closest accepted answer — never rewrites what they typed. Auto-hides
-  // after a few seconds, or as soon as they type again (see
-  // updatePreviewAnswer), whichever comes first.
-  const showHelp = useCallback(
-    (languageBlockIndex: number) => {
-      clearHelpTimer();
-      setHelpedBlockIndex(languageBlockIndex);
-      helpTimerRef.current = window.setTimeout(() => {
-        setHelpedBlockIndex(null);
-        helpTimerRef.current = null;
-      }, 3500);
-    },
-    [clearHelpTimer],
-  );
-  useEffect(() => {
-    onCompletionChange?.(isComplete);
-    if (isComplete && !spokeCompleteRef.current && sentence.layout !== "vocabulary_table") {
-      spokeCompleteRef.current = true;
-      const full = sentenceEnglishText(languageBlocks);
-      if (full) {
-        let cancelled = false;
-        // Wait for the last piece to finish (or be interrupted), pause
-        // briefly, then speak the whole sentence — never cut the last piece
-        // off mid-word. `isCancelled` lets the learner moving on during the
-        // wait (advancing, unmounting) skip the sentence outright rather
-        // than have it start late. See docs/design/speech.md item 1.
-        void speakSentenceAfterPiece(pieceSpeechRef.current, full, speaker, {
-          onStart: () => {
-            if (!cancelled) setSpeakingText(full);
-          },
-        }, { isCancelled: () => cancelled });
-        return () => {
-          cancelled = true;
-        };
-      }
-    }
-    if (!isComplete) spokeCompleteRef.current = false;
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [isComplete, onCompletionChange]);
-  // Advancing the slide or unmounting the card cancels any speech in flight
-  // — audio never blocks progression and never lingers into the next slide.
-  useEffect(() => () => stopSpeaking(), []);
-  useEffect(
-    () => () => {
-      clearHelpTimer();
-    },
-    [clearHelpTimer],
-  );
-  useEffect(() => {
-    const timer = window.setTimeout(() => inputRefs.current[0]?.focus(), 0);
-    return () => window.clearTimeout(timer);
-  }, [sentence.id]);
-  // One speaker per slide, chosen deterministically from the block id so it
-  // doesn't reshuffle on every re-render — see docs/design/speech.md.
-  useEffect(() => {
-    let cancelled = false;
-    spokeCompleteRef.current = false;
-    availableSpeakers()
-      .then((speakers) => {
-        if (cancelled) return;
-        const picked = pickSpeaker(sentence.id, speakers);
-        setSpeaker(picked);
-        onSpeakerChangeRef.current?.(picked);
-      })
-      .catch(() => {
-        if (!cancelled) setSpeaker(null);
-      });
-    return () => {
-      cancelled = true;
-    };
-  }, [sentence.id]);
-  function updatePreviewAnswer(answer: string, languageBlockIndex: number) {
-    if (helpedBlockIndex === languageBlockIndex) {
-      clearHelpTimer();
-      setHelpedBlockIndex(null);
-    }
-    const nextAnswers = [...answers];
-    nextAnswers[languageBlockIndex] = answer;
-    setAnswers(nextAnswers);
-    onAnswersChange?.(nextAnswers);
-    const languageBlock = testableBlocks[languageBlockIndex];
-    const isCorrect = isAnswerAccepted(answer, languageBlock.acceptedAnswers);
-    const wasCorrect = correctAnswers[languageBlockIndex];
-    if (isCorrect && !wasCorrect) {
-      const pieceEnglish = languageBlock.acceptedAnswers[0]?.trim();
-      if (pieceEnglish) {
-        // The bubble keeps showing this text after it finishes speaking
-        // (see SpeakerChip) — no onEnd reset here. speakAwaitingEnd()
-        // interrupts whatever piece was still playing (see speak()) and its
-        // promise is what the full-sentence effect above waits on.
-        setSpeakingText(pieceEnglish);
-        pieceSpeechRef.current = speakAwaitingEnd(pieceEnglish, speaker);
-      }
-    }
-    if (isCorrect && languageBlockIndex < testableBlocks.length - 1)
-      window.setTimeout(
-        () => inputRefs.current[languageBlockIndex + 1]?.focus(),
-        0,
-      );
-  }
+  const {
+    languageBlocks,
+    testableBlocks,
+    testableIndexById,
+    answers,
+    correctAnswers,
+    isComplete,
+    helpedBlockIndex,
+    focusedBlockIndex,
+    setFocusedBlockIndex,
+    inputRefs,
+    showHelp,
+    updateAnswer,
+    onAnswerKeyDown,
+    speaker,
+    speakingText,
+  } = useSentencePractice({
+    sentence,
+    initialAnswers,
+    onCompletionChange,
+    onAnswersChange,
+    onSpeakerChange,
+  });
   const isSingleLanguageBlock = testableBlocks.length === 1;
   const isVocabulary = sentence.layout === "vocabulary_table";
   const hasAuthoredPrompt = Boolean(
@@ -317,7 +163,7 @@ export function SentencePracticeCard({
                       autoFocus={languageBlockIndex === 0}
                       value={answers[languageBlockIndex] ?? ""}
                       onChange={(event) =>
-                        updatePreviewAnswer(
+                        updateAnswer(
                           event.target.value,
                           languageBlockIndex,
                         )
@@ -336,48 +182,9 @@ export function SentencePracticeCard({
                           current === languageBlockIndex ? null : current,
                         );
                       }}
-                      onKeyDown={(event) => {
-                        if (event.nativeEvent.isComposing) return;
-                        if (event.altKey && event.key.toLowerCase() === "h") {
-                          event.preventDefault();
-                          if (
-                            !correctAnswers[languageBlockIndex] ||
-                            helpedBlockIndex === languageBlockIndex
-                          )
-                            showHelp(languageBlockIndex);
-                          return;
-                        }
-                        if (
-                          event.key === "Enter" &&
-                          !event.ctrlKey &&
-                          !event.metaKey &&
-                          !event.altKey &&
-                          !event.shiftKey &&
-                          !correctAnswers[languageBlockIndex]
-                        ) {
-                          event.preventDefault();
-                          showHelp(languageBlockIndex);
-                          return;
-                        }
-                        if (
-                          event.key === "Tab" &&
-                          !event.shiftKey &&
-                          !event.ctrlKey &&
-                          !event.metaKey &&
-                          !event.altKey &&
-                          !correctAnswers[languageBlockIndex]
-                        ) {
-                          // Block forward Tab past a wrong/incomplete answer
-                          // rather than just revealing the hint and letting
-                          // focus move on anyway — without this the hint
-                          // reveal itself unmounts the very hint-toggle
-                          // button focus was about to land on, and the
-                          // learner could Tab straight past an unanswered
-                          // blank. Shift+Tab (above) stays unrestricted.
-                          event.preventDefault();
-                          showHelp(languageBlockIndex);
-                        }
-                      }}
+                      onKeyDown={(event) =>
+                        onAnswerKeyDown(event, languageBlockIndex)
+                      }
                       aria-label={`Traducción de ${languageBlock.spanish || `bloque ${languageBlockIndex + 1}`}`}
                       autoComplete="off"
                       autoCapitalize="off"

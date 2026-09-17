@@ -186,3 +186,67 @@ sessions' scope. Verified with `npm run lint` (CSS + ESLint), `npx tsc
 Playwright spec (deleted after) screenshotting the first explanation slide
 and an answered sentence slide at 1280×900 and 390×844 — no Playwright
 suite run beyond that one spec.
+
+## 2026-09-17 L2b — the sentence stage (an assembling sentence, two actors)
+
+A long sentence used to wrap into ragged rows of labelled boxes. It is now
+**one sentence being assembled**, for every ordinary sentence slide
+(vocabulary tables stay tables). `SentenceStageCard` is the default;
+`SentencePracticeCard` — the old grid of fields — is still renderable for
+side-by-side comparison via **`/practice?lesson=…&layout=grid`** and is what
+vocabulary tables use. Both cards share `useSentencePractice`, so answer
+matching (`isAnswerAccepted`, unchanged), hints, Tab/Enter progression and
+the speech sequencing are literally the same code in both.
+
+**The card.** Line 1 is the Spanish sentence as prose: the piece being typed
+is bold `--lesson-hl-es`, finished pieces settle to regular-weight ink,
+pieces still to come are `--ink-muted`, and a `given` piece is plain ink and
+never highlighted. Line 2 is the English sentence growing in place: every
+tested piece is an inline `<input>` in the text flow — a blank underline
+(`1ch` per character of its answer, minimum `3ch`, 2px `--border`) until it
+is answered, the finished word in `--primary` after, with `field-sizing:
+content` so it grows as the learner types and never moves the line. Because
+the blank *is* the input, clicking a blank or a finished word just focuses
+it. `given` pieces are plain words from the start, and punctuation stays
+attached to its piece ("algo." → "something."). Both lines are
+`--practice-prompt-size` at `line-height: 1.6`; the card is 880px at
+desktop. The hint lightbulb (20px, `--hint`) sits at the end of the
+highlighted Spanish piece — never inside the input.
+
+**No checks.** The whole-sentence success check and the per-piece checks are
+gone: a finished word standing in the sentence is the signal, with the
+speaker's bubble and Continue behind it.
+
+**The stage.** At ≥1024px the slide is two actors: the speaker on the left
+(72px avatar, flag + label under it, bubble pointing right at the card) and
+the card on the right, the *group* centred at roughly a third from the top.
+On phone the card comes first and the speaker row (48px avatar) sits under
+it. There is **no bubble at rest** — it appears with the first words spoken
+and then keeps the last thing said. When the sentence is complete the
+primary button also appears centred under the composition at desktop; the
+footer copy is hidden at that width, so only one is ever visible.
+
+**Explanations.** `--practice-explanation-size` is now
+`clamp(20px, 2.4vw, 32px)`, and a single-line explanation takes
+`clamp(24px, 3vw, 36px)`. Alignment no longer uses the `ResizeObserver`:
+`explanationWraps()` decides from the authored text (more than one block, or
+more than ~60 characters), so it is right in the server-rendered HTML,
+before fonts load. Two real bugs were behind "it never triggered": the
+observer's `measure()` only looked at `p`/`li`, so an explanation whose
+wrapping text was a heading stayed centred forever; and even when
+`data-wraps="true"` was set, `PracticeMarkdown`'s own `text-center` class on
+its wrapper beat the inherited `text-align: left` from the parent — so the
+flag worked and nothing moved. The CSS now targets that wrapper too.
+
+**Vocabulary tables** keep their shape but read at `--practice-prompt-size`
+in both columns, the hint button moved out of the field into its own grid
+column, and focus draws one ring instead of a ring over a recoloured border.
+
+**Avatars** were redrawn at 256×256 (`public/speakers/{us-man,uk-woman}.svg`)
+as two clearly different, friendly people — face shape, hair, skin tone and
+clothing colour all differ.
+
+Verified with `npm run test:unit` (366/366), `npx eslint` on the touched
+files, `npx tsc --noEmit`, `npm run lint`, and `tests/ux/speech.spec.ts`
+(2/2, its selectors updated for the inline inputs). Screenshots came from a
+throwaway spec, deleted after the run.

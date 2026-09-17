@@ -5,7 +5,12 @@ import { renderToStaticMarkup } from "react-dom/server";
 import { LessonDashboard } from "../../src/components/learner/lesson-dashboard";
 import { PracticeMarkdown } from "../../src/components/practice/practice-markdown";
 import { SentencePracticeCard } from "../../src/components/practice/sentence-practice-card";
-import { learnerLabel } from "../../src/lib/learner/presentation";
+import { SentenceStageCard } from "../../src/components/practice/sentence-stage-card";
+import {
+  explanationPlainText,
+  explanationWraps,
+  learnerLabel,
+} from "../../src/lib/learner/presentation";
 import {
   isAnswerAccepted,
   normalizeAnswer,
@@ -203,4 +208,70 @@ test("a given middle piece renders as static text, skips the input, and never bl
   // Its Spanish and English both still render, as static text.
   assert.match(html, /answer-given-text/);
   assert.match(html, /\.\.\.[\s\S]*\.\.\./);
+});
+
+test("the L2b stage card renders both sentence lines, one inline input per tested piece", () => {
+  const html = renderToStaticMarkup(
+    createElement(SentenceStageCard, {
+      sentence: {
+        id: "s2",
+        type: "sentence",
+        promptLabel: "",
+        promptText: "Un reto más grande.",
+        helperText: "",
+        answerFeedback: null,
+        languageBlocks: [
+          {
+            id: "l1",
+            spanish: "Quiero",
+            callout: null,
+            acceptedAnswers: ["I want"],
+          },
+          {
+            id: "l2",
+            spanish: "saber",
+            callout: null,
+            acceptedAnswers: ["to know"],
+          },
+          {
+            id: "l3",
+            spanish: "...",
+            callout: null,
+            acceptedAnswers: ["..."],
+            given: true,
+          },
+        ],
+      },
+    }),
+  );
+  // Line 1 is the Spanish sentence as prose, line 2 the English being built.
+  assert.match(html, /stage-line-es/);
+  assert.match(html, /stage-line-en/);
+  assert.match(html, /Quiero<\/span> <span[^>]*>saber/);
+  // Two tested pieces get inline inputs; the given piece is static text.
+  assert.equal((html.match(/<input/g) ?? []).length, 2);
+  assert.match(html, /stage-en given/);
+  // Pending blanks are sized from their answer, and there is no success
+  // check anywhere on the card.
+  assert.match(html, /--blank-chars:6/);
+  assert.doesNotMatch(html, /sentence-success/);
+  // The authored instruction is a quiet line above the card.
+  assert.match(html, /stage-instruction/);
+});
+
+test("explanations left-align once the authored text is longer than one line", () => {
+  assert.equal(explanationWraps("Esto es corto."), false);
+  assert.equal(
+    explanationWraps(
+      "Para decir lo que quieres hacer, usa **want** y después el verbo con *to*.",
+    ),
+    true,
+  );
+  // Several blocks always wrap, even when each block is short — and a
+  // heading counts, which the old DOM measurement (p/li only) missed.
+  assert.equal(explanationWraps("# Hola\n\nQué tal."), true);
+  assert.equal(
+    explanationPlainText("**[[en:I want]]** es _quiero_"),
+    "I want es quiero",
+  );
 });

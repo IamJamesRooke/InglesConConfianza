@@ -1,6 +1,8 @@
 import { expect, test } from "./fixtures";
 
 // Speech feature (docs/design/speech.md): pieces speak as they turn correct,
+// on the default L2b assembling-sentence stage — each piece is an inline
+// input in the English line, and a finished piece carries data-state="done".
 // then the full sentence speaks once. `window.speechSynthesis` is stubbed via
 // addInitScript so no real audio ever plays; the generated-clip manifest is
 // blocked so the stub always wins over any real /public/audio clips.
@@ -118,7 +120,11 @@ test("pieces speak on correct, then the full sentence once, with a speaker chip 
   await expect(inputs.nth(2)).toBeFocused();
   await inputs.nth(2).fill("something.");
 
-  await expect(page.locator(".sentence-success")).toBeVisible();
+  // L2b: no success check any more — the three finished words standing in
+  // the English line are the signal (docs/design/student-experience.md).
+  await expect(
+    page.locator('.stage-line-en input[data-state="done"]'),
+  ).toHaveCount(3);
 
   await page.waitForFunction(
     () =>
@@ -206,7 +212,9 @@ test("with no synthesis voices but a real clip manifest, clips play and the chip
   await expect(inputs.nth(2)).toBeFocused();
   await inputs.nth(2).fill("something.");
 
-  await expect(page.locator(".sentence-success")).toBeVisible();
+  await expect(
+    page.locator('.stage-line-en input[data-state="done"]'),
+  ).toHaveCount(3);
 
   // Three piece clips plus one full-sentence clip.
   await expect

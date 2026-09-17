@@ -22,12 +22,12 @@
 - A **speaker** is shown on the slide, persistently: a small cartoon avatar, a country
   label with its flag (**USA** 🇺🇸, **UK** 🇬🇧), and a speech bubble — rendered as soon
   as a speaker is picked (before any answer is typed), staying mounted for the whole
-  slide rather than popping in and out on state changes. The bubble is always visible
-  on a sentence/table slide: a quiet "…" before anything's spoken, the text being
-  spoken while speaking, and it keeps showing that text afterward (it doesn't clear).
-  The speaker is chosen at random per sentence slide (not per piece), and the same
-  speaker reads every piece and the full sentence of that slide. Vocabulary tables show
-  the same persistent chip.
+  slide rather than popping in and out on state changes. There is no bubble at rest
+  (owner, 2026-09-17): it appears with the first words spoken, shows the text being
+  spoken, and keeps showing that text afterward (it doesn't clear); there is no "…"
+  placeholder. The speaker is chosen at random per sentence slide (not per piece),
+  and the same speaker reads every piece and the full sentence of that slide.
+  Vocabulary tables show the same persistent chip.
 - The completion screen shows the lesson's final sentence with a replay button, read by
   the speaker of that last slide.
 - A mute toggle lives in the practice header; the choice is remembered on the device.
@@ -73,8 +73,9 @@ read as two different characters (face shape, hair, skin tone, clothing colour).
 bubble at rest: the bubble appears with the first words and then keeps the last thing
 said; never a "…" typing indicator.
 
-`web/public/speakers/<id>.svg`: flat cartoon busts, two or three palette tones each,
-128×128, no text inside the image (the label is HTML so it can be translated/styled).
+`web/public/speakers/<id>.svg`: flat cartoon busts, a handful of palette tones each,
+256×256 (redrawn 2026-09-17 for the L2b stage, where they render at 72px), no text
+inside the image (the label is HTML so it can be translated/styled).
 The MVP avatars are hand-drawn SVGs; they can be replaced by commissioned art later
 without touching code (same path, same size).
 

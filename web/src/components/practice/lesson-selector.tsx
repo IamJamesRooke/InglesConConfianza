@@ -21,6 +21,7 @@ import {
 } from "react";
 import { ExplanationStep } from "@/components/practice/explanation-step";
 import { SentencePracticeCard } from "@/components/practice/sentence-practice-card";
+import { SentenceStageCard } from "@/components/practice/sentence-stage-card";
 import { learnerLabel, lessonOutcome } from "@/lib/learner/presentation";
 import {
   readProgress,
@@ -61,10 +62,14 @@ export function LessonSelector({
   lessons,
   initialLessonId = null,
   onCloseLesson,
+  layout = "stage",
 }: {
   lessons: PracticeLesson[];
   initialLessonId?: string | null;
   onCloseLesson?: () => void;
+  /** `?layout=grid` renders the older grid-of-fields sentence card instead
+   * of the L2b assembling-sentence stage, for side-by-side comparison. */
+  layout?: "stage" | "grid";
 }) {
   const hydrated = useSyncExternalStore(
     subscribeHydration,
@@ -85,6 +90,7 @@ export function LessonSelector({
       lesson={lesson}
       lessons={lessons}
       onCloseLesson={onCloseLesson}
+      layout={layout}
     />
   );
 }
@@ -93,10 +99,12 @@ function LessonSession({
   lesson,
   lessons,
   onCloseLesson,
+  layout,
 }: {
   lesson: PracticeLesson;
   lessons: PracticeLesson[];
   onCloseLesson?: () => void;
+  layout: "stage" | "grid";
 }) {
   const router = useRouter();
   const [stepIndex, setStepIndex] = useState(() =>
@@ -131,6 +139,12 @@ function LessonSession({
     );
   const canAdvance =
     !complete && (block?.type === "explanation" || sentenceComplete);
+  // Vocabulary tables stay tables — only ordinary sentence slides get the
+  // L2b assembling-sentence stage.
+  const useStage =
+    layout === "stage" &&
+    block?.type === "sentence" &&
+    block.layout !== "vocabulary_table";
 
   const close = useCallback(() => {
     if (onCloseLesson) onCloseLesson();
@@ -258,6 +272,26 @@ function LessonSession({
     return () => document.removeEventListener("keydown", onKeyDown);
   }, [advance, close, complete, nextLesson, onCloseLesson, previous, router]);
 
+  // The lesson's one forward action. Rendered in the footer at every width,
+  // and a second time under the sentence composition at desktop once the
+  // sentence is complete — CSS keeps exactly one of the two visible.
+  const advanceButton = (extraClassName: string) => (
+    <button
+      type="button"
+      className={`learner-button primary ${extraClassName}`}
+      disabled={!canAdvance}
+      onClick={advance}
+    >
+      {stepIndex === totalSteps - 1
+        ? "Terminar lección"
+        : block?.type === "explanation" &&
+            lesson.blocks[stepIndex + 1]?.type === "sentence"
+          ? "Vamos a practicar"
+          : "Continuar"}
+      <ArrowRight size={18} aria-hidden="true" />
+    </button>
+  );
+
   // Full learner navigation (no onCloseLesson) IS the page — it needs its own
   // <main> landmark since this route renders nothing else. The Lesson
   // Builder's inline preview (onCloseLesson is set) lives inside an admin
@@ -265,7 +299,7 @@ function LessonSession({
   const sessionContent = (
     <section
       ref={sectionRef}
-      className="learner-theme lesson-session"
+      className={`learner-theme lesson-session ${layout === "stage" ? "stage-layout" : ""}`}
       role={onCloseLesson ? "dialog" : undefined}
       aria-modal={onCloseLesson ? "true" : undefined}
       aria-labelledby="practice-lesson-title"
@@ -398,18 +432,40 @@ function LessonSession({
             <ExplanationStep markdown={block.contentMarkdown} />
           ) : block?.type === "sentence" ? (
             <>
-              <SentencePracticeCard
-                sentence={block}
-                onCompletionChange={setSentenceComplete}
-                initialAnswers={draftAnswers[block.id]}
-                onAnswersChange={(answers) =>
-                  setDraftAnswers((current) => ({
-                    ...current,
-                    [block.id]: answers,
-                  }))
-                }
-                onSpeakerChange={setLastSpeaker}
-              />
+              {useStage ? (
+                <SentenceStageCard
+                  sentence={block}
+                  onCompletionChange={setSentenceComplete}
+                  initialAnswers={draftAnswers[block.id]}
+                  onAnswersChange={(answers) =>
+                    setDraftAnswers((current) => ({
+                      ...current,
+                      [block.id]: answers,
+                    }))
+                  }
+                  onSpeakerChange={setLastSpeaker}
+                />
+              ) : (
+                <SentencePracticeCard
+                  sentence={block}
+                  onCompletionChange={setSentenceComplete}
+                  initialAnswers={draftAnswers[block.id]}
+                  onAnswersChange={(answers) =>
+                    setDraftAnswers((current) => ({
+                      ...current,
+                      [block.id]: answers,
+                    }))
+                  }
+                  onSpeakerChange={setLastSpeaker}
+                />
+              )}
+              {/* Desktop: the primary action appears centred under the
+                  composition once the sentence is complete. The footer copy
+                  is hidden at that width (see .stage-duplicated), so only
+                  one instance is ever visible. */}
+              {useStage && sentenceComplete && (
+                <div className="stage-continue">{advanceButton("")}</div>
+              )}
             </>
           ) : null}
         </div>
@@ -429,20 +485,13 @@ function LessonSession({
               <ArrowLeft size={20} aria-hidden="true" />
             </button>
             <div className="lesson-feedback" role="status" />
-            <button
-              type="button"
-              className={`learner-button primary ${block?.type === "sentence" && !sentenceComplete ? "awaiting-answer" : ""}`}
-              disabled={!canAdvance}
-              onClick={advance}
-            >
-              {stepIndex === totalSteps - 1
-                ? "Terminar lección"
-                : block?.type === "explanation" &&
-                    lesson.blocks[stepIndex + 1]?.type === "sentence"
-                  ? "Vamos a practicar"
-                  : "Continuar"}
-              <ArrowRight size={18} aria-hidden="true" />
-            </button>
+            {advanceButton(
+              `${block?.type === "sentence" && !sentenceComplete ? "awaiting-answer" : ""} ${
+                useStage && block?.type === "sentence" && sentenceComplete
+                  ? "stage-duplicated"
+                  : ""
+              }`,
+            )}
           </div>
         </footer>
       )}

@@ -1,45 +1,23 @@
-"use client";
-
-import { useEffect, useRef, useState } from "react";
 import { PracticeMarkdown } from "@/components/practice/practice-markdown";
+import { explanationWraps } from "@/lib/learner/presentation";
 
-export function ExplanationStep({
-  markdown,
-}: {
-  markdown: string;
-}) {
-  // Single-line explanation text reads fine centered; once any paragraph or
-  // list item wraps to a second line, centering makes the ragged edges hard
-  // to read, so the whole card switches to left-aligned text (owner spec:
-  // "left-aligned when it wraps beyond one line"). Detected by comparing
-  // each text node's rendered height against one line of its own type,
-  // rather than guessing from character count, so it stays correct across
-  // viewport widths and font-size changes.
-  const containerRef = useRef<HTMLDivElement>(null);
-  const [wraps, setWraps] = useState(false);
-
-  useEffect(() => {
-    const container = containerRef.current;
-    if (!container) return;
-    const measure = () => {
-      const nodes = container.querySelectorAll<HTMLElement>("p, li");
-      let multiline = false;
-      nodes.forEach((node) => {
-        const lineHeight = parseFloat(getComputedStyle(node).lineHeight);
-        if (Number.isFinite(lineHeight) && node.offsetHeight > lineHeight * 1.4)
-          multiline = true;
-      });
-      setWraps(multiline);
-    };
-    measure();
-    const observer = new ResizeObserver(measure);
-    observer.observe(container);
-    return () => observer.disconnect();
-  }, [markdown]);
-
+/**
+ * An explanation slide. A single short line reads well centred and gets the
+ * larger of the two fluid type sizes; anything that wraps switches to
+ * left-aligned at the ordinary size (owner spec: "left-aligned when it wraps
+ * beyond one line").
+ *
+ * The wrap decision is a rule on the authored text (explanationWraps), not a
+ * DOM measurement: the previous ResizeObserver version measured only `p`/`li`
+ * heights, so an explanation whose wrapping text was a heading stayed centred
+ * forever, and its first measurement ran before webfonts had loaded with no
+ * later re-measure guaranteed. The rule needs no effect, no ref, and is
+ * already right in the server-rendered HTML.
+ */
+export function ExplanationStep({ markdown }: { markdown: string }) {
+  const wraps = explanationWraps(markdown);
   return (
     <div
-      ref={containerRef}
       className="lesson-explanation learner-enter"
       data-wraps={wraps ? "true" : "false"}
     >

@@ -18,8 +18,9 @@
   outline: 2px solid var(--primary);
   outline-offset: 2px;
 }
-/* The answer input carries its own focus treatment (border + ring). */
-.learner-theme .answer-input:focus-visible {
+/* Answer fields carry their own focus treatment (the grid card's border +
+   ring; the L2b stage's underline + tint) — never a second box on top. */
+.learner-theme :is(.answer-input, .stage-en-input):focus-visible {
   outline: none;
 }
 .learner-theme button {

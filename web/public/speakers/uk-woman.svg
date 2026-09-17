@@ -1,9 +1,25 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128" role="img" aria-hidden="true">
-  <circle cx="64" cy="64" r="64" fill="#ffd9e6"/>
-  <path d="M18 128c4-28 22-44 46-44s42 16 46 44z" fill="#8a2f5c"/>
-  <path d="M30 60c0-24 15-38 34-38s34 14 34 38c0 8-2 16-6 22-2-14-6-24-12-30-8 10-30 16-50 8z" fill="#5c2a1a"/>
-  <circle cx="64" cy="62" r="28" fill="#f3c6a2"/>
-  <circle cx="54" cy="64" r="3.2" fill="#2b1b12"/>
-  <circle cx="74" cy="64" r="3.2" fill="#2b1b12"/>
-  <path d="M56 78c4 4 12 4 16 0" stroke="#7a3a2a" stroke-width="2.6" fill="none" stroke-linecap="round"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256" role="img" aria-hidden="true">
+  <!-- UK speaker: fair rosy skin, long auburn hair with a fringe, oval face,
+       plum top, gold earrings. Deliberately a different person from the USA
+       speaker (face shape, hair, skin tone, clothing colour). -->
+  <circle cx="128" cy="128" r="128" fill="#fae2d5"/>
+  <ellipse cx="128" cy="124" rx="74" ry="86" fill="#a8482a"/>
+  <path d="M112 166h32v32h-32z" fill="#eebb98"/>
+  <path d="M32 256c6-44 34-64 66-70l30 26 30-26c32 6 60 26 66 70z" fill="#7d3f8c"/>
+  <ellipse cx="128" cy="110" rx="49" ry="56" fill="#f6cba6"/>
+  <circle cx="79" cy="116" r="10" fill="#eebb98"/>
+  <circle cx="177" cy="116" r="10" fill="#eebb98"/>
+  <circle cx="79" cy="130" r="6.5" fill="#e8b23f"/>
+  <circle cx="177" cy="130" r="6.5" fill="#e8b23f"/>
+  <path d="M79 106c0-42 22-62 49-62s49 20 49 62c-3-15-7-26-13-35-16 19-53 25-71 15-7 5-11 11-14 20z" fill="#b8532e"/>
+  <path d="M101 95c9-7 18-7 25-2" stroke="#7d3a1e" stroke-width="5" fill="none" stroke-linecap="round"/>
+  <path d="M130 93c7-5 16-5 25 2" stroke="#7d3a1e" stroke-width="5" fill="none" stroke-linecap="round"/>
+  <circle cx="109" cy="113" r="6.8" fill="#36251c"/>
+  <circle cx="147" cy="113" r="6.8" fill="#36251c"/>
+  <circle cx="111.4" cy="110.6" r="2.4" fill="#ffffff"/>
+  <circle cx="149.4" cy="110.6" r="2.4" fill="#ffffff"/>
+  <ellipse cx="94" cy="132" rx="10" ry="6" fill="#f0a591" opacity="0.6"/>
+  <ellipse cx="162" cy="132" rx="10" ry="6" fill="#f0a591" opacity="0.6"/>
+  <path d="M128 120v11l-6 4" stroke="#dfa47c" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M113 148c9 10 22 10 30 0" stroke="#c0483f" stroke-width="5.5" fill="none" stroke-linecap="round"/>
 </svg>
