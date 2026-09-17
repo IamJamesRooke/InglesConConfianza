@@ -1,4 +1,4 @@
-import { Check, Play, RotateCcw, SkipForward } from "lucide-react";
+import { Check, RotateCcw, SkipForward } from "lucide-react";
 import Link from "next/link";
 
 import type { LearnerLesson } from "@/components/learner/types";
@@ -45,15 +45,6 @@ export function LessonRow({
             : "Una nueva conversación, muy pronto."}
         </span>
       </span>
-      {available && (
-        <span className="lesson-action" aria-hidden="true">
-          {complete ? (
-            <RotateCcw size={17} />
-          ) : (
-            <Play size={17} fill={isNext ? "currentColor" : "none"} />
-          )}
-        </span>
-      )}
     </>
   );
   return (

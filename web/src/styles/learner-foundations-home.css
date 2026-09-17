@@ -477,16 +477,6 @@
   font-size: 14px;
   line-height: 1.4;
 }
-.module-fraction {
-  font-size: 13px;
-  white-space: nowrap;
-  color: var(--muted-foreground);
-}
-.module-fraction strong {
-  margin-right: 2px;
-  font-size: 15px;
-  color: var(--foreground);
-}
 .module-progress {
   margin-block: 14px 0;
 }
@@ -597,30 +587,10 @@
 .lesson-row.complete .lesson-number {
   color: var(--success);
 }
-.lesson-action {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-  width: 36px;
-  height: 36px;
-  border: 1px solid var(--border);
-  border-radius: 50%;
-  color: var(--muted-foreground);
-  background: var(--card);
-}
-.lesson-row.next .lesson-action {
-  color: var(--primary-foreground);
-  border-color: var(--primary);
-  background: var(--primary);
-}
 .lesson-row.next {
   border-color: var(--border);
   border-left: 3px solid var(--primary);
   background: var(--card);
-}
-.lesson-row.complete .lesson-action {
-  border-color: var(--border);
 }
 .lesson-row.unavailable {
   color: var(--muted-foreground);

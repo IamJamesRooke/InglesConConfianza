@@ -277,9 +277,6 @@ export function LessonDashboard({
                       </p>
                     )}
                   </div>
-                  <span className="module-fraction">
-                    <strong>{moduleCompleted}</strong>/{moduleAvailable.length}
-                  </span>
                 </div>
                 <progress
                   className="module-progress"
