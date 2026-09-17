@@ -38,6 +38,9 @@ export default defineConfig({
     env: {
       LESSON_BUILDER_DATA_PATH: uxCheckLessonsPath,
       UX_CHECK_DIST_DIR: `.next-ux-check-${UX_CHECK_PORT}`,
+      // Forwarded only when set, so the admin guard stays off (default) for
+      // every other UX-check run — see tests/ux/admin-guard.spec.ts.
+      ...(process.env.ADMIN_SECRET ? { ADMIN_SECRET: process.env.ADMIN_SECRET } : {}),
     },
   },
   globalSetup: "./tests/ux/global-setup.ts",

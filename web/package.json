@@ -24,6 +24,7 @@
     "ux:check:headed": "playwright test --headed",
     "db:studio": "prisma studio",
     "audio:generate": "tsx scripts/generate-audio.ts",
+    "admin:secret": "tsx scripts/generate-admin-secret.ts",
     "curriculum:sources:inventory": "tsx scripts/inventory-curriculum-sources.ts",
     "curriculum:sources:query": "tsx scripts/query-curriculum-sources.ts",
     "curriculum:roles:apply": "tsx scripts/apply-role-manifest.ts",
