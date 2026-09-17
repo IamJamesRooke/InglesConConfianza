@@ -106,20 +106,44 @@ function matchesVoiceName(voice: SpeechSynthesisVoice, names: string[]) {
 }
 
 /**
- * Speakers whose `lang` has at least one matching voice on this device.
- * Accent (lang) always wins over the gender hint — a speaker with no
+ * Speakers usable on this device: either the generated-clip manifest lists
+ * at least one clip for that speaker id, or the device reports a
+ * `speechSynthesis` voice matching that speaker's `lang`. Accent (lang)
+ * always wins over the gender hint for the voice path — a speaker with no
  * gender-matching voice is still available if the accent matches.
+ *
+ * Both probes (manifest fetch, voice list) must settle before this
+ * resolves — callers (the sentence card) await it before picking a speaker
+ * and rendering the chip, so a slow manifest fetch never causes a false
+ * "no speakers" result. See docs/design/speech.md rule 1.
  */
 export async function availableSpeakers(): Promise<Speaker[]> {
   const synth = getSynth();
-  if (!synth) return [];
-  const voices = await loadVoices(synth);
-  if (voices.length === 0) return [];
-  return SPEAKER_ROSTER.filter((speaker) =>
-    voices.some((voice) => voice.lang.toLowerCase().startsWith(
-      speaker.lang.toLowerCase(),
-    )),
+  const [voices, manifestSpeakerIds] = await Promise.all([
+    synth ? loadVoices(synth) : Promise.resolve<SpeechSynthesisVoice[]>([]),
+    manifestSpeakerIdSet(),
+  ]);
+  return SPEAKER_ROSTER.filter(
+    (speaker) =>
+      manifestSpeakerIds.has(speaker.id) ||
+      voices.some((voice) =>
+        voice.lang.toLowerCase().startsWith(speaker.lang.toLowerCase()),
+      ),
   );
+}
+
+/**
+ * Resolves once both the manifest probe and the voice list have settled —
+ * the point at which `availableSpeakers()`/`pickSpeaker()` can be trusted.
+ * Exposed for callers that want to wait without discarding the result of
+ * `availableSpeakers()` itself (which already awaits the same thing).
+ */
+export async function whenReady(): Promise<void> {
+  const synth = getSynth();
+  await Promise.all([
+    synth ? loadVoices(synth) : Promise.resolve<SpeechSynthesisVoice[]>([]),
+    loadManifest(),
+  ]);
 }
 
 function pickVoiceFor(
@@ -215,18 +239,108 @@ export function resetSpeechCaches(): void {
   manifestPromise = null;
 }
 
-async function sha1(text: string): Promise<string | null> {
-  if (typeof crypto === "undefined" || !crypto.subtle) return null;
-  try {
-    const bytes = new TextEncoder().encode(text);
-    const digest = await crypto.subtle.digest("SHA-1", bytes);
-    return Array.from(new Uint8Array(digest))
-      .map((byte) => byte.toString(16).padStart(2, "0"))
-      .join("");
-  } catch {
-    return null;
+/** Every speaker id that has at least one generated clip, across all texts. */
+async function manifestSpeakerIdSet(): Promise<Set<SpeakerId>> {
+  const manifest = await loadManifest();
+  const ids = new Set<SpeakerId>();
+  if (!manifest) return ids;
+  for (const speakers of Object.values(manifest)) {
+    for (const id of speakers) ids.add(id);
   }
+  return ids;
 }
+
+// --- sha1 -----------------------------------------------------------------
+// `crypto.subtle` is only available in "secure contexts" (https, or plain
+// http on localhost) — a LAN-address preview over plain http does not get
+// it, so this falls back to a small pure-JS SHA-1 rather than silently
+// returning no clip on those devices.
+
+function rotl(value: number, shift: number): number {
+  return (value << shift) | (value >>> (32 - shift));
+}
+
+/** Pure-JS SHA-1 (hex digest), used only where `crypto.subtle` is absent. */
+function sha1Fallback(text: string): string {
+  const bytes = new TextEncoder().encode(text);
+  const bitLength = bytes.length * 8;
+  // Pad: 0x80, then zeros, then the 64-bit bit-length, to a multiple of 64
+  // bytes (16 32-bit words), matching the SHA-1 spec.
+  const withOne = bytes.length + 1;
+  const paddedLength = Math.ceil((withOne + 8) / 64) * 64;
+  const padded = new Uint8Array(paddedLength);
+  padded.set(bytes);
+  padded[bytes.length] = 0x80;
+  const view = new DataView(padded.buffer);
+  view.setUint32(paddedLength - 4, bitLength >>> 0, false);
+  view.setUint32(paddedLength - 8, Math.floor(bitLength / 2 ** 32), false);
+
+  let h0 = 0x67452301;
+  let h1 = 0xefcdab89;
+  let h2 = 0x98badcfe;
+  let h3 = 0x10325476;
+  let h4 = 0xc3d2e1f0;
+
+  const w = new Array<number>(80);
+  for (let chunkStart = 0; chunkStart < padded.length; chunkStart += 64) {
+    for (let i = 0; i < 16; i += 1) {
+      w[i] = view.getUint32(chunkStart + i * 4, false);
+    }
+    for (let i = 16; i < 80; i += 1) {
+      w[i] = rotl(w[i - 3] ^ w[i - 8] ^ w[i - 14] ^ w[i - 16], 1);
+    }
+    let [a, b, c, d, e] = [h0, h1, h2, h3, h4];
+    for (let i = 0; i < 80; i += 1) {
+      let f: number;
+      let k: number;
+      if (i < 20) {
+        f = (b & c) | (~b & d);
+        k = 0x5a827999;
+      } else if (i < 40) {
+        f = b ^ c ^ d;
+        k = 0x6ed9eba1;
+      } else if (i < 60) {
+        f = (b & c) | (b & d) | (c & d);
+        k = 0x8f1bbcdc;
+      } else {
+        f = b ^ c ^ d;
+        k = 0xca62c1d6;
+      }
+      const temp = (rotl(a, 5) + f + e + k + w[i]) | 0;
+      e = d;
+      d = c;
+      c = rotl(b, 30);
+      b = a;
+      a = temp;
+    }
+    h0 = (h0 + a) | 0;
+    h1 = (h1 + b) | 0;
+    h2 = (h2 + c) | 0;
+    h3 = (h3 + d) | 0;
+    h4 = (h4 + e) | 0;
+  }
+  return [h0, h1, h2, h3, h4]
+    .map((part) => (part >>> 0).toString(16).padStart(8, "0"))
+    .join("");
+}
+
+async function sha1(text: string): Promise<string> {
+  if (typeof crypto !== "undefined" && crypto.subtle) {
+    try {
+      const bytes = new TextEncoder().encode(text);
+      const digest = await crypto.subtle.digest("SHA-1", bytes);
+      return Array.from(new Uint8Array(digest))
+        .map((byte) => byte.toString(16).padStart(2, "0"))
+        .join("");
+    } catch {
+      // Fall through to the pure-JS implementation below.
+    }
+  }
+  return sha1Fallback(text);
+}
+
+/** Exposed for tests: the pure-JS fallback, checked against a known digest. */
+export const __sha1Fallback = sha1Fallback;
 
 /**
  * Resolves the URL of a generated clip for this text/speaker, if the
@@ -239,7 +353,6 @@ export async function clipUrlFor(
   const manifest = await loadManifest();
   if (!manifest) return null;
   const hash = await sha1(text.trim());
-  if (!hash) return null;
   const speakers = manifest[hash];
   if (!speakers?.includes(speaker)) return null;
   return `/audio/${speaker}/${hash}.mp3`;
@@ -269,6 +382,16 @@ function speakWithSynthesis(
 ) {
   const synth = getSynth();
   if (!synth) return;
+  // No voices at all (e.g. the owner's Linux desktop Chrome) — there is
+  // nothing for `speechSynthesis` to say, and calling `speak()` anyway would
+  // just queue an utterance that never fires `onstart`/`onend` on some
+  // browsers, leaving the speech bubble stuck. Resolve silently instead,
+  // still firing `onEnd` so callers never hang. See docs/design/speech.md
+  // rule 2.
+  if (synth.getVoices().length === 0) {
+    callbacks?.onEnd?.();
+    return;
+  }
   const utterance = new SpeechSynthesisUtterance(text);
   utterance.rate = 0.95;
   utterance.pitch = 1.0;

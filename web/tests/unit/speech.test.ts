@@ -2,6 +2,7 @@ import assert from "node:assert/strict";
 import test from "node:test";
 
 import {
+  __sha1Fallback,
   availableSpeakers,
   clipUrlFor,
   isMuted,
@@ -234,6 +235,59 @@ test("an absent or broken manifest resolves to no clip rather than throwing", as
     },
     async () => {
       assert.equal(await clipUrlFor("Hello", "us-man"), null);
+    },
+  );
+});
+
+test("pure-JS sha1 fallback matches the known digest of 'abc'", () => {
+  assert.equal(
+    __sha1Fallback("abc"),
+    "a9993e364706816aba3e25717850c26c9cd0d89d",
+  );
+  assert.equal(__sha1Fallback(""), "da39a3ee5e6b4b0d3255bfef95601890afd80709");
+});
+
+test("a speaker with no matching voice is still available when the manifest lists a clip for it", async () => {
+  // No voices at all (the owner's Linux desktop Chrome symptom), but the
+  // manifest has a clip for uk-woman — that speaker must still show up.
+  const { synth } = makeSynth([]);
+  const digest = await crypto.subtle.digest(
+    "SHA-1",
+    new TextEncoder().encode("Hello"),
+  );
+  const hash = Array.from(new Uint8Array(digest))
+    .map((byte) => byte.toString(16).padStart(2, "0"))
+    .join("");
+  await withStubbedGlobals(
+    {
+      synth,
+      fetchImpl: (async () =>
+        new Response(JSON.stringify({ [hash]: ["uk-woman"] }), {
+          status: 200,
+        })) as unknown as typeof fetch,
+    },
+    async () => {
+      const speakers = await availableSpeakers();
+      assert.deepEqual(
+        speakers.map((speaker) => speaker.id),
+        ["uk-woman"],
+      );
+    },
+  );
+});
+
+test("no manifest and no voices means no available speakers, but speak() still resolves silently", async () => {
+  const { synth, spoken } = makeSynth([]);
+  await withStubbedGlobals(
+    {
+      synth,
+      fetchImpl: (async () =>
+        new Response("not found", { status: 404 })) as unknown as typeof fetch,
+    },
+    async () => {
+      assert.deepEqual(await availableSpeakers(), []);
+      await assert.doesNotReject(() => speak("hello", null));
+      assert.equal(spoken.length, 0);
     },
   );
 });

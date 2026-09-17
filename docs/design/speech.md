@@ -30,13 +30,25 @@
 Later: Australia, Ireland, Canada, plus a Colombian-English learner voice is *not* a
 goal. Adding a speaker = one roster entry + one avatar file.
 
-Voice availability differs per device. Rules:
-1. A speaker is *available* on a device only if a voice matching its `lang` exists.
-   If the gender hint cannot be honoured, the accent still wins (the label is the accent).
+Voice availability differs per device — some report no `speechSynthesis` voices at all
+(seen on the owner's Linux desktop Chrome) but still have generated clips. Rules:
+1. A speaker is *available* on a device if EITHER the generated-clip manifest lists at
+   least one clip for that speaker id, OR a `speechSynthesis` voice matching its `lang`
+   exists. If the gender hint cannot be honoured, the accent still wins (the label is
+   the accent). Both probes (manifest fetch, voice list) run before the first pick —
+   `availableSpeakers()`/`pickSpeaker()` are async and the sentence card awaits them
+   before rendering the chip, so a slow manifest fetch never causes a false "no
+   speakers" result. If the manifest is absent and no voices exist: no speaker, no
+   chip, and `speak()` still resolves silently (never throws, never blocks practice).
 2. Randomise only among available speakers. If exactly one is available, always use it.
-   If none, use any `en-*` voice and show no speaker chip (bubble still shows the text).
+   Clip playback never depends on `speechSynthesis`: `speak(text, speaker)` plays a
+   clip via `new Audio(url)` when the manifest has one for that (speaker, text) pair
+   (its `play()` rejection — e.g. autoplay policy — is handled silently, falling back
+   to synthesis), else falls back to browser synthesis if a voice exists, else resolves
+   with no sound.
 3. Rate 0.95, pitch 1.0. Pieces are spoken with `speechSynthesis.speak`; the full
-   sentence cancels the queue first so pieces never overlap it.
+   sentence cancels the queue first so pieces never overlap it. `speakSentence` also
+   stops any in-flight clip `Audio` before speaking.
 4. iOS/Safari play audio only after a user gesture — the learner has just typed, so this
    holds; still guard `speak()` so it never throws when synthesis is unavailable.
 

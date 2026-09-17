@@ -132,3 +132,69 @@ test("pieces speak on correct, then the full sentence once, with a speaker chip 
   );
   expect(cleanup.ok()).toBeTruthy();
 });
+
+// Owner's Linux desktop Chrome symptom: `speechSynthesis.getVoices()` reports
+// no voices at all, so the old voice-only availability check found no
+// speakers and hid the chip entirely — even though generated clips exist.
+// This lesson's three pieces and full sentence are real entries in the
+// committed `public/audio/manifest.json` (see docs/design/speech.md), so the
+// manifest here is the real one, unblocked, and clip requests are counted.
+test("with no synthesis voices but a real clip manifest, clips play and the chip still shows", async ({
+  page,
+  request,
+}) => {
+  const courseResponse = await request.get("/api/admin/lesson-builder/lessons");
+  const course = (await courseResponse.json()) as {
+    modules: Array<{ id: string }>;
+  };
+  const response = await request.put(
+    `/api/admin/lesson-builder/lessons/${speechLesson.id}`,
+    { data: { lesson: speechLesson, moduleId: course.modules[0].id } },
+  );
+  expect(response.ok()).toBeTruthy();
+
+  const requestedClips: string[] = [];
+  await page.route("**/audio/**/*.mp3", (route) => {
+    requestedClips.push(route.request().url());
+    route.continue();
+  });
+
+  await page.addInitScript(() => {
+    // No voices at all — the manifest alone must make a speaker available.
+    Object.defineProperty(window, "speechSynthesis", {
+      configurable: true,
+      value: {
+        getVoices: () => [],
+        speak: () => {},
+        cancel: () => {},
+        addEventListener: () => {},
+        removeEventListener: () => {},
+      },
+    });
+  });
+
+  await page.goto(`/practice?lesson=${speechLesson.id}`);
+
+  const chip = page.locator(".speaker-chip-label");
+  await expect(chip).toBeVisible();
+  await expect(chip).toContainText(/USA|UK/);
+
+  const inputs = page.locator("[data-practice-answer]");
+  await inputs.nth(0).fill("I want");
+  await expect(inputs.nth(1)).toBeFocused();
+  await inputs.nth(1).fill("to know");
+  await expect(inputs.nth(2)).toBeFocused();
+  await inputs.nth(2).fill("something.");
+
+  await expect(page.locator(".sentence-success")).toBeVisible();
+
+  // Three piece clips plus one full-sentence clip.
+  await expect
+    .poll(() => requestedClips.length, { timeout: 5000 })
+    .toBeGreaterThanOrEqual(4);
+
+  const cleanup = await request.delete(
+    `/api/admin/lesson-builder/lessons/${speechLesson.id}`,
+  );
+  expect(cleanup.ok()).toBeTruthy();
+});
