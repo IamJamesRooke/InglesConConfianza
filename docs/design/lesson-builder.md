@@ -69,29 +69,22 @@ interaction decision below is in service of those three goals, not of
 - **Instruction** (`promptText`) — an optional line of learner-facing
   guidance shown above a Sentence/Vocabulary block's pairs.
 - **"Covers" concepts** (`Lesson.concepts: LessonConcept[]`) — curriculum
-  concepts a lesson teaches, tagged from the compact field under the slide
-  list via `LessonConceptsField`, which always renders in full (see §5,
-  "Covers never collapses"). Two independent suggestion sources feed that
-  field and neither ever writes to the lesson on its own:
+  concepts a lesson teaches, tagged by hand from the compact field under the
+  slide list via `LessonConceptsField`, which always renders in full (see
+  §5, "Covers never collapses" and "Covers reads as the end step"). A small-
+  caps "Covers" eyebrow sits above the pills; the add-input sits on its own
+  line under them. One suggestion source feeds the field, and it never
+  writes to the lesson on its own:
   - **Suggested review** (amber, `Snowflake` icon, dashed pill) — cold
     concepts from earlier lessons that haven't reappeared recently
-    (`suggestConceptsForLesson`, `concept-suggestions.ts`).
-  - **Auto-Covers** (`.lesson-concept-suggestion-ghost`, borderless ghost
-    text with a leading "+", owner 2026-09-16) — concepts the lesson's own
-    pairs already name. `extractLessonPairTerms` pulls terms from every
-    pair's Spanish text and accepted English answers (explanation prose is
-    never a source); `matchPairTermsToConcepts` matches them against the
-    curriculum (exact, then example-sentence, accent/case-insensitive,
-    bracket placeholders stripped) via one `POST
-    /api/admin/curriculum/concepts/suggest` call, recomputed 800ms after
-    the pairs change and once on open. `isSyllabusEligiblePairMatch`
-    (`concept-suggestions.ts`) then drops any match that isn't Level 1
-    (`P1`) or already in this lesson's module syllabus (main or review) —
-    an incidental sentence noun never becomes a suggestion — and the field
-    caps the result at four visible. Already-tagged concepts are excluded;
-    `Enter`/click tags one, `Ctrl+Enter` (input focused) tags all,
-    `Backspace`/`×` on a focused suggestion dismisses it for that lesson —
-    dismissals live in `sessionStorage`, never in lesson data.
+    (`suggestConceptsForLesson`, `concept-suggestions.ts`). This is module
+    planning (which cold concepts to revisit), not derived from this
+    lesson's own pairs, so it's unaffected by the "nothing guesses" decision
+    below.
+  - **Auto-Covers from a lesson's own pairs was removed 2026-09-17** (see
+    §6, "While writing slides, nothing guesses") — a sentence pair naming
+    "querer"/"to want" no longer offers itself as a Covers suggestion; the
+    teacher tags it by hand.
 - Two fields on `SentenceBlock` — `helperText` and `answerFeedback` — are
   **deprecated**: retained only for on-disk compatibility with older lesson
   files, intentionally inert in both authoring and learner UI. Do not build
@@ -200,19 +193,9 @@ their own local handling rather than going through the dispatcher:
   `Ctrl+Alt+Enter` above).
 - The concept-tag typeahead, the concept quick-edit dialog, and the
   keyboard-help dialog are each `[data-keymap-ignore]` for the same reason.
-  The Covers input's own `onKeyDown` also owns `Ctrl+Enter` (accept every
-  visible auto-Covers suggestion) and, on a focused suggestion pill itself,
-  `Enter` (tag it) and `Backspace` (dismiss it) — see §2's Auto-Covers entry.
-- E5b's pair-field autocomplete popover (`PairLanguageField`,
-  `pair-field-autocomplete.tsx`) is the one field-scope exception that's only
-  *sometimes* `[data-keymap-ignore]`: the Spanish/English textarea carries
-  the attribute only while its own popover is open, so the shared dispatcher
-  skips the field for that stretch and the field's own `onKeyDown` handles
-  `↑`/`↓` (move the highlight), `Tab`/`Enter` (accept the highlighted
-  completion), and `Escape` (close the popover only, selection unchanged)
-  instead. Closed, the attribute is absent and normal Tab/Enter/Escape pair
-  navigation (this section's `spanish`/`english` rows) applies exactly as
-  documented — nothing here changes when the popover never opens.
+  (E5b's pair-field autocomplete popover and the Covers input's `Ctrl+Enter`
+  "accept every suggestion" chord were removed 2026-09-17 — see §6, "While
+  writing slides, nothing guesses.")
 - The module navigator's search input and the module-name input are
   `[data-keymap-ignore]` too — nothing about typing in them is part of the
   `EditingSelection` model, so a stale selection elsewhere must never
@@ -514,17 +497,11 @@ proposal doc's aspirations.
   `promptText` itself keeps whatever case the teacher typed.
 - **Covers never collapses** (owner, 2026-09-16 — reverses the Phase 3b
   "quiet line at rest" rule): `LessonConceptsField`'s compact Covers field
-  (`coversFor` set) always renders the full line — tagged pills, the
-  pair-suggestion ghost text, and the add-input — with no summary/expand
-  state (`covers-summary.tsx` and its `data-covers-summary` button are gone).
-  Auto-Covers suggestions (`concept-suggestion-chips.tsx`'s
-  `usePairSuggestions`/`PairSuggestionChips`) render as borderless ghost
-  text ("+ some term", `.lesson-concept-suggestion-ghost`) rather than
-  dashed pills, capped at four visible, and a pair-derived match is only
-  offered when its concept is Level 1 (`P1`) or already in this lesson's
-  module syllabus (main or review — `isSyllabusEligiblePairMatch` in
-  `concept-suggestions.ts`, fed the field's own `syllabusMarkers`); this
-  keeps an incidental sentence noun (e.g. "egg") from becoming a suggestion.
+  (`coversFor` set) always renders the full line — tagged pills and the
+  add-input — with no summary/expand state (`covers-summary.tsx` and its
+  `data-covers-summary` button are gone). Pair-derived Auto-Covers
+  suggestions were removed 2026-09-17 (§6) — the field's only suggestion
+  source now is "Suggested review" (module planning, unaffected).
   The add-input (`.lesson-concept-add`) is borderless at rest, gaining a
   border only on `:focus-visible`, with a fixed "Add concept…" placeholder
   (same wording regardless of whether the lesson already has concepts).
@@ -703,6 +680,23 @@ proposal doc's aspirations.
   below it. The name stays in the button's `aria-label` (`"Modules — <name>,
   expand/collapse"`) for screen readers, who don't get that title as a
   visual confirmation.
+- **Covers reads as the end step** (owner, 2026-09-17): a small-caps
+  "Covers" eyebrow (`.lesson-concepts-eyebrow`, sharing `.syllabus-group-
+  eyebrow`'s size/weight/tracking/case/color with the syllabus card's own
+  "Main teaching points"/"Review" eyebrows) sits above the lesson's Covers
+  pills; the pills use the same shared stacked label component
+  (`ConceptPillLabel`, English over Spanish for a linked concept, single
+  line with a dashed border for freehand) and size as the syllabus card's
+  own pills, since both already render through `.lesson-concept-chip`. The
+  "Add concept…" input moves onto its own line under the pills
+  (`.lesson-concepts-add-row`). `.lesson-document-tags`'s top margin dropped
+  20px → 12px so the gap above the eyebrow equals one slide's own rhythm
+  (`.lesson-document-block`'s 6px+6px padding meeting the next block's) —
+  Covers reads as the lesson's own last block, not a separate section set
+  apart by extra air. This layout only applies to the lesson's own compact
+  Covers field (`coversFor` set, `hideChips` absent); the syllabus panel's
+  own embed of the same component (`hideChips`, no `coversFor`) is
+  untouched.
 
 ## 6. Owner decisions & rejected ideas
 
@@ -747,6 +741,27 @@ without a fresh, explicit ask:
   own grey.
 - **Desktop is the authoring target.** Narrow/mobile authoring is
   explicitly out of scope for now (see Known gaps).
+- **While writing slides, nothing guesses (owner, 2026-09-17).** "Covers" is
+  a deliberate step the teacher does by hand at the end of the lesson, not
+  something the document infers from what she just typed. This removed
+  every automatic guess that used to live inside the lesson document: E3
+  (practice pairs proposed from an explanation's `[[es:X]]`/`[[en:Y]]`
+  marks), E5b (pair-field curriculum autocomplete), and the pair-derived
+  half of Auto-Covers (suggesting "Covers" chips from a lesson's own
+  sentence pairs). The Covers typeahead itself stays — it's the teacher
+  typing on purpose — but got stricter about not guessing too: `Enter`/`Tab`
+  with nothing explicitly arrowed-to only links a concept when the typed
+  text exactly matches (accent/case-insensitive) a loaded result's own
+  Spanish label; anything else becomes a freehand label rather than a fuzzy
+  best guess (see §3's `spanish`/`english` field rows are unaffected — this
+  is the Covers input, `concept-typeahead.tsx`). Coverage bookkeeping
+  (`syllabus.ts`) tolerates a freehand label that names the same thing as a
+  syllabus item under that same normalisation, so a deliberately freehand
+  "algo" still counts as covering a linked `{conceptId, label: "algo"}`
+  syllabus item — that's not a guess, it's recognizing the same word. The
+  "Suggested review" chips (module planning, cold concepts from earlier
+  lessons) are unaffected — they were never derived from this lesson's own
+  pairs.
 - **"New lesson like this one" (E7, "Duplicate structure") was removed
   2026-09-15: the owner found no use for it.** The action, its mutation,
   its header icon, and its tests are gone; "Duplicate lesson" (full copy)
@@ -853,8 +868,8 @@ statically or spin up their own isolated server against a throwaway file.
 | P2 | Phase 2: explanation editor on Tiptap/ProseMirror — schema + markdown round-trip, mark commands via an editor registry, floating toolbar, E1 auto-marking, mark-preserving copy/paste; `serialize-explanation.ts` and all `execCommand`/`Range` code deleted | Opus | done |
 | CT1 | "Covers" concept typeahead popover: fixed overlapping/clipped option rows, restyled the active row from a saturated `--accent` fill (read as danger) to a soft primary tint + left rule, added viewport flip and `data-keymap-ignore`, and ranked the search route's results (exact → prefix → word-boundary → substring, ties by priority then length) so e.g. "with" surfaces the standalone preposition before "to work with [somebody]" | Sonnet | done |
 | M1 | Merge-integration pass reconciling Phase 1, empty-slide deletion, the HUD restore, typeahead, and Phase 2 landing on top of each other same-day: fixed `lesson-library.tsx`'s `onFocusOut` treating a *resolvable* out-of-root `relatedTarget` (e.g. focus landing in the lesson-preview overlay, a sibling of the builder root) the same as an unresolved one, which wrongly kept the origin slide "active" through Preview and stopped its origin field from ever going stale enough to fall back to the title; updated four tests whose assumptions predated today's changes (a dead-end blur no longer force-exits editing — Phase 1 dropped the rAF/`activeElement` polling that used to do that and has no replacement signal; leaving a still-blank slide via any path, insert included, now deletes it, so tests that created blank sentence/table/explanation slides via the mouse and moved on need to fill them first; the restored `EditingHud` correctly shows whenever `selection.kind !== "none"`, including right after a mouse click back into a resting slide — a pre-HUD assertion of `.editing-hud` count 0 was stale, not a real check) | Sonnet | done |
-| E5a | Auto-Covers: suggest "Covers" chips from a lesson's own pairs (`extractLessonPairTerms`/`matchPairTermsToConcepts` in `concept-suggestions.ts`, `POST /api/admin/curriculum/concepts/suggest`, dashed `.is-pair-suggestion` pills in `LessonConceptsField`, `Ctrl+Enter` accepts all, session-only dismissal). | Sonnet | done |
-| E3/E5b | Practice pairs proposed from the explanation (`proposePairsFromMarkdown`/`proposedPairsForBlock`, `pair-proposals.ts`) — a sentence/table slide inserted right after an explanation with adjacent `[[es:X]]`/`[[en:Y]]` marks is pre-filled, focused on the first pair's English field, via all three insertion paths (`Ctrl+Alt+Enter`, its type-cycle, the mouse chooser). Pair-field autocomplete (`PairLanguageField`/`usePairFieldAutocomplete`, `pair-field-autocomplete.tsx`): typing ≥2 chars in a Spanish/English pair field offers up to 5 curriculum completions after a 250ms pause, `Tab`/`Enter` fills both fields (when the other was empty) and moves focus to the other field, `Escape` closes the popover only. Reuses the Covers field's `.concept-typeahead-*` CSS. | Sonnet | done |
+| E5a | ~~Auto-Covers: suggest "Covers" chips from a lesson's own pairs~~ — **REMOVED 2026-09-17**, same owner decision as E3/E5b: see §6, "While writing slides, nothing guesses." | Sonnet | removed |
+| E3/E5b | ~~Practice pairs proposed from the explanation~~ / ~~pair-field autocomplete~~ — **REMOVED 2026-09-17**: the owner decided that while writing slides, nothing guesses; see §6. `pair-proposals.ts`, `pair-field-autocomplete.tsx`, and the pair-derived half of Auto-Covers (`isSyllabusEligiblePairMatch`, `matchPairTermsToConcepts`, `extractLessonPairTerms`, the `/api/admin/curriculum/concepts/suggest` route) are deleted outright, along with their tests. A newly inserted sentence/vocabulary slide is always blank; the Covers typeahead's `scope=label` query param is gone (nothing calls it anymore). | Sonnet | removed |
 | E3b/E8 | Chain building (`extendLastSentence`, `Ctrl+Alt+Shift+Enter`, the seam palette's "Extend" choice) and "given" pieces (`LanguageBlock.given?`, `Ctrl+Alt+G`, resting dotted-underline treatment, learner static rendering excluded from progression/completion). Found and fixed live: `lesson-file.ts`'s `normalizeLessonForFile` (every GET read) rebuilt each language block field-by-field and silently dropped `given` — a "given" pair round-tripped fine on disk but reverted to a normal tested blank on reload. Script syntax (`> +`, `> =`) stays open per `lesson-script-grammar.md`. | Sonnet | done |
 | E7 | "New lesson like this one" ("Duplicate structure") — removed 2026-09-15: owner found no use for it. `duplicateLessonStructure` (`mutations.ts`), its `LessonHeaderActions` icon, wiring, and tests (incl. `tests/ux/duplicate-structure.spec.ts`) were deleted outright. "Duplicate lesson" (full copy) is unaffected. | Sonnet | removed |
 | E4 | Script mode: `parseScript`/`printScript` (`lib/lesson-builder/script.ts`) over the block model per `lesson-script-grammar.md`, property-tested (500 generated lessons + the owner's two real lessons, ids ignored). `Ctrl+Alt+T` (new `lesson`-scope keymap entry) and a `</>` icon in the lesson row header's icon cluster (`lesson-library-row.tsx`, moved there 2026-09-15 from `lesson-document.tsx`) toggle a per-lesson `<textarea>` (`lesson-script-view.tsx`, `editing.ts`'s new `scriptViewLessonId`/`setScriptView`). Leaving the view parses; success dispatches the new `REPLACE_LESSON_BLOCKS` reducer action (one undoable step, since it isn't in `history.ts`'s coalescing set) and closes; errors show inline with line numbers and the view stays open. An empty lesson's tail gains a third quiet "Paste a script…" action that opens the view blank. Does **not** auto-mark explanation text on parse (E1 stays editor-only) — see the note at the top of `script.ts`. | Sonnet | done |
@@ -863,3 +878,4 @@ statically or spin up their own isolated server against a throwaway file.
 | R2-B | "Add from Level…" on the syllabus card: a quiet text-button next to "Copy as text" opens a portal popover (`syllabus-fill-picker.tsx`, `ConceptQuickEdit`'s pattern) with a level selector (Level 1…Level 5) and that level's concepts not yet claimed by any module's Main or Review list course-wide, grouped by `syllabus-groups.ts` with a level dot per row; `Select all`/`Clear`, "Add N to Main" appends linked `LessonConcept`s in group order, records displays, and focuses the first new pill. New read-only route `GET /api/admin/curriculum/concepts/by-level?role=P1..P5` (same `collections` array_agg subquery as the search route, ordered by `sort_order`, capped at 500); pure exclusion/grouping in `syllabus-fill.ts` (`unclaimedConceptsForLevel`). | Sonnet | done (2026-09-16) |
 | R2-C | Syllabus-card regrouping (owner screenshot, 2026-09-16): the old six `pos:*`-only groups (Pronouns/Verbs/Connectors/Prepositions,time,degree/Words/Untagged) dumped facet-tagged pronouns ("conmigo", "que yo [haga algo]", "algo") in with plain "yo"/"me". Replaced with eight groups — People, Verbs, Sentence patterns, Connectors, Prepositions and phrases, Time and place, Things and describing words, Untagged — matched against a concept's full `pos:*`/`grammar:*`/`construction:*` collection set with explicit evaluation precedence (`patterns`/`prepositions`/`things` tested before the broad `people` catch-all; see the header comment and `EVALUATION_ORDER` in `syllabus-groups.ts`). Chose the smaller of the two owner-offered options: widened what `readConceptDisplays`/the by-level and search routes select (all `pos:`/`grammar:`/`construction:` collections, not just the first `pos:`) rather than precomputing the group id server-side, so the existing isomorphic `syllabus-groups.ts` stays the single source of truth for both client and server callers. `ConceptDisplayLookup`/`ByLevelConcept`/the search route's `Row` all renamed `pos` → `collections: string[]`. | Sonnet | done (2026-09-16) |
 | QE1 | Fixed: focusing a field inside the `ConceptQuickEdit` popover (a `createPortal` dialog, `[data-keymap-ignore]`) closed the popover — every blur handler that watches "did focus leave X" only checked DOM containment, and the portal renders outside `X`'s subtree. `lesson-library.tsx`'s document-level `focusout` listener (the shared editing selection, `leaveSlide`) was the reproducible case for both a lesson's Covers pill and a module Syllabus-card pill; `LessonConceptsField`'s `collapseIfFocusLeft` had the same blind spot. Added one shared predicate, `isFocusStillInside` (`focus.ts`): true when the target is inside the wrapper *or* inside any `[data-keymap-ignore]` element. Both call sites now use it. The popover also returns focus to its trigger pill on every close path (Cancel/Save/Delete/Escape/backdrop, via a new `closePopover()`; Escape is now handled at all — it previously did nothing). | Sonnet | done (2026-09-16) |
+| NG1 | "Nothing guesses" (owner, 2026-09-17): removed every automatic guess inside the lesson document — E3 (pair proposals from explanation marks), E5b (pair-field curriculum autocomplete, `pair-field-autocomplete.tsx`, the search route's `scope=label`), and E5a's pair-derived Auto-Covers (`isSyllabusEligiblePairMatch`/`matchPairTermsToConcepts`/`extractLessonPairTerms`, the `/api/admin/curriculum/concepts/suggest` route) — deleted outright with their tests; "Suggested review" is unaffected (module planning, not pair-derived). The Covers typeahead (`concept-typeahead.tsx`) got stricter instead of removed: `Enter`/`Tab` with nothing explicitly arrowed-to link a concept only on an exact (accent/case-insensitive) match of the typed text against a loaded result's Spanish label, freehand otherwise. `syllabus.ts` coverage/also-taught/warnings tolerate a freehand label naming the same thing as a syllabus item under that normalisation (`freehandMatchesItem`, new optional `conceptDisplays` param on `coverageOfItem`/`alsoTaughtAndReviewed`). Covers block restyled as the lesson's end step: small-caps "Covers" eyebrow (reusing `.syllabus-group-eyebrow`), add-input on its own line, 12px gap above matching slide rhythm (was 20px). | Sonnet | done (2026-09-17) |

@@ -39,6 +39,20 @@ function roleLabel(role?: string): string {
   return curriculumRoles.find((candidate) => candidate.value === role)?.label ?? "Unranked";
 }
 
+// Accent/case-insensitive equality for "did the teacher just type a
+// concept's own label" (owner, 2026-09-17: while writing slides, nothing
+// guesses — Enter/Tab with no result explicitly highlighted only links a
+// concept when the typed text is an exact match, never a fuzzy best guess).
+// Same normalisation `syllabus.ts` uses for tolerating a freehand label
+// against a syllabus item's Spanish label.
+function normalizeForExactMatch(text: string): string {
+  return text
+    .normalize("NFD")
+    .replace(/[̀-ͯ]/g, "")
+    .trim()
+    .toLowerCase();
+}
+
 export function ConceptTypeahead({
   concepts,
   onAdd,
@@ -48,9 +62,6 @@ export function ConceptTypeahead({
   variant,
   inputRef,
   syllabusMarkers,
-  pairSuggestionsCount,
-  onAcceptAllPairSuggestions,
-  onOpenChange,
 }: {
   concepts: LessonConcept[];
   onAdd: (concept: LessonConcept) => void;
@@ -63,20 +74,14 @@ export function ConceptTypeahead({
   variant: "block" | "inline" | "compact";
   inputRef?: Ref<HTMLInputElement>;
   syllabusMarkers?: SyllabusMarkers;
-  pairSuggestionsCount: number;
-  onAcceptAllPairSuggestions: () => void;
-  // Mirrors this popover's open/closed state upward — the auto-Covers pair
-  // suggestions refetch "once on open" (see concept-suggestion-chips.tsx).
-  onOpenChange?: (open: boolean) => void;
 }) {
   const [query, setQuery] = useState("");
   const [results, setResults] = useState<ConceptResult[]>([]);
-  const [highlight, setHighlight] = useState(0);
-  const [open, setOpenState] = useState(false);
-  function setOpen(next: boolean) {
-    setOpenState(next);
-    onOpenChange?.(next);
-  }
+  // -1 = nothing explicitly highlighted (owner, 2026-09-17): typing must
+  // never pre-select a suggestion that Enter/Tab could silently link —
+  // only an arrow key moves into the list. See the Enter/Tab handler below.
+  const [highlight, setHighlight] = useState(-1);
+  const [open, setOpen] = useState(false);
   const [searchState, setSearchState] = useState<"idle" | "loading" | "error">(
     "idle",
   );
@@ -107,7 +112,7 @@ export function ConceptTypeahead({
         }
         const data = (await response.json()) as { concepts: ConceptResult[] };
         setResults(data.concepts);
-        setHighlight(0);
+        setHighlight(-1);
         setSearchState("idle");
       } catch {
         // aborted or offline — leave the previous results in place
@@ -219,17 +224,20 @@ export function ConceptTypeahead({
           setOpen(true);
         }}
         onKeyDown={(event) => {
-          if (event.key === "Enter" && event.ctrlKey && pairSuggestionsCount > 0) {
-            event.preventDefault();
-            onAcceptAllPairSuggestions();
-            return;
-          }
           if (event.key === "Backspace" && query === "" && concepts.length > 0) {
             // Never delete on the first press: move focus onto the last
             // chip, where a second Backspace (or Delete) removes it — so a
-            // reflexive Backspace can't silently eat a concept. The chip
-            // row is the nearest wrapper around both the chips and this input.
-            const row = event.currentTarget.closest(".lesson-concepts-row, .syllabus-chip-row");
+            // reflexive Backspace can't silently eat a concept. The lesson's
+            // own Covers field (coversLayout, lesson-concepts-field.tsx)
+            // puts the add-input on its own line below the chip row rather
+            // than inside it (owner, 2026-09-17), so the nearest wrapper
+            // around *both* is `.lesson-concepts-field`, not
+            // `.lesson-concepts-row` itself — checked after it so the more
+            // specific containers other callers (syllabus panel) use still
+            // match first.
+            const row = event.currentTarget.closest(
+              ".lesson-concepts-row, .syllabus-chip-row, .lesson-concepts-field",
+            );
             const chips = row?.querySelectorAll<HTMLElement>("[data-chip-focusable]");
             const last = chips?.[chips.length - 1];
             if (last) {
@@ -253,18 +261,38 @@ export function ConceptTypeahead({
           }
           if (event.key === "ArrowUp") {
             event.preventDefault();
-            setHighlight((current) => Math.max(current - 1, 0));
+            setHighlight((current) => Math.max(current - 1, -1));
             return;
           }
-          if (event.key === "Enter" && !event.nativeEvent.isComposing) {
-            event.preventDefault();
-            const chosen = open ? visibleResults[highlight] : undefined;
-            if (chosen) {
-              addFromResult(chosen);
-            } else if (query.trim()) {
-              addFreehand();
+          // Enter and Tab commit the same way here (owner, 2026-09-17):
+          // an explicitly arrowed-to result (highlight >= 0) always wins;
+          // otherwise nothing guesses — only the typed text's own exact
+          // match (accent/case-insensitive) is linked, and anything else
+          // becomes a freehand label. Tab still moves focus on afterward
+          // (no preventDefault); Enter does not.
+          if (
+            (event.key === "Enter" && !event.nativeEvent.isComposing) ||
+            (event.key === "Tab" && !event.shiftKey)
+          ) {
+            if (event.key === "Enter") event.preventDefault();
+            const arrowed = open && highlight >= 0 ? visibleResults[highlight] : undefined;
+            if (arrowed) {
+              addFromResult(arrowed);
+              return;
+            }
+            const typed = query.trim();
+            if (!typed) {
+              if (event.key === "Enter") onAdvance?.();
+              return;
+            }
+            const normalizedTyped = normalizeForExactMatch(typed);
+            const exactMatch = visibleResults.find(
+              (result) => normalizeForExactMatch(result.spanish) === normalizedTyped,
+            );
+            if (exactMatch) {
+              addFromResult(exactMatch);
             } else {
-              onAdvance?.();
+              addFreehand();
             }
           }
         }}

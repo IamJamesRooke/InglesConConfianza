@@ -59,12 +59,16 @@ test.describe("from-zero: the owner's literal flow, keyboard only", () => {
     await page.keyboard.type("Quiero es I want.");
 
     // Predicted type after an explanation is a sentence — one press, no
-    // chooser to pick from. E3: the explanation's own "[[es:Quiero]] es
-    // [[en:I want]]" mark (E1 auto-marked it on the "." above) is proposed
-    // as the slide's first pair, already filled, focus on its English
-    // field.
+    // chooser to pick from. Sentence slides always insert blank (owner,
+    // 2026-09-17: nothing guesses while writing slides — E3's pre-fill from
+    // the preceding explanation's marks was removed), so both pairs are
+    // typed by hand.
     await page.keyboard.press("Control+Alt+Enter");
+    await waitForFocusedField(page, "spanish");
+    await page.keyboard.type("Quiero");
+    await page.keyboard.press("Tab");
     await waitForFocusedField(page, "english");
+    await page.keyboard.type("I want");
     await page.keyboard.press("Tab");
     await waitForFocusedField(page, "spanish");
     await page.keyboard.type("hacerlo");
@@ -120,10 +124,15 @@ async function authorTwoCompletePairs(page: import("@playwright/test").Page, tit
   await page.keyboard.press("Enter");
   await waitForFocusedField(page, "explanation");
   await page.keyboard.type("Quiero es I want.");
-  // E3: the marked "Quiero es I want" is proposed as the first pair,
-  // already filled, focus on its English field.
+  // Sentence slides always insert blank (owner, 2026-09-17: nothing guesses
+  // while writing slides — E3's pre-fill from the preceding explanation's
+  // marks was removed), so both pairs are typed by hand.
   await page.keyboard.press("Control+Alt+Enter");
+  await waitForFocusedField(page, "spanish");
+  await page.keyboard.type("Quiero");
+  await page.keyboard.press("Tab");
   await waitForFocusedField(page, "english");
+  await page.keyboard.type("I want");
   await page.keyboard.press("Tab");
   await waitForFocusedField(page, "spanish");
   await page.keyboard.type("hacerlo");

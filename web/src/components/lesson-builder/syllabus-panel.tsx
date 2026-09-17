@@ -136,8 +136,8 @@ export function SyllabusPanel({
     .map((id) => lessonById.get(id))
     .filter((lesson): lesson is Lesson => Boolean(lesson));
 
-  const mainCovered = syllabus.main.filter((item) => coverageOfItem(item, moduleLessons).covered).length;
-  const reviewCovered = syllabus.review.filter((item) => coverageOfItem(item, moduleLessons).covered).length;
+  const mainCovered = syllabus.main.filter((item) => coverageOfItem(item, moduleLessons, conceptDisplays).covered).length;
+  const reviewCovered = syllabus.review.filter((item) => coverageOfItem(item, moduleLessons, conceptDisplays).covered).length;
   const totalItems = syllabus.main.length + syllabus.review.length;
   const totalCovered = mainCovered + reviewCovered;
 
@@ -153,7 +153,7 @@ export function SyllabusPanel({
     plannedItems.some((item) => item.conceptId && conceptDisplays[item.conceptId]?.role === role),
   );
 
-  const { alsoTaught, reviewed } = alsoTaughtAndReviewed(module, moduleIndex, lessons, timeline);
+  const { alsoTaught, reviewed } = alsoTaughtAndReviewed(module, moduleIndex, lessons, timeline, conceptDisplays);
 
   const warnings = computeModuleWarnings(module, moduleIndex, lessons, timeline, conceptDisplays);
   const warningCount =
@@ -205,7 +205,7 @@ export function SyllabusPanel({
 
   function toneFor(item: SyllabusItem): "is-covered" | "is-uncovered" | "is-missing" {
     if (isMissingConcept(item, conceptDisplays)) return "is-missing";
-    return coverageOfItem(item, moduleLessons).covered ? "is-covered" : "is-uncovered";
+    return coverageOfItem(item, moduleLessons, conceptDisplays).covered ? "is-covered" : "is-uncovered";
   }
 
   function displayOf(item: SyllabusItem) {
@@ -225,7 +225,7 @@ export function SyllabusPanel({
     const display = item.conceptId ? conceptDisplays[item.conceptId] : undefined;
     const state = isMissingConcept(item, conceptDisplays)
       ? "No longer in the curriculum (Trash or deleted)"
-      : coverageOfItem(item, moduleLessons).covered
+      : coverageOfItem(item, moduleLessons, conceptDisplays).covered
         ? "Taught by a lesson in this module"
         : "Planned — not taught by a lesson in this module yet";
     // The full label (brackets and all) stays here, even though the pill

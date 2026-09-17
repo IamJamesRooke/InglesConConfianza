@@ -37,9 +37,15 @@
    read here, but a negative margin on a flex child changes how much of
    the row's own width the browser thinks is taken, which briefly
    regressed the narrow-viewport table's own width; padding math on the
-   static container avoids that.) */
+   static container avoids that.)
+
+   `margin-top: 12px` (owner, 2026-09-17 — was 20px): the gap above the
+   "Covers" eyebrow now equals one slide's own rhythm
+   (`.lesson-document-block`'s 6px top+bottom padding meeting the next
+   block's, 12px total) — Covers reads as the lesson's own last block, not a
+   separate section set apart by extra air. */
 .lesson-document-tags {
-  margin: 20px 0 0;
+  margin: 12px 0 0;
   padding-left: 13px;
 }
 .lesson-document > div:first-child > div > span:first-child {

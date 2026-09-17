@@ -212,7 +212,23 @@ Served instead by: E1/E2 auto-marking (nothing to select), word-at-caret marking
 **mark-all-occurrences** command (`Ctrl Alt Shift S/E`: every occurrence of the word
 under the caret in this explanation) in Phase 2.5 if auto-marking leaves a need.
 
-### E3. Practice pairs proposed from the explanation — done 2026-09-15
+### E3. Practice pairs proposed from the explanation — REMOVED 2026-09-17
+Owner decision, 2026-09-17: while writing slides, nothing guesses — "Covers"
+(and, by the same reasoning, a slide's own content) is something the teacher
+does deliberately, not something the document infers from a preceding
+explanation's marks. `pair-proposals.ts` (`proposePairsFromMarkdown`/
+`proposedPairsForBlock`), its call sites in the keyboard path
+(`keymap/shared.ts`'s `insertAfterBlock`) and the mouse chooser
+(`lesson-document.tsx`'s `add`), the `firstPieceId`/`selectionForInsertion`
+plumbing in `builder-context.tsx`/`use-builder-actions.ts`/`keymap/shared.ts`,
+and the `proposedPairs` field on the `ADD_SENTENCE_BLOCK` reducer action
+(`reducer.ts`, `mutations.ts`'s `addSentenceBlock`) were deleted outright,
+along with `tests/unit/pair-proposals.test.ts` and
+`tests/ux/pair-proposals.spec.ts`. A newly inserted sentence/vocabulary slide
+is now always blank, regardless of what precedes it. See
+`docs/design/lesson-builder.md` §6. Superseded text kept below for history.
+
+~~### E3. Practice pairs proposed from the explanation — done 2026-09-15~~
 Shipped: `proposePairsFromMarkdown` (pure, `pair-proposals.ts`) reads the preceding
 explanation's stored Markdown directly for `[[es:X]]` immediately followed by
 `[[en:Y]]` — allowing only the connective word "es"/"o", punctuation, and whitespace
@@ -306,38 +322,34 @@ ending in `:` = instruction for the following practice. Paste a whole script fro
 surface, toggled per lesson (`Ctrl Alt T`). Native text editing, undo, search, copy —
 for free.
 
-### E5. Curriculum autocomplete
-Typing Spanish in any pair field suggests the concept's English (and vice versa) from
-the curriculum; `Tab` accepts and moves on. The same lookup **auto-fills "Covers"**
-from the pairs used (`concept-suggestions.ts` already computes this — surface it as
-suggested chips, `Enter` accepts all). Six hand-tagged chips per lesson is the second
-biggest time sink after marking.
+### E5. Curriculum autocomplete — pair-derived halves REMOVED 2026-09-17
+Owner decision, 2026-09-17: while writing slides, nothing guesses (see
+`docs/design/lesson-builder.md` §6). Both halves below are deleted:
 
-**Auto-Covers half: done (2026-09-15).** `extractLessonPairTerms` +
-`matchPairTermsToConcepts` (`concept-suggestions.ts`) turn a lesson's own pairs
-(Spanish text, accepted English answers, `[[es:…]]`/`[[en:…]]` explanation marks)
-into curriculum concept matches via one `POST /api/admin/curriculum/concepts/suggest`
-call; `LessonConceptsField` renders them as dashed "+" pills after the tagged chips
-(`Enter`/click tags one, `Ctrl+Enter` tags all, `Backspace`/`×` dismisses for the
-session only).
+**Auto-Covers half: removed.** `extractLessonPairTerms`/
+`matchPairTermsToConcepts`/`isSyllabusEligiblePairMatch`
+(`concept-suggestions.ts`), the `POST /api/admin/curriculum/concepts/suggest`
+route, and `concept-suggestion-chips.tsx`'s `usePairSuggestions`/
+`PairSuggestionChips` are deleted, along with their unit/UX tests
+(`tests/unit/concept-suggestions.test.ts`'s pair-match cases,
+`tests/ux/concept-suggestions.spec.ts`). "Suggested review"
+(`suggestConceptsForLesson`) is unaffected — it's module planning, not
+pair-derived.
 
-**Pair-field autocomplete half: done (2026-09-15).** `PairLanguageField` /
-`usePairFieldAutocomplete` (`pair-field-autocomplete.tsx`) wrap each Spanish/English
-pair-field textarea in `sentence-editor.tsx`. After ≥2 typed characters and a 250ms
-pause it queries the existing `GET /api/admin/curriculum/concepts/search?q=` and shows
-up to 5 completions in a popover under the field — reusing `lesson-concepts-field.css`'s
-`.concept-typeahead-*` classes rather than a new stylesheet — Spanish bold + English
-muted in a Spanish field, roles reversed in an English field. `↓`/`↑` move the
-highlight; `Tab`/`Enter` accepts: fills this field with the concept's own-language text
-(bracket placeholders stripped via `stripConceptPlaceholder`, `concept-suggestions.ts`)
-and, when the other field is still empty, fills it too, then moves the shared selection
-(and DOM focus, through `focusSelection`) to the other field. `Escape` closes the
-popover only. While the popover is open the field carries `data-keymap-ignore`
-dynamically (removed once it closes) so the shared keymap dispatcher skips it and the
-field's own local `onKeyDown` handles the same keys instead — normal Tab/Enter/Escape
-pair navigation is unaffected when the popover is closed. Never opens when the field's
-text already exactly matches a concept's own-language text. UX:
-`tests/ux/pair-autocomplete.spec.ts`.
+**Pair-field autocomplete half: removed.** `pair-field-autocomplete.tsx`
+(`PairLanguageField`/`usePairFieldAutocomplete`), its use in
+`sentence-editor.tsx`, and the search route's `scope=label` branch (nothing
+else called it) are deleted, along with `tests/unit/pair-field-autocomplete.test.ts`
+and `tests/ux/pair-autocomplete.spec.ts`. A pair's Spanish/English fields are
+now plain textareas with no popover.
+
+The plain Covers typeahead (`concept-typeahead.tsx`) stays, but got stricter:
+`Enter`/`Tab` with nothing explicitly arrowed-to links a concept only when the
+typed text exactly matches (accent/case-insensitive) a loaded result's own
+Spanish label — freehand otherwise, never a fuzzy best guess. Coverage
+bookkeeping (`syllabus.ts`) tolerates a freehand label naming the same thing
+as a syllabus item under that normalisation, so a deliberately freehand
+"algo" still counts against a linked syllabus item spelled the same way.
 
 ### E6. Fewer keystrokes per pair
 `Enter` in an English field = next pair (same as Tab); `Enter` on an empty last pair =
@@ -373,6 +385,8 @@ type sizes on one screen. Rules for Phase 3:
 - Phase 1: E6 (`leaveSlide`, Enter-as-next), `Ctrl Alt Enter` from the title.
 - Phase 2: E1, E2 (input rules and word classification live in the editor engine).
 - Phase 2.5 (new): E3, E4, E5, E7 — script mode + proposals + autocomplete + templates.
+  E3, E5's pair-derived halves, and E7 were all later removed by owner
+  decision (2026-09-15 for E7, 2026-09-17 for E3/E5) — see each section above.
 - Phase 3: the aesthetics rules above, as component styles.
 
 ## Not doing

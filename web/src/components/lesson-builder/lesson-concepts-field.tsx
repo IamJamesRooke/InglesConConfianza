@@ -6,11 +6,7 @@ import { useState, type Ref } from "react";
 import { ConceptPillLabel } from "@/components/lesson-builder/concept-pill-label";
 import { ConceptQuickEdit, type ConceptDraft } from "@/components/lesson-builder/concept-quick-edit";
 import { curriculumRoles } from "@/components/curriculum/curriculum-row-editor";
-import {
-  PairSuggestionChips,
-  ReviewSuggestions,
-  usePairSuggestions,
-} from "@/components/lesson-builder/concept-suggestion-chips";
+import { ReviewSuggestions } from "@/components/lesson-builder/concept-suggestion-chips";
 import { ConceptTypeahead } from "@/components/lesson-builder/concept-typeahead";
 import { renderConceptLabel } from "@/lib/lesson-builder/concept-label";
 import { conceptKey } from "@/lib/lesson-builder/lesson-file";
@@ -48,7 +44,6 @@ export function LessonConceptsField({
   onDisplayChange,
   coversFor,
   onAdvance,
-  pairTerms,
   missingConceptKeys,
   syllabusMarkers,
   hideChips,
@@ -83,11 +78,6 @@ export function LessonConceptsField({
   // a soft "not introduced yet" dot on results outside the known set. Never
   // affects already-tagged chips.
   syllabusMarkers?: SyllabusMarkers;
-  // Auto-Covers (E5): terms already named by this lesson's own pairs
-  // (extractLessonPairTerms). When given (with `coversFor` as the lesson id),
-  // the field looks up matching curriculum concepts and offers them as
-  // one-keystroke "Covers" suggestions after the tagged chips.
-  pairTerms?: string[];
   // The syllabus panel's Main/Review lists render their own ordered rows
   // (numbered, draggable) for already-tagged concepts and only want this
   // field for its search-and-add input; when true, the plain inline chips
@@ -95,29 +85,11 @@ export function LessonConceptsField({
   hideChips?: boolean;
 }) {
   const [localDisplays, setLocalDisplays] = useState<ConceptDisplayLookup>({});
-  // Mirrors the typeahead's popover open state so the auto-Covers pair
-  // suggestions can refetch "once on open" (see usePairSuggestions below).
-  const [typeaheadOpen, setTypeaheadOpen] = useState(false);
 
   function recordDisplay(conceptId: string, display: ConceptDisplayLookup[string]) {
     setLocalDisplays((current) => ({ ...current, [conceptId]: display }));
     onDisplayChange?.(conceptId, display);
   }
-
-  const alreadyAdded = new Set(
-    concepts.map((concept) => concept.conceptId).filter(Boolean),
-  );
-
-  const { pairSuggestions, acceptPairMatch, dismissPairMatch, acceptAllPairSuggestions } =
-    usePairSuggestions({
-      coversFor,
-      pairTerms,
-      alreadyAdded,
-      open: typeaheadOpen,
-      onAdd,
-      recordDisplay,
-      syllabusMarkers,
-    });
 
   function addSuggestion(suggestion: LessonConceptSuggestion) {
     onAdd({
@@ -137,16 +109,36 @@ export function LessonConceptsField({
     )
     .filter((role): role is string => role !== null);
   const rolesUniform = new Set(conceptRoles).size <= 1;
+  // The lesson's own "Covers" block (compact, chips shown, tied to a lesson
+  // via `coversFor`) gets the end-step treatment (owner, 2026-09-17): a
+  // small-caps "Covers" eyebrow above the pills (same class the syllabus
+  // card's "Main teaching points" eyebrow uses) and the add-input on its own
+  // line below them. The syllabus panel's own embed of this field (compact,
+  // `hideChips`, no `coversFor`) is unaffected — different surface.
+  const coversLayout = variant === "compact" && !hideChips;
+  const typeahead = (
+    <ConceptTypeahead
+      concepts={concepts}
+      onAdd={onAdd}
+      onAdvance={onAdvance}
+      recordDisplay={recordDisplay}
+      coversFor={coversFor}
+      variant={variant}
+      inputRef={inputRef}
+      syllabusMarkers={syllabusMarkers}
+    />
+  );
 
   return (
     <div
       className={
-        variant === "inline" || variant === "compact"
+        (variant === "inline" || variant === "compact"
           ? ""
-          : "border-b border-border bg-card px-6 py-3"
+          : "border-b border-border bg-card px-6 py-3") + (coversLayout ? " lesson-concepts-field" : "")
       }
     >
       <ReviewSuggestions suggestions={suggestions} onAdd={addSuggestion} />
+      {coversLayout && <span className="syllabus-group-eyebrow lesson-concepts-eyebrow">Covers</span>}
       <div
         className={variant === "compact" ? "lesson-concepts-row" : "flex flex-wrap items-center gap-1.5"}
         data-roles-uniform={rolesUniform ? "true" : undefined}
@@ -267,26 +259,9 @@ export function LessonConceptsField({
           </span>
           );
         })}
-        <PairSuggestionChips
-          pairSuggestions={pairSuggestions}
-          variant={variant}
-          onAccept={acceptPairMatch}
-          onDismiss={dismissPairMatch}
-        />
-        <ConceptTypeahead
-          concepts={concepts}
-          onAdd={onAdd}
-          onAdvance={onAdvance}
-          recordDisplay={recordDisplay}
-          coversFor={coversFor}
-          variant={variant}
-          inputRef={inputRef}
-          syllabusMarkers={syllabusMarkers}
-          pairSuggestionsCount={pairSuggestions.length}
-          onAcceptAllPairSuggestions={acceptAllPairSuggestions}
-          onOpenChange={setTypeaheadOpen}
-        />
+        {!coversLayout && typeahead}
       </div>
+      {coversLayout && <div className="lesson-concepts-add-row">{typeahead}</div>}
     </div>
   );
 }

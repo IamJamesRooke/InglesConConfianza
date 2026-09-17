@@ -97,10 +97,15 @@ test("keyboard-only lesson authoring produces the expected structure", async ({
   // First sentence slide: single piece. E6: Ctrl+Alt+Enter inserts the
   // *predicted* type directly (after an explanation, that's a sentence) and
   // focuses it — no chooser to open, no E/S/T pick on the keyboard path.
-  // E3: the explanation's own "[[es:voy a]] es [[en:I am going]]" mark is
-  // proposed as the slide's only pair, already filled, focus on English.
+  // Sentence slides always insert blank (owner, 2026-09-17: nothing guesses
+  // while writing slides — E3's pre-fill from the preceding explanation's
+  // marks was removed), so the pair is typed by hand.
   await page.keyboard.press("Control+Alt+Enter");
+  await waitForFocusedField(page, "spanish");
+  await page.keyboard.type("voy a");
+  await page.keyboard.press("Tab");
   await waitForFocusedField(page, "english");
+  await page.keyboard.type("I am going");
 
   // Second sentence slide: two pieces, plus a hint via Alt+ArrowDown (no
   // mouse). The predicted type after a sentence is an explanation, not

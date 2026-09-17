@@ -127,7 +127,10 @@ async function waitForFocusedField(page: import("@playwright/test").Page, field:
 // Same shape as from-zero.spec.ts (a): title, explanation with an
 // auto-marked pair, a second pair, a closing explanation — leaves a real
 // module/lesson row (open) plus a Covers summary line for the geometry
-// checks below.
+// checks below. Sentence slides are always inserted blank (owner,
+// 2026-09-17: nothing guesses while writing slides — E3's pre-fill from the
+// preceding explanation's marks was removed), so every pair is typed by
+// hand rather than accepted from a proposal.
 async function buildFlowALesson(page: import("@playwright/test").Page) {
   await page.goto("/admin/lesson-builder");
   await expect(page.getByText("All changes saved")).toBeVisible({ timeout: 10000 });
@@ -141,8 +144,6 @@ async function buildFlowALesson(page: import("@playwright/test").Page) {
   await page.keyboard.type("Quiero es I want.");
 
   await page.keyboard.press("Control+Alt+Enter");
-  await waitForFocusedField(page, "english");
-  await page.keyboard.press("Tab");
   await waitForFocusedField(page, "spanish");
   await page.keyboard.type("algo");
   await page.keyboard.press("Tab");
@@ -221,9 +222,9 @@ test("Covers input text aligns with the shared left text column at 760px", async
 
 for (const width of [760, 1280]) {
   test(`no square-cornered fills over rounded cards at ${width}px`, async ({ page }) => {
-    // Resize after authoring, not before — see pair-proposals.spec.ts: at
-    // 760px the module-navigator rail (and its save-status text) collapses
-    // out of the default authoring layout.
+    // Resize after authoring, not before: at 760px the module-navigator
+    // rail (and its save-status text) collapses out of the default
+    // authoring layout.
     await buildFlowALesson(page);
     await page.setViewportSize({ width, height: 900 });
 

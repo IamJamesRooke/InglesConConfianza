@@ -12,15 +12,13 @@ import {
   type DocumentBlockType,
 } from "@/components/lesson-builder/slide-insert-control";
 import { useLessonBuilder } from "@/lib/lesson-builder/builder-context";
-import { extractLessonPairTerms } from "@/lib/lesson-builder/concept-suggestions";
 import {
   activeBlockId,
   blockDataState,
   useLessonEditing,
   type EditingSelection,
 } from "@/lib/lesson-builder/editing";
-import { fieldSelectionForBlock, selectionForInsertion } from "@/lib/lesson-builder/keymap";
-import { proposedPairsForBlock } from "@/lib/lesson-builder/pair-proposals";
+import { fieldSelectionForBlock, selectionForNewBlock } from "@/lib/lesson-builder/keymap";
 import { useDragReorder } from "@/lib/lesson-builder/use-drag-reorder";
 import type { Lesson, LessonBlock } from "@/lib/lesson-builder/types";
 
@@ -141,12 +139,9 @@ export function LessonDocument(props: Props) {
   }, [insertAt]);
 
   function add(type: DocumentBlockType, index: number) {
-    // E3: the mouse chooser proposes pairs from the preceding explanation
-    // the same way the keyboard path (Ctrl+Alt+Enter) does.
-    const pairs = proposedPairsForBlock(props.lesson.blocks[index - 1], type);
-    const { blockId, firstPieceId } = actions.addBlock(lessonId, type, index, pairs);
+    const { blockId } = actions.addBlock(lessonId, type, index);
     closeInsert();
-    const sel = selectionForInsertion(lessonId, blockId, type, pairs, firstPieceId);
+    const sel = selectionForNewBlock(lessonId, blockId, type);
     editing.setSelection(sel, { reason: "insert" });
     editing.focusSelection(sel);
     recordNextSlideUse();
@@ -309,7 +304,6 @@ export function LessonDocument(props: Props) {
             conceptDisplays={actions.conceptDisplays}
             onDisplayChange={actions.recordConceptDisplay}
             coversFor={lessonId}
-            pairTerms={extractLessonPairTerms(props.lesson)}
             syllabusMarkers={actions.getSyllabusMarkers(lessonId)}
             onAdd={(concept) => actions.addLessonConcept(lessonId, concept)}
             onRemove={(id) => actions.removeLessonConcept(lessonId, id)}

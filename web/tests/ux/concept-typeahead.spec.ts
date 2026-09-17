@@ -56,6 +56,31 @@ for (const width of [760, 1280]) {
   });
 }
 
+// Owner, 2026-09-17: while writing slides nothing guesses — Enter with
+// nothing explicitly arrowed-to only links a concept when the typed text is
+// an exact match for a loaded result's own Spanish label; that's not a
+// guess, since the teacher typed the concept's own word. A linked pill
+// stacks the English target over the Spanish label (ConceptPillLabel), so
+// asserting the English line proves it's linked, not freehand.
+test("typing an exact concept label + Enter with nothing highlighted adds a LINKED pill", async ({
+  page,
+}) => {
+  await page.setViewportSize({ width: 1280, height: 900 });
+  const { row, input } = await openLessonWithCoversField(page);
+
+  await input.click();
+  await input.fill("algo");
+  const popover = page.locator(".concept-typeahead-popover");
+  await expect(popover.locator('[role="option"]')).not.toHaveCount(0);
+
+  await input.press("Enter");
+
+  await expect(popover).toBeHidden();
+  const chip = row.locator(".lesson-concept-chip").last();
+  await expect(chip).not.toHaveClass(/is-freehand/);
+  await expect(chip.locator(".lesson-concept-pill-en")).toBeVisible();
+});
+
 test("arrow down + enter adds the highlighted concept as a chip", async ({ page }) => {
   await page.setViewportSize({ width: 1280, height: 900 });
   const { row, input } = await openLessonWithCoversField(page);
@@ -107,6 +132,8 @@ test("backspace on an empty field focuses the last chip; a second backspace remo
 
   await input.click();
   await input.fill("if");
+  const popover = page.locator(".concept-typeahead-popover");
+  await expect(popover.locator('[role="option"]')).not.toHaveCount(0);
   await input.press("ArrowDown");
   await input.press("Enter");
   const chip = row.locator(".lesson-concept-chip");

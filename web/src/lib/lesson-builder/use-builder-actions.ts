@@ -137,12 +137,7 @@ export function useBuilderActions(params: {
   );
 
   const addBlock = useCallback(
-    (
-      lessonId: string,
-      type: DocumentBlockType,
-      insertionIndex: number,
-      proposedPairs?: { spanish: string; english: string }[],
-    ) => {
+    (lessonId: string, type: DocumentBlockType, insertionIndex: number) => {
       const blockId = createId("block");
       if (type === "explanation") {
         dispatch({
@@ -153,12 +148,6 @@ export function useBuilderActions(params: {
         });
         return { blockId };
       }
-      // E3: ids for pre-filled pairs are generated here, not in the
-      // reducer/mutation, so the caller can focus the first pair's English
-      // field the moment this returns.
-      const pairs = proposedPairs?.length
-        ? proposedPairs.map((pair) => ({ id: createId("lang"), ...pair }))
-        : undefined;
       dispatch({
         type: "ADD_SENTENCE_BLOCK",
         lessonId,
@@ -168,9 +157,8 @@ export function useBuilderActions(params: {
         ...(type === "vocabulary"
           ? { layout: "vocabulary_table" as const }
           : {}),
-        ...(pairs ? { proposedPairs: pairs } : {}),
       });
-      return { blockId, firstPieceId: pairs?.[0]?.id };
+      return { blockId };
     },
     [dispatch],
   );

@@ -92,6 +92,26 @@ test("coverageOfItem: covered when some lesson in the module has the concept", (
   assert.equal(coverageOfItem(concept("comer", "comer"), lessons).covered, false);
 });
 
+// Owner, 2026-09-17: while writing slides nothing guesses, so a freehand
+// "Covers" pill is never auto-matched to a curriculum concept — but coverage
+// bookkeeping still tolerates a freehand label that plainly names the same
+// syllabus item, under the same accent/case-insensitive normalisation the
+// Covers typeahead uses for "did the teacher just type this concept's own
+// label".
+test("coverageOfItem: a freehand lesson concept covers a syllabus item with the same (linked) label", () => {
+  const item = { conceptId: "nqv2w27jgr", label: "algo" };
+  const freehandAlgo = { id: "lc_algo", conceptId: null, label: "algo" };
+  const lessons = [lesson("l1", [freehandAlgo], "Lesson one")];
+  assert.equal(coverageOfItem(item, lessons).covered, true);
+});
+
+test("coverageOfItem: freehand match is accent/case/whitespace-insensitive", () => {
+  const item = { conceptId: "nqv2w27jgr", label: "algo" };
+  const freehandAlgo = { id: "lc_algo", conceptId: null, label: "Algo " };
+  const lessons = [lesson("l1", [freehandAlgo], "Lesson one")];
+  assert.equal(coverageOfItem(item, lessons).covered, true);
+});
+
 test("alsoTaughtAndReviewed: first-ever coverage not on main is also-taught; earlier coverage is reviewed", () => {
   const querer = concept("querer", "querer [algo]");
   const arete = concept("arete", "arete");
@@ -113,6 +133,29 @@ test("alsoTaughtAndReviewed: first-ever coverage not on main is also-taught; ear
   const m2 = alsoTaughtAndReviewed(modules[1], 1, lessons, timeline);
   assert.deepEqual(m2.alsoTaught.map((i) => i.conceptId), ["comer"]);
   assert.deepEqual(m2.reviewed.map((i) => i.conceptId), ["querer"]);
+});
+
+test("alsoTaughtAndReviewed: a freehand concept matching a main item is not also-taught; matching nothing still is", () => {
+  const querer = concept("querer", "querer [algo]");
+  const freehandAlgo: LessonConcept = { id: "lc_algo", conceptId: null, label: "algo" };
+  const freehandOther: LessonConcept = { id: "lc_other", conceptId: null, label: "unrelated-word" };
+  const lessons = [lesson("l1", [querer, freehandAlgo, freehandOther])];
+  const modules = [
+    module("m1", ["l1"], {
+      main: [querer, { id: "syl_algo", conceptId: "c-algo", label: "algo" }],
+      review: [],
+    }),
+  ];
+  const timeline = buildCourseTimeline(modules, lessons);
+
+  const m1 = alsoTaughtAndReviewed(modules[0], 0, lessons, timeline);
+  // "algo" (freehand) names the same thing as the main item {conceptId:
+  // "c-algo", label: "algo"} — not reported as also-taught. The unrelated
+  // freehand label matches nothing, so it's still also-taught.
+  assert.deepEqual(
+    m1.alsoTaught.map((i) => i.label),
+    ["unrelated-word"],
+  );
 });
 
 test("module with zero lessons: 0/N derived coverage, not done unless it has no requirements", () => {

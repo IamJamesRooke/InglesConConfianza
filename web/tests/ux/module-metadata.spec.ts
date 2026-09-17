@@ -75,10 +75,6 @@ test.describe("module and lesson metadata", () => {
     await title.fill("Quiero");
     await page.keyboard.press("Enter");
     await waitForFocusedField(page, "explanation");
-    // Deliberately no [[es:]]/[[en:]] marks here — marked adjacent pairs
-    // would trigger E3's pair-proposal pre-fill on the next sentence slide
-    // (pair-proposals.ts) and land focus on the English field instead of a
-    // fresh empty Spanish one.
     await page.keyboard.type("Let's practice.");
     await page.keyboard.press("Control+Alt+Enter");
     await waitForFocusedField(page, "spanish");

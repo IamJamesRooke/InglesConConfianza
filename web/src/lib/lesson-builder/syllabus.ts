@@ -152,6 +152,41 @@ export function knownSetAtLesson(timeline: CourseTimeline, lessonNumber: number)
   return known;
 }
 
+// --- Freehand coverage tolerance --------------------------------------------
+// Owner, 2026-09-17: while writing slides nothing guesses — a freehand
+// "Covers" concept (typed but not linked to the curriculum) never gets
+// auto-matched to anything. But coverage bookkeeping still shouldn't treat a
+// freehand pill as a brand-new, never-before-taught concept when it's
+// plainly the same word a syllabus item (linked or not) already names —
+// that's not a guess, it's the same normalisation the Covers typeahead uses
+// to decide "did the teacher just type this concept's own label"
+// (concept-typeahead.tsx's `normalizeForExactMatch`). Accent/case/whitespace
+// -insensitive only; never fuzzy.
+function normalizeFreehandLabel(text: string): string {
+  return text
+    .normalize("NFD")
+    .replace(/[̀-ͯ]/g, "")
+    .trim()
+    .toLowerCase();
+}
+
+// True when a freehand lesson concept (no conceptId) names the same thing as
+// `item` — either item's own (possibly freehand) label, or, when item is
+// linked, its recorded curriculum display's Spanish. Always false for a
+// linked lesson concept: those already compare by `conceptKey`.
+function freehandMatchesItem(
+  concept: { conceptId: string | null; label: string },
+  item: { conceptId: string | null; label: string },
+  conceptDisplays?: ConceptDisplayLookup,
+): boolean {
+  if (concept.conceptId) return false;
+  const typed = normalizeFreehandLabel(concept.label);
+  if (!typed) return false;
+  if (normalizeFreehandLabel(item.label) === typed) return true;
+  const display = item.conceptId ? conceptDisplays?.[item.conceptId] : undefined;
+  return Boolean(display?.spanish && normalizeFreehandLabel(display.spanish) === typed);
+}
+
 // --- Coverage --------------------------------------------------------------
 
 export type ItemCoverage = {
@@ -162,10 +197,13 @@ export type ItemCoverage = {
 export function coverageOfItem(
   item: { conceptId: string | null; label: string },
   moduleLessons: Lesson[],
+  conceptDisplays?: ConceptDisplayLookup,
 ): ItemCoverage {
   const key = conceptKey(item);
   const hits = moduleLessons.filter((lesson) =>
-    (lesson.concepts ?? []).some((concept) => conceptKey(concept) === key),
+    (lesson.concepts ?? []).some(
+      (concept) => conceptKey(concept) === key || freehandMatchesItem(concept, item, conceptDisplays),
+    ),
   );
   return {
     covered: hits.length > 0,
@@ -180,6 +218,7 @@ export function alsoTaughtAndReviewed(
   moduleIndex: number,
   lessons: Lesson[],
   timeline: CourseTimeline,
+  conceptDisplays?: ConceptDisplayLookup,
 ): { alsoTaught: SyllabusItem[]; reviewed: SyllabusItem[] } {
   const syllabus = syllabusOf(module);
   const mainKeys = new Set(syllabus.main.map(conceptKey));
@@ -199,8 +238,11 @@ export function alsoTaughtAndReviewed(
         conceptId: concept.conceptId,
         label: concept.label,
       };
+      const coveredByMain =
+        mainKeys.has(key) ||
+        syllabus.main.some((mainItem) => freehandMatchesItem(concept, mainItem, conceptDisplays));
       if (entry.firstTaughtModuleIndex === moduleIndex) {
-        if (!mainKeys.has(key)) {
+        if (!coveredByMain) {
           alsoTaught.push(item);
           seen.add(key);
         }
@@ -288,7 +330,10 @@ export function computeModuleWarnings(
     const known = knownSetAtLesson(timeline, lessonNumber);
     for (const concept of lesson.concepts ?? []) {
       const key = conceptKey(concept);
-      if (!known.has(key) && !mainKeys.has(key)) {
+      const coveredByMain =
+        mainKeys.has(key) ||
+        syllabus.main.some((mainItem) => freehandMatchesItem(concept, mainItem, conceptDisplays));
+      if (!known.has(key) && !coveredByMain) {
         notIntroducedYet.push({ lessonId: lesson.id, conceptKey: key, label: concept.label });
       }
     }

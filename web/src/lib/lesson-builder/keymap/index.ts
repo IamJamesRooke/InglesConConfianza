@@ -34,13 +34,12 @@ import {
   fieldSelectionForBlock,
   scopeMatchesTarget,
   scopeOf,
-  selectionForInsertion,
   selectionForNewBlock,
 } from "./shared";
 import { deleteLessonConfirm, enterFromTitle, insertFromTitle, extendFromTitle, moveLessonCommand } from "./title";
 
 export type { Chord, Command, CommandContext, Scope };
-export { chordOf, fieldSelectionForBlock, scopeOf, selectionForInsertion, selectionForNewBlock };
+export { chordOf, fieldSelectionForBlock, scopeOf, selectionForNewBlock };
 
 // -----------------------------------------------------------------------
 // The table
