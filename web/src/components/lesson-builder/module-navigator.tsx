@@ -269,6 +269,7 @@ type Props = {
   onSelectModule: (moduleId: string) => void;
   onSelectLesson: (lessonId: string, blockId?: string) => void;
   onAddModule: () => void;
+  onAddOnboardingModule: () => void;
   onReorderModule: (draggedModuleId: string, targetModuleId: string) => void;
   /** E: save status + undo/redo, moved here from the retired full-width
    * `.lesson-library-utility` header bar — a small footer row under
@@ -294,6 +295,7 @@ export function ModuleNavigator({
   onSelectModule,
   onSelectLesson,
   onAddModule,
+  onAddOnboardingModule,
   onReorderModule,
   saveLabel,
   saveFailed,
@@ -364,6 +366,11 @@ export function ModuleNavigator({
   }
   const results = searchModuleNavigator(modules, lessons, query, conceptDisplays);
   const searching = query.trim().length > 0;
+  // The pinned onboarding slot (docs/design/onboarding.md §2): normalised
+  // at load/save to always be modules[0] when one exists — see
+  // enforceOnboardingSlot in lesson-file.ts.
+  const onboardingModule = modules[0]?.kind === "onboarding" ? modules[0] : undefined;
+  const courseModules = onboardingModule ? modules.slice(1) : modules;
   // Item 6 (first-run friction): below 900px the rail + header ate 45% of a
   // 760x900 viewport before any slide showed. The disclosure below collapses
   // everything but this one summary row under that breakpoint — CSS-only
@@ -469,8 +476,43 @@ export function ModuleNavigator({
           ))}
         </ul>
       ) : (
+        <>
+          {/* The pinned onboarding slot (docs/design/onboarding.md §2):
+              always first, never draggable, nothing drops above it. */}
+          {onboardingModule ? (
+            <button
+              type="button"
+              className={`module-navigator-row module-navigator-onboarding-row${
+                onboardingModule.id === activeModuleId ? " active" : ""
+              }`}
+              aria-current={onboardingModule.id === activeModuleId ? "true" : undefined}
+              onClick={() => {
+                setRailOpen(false);
+                onSelectModule(onboardingModule.id);
+              }}
+            >
+              <span className="module-navigator-onboarding-eyebrow">Onboarding</span>
+              <span className="module-navigator-row-name">
+                {onboardingModule.name?.trim() || "Onboarding"}
+              </span>
+              {onboardingModule.id === activeModuleId && (
+                <ChevronRight size={14} aria-hidden="true" />
+              )}
+            </button>
+          ) : (
+            <button
+              type="button"
+              className="module-navigator-add module-navigator-add-onboarding"
+              onClick={onAddOnboardingModule}
+              aria-label="Add onboarding"
+              title="Add onboarding"
+            >
+              <Plus size={13} aria-hidden="true" />
+              <span>Add onboarding</span>
+            </button>
+          )}
         <ul className="module-navigator-list">
-          {modules.map((module) => (
+          {courseModules.map((module) => (
             <li
               key={module.id}
               className={draggedModuleId === module.id ? "dragging" : ""}
@@ -530,6 +572,7 @@ export function ModuleNavigator({
             </li>
           ))}
         </ul>
+        </>
       )}
 
       {!searching && (

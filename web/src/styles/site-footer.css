@@ -39,6 +39,20 @@
   font-size: var(--t-eyebrow);
   color: color-mix(in oklch, var(--primary-foreground) 70%, transparent);
 }
+/* Replay link for onboarding (docs/design/onboarding.md §1, "Afterwards") —
+   only rendered when a published onboarding module exists. Same quiet
+   treatment as the reset control beside it. */
+.site-footer-replay {
+  display: block;
+  margin-top: 12px;
+  font-size: var(--t-eyebrow);
+  color: color-mix(in oklch, var(--primary-foreground) 70%, transparent);
+}
+.site-footer-replay:hover {
+  color: var(--primary-foreground);
+  text-decoration: underline;
+}
+
 /* Testers reset progress constantly (owner, 2026-09-17) — a quiet link in
    the footer, never a browser dialog: it asks once inline instead. Learner
    variant only. */

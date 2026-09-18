@@ -4,7 +4,13 @@
 // process) so the filtering/shaping logic is unit-testable without fs or
 // the server-only guard. No fs, no server-only — see
 // tests/unit/course-summary.test.ts.
-import type { Lesson, LessonBlock, LessonConcept, LessonFile } from "@/lib/lesson-builder/types";
+import type {
+  Lesson,
+  LessonBlock,
+  LessonConcept,
+  LessonFile,
+  LessonModule,
+} from "@/lib/lesson-builder/types";
 import { normalizeLessonMarkdown } from "@/lib/lesson-builder/markdown";
 
 type CourseLessonSummary = {
@@ -63,13 +69,47 @@ function getLessonPreviewText(lesson: Lesson) {
     .trim();
 }
 
+// The gate's "is there anything to send a first-time learner to" check
+// (docs/design/onboarding.md §1, "when the gate is on"): a module of kind
+// "onboarding" whose status is not draft AND which has at least one
+// non-draft lesson with at least one block. Reads the raw file directly
+// (not the already-filtered CourseSummary) so it stays a single obvious
+// definition independent of summarizeCourse's own filtering.
+export function hasPublishedOnboarding(lessonFile: LessonFile): boolean {
+  const onboarding = lessonFile.modules.find((m) => m.kind === "onboarding");
+  if (!onboarding || onboarding.status === "draft") return false;
+  const lessonById = new Map(lessonFile.lessons.map((lesson) => [lesson.id, lesson]));
+  return onboarding.lessonIds.some((lessonId) => {
+    const lesson = lessonById.get(lessonId);
+    return Boolean(lesson) && lesson!.status !== "draft" && lesson!.blocks.length > 0;
+  });
+}
+
+// The onboarding module itself (undefined when there is none), used by the
+// /bienvenida route to walk its published lessons in order.
+export function findOnboardingModule(lessonFile: LessonFile): LessonModule | undefined {
+  return lessonFile.modules.find((m) => m.kind === "onboarding");
+}
+
 // Learner-facing filtering: draft modules and draft lessons are excluded
 // entirely — used by `/` and `/practice` (via readCourseSummary). Coverage/
 // studio surfaces read the raw LessonFile directly and are unaffected.
 export function summarizeCourse(lessonFile: LessonFile): CourseSummary {
   const lessonById = new Map(lessonFile.lessons.map((lesson) => [lesson.id, lesson]));
+  // Learner-facing lesson numbers never count the onboarding module (docs/
+  // design/onboarding.md item 9) — the first ordinary course lesson is
+  // "Lección 1" regardless of onboarding's own lesson count. Onboarding
+  // lessons themselves get no meaningful number (0; nothing displays it —
+  // /bienvenida shows no lesson title or number).
+  let courseLessonCounter = 0;
   const lessonNumberById = new Map(
-    lessonFile.lessons.map((lesson, index) => [lesson.id, index + 1]),
+    lessonFile.modules.flatMap((module) =>
+      module.lessonIds.map((lessonId) => {
+        if (module.kind === "onboarding") return [lessonId, 0] as const;
+        courseLessonCounter += 1;
+        return [lessonId, courseLessonCounter] as const;
+      }),
+    ),
   );
 
   const modules = lessonFile.modules

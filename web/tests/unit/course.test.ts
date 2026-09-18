@@ -3,6 +3,7 @@ import test from "node:test";
 
 import {
   conceptKey,
+  enforceOnboardingSlot,
   isLessonFile,
   isLessonModule,
   migrateV1ToV2,
@@ -93,6 +94,77 @@ test("module kind accepts onboarding and rejects unknown values", () => {
   };
   assert.ok(isLessonModule(onboarding));
   assert.equal(isLessonModule({ ...onboarding, kind: "private" }), false);
+});
+
+test("enforceOnboardingSlot: no onboarding module is a no-op", () => {
+  const modules: LessonModule[] = [
+    { id: "m1", name: "Module 1", lessonIds: [] },
+    { id: "m2", name: "Module 2", lessonIds: [] },
+  ];
+  assert.deepEqual(enforceOnboardingSlot(modules), modules);
+});
+
+test("enforceOnboardingSlot: an onboarding module already first is unchanged", () => {
+  const modules: LessonModule[] = [
+    { id: "welcome", name: "Onboarding", kind: "onboarding", lessonIds: [] },
+    { id: "m1", name: "Module 1", lessonIds: [] },
+  ];
+  assert.deepEqual(enforceOnboardingSlot(modules), modules);
+});
+
+test("enforceOnboardingSlot: moves an onboarding module found later to index 0", () => {
+  const modules: LessonModule[] = [
+    { id: "m1", name: "Module 1", lessonIds: [] },
+    { id: "welcome", name: "Onboarding", kind: "onboarding", lessonIds: [] },
+    { id: "m2", name: "Module 2", lessonIds: [] },
+  ];
+  const result = enforceOnboardingSlot(modules);
+  assert.deepEqual(
+    result.map((m) => m.id),
+    ["welcome", "m1", "m2"],
+  );
+  assert.equal(result[0].kind, "onboarding");
+});
+
+test("enforceOnboardingSlot: two onboarding modules collapse to one, the first, at index 0", () => {
+  const modules: LessonModule[] = [
+    { id: "m1", name: "Module 1", lessonIds: [] },
+    { id: "welcome-a", name: "Onboarding A", kind: "onboarding", lessonIds: [] },
+    { id: "welcome-b", name: "Onboarding B", kind: "onboarding", lessonIds: [] },
+  ];
+  const result = enforceOnboardingSlot(modules);
+  assert.deepEqual(
+    result.map((m) => m.id),
+    ["welcome-a", "m1", "welcome-b"],
+  );
+  assert.equal(result[0].kind, "onboarding");
+  assert.equal(result.find((m) => m.id === "welcome-b")!.kind, undefined);
+});
+
+test("parseLessonFile and reconcileLessonFile both enforce the onboarding slot", () => {
+  const raw = {
+    version: 2,
+    modules: [
+      { id: "m1", name: "Module 1", lessonIds: ["a"] },
+      { id: "welcome", name: "Onboarding", kind: "onboarding", lessonIds: ["b"] },
+    ],
+    lessons: [lesson("a"), lesson("b")],
+  };
+  const parsed = parseLessonFile(raw);
+  assert.equal(parsed.modules[0].id, "welcome");
+  // "b" belongs to the onboarding module, now moved to index 0 — the
+  // ordering invariant re-flattens `lessons` to match.
+  assert.deepEqual(
+    parsed.lessons.map((l) => l.id),
+    ["b", "a"],
+  );
+
+  const reconciled = reconcileLessonFile(raw as LessonFile);
+  assert.equal(reconciled.modules[0].id, "welcome");
+  assert.deepEqual(
+    reconciled.lessons.map((l) => l.id),
+    ["b", "a"],
+  );
 });
 
 test("conceptKey: id when linked, lowercased trimmed label otherwise", () => {

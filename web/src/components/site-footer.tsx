@@ -20,9 +20,13 @@ const adminLinks = [
 export function SiteFooter({
   variant,
   onResetAll,
+  showOnboardingReplay = false,
 }: {
   variant: "learner" | "admin";
   onResetAll?: () => void;
+  /** A quiet "Ver la introducción otra vez" link — only when a published
+   * onboarding module exists (docs/design/onboarding.md §1, "Afterwards"). */
+  showOnboardingReplay?: boolean;
 }) {
   return (
     <footer className="site-footer">
@@ -38,12 +42,19 @@ export function SiteFooter({
           © 2026 Inglés con Confianza · Hecho en Bogotá
         </p>
         {variant === "learner" ? (
-          <ConfirmResetButton
-            className="site-footer-reset"
-            label="Reiniciar todo el progreso"
-            confirmLabel="¿Seguro? Reiniciar todo"
-            onConfirm={() => onResetAll?.()}
-          />
+          <>
+            {showOnboardingReplay && (
+              <Link href="/bienvenida?repasar=1" className="site-footer-replay">
+                Ver la introducción otra vez
+              </Link>
+            )}
+            <ConfirmResetButton
+              className="site-footer-reset"
+              label="Reiniciar todo el progreso"
+              confirmLabel="¿Seguro? Reiniciar todo, incluida la introducción"
+              onConfirm={() => onResetAll?.()}
+            />
+          </>
         ) : (
           <div className="site-footer-admin">
             <p className="site-footer-admin-label">Admin · Inglés con Confianza</p>

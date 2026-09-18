@@ -121,6 +121,7 @@ export default function LessonBuilderPage() {
           onRetrySave={() => void retrySave()}
           onFlushSave={flushSave}
           onAddModule={courseModules.addModule}
+          onAddOnboardingModule={courseModules.addOnboardingModule}
           onDeleteModule={courseModules.deleteModule}
           onMoveModule={courseModules.moveModule}
           onReorderModule={courseModules.reorderModule}

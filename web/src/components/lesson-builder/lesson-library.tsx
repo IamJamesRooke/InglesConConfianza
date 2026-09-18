@@ -168,6 +168,7 @@ type Props = {
   onRetrySave: () => void;
   onFlushSave: () => void;
   onAddModule: () => void;
+  onAddOnboardingModule: () => void;
   onDeleteModule: (moduleId: string) => void;
   onMoveModule: (index: number, direction: -1 | 1) => void;
   onReorderModule: (draggedModuleId: string, targetModuleId: string) => void;
@@ -497,6 +498,7 @@ function LessonLibraryInner(props: Props) {
           onSelectModule={openModule}
           onSelectLesson={jumpToLesson}
           onAddModule={props.onAddModule}
+          onAddOnboardingModule={props.onAddOnboardingModule}
           onReorderModule={props.onReorderModule}
           saveLabel={props.saveLabel}
           saveFailed={props.saveFailed}
@@ -612,20 +614,29 @@ function LessonLibraryInner(props: Props) {
                           >
                             {module.status === "draft" ? "Draft" : "Published"}
                           </button>
-                          <button
-                            type="button"
-                            aria-pressed={module.access === "premium"}
-                            className="lesson-library-module-pill"
-                            onClick={() =>
-                              props.onChangeModule(module.id, {
-                                access: module.access === "premium" ? "free" : "premium",
-                              })
-                            }
-                          >
-                            {module.access === "premium" ? "Premium" : "Free"}
-                          </button>
+                          {/* Onboarding is always free (docs/design/
+                              onboarding.md §2) — no Free/Premium toggle. */}
+                          {module.kind !== "onboarding" && (
+                            <button
+                              type="button"
+                              aria-pressed={module.access === "premium"}
+                              className="lesson-library-module-pill"
+                              onClick={() =>
+                                props.onChangeModule(module.id, {
+                                  access: module.access === "premium" ? "free" : "premium",
+                                })
+                              }
+                            >
+                              {module.access === "premium" ? "Premium" : "Free"}
+                            </button>
+                          )}
                         </span>
                       </div>
+                      {module.kind === "onboarding" && (
+                        <p className="lesson-library-module-helper">
+                          Shown once to every new learner before the course. Draft turns it off.
+                        </p>
+                      )}
                     </div>
 
                     <SyllabusPanel

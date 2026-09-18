@@ -145,6 +145,25 @@ export function useCourseModules(
     ]);
   }, [modules, updateModules]);
 
+  // The pinned onboarding slot's "+ Add onboarding" button (docs/design/
+  // onboarding.md §2) — created as DRAFT so the learner-side gate never
+  // switches on by surprise, and always inserted at index 0. A no-op if one
+  // already exists (the navigator hides the button in that case, but this
+  // stays safe if it's ever called anyway).
+  const addOnboardingModule = useCallback(() => {
+    if (modules.some((module) => module.kind === "onboarding")) return;
+    updateModules([
+      {
+        id: createId("module"),
+        name: "Onboarding",
+        kind: "onboarding",
+        status: "draft",
+        lessonIds: [],
+      },
+      ...modules,
+    ]);
+  }, [modules, updateModules]);
+
   const deleteModule = useCallback(
     (moduleId: string) => {
       if (modules.length === 1) return;
@@ -168,10 +187,15 @@ export function useCourseModules(
     [modules, updateModules],
   );
 
+  // The onboarding module, when present, is always index 0 and pinned
+  // there (docs/design/onboarding.md §2): it cannot be dragged, and nothing
+  // can be dropped above it. Both movement paths guard against touching it.
   const moveModule = useCallback(
     (index: number, direction: -1 | 1) => {
       const target = index + direction;
       if (target < 0 || target >= modules.length) return;
+      if (modules[index]?.kind === "onboarding" || modules[target]?.kind === "onboarding")
+        return;
       const next = [...modules];
       [next[index], next[target]] = [next[target], next[index]];
       updateModules(next);
@@ -182,11 +206,13 @@ export function useCourseModules(
   const reorderModule = useCallback(
     (draggedId: string, targetId: string) => {
       if (draggedId === targetId) return;
+      const dragged = modules.find((module) => module.id === draggedId);
+      const target = modules.find((module) => module.id === targetId);
+      if (!dragged || !target) return;
+      if (dragged.kind === "onboarding" || target.kind === "onboarding") return;
       const without = modules.filter((module) => module.id !== draggedId);
       const targetIndex = without.findIndex((module) => module.id === targetId);
       if (targetIndex < 0) return;
-      const dragged = modules.find((module) => module.id === draggedId);
-      if (!dragged) return;
       updateModules(without.toSpliced(targetIndex, 0, dragged));
     },
     [modules, updateModules],
@@ -299,6 +325,7 @@ export function useCourseModules(
     createLesson,
     duplicateLesson,
     addModule,
+    addOnboardingModule,
     deleteModule,
     moveModule,
     reorderModule,

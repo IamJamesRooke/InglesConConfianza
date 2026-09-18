@@ -8,9 +8,15 @@ import {
 } from "@/lib/curriculum/server/concept-display";
 import { readNewConceptIds } from "@/lib/curriculum/server/coverage";
 import { readCourseSummary } from "@/lib/lesson-builder/server/course-summary";
+import { onboardedCookieName } from "@/lib/learner/onboarding";
+import { redirectToOnboardingIfNeeded } from "@/lib/learner/onboarding-gate-server";
+import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
 import type { Viewport } from "next";
 
+// Reads cookies() (via redirectToOnboardingIfNeeded, and again below for the
+// direct-onboarding-lesson-URL check) so this route is dynamically rendered
+// regardless — see docs/engineering/deploy.md.
 export const dynamic = "force-dynamic";
 export const viewport: Viewport = { interactiveWidget: "resizes-content" };
 
@@ -23,9 +29,26 @@ function first(value: string | string[] | undefined) {
 }
 
 export default async function PracticePage({ searchParams }: PageProps) {
+  await redirectToOnboardingIfNeeded();
   const parameters = await searchParams;
   const selectedLessonId = first(parameters.lesson) ?? null;
   const course = await readCourseSummary();
+
+  // A direct link to an onboarding lesson never opens here — onboarding
+  // mode is /bienvenida's job (no close button, whole-course progress bar,
+  // no completion screen between its lessons). Redirect to the welcome
+  // route in whichever mode fits: still onboarding (not onboarded) or
+  // replay (already onboarded) — docs/design/onboarding.md item 8.
+  const onboardingModule = course.modules.find((module) => module.kind === "onboarding");
+  if (
+    selectedLessonId &&
+    onboardingModule?.lessons.some((lesson) => lesson.id === selectedLessonId)
+  ) {
+    const cookieStore = await cookies();
+    redirect(
+      cookieStore.has(onboardedCookieName) ? "/bienvenida?repasar=1" : "/bienvenida",
+    );
+  }
   const newConceptIdsByLesson = new Map(
     await Promise.all(
       course.lessons.map(async (lesson) => [

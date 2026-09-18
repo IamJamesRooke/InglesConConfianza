@@ -181,6 +181,32 @@
   text-overflow: ellipsis;
 }
 
+/* The pinned onboarding slot (docs/design/onboarding.md §2): rendered
+   above the ordinary module list, never inside it — no drag handle, since
+   it cannot be dragged and nothing can be dropped above it. */
+.module-navigator-onboarding-row {
+  width: 100%;
+  margin-bottom: 6px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2px;
+}
+.module-navigator-onboarding-eyebrow {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted-foreground);
+}
+.module-navigator-onboarding-row.active .module-navigator-onboarding-eyebrow {
+  color: color-mix(in oklch, var(--primary-foreground) 80%, transparent);
+}
+.module-navigator-add-onboarding {
+  width: 100%;
+  margin-bottom: 6px;
+  border: 1px dashed var(--border);
+}
+
 .module-navigator-empty {
   padding: 8px;
   color: var(--muted-foreground);

@@ -308,11 +308,17 @@ export function emptyLessonFile(): LessonFile {
 export function parseLessonFile(parsed: unknown): LessonFile {
   if (isLessonFile(parsed)) {
     const lessons = parsed.lessons.map(normalizeLessonForFile);
-    const modules = parsed.modules.map(normalizeModule);
+    const modules = enforceOnboardingSlot(parsed.modules.map(normalizeModule));
+    const lessonById = new Map(lessons.map((l) => [l.id, l]));
+    // `isLessonFile(parsed)` already guarantees `lessons` matched the
+    // pre-normalization module order — enforceOnboardingSlot can reorder
+    // modules (moving an onboarding module to index 0), so re-flatten
+    // `lessons` to match, keeping the ordering invariant intact.
+    const reordered = modules.flatMap((m) => m.lessonIds).map((id) => lessonById.get(id)!);
     return {
       ...parsed,
       modules: repairSyllabusIdCollisions(modules, lessons),
-      lessons,
+      lessons: reordered,
     };
   }
   if (isLessonFileV1(parsed)) return migrateV1ToV2(parsed);
@@ -343,13 +349,34 @@ export function reconcileLessonFile(file: LessonFile): LessonFile {
     last.lessonIds = [...last.lessonIds, ...orphans];
   }
 
+  const orderedModules = enforceOnboardingSlot(modules);
+
   return {
     version: 2,
-    modules,
-    lessons: modules
+    modules: orderedModules,
+    lessons: orderedModules
       .flatMap((module) => module.lessonIds)
       .map((id) => lessonById.get(id)!),
   };
+}
+
+// Onboarding is a single fixed slot (docs/design/onboarding.md §2): at most
+// one module may carry `kind: "onboarding"`, and when one exists it is
+// always `modules[0]`. The first onboarding module found (in file order)
+// wins; any later ones are demoted to ordinary "course" modules rather than
+// dropped, so no lesson content is ever silently lost by this repair. A
+// no-op when there is already at most one, already first.
+export function enforceOnboardingSlot(modules: LessonModule[]): LessonModule[] {
+  const onboardingIndex = modules.findIndex((m) => m.kind === "onboarding");
+  if (onboardingIndex === -1) return modules;
+  const demoted = modules.map((module, index) => {
+    if (module.kind !== "onboarding" || index === onboardingIndex) return module;
+    const rest: LessonModule = { ...module };
+    delete rest.kind;
+    return rest;
+  });
+  const [onboarding] = demoted.splice(onboardingIndex, 1);
+  return [onboarding, ...demoted];
 }
 
 export function moduleContainingLesson(

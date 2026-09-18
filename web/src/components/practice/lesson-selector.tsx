@@ -12,6 +12,7 @@ import { useRouter } from "next/navigation";
 import {
   useCallback,
   useEffect,
+  useMemo,
   useRef,
   useState,
   useSyncExternalStore,
@@ -30,6 +31,7 @@ import {
   lessonOutcome,
 } from "@/lib/learner/presentation";
 import {
+  nextLessonToStudy,
   readProgress,
   resetLessonProgress,
   resumeStepIndex,
@@ -42,6 +44,11 @@ import {
   subscribeMuted,
   type Speaker,
 } from "@/lib/learner/speech";
+import {
+  completeOnboarding,
+  isOnboardingComplete,
+  reconcileOnboardedCookie,
+} from "@/lib/learner/onboarding";
 import type { LessonBlock } from "@/lib/lesson-builder/types";
 import {
   isAnswerAccepted,
@@ -68,23 +75,83 @@ export type PracticeLesson = {
 
 const subscribeHydration = () => () => {};
 
+// Onboarding mode (docs/design/onboarding.md §1): the /bienvenida route
+// passes this instead of `initialLessonId` — `lessons` is then the whole,
+// ordered, published onboarding module (not the course). LessonSelector
+// itself resolves which onboarding lesson to open (resume the first
+// unfinished one, or the first one in replay), and LessonSession handles
+// advancing lesson-to-lesson with no completion screen in between.
+export type OnboardingModeConfig = {
+  replay: boolean;
+};
+
 export function LessonSelector({
   lessons,
   initialLessonId = null,
   onCloseLesson,
+  onboarding,
 }: {
   lessons: PracticeLesson[];
   initialLessonId?: string | null;
   onCloseLesson?: () => void;
+  onboarding?: OnboardingModeConfig;
 }) {
+  const router = useRouter();
   const hydrated = useSyncExternalStore(
     subscribeHydration,
     () => true,
     () => false,
   );
-  const lesson = lessons.find((item) => item.id === initialLessonId);
-  if (!lesson) return null;
-  if (!hydrated)
+  // A lazy initializer, not an effect: this is one-time client-only setup
+  // (localStorage is unavailable during the server render that also
+  // produces the pre-hydration loading placeholder LessonSelector shows
+  // below), not a synchronization that should re-run on every dependency
+  // change. `window === undefined` during SSR yields `null`, matching that
+  // placeholder; hydration then runs this for real, in the browser.
+  const [onboardingLessonId, setOnboardingLessonId] = useState<string | null>(() => {
+    if (!onboarding || typeof window === "undefined") return null;
+    // Reconcile (localStorage says done, cookie was lost) is handled by the
+    // effect below, which navigates away — stay on the loading placeholder
+    // rather than briefly showing a finished onboarding lesson.
+    if (!onboarding.replay && isOnboardingComplete()) return null;
+    return onboarding.replay
+      ? (lessons[0]?.id ?? null)
+      : (nextLessonToStudy(
+          lessons.map((item) => ({ id: item.id, stepCount: item.blocks.length })),
+          readProgress(),
+        )?.id ?? lessons[0]?.id ?? null);
+  });
+
+  useEffect(() => {
+    if (!onboarding || onboarding.replay) return;
+    if (!isOnboardingComplete()) return;
+    // Reconcile: localStorage already says done but the cookie was lost
+    // (docs/design/onboarding.md §1) — re-set it and send the learner home
+    // instead of replaying onboarding.
+    reconcileOnboardedCookie();
+    router.replace("/");
+  }, [onboarding, router]);
+
+  const activeLessonId = onboarding ? onboardingLessonId : initialLessonId;
+  const lesson = lessons.find((item) => item.id === activeLessonId);
+
+  const onboardingHandlers = useMemo(
+    () =>
+      onboarding
+        ? {
+            replay: onboarding.replay,
+            onAdvanceLesson: (nextId: string) => setOnboardingLessonId(nextId),
+            onFinishAll: () => {
+              if (!onboarding.replay) completeOnboarding();
+              router.replace("/");
+            },
+          }
+        : undefined,
+    [onboarding, router],
+  );
+
+  if (!onboarding && !lesson) return null;
+  if (!hydrated || !lesson)
     return (
       <div className="learner-theme lesson-loading" role="status">
         Preparando tu lección…
@@ -96,18 +163,27 @@ export function LessonSelector({
       lesson={lesson}
       lessons={lessons}
       onCloseLesson={onCloseLesson}
+      onboarding={onboardingHandlers}
     />
   );
 }
+
+type OnboardingSessionHandlers = {
+  replay: boolean;
+  onAdvanceLesson: (nextLessonId: string) => void;
+  onFinishAll: () => void;
+};
 
 function LessonSession({
   lesson,
   lessons,
   onCloseLesson,
+  onboarding,
 }: {
   lesson: PracticeLesson;
   lessons: PracticeLesson[];
   onCloseLesson?: () => void;
+  onboarding?: OnboardingSessionHandlers;
 }) {
   const router = useRouter();
   const [stepIndex, setStepIndex] = useState(() =>
@@ -115,6 +191,22 @@ function LessonSession({
       ? 0
       : resumeStepIndex(lesson.blocks, readProgress()[lesson.id]),
   );
+  // Onboarding mode only (docs/design/onboarding.md §1): `lessons` here is
+  // the whole published onboarding module, in order, so the whole-course
+  // progress bar and lesson-to-lesson chaining are derived straight from it
+  // — no extra numbers need to travel down from the route.
+  const onboardingIndex = onboarding
+    ? lessons.findIndex((item) => item.id === lesson.id)
+    : -1;
+  const onboardingIsLast = onboarding ? onboardingIndex === lessons.length - 1 : false;
+  const onboardingNextLessonId =
+    onboarding && !onboardingIsLast ? (lessons[onboardingIndex + 1]?.id ?? null) : null;
+  const onboardingTotalSlides = onboarding
+    ? lessons.reduce((sum, item) => sum + item.blocks.length, 0)
+    : 0;
+  const onboardingSlidesBefore = onboarding
+    ? lessons.slice(0, Math.max(onboardingIndex, 0)).reduce((sum, item) => sum + item.blocks.length, 0)
+    : 0;
   const [sentenceComplete, setSentenceComplete] = useState(false);
   const [draftAnswers, setDraftAnswers] = useState<Record<string, string[]>>(
     {},
@@ -257,13 +349,17 @@ function LessonSession({
 
   const close = useCallback(() => {
     if (onCloseLesson) onCloseLesson();
+    // Replay mode's close button always returns to plain "/" (docs/design/
+    // onboarding.md §1) — the onboarding module never has a home section
+    // to scroll to (it's filtered off the path).
+    else if (onboarding) router.push("/");
     else
       router.push(
         lesson.moduleId
           ? `/?module=${encodeURIComponent(lesson.moduleId)}`
           : "/",
       );
-  }, [lesson.moduleId, onCloseLesson, router]);
+  }, [lesson.moduleId, onCloseLesson, onboarding, router]);
 
   const previous = useCallback(() => {
     setSentenceComplete(false);
@@ -281,12 +377,31 @@ function LessonSession({
           readProgress()[lesson.id]?.completedAt ?? new Date().toISOString(),
         stepId: undefined,
       });
+      // Onboarding mode never shows a completion screen between lessons
+      // (docs/design/onboarding.md §1): finishing lesson N opens lesson
+      // N+1 directly, and finishing the last one records completion and
+      // sends the learner home — this returns before `complete` can ever
+      // become true.
+      if (onboarding) {
+        if (onboardingIsLast) onboarding.onFinishAll();
+        else if (onboardingNextLessonId) onboarding.onAdvanceLesson(onboardingNextLessonId);
+        return;
+      }
     }
     setSentenceComplete(false);
     setHintsUsedOnSlide(0);
     setSlideStartedAt(Date.now());
     setStepIndex(next);
-  }, [canAdvance, lesson.id, onCloseLesson, stepIndex, totalSteps]);
+  }, [
+    canAdvance,
+    lesson.id,
+    onCloseLesson,
+    onboarding,
+    onboardingIsLast,
+    onboardingNextLessonId,
+    stepIndex,
+    totalSteps,
+  ]);
 
   useEffect(() => {
     if (!onCloseLesson && !complete) {
@@ -331,6 +446,10 @@ function LessonSession({
       const target = event.target instanceof HTMLElement ? event.target : null;
       if (event.key === "Escape") {
         event.preventDefault();
+        // Onboarding mode: the one way out is forward — Escape does not
+        // exit (docs/design/onboarding.md §1). Replay mode keeps the
+        // normal close-button escape hatch.
+        if (onboarding && !onboarding.replay) return;
         close();
         return;
       }
@@ -383,7 +502,7 @@ function LessonSession({
     }
     document.addEventListener("keydown", onKeyDown);
     return () => document.removeEventListener("keydown", onKeyDown);
-  }, [advance, close, complete, nextLesson, onCloseLesson, previous, router]);
+  }, [advance, close, complete, nextLesson, onCloseLesson, onboarding, previous, router]);
 
   // The lesson's one forward action. Rendered in the footer at every width,
   // and a second time under the sentence composition at desktop once the
@@ -419,15 +538,19 @@ function LessonSession({
       tabIndex={-1}
     >
       <header className="lesson-topbar">
-        <button
-          type="button"
-          className="learner-icon-button"
-          onClick={close}
-          aria-label="Volver a mis lecciones"
-          title="Volver a mis lecciones"
-        >
-          <X size={20} aria-hidden="true" />
-        </button>
+        {/* No close button in onboarding mode (docs/design/onboarding.md
+            §1) — the one way out is forward. Replay mode keeps it. */}
+        {(!onboarding || onboarding.replay) && (
+          <button
+            type="button"
+            className="learner-icon-button"
+            onClick={close}
+            aria-label="Volver a mis lecciones"
+            title="Volver a mis lecciones"
+          >
+            <X size={20} aria-hidden="true" />
+          </button>
+        )}
         {/* The lesson name/number lives off-screen for the dialog's
             aria-labelledby — it's shown on-canvas only on the first slide
             and on completion (see the eyebrow below), not repeated here. */}
@@ -437,8 +560,17 @@ function LessonSession({
         <progress
           className="lesson-top-progress"
           aria-label="Progreso de la lección"
-          value={complete ? totalSteps : stepIndex}
-          max={totalSteps || 1}
+          // Onboarding: the bar spans the WHOLE onboarding, not just this
+          // lesson, so the end is always visible (docs/design/onboarding.md
+          // §1).
+          value={
+            onboarding
+              ? onboardingSlidesBefore + (complete ? totalSteps : stepIndex)
+              : complete
+                ? totalSteps
+                : stepIndex
+          }
+          max={onboarding ? onboardingTotalSlides || 1 : totalSteps || 1}
         />
         <button
           type="button"

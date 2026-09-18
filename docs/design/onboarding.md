@@ -133,3 +133,104 @@ Each phase ships alone and is useful alone. Nothing later is built until it is n
 4. **See it again**: yes, without clearing cookies — the footer replay link.
 
 Everyone sees onboarding once, including browsers that already have course progress.
+
+## Built — phase 1 (2026-09-18)
+
+Everything in §1/§2 above with today's slide types (no acknowledge, no
+capture slide, no `{name}`, no media — those stay phases 2–4, not built).
+
+**Data model / normalisation**
+- `enforceOnboardingSlot` (`web/src/lib/lesson-builder/lesson-file.ts`): at
+  most one `kind: "onboarding"` module, always `modules[0]`; a later
+  duplicate is demoted to an ordinary module (never dropped). Wired into
+  both `parseLessonFile` (every read) and `reconcileLessonFile` (every
+  write/import), which also re-flattens `lessons` to match so the
+  ordering invariant survives a module reorder. Round-trips `kind` through
+  import/export unchanged (that path already reused `isLessonModule`).
+  Tests: `web/tests/unit/course.test.ts`.
+
+**Gate**
+- `onboardingGate` (`web/src/lib/learner/onboarding-gate.ts`): pure
+  `{ hasPublishedOnboarding, onboardedCookie } → "welcome" | "pass"`.
+- `hasPublishedOnboarding`/`findOnboardingModule`
+  (`web/src/lib/lesson-builder/course-summary-core.ts`): a published
+  module of kind onboarding with ≥1 published, non-empty lesson.
+  `summarizeCourse`'s learner-facing `lessonNumber` now skips onboarding
+  lessons entirely (they get `0`; nothing displays it) so the first
+  ordinary course lesson is always "Lección 1".
+- `redirectToOnboardingIfNeeded` (`web/src/lib/learner/onboarding-gate-server.ts`,
+  `"server-only"`): reads `cookies()` + the raw lesson file and calls
+  `redirect("/bienvenida")`. Called from `src/app/page.tsx` and
+  `src/app/practice/page.tsx` — never from `src/proxy.ts`.
+- Learner state (`web/src/lib/learner/onboarding.ts`): localStorage
+  `icc.onboarding.v1 = { completedAt }` is the truth; `completeOnboarding()`
+  also sets `icc_onboarded=1` (path=/, max-age 1y, SameSite=Lax, Secure over
+  https). `resetOnboarding()` clears both (wired into "Reiniciar todo el
+  progreso"). `reconcileOnboardedCookie()` re-sets a lost cookie without
+  touching the completion timestamp.
+
+**`/practice`**
+- A direct `/practice?lesson=<onboarding lesson id>` never opens inline —
+  it redirects to `/bienvenida` (not yet onboarded) or `/bienvenida?repasar=1`
+  (already onboarded).
+
+**`/bienvenida`** (`web/src/app/bienvenida/page.tsx`)
+- Server component: builds the ordered, published onboarding lesson list
+  from `readCourseSummary()`; redirects to `/` if none exists;
+  `?repasar=1` is replay mode.
+- Hosts `LessonSelector`/`LessonSession` (`web/src/components/practice/lesson-selector.tsx`)
+  in onboarding mode via a new `onboarding?: { replay }` prop — the same
+  component the course uses, not a fork. Onboarding-only behaviour:
+  - `lessons` passed in IS the whole onboarding module, in order — chaining
+    lesson N → N+1 and the whole-course progress bar are both derived from
+    it directly (`onboardingIndex`/`onboardingIsLast`/`onboardingNextLessonId`/
+    `onboardingTotalSlides`/`onboardingSlidesBefore`).
+  - `advance()` on a lesson's last slide skips ever setting `complete` —
+    it calls `onAdvanceLesson(nextId)` (remounts `LessonSession` via
+    `key={lesson.id}`) or, on the last lesson, `onFinishAll()`
+    (`completeOnboarding()` unless replay, then `router.replace("/")`).
+    No completion screen ever renders between or after onboarding lessons.
+  - No close button unless replay; Escape is a no-op unless replay (the
+    keydown handler returns before `close()`).
+  - The reconcile rule (localStorage says done, cookie lost) lives in
+    `LessonSelector`'s lazy `useState` initializer (computes the resume
+    lesson id, `null` when window is undefined during SSR) plus one
+    `useEffect` that does the actual `reconcileOnboardedCookie()` +
+    `router.replace("/")` side effect — split that way to avoid a
+    setState-in-effect lint error while still working under SSR.
+
+**Home** (`web/src/app/page.tsx`, `web/src/components/learner/lesson-dashboard.tsx`)
+- The onboarding module is filtered out before `LessonDashboard` ever sees
+  it, so the path/hero/promise/`nextLessonToStudy` all ignore it for free;
+  the dead `"Primeros pasos"` label was removed.
+- `hasPublishedOnboarding` (derived from the already-fetched `CourseSummary`,
+  no second file read) drives the footer's replay link.
+
+**Footer** (`web/src/components/site-footer.tsx`)
+- `showOnboardingReplay` prop renders "Ver la introducción otra vez" →
+  `/bienvenida?repasar=1`. "Reiniciar todo el progreso"'s confirm text is
+  now "¿Seguro? Reiniciar todo, incluida la introducción" and its handler
+  also calls `resetOnboarding()`.
+
+**Builder** (`web/src/components/lesson-builder/module-navigator.tsx`,
+`use-course-modules.ts`, `lesson-library.tsx`)
+- The navigator renders the onboarding module (when `modules[0].kind ===
+  "onboarding"`) as a pinned, non-draggable row with an "Onboarding"
+  eyebrow above the ordinary module list, or a quiet "+ Add onboarding"
+  button when none exists (`addOnboardingModule`: creates
+  `{ kind: "onboarding", name: "Onboarding", status: "draft" }` at index 0).
+  `moveModule`/`reorderModule` both refuse to move it or drop anything
+  above it. Its module header hides Free/Premium and adds one helper line
+  ("Shown once to every new learner before the course. Draft turns it
+  off."); Published/Draft, lessons, syllabus, and delete all work as for
+  any module.
+- Deleting it uses the ordinary "Delete module" control — no special path.
+
+**Tests**: `web/tests/unit/onboarding-gate.test.ts`,
+`web/tests/unit/onboarding.test.ts`, additions to `course.test.ts` and
+`course-summary.test.ts`, and `web/tests/ux/onboarding.spec.ts` (cases a–g
+from the spec above).
+
+**Not built** (phase 1 scope, deliberately): the acknowledge option, the
+capture slide + `{name}` variable, and the media option — all phases 2–4,
+built only when the owner reaches for them (§3/§5 above are unchanged).

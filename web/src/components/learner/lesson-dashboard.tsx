@@ -23,11 +23,13 @@ import {
   serverProgress,
   subscribeToProgress,
 } from "@/lib/learner/progress";
+import { resetOnboarding } from "@/lib/learner/onboarding";
 
+// The onboarding module is filtered out before it ever reaches this
+// component (src/app/page.tsx) — every module here is an ordinary course
+// module, numbered in course order.
 function moduleLabel(modules: LearnerModule[], index: number) {
-  return modules[index]?.kind === "onboarding"
-    ? "Primeros pasos"
-    : `Módulo ${modules.slice(0, index + 1).filter((module) => module.kind !== "onboarding").length}`;
+  return `Módulo ${index + 1}`;
 }
 
 /**
@@ -41,9 +43,13 @@ function moduleLabel(modules: LearnerModule[], index: number) {
 export function LessonDashboard({
   modules,
   initialModuleId = null,
+  hasPublishedOnboarding = false,
 }: {
   modules: LearnerModule[];
   initialModuleId?: string | null;
+  /** Shows the footer's "Ver la introducción otra vez" replay link (docs/
+   * design/onboarding.md §1). */
+  hasPublishedOnboarding?: boolean;
 }) {
   const feedbackSheetRef = useRef<FeedbackSheetHandle>(null);
   const progress = useSyncExternalStore(
@@ -202,7 +208,11 @@ export function LessonDashboard({
       </div>
       <SiteFooter
         variant="learner"
-        onResetAll={() => resetLessonProgress(lessons.map((lesson) => lesson.id))}
+        showOnboardingReplay={hasPublishedOnboarding}
+        onResetAll={() => {
+          resetLessonProgress(lessons.map((lesson) => lesson.id));
+          resetOnboarding();
+        }}
       />
       <FeedbackSheet
         ref={feedbackSheetRef}

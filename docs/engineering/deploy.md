@@ -127,6 +127,19 @@ it reads only the build-time JSON/audio files). Setting it there would let a
 Server Action that ever slipped past its guard reach a real database from a
 public deploy.
 
+## `/` and `/practice` are dynamically rendered
+
+Both routes call the onboarding gate's server helper
+(`redirectToOnboardingIfNeeded`, `web/src/lib/learner/onboarding-gate-server.ts`),
+which reads `cookies()` (the `icc_onboarded` hint) before deciding whether
+to `redirect("/bienvenida")` — see `docs/design/onboarding.md` §1. Reading
+`cookies()` in a page opts it into dynamic rendering regardless of any
+`export const dynamic` already set (both routes already declared
+`"force-dynamic"` for other reasons, e.g. reading the lesson file live).
+`/bienvenida` reads no cookies itself (its own reconcile check is
+client-side) but stays dynamic too, since the course it hosts changes with
+every builder edit.
+
 ## Environment variables
 
 | Variable | Needed for | Notes |
