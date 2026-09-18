@@ -1,7 +1,9 @@
-# Onboarding — PROPOSAL (not agreed, nothing built)
+# Onboarding — decided 2026-09-18; phase 1 being built
 
-> 2026-09-18. Written for the owner to react to. Nothing here is decided until the
-> "Decisions" section is answered. Supersedes the loose onboarding notes in
+> 2026-09-18. The owner answered the four decisions (see the end). **Governing principle
+> (owner): onboarding is part of the CMS — a teacher edits it in the Lesson Builder; no
+> learner-facing onboarding text lives in code, and the on/off switch is the module's Draft
+> toggle.** Build only what is needed: phase 1 now; phases 2–4 when the owner reaches for them. Supersedes the loose onboarding notes in
 > `docs/backlog.md`, which remain the source for *content* ideas (the promise, keyboard,
 > say it aloud, follow the order, punctuation, feedback). This document is about the
 > *mechanism*.
@@ -28,7 +30,8 @@ slide* wherever that is enough, and as a new slide type only where it is not.
 
 - **State.** `localStorage icc.onboarding.v1 = { completedAt }` is the truth. On completion
   we also set a cookie `icc_onboarded=1` so the **server** can redirect with no flash of the
-  home page. The cookie is only a hint: if it is lost but localStorage says done, the
+  home page. The check lives in the `/` and `/practice` page server components through one
+  shared server helper — **not** in `proxy.ts`, which stays admin-only and small. The cookie is only a hint: if it is lost but localStorage says done, the
   welcome route notices, re-sets the cookie and sends the learner home.
 - **When the gate is on.** Only when a *published* onboarding module with at least one
   *published* lesson exists. Set that module to Draft in the builder and the gate vanishes.
@@ -37,19 +40,28 @@ slide* wherever that is enough, and as a new slide type only where it is not.
   *onboarding mode*. Visiting `/` or `/practice?lesson=…` without having finished
   onboarding redirects there. It resumes at the first unfinished onboarding lesson, so a
   reload mid-way does not restart it.
-- **Onboarding mode differs from a normal lesson in three ways only:** no close button (the
-  one way out is forward); finishing lesson N opens lesson N+1 directly, with no
+- **Onboarding mode differs from a normal lesson in these ways only:** no close button and
+  Escape does not exit (the one way out is forward; back-a-slide still works); the progress
+  bar spans the WHOLE onboarding, not one lesson, so the end is always visible; the
+  "Comentar" pill stays available; finishing lesson N opens lesson N+1 directly, with no
   completion screen in between; finishing the last lesson records completion and lands on
   the home in its first-visit state ("Empieza aquí").
-- **Afterwards.** The onboarding module never appears on the learner's path. "Reiniciar todo
+- **Afterwards.** The onboarding module never appears on the learner's path, and learner-facing
+  lesson numbers do not count it (the first course lesson is "Lección 1"). A quiet footer link,
+  "Ver la introducción otra vez", opens `/bienvenida` in **replay mode**: close button present,
+  no flags changed. "Reiniciar todo
   el progreso" also clears onboarding, and says so, because testers will want to replay it.
 - **Honest limit.** With no accounts this is a UX gate, not access control. Someone who
   clears their browser sees onboarding again; someone determined can skip it. That is fine.
 
 ## 2. Authoring (builder side)
 
-- Module header gets a kind toggle next to Published / Free: **Course / Onboarding**. At
-  most one onboarding module; it is pinned first in the navigator and labelled.
+- **One fixed Onboarding slot, pinned first in the navigator** (owner: "a mandatory module
+  that stays as the first module"). No kind toggle on ordinary modules. If no onboarding
+  module exists the slot shows "Add onboarding". It cannot be dragged, nothing can be dropped
+  above it, and the file is normalised on load so there is at most one and it is always first.
+  Its header shows Published/Draft (the kill switch) with one helper line, and hides
+  Free/Premium (onboarding is always free).
 - Preview from the builder runs in onboarding mode without touching learner state (previews
   already never write progress).
 - Onboarding lessons stay in the course timeline. "Hello, my name is…" is real language, so
@@ -109,15 +121,15 @@ Each phase ships alone and is useful alone. Nothing later is built until it is n
 4. **Media option** — image first, YouTube second — only once there is an actual image or
    video to show. *Sonnet.*
 
-## Decisions needed from the owner
+## Decisions (owner, 2026-09-18)
 
-1. **Email:** name only (recommended), or collect email too — accepting that it waits on the
-   feedback-storage decision and needs an opt-in line?
-2. **Raw-HTML slide:** agree to leave it out (recommended)?
-3. **Leaving mid-way:** no close button during onboarding, progress saved so a reload
-   resumes (recommended) — or allow closing?
-4. **After it is done:** gone from the path, with a quiet "Ver la introducción otra vez" in
-   the footer (recommended) — or gone entirely?
+1. **Name only for now**; email may be needed later. The capture slide (phase 3) stores values
+   under a named key, so an email field later is content, not a rebuild. It still waits on
+   the feedback-storage decision and an opt-in line.
+2. **No raw-HTML slide.** "Don't create features until we need them." The point is that
+   onboarding is CMS content a teacher edits without touching code.
+3. **No close button**, best practice at the coordinator's judgement: whole-onboarding progress
+   bar, resumable, back-a-slide works, Escape does not exit, feedback stays available.
+4. **See it again**: yes, without clearing cookies — the footer replay link.
 
-Assumption unless told otherwise: everyone sees onboarding once, including browsers that
-already have course progress (today that is only the owner's).
+Everyone sees onboarding once, including browsers that already have course progress.
