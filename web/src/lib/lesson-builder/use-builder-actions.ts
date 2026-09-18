@@ -356,6 +356,13 @@ export function useBuilderActions(params: {
           contentMarkdown,
           boundary: options?.boundary,
         }),
+      updateExplanationImage: (lessonId, blockId, image) =>
+        dispatch({
+          type: "UPDATE_EXPLANATION_IMAGE",
+          lessonId,
+          blockId,
+          image,
+        }),
       updateSentence: (lessonId, sentenceBlockId, field, value) =>
         dispatch({
           type: "UPDATE_SENTENCE_BLOCK",

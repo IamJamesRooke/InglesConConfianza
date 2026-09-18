@@ -222,3 +222,79 @@
   border-radius: 0 0 14px 14px;
 }
 
+/* An explanation slide's optional image (Part A) — the "Add image" file
+   picker, and the thumbnail/alt/remove row once one is set. Sits directly
+   under the explanation's own text, inside the same card. */
+.lesson-document-image-add {
+  margin-top: 8px;
+}
+.lesson-document-image-add button {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 28px;
+  padding: 0 10px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  color: var(--muted-foreground);
+  background: var(--surface-writing);
+  font-size: 13px;
+}
+.lesson-document-image-add button:hover,
+.lesson-document-image-add button:focus-visible {
+  color: var(--foreground);
+  background: var(--muted);
+  outline: none;
+}
+.lesson-document-image-add button:disabled {
+  cursor: default;
+  opacity: 0.6;
+}
+.lesson-document-image {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 8px;
+}
+.lesson-document-image-thumb {
+  width: 40px;
+  height: 40px;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  object-fit: cover;
+  background: var(--muted);
+}
+.lesson-document-image input[type="text"] {
+  flex: 1;
+  min-width: 0;
+  min-height: 28px;
+  padding: 0 8px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: var(--surface-writing);
+  color: var(--foreground);
+  font-size: 13px;
+}
+.lesson-document-image button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 24px;
+  min-height: 24px;
+  border-radius: 5px;
+  color: var(--muted-foreground);
+  background: var(--surface-writing);
+}
+.lesson-document-image button:hover,
+.lesson-document-image button:focus-visible {
+  color: var(--destructive);
+  background: var(--muted);
+  outline: none;
+}
+.lesson-document-image-error {
+  flex-basis: 100%;
+  margin: 4px 0 0;
+  color: var(--destructive);
+  font-size: 12px;
+}
+

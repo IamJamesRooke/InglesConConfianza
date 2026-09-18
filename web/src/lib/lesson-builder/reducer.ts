@@ -88,6 +88,12 @@ export type LessonsAction =
       contentMarkdown: string;
     }
   | {
+      type: "UPDATE_EXPLANATION_IMAGE";
+      lessonId: string;
+      blockId: string;
+      image: { file: string; alt: string } | null;
+    }
+  | {
       type: "UPDATE_SENTENCE_BLOCK";
       lessonId: string;
       sentenceBlockId: string;
@@ -282,6 +288,13 @@ export function lessonsReducer(
         action.lessonId,
         action.blockId,
         action.contentMarkdown,
+      );
+    case "UPDATE_EXPLANATION_IMAGE":
+      return mutations.updateExplanationImage(
+        lessons,
+        action.lessonId,
+        action.blockId,
+        action.image,
       );
     case "UPDATE_SENTENCE_BLOCK":
       return mutations.updateSentenceBlock(

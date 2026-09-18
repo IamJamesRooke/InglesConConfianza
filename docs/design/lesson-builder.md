@@ -332,6 +332,41 @@ view (E5's other half) and auto-marking explanation text on parse — script
 mode carries marked/unmarked text through verbatim, since E1's "X es Y"
 auto-marking is an editor input rule, not a parser behaviour.
 
+### Explanation images (Part A)
+
+An explanation slide may carry one optional image, shown to the learner
+ABOVE its text (owner, 2026-09-18 — see docs/design/onboarding.md "media
+option" and docs/engineering/assets.md). Two ways in, both landing on
+`ExplanationBlock.image = { file, alt }`:
+
+- **Paste** — while the explanation block is focused, pasting an image
+  (a PNG/JPEG/WebP blob from the OS clipboard, or SVG text copied from a
+  text editor, sniffed the same way the upload route sniffs a file) uploads
+  it via `POST /api/admin/lesson-builder/media` and sets the block's image.
+  Pasting ordinary text, our own marked HTML, our bilingual dialect as
+  plain text, or foreign HTML all keep working exactly as before —
+  `handleExplanationPaste` in `explanation-editor.tsx` only intercepts the
+  image cases.
+- **The block's own options area** — a small "Add image" file picker
+  (accepts `.svg`/`.png`/`.jpg`/`.jpeg`/`.webp`) sits under the explanation
+  text. Once an image is set it becomes a 40px thumbnail, a Spanish
+  alt-text field (placeholder "Describe la imagen"), and a remove (`×`)
+  control — `ExplanationImageControl` in `lesson-document.tsx`.
+
+Uploads are content-hash named
+(`<slug-of-alt-or-"imagen">-<sha1 prefix>.<ext>`, see
+`src/lib/lesson-builder/lesson-media.ts`) and dedupe automatically — pasting
+or picking the same image twice reuses the same file. Removing an image
+never deletes its file (another slide, or the same slide a moment ago via
+undo, may still reference it); orphaned files are cleaned up separately by
+`npm run assets:prune` (docs/engineering/assets.md).
+
+Add/remove/edit-alt are ordinary lesson-state mutations
+(`updateExplanationImage`, dispatched as `UPDATE_EXPLANATION_IMAGE`) — undo
+(`Ctrl/⌘ Z`) and redo cover them exactly as they cover any other block edit.
+Script mode round-trips the image as its own line, printed FIRST,
+`[[img: file | alt]]` (docs/design/lesson-script-grammar.md).
+
 ## 5. Visual rules (current)
 
 Pulled from `web/src/styles/lesson-builder/*.css` (one stylesheet per

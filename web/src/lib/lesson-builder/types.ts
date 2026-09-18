@@ -28,6 +28,13 @@ export type ExplanationBlock = {
   id: string;
   type: "explanation";
   contentMarkdown: string;
+  // An optional single image shown ABOVE the explanation text on the
+  // learner side (owner, 2026-09-18). `file` is a bare filename (no path) living in
+  // `web/public/lesson-media/`, uploaded through
+  // `POST /api/admin/lesson-builder/media`; `alt` is the Spanish alt text.
+  // See docs/design/lesson-builder.md and docs/design/lesson-script-grammar.md
+  // (`[[img: file | alt]]`).
+  image?: { file: string; alt: string };
 };
 
 export type SentenceBlock = {

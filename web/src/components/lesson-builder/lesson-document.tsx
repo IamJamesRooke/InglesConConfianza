@@ -1,7 +1,7 @@
 "use client";
 
-import { Copy, GripVertical, Trash2, Undo2, Volume2 } from "lucide-react";
-import { Fragment, useEffect, useRef, useState, type DragEvent } from "react";
+import { Copy, GripVertical, ImagePlus, Trash2, Undo2, Volume2, X } from "lucide-react";
+import { Fragment, useEffect, useRef, useState, type ChangeEvent, type DragEvent } from "react";
 
 import { LessonConceptsField } from "@/components/lesson-builder/lesson-concepts-field";
 import { EditablePracticeMarkdown } from "@/components/lesson-builder/explanation-editor";
@@ -21,7 +21,7 @@ import {
 import { fieldSelectionForBlock, selectionForNewBlock } from "@/lib/lesson-builder/keymap";
 import { useDragReorder } from "@/lib/lesson-builder/use-drag-reorder";
 import { explanationClipUrl, resetSpeechCaches } from "@/lib/learner/speech";
-import type { Lesson, LessonBlock } from "@/lib/lesson-builder/types";
+import type { ExplanationBlock, Lesson, LessonBlock } from "@/lib/lesson-builder/types";
 
 export type { DocumentBlockType } from "@/components/lesson-builder/slide-insert-control";
 
@@ -268,6 +268,20 @@ export function LessonDocument(props: Props) {
                     editing.setSelection({ kind: "field", lessonId, blockId: block.id, field: "explanation" })
                   }
                   onChange={(markdown) => actions.updateExplanation(lessonId, block.id, markdown)}
+                  onImagePaste={(blob) =>
+                    void uploadLessonImage(blob, block.image?.alt ?? "").then((result) => {
+                      if ("file" in result) {
+                        actions.updateExplanationImage(lessonId, block.id, {
+                          file: result.file,
+                          alt: block.image?.alt ?? "",
+                        });
+                      }
+                    })
+                  }
+                />
+                <ExplanationImageControl
+                  image={block.image ?? null}
+                  onSet={(image) => actions.updateExplanationImage(lessonId, block.id, image)}
                 />
               </section>
             ) : (
@@ -415,6 +429,131 @@ function ExplanationListenButton({
         className={generating ? "authoring-spin" : undefined}
       />
     </button>
+  );
+}
+
+// Uploads one image to POST /api/admin/lesson-builder/media, shared by the
+// paste path (lesson-document.tsx's onImagePaste above) and the "Add image"
+// file picker below. `alt` only ever seeds the server's content-hash
+// filename; the block's own alt text is edited separately afterward and
+// never renames the file.
+async function uploadLessonImage(
+  blob: Blob,
+  alt: string,
+): Promise<{ file: string } | { error: string }> {
+  try {
+    const form = new FormData();
+    form.append("file", blob, "image");
+    if (alt) form.append("alt", alt);
+    const response = await fetch("/api/admin/lesson-builder/media", {
+      method: "POST",
+      body: form,
+    });
+    const body = (await response.json().catch(() => null)) as
+      | { file: string }
+      | { error: string }
+      | null;
+    if (!response.ok) {
+      return { error: (body && "error" in body && body.error) || "Unable to upload image." };
+    }
+    if (body && "file" in body) return { file: body.file };
+    return { error: "Unable to upload image." };
+  } catch {
+    return { error: "Unable to upload image." };
+  }
+}
+
+// The explanation slide's image option: a thumbnail + alt-text field +
+// remove control when one is set, or an "Add image" file picker when none
+// is. Pasting an image (explanation-editor.tsx's onImagePaste) is the other
+// way in. See docs/design/lesson-builder.md "Paste image, alt, remove".
+function ExplanationImageControl({
+  image,
+  onSet,
+}: {
+  image: ExplanationBlock["image"] | null;
+  onSet: (image: { file: string; alt: string } | null) => void;
+}) {
+  const inputRef = useRef<HTMLInputElement>(null);
+  const [uploading, setUploading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+
+  async function handleFileChange(event: ChangeEvent<HTMLInputElement>) {
+    const file = event.target.files?.[0];
+    event.target.value = "";
+    if (!file) return;
+    setUploading(true);
+    setError(null);
+    const result = await uploadLessonImage(file, "");
+    setUploading(false);
+    if ("file" in result) {
+      onSet({ file: result.file, alt: "" });
+    } else {
+      setError(result.error);
+    }
+  }
+
+  if (!image) {
+    // A distinct `key` from the "has image" branch below: without it React
+    // reconciles the two returned trees element-by-element (both are a
+    // `<div>` with an `<input>` as a later child), and since the position
+    // matches it patches THIS hidden file input's DOM node into the alt-text
+    // input's node on the next render — an uncontrolled input (no `value`
+    // prop) suddenly gaining a `value` prop, which is exactly React's
+    // "changing an uncontrolled input to be controlled" warning. The key
+    // forces a full unmount/remount across the add <-> has-image switch
+    // instead, so the two inputs never share a DOM node.
+    return (
+      <div className="lesson-document-image-add" key="image-add">
+        <button
+          type="button"
+          onClick={() => inputRef.current?.click()}
+          disabled={uploading}
+        >
+          <ImagePlus size={13} aria-hidden="true" />
+          {uploading ? "Uploading…" : "Add image"}
+        </button>
+        <input
+          ref={inputRef}
+          type="file"
+          accept="image/svg+xml,image/png,image/jpeg,image/webp"
+          hidden
+          onChange={handleFileChange}
+        />
+        {error && <p className="lesson-document-image-error">{error}</p>}
+      </div>
+    );
+  }
+
+  return (
+    <div className="lesson-document-image" key="image-set">
+      {/* eslint-disable-next-line @next/next/no-img-element -- content-hash filename under public/lesson-media/, not a Next-optimized asset */}
+      <img
+        src={`/lesson-media/${image.file}`}
+        alt=""
+        className="lesson-document-image-thumb"
+      />
+      <input
+        type="text"
+        // Always a string: never lets this input flip from uncontrolled
+        // (undefined) to controlled — belt and braces alongside the `key`
+        // fix above and lesson-file.ts's normalizer, which also guarantees
+        // `alt` is a string on load.
+        value={image.alt ?? ""}
+        placeholder="Describe la imagen"
+        aria-label="Image alt text"
+        onChange={(event) => onSet({ file: image.file, alt: event.target.value })}
+      />
+      <button
+        type="button"
+        aria-label="Remove image"
+        title="Remove image"
+        onClick={() => onSet(null)}
+      >
+        <X size={13} aria-hidden="true" />
+      </button>
+      {error && <p className="lesson-document-image-error">{error}</p>}
+    </div>
   );
 }
 

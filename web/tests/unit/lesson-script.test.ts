@@ -424,3 +424,82 @@ test("an explanation carrying an audio-only span round-trips through the script"
   assert.equal(printScript({ id: "l", name: parsed.title ?? "Audio", concepts: [], blocks: parseScript(printed).blocks }), printed);
   assert.ok(printed.includes("[[audio:, T-H-I-N-G, [[en:thing]]]]"));
 });
+
+// ---------------------------------------------------------------------
+// Part A — [[img: file | alt]] (docs/design/lesson-script-grammar.md)
+// ---------------------------------------------------------------------
+
+test("[[img: file | alt]] sets the slide's image", () => {
+  const result = parseScript("Mira esta imagen.\n[[img: preparar-1a2b3c4d5e.svg | preparar to prepare]]");
+  assert.deepEqual(result.errors, []);
+  assert.equal(result.blocks.length, 1);
+  const block = result.blocks[0];
+  assert.equal(block.type, "explanation");
+  assert.deepEqual(
+    block.type === "explanation" ? block.image : undefined,
+    { file: "preparar-1a2b3c4d5e.svg", alt: "preparar to prepare" },
+  );
+});
+
+test("an [[img: ]] line alone (no text) still produces an explanation slide", () => {
+  const result = parseScript("[[img: a.png | a photo]]");
+  assert.deepEqual(result.errors, []);
+  assert.equal(result.blocks.length, 1);
+  const block = result.blocks[0];
+  assert.equal(block.type, "explanation");
+  assert.equal(block.type === "explanation" ? block.contentMarkdown : "", "");
+  assert.deepEqual(
+    block.type === "explanation" ? block.image : undefined,
+    { file: "a.png", alt: "a photo" },
+  );
+});
+
+test("a second [[img: ]] line in one slide is a line-numbered parse error", () => {
+  const result = parseScript(
+    "Texto.\n[[img: a.png | a]]\n[[img: b.png | b]]",
+  );
+  assert.equal(result.errors.length, 1);
+  assert.equal(result.errors[0].line, 3);
+});
+
+test("an invalid image filename is a line-numbered parse error", () => {
+  const result = parseScript("[[img: ../evil.svg | bad]]");
+  assert.equal(result.errors.length, 1);
+  assert.equal(result.errors[0].line, 1);
+});
+
+test("printScript emits [[img: ]] as the FIRST line of the explanation, and it round-trips", () => {
+  const lesson: Lesson = makeLesson({
+    blocks: [
+      {
+        id: "b1",
+        type: "explanation",
+        contentMarkdown: "Primera línea.\n\nSegunda línea.",
+        image: { file: "foto-0123456789.png", alt: "una foto" },
+      },
+    ],
+  });
+  const printed = printScript(lesson);
+  const lines = printed.trim().split("\n");
+  assert.equal(lines[0], "[[img: foto-0123456789.png | una foto]]");
+
+  const reparsed = parseScript(printed);
+  assert.deepEqual(reparsed.errors, []);
+  const block = reparsed.blocks[0];
+  assert.equal(block.type, "explanation");
+  assert.deepEqual(
+    block.type === "explanation" ? block.image : undefined,
+    { file: "foto-0123456789.png", alt: "una foto" },
+  );
+  // Fixed point: printing the reparsed blocks again yields the same script.
+  const reprinted = printScript({ ...lesson, blocks: reparsed.blocks });
+  assert.equal(reprinted, printed);
+});
+
+test("an explanation with no image round-trips with no [[img: ]] line", () => {
+  const lesson: Lesson = makeLesson({
+    blocks: [{ id: "b1", type: "explanation", contentMarkdown: "Solo texto." }],
+  });
+  const printed = printScript(lesson);
+  assert.ok(!printed.includes("[[img:"));
+});

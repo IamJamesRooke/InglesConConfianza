@@ -53,6 +53,11 @@ export type LessonBuilderActions = {
     markdown: string,
     options?: { boundary?: boolean },
   ) => void;
+  updateExplanationImage: (
+    lessonId: string,
+    blockId: string,
+    image: { file: string; alt: string } | null,
+  ) => void;
   updateSentence: (
     lessonId: string,
     blockId: string,

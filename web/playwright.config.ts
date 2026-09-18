@@ -41,6 +41,16 @@ export default defineConfig({
       // Forwarded only when set, so the admin guard stays off (default) for
       // every other UX-check run — see tests/ux/admin-guard.spec.ts.
       ...(process.env.ADMIN_SECRET ? { ADMIN_SECRET: process.env.ADMIN_SECRET } : {}),
+      // Never call the real Google TTS service from a UX check: Next.js
+      // loads .env/.env.local itself inside the spawned dev server, which
+      // would otherwise pick up a real GOOGLE_TTS_API_KEY from the repo's
+      // .env regardless of this file — a real env var set here (even to
+      // empty) takes precedence over what Next loads from .env, per
+      // Next.js's own "don't overwrite existing env vars" rule. This is
+      // deliberately unconditional (not `...(key && {...})`), so a
+      // developer's local .env can never leak a real key into these
+      // spawned servers.
+      GOOGLE_TTS_API_KEY: "",
     },
   },
   globalSetup: "./tests/ux/global-setup.ts",

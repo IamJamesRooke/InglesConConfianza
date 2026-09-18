@@ -75,7 +75,7 @@ slide* wherever that is enough, and as a new slide type only where it is not.
 | Pre-alpha / localStorage warning with "Entiendo" | `acknowledge?: { label }` **option on an explanation slide**: a checkbox; Continue stays disabled until ticked; remembered per slide on the device | no |
 | "Hola, mi nombre es …" | a **capture piece** — an option on an ordinary sentence piece, not a slide of its own. See "The capture piece" below (built 2026-09-18; this supersedes the capture-*slide* proposal) | **no** |
 | Use the name later | a `{name}` token usable in explanation text and in sentence pieces, substituted on the learner side, shown as a chip in the builder. `{name|amigo}` gives a fallback when empty | no |
-| A picture or an intro video | `media?: { kind: "image" \| "youtube", … }` **option on an explanation slide**. Images are committed under `web/public/lesson-media/` like the audio. YouTube stores only the video id and loads on click from the no-cookie domain, so no third party is contacted until the learner presses play | no |
+| A picture or an intro video | **Image: built 2026-09-18** — `ExplanationBlock.image?: { file, alt }`, uploaded under `web/public/lesson-media/` (see "The image option" below). Video (YouTube) is **not built**: `media?: { kind: "youtube", … }` would store only the video id and load on click from the no-cookie domain, so no third party is contacted until the learner presses play — built only once there is an actual video to show | image: no; video: not yet |
 | "Customizable HTML" | **recommend against** — see below | — |
 
 Knock-on effects that must be handled when each lands, listed so they are not discovered
@@ -119,7 +119,7 @@ Each phase ships alone and is useful alone. Nothing later is built until it is n
    This is the judgement-heavy seam (markdown dialect, editor schema, answer matching,
    audio). *Opus.* — **built 2026-09-18, see "The capture piece" below.**
 4. **Media option** — image first, YouTube second — only once there is an actual image or
-   video to show. *Sonnet.*
+   video to show. *Sonnet.* — **image built 2026-09-18, see below; YouTube not built.**
 
 ## Decisions (owner, 2026-09-18)
 
@@ -240,6 +240,16 @@ from the spec above).
 **Not built** (phase 1 scope, deliberately): the acknowledge option, the
 capture piece + `{name}` variable, and the media option — all phases 2–4,
 built only when the owner reaches for them (§3/§5 above are unchanged).
+
+## The image option — built 2026-09-18 (phase 4, image half)
+
+Not onboarding-specific — it's a general explanation-slide capability
+(`ExplanationBlock.image?: { file: string; alt: string }`) that onboarding's
+own lessons can use like any other module's. Full detail lives in
+`docs/design/lesson-builder.md` "Explanation images (Part A)" (authoring),
+`docs/design/lesson-script-grammar.md` (`[[img: file | alt]]`), and
+`docs/engineering/assets.md` (storage/cleanup). Not built: YouTube video,
+custom HTML — see the table above and "Why not a raw-HTML slide".
 
 ## The capture piece — built 2026-09-18 (phase 3)
 

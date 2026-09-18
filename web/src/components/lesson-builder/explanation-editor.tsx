@@ -32,25 +32,56 @@ import { ExplanationSpelledToken } from "@/lib/lesson-builder/explanation-spelle
 
 const extensions = [...baseExplanationExtensions, ExplanationAutoMark, ExplanationSpelledToken];
 
-// Paste, in three cases:
+// An SVG document pasted as plain text (copied from a text editor, not an
+// image blob) — sniffed the same way the upload route sniffs an uploaded
+// file, before any of the dialect/HTML cases below get a look at it.
+const SVG_TEXT_RE = /^\s*(<\?xml[^>]*>\s*)?<svg[\s>]/i;
+
+// Paste, in four cases:
 //
-//  1. **Our own content** (another explanation, or anything carrying
+//  1. **An image** (a PNG/JPEG/WebP blob from the OS clipboard, or SVG text
+//     copied from a text editor) while `onImagePaste` is wired up: hand the
+//     blob off to it and swallow the paste — see docs/design/lesson-builder.md
+//     "Paste image, alt, remove".
+//  2. **Our own content** (another explanation, or anything carrying
 //     `mark[data-language]`): let ProseMirror do its normal thing. Its
 //     clipboard HTML round-trips through this schema, so the Spanish/English
 //     marks, bold and italic survive the trip — the owner copies marked runs
 //     between slides and expects them to arrive marked.
-//  2. **Our dialect as plain text** (`[[es:sí]] es [[en:yes]]`, pasted from a
+//  3. **Our dialect as plain text** (`[[es:sí]] es [[en:yes]]`, pasted from a
 //     note or a chat): parse it, so the teacher sees marks and not brackets.
-//  3. **Foreign HTML** (a web page, a doc): flatten to plain paragraphs.
+//  4. **Foreign HTML** (a web page, a doc): flatten to plain paragraphs.
 //     Styles, links, lists and headings are dropped on purpose — this is the
 //     teacher's bilingual dialect, not a web page.
-function handleExplanationPaste(view: EditorView, event: ClipboardEvent): boolean {
+function handleExplanationPaste(
+  view: EditorView,
+  event: ClipboardEvent,
+  onImagePaste?: (blob: Blob) => void,
+): boolean {
   const clipboard = event.clipboardData;
   if (!clipboard) return false;
+
+  if (onImagePaste) {
+    for (const item of Array.from(clipboard.items)) {
+      if (item.kind === "file" && item.type.startsWith("image/")) {
+        const file = item.getAsFile();
+        if (file) {
+          onImagePaste(file);
+          return true;
+        }
+      }
+    }
+  }
+
   const html = clipboard.getData("text/html");
   const text = clipboard.getData("text/plain");
 
   if (html && (html.includes("data-pm-slice") || html.includes("data-language="))) return false;
+
+  if (onImagePaste && text && SVG_TEXT_RE.test(text)) {
+    onImagePaste(new Blob([text], { type: "image/svg+xml" }));
+    return true;
+  }
 
   if (text && /\[\[(?:es|en):/u.test(text)) {
     return insertParagraphs(view, parseExplanation(text));
@@ -94,6 +125,7 @@ export function EditablePracticeMarkdown({
   variant = "explanation",
   showSelectionMenu = true,
   onFocus,
+  onImagePaste,
 }: {
   // Identifies this editor in the registry the keymap's explanation-scope
   // commands look up (lib/lesson-builder/explanation-commands.ts).
@@ -108,6 +140,10 @@ export function EditablePracticeMarkdown({
   // Reports real focus into the shared selection (editing.ts) — the keymap
   // dispatcher's only source of truth for "which field is current."
   onFocus?: () => void;
+  // Pasting an image (blob or SVG text) while this block is focused — see
+  // handleExplanationPaste above. Omit to keep image paste off (e.g. a
+  // non-explanation-slide use of this editor, if one is ever added).
+  onImagePaste?: (blob: Blob) => void;
 }) {
   const [isActive, setIsActive] = useState(false);
   // Tiptap 3 does not re-render its React host on every transaction (a
@@ -132,9 +168,11 @@ export function EditablePracticeMarkdown({
   // these refs instead of tearing the editor down on every render.
   const onChangeRef = useRef(onChange);
   const onFocusRef = useRef(onFocus);
+  const onImagePasteRef = useRef(onImagePaste);
   useEffect(() => {
     onChangeRef.current = onChange;
     onFocusRef.current = onFocus;
+    onImagePasteRef.current = onImagePaste;
   });
 
   const editor = useEditor({
@@ -155,7 +193,8 @@ export function EditablePracticeMarkdown({
         "aria-multiline": "true",
         class: `authoring-wysiwyg authoring-wysiwyg-${variant} practice-markdown-content text-left`,
       },
-      handlePaste: handleExplanationPaste,
+      handlePaste: (view, event) =>
+        handleExplanationPaste(view, event, onImagePasteRef.current),
     },
     onUpdate({ editor: current }) {
       const next = serializeExplanationDoc(current.getJSON() as unknown as PMDoc);

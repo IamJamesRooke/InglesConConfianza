@@ -702,6 +702,7 @@ function LessonSession({
           ) : block?.type === "explanation" ? (
             <ExplanationStep
               markdown={block.contentMarkdown}
+              image={block.image}
               isFirstSlide={stepIndex === 0}
             />
           ) : block?.type === "sentence" ? (

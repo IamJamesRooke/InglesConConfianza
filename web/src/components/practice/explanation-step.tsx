@@ -39,9 +39,14 @@ import { useVariableText } from "@/lib/learner/use-learner-variables";
  */
 export function ExplanationStep({
   markdown,
+  image,
   isFirstSlide = false,
 }: {
   markdown: string;
+  // An optional image ABOVE the text, owner correction 2026-09-18 (Part A,
+  // docs/design/onboarding.md "media option"). `alt` is never spoken — the
+  // audio track is unaffected.
+  image?: { file: string; alt: string };
   isFirstSlide?: boolean;
 }) {
   // `markdown` stays the AUTHORED text everywhere it matters: the clip is
@@ -51,6 +56,14 @@ export function ExplanationStep({
   // piece".
   const substitute = useVariableText();
   const shownMarkdown = substitute(markdown);
+  // `wraps` reflects the TEXT alone — an image never forces it. What an
+  // image changes is the *width* rule only (owner, 2026-09-18): the
+  // fit-content shrink that a one-line, no-image explanation gets would
+  // clip or crowd an image, so a slide with an image always takes the
+  // ordinary 720-max card width, centred, whether its one line of text is
+  // centred under the image (one-line size, sharing the image's centre
+  // axis) or wraps to the ordinary left-aligned multi-line layout — see
+  // practice-explanation.css's `[data-has-image="true"]` rules.
   const wraps = explanationWraps(shownMarkdown);
   const [clipUrl, setClipUrl] = useState<string | null>(null);
   const [playing, setPlaying] = useState(false);
@@ -139,6 +152,7 @@ export function ExplanationStep({
     <div
       className="lesson-explanation learner-enter"
       data-wraps={wraps ? "true" : "false"}
+      data-has-image={image ? "true" : "false"}
     >
       {clipUrl && (
         <button
@@ -159,6 +173,16 @@ export function ExplanationStep({
             <span className="lesson-explanation-replay-label">Escuchar</span>
           )}
         </button>
+      )}
+      {image && (
+        // Content-hash filename under public/lesson-media/, not a Next-optimized asset.
+        // eslint-disable-next-line @next/next/no-img-element
+        <img
+          src={`/lesson-media/${image.file}`}
+          alt={image.alt}
+          loading="eager"
+          className="lesson-explanation-image"
+        />
       )}
       <PracticeMarkdown markdown={shownMarkdown} />
     </div>

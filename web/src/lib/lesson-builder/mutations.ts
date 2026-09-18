@@ -354,6 +354,28 @@ export function updateExplanationBlock(
   }));
 }
 
+// Sets or removes (`image: null`) an explanation slide's image. Ordinary
+// lesson state — undo/redo covers it the same way as any other block edit.
+export function updateExplanationImage(
+  lessons: Lesson[],
+  lessonId: string,
+  blockId: string,
+  image: { file: string; alt: string } | null,
+): Lesson[] {
+  return mapLesson(lessons, lessonId, (lesson) => ({
+    ...lesson,
+    blocks: lesson.blocks.map((block) => {
+      if (block.id !== blockId || block.type !== "explanation") return block;
+      if (image === null) {
+        const rest = { ...block };
+        delete rest.image;
+        return rest;
+      }
+      return { ...block, image };
+    }),
+  }));
+}
+
 // --- Sentence block fields ----------------------------------------------
 
 export function updateSentenceBlock(

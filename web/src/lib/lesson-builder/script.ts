@@ -23,6 +23,7 @@ import type {
   LessonBlock,
   SentenceBlock,
 } from "@/lib/lesson-builder/types";
+import { isLessonMediaFilename } from "@/lib/lesson-builder/lesson-media";
 
 export type ScriptError = { line: number; message: string };
 
@@ -145,7 +146,11 @@ function copyPiecesForExtend(pieces: LanguageBlock[]): LanguageBlock[] {
 // parseScript
 // -----------------------------------------------------------------------
 
-type PendingExplanation = { kind: "explanation"; paragraphs: string[] };
+type PendingExplanation = {
+  kind: "explanation";
+  paragraphs: string[];
+  image?: { file: string; alt: string };
+};
 type PendingSlide = {
   kind: "sentence" | "table";
   promptText: string;
@@ -214,6 +219,9 @@ const PAIR_RE = /^>\s+(?:(\+)\s+)?(?:(=)\s+)?(?:(\?)\s+)?(.*)$/;
 const ROW_RE = /^\|\s+(.*)$/;
 const TITLE_RE = /^#\s+(.*)$/;
 const INSTRUCTION_RE = /^\?\s*(.*)$/;
+// A slide's image, its own line, anywhere in the explanation's paragraphs.
+// See docs/design/lesson-script-grammar.md.
+const IMG_RE = /^\[\[img:\s*(.+?)\s*\|\s*(.*?)\s*\]\]$/;
 
 export function parseScript(text: string): ParseScriptResult {
   const rawLines = text.split(/\r\n|\r|\n/);
@@ -246,8 +254,13 @@ export function parseScript(text: string): ParseScriptResult {
     if (!current) return;
     if (current.kind === "explanation") {
       const markdown = current.paragraphs.join("\n\n");
-      if (markdown.trim().length > 0) {
-        blocks.push({ id: createId("block"), type: "explanation", contentMarkdown: markdown });
+      if (markdown.trim().length > 0 || current.image) {
+        blocks.push({
+          id: createId("block"),
+          type: "explanation",
+          contentMarkdown: markdown,
+          ...(current.image ? { image: current.image } : {}),
+        });
       }
     } else {
       let pieces = current.pieces;
@@ -343,6 +356,30 @@ export function parseScript(text: string): ParseScriptResult {
       continue;
     }
 
+    const imgMatch = trimmed.match(IMG_RE);
+    if (imgMatch) {
+      dropDanglingInstruction();
+      if (!current || current.kind !== "explanation") {
+        flush();
+        current = { kind: "explanation", paragraphs: [] };
+      }
+      if (current.image) {
+        errors.push({
+          line: lineNo,
+          message: "Only one [[img: ]] line is allowed per explanation slide.",
+        });
+        continue;
+      }
+      const file = imgMatch[1].trim();
+      const alt = imgMatch[2].trim();
+      if (!isLessonMediaFilename(file)) {
+        errors.push({ line: lineNo, message: `Invalid image filename: "${file}".` });
+        continue;
+      }
+      current.image = { file, alt };
+      continue;
+    }
+
     // Plain line — explanation paragraph.
     dropDanglingInstruction();
     if (!current || current.kind !== "explanation") {
@@ -386,8 +423,13 @@ export function printScript(lesson: Lesson): string {
         .split(/\n{2,}/)
         .map((paragraph) => paragraph.trim())
         .filter((paragraph) => paragraph.length > 0);
-      if (paragraphs.length === 0) continue;
-      sections.push(paragraphs.join("\n"));
+      if (paragraphs.length === 0 && !block.image) continue;
+      const lines = paragraphs.join("\n");
+      // The image line prints FIRST (owner, 2026-09-18) — parsing still
+      // accepts [[img: ]] anywhere in the slide, this is only the printed
+      // order.
+      const imgLine = block.image ? `[[img: ${block.image.file} | ${block.image.alt}]]` : "";
+      sections.push([imgLine, lines].filter(Boolean).join("\n"));
       continue;
     }
 

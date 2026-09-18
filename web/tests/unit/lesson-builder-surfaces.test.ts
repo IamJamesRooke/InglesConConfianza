@@ -112,6 +112,7 @@ const stubBuilderActions: LessonBuilderActions = {
   removeLessonConcept: noop,
   relabelLessonConcept: noop,
   updateExplanation: noop,
+  updateExplanationImage: noop,
   updateSentence: noop,
   updateSpanish: noop,
   updateAnswer: noop,

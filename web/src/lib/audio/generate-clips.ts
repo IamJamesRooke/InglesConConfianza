@@ -180,6 +180,58 @@ function collectInstructions(lessons: Lesson[]): Set<string> {
   return instructions;
 }
 
+// A single clip the generator wants for the given lessons — the one place
+// hashes are derived, so any other caller (assets:prune) reuses this instead
+// of re-deriving sha1 keys itself. `relativePath` is the file's path under
+// public/audio/, e.g. "us-man/<hash>.mp3", "explanations/<hash>.mp3",
+// "instructions/<hash>.mp3" — also the manifest lookup shape (top-level key
+// for a speaker clip, "explanations"/"instructions" sub-map key otherwise).
+export type WantedClip =
+  | { kind: "speaker"; speaker: SpeakerId; hash: string; text: string; relativePath: string }
+  | { kind: "explanation"; hash: string; markdown: string; relativePath: string }
+  | { kind: "instruction"; hash: string; text: string; relativePath: string };
+
+/** Every clip the generator wants for `lessons` — pure, no fs access. See
+ * `WantedClip` above; this is the single source of hash derivation reused by
+ * `generateMissingClips` (below) and by `assets:prune`'s referenced-assets
+ * core (`src/lib/assets/referenced-assets.ts`). */
+export function listWantedClips(lessons: Lesson[]): WantedClip[] {
+  const speakerIds = Object.keys(VOICES) as SpeakerId[];
+  const clips: WantedClip[] = [];
+
+  for (const text of collectTexts(lessons)) {
+    const hash = sha1(text);
+    for (const speaker of speakerIds) {
+      clips.push({
+        kind: "speaker",
+        speaker,
+        hash,
+        text,
+        relativePath: path.posix.join(speaker, `${hash}.mp3`),
+      });
+    }
+  }
+  for (const markdown of collectExplanations(lessons)) {
+    const hash = sha1(markdown);
+    clips.push({
+      kind: "explanation",
+      hash,
+      markdown,
+      relativePath: path.posix.join("explanations", `${hash}.mp3`),
+    });
+  }
+  for (const text of collectInstructions(lessons)) {
+    const hash = sha1(text);
+    clips.push({
+      kind: "instruction",
+      hash,
+      text,
+      relativePath: path.posix.join("instructions", `${hash}.mp3`),
+    });
+  }
+  return clips;
+}
+
 async function fileExists(filePath: string): Promise<boolean> {
   try {
     await readFile(filePath);
@@ -266,16 +318,24 @@ export async function generateMissingClips(
 ): Promise<GenerateResult> {
   const lessonFile = await readLessonFile();
   const lessons = selectLessons(lessonFile.lessons, options);
-  const texts = collectTexts(lessons);
-  const explanations = collectExplanations(lessons);
-  const instructions = collectInstructions(lessons);
+  const wanted = listWantedClips(lessons);
+  const speakerClips = wanted.filter(
+    (clip): clip is Extract<WantedClip, { kind: "speaker" }> => clip.kind === "speaker",
+  );
+  const explanationClips = wanted.filter(
+    (clip): clip is Extract<WantedClip, { kind: "explanation" }> => clip.kind === "explanation",
+  );
+  const instructionClips = wanted.filter(
+    (clip): clip is Extract<WantedClip, { kind: "instruction" }> => clip.kind === "instruction",
+  );
   const speakerIds = Object.keys(VOICES) as SpeakerId[];
   const apiKey = process.env.GOOGLE_TTS_API_KEY;
+  const distinctTextCount = new Set(speakerClips.map((clip) => clip.text)).size;
 
   console.log(
-    `Collected ${texts.size} distinct English text(s) across ${speakerIds.length} speaker(s), ` +
-      `${explanations.size} distinct explanation block(s), and ` +
-      `${instructions.size} distinct instruction line(s).`,
+    `Collected ${distinctTextCount} distinct English text(s) across ${speakerIds.length} speaker(s), ` +
+      `${explanationClips.length} distinct explanation block(s), and ` +
+      `${instructionClips.length} distinct instruction line(s).`,
   );
 
   if (!apiKey) {
@@ -283,32 +343,27 @@ export async function generateMissingClips(
       "GOOGLE_TTS_API_KEY is not set — dry run only, nothing will be generated.",
     );
     let wouldGenerate = 0;
-    for (const text of texts) {
-      const hash = sha1(text);
-      for (const speaker of speakerIds) {
-        const clipPath = path.join(AUDIO_DIR, speaker, `${hash}.mp3`);
-        const exists = await fileExists(clipPath);
-        console.log(
-          `${exists ? "[exists]" : "[would generate]"} ${speaker}/${hash}.mp3 <- "${text}"`,
-        );
-        if (!exists) wouldGenerate += 1;
-      }
-    }
-    for (const markdown of explanations) {
-      const hash = sha1(markdown);
-      const clipPath = path.join(EXPLANATIONS_DIR, `${hash}.mp3`);
+    for (const clip of speakerClips) {
+      const clipPath = path.join(AUDIO_DIR, clip.relativePath);
       const exists = await fileExists(clipPath);
       console.log(
-        `${exists ? "[exists]" : "[would generate]"} explanations/${hash}.mp3 <- "${markdown}"`,
+        `${exists ? "[exists]" : "[would generate]"} ${clip.relativePath} <- "${clip.text}"`,
       );
       if (!exists) wouldGenerate += 1;
     }
-    for (const text of instructions) {
-      const hash = sha1(text);
-      const clipPath = path.join(INSTRUCTIONS_DIR, `${hash}.mp3`);
+    for (const clip of explanationClips) {
+      const clipPath = path.join(AUDIO_DIR, clip.relativePath);
       const exists = await fileExists(clipPath);
       console.log(
-        `${exists ? "[exists]" : "[would generate]"} instructions/${hash}.mp3 <- "${text}"`,
+        `${exists ? "[exists]" : "[would generate]"} ${clip.relativePath} <- "${clip.markdown}"`,
+      );
+      if (!exists) wouldGenerate += 1;
+    }
+    for (const clip of instructionClips) {
+      const clipPath = path.join(AUDIO_DIR, clip.relativePath);
+      const exists = await fileExists(clipPath);
+      console.log(
+        `${exists ? "[exists]" : "[would generate]"} ${clip.relativePath} <- "${clip.text}"`,
       );
       if (!exists) wouldGenerate += 1;
     }
@@ -326,46 +381,42 @@ export async function generateMissingClips(
   let generated = 0;
   let skipped = 0;
   let bytes = 0;
-  for (const text of texts) {
-    const hash = sha1(text);
-    for (const speaker of speakerIds) {
-      const speakerDir = path.join(AUDIO_DIR, speaker);
-      const clipPath = path.join(speakerDir, `${hash}.mp3`);
-      if (await fileExists(clipPath)) {
-        skipped += 1;
-      } else {
-        await mkdir(speakerDir, { recursive: true });
-        const audio = await synthesize(text, speaker, apiKey);
-        await writeFile(clipPath, audio);
-        generated += 1;
-        bytes += audio.byteLength;
-        console.log(`Generated ${speaker}/${hash}.mp3 <- "${text}"`);
-      }
-      const speakersForHash = manifest[hash] ?? [];
-      if (!speakersForHash.includes(speaker)) speakersForHash.push(speaker);
-      manifest[hash] = speakersForHash;
+  for (const clip of speakerClips) {
+    const speakerDir = path.join(AUDIO_DIR, clip.speaker);
+    const clipPath = path.join(AUDIO_DIR, clip.relativePath);
+    if (await fileExists(clipPath)) {
+      skipped += 1;
+    } else {
+      await mkdir(speakerDir, { recursive: true });
+      const audio = await synthesize(clip.text, clip.speaker, apiKey);
+      await writeFile(clipPath, audio);
+      generated += 1;
+      bytes += audio.byteLength;
+      console.log(`Generated ${clip.relativePath} <- "${clip.text}"`);
     }
+    const speakersForHash = manifest[clip.hash] ?? [];
+    if (!speakersForHash.includes(clip.speaker)) speakersForHash.push(clip.speaker);
+    manifest[clip.hash] = speakersForHash;
   }
 
   let explanationsGenerated = 0;
   let explanationsSkipped = 0;
   let explanationsBytes = 0;
   const explanationManifest = manifest.explanations ?? {};
-  for (const markdown of explanations) {
-    const hash = sha1(markdown);
-    const clipPath = path.join(EXPLANATIONS_DIR, `${hash}.mp3`);
+  for (const clip of explanationClips) {
+    const clipPath = path.join(AUDIO_DIR, clip.relativePath);
     if (await fileExists(clipPath)) {
       explanationsSkipped += 1;
     } else {
       await mkdir(EXPLANATIONS_DIR, { recursive: true });
-      const ssml = explanationToSsml(markdown);
+      const ssml = explanationToSsml(clip.markdown);
       const audio = await synthesizeSsml(ssml, apiKey);
       await writeFile(clipPath, audio);
       explanationsGenerated += 1;
       explanationsBytes += audio.byteLength;
-      console.log(`Generated explanations/${hash}.mp3 <- "${markdown}"`);
+      console.log(`Generated ${clip.relativePath} <- "${clip.markdown}"`);
     }
-    explanationManifest[hash] = true;
+    explanationManifest[clip.hash] = true;
   }
   manifest.explanations = explanationManifest;
 
@@ -373,20 +424,19 @@ export async function generateMissingClips(
   let instructionsSkipped = 0;
   let instructionsBytes = 0;
   const instructionManifest = manifest.instructions ?? {};
-  for (const text of instructions) {
-    const hash = sha1(text);
-    const clipPath = path.join(INSTRUCTIONS_DIR, `${hash}.mp3`);
+  for (const clip of instructionClips) {
+    const clipPath = path.join(AUDIO_DIR, clip.relativePath);
     if (await fileExists(clipPath)) {
       instructionsSkipped += 1;
     } else {
       await mkdir(INSTRUCTIONS_DIR, { recursive: true });
-      const audio = await synthesizeSsml(instructionToSsml(text), apiKey);
+      const audio = await synthesizeSsml(instructionToSsml(clip.text), apiKey);
       await writeFile(clipPath, audio);
       instructionsGenerated += 1;
       instructionsBytes += audio.byteLength;
-      console.log(`Generated instructions/${hash}.mp3 <- "${text}"`);
+      console.log(`Generated ${clip.relativePath} <- "${clip.text}"`);
     }
-    instructionManifest[hash] = true;
+    instructionManifest[clip.hash] = true;
   }
   manifest.instructions = instructionManifest;
 

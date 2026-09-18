@@ -8,6 +8,7 @@ import type {
 } from "@/lib/lesson-builder/types";
 import { createId } from "@/lib/lesson-builder/utils";
 import { isLearnerVariableKey } from "@/lib/learner/variables";
+import { isExplanationImage } from "@/lib/lesson-builder/lesson-media";
 
 // Pure validation, migration, and the ordering invariant for data/lessons.json.
 // No fs — lesson-store.ts wraps this with reads/writes. Unit-tested in
@@ -53,7 +54,10 @@ function isLessonBlock(value: unknown): value is LessonBlock {
   }
 
   if (value.type === "explanation") {
-    return typeof value.contentMarkdown === "string";
+    return (
+      typeof value.contentMarkdown === "string" &&
+      (value.image === undefined || isExplanationImage(value.image))
+    );
   }
 
   if (value.type === "sentence") {
@@ -244,6 +248,13 @@ function normalizeLessonForFile(lesson: Lesson): Lesson {
           id: block.id,
           type: "explanation",
           contentMarkdown: block.contentMarkdown,
+          // `alt` is guaranteed a string here (never undefined) so the
+          // builder's alt-text <input> is never handed `undefined` as its
+          // `value` — that would make it uncontrolled, and React warns the
+          // moment a later render supplies a real string.
+          ...(block.image
+            ? { image: { file: block.image.file, alt: block.image.alt ?? "" } }
+            : {}),
         };
       }
 

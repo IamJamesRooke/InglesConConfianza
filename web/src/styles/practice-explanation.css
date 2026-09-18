@@ -127,6 +127,31 @@
 .lesson-explanation[data-wraps="true"] :is(h1, h2, h3, p, li) {
   text-align: left;
 }
+/* Part A — one optional image ABOVE the explanation text (owner correction
+   2026-09-18), centred, no border/shadow of its own (docs/design/
+   onboarding.md "media option"). */
+.lesson-explanation-image {
+  display: block;
+  max-width: 100%;
+  max-height: 40vh;
+  margin: 0 auto 24px;
+  object-fit: contain;
+}
+/* A slide with an image always keeps the ordinary 720-max, centred card
+   (owner, 2026-09-18: "never the full column" reads oddly for the SHRUNK
+   card, not this one — the point is a card with an image must never use
+   the fit-content shrink below, which would clip or crowd the image). One
+   line of text then stays centred under the image, sharing its centre
+   axis, at the one-line size (data-wraps="false"'s own font-size rule
+   already applies regardless of data-has-image); text that wraps falls
+   through to the ordinary left-aligned multi-line rule above, with the
+   image still centred above it either way. Higher specificity than
+   `[data-wraps="false"]` alone (two attributes vs. one) — order in the
+   file doesn't matter, but this sits right after it for readability. */
+.lesson-explanation[data-has-image="true"][data-wraps="false"] {
+  width: 100%;
+  max-width: var(--practice-column);
+}
 
 /* Bilingual highlight: language is told by colour alone, no underline and no
    italics (owner, 2026-09-17 — a Spanish mark is bold `--lesson-hl-es`, an
