@@ -168,6 +168,8 @@ This scaffold is demo content, not a claim that Module 1 has passed learner vali
 
 ## Later
 
+- [ ] ElevenLabs voices (owner 2026-09-17: keep Google TTS for now; revisit if voice quality is the weak point) — swap `synthesize()`/`synthesizeSsml()` in `web/src/lib/audio/generate-clips.ts`, segment-per-voice + concatenation for two-voice explanations; costs in `docs/design/audio-provider-costs.md`
+
 - [ ] Derive the minimum stable lesson, question, concept-reference, and learner-history contracts from the completed module.
 - [ ] Add persistent learner accounts, progress, spaced repetition, authentication, and authorization only after the first module proves the learning flow.
 - [ ] Create an initial threat model when persistent authoring, authentication, or learner data introduces meaningful trust boundaries.
