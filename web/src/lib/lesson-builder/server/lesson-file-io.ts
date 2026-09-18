@@ -13,15 +13,28 @@ import path from "node:path";
 import type { LessonFile } from "@/lib/lesson-builder/types";
 import { emptyLessonFile, parseLessonFile } from "@/lib/lesson-builder/lesson-file";
 
+// The default, statically-scoped path (`path.join(process.cwd(), "data", …)`)
+// so Turbopack's build-time trace analysis can see it lands under `data/`
+// instead of tracing (and deploying) the whole project — see the
+// `/*turbopackIgnore*/` note on the override branch below.
+const DEFAULT_LESSONS_PATH = path.join(process.cwd(), "data", "lessons.json");
+
 // Overridable so the UX-check harness (tests/ux/) can point at an isolated
 // fixture file instead of the real course data — see playwright.config.ts.
 export const lessonsFilePath =
-  process.env.LESSON_BUILDER_DATA_PATH ??
-  path.join(process.cwd(), "data", "lessons.json");
+  process.env.LESSON_BUILDER_DATA_PATH ?? DEFAULT_LESSONS_PATH;
 
 export async function readLessonFile(): Promise<LessonFile> {
   try {
-    const file = await readFile(lessonsFilePath, "utf8");
+    // Two branches so Turbopack can statically resolve the common (no
+    // override) case to a path scoped under `data/` and only trace that —
+    // see the warning this used to produce: "Dynamic filesystem access
+    // causes tracing of the whole project". The override branch reads an
+    // arbitrary test-only path from LESSON_BUILDER_DATA_PATH and is
+    // intentionally excluded from that analysis.
+    const file = process.env.LESSON_BUILDER_DATA_PATH
+      ? await readFile(/*turbopackIgnore: true*/ lessonsFilePath, "utf8")
+      : await readFile(DEFAULT_LESSONS_PATH, "utf8");
     return parseLessonFile(JSON.parse(file));
   } catch (error) {
     if (

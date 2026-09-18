@@ -2,7 +2,7 @@ import { NextResponse } from "next/server";
 
 import { adminGuardResponse } from "@/lib/admin/assert-admin";
 import { curriculumRoles, type CurriculumRole } from "@/lib/curriculum/types";
-import { prisma } from "@/lib/database/prisma";
+import { hasDatabase, prisma } from "@/lib/database/prisma";
 
 export const dynamic = "force-dynamic";
 
@@ -29,6 +29,13 @@ type Row = {
 export async function GET(request: Request) {
   const denied = await adminGuardResponse();
   if (denied) return denied;
+
+  if (!hasDatabase()) {
+    return NextResponse.json(
+      { error: "No database configured on this deployment." },
+      { status: 503 },
+    );
+  }
 
   const role = new URL(request.url).searchParams.get("role") ?? "";
 

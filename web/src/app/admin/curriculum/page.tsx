@@ -1,5 +1,6 @@
 import { CurriculumTable } from "@/components/curriculum/curriculum-table";
 import { topicTitles } from "@/components/curriculum/topic-presentation";
+import { hasDatabase } from "@/lib/database/prisma";
 import {
   canonicalFacetCollection,
   resolveCurriculumPath,
@@ -36,6 +37,19 @@ function first(value: string | string[] | undefined) {
 }
 
 export default async function CurriculumPage({ searchParams }: PageProps) {
+  // This deployment has no DATABASE_URL (docs/engineering/deploy.md — the
+  // curriculum database is admin-only and never set on the public deploy).
+  // Fail cleanly with a plain message instead of an unhandled query error.
+  if (!hasDatabase()) {
+    return (
+      <main className="flex-1 bg-background px-3 py-4 text-foreground sm:px-5 lg:px-6">
+        <div className="mx-auto max-w-[1800px]">
+          <p>No database is configured on this deployment.</p>
+        </div>
+      </main>
+    );
+  }
+
   const parameters = await searchParams;
   const topic = findCurriculumTopic(first(parameters.topic) ?? "");
   const requestedLeaf = first(parameters.leaf) ?? "";

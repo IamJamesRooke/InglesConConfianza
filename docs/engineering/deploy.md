@@ -151,6 +151,65 @@ every builder edit.
 | `FEEDBACK_GITHUB_REPO` | The feedback endpoint | `owner/name` of that same private feedback repo. Both this and the token must be set together, or the route falls back to `FEEDBACK_WEBHOOK_URL`/local jsonl. |
 | `ADMIN_SECRET` | The admin guard | Optional; unset = guard off. See above. |
 
+## Building and running with no DATABASE_URL
+
+The public deployment sets neither `DATABASE_URL` nor `GOOGLE_TTS_API_KEY`
+(2026-09-18, deploy-blocker fix). Two things had to change to make
+`next build` (and the built server) tolerate that:
+
+- **`web/prisma.config.ts`** falls back to a placeholder connection string
+  when `DATABASE_URL` is unset. `prisma generate` (run by `postinstall` and
+  `prebuild`) only needs to generate the client's TypeScript types — it
+  never actually connects — so the placeholder is never dialed.
+- **`web/src/lib/database/prisma.ts`** creates its `PrismaClient` lazily,
+  behind a `Proxy`. Importing the module never throws, even with no
+  `DATABASE_URL` — this matters because Next's page-data collection
+  imports every module a route touches (even transitively) just to build
+  the route, long before any request runs a query; the old code threw
+  `DATABASE_URL is required.` at import time, which failed the build for
+  every route that happened to import it (including `/practice`, via
+  `concept-display.ts`). The client is now only constructed, and only
+  throws, the first time a caller actually touches a property on `prisma`
+  (a query, `$queryRaw`, etc.). The module also exports `hasDatabase()` so
+  callers can check first and degrade gracefully instead of hitting that
+  throw; the dev-mode global-caching behavior is unchanged.
+- **Learner-facing code checks `hasDatabase()` before querying.**
+  `src/lib/curriculum/server/concept-display.ts` (`readConceptDisplays`,
+  used by `/practice` to label newly-introduced concepts) returns `{}`
+  immediately when there's no database, which its caller already treats
+  the same as a query failure — the lesson's own stored label is used
+  instead. `/`, `/practice` and `/bienvenida` otherwise only read
+  `data/lessons.json` (via `readCourseSummary`/`readLessonFile`), never the
+  curriculum database, so they render normally with no database at all.
+  `POST /api/feedback` never touches the database either way.
+- **Admin curriculum surfaces fail cleanly instead of crashing** when
+  `ADMIN_SECRET` is set (so the guard lets a request through) but there is
+  still no `DATABASE_URL` — a state that should never happen on a real
+  deploy (see "never set DATABASE_URL" above) but is now handled instead of
+  throwing an unhandled query error: `/admin/curriculum` renders a plain
+  "No database is configured on this deployment." message, and the four
+  `/api/admin/curriculum/**` route handlers (`collections`,
+  `concepts/search`, `concepts/by-level`, `concepts/[conceptId]`) return
+  `503 { error: "No database configured on this deployment." }` before
+  touching Prisma. This is a minimal guard, not a redesign — the admin
+  Lesson Builder and every other admin surface are unaffected.
+- **`src/lib/lesson-builder/server/lesson-file-io.ts`** reads
+  `data/lessons.json` from a statically-scoped path
+  (`path.join(process.cwd(), "data", "lessons.json")`) in the common case,
+  so Turbopack's build-time trace analysis can see the read is scoped under
+  `data/` and only trace that — it previously warned "Dynamic filesystem
+  access causes tracing of the whole project" (which would have deployed
+  the whole repo, including `public/`, as server code) because the path
+  expression also had to account for the test-only
+  `LESSON_BUILDER_DATA_PATH` override. That override still works — it's
+  now a separate branch reading an explicit `/*turbopackIgnore: true*/`
+  path, intentionally excluded from the static analysis. Verified after the
+  fix: `.next/server/app/{page,practice/page,bienvenida/page}.js.nft.json`
+  each list `data/lessons.json` (not the whole project) as a required file.
+  Nothing server-side reads `public/audio/manifest.json` (only the browser
+  fetches it, from `src/lib/learner/speech.ts`), so no equivalent tracing
+  fix or `outputFileTracingIncludes` entry was needed for it.
+
 ## Vercel steps
 
 1. Import the repo into Vercel.
@@ -160,11 +219,15 @@ every builder edit.
    build); set `FEEDBACK_GITHUB_TOKEN` + `FEEDBACK_GITHUB_REPO` (or
    `FEEDBACK_WEBHOOK_URL`) if feedback is enabled; only set
    `ADMIN_SECRET`/`DATABASE_URL` if admin is somehow reachable on that
-   deploy (see "local-only" above — normally it should not be).
+   deploy (see "local-only" above — normally it should not be). Framework
+   preset: Next.js.
 4. Build command: default (`next build` via `npm run build`, which runs
    `prisma generate` first via `prebuild`). No special static-export flags —
    this app is not statically exported, so `proxy` (and therefore the admin
-   guard) applies to every deploy target Vercel builds from this repo.
+   guard) applies to every deploy target Vercel builds from this repo. As of
+   2026-09-18, `next build` succeeds with neither `DATABASE_URL` nor
+   `GOOGLE_TTS_API_KEY` set — see "Building and running with no
+   DATABASE_URL" above.
 
 ## Baseline security headers
 

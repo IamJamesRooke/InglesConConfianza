@@ -1,6 +1,6 @@
 import "server-only";
 
-import { prisma } from "@/lib/database/prisma";
+import { hasDatabase, prisma } from "@/lib/database/prisma";
 import type { CurriculumRole } from "@/lib/curriculum/types";
 
 export type ConceptDisplay = {
@@ -21,6 +21,11 @@ export type ConceptDisplay = {
 export async function readConceptDisplays(conceptIds: string[]) {
   const ids = [...new Set(conceptIds.filter(Boolean))];
   if (ids.length === 0) return {} as Record<string, ConceptDisplay>;
+  // No curriculum database on this deployment (docs/engineering/deploy.md,
+  // "Learner site: read-only") — the learner app falls back to the label
+  // already stored in the lesson (see callers of readConceptDisplays: the
+  // practice page catches this the same as a query failure).
+  if (!hasDatabase()) return {} as Record<string, ConceptDisplay>;
 
   const concepts = await prisma.curriculumConcept.findMany({
     where: { id: { in: ids } },

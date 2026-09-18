@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 
 import { adminGuardResponse } from "@/lib/admin/assert-admin";
+import { hasDatabase } from "@/lib/database/prisma";
 import {
   CurriculumConceptNotFoundError,
   deleteCurriculumConcept,
@@ -13,9 +14,17 @@ type RouteContext = {
   params: Promise<{ conceptId: string }>;
 };
 
+function noDatabaseResponse() {
+  return NextResponse.json(
+    { error: "No database configured on this deployment." },
+    { status: 503 },
+  );
+}
+
 export async function GET(_request: Request, context: RouteContext) {
   const denied = await adminGuardResponse();
   if (denied) return denied;
+  if (!hasDatabase()) return noDatabaseResponse();
 
   const { conceptId } = await context.params;
   try {
@@ -33,6 +42,7 @@ export async function GET(_request: Request, context: RouteContext) {
 export async function PATCH(request: Request, context: RouteContext) {
   const denied = await adminGuardResponse();
   if (denied) return denied;
+  if (!hasDatabase()) return noDatabaseResponse();
 
   const { conceptId } = await context.params;
   let concept: unknown;
@@ -65,6 +75,7 @@ export async function PATCH(request: Request, context: RouteContext) {
 export async function DELETE(_request: Request, context: RouteContext) {
   const denied = await adminGuardResponse();
   if (denied) return denied;
+  if (!hasDatabase()) return noDatabaseResponse();
 
   const { conceptId } = await context.params;
 
