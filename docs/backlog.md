@@ -65,6 +65,8 @@ the owner's say-so.
       optional "¿quién eres?"); completion keeps a general "¿Qué te pareció?"
 - [ ] L4 craft: favicon/app icon, manifest, loading/empty/error states, focus rings,
       transitions, reduced motion
+- [ ] Instruction lines spoken: the narrator (es-US male) reads a sentence/table slide's instruction ("Veamos la diferencia.") on slide open, replay on the line, generated like the other clips (owner 2026-09-17)
+- [ ] Audio generation from the builder (Listen generates if missing; module "Generate audio"); manifest fetched fresh (was force-cache → new clips invisible)
 - [ ] Onboarding (below)
 - [x] Admin guard (env secret on `/admin` + `/api/admin`), deploy shape: static learner site
       with lessons + audio bundled + one feedback function on Vercel; admin local only;
