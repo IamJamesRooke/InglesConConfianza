@@ -57,7 +57,7 @@ export function SentencePracticeCard({
     onHintsUsedChange,
   });
   const isSingleLanguageBlock = testableBlocks.length === 1;
-  // Which row "Pista" speaks: the focused one, else the first row still
+  // Which row "Recuérdame" speaks: the focused one, else the first row still
   // unanswered.
   const hintIndex =
     focusedBlockIndex !== null
@@ -156,7 +156,7 @@ export function SentencePracticeCard({
                       onFocus={() => setFocusedBlockIndex(languageBlockIndex)}
                       onBlur={(event) => {
                         // Keep the row "focused" while the learner reaches
-                        // for the speaker's Pista button — that button is
+                        // for the speaker's Recuérdame button — that button is
                         // what decides which row's answer gets spoken.
                         if (
                           event.relatedTarget instanceof HTMLElement &&
@@ -226,26 +226,31 @@ export function SentencePracticeCard({
   // see docs/design/student-experience.md, "L2b — the sentence stage",
   // item 3. Every other rendering (the older grid card behind
   // `?layout=grid`) keeps its own flat layout, speaker chip included above.
-  if (isVocabulary)
+  if (isVocabulary) {
+    const hintButtonNode = (
+      <HintButton
+        onShowHint={() => showHelp(hintIndex)}
+        disabled={hintIndex < 0}
+      />
+    );
     return (
       <div className="sentence-stage learner-enter">
-        <div className="stage-composition">
+        <div className="stage-composition" data-wraps="true">
           <div className="stage-speaker">
             <SpeakerChip
               key={sentence.id}
               speaker={speaker}
               speakingText={speakingText}
               variant="stage"
+              action={hintButtonNode}
             />
-            <HintButton
-              onShowHint={() => showHelp(hintIndex)}
-              disabled={hintIndex < 0}
-            />
+            {!speaker && hintButtonNode}
           </div>
-          <div className="stage-column">{cardBody}</div>
+          <div className="stage-column" data-wraps="true">{cardBody}</div>
         </div>
       </div>
     );
+  }
 
   return cardBody;
 }

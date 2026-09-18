@@ -31,6 +31,17 @@
   gap: 4px;
   min-width: 0;
 }
+/* The flag/label and the "Recuérdame" button share one line, the button
+   immediately after the label — not pushed to the far right (owner,
+   2026-09-18: "closer to the person's head"). At 1024+ (speaker-chip.stage)
+   this stacks into a column instead, per the direction's "button stays
+   under the flag/label" — see the 1024px media block below. */
+.speaker-chip-label-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
 .speaker-chip-label {
   font-size: 12px;
   font-weight: 700;
@@ -82,14 +93,9 @@
   }
 }
 
-/* One card recipe (direction, "Cards"): 32px padding desktop, 24px phone —
-   this file's own share of the rule also touching .lesson-explanation
-   (practice-explanation.css) and .answer-grid (practice-table.css). */
-@media (max-width: 760px) {
-  .stage-card {
-    padding: 24px;
-  }
-}
+/* The sentence card diverges from the shared 32/24 card recipe (direction,
+   "Size and spacing", 2026-09-18): 32px padding on phone, 48px from 761px up
+   — see the dedicated rule below `.stage-card`'s own declaration. */
 
 /* ===================================================================== */
 /* The sentence slide as a sentence being assembled, and the two-actor    */
@@ -107,10 +113,27 @@
   flex-direction: column;
   gap: 18px;
 }
+/* Direction ("Alignment rule"): below 1024, the speaker cluster's left edge
+   always equals the card's left edge. A single grid track sized to the
+   widest of {speaker row, card column} and centred gives both the same
+   left edge whichever one is narrower — a pure-CSS equivalent of the
+   explanation card's own centring, since the two are otherwise unrelated
+   flex siblings of different intrinsic widths. At 1024+ the two-actor row
+   composition stays exactly as it is (see the existing 1024px media block
+   below), so this is scoped to widths under it. */
+@media (max-width: 1023.98px) {
+  .stage-composition[data-wraps="false"] {
+    display: grid;
+    grid-template-columns: max-content;
+    justify-content: center;
+    gap: 18px;
+  }
+}
 /* Below 1024: the card comes first and the speaker is a row under it — the
-   portrait, its bubble, and "Pista" at the end of the row (owner,
-   2026-09-17: at ~980 the two-actor column read as "a portrait stuck in the
-   corner next to a box"). */
+   portrait, then one line of flag/label + "Recuérdame" immediately after it,
+   the bubble opening under that line (owner, 2026-09-17: at ~980 the
+   two-actor column read as "a portrait stuck in the corner next to a box";
+   2026-09-18: renamed from "Pista" and moved off the far right edge). */
 .stage-speaker {
   order: 2;
   display: flex;
@@ -124,6 +147,15 @@
   display: flex;
   flex-direction: column;
   min-width: 0;
+}
+/* Alignment rule (docs/design/learner-direction.md, "Sentence slide",
+   2026-09-18): a sentence that fits on one line at the current width centres
+   the eyebrow, instruction and card on one shared axis — mirroring the
+   explanation card's own fit-vs-wrap rule in practice-explanation.css. A
+   sentence that wraps keeps the ordinary left-aligned, full-width column. */
+.stage-column[data-wraps="false"] {
+  align-items: center;
+  text-align: center;
 }
 .stage-eyebrow p {
   margin-bottom: 6px;
@@ -143,36 +175,64 @@
   display: flex;
   flex-wrap: wrap;
   align-items: baseline;
+  justify-content: flex-start;
   gap: 6px;
+  width: 100%;
+}
+.stage-column[data-wraps="false"] .stage-instruction {
+  justify-content: center;
 }
 
-/* Direction ("Sentence slide"): the instruction is a muted body line above
-   the card, not a label-sized caption. */
+/* Direction ("Size and spacing", 2026-09-18): the instruction is one step
+   smaller than before (--t-body -> --t-ui), muted, 16px above the card —
+   centred when the sentence fits one line, left-aligned when it wraps. */
 .stage-instruction :is(p, h1, h2, h3) {
-  margin-bottom: 10px;
+  margin-bottom: 16px;
   color: var(--ink-muted);
-  font-size: var(--t-body);
+  font-size: var(--t-ui);
   font-weight: 500;
   line-height: 1.55;
   text-align: left;
 }
+.stage-column[data-wraps="false"] .stage-instruction :is(p, h1, h2, h3) {
+  text-align: center;
+}
+/* Direction ("Alignment rule"): fits one line -> fit-content, centred, same
+   axis as the explanation card's own `[data-wraps="false"]` rule. Wraps ->
+   the ordinary 720-wide, left-aligned card (unchanged from before). */
 .stage-card {
+  width: 100%;
   padding: 32px;
   border: 1px solid var(--border);
   border-radius: 16px;
   background: var(--surface-writing);
   box-shadow: var(--shadow-card);
 }
+.stage-card[data-wraps="false"] {
+  width: fit-content;
+  max-width: min(100%, 720px);
+}
+@media (min-width: 761px) {
+  .stage-card {
+    padding: 48px;
+  }
+}
 /* Both lines are prose that wraps, at --t-sentence / line-height 1.35
-   (direction, "Sentence slide"). */
+   (direction, "Sentence slide"); 1–2 pieces that fit one line step up to
+   --t-hero instead (direction, "Size and spacing", 2026-09-18). */
 .stage-line {
   margin: 0;
   font-size: var(--practice-prompt-size);
   line-height: 1.35;
   font-weight: 600;
 }
+.stage-card[data-hero="true"] .stage-line {
+  font-size: var(--t-hero);
+}
+/* 16px between the Spanish and English lines (direction, "Size and
+   spacing"). */
 .stage-line-en {
-  margin-top: 12px;
+  margin-top: 16px;
 }
 /* Line 1: the Spanish sentence. Owner rule, 2026-09-17 — in practice colour
    IS language: everything the learner is translating is flag red and bold,
@@ -198,6 +258,12 @@
 .stage-es[data-state="active"] {
   opacity: 1;
   border-bottom: 2px solid var(--lesson-hl-es);
+}
+/* Direction ("The answer slot"): the red underline on the active Spanish
+   piece only appears once the sentence has more than one piece — a
+   one-piece sentence ("hola") has nothing left to point at. */
+.stage-line-es[data-single-piece="true"] .stage-es[data-state="active"] {
+  border-bottom: none;
 }
 /* Line 2: the English sentence being built. Every piece is an input all
    along — a blank underline until it's answered, the finished word after —
@@ -225,26 +291,35 @@
   max-width: 100%;
   padding: 0 1px;
   border: 0;
-  /* An empty blank is a neutral hairline; what the learner types is
-     English, so it is Union Jack blue (owner, 2026-09-17). */
+  /* PENDING (direction, "The answer slot"): a plain lavender hairline
+     underline, no fill — exactly one tinted thing on the stage (the ACTIVE
+     slot below) says where to type. */
   border-bottom: 2px solid var(--border);
   border-radius: 0;
   background: transparent;
   color: var(--lesson-hl-en);
+  caret-color: var(--lesson-hl-en);
   font: inherit;
   font-weight: 700;
   vertical-align: baseline;
   transition:
     border-color 160ms,
-    background 160ms;
+    background 160ms,
+    border-radius 160ms,
+    padding 160ms;
 }
+/* ACTIVE (direction, "The answer slot"): a rounded, filled slot rather than
+   just a coloured underline — visible from first paint since the first
+   piece autofocuses. Text stays left-aligned inside it; the slot's own
+   width still tracks the answer's width plus this padding. */
 .stage-en-input:focus {
-  /* The underline and tint are the focus indicator — one ring, no outline
-     stacked on top of a border. */
   outline: none;
   min-width: max(3ch, calc(var(--blank-chars, 3) * 0.62ch + 1ch));
+  padding: 1px 6px;
   border-bottom-color: var(--lesson-hl-en);
-  background: color-mix(in oklch, var(--lesson-hl-en) 8%, transparent);
+  border-radius: 8px;
+  background: var(--surface-subtle);
+  text-align: left;
 }
 /* A piece re-focused for editing after already being correct (rare —
    the finished word is normally the .stage-en-done span below): same look
@@ -296,15 +371,15 @@
   gap: 6px;
   margin-top: 10px;
 }
-/* Help lives on the speaker (owner, 2026-09-17): a quiet text button under
+/* Help lives on the speaker (owner, 2026-09-17): a quiet text button beside
    the flag/label — no lightbulb, no amber field. Using it puts the answer in
    the bubble and has the speaker say it; `Alt+H` in a field does the same. */
 /* It has to look pressable (owner, 2026-09-17): a small ghost button, not a
-   line of text. At the end of the speaker row below 1024; under the
-   flag/label in the speaker column above it. */
+   line of text. Immediately after the flag/label below 1024 (owner,
+   2026-09-18 — "closer to the person's head", not at the far right); under
+   the flag/label in the speaker column at 1024+. */
 .stage-hint-button {
   flex: none;
-  margin-left: auto;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -369,8 +444,15 @@
   justify-content: center;
   margin-top: 28px;
 }
+/* Direction ("The action", owner correction 2026-09-18): centred under the
+   stage with a sensible width, not stretched — this only renders at 1024+
+   (see .stage-continue above), where it's always well past the 640px
+   full-width cutoff, so no extra media query is needed here (compare
+   .lesson-controls .learner-button in practice-shell.css, which owns the
+   <640 full-width case for the footer's copy of this same button). */
 .stage-continue .learner-button {
-  min-width: 220px;
+  width: min(360px, 100%);
+  min-width: 280px;
   min-height: 56px;
   border-radius: 8px;
   font-size: var(--t-ui);
@@ -411,10 +493,12 @@
     align-items: flex-start;
     gap: 8px;
   }
-  /* Back under the flag/label, not pushed to the end of a row. */
-  .stage-hint-button {
-    margin-left: 0;
-    margin-top: 2px;
+  /* At 1024+ only the name changes (owner, 2026-09-18) — the button still
+     sits under the flag/label in the speaker column, not beside it. */
+  .speaker-chip.stage .speaker-chip-label-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
   }
   .stage-column {
     flex: 1 1 auto;

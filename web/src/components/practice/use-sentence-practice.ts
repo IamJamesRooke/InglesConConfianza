@@ -74,7 +74,7 @@ export function blankChars(languageBlock: LanguageBlock): number {
   return Math.max(3, expected.length);
 }
 
-/** The bubble text "Pista" shows on a capture piece: there is no answer to
+/** The bubble text "Recuérdame" shows on a capture piece: there is no answer to
  * reveal, so it is the authored hint, or a generic nudge. No audio — a clip
  * cannot say the learner's own word (docs/design/speech.md "Variables"). */
 function captureHintText(languageBlock: LanguageBlock): string {

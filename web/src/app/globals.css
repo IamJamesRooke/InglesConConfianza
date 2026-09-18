@@ -253,3 +253,73 @@
     animation: none;
   }
 }
+
+/* Kill the grey (owner, 2026-09-18: "that greyish background... I hate
+   it") — scoped to `.learner-theme` only (every learner surface: home,
+   header, lesson session — see the class list in the components listed
+   below), so admin's own reads of `--ink-muted`/`--border`/`--shadow-sm`
+   at :root are untouched. Contrast ratios computed with a small OKLCH ->
+   sRGB conversion script (WCAG relative-luminance formula), not eyeballed.
+   #503975 replaces #605a6c for --ink-muted: 9.60:1 on white (was 6.61:1),
+   7.98:1 on --surface-subtle (was 5.77:1) — both clear AA (and AAA) with
+   room to spare, and read as deep purple ink rather than grey. #c6b1f0
+   replaces #d4cde2 for --border/hairlines: chroma raised 0.03 -> 0.09 at
+   the same hue (300) so underlines and card hairlines read as visibly
+   lavender instead of near-grey; lightness held so it still reads as a
+   hairline, not a stroke (hairlines are decorative, not text, so no
+   contrast minimum applies). --shadow-sm's grey-black (hue 260) becomes a
+   purple tint (hue 300) to match --shadow-card, which was already
+   purple-tinted. */
+.learner-theme {
+  --ink-muted: oklch(0.4 0.1 300);
+  --border: oklch(0.8 0.09 300);
+  --input: oklch(0.65 0.1 300);
+  --shadow-sm:
+    0 1px 2px oklch(0.32 0.1 300 / 0.09), 0 1px 3px oklch(0.32 0.1 300 / 0.08);
+}
+
+/* Learner canvas — three switchable variants for the owner to pick from
+   screenshots (docs/design/learner-direction.md, "Colour"). TEMPORARY:
+   driven by a `data-canvas` attribute on `<html>` (default "glow", see
+   layout.tsx's CanvasVariantSwitch — delete both once the owner has
+   picked), never persisted, and scoped to `.learner-theme` so it can never
+   touch the admin canvas. */
+html[data-canvas="glow"] .learner-theme.lesson-session,
+html[data-canvas="glow"] .learner-theme.course-home,
+html[data-canvas="bare"] .learner-theme.lesson-session,
+html[data-canvas="bare"] .learner-theme.course-home {
+  --background: #ffffff;
+  background:
+    radial-gradient(
+      ellipse 1100px 760px at 50% 30%,
+      color-mix(in oklch, var(--brand-primary) 14%, transparent),
+      transparent 70%
+    ),
+    #ffffff;
+}
+/* "bare": pure white, no glow at all — the plainest of the three. */
+html[data-canvas="bare"] .learner-theme.lesson-session,
+html[data-canvas="bare"] .learner-theme.course-home {
+  background: #ffffff;
+}
+/* "bare": the sentence card itself disappears — the word and its slot float
+   directly on the canvas. Explanation slides keep their (very light) card,
+   unaffected. */
+html[data-canvas="bare"] .stage-card {
+  border: 0;
+  background: none;
+  box-shadow: none;
+}
+/* "lavender": a clearly visible lavender canvas, fading to white toward the
+   bottom, white card (unchanged). More saturated than --canvas-warm (which
+   stays the quiet default used elsewhere) so the three variants read as
+   genuinely different, not three shades of the same near-white. */
+html[data-canvas="lavender"] .learner-theme.lesson-session,
+html[data-canvas="lavender"] .learner-theme.course-home {
+  --background: oklch(0.93 0.05 300);
+  background: linear-gradient(
+    to bottom,
+    oklch(0.93 0.05 300),
+    #ffffff 640px
+  );
+}

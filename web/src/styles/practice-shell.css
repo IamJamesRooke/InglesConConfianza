@@ -223,9 +223,17 @@
 }
 /* Direction ("The action"): one primary button, 56px tall, 8px radius,
    --t-ui text at weight 600 — not the lesson-builder's own --radius-lg
-   scale (1rem+), and not the previous fixed 20px/700 size. */
+   scale (1rem+), and not the previous fixed 20px/700 size. Owner correction
+   2026-09-18: full width only below 640px (the phone thumb zone, see the
+   639px media block below); from 640px up it is centred under the stage at
+   a sensible width, never stretched edge to edge (the earlier `min-width:
+   220px` with no cap let it read as a stretched phone layout at ~920px in
+   a real browser, where the footer's own layout is still governed by the
+   760px breakpoint just below — the width rule now stands on its own,
+   independent of that breakpoint or of flex vs. block context). */
 .lesson-controls .learner-button {
-  min-width: 220px;
+  width: min(360px, 100%);
+  min-width: 280px;
   min-height: 56px;
   border-radius: 8px;
   font-size: var(--t-ui);
@@ -368,12 +376,15 @@
     padding: 14px 20px max(14px, env(safe-area-inset-bottom));
   }
   /* Direction ("The action"): phone gets the footer thumb zone — the one
-     primary button full width minus the 20px gutters, with a quiet back
-     icon pinned bottom-left instead of sharing the button's row. */
+     primary button centred (or full width below 640px, see the dedicated
+     639px block below), with a quiet back icon pinned bottom-left instead
+     of sharing the button's row. text-align centres the button here since
+     this container is block, not flex, at this width. */
   .lesson-controls-inner {
     position: relative;
     display: block;
     min-height: 56px;
+    text-align: center;
   }
   .lesson-controls .previous-step {
     left: 20px;
@@ -381,13 +392,18 @@
   .lesson-feedback {
     display: none;
   }
+  .lesson-position {
+    font-size: 11px;
+  }
+}
+/* Direction ("The action", owner correction 2026-09-18): full width only
+   below 640px — the phone thumb zone. From 640px up (including the 760px
+   block above) the button is centred at its own min/max width instead. */
+@media (max-width: 639px) {
   .lesson-controls .learner-button {
     display: flex;
     width: 100%;
     min-width: 0;
-  }
-  .lesson-position {
-    font-size: 11px;
   }
 }
 @media (max-width: 480px) {

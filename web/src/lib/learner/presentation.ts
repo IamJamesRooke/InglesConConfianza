@@ -114,3 +114,29 @@ export function explanationWraps(markdown: string): boolean {
   if (blocks.length > 1) return true;
   return (blocks[0]?.length ?? 0) > EXPLANATION_SINGLE_LINE_CHARS;
 }
+
+/** Roughly how many characters of a sentence-stage line fit on one rendered
+ * line at the stage card's measure, same reasoning as
+ * EXPLANATION_SINGLE_LINE_CHARS above — a plain rule on the authored text,
+ * not a DOM measurement, so the fit-vs-wrap decision is stable from first
+ * paint and never flickers or jumps as the learner fills in pieces (the
+ * decision is made from the FULL Spanish sentence and the FULL accepted
+ * English sentence, not the learner's in-progress answers, since a blank's
+ * width already tracks its answer's width — see blankChars). */
+const SENTENCE_SINGLE_LINE_CHARS = 42;
+
+/**
+ * Whether the sentence stage's two lines wrap — the alignment rule (docs/
+ * design/learner-direction.md, "Sentence slide"): a sentence that fits on
+ * one line at the current width gets a centred, fit-content card sharing
+ * the explanation card's centre axis; a sentence that wraps keeps the
+ * ordinary 720-wide, left-aligned card. Longest of the two lines decides,
+ * since both live in the same card.
+ */
+export function sentenceWraps(spanishText: string, englishText: string): boolean {
+  const longest = Math.max(
+    spanishText.trim().replace(/\s+/g, " ").length,
+    englishText.trim().replace(/\s+/g, " ").length,
+  );
+  return longest > SENTENCE_SINGLE_LINE_CHARS;
+}

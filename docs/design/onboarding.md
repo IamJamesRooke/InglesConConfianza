@@ -294,7 +294,7 @@ with progress and onboarding.
   then displays is the value plus the piece's `suffix`.
 - Replay: if the variable already exists the field opens prefilled and the
   learner only confirms it.
-- "Pista" on a capture piece puts the piece's own hint in the bubble, or
+- "Recuérdame" (renamed from "Pista", 2026-09-18) on a capture piece puts the piece's own hint in the bubble, or
   "Escribe tu respuesta." if it has none, and says nothing out loud.
 - `{key}` tokens are substituted at render/match time — never written back
   into lesson data — in explanation text, instruction/eyebrow text, sentence

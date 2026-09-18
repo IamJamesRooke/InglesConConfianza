@@ -466,7 +466,7 @@ test("the vocabulary table on the stage uses the two-actor composition, not a ce
   assert.match(html, /vocabulary-practice/);
 });
 
-test("help is the speaker's quiet Pista button — no lightbulb, no amber hint bar anywhere on the learner side", () => {
+test("help is the speaker's quiet Recuérdame button — no lightbulb, no amber hint bar anywhere on the learner side", () => {
   const css = readPracticeStyles();
   // The lightbulb toggles and the old hint field/diff are gone (owner,
   // 2026-09-17 — hints are spoken by the speaker and shown in its bubble).
@@ -478,7 +478,7 @@ test("help is the speaker's quiet Pista button — no lightbulb, no amber hint b
     '.stage-en-input[data-state="hint"]',
   ])
     assert.equal(css.includes(gone), false, `${gone} should be gone`);
-  // Owner, 2026-09-17: "Pista" has to look pressable — a small ghost button
+  // Owner, 2026-09-17: "Recuérdame" (then "Pista") has to look pressable — a small ghost button
   // (hairline border, ink text, 8px radius, 28px tall), not a line of text.
   const hintButtonBlock =
     css.match(/\.stage-hint-button\s*\{([^}]*)\}/)?.[1] ?? "";

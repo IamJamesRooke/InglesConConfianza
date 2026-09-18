@@ -4,6 +4,11 @@
 > This is the target the mockups and then the code follow. Purple palette, tokens only,
 > one typeface (Geist), phone first (390×844), desktop second (1280+). The owner
 > approves against mockups before anything is built.
+>
+> 2026-09-18 (sentence-stage beauty pass): the sentence slide's alignment, answer slot,
+> short-sentence sizing, "Recuérdame" placement (renamed from "Pista"), and colour are
+> revised below — see each section's own note. The learner canvas now has three
+> switchable variants (temporary, owner to pick from screenshots).
 
 ## The idea in one line
 
@@ -57,6 +62,30 @@ for the home grid.
 - No success glyph anywhere in practice — the colour settling and the speaker are
   the success signal. No other hue on a screen.
 - Text on white: ink. Secondary: `--ink-muted`. On purple: white / white 85%.
+- **Kill the grey** (owner, 2026-09-18: "that greyish background... I hate it").
+  `--ink-muted`, `--border`/`--input` and `--shadow-sm` are overridden inside
+  `.learner-theme` only (admin keeps the :root values, unchanged): `--ink-muted`
+  becomes a deep purple-ink, `oklch(0.4 0.1 300)` / `#503975` — 9.60:1 on white,
+  7.98:1 on `--surface-subtle` (both comfortably past AA); `--border` becomes a
+  visibly lavender hairline, `oklch(0.8 0.09 300)` / `#c6b1f0` (same hue, chroma
+  raised from 0.03 to 0.09 — hairlines aren't text, so no contrast minimum
+  applies, but they now read as tinted lavender rather than near-grey); the
+  small/hairline `--shadow-sm` moves from grey-black (hue 260) to a purple tint
+  (hue 300), matching `--shadow-card`, which was already purple-tinted. Ratios
+  computed with an OKLCH → sRGB conversion (WCAG relative-luminance formula),
+  not eyeballed.
+- **Canvas variants** (temporary, owner to pick from screenshots): the learner
+  canvas is one token set with three switchable looks, chosen by a `data-canvas`
+  attribute on `<html>` (`CanvasVariantSwitch`, `?canvas=` query param — default
+  `glow`). Delete the switch and the `[data-canvas]` rules in `globals.css` once
+  the owner has picked.
+  1. `glow` — pure white page; a wide, very soft radial lavender glow behind the
+     stage, fading to nothing; purple-tinted card shadow; lavender card hairline.
+  2. `bare` — pure white, no glow; the sentence card itself disappears (word and
+     slot float on the canvas); explanation slides keep their light card.
+  3. `lavender` — a clearly visible lavender canvas, fading to white toward the
+     bottom; white card, unchanged.
+  The learner home uses the same canvas variant as the lesson.
 
 ## HOME — "your next sentence"
 
@@ -101,14 +130,47 @@ and the one action.
      (`width: fit-content`, max 720, centred) at sentence size. More than one line:
      max 720, left-aligned, at `clamp(20px, 2vw, 26px)`. Marks are flag red / Union
      Jack blue and **both bold, same weight — no italics** (owner, 2026-09-17).
-   - **Sentence slide**: instruction (if any) as a muted body line above the card.
-     White card with two lines at sentence size: the Spanish sentence as prose (active
-     piece in flag red bold, done pieces ink, pending `--ink-muted`), and the English
-     sentence assembling beneath it. Line 1 is all flag red and bold — the active
-     piece carries a 2px red underline rather than a colour change, pieces still to
-     come sit at 60% of the same red, a `given` piece is plain ink. Line 2 is Union
-     Jack blue 600 as it fills in; an empty blank is a `--border` underline sized to
-     the word, and the active piece is an inline field in the flow, also blue.
+     Pronunciation respellings (`*jelóu*`) and any other `*…*` emphasis render
+     upright too (owner, 2026-09-18 — no italics anywhere on learner surfaces):
+     `--ink-muted`, weight 500, scoped to `.learner-theme em.italic` so the
+     Lesson Builder's own preview keeps showing it as ordinary emphasis for the
+     author.
+   - **Sentence slide** (revised 2026-09-18 — alignment rule mirrors the
+     explanation card's own): the sentence, as authored (Spanish text, English
+     accepted answers — never the learner's in-progress typing), decides fit vs
+     wrap the same deterministic, text-length way `explanationWraps` does
+     (`sentenceWraps`, `docs/…/presentation.ts`) — no DOM measurement, no
+     flicker on first paint, no jump as pieces fill in (a blank's width already
+     tracks its answer's width). **Fits one line**: the card is `fit-content`
+     (min 360px, or full width minus gutters on phones), centred on the same
+     axis as a one-line explanation card; the eyebrow, instruction and card
+     share that one centre axis, and below 1024 the speaker cluster's left
+     edge equals the card's own left edge (a single-track CSS grid sized to
+     the wider of the two, centred — no JS measurement). At 1024+ the
+     two-actor composition is unchanged. **Wraps**: the ordinary 720-wide,
+     left-aligned card, as before. A sentence of 1–2 pieces that fits one line
+     also steps up to `--t-hero` (Spanish 700, English 600–700, unchanged
+     weights); everything else stays `--t-sentence`. 16px between the Spanish
+     and English lines; card padding 32 phone / 48 desktop, equal on every
+     side. The instruction above the card drops one size (`--t-body` →
+     `--t-ui`), muted, 16px above the card, centred in one-line mode and
+     left-aligned when it wraps.
+
+     White card, two lines: the Spanish sentence as prose (active piece in
+     flag red bold, done pieces ink, pending `--ink-muted`), and the English
+     sentence assembling beneath it. Line 1 is all flag red and bold — the
+     active piece carries a 2px red underline rather than a colour change
+     (only once the sentence has more than one piece — a single-piece
+     sentence like "hola" has nothing left to point at), pieces still to come
+     sit at 60% of the same red, a `given` piece is plain ink. Line 2 is Union
+     Jack blue 600–700 as it fills in. **The answer slot** (revised
+     2026-09-18): a PENDING blank is a plain lavender hairline underline, no
+     fill — exactly one tinted thing on the stage says where to type. The
+     ACTIVE blank is a rounded 8px slot filled with `--surface-subtle`, a 2px
+     `--lesson-hl-en` bottom border and a blue caret, text left-aligned inside
+     it, width = the answer's width plus padding (min ~3ch); visible from
+     first paint (autofocus unchanged). COMPLETE fades the tint 150ms
+     ease-out to bold blue text, as before. Capture pieces use the same slot.
      Nothing else in the card — no hint icon (see **Help** below).
    - **Speaker**: the two-actor composition starts at **1024px** (owner, 2026-09-17 —
      it briefly started at 768, where a portrait beside a box read as a portrait
@@ -123,21 +185,31 @@ and the one action.
      marked by an underline under its Spanish prompt, hairline between rows. Every row's field is the same width, focused or not, and
      the stage's bottom padding clears the footer so the last row is never hidden
      behind it.
-   - **Help**: one small ghost button, "Pista" — hairline `--border`, ink text at
-     `--t-eyebrow` (not uppercase), 8px radius, 28px tall, `--surface-subtle` on
-     hover. Under the speaker's flag/label in the column at 1024+, at the end of the
-     speaker row below that. No lightbulb anywhere, no amber hint bar (owner,
-     2026-09-17). It puts the answer
+   - **Help**: one small ghost button, "Recuérdame" (renamed from "Pista",
+     2026-09-18) — hairline `--border`, ink text at `--t-eyebrow` (not
+     uppercase), 8px radius, 28px tall, `--surface-subtle` on hover. Below
+     1024, it sits immediately after the flag/label on their shared line, not
+     at the far right of the row (owner, 2026-09-18: "closer to the person's
+     head"); the bubble opens directly under that line, tail towards the
+     portrait. At 1024+ only the name changed — the button still stacks under
+     the flag/label in the speaker column. No lightbulb anywhere, no amber
+     hint bar (owner, 2026-09-17). It puts the answer
      for the active piece (or focused table row) in the speaker's bubble and has the
      speaker say it for ~4s, then the bubble goes back to what it was showing. The
      field is never filled in; no penalty, no limit; `Alt+H` does the same. With no
      speaker on the device, the bubble shows the text without audio.
 3. **The action**: a single primary button, 56px tall, purple, white text, 8px
-   radius: "Continuar →" / "Vamos a practicar →" / "Terminar lección →". Phone: in
-   the footer thumb zone, full width minus gutters, only when there is something to
-   do (never an empty bar; sentence slides show it once complete). Desktop: centred
-   under the stage. Back is a quiet icon 24px from the left of the footer, vertically
-   centred with the primary button, only when going back is possible.
+   radius: "Continuar →" / "Vamos a practicar →" / "Terminar lección →". Full width
+   only below 640px (the phone thumb zone); from 640px up it is centred under the
+   stage at a sensible width (min 280, max 360) — never stretched edge to edge
+   (owner, 2026-09-18: it read as a stretched phone layout at ~920px; the width
+   rule now stands on its own, independent of the footer's other breakpoints).
+   Shown only when there is something to do (never an empty bar; sentence slides
+   show it once complete). Back is a quiet icon 24px from the left of the footer,
+   vertically centred with the primary button, only when going back is possible.
+   Every card (explanation, explanation with image, sentence) is capped at 720 and
+   centred at every width — nothing stretches to the full column between 640 and
+   1024.
 
 Success = the word settling into place (150 ms ease-out from tint field to blue
 text) and the speaker saying it. No check glyphs anywhere — not beside a vocabulary

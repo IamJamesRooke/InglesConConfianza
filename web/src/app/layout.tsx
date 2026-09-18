@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist } from "next/font/google";
+import { CanvasVariantSwitch } from "@/components/learner/canvas-variant-switch";
 import { SiteHeader } from "@/components/site-header";
 import "./globals.css";
 // Imported here rather than @import'd from globals.css so the dev server tracks
@@ -45,8 +46,18 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="es" className={`${geist.variable} h-full antialiased`}>
+    <html
+      lang="es"
+      // TEMPORARY (docs/design/learner-direction.md "Colour", owner to
+      // pick, 2026-09-18): default canvas variant; CanvasVariantSwitch
+      // overrides it from `?canvas=bare|lavender` for comparison
+      // screenshots. Delete this attribute and CanvasVariantSwitch once
+      // the owner has picked.
+      data-canvas="glow"
+      className={`${geist.variable} h-full antialiased`}
+    >
       <body className="flex min-h-full flex-col">
+        <CanvasVariantSwitch />
         <SiteHeader />
         {children}
       </body>

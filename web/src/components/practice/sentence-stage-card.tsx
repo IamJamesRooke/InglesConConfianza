@@ -11,6 +11,8 @@ import {
 } from "@/components/practice/use-sentence-practice";
 import type { SentenceBlock } from "@/lib/lesson-builder/types";
 import type { Speaker } from "@/lib/learner/speech";
+import { pieceEnglishSource } from "@/lib/lesson-builder/utils";
+import { sentenceWraps } from "@/lib/learner/presentation";
 import { useVariableText } from "@/lib/learner/use-learner-variables";
 
 /**
@@ -75,7 +77,7 @@ export function SentenceStageCard({
   });
   // The piece the learner is on: whatever is focused, else the first one
   // still unanswered. Drives line 1's highlight and which answer the
-  // speaker's "Pista" says out loud.
+  // speaker's "Recuérdame" says out loud.
   // The instruction and eyebrow are authored text like any other, so they
   // take `{key}` tokens too; the spoken clip below keeps the AUTHORED text,
   // which instructionClipUrl strips tokens from itself.
@@ -85,6 +87,21 @@ export function SentenceStageCard({
     focusedBlockIndex !== null ? focusedBlockIndex : firstUnanswered;
   const hintedBlock =
     hintedBlockIndex === null ? null : testableBlocks[hintedBlockIndex];
+  // Alignment rule (docs/design/learner-direction.md, "Sentence slide"): the
+  // fit-vs-wrap and hero-size decisions are made from the FULL sentence
+  // (Spanish as authored, English as its accepted answers), never the
+  // learner's in-progress typing — so nothing about the card's width or
+  // font-size ever shifts as pieces are answered.
+  const fullSpanish = languageBlocks.map((block) => block.spanish.trim()).join(" ");
+  const fullEnglish = languageBlocks.map(pieceEnglishSource).join(" ");
+  const wraps = sentenceWraps(fullSpanish, fullEnglish);
+  // Direction, "Size and spacing": 1–2 pieces that fit one line get the
+  // hero size; everything else (including a wrapping sentence) stays at
+  // --t-sentence.
+  const isHero = !wraps && languageBlocks.length <= 2;
+  const hintButtonNode = (
+    <HintButton onShowHint={() => showHelp(activeIndex)} disabled={activeIndex < 0} />
+  );
 
   if (languageBlocks.length === 0)
     return (
@@ -95,20 +112,18 @@ export function SentenceStageCard({
 
   return (
     <div className="sentence-stage learner-enter">
-      <div className="stage-composition">
+      <div className="stage-composition" data-wraps={wraps ? "true" : "false"}>
         <div className="stage-speaker">
           <SpeakerChip
             key={sentence.id}
             speaker={speaker}
             speakingText={speakingText}
             variant="stage"
+            action={hintButtonNode}
           />
-          <HintButton
-            onShowHint={() => showHelp(activeIndex)}
-            disabled={activeIndex < 0}
-          />
+          {!speaker && hintButtonNode}
         </div>
-        <div className="stage-column">
+        <div className="stage-column" data-wraps={wraps ? "true" : "false"}>
           {sentence.promptLabel.trim() && (
             <div className="stage-eyebrow">
               <PracticeMarkdown
@@ -126,8 +141,16 @@ export function SentenceStageCard({
               <InstructionAudio text={sentence.promptText} />
             </div>
           )}
-          <div className="stage-card">
-            <p className="stage-line stage-line-es" lang="es">
+          <div
+            className="stage-card"
+            data-wraps={wraps ? "true" : "false"}
+            data-hero={isHero ? "true" : "false"}
+          >
+            <p
+              className="stage-line stage-line-es"
+              lang="es"
+              data-single-piece={languageBlocks.length <= 1 ? "true" : "false"}
+            >
               {languageBlocks.map((languageBlock, index) => {
                 const testableIndex = testableIndexById.get(languageBlock.id);
                 const state =

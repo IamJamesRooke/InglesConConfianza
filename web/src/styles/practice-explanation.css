@@ -113,6 +113,18 @@
 .lesson-explanation strong {
   font-weight: 700;
 }
+/* Pronunciation respellings (`*jelóu*`) and any other `*…*` emphasis render
+ * upright on learner surfaces, never italic (direction: "No italics, no
+ * serif" — owner, 2026-09-18). Scoped to `.learner-theme` only: the same
+ * `PracticeMarkdown` renderer also backs the Lesson Builder's own preview
+ * (outside `.learner-theme`), which keeps showing it as ordinary italic
+ * emphasis for the author. Tailwind's `.italic` utility has one class of
+ * specificity; this two-class-plus-tag selector wins over it. */
+.learner-theme em.italic {
+  font-style: normal;
+  color: var(--ink-muted);
+  font-weight: 500;
+}
 /* Single-line explanations read fine centered; once a paragraph wraps to a
    second line, ragged centered edges are harder to read, so it switches to
    left-aligned (owner spec: "left-aligned when it wraps beyond one line").
