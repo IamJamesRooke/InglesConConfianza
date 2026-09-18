@@ -103,15 +103,19 @@ test("XML-sensitive characters in a Spanish mark are escaped", () => {
 // screen ever treats it differently (docs/design/speech.md "Audio-only
 // marks").
 
+// A spelled token in plain (unmarked) text is spelled by the NARRATOR, in
+// Spanish letter names — no <voice> switch. Google reads
+// <say-as interpret-as="characters"> in the enclosing voice's language, so
+// inside the narrator's Spanish voice it comes out "te-hache-i-ene-ge".
 function spelled(word: string): string {
   return (
-    '<break time="150ms"/><voice name="en-US-Neural2-D">' +
+    '<break time="150ms"/>' +
     `<say-as interpret-as="characters">${word}</say-as>` +
-    '</voice><break time="150ms"/>'
+    '<break time="150ms"/>'
   );
 }
 
-test("the owner's audio-only example: spoken in full, with T-H-I-N-G spelled out", () => {
+test("the owner's audio-only example: spoken in full, with T-H-I-N-G spelled by the narrator", () => {
   assert.equal(
     explanationToSsml("[[es:cosa]] es [[en:thing]][[audio:, T-H-I-N-G, [[en:thing]]]]"),
     NARRATOR_OPEN +
@@ -123,6 +127,17 @@ test("the owner's audio-only example: spoken in full, with T-H-I-N-G spelled out
       ", " +
       englishVoice("thing") +
       NARRATOR_CLOSE,
+  );
+  // The spelled-out part must not switch into the English voice.
+  assert.doesNotMatch(explanationToSsml("[[audio:T-H-I-N-G]]"), /en-US/u);
+});
+
+test("a spelled token inside an [[en:…]] mark is spelled by the English voice", () => {
+  assert.equal(
+    explanationToSsml("[[en:T-H-I-N-G]]"),
+    `${NARRATOR_OPEN}${englishVoice(
+      '<break time="150ms"/><say-as interpret-as="characters">thing</say-as><break time="150ms"/>',
+    )}${NARRATOR_CLOSE}`,
   );
 });
 

@@ -308,14 +308,18 @@ T-H-I-N-G, thing."
   the rules visible text is — narrator Spanish, an `[[en:]]` inside it still
   switching to the USA voice with the taught-word emphasis. Additionally, a
   whole token matching `^[A-Za-z](-[A-Za-z])+$` (`T-H-I-N-G`) is spelled
-  letter by letter in the USA voice as
-  `<say-as interpret-as="characters">thing</say-as>`, wrapped in
-  `<voice name="en-US-Neural2-D">` with `<break time="150ms"/>` before and
-  after. Ordinary hyphenated words ("e-mail") are untouched. The sample above
+  letter by letter as `<say-as interpret-as="characters">thing</say-as>`,
+  with `<break time="150ms"/>` before and after — but with **no `<voice>`
+  switch of its own**: Google reads `<say-as interpret-as="characters">` in
+  whichever voice already encloses it: plain (unmarked) text stays inside
+  the narrator's voice and is spelled by the narrator in Spanish letter
+  names (`thing` → "te-hache-i-ene-ge"), while the same markup inside an
+  `[[en:…]]` mark is spelled by the English voice in English letter names.
+  Ordinary hyphenated words ("e-mail") are untouched. The sample above
   produces:
 
 ```
-<speak><voice name="es-US-Neural2-B"><prosody rate="88%"><break time="150ms"/><emphasis level="moderate"><prosody rate="82%">cosa</prosody></emphasis><break time="350ms"/> es <voice name="en-US-Neural2-D"><break time="300ms"/><emphasis level="moderate"><prosody rate="85%">thing</prosody></emphasis><break time="300ms"/></voice>, <break time="150ms"/><voice name="en-US-Neural2-D"><say-as interpret-as="characters">thing</say-as></voice><break time="150ms"/>, <voice name="en-US-Neural2-D"><break time="300ms"/><emphasis level="moderate"><prosody rate="85%">thing</prosody></emphasis><break time="300ms"/></voice></prosody></voice></speak>
+<speak><voice name="es-US-Neural2-B"><prosody rate="88%"><break time="150ms"/><emphasis level="moderate"><prosody rate="82%">cosa</prosody></emphasis><break time="350ms"/> es <voice name="en-US-Neural2-D"><break time="300ms"/><emphasis level="moderate"><prosody rate="85%">thing</prosody></emphasis><break time="300ms"/></voice>, <break time="150ms"/><say-as interpret-as="characters">thing</say-as><break time="150ms"/>, <voice name="en-US-Neural2-D"><break time="300ms"/><emphasis level="moderate"><prosody rate="85%">thing</prosody></emphasis><break time="300ms"/></voice></prosody></voice></speak>
 ```
 
 - **Script mode** needs no change: `script.ts` carries explanation paragraphs

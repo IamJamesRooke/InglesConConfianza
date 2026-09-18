@@ -32,7 +32,12 @@
 // but the learner never SEES. It is spoken by exactly the rules above (an
 // `[[en:]]` inside it still switches to the USA voice with the taught-word
 // emphasis); the learner-side renderer is what drops it. Inside or outside
-// one, a token like `T-H-I-N-G` is spelled letter by letter in the USA voice.
+// one, a token like `T-H-I-N-G` is spelled letter by letter — by the
+// NARRATOR, in Spanish letter names, when it's in plain (unmarked) text; by
+// the English voice, in English letter names, when it's inside an
+// `[[en:…]]` mark. Both use the same `<say-as interpret-as="characters">`
+// with no dedicated voice switch of its own — Google reads it in whichever
+// voice already encloses it.
 //
 // Bold/italic carry no spoken meaning and are ignored. This is a pure string
 // builder: no network call, no file I/O — scripts/generate-audio.ts sends
@@ -61,17 +66,21 @@ function escapeXml(text: string): string {
 }
 
 // A spelled-out token: `T-H-I-N-G` — single letters joined by hyphens, the
-// notation the owner uses inside an audio-only run to have the narrator
-// spell an English word. Read letter by letter in the USA voice
+// notation the owner uses to have a word spelled letter by letter
 // (<say-as interpret-as="characters">), with a beat either side so the
 // spelling stands apart from the narration around it. The lookbehind/ahead
 // keep it to whole tokens, so ordinary hyphenated words ("e-mail") are
 // untouched. See docs/design/speech.md "Audio-only marks".
 const SPELLED_TOKEN = /(?<![A-Za-z-])[A-Za-z](?:-[A-Za-z])+(?![A-Za-z-])/gu;
 
-/** Plain, unmarked narrator text — escaped, with any spelled-out token
- * lifted into the English voice as a `<say-as>` spelling. */
-function plainTextSsml(text: string): string {
+/** Escapes `text`, lifting any spelled-out token into a `<say-as>` spelling
+ * with a beat either side — WITHOUT switching voice. `<say-as
+ * interpret-as="characters">` is read in whichever `<voice>` currently
+ * encloses it, so the same markup spells in Spanish letter names from
+ * inside the narrator's voice ("te-hache-i-ene-ge" for `thing`) and in
+ * English letter names from inside the English voice (`englishVoiceSsml`).
+ * Used for plain narrator text and for the body of an `[[en:…]]` mark. */
+function withSpelledTokens(text: string): string {
   let out = "";
   let last = 0;
   for (const match of text.matchAll(SPELLED_TOKEN)) {
@@ -80,9 +89,7 @@ function plainTextSsml(text: string): string {
     const word = match[0].split("-").join("").toLowerCase();
     out +=
       '<break time="150ms"/>' +
-      `<voice name="${ENGLISH_VOICE}">` +
       `<say-as interpret-as="characters">${escapeXml(word)}</say-as>` +
-      "</voice>" +
       '<break time="150ms"/>';
     last = index + match[0].length;
   }
@@ -149,7 +156,7 @@ function inlineToSsml(nodes: PMInline[]): string {
       const content =
         lang.attrs.bridge !== undefined
           ? bridgeSsml(node.text, lang.attrs.bridge)
-          : escapeXml(node.text);
+          : withSpelledTokens(node.text);
       out += englishVoiceSsml(content);
       continue;
     }
@@ -163,7 +170,7 @@ function inlineToSsml(nodes: PMInline[]): string {
     // Text inside an audio-only mark lands here too — it is spoken exactly
     // like visible text, it just never reaches the learner's screen (the
     // `audio` mark carries no spoken meaning of its own, only a visual one).
-    out += plainTextSsml(node.text);
+    out += withSpelledTokens(node.text);
   }
   return out;
 }
