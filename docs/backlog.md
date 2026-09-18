@@ -69,6 +69,8 @@ the owner's say-so.
 - [ ] Audio generation from the builder (Listen generates if missing; module "Generate audio"); manifest fetched fresh (was force-cache → new clips invisible)
 - [ ] Marks in small caps (owner chose B 2026-09-17): Geist `font-variant-caps: small-caps`, weight 600 (not 700), +0.05em tracking, on explanation marks, the sentence stage's Spanish line and assembled English, the vocabulary table, and the builder document — screenshot before commit
 - [ ] Spelled tokens as keycaps (owner 2026-09-17): a visible `T-H-I-N-G` renders each letter as a keycap (learner renderer + a builder editor decoration), reusing the HUD keycap style; no new font
+- [ ] **Matcher bug (found 2026-09-18, blocks the pre-alpha on phones):** `normalizeAnswer` rejects the curly apostrophe (U+2019) that iOS/Android keyboards insert, so "I’m" never matches "I'm". Fold ’ ‘ ʼ ´ ` to ' (and curly double quotes) before comparing; unit tests. Queued behind the onboarding build. **Onboarding lesson 3 must not go live before this.**
+- [ ] Open product question (from `product-brief.md`, now concrete): a missing FINAL full stop or a comma is rejected silently (verified 2026-09-18: "hello" ≠ "Hello."). Keep strict and teach it (current, what onboarding does), or forgive terminal punctuation? Owner decision.
 - [ ] Onboarding (below)
 - [x] Admin guard (env secret on `/admin` + `/api/admin`), deploy shape: static learner site
       with lessons + audio bundled + one feedback function on Vercel; admin local only;
@@ -184,6 +186,8 @@ This scaffold is demo content, not a claim that Module 1 has passed learner vali
 - Expanding beyond Spanish-speaking adults learning English before the first learning experience has evidence behind it.
 
 ## Curriculum gaps noticed while authoring (batch into one curation pass)
+
+- 2026-09-18 — no row for **hola → hello** and none for **[el] nombre → name**. Found while drafting the onboarding (`docs/design/onboarding-content.md`), which carries both as unlinked Covers labels until they exist. Greetings may belong in the social-expressions vocabulary band rather than Level 1 — the owner's call.
 
 - 2026-09-15 — no bare concept for **con / with** (only phrasal entries: "trabajar con [alguien]", "traer [algo] consigo"…). Owner hit it tagging "I want to do something with you."
 - 2026-09-16 — no double object pronoun rows (**me lo / te lo / se lo / nos lo → it to me / you / him / us**). Owner hit it authoring Confianza I. Routed to the infinitive-normalization curation session.
