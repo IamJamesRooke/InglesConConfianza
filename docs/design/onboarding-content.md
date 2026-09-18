@@ -67,9 +67,9 @@ Llevo más de 14 años haciendo una sola cosa: llevar a personas desde cero hast
 En una hora vas a decir [[en:I want you to come here]].
 Muchos, después de años de clases, todavía no lo dicen bien.[[audio: Lo traducen palabra por palabra del español, y suena raro.]]
 
-Si no recuerdas una palabra, presiona **Pista**. Aquí nadie pierde puntos.
+Si no recuerdas una palabra, presiona **Recuérdame**. Aquí nadie pierde puntos.
 
-? Prueba el botón Pista, solo para verlo.
+? Prueba el botón Recuérdame, solo para verlo.
 > hola / hello | hi
 
 Una frase empieza con mayúscula y termina con punto.
