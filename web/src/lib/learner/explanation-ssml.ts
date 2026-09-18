@@ -28,6 +28,12 @@
 //     pause + syllable-chunk rendering inside that same emphasis/prosody
 //     wrapping.
 //   - Plain (unmarked) text between them is read at the narrator's 88%.
+// Owner addition 2026-09-17: an `[[audio:…]]` run is text the narrator SAYS
+// but the learner never SEES. It is spoken by exactly the rules above (an
+// `[[en:]]` inside it still switches to the USA voice with the taught-word
+// emphasis); the learner-side renderer is what drops it. Inside or outside
+// one, a token like `T-H-I-N-G` is spelled letter by letter in the USA voice.
+//
 // Bold/italic carry no spoken meaning and are ignored. This is a pure string
 // builder: no network call, no file I/O — scripts/generate-audio.ts sends
 // the result to Google TTS, src/lib/learner/speech.ts resolves the clip URL.
@@ -52,6 +58,35 @@ function escapeXml(text: string): string {
     .replace(/>/gu, "&gt;")
     .replace(/"/gu, "&quot;")
     .replace(/'/gu, "&apos;");
+}
+
+// A spelled-out token: `T-H-I-N-G` — single letters joined by hyphens, the
+// notation the owner uses inside an audio-only run to have the narrator
+// spell an English word. Read letter by letter in the USA voice
+// (<say-as interpret-as="characters">), with a beat either side so the
+// spelling stands apart from the narration around it. The lookbehind/ahead
+// keep it to whole tokens, so ordinary hyphenated words ("e-mail") are
+// untouched. See docs/design/speech.md "Audio-only marks".
+const SPELLED_TOKEN = /(?<![A-Za-z-])[A-Za-z](?:-[A-Za-z])+(?![A-Za-z-])/gu;
+
+/** Plain, unmarked narrator text — escaped, with any spelled-out token
+ * lifted into the English voice as a `<say-as>` spelling. */
+function plainTextSsml(text: string): string {
+  let out = "";
+  let last = 0;
+  for (const match of text.matchAll(SPELLED_TOKEN)) {
+    const index = match.index ?? 0;
+    out += escapeXml(text.slice(last, index));
+    const word = match[0].split("-").join("").toLowerCase();
+    out +=
+      '<break time="150ms"/>' +
+      `<voice name="${ENGLISH_VOICE}">` +
+      `<say-as interpret-as="characters">${escapeXml(word)}</say-as>` +
+      "</voice>" +
+      '<break time="150ms"/>';
+    last = index + match[0].length;
+  }
+  return out + escapeXml(text.slice(last));
 }
 
 function langMark(marks: PMMark[] | undefined): Extract<PMMark, { type: "lang" }> | null {
@@ -125,7 +160,10 @@ function inlineToSsml(nodes: PMInline[]): string {
       continue;
     }
     // Plain, unmarked text is read by the narrator voice at its base rate.
-    out += escapeXml(node.text);
+    // Text inside an audio-only mark lands here too — it is spoken exactly
+    // like visible text, it just never reaches the learner's screen (the
+    // `audio` mark carries no spoken meaning of its own, only a visual one).
+    out += plainTextSsml(node.text);
   }
   return out;
 }

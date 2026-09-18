@@ -3,6 +3,7 @@
 import {
   getExplanationEditor,
   setExplanationLanguage,
+  toggleAudioOnly,
   toggleExplanationMark,
 } from "@/lib/lesson-builder/explanation-commands";
 import type { Command } from "./shared";
@@ -25,5 +26,17 @@ export function markCommand(mark: "bold" | "italic"): Command {
     const editor = getExplanationEditor(ctx.selection.blockId);
     if (!editor) return false;
     return toggleExplanationMark(editor, mark);
+  };
+}
+
+// Ctrl+Alt+A inside an explanation: mark the selection (or the word around
+// the caret) as audio-only — spoken by the narrator, never shown to the
+// learner. See docs/design/speech.md "Audio-only marks".
+export function audioOnlyCommand(): Command {
+  return (ctx) => {
+    if (ctx.selection.kind !== "field" || ctx.selection.field !== "explanation") return false;
+    const editor = getExplanationEditor(ctx.selection.blockId);
+    if (!editor) return false;
+    return toggleAudioOnly(editor);
   };
 }

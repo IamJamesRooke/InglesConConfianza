@@ -28,6 +28,27 @@ declare module "@tiptap/core" {
   }
 }
 
+// Audio-only text (owner notation, 2026-09-17): the narrator says it, the
+// learner never sees it — `[[audio:, T-H-I-N-G, [[en:thing]]]]`. Modelled as
+// a mark rather than a node because it behaves exactly like bold/italic in
+// the editor (it wraps a run, and a `lang` mark can sit inside it), and
+// because that is what explanation-markdown.ts already round-trips. Rendered
+// as `<span data-audio>` so the builder stylesheet can dim it and the
+// learner renderer (which strips it from the markdown before rendering at
+// all) never has to know about it.
+const AudioOnly = Mark.create({
+  name: "audio",
+  // Like `lang`, not inclusive: carrying on typing after a spoken aside
+  // must not silently extend it.
+  inclusive: false,
+  parseHTML() {
+    return [{ tag: "span[data-audio]" }];
+  },
+  renderHTML({ HTMLAttributes }) {
+    return ["span", mergeAttributes(HTMLAttributes, { "data-audio": "" }), 0];
+  },
+});
+
 // An `en` mark's optional pronunciation bridge (`different|DIFF-rent`) — see
 // docs/design/speech.md "Explanation voice track" and
 // explanation-markdown.ts. Stored as `data-bridge` so it survives the
@@ -118,5 +139,6 @@ export const baseExplanationExtensions = [
   Bold,
   Italic,
   Lang,
+  AudioOnly,
   ExplanationHistory,
 ];

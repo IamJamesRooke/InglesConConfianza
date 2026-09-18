@@ -37,9 +37,15 @@ test("the explanation scope groups Ctrl+Alt chords together, with Escape as its 
 
   const [ctrlAlt, solo] = groups;
   assert.deepEqual(ctrlAlt.modifiers, ["Ctrl", "Alt"]);
+  // S/E/N/A are the explanation scope's four marking chords (A = audio only,
+  // added 2026-09-17 with the `[[audio:…]]` notation). The bar caps at
+  // PRIMARY_COUNT chips, so the fourth marking chord pushes the universal
+  // Ctrl+Alt+Enter "next slide" out of *this* scope's legend — it is still
+  // in the keymap, still in the help dialog, and still shown in every other
+  // scope's bar.
   assert.deepEqual(
     ctrlAlt.pairs.map((pair) => pair.key),
-    ["S", "E", "N", "Enter"],
+    ["S", "E", "N", "A"],
   );
 
   assert.deepEqual(solo.modifiers, []);

@@ -33,6 +33,7 @@ export const HUD_LABELS: Partial<Record<Chord, string>> = {
   "Ctrl+Alt+S": "Spanish",
   "Ctrl+Alt+E": "English",
   "Ctrl+Alt+N": "normal",
+  "Ctrl+Alt+A": "audio only",
   "Ctrl+B": "bold",
   "Ctrl+I": "italic",
   "Alt+ArrowDown": "hint",
@@ -54,7 +55,7 @@ export const HUD_LABELS: Partial<Record<Chord, string>> = {
 // nothing here can hide a command the keymap actually has.
 const SCOPE_PRIORITY: Partial<Record<Scope, Chord[]>> = {
   title: ["Enter", "Ctrl+Alt+Enter", "Ctrl+Alt+ArrowUp", "Ctrl+Alt+ArrowDown", "Ctrl+Alt+D"],
-  explanation: ["Ctrl+Alt+S", "Ctrl+Alt+E", "Ctrl+Alt+N", "Escape", "Ctrl+Alt+Enter"],
+  explanation: ["Ctrl+Alt+S", "Ctrl+Alt+E", "Ctrl+Alt+N", "Ctrl+Alt+A", "Escape", "Ctrl+Alt+Enter"],
   instruction: ["Escape", "Ctrl+Alt+Enter"],
   spanish: ["Tab", "Alt+ArrowDown", "Escape", "Ctrl+Alt+Enter", "Ctrl+Alt+Backspace"],
   english: ["Tab", "Shift+Tab", "Alt+ArrowDown", "Escape", "Ctrl+Alt+Backspace"],

@@ -1,6 +1,7 @@
 "use client";
 import { Info } from "lucide-react";
 import type { CSSProperties } from "react";
+import { InstructionAudio } from "@/components/practice/instruction-audio";
 import { PracticeMarkdown } from "@/components/practice/practice-markdown";
 import { HintButton, SpeakerChip } from "@/components/practice/speaker-chip";
 import {
@@ -80,6 +81,7 @@ export function SentencePracticeCard({
           <div className="sentence-prompt">
             <PracticeMarkdown markdown={sentence.promptText} variant="prompt" />
           </div>
+          <InstructionAudio text={sentence.promptText ?? ""} />
         </div>
       )}
       {languageBlocks.length > 0 ? (

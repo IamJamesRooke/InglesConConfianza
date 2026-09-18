@@ -5,6 +5,7 @@ import { isEnglish, planEsEnMarks } from "../../src/lib/lesson-builder/explanati
 import {
   parseExplanation,
   serializeExplanationDoc,
+  stripAudioOnly,
   type PMDoc,
   type PMInline,
   type PMMark,
@@ -35,13 +36,19 @@ function plainRun(random: () => number): string {
 
 function markedSpan(random: () => number): string {
   const inner = plainRun(random);
-  switch (Math.floor(random() * 4)) {
+  switch (Math.floor(random() * 5)) {
     case 0:
       return `**${inner}**`;
     case 1:
       return `*${inner}*`;
     case 2:
       return `[[es:${inner}]]`;
+    case 3:
+      // An audio-only run, sometimes carrying a nested language mark — the
+      // shape the owner's notation actually produces.
+      return random() < 0.5
+        ? `[[audio:${inner}]]`
+        : `[[audio:${inner} [[en:${plainRun(random)}]]]]`;
     default:
       return `[[en:${inner}]]`;
   }
@@ -71,11 +78,12 @@ test("property: serialize(parse(markdown)) === markdown for 500 generated docume
 
 function generateDoc(random: () => number): PMDoc {
   const marksFor = (): PMMark[] | undefined => {
-    const roll = Math.floor(random() * 5);
+    const roll = Math.floor(random() * 6);
     if (roll === 0) return [{ type: "bold" }];
     if (roll === 1) return [{ type: "italic" }];
     if (roll === 2) return [{ type: "lang", attrs: { language: "es" } }];
     if (roll === 3) return [{ type: "lang", attrs: { language: "en" } }];
+    if (roll === 4) return [{ type: "audio" }];
     return undefined;
   };
   const paragraphs = 1 + Math.floor(random() * 3);
@@ -174,6 +182,46 @@ test("an unterminated bridge does not throw", () => {
   for (const markdown of ["[[en:x|Y", "[[en:x|", "[[en:|]]"]) {
     assert.doesNotThrow(() => serializeExplanationDoc(parseExplanation(markdown)));
   }
+});
+
+// ---- audio-only marks ---------------------------------------------------
+// `[[audio:…]]` is text the narrator SAYS and the learner never SEES (owner
+// notation 2026-09-17, docs/design/speech.md "Audio-only marks").
+
+test("the owner's audio-only example round-trips byte-identically", () => {
+  const markdown = "[[es:cosa]] es [[en:thing]][[audio:, T-H-I-N-G, [[en:thing]]]]";
+  const doc = parseExplanation(markdown);
+  const spelled = doc.content[0].content?.find(
+    (node) => node.type === "text" && node.text.includes("T-H-I-N-G"),
+  ) as { marks?: PMMark[] } | undefined;
+  assert.deepEqual(spelled?.marks, [{ type: "audio" }]);
+  // The nested English mark keeps BOTH marks: audio outside, lang inside.
+  const nested = doc.content[0].content?.filter(
+    (node) => node.type === "text" && node.text === "thing",
+  ) as Array<{ marks?: PMMark[] }>;
+  assert.deepEqual(nested[1]?.marks, [{ type: "audio" }, { type: "lang", attrs: { language: "en" } }]);
+  assert.equal(serializeExplanationDoc(doc), markdown);
+});
+
+test("an audio mark can wrap bold and a Spanish mark, and round-trips", () => {
+  const markdown = "uno [[audio:**dos** [[es:tres]]]] cuatro";
+  assert.equal(serializeExplanationDoc(parseExplanation(markdown)), markdown);
+});
+
+test("an unterminated [[audio: does not throw", () => {
+  for (const markdown of ["[[audio:", "[[audio:x", "[[audio:[[en:y"]) {
+    assert.doesNotThrow(() => serializeExplanationDoc(parseExplanation(markdown)));
+  }
+});
+
+test("stripAudioOnly removes the run entirely, nested language marks included", () => {
+  assert.equal(
+    stripAudioOnly("[[es:cosa]] es [[en:thing]][[audio:, T-H-I-N-G, [[en:thing]]]]"),
+    "[[es:cosa]] es [[en:thing]]",
+  );
+  assert.equal(stripAudioOnly("[[audio:todo]]"), "");
+  // Markdown with no audio run at all is returned unchanged.
+  assert.equal(stripAudioOnly("[[es:hoy]] es [[en:today]]"), "[[es:hoy]] es [[en:today]]");
 });
 
 // ---- legacy inputs the previous editor accepted -------------------------

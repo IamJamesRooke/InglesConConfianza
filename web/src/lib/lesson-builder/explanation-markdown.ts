@@ -7,6 +7,12 @@
 //     — a learner-facing respelling spoken by the explanation voice track (see
 //     docs/design/speech.md "Explanation voice track"); the `|bridge` suffix is
 //     data on the mark, not visible text
+//   - [[audio:…]] audio-only marks: text the narrator SAYS but the learner
+//     never SEES (owner notation, 2026-09-17). Like bold/italic it can wrap
+//     runs that contain `es`/`en` marks, so
+//     `[[audio:, T-H-I-N-G, [[en:thing]]]]` is one audio run carrying a
+//     nested English mark. `stripAudioOnly` below is what the learner
+//     renderer uses to drop them.
 //   - hard line breaks: a lone "\n" inside a paragraph
 //
 // Ported from the Phase 2 Tiptap spike, where it was property-tested (2000+
@@ -23,6 +29,7 @@
 export type PMMark =
   | { type: "bold" }
   | { type: "italic" }
+  | { type: "audio" }
   | { type: "lang"; attrs: { language: "es" | "en"; bridge?: string } };
 type PMTextNode = { type: "text"; text: string; marks?: PMMark[] };
 type PMHardBreak = { type: "hardBreak" };
@@ -39,6 +46,10 @@ type Token =
   | { kind: "close"; mark: PMMark["type"] };
 
 const DELIMITERS: Array<{ re: RegExp; mark: () => PMMark }> = [
+  // Longest-prefix first would not matter here (the three `[[…:` openers are
+  // mutually exclusive), but keep the audio opener above the language ones
+  // so the intent stays obvious.
+  { re: /^\[\[audio:/u, mark: () => ({ type: "audio" }) },
   { re: /^\[\[es:/u, mark: () => ({ type: "lang", attrs: { language: "es" } }) },
   { re: /^\[\[en:/u, mark: () => ({ type: "lang", attrs: { language: "en" } }) },
   { re: /^\*\*/u, mark: () => ({ type: "bold" }) },
@@ -127,7 +138,11 @@ function tokenizeParagraph(source: string): Token[] {
       const mark = delimiter.mark();
       flushText();
       tokens.push({ kind: "open", mark });
-      openStack.push({ closer: mark.type === "lang" ? "]]" : matched, mark: mark.type, ref: mark });
+      openStack.push({
+        closer: mark.type === "lang" || mark.type === "audio" ? "]]" : matched,
+        mark: mark.type,
+        ref: mark,
+      });
       index += matched.length;
       continue;
     }
@@ -196,8 +211,10 @@ function wrapTrimmed(content: string, open: string, close: string): string {
   return `${lead}${open}${core}${close}${trail}`;
 }
 
+// Audio outermost (it wraps whole spoken asides, language marks included),
+// then lang, then bold, then italic.
 function markOrder(mark: PMMark): number {
-  return mark.type === "lang" ? 0 : mark.type === "bold" ? 1 : 2;
+  return mark.type === "audio" ? 0 : mark.type === "lang" ? 1 : mark.type === "bold" ? 2 : 3;
 }
 
 function sameMark(a: PMMark, b: PMMark): boolean {
@@ -250,6 +267,7 @@ function serializeInline(content: PMInline[]): string {
     const inner = serializeInline(run);
     if (mark.type === "bold") out += wrapTrimmed(inner, "**", "**");
     else if (mark.type === "italic") out += wrapTrimmed(inner, "*", "*");
+    else if (mark.type === "audio") out += wrapTrimmed(inner, "[[audio:", "]]");
     else {
       const open = mark.attrs.language === "es" ? "[[es:" : "[[en:";
       // The editor stores an absent bridge as null (Tiptap attribute default) —
@@ -264,4 +282,28 @@ function serializeInline(content: PMInline[]): string {
 
 export function serializeExplanationDoc(doc: PMDoc): string {
   return doc.content.map((paragraph) => serializeInline(paragraph.content ?? [])).join("\n\n");
+}
+
+// ------------------------------------------------------- audio-only ---
+
+/**
+ * The markdown with every `[[audio:…]]` run removed entirely — including any
+ * `es`/`en` marks nested inside it. This is what the learner sees: audio-only
+ * text is narration, never presentation (docs/design/speech.md "Audio-only
+ * marks"). Goes through parse/serialize rather than a regex so a nested
+ * `]]` can't end the span early, and so a half-typed `[[audio:` behaves like
+ * every other unterminated delimiter in this dialect instead of throwing.
+ */
+export function stripAudioOnly(markdown: string): string {
+  const doc = parseExplanation(markdown);
+  return serializeExplanationDoc({
+    type: "doc",
+    content: doc.content.map((paragraph) => {
+      const content = (paragraph.content ?? []).filter(
+        (node) =>
+          node.type !== "text" || !(node.marks ?? []).some((mark) => mark.type === "audio"),
+      );
+      return content.length ? { type: "paragraph", content } : { type: "paragraph" };
+    }),
+  });
 }

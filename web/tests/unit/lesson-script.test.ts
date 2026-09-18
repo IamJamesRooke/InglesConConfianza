@@ -401,3 +401,26 @@ test("REPLACE_LESSON_BLOCKS leaves title/concepts alone when the script omits th
   assert.equal(next[0].name, "Keep me");
   assert.deepEqual(next[0].concepts.map((c) => c.label), ["keep"]);
 });
+
+// Script mode passes explanation text through untouched, so the audio-only
+// notation needs no special handling there — this pins that (docs/design/
+// lesson-script-grammar.md, docs/design/speech.md "Audio-only marks").
+test("an explanation carrying an audio-only span round-trips through the script", () => {
+  const script =
+    "# Audio\n[[es:cosa]] es [[en:thing]][[audio:, T-H-I-N-G, [[en:thing]]]]\n\n> Quiero / I want";
+  const parsed = parseScript(script);
+  const explanation = parsed.blocks[0];
+  assert.equal(explanation.type, "explanation");
+  assert.equal(
+    explanation.type === "explanation" ? explanation.contentMarkdown : "",
+    "[[es:cosa]] es [[en:thing]][[audio:, T-H-I-N-G, [[en:thing]]]]",
+  );
+  const printed = printScript({
+    id: "l",
+    name: parsed.title ?? "Audio",
+    concepts: [],
+    blocks: parsed.blocks,
+  });
+  assert.equal(printScript({ id: "l", name: parsed.title ?? "Audio", concepts: [], blocks: parseScript(printed).blocks }), printed);
+  assert.ok(printed.includes("[[audio:, T-H-I-N-G, [[en:thing]]]]"));
+});

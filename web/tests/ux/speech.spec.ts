@@ -336,3 +336,133 @@ test("an explanation's clip auto-plays on open and replays on Escuchar, with the
   );
   expect(cleanup.ok()).toBeTruthy();
 });
+
+// Audio-only marks (docs/design/speech.md "Audio-only marks"): `[[audio:…]]`
+// is text the narrator SAYS and the learner never SEES — including any
+// language mark nested inside it.
+const audioOnlyLesson = {
+  id: "lesson_ux_audio_only",
+  name: "UX audio only",
+  concepts: [],
+  blocks: [
+    {
+      id: "block_ux_audio_only",
+      type: "explanation" as const,
+      contentMarkdown:
+        "[[es:cosa]] es [[en:thing]][[audio:, T-H-I-N-G, [[en:thing]]]]",
+    },
+  ],
+};
+
+test("an explanation's audio-only span is spoken-only: never rendered to the learner", async ({
+  page,
+  request,
+}) => {
+  const courseResponse = await request.get("/api/admin/lesson-builder/lessons");
+  const course = (await courseResponse.json()) as {
+    modules: Array<{ id: string }>;
+  };
+  const response = await request.put(
+    `/api/admin/lesson-builder/lessons/${audioOnlyLesson.id}`,
+    { data: { lesson: audioOnlyLesson, moduleId: course.modules[0].id } },
+  );
+  expect(response.ok()).toBeTruthy();
+
+  await page.route("**/audio/manifest.json", (route) =>
+    route.fulfill({ status: 404, body: "not found" }),
+  );
+
+  await page.goto(`/practice?lesson=${audioOnlyLesson.id}`);
+
+  const explanation = page.locator(".lesson-explanation");
+  await expect(explanation).toBeVisible();
+  await expect(explanation).toContainText("cosa");
+  // The spelled aside, the audio run's own markers, and the `en` mark nested
+  // inside it are all absent from what the learner sees — only the two
+  // authored, visible marks remain.
+  await expect(explanation).not.toContainText("T-H-I-N-G");
+  await expect(explanation).not.toContainText("[[audio:");
+  await expect(explanation.locator("mark")).toHaveCount(2);
+  await expect(page.locator("[data-audio]")).toHaveCount(0);
+
+  const cleanup = await request.delete(
+    `/api/admin/lesson-builder/lessons/${audioOnlyLesson.id}`,
+  );
+  expect(cleanup.ok()).toBeTruthy();
+});
+
+// Spoken instruction lines (docs/design/speech.md "Spoken instruction
+// lines"): a slide's promptText is read by the narrator the moment the slide
+// opens, from /audio/instructions/<sha1(text)>.mp3.
+const instructionText = "Veamos la diferencia.";
+const instructionHash = createHash("sha1")
+  .update(instructionText, "utf8")
+  .digest("hex");
+const instructionLesson = {
+  ...speechLesson,
+  id: "lesson_ux_instruction_audio",
+  name: "UX instruction audio",
+  blocks: [
+    {
+      ...speechLesson.blocks[0],
+      id: "block_ux_instruction_audio",
+      promptText: instructionText,
+    },
+  ],
+};
+
+test("a sentence slide's instruction line requests its narrator clip on open", async ({
+  page,
+  request,
+}) => {
+  const courseResponse = await request.get("/api/admin/lesson-builder/lessons");
+  const course = (await courseResponse.json()) as {
+    modules: Array<{ id: string }>;
+  };
+  const response = await request.put(
+    `/api/admin/lesson-builder/lessons/${instructionLesson.id}`,
+    { data: { lesson: instructionLesson, moduleId: course.modules[0].id } },
+  );
+  expect(response.ok()).toBeTruthy();
+
+  await page.route("**/audio/manifest.json", (route) =>
+    route.fulfill({
+      status: 200,
+      contentType: "application/json",
+      body: JSON.stringify({ instructions: { [instructionHash]: true } }),
+    }),
+  );
+
+  const clipRequests: string[] = [];
+  await page.route("**/audio/instructions/*.mp3", (route) => {
+    clipRequests.push(route.request().url());
+    route.fulfill({
+      status: 200,
+      contentType: "audio/mpeg",
+      body: Buffer.alloc(4),
+    });
+  });
+
+  await page.goto(`/practice?lesson=${instructionLesson.id}`);
+
+  await expect(page.locator(".stage-instruction")).toContainText(
+    instructionText,
+  );
+  await expect.poll(() => clipRequests.length).toBeGreaterThanOrEqual(1);
+  expect(clipRequests[0]).toContain(`/audio/instructions/${instructionHash}.mp3`);
+
+  // The replay control sits at the end of the instruction line, and pressing
+  // it is a real new request.
+  const replay = page.locator(".stage-instruction button[aria-label='Escuchar']");
+  await expect(replay).toBeVisible();
+  const afterOpen = clipRequests.length;
+  await replay.click();
+  await expect
+    .poll(() => clipRequests.length)
+    .toBeGreaterThanOrEqual(afterOpen + 1);
+
+  const cleanup = await request.delete(
+    `/api/admin/lesson-builder/lessons/${instructionLesson.id}`,
+  );
+  expect(cleanup.ok()).toBeTruthy();
+});

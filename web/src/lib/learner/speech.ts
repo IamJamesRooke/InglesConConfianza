@@ -232,9 +232,15 @@ export function subscribeMuted(listener: () => void): () => void {
 // The manifest also carries an `explanations` map (`{ "<sha1>": true }`,
 // keyed by the sha1 of the explanation's *markdown source*, not its spoken
 // text — see scripts/generate-audio.ts and docs/design/speech.md
-// "Explanation voice track"). Older manifests without that key still parse
-// fine: `explanationClipUrl` just finds nothing and resolves null.
-type Manifest = Record<string, SpeakerId[]> & { explanations?: Record<string, true> };
+// "Explanation voice track"), and an `instructions` map keyed by the sha1 of
+// a slide's trimmed instruction line (docs/design/speech.md "Spoken
+// instruction lines"). Older manifests without those keys still parse fine:
+// `explanationClipUrl`/`instructionClipUrl` just find nothing and resolve
+// null.
+type Manifest = Record<string, SpeakerId[]> & {
+  explanations?: Record<string, true>;
+  instructions?: Record<string, true>;
+};
 let manifestPromise: Promise<Manifest | null> | null = null;
 
 async function loadManifest(): Promise<Manifest | null> {
@@ -263,7 +269,7 @@ async function manifestSpeakerIdSet(): Promise<Set<SpeakerId>> {
   const ids = new Set<SpeakerId>();
   if (!manifest) return ids;
   for (const key of Object.keys(manifest)) {
-    if (key === "explanations") continue;
+    if (key === "explanations" || key === "instructions") continue;
     for (const id of manifest[key]) ids.add(id);
   }
   return ids;
@@ -392,6 +398,25 @@ export async function explanationClipUrl(markdown: string): Promise<string | nul
   const hash = await sha1(markdown);
   if (!manifest.explanations[hash]) return null;
   return `/audio/explanations/${hash}.mp3`;
+}
+
+/**
+ * Resolves the URL of a generated clip for a slide's instruction line
+ * (`promptText`), if the manifest lists one — read by the same narrator that
+ * reads explanations, so like `explanationClipUrl` there is no per-speaker
+ * choice. Keyed by `sha1(text.trim())`, matching how
+ * src/lib/audio/generate-clips.ts names the file. Never throws; resolves
+ * null on any absent manifest or clip. See docs/design/speech.md "Spoken
+ * instruction lines".
+ */
+export async function instructionClipUrl(text: string): Promise<string | null> {
+  const trimmed = text.trim();
+  if (!trimmed) return null;
+  const manifest = await loadManifest();
+  if (!manifest?.instructions) return null;
+  const hash = await sha1(trimmed);
+  if (!manifest.instructions[hash]) return null;
+  return `/audio/instructions/${hash}.mp3`;
 }
 
 // --- Speaking -------------------------------------------------------------

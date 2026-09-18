@@ -47,6 +47,24 @@ function wordRangeAt(state: EditorState, pos: number): { from: number; to: numbe
   return { from: start + from, to: start + to };
 }
 
+/** True when *every* text node in the range carries a mark of this name. */
+function fullyMarkedWith(
+  state: EditorState,
+  from: number,
+  to: number,
+  markName: string,
+): boolean {
+  let complete = true;
+  let sawText = false;
+  state.doc.nodesBetween(from, to, (node) => {
+    if (!node.isText) return true;
+    sawText = true;
+    if (!node.marks.some((candidate) => candidate.type.name === markName)) complete = false;
+    return true;
+  });
+  return sawText && complete;
+}
+
 function targetRange(state: EditorState): { from: number; to: number } | null {
   const { from, to } = state.selection;
   if (from !== to) return { from, to };
@@ -134,6 +152,31 @@ export function setExplanationBridge(editor: Editor, bridge: string | null): boo
     .extendMarkRange("lang")
     .updateAttributes("lang", { bridge: bridge && bridge.trim() ? bridge.trim() : null })
     .run();
+}
+
+/**
+ * `Ctrl+Alt+A` — toggles the audio-only mark on the selection, or on the word
+ * around a collapsed caret (the same target rule as the language chords).
+ * Audio-only text is spoken by the narrator and never rendered to the learner
+ * — see docs/design/speech.md "Audio-only marks" and the `[[audio:…]]`
+ * notation in explanation-markdown.ts.
+ */
+export function toggleAudioOnly(editor: Editor): boolean {
+  return apply(editor, (state, transaction) => {
+    const range = targetRange(state);
+    if (!range) return false;
+    const { from, to } = range;
+    const type = state.schema.marks.audio;
+    if (!type) return false;
+    const marked = fullyMarkedWith(state, from, to, "audio");
+    transaction.removeMark(from, to, type);
+    if (!marked) transaction.addMark(from, to, type.create());
+    transaction.setSelection(
+      TextSelection.create(transaction.doc, state.selection.from, state.selection.to),
+    );
+    transaction.setStoredMarks([]);
+    return true;
+  });
 }
 
 /** Bold/italic, from the toolbar and from `Ctrl/⌘+B` / `Ctrl/⌘+I`. Tiptap's

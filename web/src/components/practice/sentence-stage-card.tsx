@@ -2,6 +2,7 @@
 import { Info } from "lucide-react";
 import type { CSSProperties } from "react";
 import { Fragment } from "react";
+import { InstructionAudio } from "@/components/practice/instruction-audio";
 import { PracticeMarkdown } from "@/components/practice/practice-markdown";
 import { HintButton, SpeakerChip } from "@/components/practice/speaker-chip";
 import {
@@ -113,6 +114,7 @@ export function SentenceStageCard({
           {sentence.promptText?.trim() && (
             <div className="stage-instruction">
               <PracticeMarkdown markdown={sentence.promptText} variant="prompt" />
+              <InstructionAudio text={sentence.promptText} />
             </div>
           )}
           <div className="stage-card">

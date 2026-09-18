@@ -97,3 +97,50 @@ test("XML-sensitive characters in a Spanish mark are escaped", () => {
     `${NARRATOR_OPEN}${spanishMark("Tom &amp; &quot;Jerry&quot;")}${NARRATOR_CLOSE}`,
   );
 });
+
+// ---- audio-only marks ---------------------------------------------------
+// `[[audio:…]]` is spoken exactly like visible text — only the learner's
+// screen ever treats it differently (docs/design/speech.md "Audio-only
+// marks").
+
+function spelled(word: string): string {
+  return (
+    '<break time="150ms"/><voice name="en-US-Neural2-D">' +
+    `<say-as interpret-as="characters">${word}</say-as>` +
+    '</voice><break time="150ms"/>'
+  );
+}
+
+test("the owner's audio-only example: spoken in full, with T-H-I-N-G spelled out", () => {
+  assert.equal(
+    explanationToSsml("[[es:cosa]] es [[en:thing]][[audio:, T-H-I-N-G, [[en:thing]]]]"),
+    NARRATOR_OPEN +
+      spanishMark("cosa") +
+      " es " +
+      englishVoice("thing") +
+      ", " +
+      spelled("thing") +
+      ", " +
+      englishVoice("thing") +
+      NARRATOR_CLOSE,
+  );
+});
+
+test("audio-only plain text is read by the narrator like any other prose", () => {
+  assert.equal(
+    explanationToSsml("Hola[[audio: otra vez]]."),
+    `${NARRATOR_OPEN}Hola otra vez.${NARRATOR_CLOSE}`,
+  );
+});
+
+test("a spelled token is recognised outside an audio run too, and only as a whole token", () => {
+  assert.equal(
+    explanationToSsml("Se escribe D-O-G hoy"),
+    `${NARRATOR_OPEN}Se escribe ${spelled("dog")} hoy${NARRATOR_CLOSE}`,
+  );
+  // Ordinary hyphenated words are not spellings.
+  assert.equal(
+    explanationToSsml("e-mail y bien-estar"),
+    `${NARRATOR_OPEN}e-mail y bien-estar${NARRATOR_CLOSE}`,
+  );
+});

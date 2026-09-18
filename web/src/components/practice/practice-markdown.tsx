@@ -1,5 +1,6 @@
 import type { ReactNode } from "react";
 
+import { stripAudioOnly } from "@/lib/lesson-builder/explanation-markdown";
 import {
   normalizeLessonMarkdown,
   parseLessonMarkdown,
@@ -21,7 +22,16 @@ export function PracticeMarkdown({
   markdown: string;
   variant?: PracticeMarkdownVariant;
 }) {
-  const blocks = parseLessonMarkdown(normalizeLessonMarkdown(markdown));
+  // Audio-only runs (`[[audio:…]]`, docs/design/speech.md "Audio-only
+  // marks") are narration, never presentation: they come out of the text
+  // entirely here — including any `es`/`en` marks nested inside them —
+  // before anything else looks at it. Guarded on the literal opener so the
+  // ordinary path (which this dialect's legacy heading/list handling still
+  // flows through) is untouched when there is no audio run to strip.
+  const source = markdown.includes("[[audio:")
+    ? stripAudioOnly(markdown)
+    : markdown;
+  const blocks = parseLessonMarkdown(normalizeLessonMarkdown(source));
   const isExplanation = variant === "explanation";
 
   return (

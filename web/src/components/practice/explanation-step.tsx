@@ -4,30 +4,9 @@ import { Volume2 } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 
 import { PracticeMarkdown } from "@/components/practice/practice-markdown";
+import { hasActivatedAudio, markAudioActivated } from "@/lib/learner/audio-activation";
 import { explanationWraps } from "@/lib/learner/presentation";
 import { explanationClipUrl, isMuted, subscribeMuted } from "@/lib/learner/speech";
-
-/** sessionStorage key: once any explanation clip has played successfully in
- * this document, later slides skip the expanded "Escuchar" cue even if a
- * future auto-play were refused (it won't be, but be safe). */
-const AUDIO_ACTIVATED_KEY = "icc.audio.activated";
-
-function hasActivatedAudio(): boolean {
-  try {
-    return sessionStorage.getItem(AUDIO_ACTIVATED_KEY) === "1";
-  } catch {
-    return false;
-  }
-}
-
-function markAudioActivated() {
-  try {
-    sessionStorage.setItem(AUDIO_ACTIVATED_KEY, "1");
-  } catch {
-    // Ignore (private mode, storage disabled, etc.) — the cue simply keeps
-    // showing on later slides, which is harmless.
-  }
-}
 
 /**
  * An explanation slide. A single short line reads well centred and gets the

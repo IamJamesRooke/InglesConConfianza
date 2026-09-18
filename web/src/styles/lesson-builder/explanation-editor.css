@@ -132,3 +132,35 @@
   font-weight: 650;
   line-height: 1.5;
 }
+/* Audio-only text (owner notation 2026-09-17, `[[audio:…]]` — see
+   docs/design/speech.md "Audio-only marks"): the narrator says it, the
+   learner never sees it. So it has to be visible to the *teacher* while
+   reading as "not part of the slide": muted ink at 80%, a dotted underline
+   rather than the solid one a link would carry, and a small speaker glyph
+   in front of the run.
+
+   The glyph is drawn by masking a currentColor-filled box with an inline
+   SVG (a lucide Volume2 outline), not an emoji and not an <img>: an emoji
+   would ship a colour font's own palette into a page that owns its colour
+   tokens, and a mask inherits `color` so the marker dims with the text it
+   belongs to, in either theme. Colour comes from `--ink-muted` above via
+   `currentcolor`; no literal colour appears here. */
+.lesson-document-explanation span[data-audio] {
+  color: var(--ink-muted);
+  opacity: 0.8;
+  text-decoration: underline dotted;
+  text-underline-offset: 2px;
+}
+.lesson-document-explanation span[data-audio]::before {
+  content: "";
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  margin-right: 3px;
+  vertical-align: -1px;
+  background-color: currentcolor;
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M11 5 6 9H2v6h4l5 4z'/%3E%3Cpath d='M15.5 8.5a5 5 0 0 1 0 7'/%3E%3Cpath d='M19 5a9 9 0 0 1 0 14'/%3E%3C/svg%3E");
+  mask-repeat: no-repeat;
+  mask-position: center;
+  mask-size: contain;
+}

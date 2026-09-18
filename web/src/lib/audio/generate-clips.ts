@@ -29,6 +29,7 @@ import { explanationToSsml } from "@/lib/learner/explanation-ssml";
 const AUDIO_DIR = path.join(process.cwd(), "public", "audio");
 const MANIFEST_PATH = path.join(AUDIO_DIR, "manifest.json");
 const EXPLANATIONS_DIR = path.join(AUDIO_DIR, "explanations");
+const INSTRUCTIONS_DIR = path.join(AUDIO_DIR, "instructions");
 
 const VOICES: Record<SpeakerId, { languageCode: string; name: string }> = {
   "us-man": { languageCode: "en-US", name: "en-US-Neural2-D" },
@@ -46,6 +47,27 @@ const SPEAKING_RATE = 0.95;
 // actually read from. See docs/design/speech.md "Explanation voice track"
 // and src/lib/learner/explanation-ssml.ts, which builds the SSML this sends.
 const EXPLANATION_VOICE = { languageCode: "es-US", name: "es-US-Neural2-B" };
+
+// Spoken instruction lines (owner, 2026-09-17): a sentence/vocabulary
+// slide's `promptText` ("Veamos la diferencia.") is read by the same
+// narrator on slide open. One voice, no inline switching and no taught-word
+// emphasis — it is direction, not content — so the SSML is just the
+// narrator's rate around the escaped line. See docs/design/speech.md
+// "Spoken instruction lines".
+const INSTRUCTION_RATE = "88%";
+
+function escapeXml(text: string): string {
+  return text
+    .replace(/&/gu, "&amp;")
+    .replace(/</gu, "&lt;")
+    .replace(/>/gu, "&gt;")
+    .replace(/"/gu, "&quot;")
+    .replace(/'/gu, "&apos;");
+}
+
+export function instructionToSsml(text: string): string {
+  return `<speak><prosody rate="${INSTRUCTION_RATE}">${escapeXml(text)}</prosody></speak>`;
+}
 
 function sha1(text: string): string {
   return createHash("sha1").update(text, "utf8").digest("hex");
@@ -127,6 +149,22 @@ function collectExplanations(lessons: Lesson[]): Set<string> {
   return markdowns;
 }
 
+/** Every distinct instruction line (`promptText`) across sentence and
+ * vocabulary slides, trimmed, blanks skipped. sha1(trimmed text) is the clip
+ * filename and manifest key, matching instructionClipUrl() in
+ * src/lib/learner/speech.ts. */
+function collectInstructions(lessons: Lesson[]): Set<string> {
+  const instructions = new Set<string>();
+  for (const lesson of lessons) {
+    for (const block of lesson.blocks) {
+      if (block.type !== "sentence") continue;
+      const text = (block as SentenceBlock).promptText?.trim();
+      if (text) instructions.add(text);
+    }
+  }
+  return instructions;
+}
+
 async function fileExists(filePath: string): Promise<boolean> {
   try {
     await readFile(filePath);
@@ -194,7 +232,10 @@ async function synthesizeSsml(ssml: string, apiKey: string): Promise<Buffer> {
 // sha1(spoken text); "explanations" is an additional top-level key, keyed
 // by sha1(explanation markdown source), so an old manifest (no
 // "explanations" key) still parses and just has no explanation clips.
-type Manifest = Record<string, SpeakerId[]> & { explanations?: Record<string, true> };
+type Manifest = Record<string, SpeakerId[]> & {
+  explanations?: Record<string, true>;
+  instructions?: Record<string, true>;
+};
 
 /**
  * Generates every missing clip (per-speaker sentence/vocabulary audio, plus
@@ -212,12 +253,14 @@ export async function generateMissingClips(
   const lessons = selectLessons(lessonFile.lessons, options);
   const texts = collectTexts(lessons);
   const explanations = collectExplanations(lessons);
+  const instructions = collectInstructions(lessons);
   const speakerIds = Object.keys(VOICES) as SpeakerId[];
   const apiKey = process.env.GOOGLE_TTS_API_KEY;
 
   console.log(
     `Collected ${texts.size} distinct English text(s) across ${speakerIds.length} speaker(s), ` +
-      `and ${explanations.size} distinct explanation block(s).`,
+      `${explanations.size} distinct explanation block(s), and ` +
+      `${instructions.size} distinct instruction line(s).`,
   );
 
   if (!apiKey) {
@@ -242,6 +285,15 @@ export async function generateMissingClips(
       const exists = await fileExists(clipPath);
       console.log(
         `${exists ? "[exists]" : "[would generate]"} explanations/${hash}.mp3 <- "${markdown}"`,
+      );
+      if (!exists) wouldGenerate += 1;
+    }
+    for (const text of instructions) {
+      const hash = sha1(text);
+      const clipPath = path.join(INSTRUCTIONS_DIR, `${hash}.mp3`);
+      const exists = await fileExists(clipPath);
+      console.log(
+        `${exists ? "[exists]" : "[would generate]"} instructions/${hash}.mp3 <- "${text}"`,
       );
       if (!exists) wouldGenerate += 1;
     }
@@ -302,18 +354,41 @@ export async function generateMissingClips(
   }
   manifest.explanations = explanationManifest;
 
+  let instructionsGenerated = 0;
+  let instructionsSkipped = 0;
+  let instructionsBytes = 0;
+  const instructionManifest = manifest.instructions ?? {};
+  for (const text of instructions) {
+    const hash = sha1(text);
+    const clipPath = path.join(INSTRUCTIONS_DIR, `${hash}.mp3`);
+    if (await fileExists(clipPath)) {
+      instructionsSkipped += 1;
+    } else {
+      await mkdir(INSTRUCTIONS_DIR, { recursive: true });
+      const audio = await synthesizeSsml(instructionToSsml(text), apiKey);
+      await writeFile(clipPath, audio);
+      instructionsGenerated += 1;
+      instructionsBytes += audio.byteLength;
+      console.log(`Generated instructions/${hash}.mp3 <- "${text}"`);
+    }
+    instructionManifest[hash] = true;
+  }
+  manifest.instructions = instructionManifest;
+
   await mkdir(AUDIO_DIR, { recursive: true });
   await writeFile(MANIFEST_PATH, JSON.stringify(manifest, null, 2));
   console.log(
     `Done: ${generated} clip(s) generated, ${skipped} already present. ` +
       `Explanations: ${explanationsGenerated} clip(s) generated (${explanationsBytes} bytes), ` +
-      `${explanationsSkipped} already present. Manifest written to ${MANIFEST_PATH}.`,
+      `${explanationsSkipped} already present. ` +
+      `Instructions: ${instructionsGenerated} clip(s) generated (${instructionsBytes} bytes), ` +
+      `${instructionsSkipped} already present. Manifest written to ${MANIFEST_PATH}.`,
   );
 
   return {
-    generated: generated + explanationsGenerated,
-    skipped: skipped + explanationsSkipped,
-    bytes: bytes + explanationsBytes,
+    generated: generated + explanationsGenerated + instructionsGenerated,
+    skipped: skipped + explanationsSkipped + instructionsSkipped,
+    bytes: bytes + explanationsBytes + instructionsBytes,
     missingKey: false,
   };
 }

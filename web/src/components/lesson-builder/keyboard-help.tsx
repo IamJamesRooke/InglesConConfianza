@@ -155,6 +155,15 @@ export function KeyboardHelpDialog({ onClose }: { onClose: () => void }) {
             </div>
             <div>
               <dt>
+                <kbd>Ctrl</kbd> <kbd>Alt</kbd> <kbd>A</kbd>
+              </dt>
+              <dd>
+                In an explanation: audio only — the narrator says it, the
+                learner never sees it.
+              </dd>
+            </div>
+            <div>
+              <dt>
                 <kbd>Ctrl</kbd> <kbd>Alt</kbd> <kbd>↑</kbd> <kbd>↓</kbd>
               </dt>
               <dd>Move the active slide up or down</dd>

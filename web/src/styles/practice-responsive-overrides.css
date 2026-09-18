@@ -1188,6 +1188,17 @@
 }
 /* The authored instruction ("Un reto más grande.") is a quiet line above the
    card, not a second headline. */
+/* The replay control sits at the END of the instruction line, so the line
+   reads as one thing that can be heard rather than a line with a widget
+   above it (docs/design/speech.md "Spoken instruction lines"). Baseline
+   alignment keeps the 20px glyph sitting on the text's own line. */
+.stage-instruction {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 6px;
+}
+
 /* Direction ("Sentence slide"): the instruction is a muted body line above
    the card, not a label-sized caption. */
 .stage-instruction :is(p, h1, h2, h3) {
@@ -1498,4 +1509,64 @@
 }
 .lesson-explanation[data-wraps="false"] :is(p, li) {
   font-size: var(--practice-explanation-single-size);
+}
+
+/* Spoken instruction line (docs/design/speech.md "Spoken instruction
+   lines"): the narrator reads the slide's direction on open, and this
+   replays it. Same visual language as the explanation slide's "Escuchar"
+   control, one size down (20px glyph, 28px hit area) because it sits inline
+   beside a body line rather than in a card's corner. Only rendered when a
+   generated clip exists for this line. */
+.instruction-replay {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: none;
+  gap: 6px;
+  width: 28px;
+  height: 28px;
+  margin-bottom: 10px;
+  padding: 0;
+  border: 0;
+  border-radius: 999px;
+  color: var(--primary);
+  background: none;
+  transition: background 180ms;
+}
+.instruction-replay:hover {
+  background: var(--muted);
+}
+.instruction-replay:focus-visible {
+  outline: 3px solid color-mix(in oklch, var(--primary) 32%, transparent);
+  outline-offset: 1px;
+}
+@keyframes instruction-replay-pulse {
+  0% {
+    box-shadow: 0 0 0 0 color-mix(in oklch, var(--primary) 35%, transparent);
+  }
+  100% {
+    box-shadow: 0 0 0 6px color-mix(in oklch, var(--primary) 0%, transparent);
+  }
+}
+.instruction-replay.playing {
+  animation: instruction-replay-pulse 1200ms ease-out infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+  .instruction-replay.playing {
+    animation: none;
+  }
+}
+/* Expanded cue, shown only when the browser actually refused the auto-play
+   (a directly opened or reloaded lesson page with no user activation yet),
+   so the control never looks dead. */
+.instruction-replay--cue {
+  width: auto;
+  padding: 0 10px;
+  border-radius: 999px;
+  background: color-mix(in oklch, var(--primary) 10%, transparent);
+}
+.instruction-replay-label {
+  font-size: var(--t-eyebrow);
+  font-weight: 650;
+  letter-spacing: 0.02em;
 }

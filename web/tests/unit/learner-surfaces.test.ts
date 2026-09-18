@@ -555,3 +555,27 @@ test("explanations left-align once the authored text is longer than one line", (
     "I want es quiero",
   );
 });
+
+// Audio-only marks (docs/design/speech.md "Audio-only marks"): the narrator
+// says them, the learner never sees them — so PracticeMarkdown drops the run
+// entirely, including any language mark nested inside it.
+test("PracticeMarkdown renders nothing for an audio-only run", () => {
+  const html = renderToStaticMarkup(
+    createElement(PracticeMarkdown, {
+      markdown: "[[es:cosa]] es [[en:thing]][[audio:, T-H-I-N-G, [[en:thing]]]]",
+    }),
+  );
+  assert.ok(!html.includes("T-H-I-N-G"), "the spelled aside is not rendered");
+  assert.ok(!html.includes("data-audio"), "no audio span reaches the learner");
+  assert.ok(html.includes("cosa") && html.includes("thing"), "the visible text survives");
+  // Exactly the two authored marks are rendered — the nested `en` inside the
+  // audio run is gone with it, not rendered a second time.
+  assert.equal(html.match(/<mark/gu)?.length, 2);
+});
+
+test("PracticeMarkdown leaves markdown with no audio run untouched", () => {
+  const html = renderToStaticMarkup(
+    createElement(PracticeMarkdown, { markdown: "[[es:hoy]] es [[en:today]]" }),
+  );
+  assert.ok(html.includes(">hoy<") && html.includes(">today<"));
+});

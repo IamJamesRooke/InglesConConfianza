@@ -646,3 +646,35 @@ test("fieldSelectionForBlock: explanation -> explanation field; sentence -> span
     pieceId: "piece-1",
   });
 });
+
+// ---- audio-only chord ----------------------------------------------------
+// `Ctrl+Alt+A` marks the selection (or the word at the caret) as audio-only
+// inside an explanation — docs/design/speech.md "Audio-only marks". The
+// command itself needs a mounted Tiptap editor, so what is asserted here is
+// the table wiring: the chord is registered in the explanation scope, it is
+// free everywhere else, and with no editor registered it declines (returns
+// false) instead of throwing.
+test("Ctrl+Alt+A is the explanation scope's audio-only chord and is free in every other scope", () => {
+  assert.ok(KEYMAP.explanation["Ctrl+Alt+A"], "explanation scope has Ctrl+Alt+A");
+  for (const [scope, commands] of Object.entries(KEYMAP)) {
+    if (scope === "explanation") continue;
+    assert.equal(
+      commands["Ctrl+Alt+A"],
+      undefined,
+      `Ctrl+Alt+A must stay free in the ${scope} scope`,
+    );
+  }
+  assert.equal(chordOf(fakeEvent({ code: "KeyA", ctrlKey: true, altKey: true })), "Ctrl+Alt+A");
+});
+
+test("the audio-only chord declines when the selection isn't an explanation field", () => {
+  const actions = fakeActions();
+  const handled = KEYMAP.explanation["Ctrl+Alt+A"]!({
+    selection: { kind: "block", lessonId: "lesson-1", blockId: "block-1" },
+    lessons: [lesson([sentenceBlock()])],
+    actions,
+    editing: actions as unknown as EditingActions,
+    event: fakeEvent({ code: "KeyA", ctrlKey: true, altKey: true }),
+  });
+  assert.equal(handled, false);
+});

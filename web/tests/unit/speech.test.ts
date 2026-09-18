@@ -6,6 +6,7 @@ import {
   __sha1Fallback,
   availableSpeakers,
   clipUrlFor,
+  instructionClipUrl,
   isMuted,
   isSpeechAvailable,
   pickSpeaker,
@@ -18,6 +19,7 @@ import {
   speakSentenceAfterPiece,
   stopSpeaking,
 } from "../../src/lib/learner/speech";
+import { instructionToSsml } from "../../src/lib/audio/generate-clips";
 
 type FakeVoice = { name: string; lang: string };
 
@@ -437,5 +439,58 @@ test("no manifest and no voices means no available speakers, but speak() still r
       await assert.doesNotReject(() => speak("hello", null));
       assert.equal(spoken.length, 0);
     },
+  );
+});
+
+// ---- spoken instruction lines -------------------------------------------
+// docs/design/speech.md "Spoken instruction lines": a slide's promptText is
+// read by the narrator on open. The clip is keyed by sha1(trimmed text) in
+// the manifest's `instructions` map, exactly as generate-clips.ts writes it.
+
+test("instructionClipUrl resolves a listed instruction clip and null otherwise", async () => {
+  const { synth } = makeSynth([]);
+  const hash = __sha1Fallback("Veamos la diferencia.");
+  await withStubbedGlobals(
+    {
+      synth,
+      fetchImpl: (async () =>
+        new Response(
+          JSON.stringify({ instructions: { [hash]: true } }),
+          { status: 200, headers: { "content-type": "application/json" } },
+        )) as unknown as typeof fetch,
+    },
+    async () => {
+      // Whitespace around the authored line is trimmed before hashing.
+      assert.equal(
+        await instructionClipUrl("  Veamos la diferencia.  "),
+        `/audio/instructions/${hash}.mp3`,
+      );
+      assert.equal(await instructionClipUrl("Otra cosa."), null);
+      assert.equal(await instructionClipUrl("   "), null);
+    },
+  );
+});
+
+test("an old manifest with no instructions map resolves null, never throws", async () => {
+  const { synth } = makeSynth([]);
+  await withStubbedGlobals(
+    {
+      synth,
+      fetchImpl: (async () =>
+        new Response("{}", {
+          status: 200,
+          headers: { "content-type": "application/json" },
+        })) as unknown as typeof fetch,
+    },
+    async () => {
+      assert.equal(await instructionClipUrl("Veamos la diferencia."), null);
+    },
+  );
+});
+
+test("the narrator SSML for an instruction line is escaped and carries the 88% rate", () => {
+  assert.equal(
+    instructionToSsml('Veamos la "diferencia" & más.'),
+    '<speak><prosody rate="88%">Veamos la &quot;diferencia&quot; &amp; más.</prosody></speak>',
   );
 });

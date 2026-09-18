@@ -55,6 +55,16 @@ interaction decision below is in service of those three goals, not of
     brackets. See `docs/design/speech.md` "Explanation voice track" for the
     generator/SSML side and `docs/design/student-experience.md`
     "Explanation audio" for the learner-facing playback.
+    A run can also be marked **audio only** (`[[audio:…]]`, the `audio`
+    mark — so the schema is four nodes and *four* marks as of 2026-09-17):
+    text the narrator SAYS and the learner never SEES, e.g.
+    `[[es:cosa]] es [[en:thing]][[audio:, T-H-I-N-G, [[en:thing]]]]`. Like
+    bold/italic it can wrap runs containing `es`/`en` marks, and a token
+    written `T-H-I-N-G` is spelled out letter by letter in the USA voice.
+    `Ctrl+Alt+A` toggles it (§3/§4); the builder shows it dimmed with a
+    dotted underline and a small speaker marker (§5), and the learner
+    renderer drops it from the text entirely. See `docs/design/speech.md`
+    "Audio-only marks".
   - **Sentence** — a `SentenceBlock` with `layout` left as `"sentence"`
     (default): one or more **pairs**.
   - **Vocabulary table** — a `SentenceBlock` with `layout: "vocabulary_table"`:
@@ -191,6 +201,7 @@ The table below is generated from `KEYMAP` — one row per scope × chord.
 | `explanation` | `Escape` | Move selection to `block` (registered via the same field-scope loop). |
 | `explanation` | `Ctrl+Alt+S` / `Ctrl+Alt+E` | Mark the selection Spanish / English. With a collapsed caret, marks the word around it; re-applying the language already there removes it. Marking across a run marked in the other language *replaces* it — the `lang` mark excludes itself, so marks can never nest. |
 | `explanation` | `Ctrl+Alt+N` | Remove any language mark from the selection, or from the word around a collapsed caret. |
+| `explanation` | `Ctrl+Alt+A` | Toggle **audio only** on the selection, or on the word around a collapsed caret — the `audio` mark, serialized `[[audio:…]]`. Spoken by the narrator, never rendered to the learner. `A` was the only free letter in this scope's `Ctrl+Alt` lane. |
 | `explanation` | `Ctrl/⌘+B` / `Ctrl/⌘+I` | Registered as no-ops that return false, so Tiptap's own `Mod-b`/`Mod-i` toggle bold/italic. Documented here so the table is the whole scope. |
 | `block` | `Enter` / `Space` | Enter editing: focus the slide's first field. |
 | `block` | `Escape` | Fully deselect (`selection → none`): no rail, no chrome, focus parks on the builder root with no visible ring. Two Escapes from a field reach this — field → block → none. |
@@ -272,6 +283,7 @@ reading the table.
 | Keys | Behaviour |
 |---|---|
 | `Ctrl Alt S` · `Ctrl Alt E` · `Ctrl Alt N` | In an explanation: mark as Spanish · English · neutral. With text selected, marks the selection; with just a caret, the word around it. |
+| `Ctrl Alt A` | In an explanation: audio only — the narrator says it, the learner never sees it. |
 | `Ctrl Alt ↑` `↓` | Move the active slide up or down. |
 | `Ctrl Alt ↑` `↓` (from a lesson's title) | Move the lesson within its module, or across a module boundary at the top/bottom of the list. |
 | `Ctrl Alt D` | Finish this lesson (collapse it). |
@@ -375,6 +387,17 @@ proposal doc's aspirations.
   caret to the whole marked word first (`setExplanationBridge`, mirroring
   how the language chords already treat a collapsed caret as "the word
   here").
+- **Audio-only runs are visible to the teacher, quietly** (2026-09-17,
+  `explanation-editor.css`): a `[[audio:…]]` run renders as
+  `<span data-audio>` in `--ink-muted` at 80% opacity with a dotted
+  underline (not the solid one a link would carry), preceded by a 12px
+  speaker marker. The marker is a `::before` box filled with `currentcolor`
+  and masked by an inline SVG (a lucide `Volume2` outline) — not an emoji,
+  which would drag a colour font's own palette into a surface that owns its
+  colour tokens, and not an `<img>`, which wouldn't dim with the text. No
+  literal colour appears in the rule; it inherits and therefore works in
+  either theme. The learner never sees any of this: `PracticeMarkdown`
+  strips the whole run (nested `es`/`en` marks included) before rendering.
 - **Insert "+" controls show nothing at rest, except one seam** (round 2,
   item A — tightened from the earlier "discoverable at rest everywhere"
   rule, which read as a ladder of dots down the whole left gutter on a
@@ -933,6 +956,12 @@ statically or spin up their own isolated server against a throwaway file.
   "Ctrl Alt P previews the lesson, and closing it returns focus…" case.
   Failed-save retry is still unit-only (`lesson-persistence.test.ts`) — no
   browser-level `ux:check` coverage exists for that path yet.
+- The explanation scope's HUD legend caps at five chips, so adding the
+  fourth marking chord (`Ctrl+Alt+A`, audio only, 2026-09-17) pushed the
+  universal `Ctrl+Alt+Enter` "next slide" out of *that* scope's bar. The
+  chord still works, is still in the help dialog, and is still shown in
+  every other scope; raise `PRIMARY_COUNT` (`editing-hud.tsx`) if the owner
+  misses it there.
 - **Phase 1 (one editing model, one keymap) is done** — see
   `docs/design/lesson-builder-editing-model.md` for the contract and §3/§4
   above for the generated keymap table. Residual gaps from that work,
@@ -1010,3 +1039,4 @@ statically or spin up their own isolated server against a throwaway file.
 | R3 | Round-3 syllabus card: (1) the Main list's own add control moved to a full-width static input above the "Main teaching points" eyebrow (`ConceptTypeahead`'s new `"main-add"` variant, `.syllabus-main-add-row`/`.syllabus-main-add`) — same Covers-field sizing/focus behaviour but a visible hairline at rest, since this is the card's primary control; Review is unchanged. (2) Fixed a real "stale group until reload" bug: `use-lesson-persistence.ts`'s `recordConceptDisplay` compared only spanish/english/role before skipping a display update, so a later record that changed only `collections` — a concept already known elsewhere in the file re-accepted here, or a quick-edit dialog's saved tags — compared equal and was silently dropped (new exported `conceptDisplaysEqual`, unit-tested); the two `ConceptQuickEdit` `onSaved` callers (`syllabus-panel.tsx`, `lesson-concepts-field.tsx`) also used to discard the dialog's saved `collections` outright and keep the old ones — now pass `draft.collections` through. (3) Ninth group **Determiners** (`pos:determiner` or `grammar:quantifier`), rendered after Things/before Untagged; **Time and place** widened to also claim `topic:time` and any `topic:noun-time-*` facet (día's `topic:noun-time-days-periods`); both evaluated before the broad Things/People catch-alls (`syllabus-groups.ts`). | Sonnet | done (2026-09-17) |
 | NG2 | Covers splits into derived "Introduced"/"Reviewed" (owner, 2026-09-17): `introducedAndReviewedForLesson` (`syllabus.ts`, unit-tested) reuses the course-timeline machinery `alsoTaughtAndReviewed` already had for the module level, applied per-lesson; `getLessonReviewSplit` threaded through `use-course-modules.ts` → `builder-context.tsx`/`use-builder-actions.ts` → `page.tsx` → `lesson-document.tsx`, same stable-identity pattern as `getSyllabusMarkers`. `LessonConceptsField` renders two eyebrows instead of one when `reviewSplit` is given, sharing the same chip renderer and add-input; a `TriangleAlert` "no review" warning shows on "Reviewed" when the lesson has Covers concepts, the course taught something earlier, and none of it is reviewed here. | Sonnet | done (2026-09-17) |
 | NG3 | Bug fix, owner report 2026-09-17 ("'to do' should be reviewed, deleting and re-adding it didn't help"): `freehandMatchesItem` (`syllabus.ts`) only tolerated a freehand *lesson concept* matching a linked syllabus item, one direction — a linked concept matching a syllabus item that was itself tagged freehand fell through to a bare `conceptKey` compare, which never matches (a real conceptId vs. a lowercased label), so no amount of deleting/re-adding the *linked* side could fix it. Made the match direction-agnostic (`candidateLabelsOf`, checked both ways) and widened it to compare a linked concept's English display too, not just Spanish, since a freehand tag can be typed in either language ("to do" vs. "hacer"). Two linked concepts with different `conceptId`s are still never merged by this path. 5 new/updated unit tests in `tests/unit/syllabus.test.ts`. | Sonnet | done (2026-09-17) |
+| A1 | Audio-only marks + spoken instruction lines (owner, 2026-09-17). (1) `[[audio:…]]` is a third mark — text the narrator SAYS and the learner never SEES: parser/serializer, a Tiptap `audio` mark rendering `<span data-audio>`, `toggleAudioOnly`, the `Ctrl+Alt+A` chord in the `explanation` scope (the only free letter in that lane; the HUD and help dialog regenerate from `KEYMAP`), a dimmed/dotted/CSS-masked-speaker treatment in the builder (§5), removal from the learner's DOM (`stripAudioOnly` → `PracticeMarkdown`), and SSML that speaks it in full plus spells a `T-H-I-N-G` token letter-by-letter in the USA voice. Script mode needed no change (round-trip test added). (2) A sentence/vocabulary slide's `promptText` is now read by the narrator on slide open: `generate-clips.ts` writes `public/audio/instructions/<sha1>.mp3` and a third manifest key, `instructionClipUrl` resolves it, and `instruction-audio.tsx` (used by both cards) auto-plays, replays and stops on slide change, sharing the session "audio activated" flag with the explanation slide. See `docs/design/speech.md` "Audio-only marks" / "Spoken instruction lines". | Opus | done (2026-09-17) |

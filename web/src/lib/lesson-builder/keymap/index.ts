@@ -4,7 +4,7 @@
 // file (title.ts, explanation.ts, pair.ts, block.ts, lesson.ts, page.ts) and
 // this file assembles KEYMAP and the dispatcher from them.
 
-import { languageCommand, markCommand } from "./explanation";
+import { audioOnlyCommand, languageCommand, markCommand } from "./explanation";
 import {
   escapeBlockToNone,
   escapeToBlock,
@@ -62,6 +62,10 @@ export const KEYMAP: Record<Scope, Partial<Record<Chord, Command>>> = {
     "Ctrl+Alt+S": languageCommand("es"),
     "Ctrl+Alt+E": languageCommand("en"),
     "Ctrl+Alt+N": languageCommand(null),
+    // Audio-only: text the narrator says and the learner never sees
+    // (docs/design/speech.md "Audio-only marks"). `A` was the only free
+    // letter in the explanation scope's Ctrl+Alt lane.
+    "Ctrl+Alt+A": audioOnlyCommand(),
     // Bold/italic go through this table too, rather than being left to
     // Tiptap's own `Mod-b`/`Mod-i`: the dispatcher sees the key first, and
     // only this path flushes the pending DOM selection before reading it

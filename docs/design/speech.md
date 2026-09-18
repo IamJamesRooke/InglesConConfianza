@@ -269,6 +269,91 @@ whole marked word first. `lesson-document.tsx`'s per-slide hover icon cluster ga
 "Listen" button (explanation slides only) that plays the clip if one exists, else
 generates it on demand and then plays it — see "Generating clips" above.
 
+## Audio-only marks
+
+> Owner notation, 2026-09-17. A third mark alongside `[[es:…]]` and
+> `[[en:…]]`: **`[[audio:…]]` is text the narrator SAYS but the learner never
+> SEES.** It exists so an explanation can be *heard* more fully than it is
+> *read* — spelling a word out, or repeating it, without cluttering the slide.
+
+```
+[[es:cosa]] es [[en:thing]][[audio:, T-H-I-N-G, [[en:thing]]]]
+```
+
+The learner reads "cosa es thing"; the narrator says "cosa … es … thing,
+T-H-I-N-G, thing."
+
+- **Notation** (`src/lib/lesson-builder/explanation-markdown.ts`): the `audio`
+  mark behaves like bold/italic — it can wrap runs that contain `es`/`en`
+  marks, and language marks sit inside it. Nesting order when marks stack is
+  fixed (audio outermost, then lang, then bold, then italic) so the file
+  never churns between two legal spellings. Round-trips byte-identically
+  (property-tested, 500 generated documents including audio spans); an
+  unterminated `[[audio:` behaves like every other half-typed delimiter in
+  this dialect and never throws. `stripAudioOnly(markdown)` is the
+  learner-side removal, run through parse/serialize rather than a regex so a
+  nested `]]` can't end the span early.
+- **Schema/editor**: a Tiptap mark `audio` rendering `<span data-audio>`
+  (`explanation-schema.ts`), toggled by `toggleAudioOnly`
+  (`explanation-commands.ts`) on the selection, or on the word around a
+  collapsed caret — the same target rule as the language chords. The chord is
+  **`Ctrl+Alt+A`** in the `explanation` scope (`A` was the only free letter in
+  that scope's `Ctrl+Alt` lane); the HUD and the help dialog pick it up from
+  `KEYMAP`. Shown to the teacher dimmed with a dotted underline and a small
+  CSS-drawn speaker marker — see `docs/design/lesson-builder.md` §5.
+- **Learner**: `PracticeMarkdown` removes the run entirely before anything
+  else looks at the text, nested `es`/`en` marks included. Nothing carrying
+  `data-audio` ever reaches the learner's DOM.
+- **SSML** (`explanation-ssml.ts`): audio-only content is spoken by exactly
+  the rules visible text is — narrator Spanish, an `[[en:]]` inside it still
+  switching to the USA voice with the taught-word emphasis. Additionally, a
+  whole token matching `^[A-Za-z](-[A-Za-z])+$` (`T-H-I-N-G`) is spelled
+  letter by letter in the USA voice as
+  `<say-as interpret-as="characters">thing</say-as>`, wrapped in
+  `<voice name="en-US-Neural2-D">` with `<break time="150ms"/>` before and
+  after. Ordinary hyphenated words ("e-mail") are untouched. The sample above
+  produces:
+
+```
+<speak><voice name="es-US-Neural2-B"><prosody rate="88%"><break time="150ms"/><emphasis level="moderate"><prosody rate="82%">cosa</prosody></emphasis><break time="350ms"/> es <voice name="en-US-Neural2-D"><break time="300ms"/><emphasis level="moderate"><prosody rate="85%">thing</prosody></emphasis><break time="300ms"/></voice>, <break time="150ms"/><voice name="en-US-Neural2-D"><say-as interpret-as="characters">thing</say-as></voice><break time="150ms"/>, <voice name="en-US-Neural2-D"><break time="300ms"/><emphasis level="moderate"><prosody rate="85%">thing</prosody></emphasis><break time="300ms"/></voice></prosody></voice></speak>
+```
+
+- **Script mode** needs no change: `script.ts` carries explanation paragraphs
+  through verbatim, pinned by a round-trip test with an audio span.
+
+## Spoken instruction lines
+
+> Owner decision 2026-09-17. A sentence or vocabulary slide's instruction
+> (`promptText`, e.g. "Veamos la diferencia.") is read by the narrator the
+> moment the slide opens.
+
+- **Generator** (`src/lib/audio/generate-clips.ts`): every non-empty, trimmed
+  `promptText` across sentence/vocabulary blocks, deduplicated, synthesized
+  with the narrator voice (`es-US-Neural2-B`) as plain XML-escaped SSML —
+  `<speak><prosody rate="88%">…</prosody></speak>`, no inline voice switching
+  and no taught-word emphasis, because an instruction is direction, not
+  content. Written to `public/audio/instructions/<sha1(trimmed text)>.mp3`
+  only when missing. The manifest gains a third top-level key,
+  `instructions: { "<sha1>": true }`, alongside `explanations` and the
+  per-speaker map; older manifests without it still parse (no instruction
+  clips, nothing else affected).
+- **Resolution**: `instructionClipUrl(text)` in `src/lib/learner/speech.ts` —
+  manifest-aware, trims before hashing, resolves
+  `/audio/instructions/<sha1>.mp3` or `null`. Never throws.
+- **Playback** (`src/components/practice/instruction-audio.tsx`, rendered by
+  both `sentence-stage-card.tsx` and `sentence-practice-card.tsx`): on slide
+  open, a clip that exists plays once automatically unless speech is muted.
+  A refused auto-play (no user activation yet on a directly opened page) is
+  tracked and surfaced as a small expanded "Escuchar" pill at the end of the
+  instruction line; once any clip has played in this session
+  (`src/lib/learner/audio-activation.ts`, shared with the explanation slide)
+  autoplay is trusted and the control collapses back to a 20px `Volume2`
+  replay button at the end of the line. A fresh `Audio` per play; muting
+  mid-line stops it; a slide change (unmount, or `text` changing underneath)
+  stops it, so an instruction never talks over the next slide. No clip → no
+  control at all. The pieces themselves are still spoken as they are
+  answered, by the slide's own speaker.
+
 ## Not in scope now
 
 Recording, per-piece speaker changes, speed control, and Spanish speech for the
