@@ -240,7 +240,13 @@ let manifestPromise: Promise<Manifest | null> | null = null;
 async function loadManifest(): Promise<Manifest | null> {
   if (typeof window === "undefined") return null;
   if (manifestPromise) return manifestPromise;
-  manifestPromise = fetch("/audio/manifest.json", { cache: "force-cache" })
+  // "no-cache" (not "force-cache"): still lets the browser cache reuse a
+  // validated response, but always revalidates with the server first, so a
+  // clip generated after the last full page load (via the builder's
+  // generate actions) is visible without a hard refresh clearing the HTTP
+  // cache. The in-memory memo above is still per-page-load; callers that
+  // just generated a clip call resetSpeechCaches() to drop it immediately.
+  manifestPromise = fetch("/audio/manifest.json", { cache: "no-cache" })
     .then((response) => (response.ok ? response.json() : null))
     .catch(() => null);
   return manifestPromise;

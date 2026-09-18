@@ -192,6 +192,20 @@
   gap: 3px;
   margin-left: auto;
 }
+.lesson-library-module-audio {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.lesson-library-module-audio-status {
+  font-size: 10px;
+  font-weight: 650;
+  color: color-mix(in oklch, var(--primary-foreground) 75%, transparent);
+  white-space: nowrap;
+}
+.lesson-library-module-audio-status.is-error {
+  color: var(--on-primary-danger-soft);
+}
 .lesson-library-module-controls button {
   display: inline-flex;
   align-items: center;

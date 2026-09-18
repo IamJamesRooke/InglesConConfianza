@@ -29,7 +29,10 @@ interaction decision below is in service of those three goals, not of
   (`readCourseSummary`); the header shows a `Draft`/`Published` pill (dashed
   border while draft). `access?: "free" | "premium"` (absent = free) is
   stored and shown as a second pill but not enforced anywhere yet (see
-  `docs/design/product-vision.md` §4/§6).
+  `docs/design/product-vision.md` §4/§6). The header's icon cluster also
+  carries a "Generate audio" (`AudioLines`) button that generates any
+  missing clips for the module's lessons on demand — see
+  `docs/design/speech.md` "Generating clips".
 - **Lesson** — a titled sequence of slides (`Lesson.blocks`). Lessons render
   as collapsible rows inside their module. `status?: "draft" | "published"`
   (absent = published, 2026-09-16) hides the lesson from `/` and `/practice`

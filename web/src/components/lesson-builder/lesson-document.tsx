@@ -20,7 +20,7 @@ import {
 } from "@/lib/lesson-builder/editing";
 import { fieldSelectionForBlock, selectionForNewBlock } from "@/lib/lesson-builder/keymap";
 import { useDragReorder } from "@/lib/lesson-builder/use-drag-reorder";
-import { explanationClipUrl } from "@/lib/learner/speech";
+import { explanationClipUrl, resetSpeechCaches } from "@/lib/learner/speech";
 import type { Lesson, LessonBlock } from "@/lib/lesson-builder/types";
 
 export type { DocumentBlockType } from "@/components/lesson-builder/slide-insert-control";
@@ -172,7 +172,7 @@ export function LessonDocument(props: Props) {
     return (
       <div className="lesson-document-block-actions">
         {block.type === "explanation" && (
-          <ExplanationListenButton markdown={block.contentMarkdown} />
+          <ExplanationListenButton markdown={block.contentMarkdown} blockId={block.id} />
         )}
         <button type="button" draggable aria-label={`Drag slide ${index + 1} to reorder`} title="Drag to reorder" onDragStart={(event) => drag.dragStart(event, dragScope, block.id)} onDragEnd={drag.reset}>
           <GripVertical size={13} aria-hidden="true" />
@@ -327,12 +327,23 @@ export function LessonDocument(props: Props) {
 }
 
 // "Listen" (docs/design/speech.md "Explanation voice track"): plays this
-// explanation's generated clip if one exists for its exact markdown, else
-// tells the teacher how to make one. Resolved async per markdown change —
-// `undefined` (checking) disables the button rather than flashing the "no
-// clip" tooltip for a moment on every keystroke.
-function ExplanationListenButton({ markdown }: { markdown: string }) {
+// explanation's generated clip if one exists for its exact markdown. If none
+// exists yet, clicking generates it on demand (POST
+// /api/admin/audio/generate for this block), resets the manifest memo so the
+// fresh clip is picked up, then plays it — no more "generate audio first"
+// dead end. Resolved async per markdown change — `undefined` (checking)
+// disables the button rather than flashing a stale state for a moment on
+// every keystroke.
+function ExplanationListenButton({
+  markdown,
+  blockId,
+}: {
+  markdown: string;
+  blockId: string;
+}) {
   const [clipUrl, setClipUrl] = useState<string | null | undefined>(undefined);
+  const [generating, setGenerating] = useState(false);
+  const [missingKey, setMissingKey] = useState(false);
 
   useEffect(() => {
     let cancelled = false;
@@ -341,6 +352,7 @@ function ExplanationListenButton({ markdown }: { markdown: string }) {
     // generated clip.
     // eslint-disable-next-line react-hooks/set-state-in-effect
     setClipUrl(undefined);
+    setMissingKey(false);
     void explanationClipUrl(markdown).then((url) => {
       if (!cancelled) setClipUrl(url);
     });
@@ -349,19 +361,59 @@ function ExplanationListenButton({ markdown }: { markdown: string }) {
     };
   }, [markdown]);
 
+  async function handleClick() {
+    if (generating) return;
+    if (clipUrl) {
+      void new Audio(clipUrl).play().catch(() => {});
+      return;
+    }
+    setGenerating(true);
+    setMissingKey(false);
+    try {
+      const response = await fetch("/api/admin/audio/generate", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ blockId }),
+      });
+      if (response.status === 503) {
+        setMissingKey(true);
+        return;
+      }
+      if (!response.ok) return;
+      resetSpeechCaches();
+      const freshUrl = await explanationClipUrl(markdown);
+      setClipUrl(freshUrl);
+      if (freshUrl) void new Audio(freshUrl).play().catch(() => {});
+    } catch {
+      // Best-effort, like every other speech path — stay silent.
+    } finally {
+      setGenerating(false);
+    }
+  }
+
+  const title = missingKey
+    ? "Set GOOGLE_TTS_API_KEY in .env to generate audio"
+    : clipUrl
+      ? "Listen"
+      : generating
+        ? "Generating…"
+        : "Generate and listen";
+
   return (
     <button
       type="button"
       aria-label="Listen to this explanation's audio"
-      title={clipUrl ? "Listen" : "Generate audio first (npm run audio:generate)"}
-      disabled={!clipUrl}
+      title={title}
+      aria-busy={generating}
+      disabled={generating}
       data-has-clip={clipUrl ? "true" : "false"}
-      onClick={() => {
-        if (!clipUrl) return;
-        void new Audio(clipUrl).play().catch(() => {});
-      }}
+      onClick={handleClick}
     >
-      <Volume2 size={13} aria-hidden="true" />
+      <Volume2
+        size={13}
+        aria-hidden="true"
+        className={generating ? "authoring-spin" : undefined}
+      />
     </button>
   );
 }

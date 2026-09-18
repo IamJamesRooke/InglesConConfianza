@@ -361,6 +361,32 @@ test("an absent or broken manifest resolves to no clip rather than throwing", as
   );
 });
 
+// Bug fix: a "force-cache" manifest fetch made a freshly generated clip
+// invisible until the browser's HTTP cache expired (or a hard refresh
+// cleared it). "no-cache" still lets a validated response be reused but
+// always revalidates with the server first, so a clip generated after page
+// load (via the builder's generate actions) shows up without a hard
+// refresh. The in-memory memo is unaffected — resetSpeechCaches() still
+// clears it explicitly after a generate action.
+test("the manifest fetch revalidates instead of forcing the HTTP cache", async () => {
+  const { synth } = makeSynth([]);
+  const requests: RequestInit[] = [];
+  await withStubbedGlobals(
+    {
+      synth,
+      fetchImpl: (async (_input: unknown, init?: RequestInit) => {
+        requests.push(init ?? {});
+        return new Response("not found", { status: 404 });
+      }) as unknown as typeof fetch,
+    },
+    async () => {
+      await clipUrlFor("Hello", "us-man");
+    },
+  );
+  assert.equal(requests.length, 1);
+  assert.equal(requests[0].cache, "no-cache");
+});
+
 test("pure-JS sha1 fallback matches the known digest of 'abc'", () => {
   assert.equal(
     __sha1Fallback("abc"),

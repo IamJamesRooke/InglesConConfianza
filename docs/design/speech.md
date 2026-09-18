@@ -113,6 +113,25 @@ Without `GOOGLE_TTS_API_KEY` set, the script prints what it would generate and e
 the app works with no key and no clips at all, falling back to browser synthesis.
 Generated clips are deploy assets and stay committed (small; not gitignored).
 
+The generation logic itself lives in `web/src/lib/audio/generate-clips.ts`
+(`generateMissingClips({ lessonIds?, blockIds? })`, reading lessons via the
+lesson store's plain, guard-free `readLessonFile` in
+`lesson-file-io.ts` rather than a hardcoded path) — `scripts/generate-audio.ts`
+is now a thin CLI wrapper around it, and it never throws on a missing API key
+(resolves `{ missingKey: true }` and generates nothing). The same function
+backs `POST /api/admin/audio/generate` (`{ lessonId?, blockId? }` → the same
+result shape; 503 `{ error: "GOOGLE_TTS_API_KEY not set" }` with no key),
+which the Lesson Builder calls from two places: the explanation slide's
+"Listen" button generates that block's clip on demand (spinner/`aria-busy`
+while it runs, then plays it — no more "generate audio first" dead end; the
+tooltip reads "Set GOOGLE_TTS_API_KEY in .env to generate audio" if the key
+is missing), and the module header's "Generate audio" icon
+(`AudioLines`) generates every missing clip for the module's lessons, one
+`lessonId` POST per lesson, showing "Generating…" then "Generated N clips
+(M already present)" inline for a few seconds. Both actions call
+`resetSpeechCaches()` after generating so the (now `cache: "no-cache"`,
+revalidating) manifest fetch picks up the new clip without a hard refresh.
+
 ## Explanation voice track
 
 > Owner decision 2026-09-17. Generator half in this section; playback (auto-play on
@@ -248,7 +267,7 @@ whenever the caret sits inside an `en` mark (selection or not); it reads/writes 
 `bridge` attribute via `setExplanationBridge`, which extends a collapsed caret to the
 whole marked word first. `lesson-document.tsx`'s per-slide hover icon cluster gains a
 "Listen" button (explanation slides only) that plays the clip if one exists, else
-shows a "Generate audio first (npm run audio:generate)" tooltip and stays disabled.
+generates it on demand and then plays it — see "Generating clips" above.
 
 ## Not in scope now
 

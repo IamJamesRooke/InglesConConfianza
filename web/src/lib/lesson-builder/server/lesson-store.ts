@@ -1,41 +1,19 @@
 import "server-only";
 
-import { mkdir, readFile, rename, writeFile } from "node:fs/promises";
+import { mkdir, rename, writeFile } from "node:fs/promises";
 import path from "node:path";
 
 import type { LessonFile } from "@/lib/lesson-builder/types";
+import { reconcileLessonFile } from "@/lib/lesson-builder/lesson-file";
 import {
-  emptyLessonFile,
-  parseLessonFile,
-  reconcileLessonFile,
-} from "@/lib/lesson-builder/lesson-file";
+  lessonsFilePath,
+  readLessonFile,
+} from "@/lib/lesson-builder/server/lesson-file-io";
 
 export { isLesson } from "@/lib/lesson-builder/lesson-file";
-
-// Overridable so the UX-check harness (tests/ux/) can point at an isolated
-// fixture file instead of the real course data — see playwright.config.ts.
-const lessonsFilePath =
-  process.env.LESSON_BUILDER_DATA_PATH ??
-  path.join(process.cwd(), "data", "lessons.json");
+export { readLessonFile } from "@/lib/lesson-builder/server/lesson-file-io";
 
 let mutationQueue = Promise.resolve();
-
-export async function readLessonFile(): Promise<LessonFile> {
-  try {
-    const file = await readFile(lessonsFilePath, "utf8");
-    return parseLessonFile(JSON.parse(file));
-  } catch (error) {
-    if (
-      error instanceof Error &&
-      "code" in error &&
-      error.code === "ENOENT"
-    ) {
-      return emptyLessonFile();
-    }
-
-    throw error;
-  }
-}
 
 async function writeLessonFile(lessonFile: LessonFile) {
   const temporaryLessonsFilePath = `${lessonsFilePath}.tmp`;

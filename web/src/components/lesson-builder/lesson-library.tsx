@@ -1,6 +1,6 @@
 "use client";
 
-import { Plus, Trash2 } from "lucide-react";
+import { AudioLines, Plus, Trash2 } from "lucide-react";
 import {
   Fragment,
   useCallback,
@@ -59,6 +59,100 @@ function readLessonParam(): string | null {
   } catch {
     return null;
   }
+}
+
+// Module header icon cluster: generates any missing audio for every lesson
+// in this module (docs/design/speech.md "Generating clips"). The admin API
+// only takes one lesson id per call, so this fires one POST per lesson and
+// sums the results; a status message replaces the icon's tooltip inline for
+// a few seconds rather than a browser dialog.
+type ModuleAudioStatus =
+  | { kind: "idle" }
+  | { kind: "generating" }
+  | { kind: "done"; generated: number; skipped: number }
+  | { kind: "error"; message: string };
+
+const MODULE_AUDIO_STATUS_MS = 4000;
+
+function GenerateModuleAudioButton({ lessonIds }: { lessonIds: string[] }) {
+  const [status, setStatus] = useState<ModuleAudioStatus>({ kind: "idle" });
+
+  useEffect(() => {
+    if (status.kind !== "done") return;
+    const timer = window.setTimeout(
+      () => setStatus({ kind: "idle" }),
+      MODULE_AUDIO_STATUS_MS,
+    );
+    return () => window.clearTimeout(timer);
+  }, [status]);
+
+  async function handleClick() {
+    if (status.kind === "generating") return;
+    setStatus({ kind: "generating" });
+    let generated = 0;
+    let skipped = 0;
+    try {
+      for (const lessonId of lessonIds) {
+        const response = await fetch("/api/admin/audio/generate", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ lessonId }),
+        });
+        if (response.status === 503) {
+          setStatus({
+            kind: "error",
+            message: "Set GOOGLE_TTS_API_KEY in .env to generate audio.",
+          });
+          return;
+        }
+        if (!response.ok) {
+          setStatus({ kind: "error", message: "Couldn't generate audio." });
+          return;
+        }
+        const result = (await response.json()) as {
+          generated: number;
+          skipped: number;
+        };
+        generated += result.generated;
+        skipped += result.skipped;
+      }
+      setStatus({ kind: "done", generated, skipped });
+    } catch {
+      setStatus({ kind: "error", message: "Couldn't generate audio." });
+    }
+  }
+
+  return (
+    <span className="lesson-library-module-audio">
+      <button
+        type="button"
+        aria-label="Generate missing audio for this module"
+        title="Generate missing audio for this module"
+        aria-busy={status.kind === "generating"}
+        disabled={status.kind === "generating"}
+        onClick={handleClick}
+      >
+        <AudioLines
+          size={13}
+          aria-hidden="true"
+          className={status.kind === "generating" ? "authoring-spin" : undefined}
+        />
+      </button>
+      {status.kind === "generating" && (
+        <span className="lesson-library-module-audio-status">Generating…</span>
+      )}
+      {status.kind === "done" && (
+        <span className="lesson-library-module-audio-status">
+          {`Generated ${status.generated} clip${status.generated === 1 ? "" : "s"} (${status.skipped} already present)`}
+        </span>
+      )}
+      {status.kind === "error" && (
+        <span className="lesson-library-module-audio-status is-error">
+          {status.message}
+        </span>
+      )}
+    </span>
+  );
 }
 
 type Props = {
@@ -467,6 +561,7 @@ function LessonLibraryInner(props: Props) {
                           </span>
                         ) : (
                           <span className="lesson-library-module-controls">
+                            <GenerateModuleAudioButton lessonIds={module.lessonIds} />
                             <button
                               type="button"
                               className="danger lesson-library-module-delete"
