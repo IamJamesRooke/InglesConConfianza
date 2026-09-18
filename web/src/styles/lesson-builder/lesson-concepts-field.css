@@ -323,3 +323,61 @@
   background: color-mix(in oklch, var(--primary) 10%, transparent);
   box-shadow: inset 2px 0 0 var(--primary);
 }
+
+.concept-suggestion {
+  --concept-priority: var(--priority-low);
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto auto;
+  align-items: center;
+  gap: 10px;
+  min-width: 230px;
+  padding: 9px 11px;
+  border: 1px solid
+    color-mix(in oklch, var(--concept-priority) 45%, var(--border));
+  border-radius: var(--radius-lg);
+  color: var(--foreground);
+  background: color-mix(in oklch, var(--concept-priority) 9%, var(--card));
+  transition:
+    border-color 150ms,
+    background 150ms,
+    transform 150ms;
+}
+
+.concept-suggestion[data-priority="high"] {
+  --concept-priority: var(--priority-high);
+}
+
+.concept-suggestion[data-priority="medium"] {
+  --concept-priority: var(--priority-medium);
+}
+
+.concept-suggestion[data-priority="neutral"] {
+  --concept-priority: var(--muted-foreground);
+}
+
+.concept-suggestion:hover {
+  border-color: var(--concept-priority);
+  background: color-mix(in oklch, var(--concept-priority) 15%, var(--card));
+  transform: translateY(-1px);
+}
+
+.concept-suggestion strong {
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.concept-suggestion > span:first-child > span {
+  margin-top: 2px;
+  color: var(--muted-foreground);
+  font-size: 11px;
+}
+
+.concept-suggestion .concept-suggestion-meta {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  color: var(--concept-priority);
+  font-size: 10px;
+  font-weight: 750;
+  text-transform: capitalize;
+}

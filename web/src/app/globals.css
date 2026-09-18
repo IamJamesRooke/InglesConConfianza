@@ -2,35 +2,13 @@
 @import "tw-animate-css";
 @import "shadcn/tailwind.css";
 
-@custom-variant dark (&:is(.dark *));
-
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  /* Registered so site-header.tsx can use the plain `bg-header/95` utility
-     instead of `bg-[var(--header)]/95` — that arbitrary-value-plus-opacity
-     combination triggers a Lightning CSS parser bug (corrupts the
-     synthesized color-mix variable name, breaking the whole build). Opacity
-     modifiers on a properly registered theme color don't hit that path. */
-  --color-header: var(--header);
   --font-sans: var(--font-geist), ui-sans-serif, system-ui, sans-serif;
   --font-mono:
     ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
     "Courier New", monospace;
-  --font-heading: var(--font-geist), ui-sans-serif, system-ui, sans-serif;
-  --color-sidebar-ring: var(--sidebar-ring);
-  --color-sidebar-border: var(--sidebar-border);
-  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
-  --color-sidebar-accent: var(--sidebar-accent);
-  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
-  --color-sidebar-primary: var(--sidebar-primary);
-  --color-sidebar-foreground: var(--sidebar-foreground);
-  --color-sidebar: var(--sidebar);
-  --color-chart-5: var(--chart-5);
-  --color-chart-4: var(--chart-4);
-  --color-chart-3: var(--chart-3);
-  --color-chart-2: var(--chart-2);
-  --color-chart-1: var(--chart-1);
   --color-ring: var(--ring);
   --color-input: var(--input);
   --color-border: var(--border);
@@ -51,9 +29,6 @@
   --radius-md: calc(var(--radius) * 0.8);
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) * 1.4);
-  --radius-2xl: calc(var(--radius) * 1.8);
-  --radius-3xl: calc(var(--radius) * 2.2);
-  --radius-4xl: calc(var(--radius) * 2.6);
 }
 
 .role-select {
@@ -108,11 +83,6 @@
   --role-foreground: oklch(0.34 0.13 20);
 }
 
-.dark .role-select {
-  --role-background: color-mix(in oklch, var(--role-border) 22%, var(--card));
-  --role-foreground: var(--foreground);
-}
-
 /* Confianza semantic theme — L0 vibrant-purple palette (2026-09-17).
    Components consume these purpose-based tokens; the aliases below keep
    Tailwind/shadcn primitives on the same palette. Defined in oklch; hex
@@ -132,8 +102,6 @@
   --brand-primary-vivid: oklch(0.55 0.26 320);
   /* #da2751 on white: 4.79:1 */
   --brand-accent: oklch(0.58 0.21 15);
-  /* #bd003a on white: 6.52:1 */
-  --brand-accent-hover: oklch(0.5 0.21 15);
   --brand-on-accent: #ffffff;
   /* Soft danger tint for icons/labels on a --brand-primary-colored band
      (e.g. the module-meta header's delete control) — needs to read as
@@ -142,14 +110,11 @@
   --on-primary-danger-soft: color-mix(in oklch, white 78%, var(--brand-accent));
   /* #007834 on white: 5.61:1 */
   --state-success: oklch(0.5 0.14 150);
-  --state-success-soft: #e6f7ef;
-  --state-on-success: #ffffff;
   --state-help: #f5b82e;
   --state-help-soft: #fff4cf;
   --state-on-help: #382600;
   /* #890120 on white: 10.02:1 */
   --state-danger: oklch(0.4 0.16 20);
-  --state-danger-soft: #fce8ec;
   /* #f6efff: clearly lavender canvas so white cards visibly pop.
      --ink-muted on it: 5.90:1, --ink-deep on it: 15.60:1. */
   --canvas-warm: oklch(0.965 0.03 300);
@@ -191,46 +156,26 @@
   --input: var(--line-strong);
   --ring: var(--brand-primary);
   --surface: var(--canvas-warm);
-  --surface-raised: var(--surface-writing);
-  --surface-sunken: var(--surface-subtle);
-  --header: #eaf0ff;
   --success: var(--state-success);
   --success-foreground: #07563b;
-  --success-contrast: var(--state-on-success);
   --hint: var(--state-help);
   --hint-foreground: var(--state-on-help);
   --priority-high: oklch(0.59 0.16 150);
   --priority-medium: oklch(0.58 0.17 250);
   --priority-low: oklch(0.55 0.035 270);
-  --chart-1: oklch(0.55 0.22 285);
-  --chart-2: oklch(0.62 0.1 185);
-  --chart-3: oklch(0.74 0.13 80);
-  --chart-4: oklch(0.63 0.18 18);
-  --chart-5: oklch(0.58 0.11 150);
   --radius: 0.625rem;
   --shadow-sm:
     0 1px 2px oklch(0.2 0.01 260 / 0.06), 0 1px 3px oklch(0.2 0.01 260 / 0.05);
-  --shadow-md:
-    0 4px 12px oklch(0.2 0.01 260 / 0.08), 0 2px 4px oklch(0.2 0.01 260 / 0.05);
-  --shadow-lg:
-    0 16px 40px oklch(0.2 0.01 260 / 0.1), 0 4px 12px oklch(0.2 0.01 260 / 0.06);
   /* L2a practice frame: the one card shadow used by the practice canvas
-     (explanation + sentence cards) — a quieter, warmer shadow than
-     --shadow-lg, tuned to the lavender canvas rather than neutral grey. */
+     (explanation + sentence cards) — a quieter, warmer shadow than a
+     conventional large shadow, tuned to the lavender canvas rather than
+     neutral grey. */
   --shadow-card:
     0 10px 30px oklch(0.3 0.05 300 / 0.12), 0 2px 8px oklch(0.3 0.05 300 / 0.07);
   /* Home path "next" row on hover/focus — same hue as --shadow-card, a
      touch stronger so the card lifts without changing its footprint. */
   --shadow-card-hover:
     0 14px 36px oklch(0.3 0.05 300 / 0.18), 0 3px 10px oklch(0.3 0.05 300 / 0.1);
-  --sidebar: oklch(0.955 0.018 85);
-  --sidebar-foreground: oklch(0.2 0.025 260);
-  --sidebar-primary: oklch(0.55 0.22 285);
-  --sidebar-primary-foreground: oklch(0.99 0.01 85);
-  --sidebar-accent: oklch(0.91 0.06 185);
-  --sidebar-accent-foreground: oklch(0.24 0.07 195);
-  --sidebar-border: oklch(0.88 0.018 85);
-  --sidebar-ring: oklch(0.62 0.19 285);
   /* Bilingual ink: flag colours. Spanish-flag red for español, Union Jack
      royal blue for English (dialed lighter than #012169 so italic text
      stays legible). Used for the sentence-builder labels and the
@@ -267,109 +212,6 @@
   --t-body: clamp(19px, 17.69px + 0.337vw, 22px);
   --t-ui: clamp(16px, 15.56px + 0.112vw, 17px);
   --t-eyebrow: clamp(11px, 10.56px + 0.112vw, 12px);
-}
-
-.concept-suggestion {
-  --concept-priority: var(--priority-low);
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) auto auto;
-  align-items: center;
-  gap: 10px;
-  min-width: 230px;
-  padding: 9px 11px;
-  border: 1px solid
-    color-mix(in oklch, var(--concept-priority) 45%, var(--border));
-  border-radius: var(--radius-lg);
-  color: var(--foreground);
-  background: color-mix(in oklch, var(--concept-priority) 9%, var(--card));
-  transition:
-    border-color 150ms,
-    background 150ms,
-    transform 150ms;
-}
-
-.concept-suggestion[data-priority="high"] {
-  --concept-priority: var(--priority-high);
-}
-
-.concept-suggestion[data-priority="medium"] {
-  --concept-priority: var(--priority-medium);
-}
-
-.concept-suggestion[data-priority="neutral"] {
-  --concept-priority: var(--muted-foreground);
-}
-
-.concept-suggestion:hover {
-  border-color: var(--concept-priority);
-  background: color-mix(in oklch, var(--concept-priority) 15%, var(--card));
-  transform: translateY(-1px);
-}
-
-.concept-suggestion strong {
-  font-size: 13px;
-  font-weight: 700;
-}
-
-.concept-suggestion > span:first-child > span {
-  margin-top: 2px;
-  color: var(--muted-foreground);
-  font-size: 11px;
-}
-
-.concept-suggestion .concept-suggestion-meta {
-  display: inline-flex;
-  align-items: center;
-  gap: 4px;
-  color: var(--concept-priority);
-  font-size: 10px;
-  font-weight: 750;
-  text-transform: capitalize;
-}
-
-.dark {
-  /* Same flag-colour hues as :root (no separate dark design — see
-     docs/design/lesson-builder.md §5 "Palette") so these don't drift. */
-  --lesson-hl-es: oklch(0.5 0.2 25);
-  --lesson-hl-en: oklch(0.42 0.19 264);
-  --background: oklch(0.16 0.014 285);
-  --foreground: oklch(0.985 0 0);
-  --card: oklch(0.205 0 0);
-  --card-foreground: oklch(0.985 0 0);
-  --popover: oklch(0.205 0 0);
-  --popover-foreground: oklch(0.985 0 0);
-  --primary: oklch(0.72 0.19 285);
-  --primary-foreground: oklch(0.14 0.02 285);
-  --secondary: oklch(0.269 0 0);
-  --secondary-foreground: oklch(0.985 0 0);
-  --muted: oklch(0.269 0 0);
-  --muted-foreground: oklch(0.708 0 0);
-  --accent: oklch(0.32 0.13 35);
-  --accent-foreground: oklch(0.9 0.11 35);
-  --destructive: oklch(0.7 0.2 35);
-  --border: oklch(1 0 0 / 10%);
-  --input: oklch(1 0 0 / 15%);
-  --ring: oklch(0.62 0.17 285);
-  --surface: oklch(0.205 0 0);
-  --surface-raised: oklch(0.245 0 0);
-  --surface-sunken: oklch(0.165 0 0);
-  --header: oklch(0.245 0 0);
-  --success: oklch(0.72 0.17 152);
-  --success-foreground: oklch(0.88 0.13 152);
-  --hint: oklch(0.8 0.19 82);
-  --chart-1: oklch(0.87 0 0);
-  --chart-2: oklch(0.556 0 0);
-  --chart-3: oklch(0.439 0 0);
-  --chart-4: oklch(0.371 0 0);
-  --chart-5: oklch(0.269 0 0);
-  --sidebar: oklch(0.205 0 0);
-  --sidebar-foreground: oklch(0.985 0 0);
-  --sidebar-primary: oklch(0.488 0.243 264.376);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.269 0 0);
-  --sidebar-accent-foreground: oklch(0.985 0 0);
-  --sidebar-border: oklch(1 0 0 / 10%);
-  --sidebar-ring: oklch(0.556 0 0);
 }
 
 @layer base {

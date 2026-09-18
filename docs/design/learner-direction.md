@@ -76,10 +76,13 @@ Phone, top to bottom:
    vertical path: a 2px purple line on the left with a 12px node per lesson (filled
    purple = done, ring = next, hairline = later); each row: number eyebrow, English
    title at UI-label weight 600, Spanish at body muted. The next lesson's row is a
-   white card; done and later rows are plain rows. No durations, no counters, no
-   skip/reset (reset lives on the completion screen). One module = no module chrome
+   white card; done and later rows are plain rows. No durations, no counters; each
+   row carries its own per-row "Reiniciar" control. One module = no module chrome
    at all; several modules = the module name as a section title above its rows.
-4. **Footer**: brand line and the "¿Qué te pareció?" text link, small, muted.
+4. **Footer**: dark `--ink-deep` band (`SiteFooter`, `variant="learner"`) — brand
+   mark, name, tagline, copyright, and a "Reiniciar todo el progreso" control (all
+   progress, with confirmation); no text links. A floating "Comentar" pill
+   (`feedback-sheet.tsx`) sits above the footer and opens the feedback sheet.
 
 Desktop: hero as a two-column card (copy left, promise card right), 96px section gap,
 path column max 720 centred. Same components.

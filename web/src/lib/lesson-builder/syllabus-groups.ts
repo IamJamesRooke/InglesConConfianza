@@ -179,7 +179,7 @@ export function syllabusGroupLabel(id: SyllabusGroupId): string {
   return GROUPS_BY_ID.get(id)?.label ?? "Untagged";
 }
 
-export type SyllabusGroupEntry<T> = {
+type SyllabusGroupEntry<T> = {
   item: T;
   /** Position in the flat list the group was built from. */
   index: number;

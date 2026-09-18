@@ -6,7 +6,6 @@ import "./globals.css";
 // its changes for hot reload.
 import "../styles/learner-foundations-home.css";
 import "../styles/practice-base.css";
-import "../styles/authoring-base.css";
 import "../styles/lesson-builder/lesson-library.css";
 import "../styles/lesson-builder/lesson-row.css";
 import "../styles/lesson-builder/module-navigator.css";

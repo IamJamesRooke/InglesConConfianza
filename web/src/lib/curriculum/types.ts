@@ -44,7 +44,7 @@ export const curriculumRoles: CurriculumRole[] = [
 // The curriculum row editor keeps its own list (same labels plus a
 // description per option, for its <select>); this is the plain lookup for
 // everywhere else, including pure modules that must not import a component.
-export const curriculumRoleLabels: Record<CurriculumRole, string> = {
+const curriculumRoleLabels: Record<CurriculumRole, string> = {
   P1: "Level 1",
   P2: "Level 2",
   P3: "Level 3",

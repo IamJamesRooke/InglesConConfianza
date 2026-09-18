@@ -18,7 +18,7 @@ import type {
 import { ModuleNavigatorDisclosure } from "@/components/lesson-builder/module-navigator-disclosure";
 import { ModuleNavigatorStatus } from "@/components/lesson-builder/module-navigator-status";
 
-export type ModuleNavigatorMatchField =
+type ModuleNavigatorMatchField =
   | "module-title"
   | "lesson-title"
   | "spanish"

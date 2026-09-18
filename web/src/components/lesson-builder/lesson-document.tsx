@@ -277,7 +277,7 @@ export function LessonDocument(props: Props) {
           </Fragment>
         ))}
 
-        <div className="lesson-document-tail">
+        <div>
           <SlideInsertControl
             insertionLabel="Insert at lesson end"
             labelled={props.lesson.blocks.length === 0}

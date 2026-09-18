@@ -1,5 +1,17 @@
 # Student experience: September 4, 2026
 
+## Current state (2026-09-17)
+
+This file is a dated history of the learner experience's evolution; sections below
+are kept for record but many are superseded. For the current, authoritative
+visual/behavioural spec, read `docs/design/learner-direction.md` first. As of
+today: purple token palette (no coral/charcoal), no dark theme, a shared dark
+`SiteFooter` (learner variant carries "Reiniciar todo el progreso"; admin variant
+carries section links), per-row "Reiniciar" on the home path, a floating
+"Comentar" feedback pill, and the lesson player redesign (ink+underline
+highlights, one neutral sentence-piece card). Treat any conflict between this
+file and `learner-direction.md` in `learner-direction.md`'s favor.
+
 ## Direction
 
 The public course is a place to begin and continue real conversations. A bright,

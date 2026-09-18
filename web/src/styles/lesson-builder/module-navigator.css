@@ -4,7 +4,7 @@
    the flex wrapper and cross-cutting bits lesson-library.tsx/lesson-row.css
    need to lay out beside this sidebar. Do not add authoring/practice rules
    here, and do not duplicate selectors already defined in
-   src/styles/lesson-builder/*.css or authoring-base.css.
+   src/styles/lesson-builder/*.css.
 
    Moved from src/styles/module-navigation.css (Phase 3a: one stylesheet per
    component, colocated under styles/lesson-builder/) — no rule content

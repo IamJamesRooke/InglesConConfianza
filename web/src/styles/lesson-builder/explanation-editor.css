@@ -184,3 +184,109 @@
   mask-position: center;
   mask-size: contain;
 }
+
+/* Moved from authoring-base.css (2026-09-17 cleanup): the only classes from
+   that stylesheet still referenced anywhere in src/ are the ones below. */
+@keyframes authoring-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+.authoring-spin {
+  animation: authoring-spin 1s linear infinite;
+}
+.authoring-wysiwyg {
+  position: relative;
+  width: 100%;
+  color: inherit;
+  text-align: inherit;
+  cursor: text;
+  outline: none;
+}
+.authoring-wysiwyg:focus {
+  outline: none;
+}
+.authoring-wysiwyg:focus-visible {
+  border-radius: 6px;
+  box-shadow: 0 0 0 4px color-mix(in oklch, var(--primary) 12%, transparent);
+}
+/* Placeholder for an empty editor. The shell carries `data-empty` (written
+   by the component from the editor's own `isEmpty`) and `data-placeholder`,
+   so the text never lives inside the editable document itself. */
+.authoring-wysiwyg-shell {
+  position: relative;
+  width: 100%;
+}
+.authoring-wysiwyg-shell[data-empty="true"]::before {
+  position: absolute;
+  inset-inline: 0;
+  top: 0;
+  pointer-events: none;
+  color: var(--muted-foreground);
+  font-style: italic;
+  content: attr(data-placeholder);
+}
+.authoring-format-menu {
+  position: static;
+  display: flex;
+  width: fit-content;
+  max-width: 100%;
+  gap: 3px;
+  margin-top: 4px;
+  flex-wrap: wrap;
+}
+.authoring-format-menu button {
+  min-height: 22px;
+  min-width: 22px;
+  padding: 0 7px;
+  border-radius: 6px;
+  color: var(--muted-foreground);
+  font-size: 11px;
+  font-weight: 700;
+}
+.authoring-format-menu button:hover {
+  background: var(--muted);
+}
+.authoring-format-menu button.spanish {
+  background: color-mix(in oklch, var(--lesson-hl-es) 16%, var(--card));
+  color: var(--lesson-hl-es);
+}
+.authoring-format-menu button.english {
+  background: color-mix(in oklch, var(--lesson-hl-en) 16%, var(--card));
+  color: var(--lesson-hl-en);
+}
+.authoring-format-menu button:focus-visible {
+  outline: 3px solid color-mix(in oklch, var(--primary) 32%, transparent);
+  outline-offset: 1px;
+}
+.authoring-format-menu button[aria-pressed="true"] {
+  color: var(--primary-foreground);
+  background: var(--primary);
+}
+/* Pronunciation field (docs/design/speech.md "Explanation voice track"):
+   shown in the same popover, on the same row when there's room (the
+   toolbar's own flex-wrap), when the caret sits inside an `en` mark. */
+.authoring-format-menu-bridge {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 0 4px;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--muted-foreground);
+}
+.authoring-format-menu-bridge input {
+  min-height: 22px;
+  width: 96px;
+  padding: 0 6px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: var(--card);
+  color: var(--foreground);
+  font-size: 11px;
+  font-weight: 600;
+}
+.authoring-format-menu-bridge input:focus-visible {
+  outline: 3px solid color-mix(in oklch, var(--primary) 32%, transparent);
+  outline-offset: 1px;
+}

@@ -58,10 +58,6 @@ export const SPEAKER_ROSTER: Speaker[] = [
   },
 ];
 
-export function speakerById(id: SpeakerId): Speaker | undefined {
-  return SPEAKER_ROSTER.find((speaker) => speaker.id === id);
-}
-
 // --- Voice lookup -----------------------------------------------------
 
 type SynthLike = Pick<
@@ -137,20 +133,6 @@ export async function availableSpeakers(): Promise<Speaker[]> {
         voice.lang.toLowerCase().startsWith(speaker.lang.toLowerCase()),
       ),
   );
-}
-
-/**
- * Resolves once both the manifest probe and the voice list have settled —
- * the point at which `availableSpeakers()`/`pickSpeaker()` can be trusted.
- * Exposed for callers that want to wait without discarding the result of
- * `availableSpeakers()` itself (which already awaits the same thing).
- */
-export async function whenReady(): Promise<void> {
-  const synth = getSynth();
-  await Promise.all([
-    synth ? loadVoices(synth) : Promise.resolve<SpeechSynthesisVoice[]>([]),
-    loadManifest(),
-  ]);
 }
 
 function pickVoiceFor(
