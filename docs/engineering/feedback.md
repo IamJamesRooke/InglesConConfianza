@@ -42,16 +42,39 @@ This is still the core of the payload — see "Rich payload (2026-09-17)"
 below for every field added since (the old `slideText` string field was
 replaced by the structured `slide` object described there).
 
-The route rate-limits lightly in memory (10 requests/minute per IP, evicting
-stale IP entries once the map grows past 1000 keys so a flood of spoofed
-`X-Forwarded-For` values can't grow it unbounded) and never logs the
-`message` body to the console, in any environment. It also rejects the
-request body outright above 32KB (checked against `Content-Length` and
-again against the actual body, before `JSON.parse`), and every free-text
-field accepted by `validateFeedbackPayload` is length-capped (`message`
-1-2000, `who` ≤80, short identifiers like `lessonId`/`moduleId`/`slideId`
-≤500, longer/URL-shaped fields like `page`/`userAgent` ≤2000, `slide` ≤8KB
-serialized) so the endpoint can't be used to pad storage.
+The route rate-limits in memory using the shared limiter factory in
+`src/lib/rate-limit.ts` (also used by `/api/admin-login`): **5 requests per
+10 minutes per IP** (evicting stale IP entries once the map grows past 1000
+keys so a flood of spoofed `X-Forwarded-For` values can't grow it
+unbounded), returning 429 with a gentle Spanish message the sheet shows
+inline: "Recibimos varios comentarios tuyos seguidos. Inténtalo en unos
+minutos." The route never logs the `message` body to the console in the
+ordinary case (see "Delivery" below for the one exception — a failed
+delivery). It also rejects the request body outright above 32KB (checked
+against `Content-Length` and again against the actual body, before
+`JSON.parse`), and every free-text field accepted by
+`validateFeedbackPayload` is length-capped (`message` 1-2000, `who` ≤80,
+short identifiers like `lessonId`/`moduleId`/`slideId` ≤500, longer/
+URL-shaped fields like `page`/`userAgent` ≤2000, `slide` ≤8KB serialized)
+so the endpoint can't be used to pad storage.
+
+### Kind (2026-09-18)
+
+The Comentar sheet offers one optional row of three chips above the
+message field — "Algo falla" / "Una idea" / "Me gustó" — single-select, tap
+again to unselect, none selected by default. Sent as `kind: "problema" |
+"idea" | "elogio" | null` in the payload; anything else the client could
+send coerces to `null` in `validateFeedbackPayload` rather than rejecting
+the request.
+
+### Honeypot (2026-09-18)
+
+The sheet also renders an off-screen, `aria-hidden`, `tabIndex={-1}`,
+`autoComplete="off"` text input named `website` that a real learner never
+sees or fills. `isHoneypotTripped` (`src/lib/feedback/validate.ts`) checks
+the raw request body (not the validated record, since this field is never
+stored): if non-empty, the route returns the normal `{ ok: true }` success
+response and drops the comment without delivering it anywhere.
 
 ### Privacy note
 
@@ -65,23 +88,62 @@ learner presses "Enviar" on the feedback sheet — never in the background —
 and only to help triage a report (e.g. "broken on mobile Safari"), not for
 tracking. `who` is optional and free text (no account system, no email).
 
-### Two backends
+### Delivery (2026-09-18: GitHub issues)
 
-- **`FEEDBACK_WEBHOOK_URL` set**: the validated JSON record is forwarded as
-  a `POST` with a 5-second timeout, and the route returns that response's
-  status.
-- **Unset (default for local dev)**: the record is appended as one JSON
-  line to `web/data/feedback.jsonl` (created on first write; gitignored),
-  so `npm run dev` still captures feedback without any setup.
+Checked in this order:
 
-**2026-09-17 update**: the payload below was extended with rich triage
-metadata (where/what/who-did/device — see "Rich payload" below), and the
-UI moved from three text-link triggers to one floating pill. The Google
-Sheet section further down is **superseded**: feedback storage is moving to
-Postgres with an `/admin/feedback` page in a later session, not a Google
-Sheet — that section is left as historical context, not as the current
-setup path. `data/feedback.jsonl` (the no-webhook fallback) is unaffected
-and stays the source `npm run feedback:report` reads.
+1. **`FEEDBACK_GITHUB_TOKEN` and `FEEDBACK_GITHUB_REPO` both set** (a
+   `owner/name` string): `buildFeedbackIssue` (`src/lib/feedback/
+   github-issue.ts`) turns the validated record into an issue draft — title
+   = the first ~70 chars of the message on one line, prefixed by the
+   lesson name when known; body = the message as a Markdown blockquote
+   followed by every non-empty field the payload carries (who, kind,
+   module/lesson, slide index/kind/id, a best-effort slide-text summary,
+   typed answers, hints/seconds/muted/speaker, progress, page, viewport,
+   browser, language, pointer, app version, timestamp), Markdown-abuse
+   neutralised (`@mentions` get a zero-width space inserted after `@`,
+   `#123`-style refs the same after `#`, raw HTML tags stripped) and the
+   whole body hard-capped; labels = `nuevo`, the kind label or
+   `sin clasificar`, `leccion: <name>` (≤40 chars) when known, and
+   `slide: <kind>` when known. `createFeedbackIssue` then `POST`s to
+   `https://api.github.com/repos/{repo}/issues` with `Authorization:
+   Bearer`, `Accept: application/vnd.github+json`,
+   `X-GitHub-Api-Version: 2022-11-28`, and an 8-second timeout. A
+   fine-grained token scoped to only "Issues: write" cannot create labels
+   GitHub doesn't already have — if the create call returns **422**,
+   `createFeedbackIssue` retries **once** with only the labels the repo is
+   known to have (`nuevo`, `problema`, `idea`, `elogio`, `sin clasificar`),
+   noting whichever labels got dropped as a line at the end of the body.
+2. **`FEEDBACK_WEBHOOK_URL` set** (and the GitHub vars are not both set):
+   unchanged — the validated JSON record is forwarded as a `POST` with a
+   5-second timeout.
+3. **Neither set** (default for local dev): unchanged — the record is
+   appended as one JSON line to `web/data/feedback.jsonl` (created on
+   first write; gitignored), so `npm run dev` still captures feedback
+   without any setup.
+
+**The route never fails visibly to the learner.** Whichever branch above
+is used, if delivery fails (GitHub error, webhook error, or a jsonl write
+error) the route logs one structured `console.error` line — event name,
+the failure reason, and the *full validated payload* as JSON (never the
+GitHub token) — and still returns `{ ok: true }`. This is the Vercel-log
+fallback when nothing else captured the note.
+
+See `docs/engineering/deploy.md` for the two GitHub env vars (the token is
+sensitive: a fine-grained PAT scoped to exactly the private feedback repo,
+Issues read/write only, never the public project repo) and
+`docs/engineering/feedback-triage.md` for the triage routine once feedback
+lands as issues.
+
+**2026-09-17 update** (superseded by the above for delivery, kept for the
+payload history): the payload below was extended with rich triage metadata
+(where/what/who-did/device — see "Rich payload" below), and the UI moved
+from three text-link triggers to one floating pill. The Google Sheet
+section further down is **historical**: feedback moved to GitHub issues in
+a private repo (2026-09-18 decision, `docs/backlog.md`), not Postgres and
+not a Google Sheet. `data/feedback.jsonl` (the no-GitHub/no-webhook
+fallback) is unaffected and stays the source `npm run feedback:report`
+reads.
 
 ### Rich payload (2026-09-17)
 
@@ -101,7 +163,7 @@ everything else is coerced to a safe type/default by
 | `hintsUsed`, `secondsOnSlide`, `muted`, `speakerId` | What the learner had done on this slide. |
 | `progress` | `{ lessonsCompleted, lessonsTotal }`. |
 | `viewport`, `userAgent`, `language`, `pointer` | Device: `{ w, h }`, UA string, `navigator.language`, `"touch" \| "mouse"`. |
-| `who`, `message` | The note itself. |
+| `who`, `message`, `kind` | The note itself; `kind` is the optional chip (`"problema" \| "idea" \| "elogio"`, `null` if none chosen). |
 
 Built by `FeedbackContext` in `src/components/learner/feedback-sheet.tsx`
 (device/timing fields are computed at submit time; `where`/`slide`/

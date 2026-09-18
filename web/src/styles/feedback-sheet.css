@@ -128,6 +128,51 @@
   color: var(--muted-foreground);
 }
 
+.feedback-sheet-kind {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.feedback-kind-chip {
+  min-height: 44px;
+  padding: 0 16px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: var(--background);
+  color: var(--foreground);
+  font: inherit;
+  font-size: 14px;
+  cursor: pointer;
+}
+.feedback-kind-chip:hover {
+  border-color: var(--primary);
+}
+.feedback-kind-chip:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 1px;
+}
+.feedback-kind-chip--selected {
+  border-color: var(--primary);
+  background: var(--surface-subtle);
+  color: var(--primary);
+  font-weight: 600;
+}
+
+/* Honeypot — off-screen and out of the tab order (aria-hidden + tabIndex
+   -1 set alongside this class), never visible to a real learner. */
+.feedback-sheet-honeypot {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
 .feedback-sheet-textarea {
   min-height: 96px;
   resize: vertical;

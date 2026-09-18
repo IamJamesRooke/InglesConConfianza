@@ -8,9 +8,20 @@ import {
   useImperativeHandle,
   useRef,
   useState,
+  type KeyboardEvent as ReactKeyboardEvent,
 } from "react";
 import { isMuted } from "@/lib/learner/speech";
 import { getLearnerVariable } from "@/lib/learner/variables";
+
+// Optional single-select chip row (docs/backlog.md "Feedback to issues"
+// 2026-09-18): none selected by default, tap again to unselect, never
+// required. Sent as `kind` in the payload.
+type FeedbackKind = "problema" | "idea" | "elogio";
+const KIND_OPTIONS: ReadonlyArray<{ value: FeedbackKind; label: string }> = [
+  { value: "problema", label: "Algo falla" },
+  { value: "idea", label: "Una idea" },
+  { value: "elogio", label: "Me gustó" },
+];
 
 // Per-slide feedback (docs/backlog.md "Per-slide feedback",
 // docs/design/learner-direction.md, docs/engineering/feedback.md). One
@@ -120,8 +131,14 @@ export const FeedbackSheet = forwardRef<FeedbackSheetHandle, {
   const [open, setOpen] = useState(false);
   const [message, setMessage] = useState("");
   const [who, setWho] = useState("");
+  const [kind, setKind] = useState<FeedbackKind | null>(null);
+  // Honeypot (docs/backlog.md "Feedback to issues"): off-screen, never
+  // filled by a human. Non-empty on submit means a bot — the field's own
+  // aria-hidden/tabIndex keep it out of the accessible flow.
+  const [website, setWebsite] = useState("");
   const [state, setState] = useState<SendState>("idle");
   const textareaRef = useRef<HTMLTextAreaElement>(null);
+  const kindRefs = useRef<Array<HTMLButtonElement | null>>([]);
 
   const close = useCallback(() => {
     setOpen(false);
@@ -131,9 +148,30 @@ export const FeedbackSheet = forwardRef<FeedbackSheetHandle, {
   const openSheet = useCallback(() => {
     setWho(readStoredWho());
     setMessage("");
+    setKind(null);
+    setWebsite("");
     setState("idle");
     setOpen(true);
   }, []);
+
+  const focusKindAt = useCallback((index: number) => {
+    const count = KIND_OPTIONS.length;
+    const next = kindRefs.current[((index % count) + count) % count];
+    next?.focus();
+  }, []);
+
+  const onKindKeyDown = useCallback(
+    (event: ReactKeyboardEvent<HTMLButtonElement>, index: number) => {
+      if (event.key === "ArrowRight" || event.key === "ArrowDown") {
+        event.preventDefault();
+        focusKindAt(index + 1);
+      } else if (event.key === "ArrowLeft" || event.key === "ArrowUp") {
+        event.preventDefault();
+        focusKindAt(index - 1);
+      }
+    },
+    [focusKindAt],
+  );
 
   useImperativeHandle(ref, () => ({ open: openSheet }), [openSheet]);
 
@@ -199,6 +237,8 @@ export const FeedbackSheet = forwardRef<FeedbackSheetHandle, {
           appVersion: process.env.NEXT_PUBLIC_APP_VERSION || "dev",
           message: message.trim(),
           who: who.trim() || undefined,
+          kind,
+          website,
           page: window.location.pathname + window.location.search,
           at: new Date().toISOString(),
         }),
@@ -208,7 +248,7 @@ export const FeedbackSheet = forwardRef<FeedbackSheetHandle, {
     } catch {
       setState("error");
     }
-  }, [context, message, who, state]);
+  }, [context, message, who, kind, website, state]);
 
   return (
     <>
@@ -252,6 +292,46 @@ export const FeedbackSheet = forwardRef<FeedbackSheetHandle, {
                   Dime qué viste y qué esperabas. Cada comentario mejora la
                   lección.
                 </p>
+                <div
+                  className="feedback-sheet-kind"
+                  role="radiogroup"
+                  aria-label="Tipo de comentario (opcional)"
+                >
+                  {KIND_OPTIONS.map((option, index) => {
+                    const selected = kind === option.value;
+                    const isTabbable = selected || (!kind && index === 0);
+                    return (
+                      <button
+                        key={option.value}
+                        type="button"
+                        role="radio"
+                        aria-checked={selected}
+                        tabIndex={isTabbable ? 0 : -1}
+                        ref={(element) => {
+                          kindRefs.current[index] = element;
+                        }}
+                        className={`feedback-kind-chip${
+                          selected ? " feedback-kind-chip--selected" : ""
+                        }`}
+                        onClick={() => setKind(selected ? null : option.value)}
+                        onKeyDown={(event) => onKindKeyDown(event, index)}
+                      >
+                        {option.label}
+                      </button>
+                    );
+                  })}
+                </div>
+                {/* Honeypot: real learners never see or fill this. */}
+                <input
+                  type="text"
+                  name="website"
+                  value={website}
+                  onChange={(event) => setWebsite(event.target.value)}
+                  className="feedback-sheet-honeypot"
+                  aria-hidden="true"
+                  tabIndex={-1}
+                  autoComplete="off"
+                />
                 <textarea
                   ref={textareaRef}
                   className="feedback-sheet-textarea"

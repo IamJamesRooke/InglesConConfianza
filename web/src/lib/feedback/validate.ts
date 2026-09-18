@@ -12,13 +12,15 @@
 // code on the way in.
 type FeedbackSlideSnapshot = Record<string, unknown> | null;
 
-type FeedbackAnswerEntry = {
+export type FeedbackAnswerEntry = {
   index: number;
   typed: string;
   correct: boolean;
 };
 
-type FeedbackRecord = {
+type FeedbackKind = "problema" | "idea" | "elogio";
+
+export type FeedbackRecord = {
   // Where.
   moduleId: string | null;
   moduleName: string | null;
@@ -48,6 +50,10 @@ type FeedbackRecord = {
   // The note itself.
   who: string | null;
   message: string;
+  // Optional single-select chip from the Comentar sheet ("Algo falla" /
+  // "Una idea" / "Me gustó") — anything else coerces to null rather than
+  // rejecting the request, same as every other best-effort field.
+  kind: FeedbackKind | null;
 };
 
 export type FeedbackValidationResult =
@@ -118,6 +124,24 @@ function asViewport(value: unknown): { w: number; h: number } | null {
 
 function asPointer(value: unknown): "touch" | "mouse" | null {
   return value === "touch" || value === "mouse" ? value : null;
+}
+
+function asKind(value: unknown): FeedbackKind | null {
+  return value === "problema" || value === "idea" || value === "elogio" ? value : null;
+}
+
+/**
+ * Honeypot check (docs/backlog.md "Feedback to issues"): the sheet renders
+ * an off-screen `website` field that a human never fills in. A non-empty
+ * value means a bot filled every field it could find — the caller should
+ * return the normal success response and drop the comment without
+ * delivering it anywhere. Checked against the raw body (not the validated
+ * record) since this field is never stored.
+ */
+export function isHoneypotTripped(body: unknown): boolean {
+  if (typeof body !== "object" || body === null) return false;
+  const value = (body as Record<string, unknown>).website;
+  return typeof value === "string" && value.trim().length > 0;
 }
 
 function asSlide(value: unknown): FeedbackSlideSnapshot {
@@ -203,6 +227,7 @@ export function validateFeedbackPayload(body: unknown): FeedbackValidationResult
       pointer: asPointer(record.pointer),
       who: whoRaw || null,
       message,
+      kind: asKind(record.kind),
     },
   };
 }

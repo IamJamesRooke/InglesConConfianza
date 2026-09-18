@@ -1,7 +1,7 @@
 import assert from "node:assert/strict";
 import test from "node:test";
 
-import { validateFeedbackPayload } from "../../src/lib/feedback/validate";
+import { isHoneypotTripped, validateFeedbackPayload } from "../../src/lib/feedback/validate";
 
 const basePayload = {
   moduleId: "module_1",
@@ -147,4 +147,40 @@ test("accepts a slide snapshot at the 8KB boundary and drops malformed answer en
   assert.equal(result.ok, true);
   if (!result.ok) return;
   assert.deepEqual(result.value.answers, [{ index: 0, typed: "hi", correct: true }]);
+});
+
+test("accepts each valid kind", () => {
+  for (const kind of ["problema", "idea", "elogio"] as const) {
+    const result = validateFeedbackPayload({ ...basePayload, kind });
+    assert.equal(result.ok, true);
+    if (!result.ok) return;
+    assert.equal(result.value.kind, kind);
+  }
+});
+
+test("kind defaults to null when absent", () => {
+  const { kind, ...withoutKind } = { ...basePayload, kind: undefined };
+  void kind;
+  const result = validateFeedbackPayload(withoutKind);
+  assert.equal(result.ok, true);
+  if (!result.ok) return;
+  assert.equal(result.value.kind, null);
+});
+
+test("coerces an unrecognised kind to null instead of rejecting", () => {
+  const result = validateFeedbackPayload({ ...basePayload, kind: "pregunta" });
+  assert.equal(result.ok, true);
+  if (!result.ok) return;
+  assert.equal(result.value.kind, null);
+});
+
+test("isHoneypotTripped is false when the field is absent or empty", () => {
+  assert.equal(isHoneypotTripped(basePayload), false);
+  assert.equal(isHoneypotTripped({ ...basePayload, website: "" }), false);
+  assert.equal(isHoneypotTripped({ ...basePayload, website: "   " }), false);
+  assert.equal(isHoneypotTripped("not an object"), false);
+});
+
+test("isHoneypotTripped is true when a bot fills the trap field", () => {
+  assert.equal(isHoneypotTripped({ ...basePayload, website: "http://spam.example" }), true);
 });

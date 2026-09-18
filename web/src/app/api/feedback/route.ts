@@ -3,57 +3,39 @@ import path from "node:path";
 
 import { NextResponse, type NextRequest } from "next/server";
 
-import { validateFeedbackPayload } from "@/lib/feedback/validate";
+import { buildFeedbackIssue, createFeedbackIssue } from "@/lib/feedback/github-issue";
+import { isHoneypotTripped, validateFeedbackPayload } from "@/lib/feedback/validate";
+import { clientKeyFromHeaders, createRateLimiter } from "@/lib/rate-limit";
 
-// Per-slide feedback (docs/backlog.md "Per-slide feedback",
-// docs/engineering/feedback.md). Public, no auth: a learner note about a
-// slide, forwarded to the owner's Google Sheet webhook when configured, or
-// appended locally so `npm run dev` still captures it.
+// Per-slide feedback (docs/backlog.md "Per-slide feedback" and "Feedback to
+// issues", docs/engineering/feedback.md). Public, no auth: a learner note
+// about a slide. Delivery order: a GitHub issue in the private feedback
+// repo when FEEDBACK_GITHUB_TOKEN + FEEDBACK_GITHUB_REPO are set; otherwise
+// the original webhook (if configured) or a local data/feedback.jsonl
+// append, unchanged.
 export const dynamic = "force-dynamic";
 
-const RATE_LIMIT_WINDOW_MS = 60_000;
-const RATE_LIMIT_MAX = 10;
-// Per-IP timestamps of recent requests. Fine as an in-memory Map for a
-// single-instance deployment (direction: this is a light guard against
-// accidental floods, not abuse-hardening).
-const requestLog = new Map<string, number[]>();
-const RATE_LIMIT_MAX_KEYS = 1000;
+// Per-visitor limit (docs/backlog.md "Feedback to issues"): 5 comments per
+// 10 minutes per IP. In-memory, single-instance guard — a light flood
+// guard, not abuse-hardening.
+const feedbackLimiter = createRateLimiter({ windowMs: 10 * 60_000, max: 5 });
 
 // Reject oversized bodies before JSON.parse — a public, unauthenticated
 // endpoint should not let a caller force large allocations/writes.
 const MAX_BODY_BYTES = 32 * 1024;
 
 function clientKey(request: NextRequest): string {
-  const forwardedFor = request.headers.get("x-forwarded-for");
-  if (forwardedFor) return forwardedFor.split(",")[0]!.trim();
-  return request.headers.get("x-real-ip") ?? "unknown";
-}
-
-function isRateLimited(key: string): boolean {
-  const now = Date.now();
-  // Evict stale keys once the map grows large, so a flood of spoofed
-  // X-Forwarded-For values can't grow this unbounded.
-  if (requestLog.size > RATE_LIMIT_MAX_KEYS) {
-    for (const [mapKey, timestamps] of requestLog) {
-      const recent = timestamps.filter((t) => now - t < RATE_LIMIT_WINDOW_MS);
-      if (recent.length === 0) requestLog.delete(mapKey);
-      else requestLog.set(mapKey, recent);
-    }
-  }
-  const recent = (requestLog.get(key) ?? []).filter(
-    (timestamp) => now - timestamp < RATE_LIMIT_WINDOW_MS,
-  );
-  recent.push(now);
-  requestLog.set(key, recent);
-  return recent.length > RATE_LIMIT_MAX;
+  return clientKeyFromHeaders(request.headers);
 }
 
 const FEEDBACK_LOG_PATH = path.join(process.cwd(), "data", "feedback.jsonl");
 
 export async function POST(request: NextRequest) {
-  if (isRateLimited(clientKey(request))) {
+  if (feedbackLimiter.isRateLimited(clientKey(request))) {
     return NextResponse.json(
-      { error: "Too many requests. Try again in a minute." },
+      {
+        error: "Recibimos varios comentarios tuyos seguidos. Inténtalo en unos minutos.",
+      },
       { status: 429 },
     );
   }
@@ -87,43 +69,62 @@ export async function POST(request: NextRequest) {
   }
   const record = validated.value;
 
-  const webhookUrl = process.env.FEEDBACK_WEBHOOK_URL;
-  if (webhookUrl) {
-    try {
-      const controller = new AbortController();
-      const timeout = setTimeout(() => controller.abort(), 5000);
-      let response: Response;
+  // Honeypot: a bot that fills every field it can find trips the
+  // `website` field a human never sees. Drop the comment silently — the
+  // learner (or bot) still sees an ordinary success response.
+  if (isHoneypotTripped(body)) {
+    return NextResponse.json({ ok: true });
+  }
+
+  // Delivery never fails visibly to the learner — any failure below is
+  // logged (full validated payload, never the GitHub token) and the route
+  // still returns success. This is the Vercel-log fallback when nothing
+  // else captured the note.
+  let deliveryError: string | null = null;
+
+  const githubToken = process.env.FEEDBACK_GITHUB_TOKEN;
+  const githubRepo = process.env.FEEDBACK_GITHUB_REPO;
+  if (githubToken && githubRepo) {
+    const issue = buildFeedbackIssue(record);
+    const result = await createFeedbackIssue(issue, { token: githubToken, repo: githubRepo });
+    if (!result.ok) deliveryError = `github: ${result.error}`;
+  } else {
+    const webhookUrl = process.env.FEEDBACK_WEBHOOK_URL;
+    if (webhookUrl) {
       try {
-        response = await fetch(webhookUrl, {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(record),
-          signal: controller.signal,
-        });
-      } finally {
-        clearTimeout(timeout);
+        const controller = new AbortController();
+        const timeout = setTimeout(() => controller.abort(), 5000);
+        try {
+          const response = await fetch(webhookUrl, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(record),
+            signal: controller.signal,
+          });
+          if (!response.ok) deliveryError = `webhook: responded ${response.status}`;
+        } finally {
+          clearTimeout(timeout);
+        }
+      } catch (error) {
+        deliveryError = `webhook: ${error instanceof Error ? error.message : "request failed"}`;
       }
-      return NextResponse.json(
-        { ok: response.ok },
-        { status: response.ok ? 200 : 502 },
-      );
-    } catch {
-      // Never log the message body — only that the forward failed.
-      return NextResponse.json(
-        { error: "Unable to reach the feedback service." },
-        { status: 502 },
-      );
+    } else {
+      try {
+        await mkdir(path.dirname(FEEDBACK_LOG_PATH), { recursive: true });
+        await appendFile(FEEDBACK_LOG_PATH, `${JSON.stringify(record)}\n`, "utf8");
+      } catch (error) {
+        deliveryError = `jsonl: ${error instanceof Error ? error.message : "write failed"}`;
+      }
     }
   }
 
-  try {
-    await mkdir(path.dirname(FEEDBACK_LOG_PATH), { recursive: true });
-    await appendFile(FEEDBACK_LOG_PATH, `${JSON.stringify(record)}\n`, "utf8");
-    return NextResponse.json({ ok: true });
-  } catch {
-    return NextResponse.json(
-      { error: "Unable to store feedback." },
-      { status: 500 },
+  if (deliveryError) {
+    // Structured single line, full validated payload — never the token,
+    // never raw request headers.
+    console.error(
+      JSON.stringify({ event: "feedback_delivery_failed", error: deliveryError, payload: record }),
     );
   }
+
+  return NextResponse.json({ ok: true });
 }

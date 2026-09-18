@@ -93,3 +93,53 @@ test("the floating feedback pill opens the sheet on a sentence slide and submits
   // Auto-closes ~2s after the thanks state.
   await expect(sheet).not.toBeVisible({ timeout: 4000 });
 });
+
+test("choosing a kind chip sends it, and the honeypot stays empty for a real learner", async ({
+  page,
+  request,
+}) => {
+  const courseResponse = await request.get("/api/admin/lesson-builder/lessons");
+  const course = (await courseResponse.json()) as {
+    modules: Array<{ id: string }>;
+  };
+  const putResponse = await request.put(
+    `/api/admin/lesson-builder/lessons/${feedbackLesson.id}`,
+    { data: { lesson: feedbackLesson, moduleId: course.modules[0].id } },
+  );
+  expect(putResponse.ok()).toBeTruthy();
+
+  let capturedBody: Record<string, unknown> | null = null;
+  await page.route("**/api/feedback", async (route) => {
+    capturedBody = route.request().postDataJSON() as Record<string, unknown>;
+    await route.fulfill({
+      status: 200,
+      contentType: "application/json",
+      body: JSON.stringify({ ok: true }),
+    });
+  });
+
+  await page.goto(`/practice?lesson=${feedbackLesson.id}`);
+
+  const pill = page.getByRole("button", { name: "Comentar" });
+  await pill.click();
+
+  const sheet = page.getByRole("dialog");
+  await expect(sheet).toBeVisible();
+
+  const kindGroup = sheet.getByRole("radiogroup", { name: "Tipo de comentario (opcional)" });
+  const praiseChip = kindGroup.getByRole("radio", { name: "Me gustó" });
+  await praiseChip.click();
+  await expect(praiseChip).toHaveAttribute("aria-checked", "true");
+
+  await sheet
+    .getByPlaceholder("Cuéntame qué está mal o qué mejorarías.")
+    .fill("¡Me encantó esta lección!");
+  await sheet.getByRole("button", { name: "Enviar" }).click();
+
+  await expect(sheet.getByText("¡Gracias! Anotado.")).toBeVisible();
+
+  expect(capturedBody).not.toBeNull();
+  const body = capturedBody!;
+  expect(body.kind).toBe("elogio");
+  expect(body.website).toBe("");
+});

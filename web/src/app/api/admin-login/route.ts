@@ -1,6 +1,7 @@
 import { NextResponse, type NextRequest } from "next/server";
 
 import { timingSafeEqualStrings } from "@/lib/admin/secret-compare";
+import { clientKeyFromHeaders, createRateLimiter } from "@/lib/rate-limit";
 
 // Companion to src/proxy.ts's admin guard. Not under /api/admin (the guard
 // matcher excludes this route on purpose — it's how you get the cookie in
@@ -9,36 +10,13 @@ const COOKIE_NAME = "icc_admin";
 const THIRTY_DAYS_SECONDS = 60 * 60 * 24 * 30;
 
 // Tiny brute-force friction: 10 attempts/minute per IP -> 429. In-memory,
-// single-instance guard (same shape as the feedback route's limiter) — not
-// abuse-hardening, just enough to slow down a naive secret-guessing script.
-const RATE_LIMIT_WINDOW_MS = 60_000;
-const RATE_LIMIT_MAX = 10;
-const RATE_LIMIT_MAX_KEYS = 1000;
-const loginAttempts = new Map<string, number[]>();
+// single-instance guard (shared limiter shape with the feedback route) —
+// not abuse-hardening, just enough to slow down a naive secret-guessing
+// script.
+const loginLimiter = createRateLimiter({ windowMs: 60_000, max: 10 });
 
 function clientKey(request: NextRequest): string {
-  const forwardedFor = request.headers.get("x-forwarded-for");
-  if (forwardedFor) return forwardedFor.split(",")[0]!.trim();
-  return request.headers.get("x-real-ip") ?? "unknown";
-}
-
-function isRateLimited(key: string): boolean {
-  const now = Date.now();
-  // Evict stale keys once the map grows large, so a flood of spoofed
-  // X-Forwarded-For values can't grow this unbounded.
-  if (loginAttempts.size > RATE_LIMIT_MAX_KEYS) {
-    for (const [mapKey, timestamps] of loginAttempts) {
-      const recent = timestamps.filter((t) => now - t < RATE_LIMIT_WINDOW_MS);
-      if (recent.length === 0) loginAttempts.delete(mapKey);
-      else loginAttempts.set(mapKey, recent);
-    }
-  }
-  const recent = (loginAttempts.get(key) ?? []).filter(
-    (timestamp) => now - timestamp < RATE_LIMIT_WINDOW_MS,
-  );
-  recent.push(now);
-  loginAttempts.set(key, recent);
-  return recent.length > RATE_LIMIT_MAX;
+  return clientKeyFromHeaders(request.headers);
 }
 
 function safeNextPath(value: FormDataEntryValue | null): string {
@@ -53,7 +31,7 @@ function safeNextPath(value: FormDataEntryValue | null): string {
 }
 
 export async function POST(request: NextRequest) {
-  if (isRateLimited(clientKey(request))) {
+  if (loginLimiter.isRateLimited(clientKey(request))) {
     return NextResponse.json(
       { error: "Too many attempts. Try again in a minute." },
       { status: 429 },

@@ -146,7 +146,9 @@ every builder edit.
 | --- | --- | --- |
 | `DATABASE_URL` | Admin only (curriculum database) | Not required for the learner build/runtime. |
 | `GOOGLE_TTS_API_KEY` | `npm run audio:generate` only | Not needed at runtime once audio is generated and committed to `public/audio`. |
-| `FEEDBACK_WEBHOOK_URL` | The feedback endpoint (`src/app/api/feedback`, built by another workstream) | Learner-facing; only needed where feedback is enabled. |
+| `FEEDBACK_WEBHOOK_URL` | The feedback endpoint (`src/app/api/feedback`) | Learner-facing; superseded by the two GitHub vars below when both are set — see `docs/engineering/feedback.md`. |
+| `FEEDBACK_GITHUB_TOKEN` | The feedback endpoint | **Sensitive.** A fine-grained GitHub personal access token scoped to exactly one private repo — the feedback repo (`IamJamesRooke/InglesConConfianza-feedback`), NEVER the public project repo — with only the "Issues: Read and write" repository permission. The owner creates this himself and pastes it into Vercel; it is never committed. |
+| `FEEDBACK_GITHUB_REPO` | The feedback endpoint | `owner/name` of that same private feedback repo. Both this and the token must be set together, or the route falls back to `FEEDBACK_WEBHOOK_URL`/local jsonl. |
 | `ADMIN_SECRET` | The admin guard | Optional; unset = guard off. See above. |
 
 ## Vercel steps
@@ -155,7 +157,8 @@ every builder edit.
 2. Set the project root to `web/` (this is a subdirectory of the git repo).
 3. Set env vars as needed for the deploy's purpose — a read-only learner
    deploy needs none of the above by default (lessons/audio are bundled at
-   build); set `FEEDBACK_WEBHOOK_URL` if feedback is enabled; only set
+   build); set `FEEDBACK_GITHUB_TOKEN` + `FEEDBACK_GITHUB_REPO` (or
+   `FEEDBACK_WEBHOOK_URL`) if feedback is enabled; only set
    `ADMIN_SECRET`/`DATABASE_URL` if admin is somehow reachable on that
    deploy (see "local-only" above — normally it should not be).
 4. Build command: default (`next build` via `npm run build`, which runs
