@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 
+import { adminGuardResponse } from "@/lib/admin/assert-admin";
 import { mutateLessonFile } from "@/lib/lesson-builder/server/lesson-store";
 
 function isRecord(value: unknown): value is Record<string, unknown> {
@@ -10,6 +11,9 @@ function isRecord(value: unknown): value is Record<string, unknown> {
 // preserved: each module keeps its own lessons, re-sequenced to match the
 // requested order. (Cross-module moves are done via PUT /course.)
 export async function PATCH(request: Request) {
+  const denied = await adminGuardResponse();
+  if (denied) return denied;
+
   let body: unknown;
 
   try {

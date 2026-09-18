@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 
+import { adminGuardResponse } from "@/lib/admin/assert-admin";
 import { prisma } from "@/lib/database/prisma";
 import { rankConceptSearchResults } from "@/lib/lesson-builder/concept-search-rank";
 
@@ -40,6 +41,9 @@ type Row = {
 };
 
 export async function GET(request: Request) {
+  const denied = await adminGuardResponse();
+  if (denied) return denied;
+
   const params = new URL(request.url).searchParams;
   const query = params.get("q")?.trim() ?? "";
 

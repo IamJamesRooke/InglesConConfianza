@@ -2,6 +2,7 @@
 
 import { revalidatePath } from "next/cache";
 
+import { assertAdmin } from "@/lib/admin/assert-admin";
 import {
   applyLevelInline,
   type SetLevelInlineResult,
@@ -25,6 +26,8 @@ export async function setCurriculumLevelInline(
   conceptId: string,
   curriculumRole: CurriculumRole,
 ): Promise<SetLevelInlineResult> {
+  await assertAdmin();
+
   const result = await applyLevelInline(conceptId, curriculumRole, {
     updateRole: (id, role) =>
       prisma.curriculumConcept.update({

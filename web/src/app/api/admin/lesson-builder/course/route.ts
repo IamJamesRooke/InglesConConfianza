@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 
+import { adminGuardResponse } from "@/lib/admin/assert-admin";
 import { mutateLessonFile } from "@/lib/lesson-builder/server/lesson-store";
 import type { LessonModule } from "@/lib/lesson-builder/types";
 
@@ -21,6 +22,9 @@ function isModulePayload(value: unknown): value is LessonModule {
 // lessonIds. The Course view sends this on every change. The
 // lesson bodies are untouched; reconcile then re-orders `lessons` to match.
 export async function PUT(request: Request) {
+  const denied = await adminGuardResponse();
+  if (denied) return denied;
+
   let body: unknown;
 
   try {

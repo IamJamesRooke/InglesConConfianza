@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 
+import { adminGuardResponse } from "@/lib/admin/assert-admin";
 import { generateMissingClips } from "@/lib/audio/generate-clips";
 
 // POST { lessonId?: string; blockId?: string } -> generates any missing
@@ -12,6 +13,9 @@ function isRecord(value: unknown): value is Record<string, unknown> {
 }
 
 export async function POST(request: Request) {
+  const denied = await adminGuardResponse();
+  if (denied) return denied;
+
   let body: unknown = {};
 
   try {

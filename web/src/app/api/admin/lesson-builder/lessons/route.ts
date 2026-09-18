@@ -1,9 +1,13 @@
 import { NextResponse } from "next/server";
 
+import { adminGuardResponse } from "@/lib/admin/assert-admin";
 import { readConceptDisplays } from "@/lib/curriculum/server/concept-display";
 import { readLessonFile } from "@/lib/lesson-builder/server/lesson-store";
 
 export async function GET() {
+  const denied = await adminGuardResponse();
+  if (denied) return denied;
+
   try {
     const lessonFile = await readLessonFile();
     // Lesson concepts plus every module's syllabus items — the syllabus card

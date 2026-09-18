@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 
+import { adminGuardResponse } from "@/lib/admin/assert-admin";
 import {
   CurriculumConceptNotFoundError,
   deleteCurriculumConcept,
@@ -13,6 +14,9 @@ type RouteContext = {
 };
 
 export async function GET(_request: Request, context: RouteContext) {
+  const denied = await adminGuardResponse();
+  if (denied) return denied;
+
   const { conceptId } = await context.params;
   try {
     const concept = await readCurriculumConcept(conceptId);
@@ -27,6 +31,9 @@ export async function GET(_request: Request, context: RouteContext) {
 }
 
 export async function PATCH(request: Request, context: RouteContext) {
+  const denied = await adminGuardResponse();
+  if (denied) return denied;
+
   const { conceptId } = await context.params;
   let concept: unknown;
 
@@ -56,6 +63,9 @@ export async function PATCH(request: Request, context: RouteContext) {
 }
 
 export async function DELETE(_request: Request, context: RouteContext) {
+  const denied = await adminGuardResponse();
+  if (denied) return denied;
+
   const { conceptId } = await context.params;
 
   try {

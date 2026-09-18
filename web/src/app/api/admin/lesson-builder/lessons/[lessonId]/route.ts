@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 
+import { adminGuardResponse } from "@/lib/admin/assert-admin";
 import { isLesson, mutateLessonFile } from "@/lib/lesson-builder/server/lesson-store";
 
 type SaveLessonBody = {
@@ -16,6 +17,9 @@ export async function PUT(
   request: Request,
   context: RouteContext<"/api/admin/lesson-builder/lessons/[lessonId]">,
 ) {
+  const denied = await adminGuardResponse();
+  if (denied) return denied;
+
   const { lessonId } = await context.params;
   let body: unknown;
 
@@ -101,6 +105,9 @@ export async function DELETE(
   _request: Request,
   context: RouteContext<"/api/admin/lesson-builder/lessons/[lessonId]">,
 ) {
+  const denied = await adminGuardResponse();
+  if (denied) return denied;
+
   const { lessonId } = await context.params;
 
   try {

@@ -2,7 +2,7 @@ import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
 
 import { isAdminDisabledInProduction } from "@/lib/admin/admin-disabled";
-import { timingSafeEqualStrings } from "@/lib/admin/secret-compare";
+import { isAdminRequestAllowed } from "@/lib/admin/is-admin-request-allowed";
 
 // Belt-and-braces admin guard (docs/backlog.md "Admin guard",
 // docs/engineering/deploy.md). Off entirely when ADMIN_SECRET is unset, so
@@ -98,7 +98,11 @@ export function proxy(request: NextRequest) {
   }
 
   const cookieValue = request.cookies.get(COOKIE_NAME)?.value ?? "";
-  const authorized = timingSafeEqualStrings(cookieValue, secret);
+  const authorized = isAdminRequestAllowed({
+    nodeEnv: process.env.NODE_ENV,
+    adminSecret: secret,
+    cookieValue,
+  });
 
   if (pathname.startsWith("/api/admin")) {
     if (!authorized) {

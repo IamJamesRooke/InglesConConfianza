@@ -91,6 +91,42 @@ It lives at `/api/admin-login`, not `/api/admin/login`, specifically so the
 guard's `/api/admin/:path*` matcher does not also gate the one route that
 issues the cookie in the first place.
 
+## Defence in depth: the guard isn't the only check
+
+`proxy.ts`'s matcher (`/admin/:path*`, `/api/admin/:path*`) was, until now,
+the *only* thing standing between a request and an admin-only read or write —
+every route handler and Server Action underneath it trusted the proxy alone.
+That's a single point of failure: Next.js's own guidance
+(`web/node_modules/next/dist/docs/01-app/02-guides/authentication.md`,
+"Server Actions") is to authorize *inside* every Server Action too, because
+actions are invoked by an opaque id baked into the client bundle, not routed
+through the path the proxy matches on — a refactor of the matcher, or a
+Server Action reused from an unguarded page, would silently drop the only
+check in front of a database write.
+
+So the decision logic now has one pure source of truth,
+`isAdminRequestAllowed` in `web/src/lib/admin/is-admin-request-allowed.ts`
+(unit-tested in `web/tests/unit/assert-admin.test.ts`), used three ways:
+
+- `proxy.ts` calls it directly (it has no `next/headers`/`next/server`
+  import, so it stays Edge-safe).
+- `web/src/lib/admin/assert-admin.ts` wraps it as `assertAdmin()` — throws
+  an `AdminForbiddenError` — for Server Actions. Both curriculum "set level
+  in place" actions (`web/src/lib/curriculum/server/set-level-inline.ts`)
+  call it as their first statement.
+- The same file also wraps it as `adminGuardResponse()` — returns a 404 (admin
+  disabled in production) or 401 JSON response, or `null` to proceed — for
+  Route Handlers. Every exported handler (GET included: reading the
+  curriculum is admin-only too) under `web/src/app/api/admin/**` calls it
+  first, except `/api/admin-login` and `/api/feedback`, which are public by
+  design.
+
+Explicit deploy rule: **never set `DATABASE_URL` on the public deployment;
+the learner site does not need it** (see "Learner site: read-only" above —
+it reads only the build-time JSON/audio files). Setting it there would let a
+Server Action that ever slipped past its guard reach a real database from a
+public deploy.
+
 ## Environment variables
 
 | Variable | Needed for | Notes |

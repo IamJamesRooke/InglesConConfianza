@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 
+import { adminGuardResponse } from "@/lib/admin/assert-admin";
 import { curriculumRoles, type CurriculumRole } from "@/lib/curriculum/types";
 import { prisma } from "@/lib/database/prisma";
 
@@ -26,6 +27,9 @@ type Row = {
 };
 
 export async function GET(request: Request) {
+  const denied = await adminGuardResponse();
+  if (denied) return denied;
+
   const role = new URL(request.url).searchParams.get("role") ?? "";
 
   if (!SELECTABLE_ROLES.has(role)) {
