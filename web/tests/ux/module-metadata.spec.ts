@@ -59,7 +59,14 @@ test.describe("module and lesson metadata", () => {
     await expect(page.getByText("All changes saved")).toBeVisible({ timeout: 5000 });
 
     await page.goto("/");
-    await expect(page.getByText("Confianza I").first()).toBeVisible();
+    // Module 1 is the *only* published module left once module 2 is
+    // drafted away — per docs/design/learner-direction.md's home rewrite
+    // ("one module = no module chrome at all"), a single remaining module
+    // never renders its own name as a section heading (that's reserved for
+    // "several modules"), so the module's own lessons are the visible proof
+    // it survived filtering, not its name.
+    await expect(page.getByText("Quiero", { exact: true })).toBeVisible();
+    await expect(page.getByText("Confianza I")).toHaveCount(0);
     await expect(page.getByText("Confianza III")).toHaveCount(0);
   });
 

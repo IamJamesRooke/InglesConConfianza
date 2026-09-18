@@ -215,7 +215,7 @@ export function ConceptTypeahead({
         aria-controls={listboxId}
         aria-autocomplete="list"
         aria-activedescendant={
-          showPopover ? `${listboxId}-option-${highlight}` : undefined
+          showPopover && highlight >= 0 ? `${listboxId}-option-${highlight}` : undefined
         }
         placeholder={
           variant === "compact"

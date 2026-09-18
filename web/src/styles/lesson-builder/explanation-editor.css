@@ -40,10 +40,20 @@
    — position:absolute, so unaffected by this element's own box — paints
    over its top-right corner instead of beside it. Left/bottom are
    untouched: the left edge already matches every other slide's own text
-   column, and there's no gutter to reclaim at the bottom. */
+   column, and there's no gutter to reclaim at the bottom.
+
+   `-4px` (was `-10px`): `.lesson-document-block`'s own top padding is 6px
+   (lesson-document.css's 12px-total block rhythm, not the 12px single-side
+   padding this comment was written against), so cancelling all the way to
+   the cluster's 2px top offset only needs 4px, not 10px. The old -10px
+   overshot the block's own top edge by 4px, landing this fill on top of
+   the hover seam immediately above it (`.lesson-document-insert`, 4px
+   tall at rest) and stealing its hover/click — the seam's own palette
+   became unreachable by mouse (owner-reported via the authoring-ergonomics
+   Playwright spec timing out on `.lesson-document-insert`'s hover). */
 .lesson-document-explanation {
   min-height: 0;
-  margin: -10px -54px 0 0;
+  margin: -4px -54px 0 0;
   padding: 10px 14px;
   border: 0;
   border-radius: 6px;

@@ -97,12 +97,15 @@ test("keyboard writing preserves alternatives and hints and prunes abandoned pai
   await expect(rest).toBeVisible();
   await expect(rest.locator('[lang="en"]')).toHaveText("I'm hungry.");
   await expect(rest).not.toContainText("Estoy hambriento");
-  // Resting typography (§5, item C; Phase 3b bumped the scale to 17/15):
-  // Spanish 17px/600, English 15px/400 italic — not a matched pair of sizes.
+  // Resting typography (§5, item C; colour rule rewritten 2026-09-17 —
+  // colour is language, no italics anywhere): Spanish 17px/700, English
+  // 17px/600 upright — same size, both bold-weight, matching
+  // sentence-presentation.css's `.resting .lesson-sentence-composed` rules.
   await expect(rest.locator('[lang="es"]')).toHaveCSS("font-size", "17px");
-  await expect(rest.locator('[lang="es"]')).toHaveCSS("font-weight", "600");
-  await expect(rest.locator('[lang="en"]')).toHaveCSS("font-size", "15px");
-  await expect(rest.locator('[lang="en"]')).toHaveCSS("font-style", "italic");
+  await expect(rest.locator('[lang="es"]')).toHaveCSS("font-weight", "700");
+  await expect(rest.locator('[lang="en"]')).toHaveCSS("font-size", "17px");
+  await expect(rest.locator('[lang="en"]')).toHaveCSS("font-weight", "600");
+  await expect(rest.locator('[lang="en"]')).toHaveCSS("font-style", "normal");
   await expect(page.getByText("All changes saved", { exact: true })).toBeVisible();
   await page.screenshot({ path: testInfo.outputPath("sentence-rest.png"), fullPage: true });
   await page.reload();
@@ -191,8 +194,12 @@ test("table presentation stays left-aligned and compact through hint editing", a
   const restRows = table.locator(".lesson-sentence-presentation-row");
   await expect(restRows).toHaveCount(4);
   await expect(restRows.first().locator('[lang="es"]')).toHaveText("comer");
+  // Colour is language, no italics anywhere (owner, 2026-09-17):
+  // Spanish 600/17px, English 600/15px upright — sentence-presentation.css's
+  // `.lesson-sentence-presentation-row span[lang=...]` rules.
   await expect(restRows.first().locator('[lang="es"]')).toHaveCSS("font-weight", "600");
-  await expect(restRows.first().locator('[lang="en"]')).toHaveCSS("font-style", "italic");
+  await expect(restRows.first().locator('[lang="en"]')).toHaveCSS("font-weight", "600");
+  await expect(restRows.first().locator('[lang="en"]')).toHaveCSS("font-style", "normal");
   await page.screenshot({ path: testInfo.outputPath("table-rest.png"), fullPage: true });
 
   // Click back in: re-enters editing, same shape as before (four rows, the

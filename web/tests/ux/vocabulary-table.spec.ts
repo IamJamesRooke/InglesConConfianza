@@ -100,8 +100,12 @@ for (const width of [1280, 760]) {
     expect(firstRowBox).not.toBeNull();
     expect(secondRowBox).not.toBeNull();
 
+    // Colour is language, no italics anywhere (owner, 2026-09-17):
+    // sentence-presentation.css's `.lesson-sentence-presentation-row
+    // span[lang=...]` rules are both 600 weight, upright.
     await expect(restRows.nth(0).locator('[lang="es"]')).toHaveCSS("font-weight", "600");
-    await expect(restRows.nth(0).locator('[lang="en"]')).toHaveCSS("font-style", "italic");
+    await expect(restRows.nth(0).locator('[lang="en"]')).toHaveCSS("font-weight", "600");
+    await expect(restRows.nth(0).locator('[lang="en"]')).toHaveCSS("font-style", "normal");
 
     await page.screenshot({ path: testInfo.outputPath(`tbl-rest-${width}.png`), fullPage: true });
 

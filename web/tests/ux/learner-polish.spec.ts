@@ -169,7 +169,15 @@ test("vocabulary rows stay compact through completion and ordinary sentences rem
   expect(
     await rows.first().evaluate((row) => getComputedStyle(row).display),
   ).toBe("grid");
-  expect((await table.boundingBox())!.height).toBeLessThan(420);
+  // 420 assumed the old smaller type scale. The two-actor speaker
+  // composition (docs/design/learner-direction.md) caps the stage card at
+  // 720px regardless of whether the speaker column is showing beside it, so
+  // it doesn't narrow — and therefore doesn't grow — this table at this
+  // test's default (1280px) viewport; the extra height instead comes from
+  // each row's own Spanish/English text now rendering at sentence size
+  // rather than the old compact body size. Measured empirically at ~515px
+  // for 4 rows; 560 leaves headroom without hiding a real bloat regression.
+  expect((await table.boundingBox())!.height).toBeLessThan(560);
 
   const inputs = table.locator("[data-practice-answer]");
   const firstRowHeight = (await rows.first().boundingBox())!.height;
@@ -204,7 +212,12 @@ test("vocabulary rows stay compact through completion and ordinary sentences rem
   await inputs.nth(2).fill("to be able");
   await inputs.nth(3).fill("to do it");
   await expect(rows).toHaveClass([/correct/, /correct/, /correct/, /correct/]);
-  await expect(page.locator(".sentence-success")).toBeVisible();
+  // `.sentence-success` (a success glyph/banner) no longer exists — the
+  // direction removed every success glyph from practice (owner,
+  // 2026-09-17, docs/design/learner-direction.md: "No success glyph
+  // anywhere in practice — the colour settling and the speaker are the
+  // success signal"). All four rows carrying `.correct` above is the real
+  // completion signal now.
   await expect(
     page.getByText("Legacy after-correct feedback must not render."),
   ).toHaveCount(0);
@@ -281,12 +294,20 @@ test("vocabulary rows stay compact through completion and ordinary sentences rem
 
   await page.setViewportSize({ width: 1280, height: 800 });
   await page.goto(`/practice?lesson=${ordinaryLesson.id}`);
-  const ordinaryPiece = page
-    .locator(".sentence-practice:not(.vocabulary-practice) .answer-piece")
-    .first();
-  await expect(ordinaryPiece).toBeVisible();
+  // Ordinary (non-vocabulary) sentence slides no longer render through
+  // SentencePracticeCard's `.sentence-practice`/`.answer-piece` grid at all
+  // — the "the stage" rewrite (docs/design/learner-direction.md, "LESSON —
+  // the stage") moved every non-vocabulary sentence onto SentenceStageCard's
+  // `.sentence-stage`/`.stage-card` two-line composition instead;
+  // lesson-selector.tsx now only reaches SentencePracticeCard for
+  // vocabulary tables and single-answer blocks (see its "Vocabulary tables
+  // stay tables" comment). Assert the stage card renders (proving this
+  // isn't the vocabulary grid) rather than looking for a selector that no
+  // longer exists for this block type.
+  const stageCard = page.locator(".stage-card").first();
+  await expect(stageCard).toBeVisible();
   expect(
-    await ordinaryPiece.evaluate((row) => getComputedStyle(row).display),
+    await stageCard.evaluate((el) => getComputedStyle(el).display),
   ).not.toBe("grid");
 
   for (const lesson of [vocabularyLesson, ordinaryLesson]) {

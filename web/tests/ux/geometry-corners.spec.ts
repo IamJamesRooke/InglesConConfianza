@@ -185,39 +185,34 @@ async function buildFlowALesson(page: import("@playwright/test").Page) {
 // now checks the always-visible add-input's text start instead of the
 // removed summary button's label.
 //
-// Known 4px gap (2026-09-16, cosmetic-lane session): `.lesson-document-tags`
-// (lesson-document.css, out of scope for that session — owned elsewhere)
-// still carries `padding-left: 9px`, a value only correct because the old
-// collapsed `.lesson-covers-summary` button contributed its own 4px of
-// left padding to reach the shared 13px column (see that file's git
-// history). Now that Covers always renders expanded, `.lesson-document-tags`
-// needs `padding-left: 13px` again to close this gap — flagged for whoever
-// owns that file next, not fixed here.
+// Reference is the *sentence/table* text column, not the explanation's:
+// the explanation slide's own "quiet grey block" treatment (owner,
+// 2026-09-16, lesson-builder.md §5 "Explanation slide") gave it a 14px
+// inner card padding on top of the block's own left padding, which by
+// design sits further right than the shared 13px column sentence pairs,
+// vocabulary rows, and Covers all still share — the two were never meant
+// to line up after that change. Measured empirically (2026-09-17): the
+// Covers add-input's text and a sentence pair's own Spanish text land at
+// the exact same x at 760px, so this now asserts against the sentence
+// column with a tight tolerance instead of the explanation column with a
+// wide one.
 test("Covers input text aligns with the shared left text column at 760px", async ({ page }) => {
   await buildFlowALesson(page);
   await page.setViewportSize({ width: 760, height: 900 });
 
-  const explanationLeft = await page.locator(".lesson-document-explanation").first().evaluate((el) => {
-    const walker = document.createTreeWalker(el, NodeFilter.SHOW_TEXT, {
-      acceptNode: (node) => (node.textContent?.trim() ? NodeFilter.FILTER_ACCEPT : NodeFilter.FILTER_SKIP),
-    });
-    const textNode = walker.nextNode();
-    if (!textNode) return null;
-    const range = document.createRange();
-    range.selectNodeContents(textNode);
-    return range.getBoundingClientRect().left;
-  });
-  expect(explanationLeft).not.toBeNull();
+  const sentenceLeft = await page
+    .locator('.lesson-sentence-composed[lang="es"] .lesson-sentence-phrase')
+    .first()
+    .evaluate((el) => el.getBoundingClientRect().left);
 
   const inputTextLeft = await page.locator(".lesson-concept-add").first().evaluate((el) => {
     const rect = el.getBoundingClientRect();
     const paddingLeft = parseFloat(getComputedStyle(el).paddingLeft || "0");
-    return rect.left + paddingLeft;
+    const borderLeft = parseFloat(getComputedStyle(el).borderLeftWidth || "0");
+    return rect.left + borderLeft + paddingLeft;
   });
 
-  // Tolerance covers the known 4px `.lesson-document-tags` gap above,
-  // pending that file's fix — tighten back to `- 1` once it lands.
-  expect(inputTextLeft).toBeGreaterThanOrEqual((explanationLeft as number) - 5);
+  expect(Math.abs(inputTextLeft - sentenceLeft)).toBeLessThan(2);
 });
 
 for (const width of [760, 1280]) {
