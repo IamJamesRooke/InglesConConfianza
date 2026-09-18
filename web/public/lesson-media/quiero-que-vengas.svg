@@ -1,10 +1,8 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 290" role="img" aria-label="quiero que vengas se dice I want you to come: el que no se traduce">
-  <defs><marker id="a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="#7d24d3"/></marker></defs>
-  <g font-family="Geist, Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif" font-size="46" font-weight="700" text-anchor="middle">
-    <g fill="#bb061e"><text x="110" y="70">quiero</text><text x="300" y="70">que</text><text x="560" y="70">vengas</text></g>
-    <g fill="#123eb2"><text x="110" y="250">I want</text><text x="560" y="250">you to come</text></g>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 180" role="img" aria-label="quiero que vengas se dice I want you to come: el que no se traduce">
+  <g text-anchor="middle" font-family="Geist, Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif" font-weight="700">
+    <text x="180" y="40" font-size="34" fill="#bb061e">quiero <tspan fill="#7d24d3">que</tspan> vengas</text>
+    <text x="180" y="166" font-size="34" fill="#123eb2">I want you to come</text>
+    <text x="180" y="100" font-size="15" letter-spacing="1.2" fill="#503975">EL «QUE» NO SE TRADUCE</text>
   </g>
-  <text x="300" y="244" text-anchor="middle" font-family="Geist, Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif" font-size="19" font-weight="600" letter-spacing="1.5" fill="#503975">NO SE TRADUCE</text>
-  <g stroke="#7d24d3" stroke-width="4" stroke-linecap="round" marker-end="url(#a)"><path d="M110 98V184"/><path d="M560 98V184"/></g>
-  <path d="M300 98V206" stroke="#7d24d3" stroke-width="4" stroke-linecap="round" stroke-dasharray="4 12"/>
+  <path d="M180 52V76" stroke="#7d24d3" stroke-width="3" stroke-linecap="round" stroke-dasharray="3 8"/>
 </svg>

@@ -156,7 +156,7 @@ No siempre es así, pero hoy sí.
 ? Responde en voz alta mientras escribes. Nadie te está oyendo.
 > Mi nombre / My name (Empieza con MAYÚSCULA.)
 > es / is
-> ? tu nombre / {name}.
+> ? … / {name}. (Escribe tu nombre.)
 
 [[en:Hi, {name}!]]
 Mucho gusto. Ya te presentaste en inglés.[[audio: Y lo dijiste en voz alta, ¿cierto?]]

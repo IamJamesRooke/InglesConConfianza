@@ -503,3 +503,51 @@ test("an explanation with no image round-trips with no [[img: ]] line", () => {
   const printed = printScript(lesson);
   assert.ok(!printed.includes("[[img:"));
 });
+
+// ---------------------------------------------------------------------
+// Regression pin — investigation of a reported script-mode paste bug
+// (2026-09-18): three explanation slides the owner pasted came out with
+// chunks missing (e.g. a line truncated mid-word, or a middle span dropped
+// with the two remaining halves fused together, losing a space). A Playwright
+// repro pasting the whole lesson-3 script (docs/design/onboarding-content.md)
+// both via a synthetic paste and via a REAL OS clipboard paste event, then
+// focusing/blurring every explanation in the rich editor, found no
+// corruption anywhere in the builder (script textarea, parser, autosave, or
+// rich-editor normalization) — every explanation's stored contentMarkdown
+// matched the source text exactly, byte for byte, every time. That rules out
+// (B): the damage was already in the text by the time it reached the
+// clipboard (a terminal soft-wrap or scrollback copy artifact), not
+// something this app did. These three pin the exact originals through
+// parse → print → parse so a future change to the parser can't silently
+// reintroduce a text-dropping bug for these shapes (multi-sentence plain
+// paragraphs, and a paragraph with bold-immediately-before-a-period, a
+// capture with a `|` fallback, and a trailing `[[audio: ]]`).
+// ---------------------------------------------------------------------
+
+test("pins the three originally-reported damaged lines through parse -> print -> parse, byte for byte", () => {
+  const originals = [
+    "En inglés la pregunta solo lleva un signo, al final.",
+    "Las lecciones van en orden por una razón. Aunque algo te parezca fácil, no te saltes ninguna.",
+    "Eres de las primeras personas en probar esto, {name|amigo}. Si algo no se entiende o se ve mal, presiona **Comentar**.[[audio: Cada comentario me ayuda muchísimo.]]",
+  ];
+
+  for (const original of originals) {
+    const script = `# T\n${original}`;
+    const parsed = parseScript(script);
+    assert.deepEqual(parsed.errors, []);
+    assert.equal(parsed.blocks.length, 1);
+    const block = parsed.blocks[0];
+    assert.equal(block.type, "explanation");
+    assert.equal(block.type === "explanation" ? block.contentMarkdown : undefined, original);
+
+    const lesson = makeLesson({ name: parsed.title ?? null, blocks: parsed.blocks });
+    const printed = printScript(lesson);
+    const reparsed = parseScript(printed);
+    assert.deepEqual(reparsed.errors, []);
+    const reblock = reparsed.blocks[0];
+    assert.equal(
+      reblock.type === "explanation" ? reblock.contentMarkdown : undefined,
+      original,
+    );
+  }
+});

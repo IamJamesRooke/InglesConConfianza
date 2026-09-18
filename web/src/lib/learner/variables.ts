@@ -196,15 +196,46 @@ export function isAcceptableCaptureValue(raw: string): boolean {
 }
 
 /**
+ * Lowercase particles that stay lowercase when a captured name is
+ * title-cased word by word, unless the particle is the first word.
+ */
+const CAPTURE_PARTICLES = new Set([
+  "de",
+  "del",
+  "la",
+  "las",
+  "los",
+  "y",
+  "da",
+  "dos",
+  "van",
+  "von",
+]);
+
+/**
  * The value actually stored from what the learner typed: trailing sentence
  * punctuation dropped ("James." → "James", the full stop belongs to the
- * piece's `suffix`), their own capitalisation kept, and a first letter
- * upper-cased only when they typed the whole thing lowercase ("james" →
- * "James", "mcDonald" left alone).
+ * piece's `suffix`), their own capitalisation kept if they used ANY
+ * uppercase letter themselves ("mcDonald" left alone), and — only when they
+ * typed the whole thing lowercase — every word capitalised ("maría josé" →
+ * "María José", "juan de la cruz" → "Juan de la Cruz", "ana-maría" →
+ * "Ana-María"), with a fixed set of naming particles ("de", "del", "la",
+ * "las", "los", "y", "da", "dos", "van", "von") kept lowercase unless they
+ * are the first word. Unicode-aware, so accented letters (á, ñ, ü) count as
+ * letters for casing.
  */
 export function normalizeCaptureValue(raw: string): string {
   const trimmed = raw.trim().replace(/[.,!?]+$/u, "").trim();
   if (!trimmed) return "";
   if (/\p{Lu}/u.test(trimmed)) return trimmed;
-  return trimmed[0].toUpperCase() + trimmed.slice(1);
+
+  let isFirstWord = true;
+  return trimmed.replace(/[\p{L}\p{M}]+/gu, (word) => {
+    const lower = word.toLowerCase();
+    const isParticle = CAPTURE_PARTICLES.has(lower);
+    const shouldLowercase = isParticle && !isFirstWord;
+    isFirstWord = false;
+    if (shouldLowercase) return lower;
+    return lower[0].toUpperCase() + lower.slice(1);
+  });
 }

@@ -160,6 +160,20 @@ test("a stored capture value loses trailing punctuation and keeps the learner's 
   assert.equal(normalizeCaptureValue("..."), "");
 });
 
+test("an all-lowercase capture value gets every word capitalised", () => {
+  assert.equal(normalizeCaptureValue("maría josé"), "María José");
+  assert.equal(normalizeCaptureValue("juan de la cruz"), "Juan de la Cruz");
+  assert.equal(normalizeCaptureValue("ana-maría"), "Ana-María");
+  assert.equal(normalizeCaptureValue("berg van berg"), "Berg van Berg");
+  assert.equal(normalizeCaptureValue("de sousa"), "De Sousa");
+  assert.equal(normalizeCaptureValue("josé maría de la ñusta"), "José María de la Ñusta");
+});
+
+test("any uppercase letter the learner typed leaves their casing alone entirely", () => {
+  assert.equal(normalizeCaptureValue("maría JOSÉ"), "maría JOSÉ");
+  assert.equal(normalizeCaptureValue("Juan de la cruz"), "Juan de la cruz");
+});
+
 test("a capture piece displays its value plus its literal suffix", () => {
   const piece = { capture: { key: "name", suffix: "." } };
   assert.equal(captureDisplayText(piece, "James"), "James.");

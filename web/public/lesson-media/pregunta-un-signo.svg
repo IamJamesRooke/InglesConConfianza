@@ -1,7 +1,8 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 300" role="img" aria-label="En español la pregunta lleva dos signos; en inglés, uno solo al final">
-  <g text-anchor="middle" font-family="Geist, Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif" font-size="56" font-weight="700">
-    <text x="360" y="96" fill="#bb061e"><tspan fill="#7d24d3">¿</tspan>Cuál es tu nombre<tspan fill="#7d24d3">?</tspan></text>
-    <text x="360" y="246" fill="#123eb2">What is your name<tspan fill="#7d24d3">?</tspan></text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 190" role="img" aria-label="En español la pregunta lleva dos signos; en inglés, uno solo al final">
+  <g text-anchor="middle" font-family="Geist, Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif" font-weight="700">
+    <text x="180" y="42" font-size="33" fill="#bb061e"><tspan fill="#7d24d3">¿</tspan>Cuál es tu nombre<tspan fill="#7d24d3">?</tspan></text>
+    <text x="180" y="176" font-size="33" fill="#123eb2">What is your name<tspan fill="#7d24d3">?</tspan></text>
+    <text x="180" y="90" font-size="15" letter-spacing="1.2" fill="#503975">ESPAÑOL: DOS SIGNOS</text>
+    <text x="180" y="116" font-size="15" letter-spacing="1.2" fill="#503975">INGLÉS: UNO SOLO, AL FINAL</text>
   </g>
-  <text x="360" y="166" text-anchor="middle" font-family="Geist, Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif" font-size="21" font-weight="600" letter-spacing="1.5" fill="#503975">ESPAÑOL: DOS SIGNOS · INGLÉS: UNO SOLO, AL FINAL</text>
 </svg>

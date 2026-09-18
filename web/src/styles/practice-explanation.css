@@ -18,13 +18,25 @@
      of the rule that also touches .answer-grid (practice-table.css). */
   background: var(--surface-writing);
 }
-/* Replay control (docs/design/speech.md "Explanation voice track"): sits
-   top-right INSIDE the card's own padding, a 40px hit area around the 24px
+/* Replay control (docs/design/speech.md "Explanation voice track"): a
+   floating badge pinned to the card's top-right CORNER, half outside the
+   card's own border (owner-facing bug, 2026-09-18 rehearsal: at 12px inside
+   the padding it sat directly on top of the paragraph's own first line
+   whenever text reached the top-right corner — "En inglés la pregunta..."
+   read as "En inglés la pregunta so" behind the cue's "Escuchar" label —
+   and on top of a slide's diagram image whenever the image reached full
+   card width, hiding an arrow or a label under the icon. Moving it outside
+   the content box entirely removes the overlap regardless of text length,
+   image size, or which variant (icon-only vs. the labelled "Escuchar" cue)
+   is showing; the card's own 20px phone gutter leaves enough clearance for
+   the badge to sit half off the card without being clipped by the
+   viewport. Given its own background/shadow now that it's not "inside the
+   card" to borrow the card's white from). 40px hit area around the 24px
    glyph. Only rendered when a generated clip exists for this explanation. */
 .lesson-explanation-replay {
   position: absolute;
-  top: 12px;
-  right: 12px;
+  top: -16px;
+  right: -16px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -33,7 +45,8 @@
   border: 0;
   border-radius: 999px;
   color: var(--primary);
-  background: none;
+  background: var(--card);
+  box-shadow: var(--shadow-sm);
   transition: background 180ms;
 }
 .lesson-explanation-replay:hover {
@@ -67,8 +80,8 @@
    lesson regardless, so the control never looks dead. Pressing it plays and
    collapses it back to the icon-only circle. */
 .lesson-explanation-replay--cue {
-  top: 8px;
-  right: 8px;
+  top: -14px;
+  right: -12px;
   width: auto;
   height: 36px;
   gap: 8px;
@@ -76,6 +89,7 @@
   border-radius: 8px;
   color: var(--primary);
   background: var(--surface-subtle);
+  box-shadow: var(--shadow-sm);
   font: 600 var(--t-ui) / 1 inherit;
 }
 .lesson-explanation-replay-label {

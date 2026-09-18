@@ -324,24 +324,24 @@
       "name": "Hello.",
       "concepts": [
         {
-          "id": "lesson_concept_63de430d-a98c-4a8a-b503-159c3df68274",
+          "id": "lesson_concept_29109a18-a2e6-4030-a4e5-07b6f5e57b4d",
           "conceptId": null,
           "label": "hola"
         }
       ],
       "blocks": [
         {
-          "id": "block_b595f54e-6959-4686-9638-a10cd7e52841",
+          "id": "block_a98936fd-3a9a-4864-927c-fcde12b307ce",
           "type": "explanation",
           "contentMarkdown": "Aquí no vienes a estudiar inglés. Vienes a **hablarlo**.\n\nLlevo más de 14 años llevando a personas desde cero hasta conversar. Este es mi método."
         },
         {
-          "id": "block_8cd2843e-3f31-48ea-988c-4661dc9c3d4c",
+          "id": "block_d617af49-d834-4847-875b-9d534b8dc9e4",
           "type": "explanation",
           "contentMarkdown": "Empecemos por lo más fácil, para que veas cómo funciona.\n\n[[es:hola]] es [[en:hello]], pronunciado *jelóu*."
         },
         {
-          "id": "block_43e00b0e-1f6c-48da-9e20-09c6a4ecfddc",
+          "id": "block_91e933b6-ada5-4dfe-ab72-b5b474b2b950",
           "type": "sentence",
           "promptLabel": "",
           "promptText": "Escribe en inglés. En el celular funciona bien; con computador es más cómodo.",
@@ -349,7 +349,7 @@
           "answerFeedback": null,
           "languageBlocks": [
             {
-              "id": "lang_160be48a-de76-45b5-8cda-8cb88cc7b51c",
+              "id": "lang_9e7f8d03-a833-429e-93c0-b73b07621631",
               "spanish": "hola",
               "callout": null,
               "acceptedAnswers": [
@@ -360,17 +360,17 @@
           ]
         },
         {
-          "id": "block_52e73a58-f7f3-4b2c-b4b5-07ee280d658a",
+          "id": "block_ce37ed4e-7a08-401f-9033-de621ab0c017",
           "type": "explanation",
           "contentMarkdown": "Así es todo el curso: aprendes una palabra, la usas, y seguimos.\n\nAquí nadie pierde puntos ni vidas."
         },
         {
-          "id": "block_2c2df092-8ce2-4350-875a-572672c49f57",
+          "id": "block_974f6fbe-b171-4829-893e-30d45a78a046",
           "type": "explanation",
           "contentMarkdown": "Si algo se te olvida, toca **Recuérdame**. Para eso está."
         },
         {
-          "id": "block_0673d403-53d9-4278-b0f1-2549e3ceae3c",
+          "id": "block_35688ffc-64d8-4866-874c-65576ff7dcdd",
           "type": "sentence",
           "promptLabel": "",
           "promptText": "Pruébalo: escribe helo, con un error, y toca Recuérdame.",
@@ -378,7 +378,7 @@
           "answerFeedback": null,
           "languageBlocks": [
             {
-              "id": "lang_ebdbf2d1-e612-4710-9914-da61c2c35bfc",
+              "id": "lang_9b7a93d1-86df-4a95-8f51-d1f063510a08",
               "spanish": "hola",
               "callout": null,
               "acceptedAnswers": [
@@ -389,7 +389,7 @@
           ]
         },
         {
-          "id": "block_66bdb045-65fb-4c74-af6e-07935f0e3fae",
+          "id": "block_c06c2b42-c001-47eb-8ec9-7463b39ccb2f",
           "type": "explanation",
           "contentMarkdown": "Una frase empieza con mayúscula y termina con punto.\n\nEn el celular, dos toques a la barra espaciadora ponen el punto.",
           "image": {
@@ -398,7 +398,7 @@
           }
         },
         {
-          "id": "block_3872ff47-bd5c-4ead-a25d-52efb6d8c804",
+          "id": "block_a9000714-0a53-4bea-a9b9-19367b5fae18",
           "type": "sentence",
           "promptLabel": "",
           "promptText": "Tu primera frase.",
@@ -406,7 +406,7 @@
           "answerFeedback": null,
           "languageBlocks": [
             {
-              "id": "lang_7a211ce8-7be4-4539-b7e2-5f872a13bb14",
+              "id": "lang_01cea8ca-2c26-4790-99a0-808d8bc01a69",
               "spanish": "Hola.",
               "callout": "MAYÚSCULA al inicio y PUNTO al final.",
               "acceptedAnswers": [
@@ -417,7 +417,7 @@
           ]
         },
         {
-          "id": "block_2d32b7f2-bd58-4aa6-ad6b-77a20a7163b1",
+          "id": "block_0fe44f14-1c70-4451-bd01-824539e2d3bc",
           "type": "explanation",
           "contentMarkdown": "¿Ya sabes algo de inglés? Mejor. Pronto vas a decir [[en:I want you to come here]].\n\nSi ahí te provoca meter un *that*, tranquilo: aquí se te quita.[[audio: Le pasa a casi todo el mundo.]]",
           "image": {
@@ -432,39 +432,39 @@
       "name": "My name is ...",
       "concepts": [
         {
-          "id": "lesson_concept_c734c2ce-b0d5-46d8-a0c4-07904dfeeefb",
+          "id": "lesson_concept_81ebcea8-03f0-4476-a62f-f64e029706ea",
           "conceptId": null,
           "label": "mi"
         },
         {
-          "id": "lesson_concept_2d1ee1f8-d8e2-4b13-a681-9e97a5bfa078",
+          "id": "lesson_concept_38b84352-3674-46e4-9572-f3830cc20ec5",
           "conceptId": null,
           "label": "nombre"
         },
         {
-          "id": "lesson_concept_b2790ebb-14c2-430c-bc96-60eb4713f6ec",
+          "id": "lesson_concept_6a3a5ee1-a99d-48e4-8c2d-731d2fa128e7",
           "conceptId": null,
           "label": "ser"
         }
       ],
       "blocks": [
         {
-          "id": "block_17c9bb4f-8a12-470a-a8e3-9bbba31b32d4",
+          "id": "block_8eabb5c0-6669-4813-b752-b1d7bcd4b298",
           "type": "explanation",
           "contentMarkdown": "Una cosa antes de seguir: esta es una versión de prueba.\n\nNo te pedimos cuenta ni correo. Tu progreso se guarda solo en este celular o computador."
         },
         {
-          "id": "block_51541dd0-7e30-4b6a-80aa-aeebe50867e1",
+          "id": "block_18971a6c-2a8e-40ad-bf90-28d4443d052b",
           "type": "explanation",
           "contentMarkdown": "Ahora te voy a hacer una pregunta: [[en:What is your name?]][[audio: Significa: ¿cuál es tu nombre?]]\n\nPara responder necesitas tres palabras."
         },
         {
-          "id": "block_a97c1ff6-e15c-4252-ae4e-e9d444f6f101",
+          "id": "block_2db982e4-8985-45e3-a08a-3bf3ed6a5d92",
           "type": "explanation",
           "contentMarkdown": "[[es:mi]] es [[en:my]], pronunciado *mai*."
         },
         {
-          "id": "block_4a940620-5708-47fe-bd47-db1b3e69ff02",
+          "id": "block_86769e78-821d-48a7-af66-86c32599cf41",
           "type": "sentence",
           "promptLabel": "",
           "promptText": "",
@@ -472,7 +472,7 @@
           "answerFeedback": null,
           "languageBlocks": [
             {
-              "id": "lang_023ce051-3c19-4c59-996d-36c5b3e23a1c",
+              "id": "lang_ce895fbf-b454-4097-9f45-546c4ffb4377",
               "spanish": "mi",
               "callout": null,
               "acceptedAnswers": [
@@ -482,12 +482,12 @@
           ]
         },
         {
-          "id": "block_576062d5-2aea-4040-9a33-8c1af29e1390",
+          "id": "block_21b0861f-56ac-4a8c-8551-8bad9b951d52",
           "type": "explanation",
           "contentMarkdown": "[[es:nombre]] es [[en:name]], pronunciado *neim*. Una sola sílaba: no digas *na-me*."
         },
         {
-          "id": "block_f2bc81b8-917a-4fa5-ac4f-6cda0420990f",
+          "id": "block_4313bb76-9a2d-4cea-b72a-67e977c5e57e",
           "type": "sentence",
           "promptLabel": "",
           "promptText": "",
@@ -495,7 +495,7 @@
           "answerFeedback": null,
           "languageBlocks": [
             {
-              "id": "lang_b7c81fcd-52b7-4c7b-876b-2e11827d0bd7",
+              "id": "lang_33601418-0e21-4841-b280-951407b03dc3",
               "spanish": "nombre",
               "callout": null,
               "acceptedAnswers": [
@@ -505,12 +505,12 @@
           ]
         },
         {
-          "id": "block_c3ce84a7-9a82-470f-a207-9d23ea51dde4",
+          "id": "block_910d698b-e5fc-4a59-86fa-d5ee38f1f39c",
           "type": "explanation",
           "contentMarkdown": "[[es:es]] se dice [[en:is]]."
         },
         {
-          "id": "block_e4fd2efc-6f4f-4a99-900b-73f2426970b3",
+          "id": "block_cf5171d6-104f-45b8-b0a9-0b0768c4c06a",
           "type": "sentence",
           "promptLabel": "",
           "promptText": "",
@@ -518,7 +518,7 @@
           "answerFeedback": null,
           "languageBlocks": [
             {
-              "id": "lang_a8ea1ad1-dc2f-47b0-8b59-326645671be5",
+              "id": "lang_5c2722fa-5df9-43e8-bc8a-4d9f52d25a69",
               "spanish": "es",
               "callout": null,
               "acceptedAnswers": [
@@ -528,7 +528,7 @@
           ]
         },
         {
-          "id": "block_24bd1241-51f6-4010-8955-af09ee52b7dc",
+          "id": "block_547df175-5f4d-4301-be94-70339a829212",
           "type": "sentence",
           "layout": "vocabulary_table",
           "promptLabel": "",
@@ -537,7 +537,7 @@
           "answerFeedback": null,
           "languageBlocks": [
             {
-              "id": "lang_11d26d46-189b-4b32-96e5-7ec347f92217",
+              "id": "lang_a4c92a05-0516-4119-80c8-b770b9b40a2b",
               "spanish": "mi",
               "callout": null,
               "acceptedAnswers": [
@@ -545,7 +545,7 @@
               ]
             },
             {
-              "id": "lang_3cbe1f1b-5e1c-4631-9735-43f845ab60fa",
+              "id": "lang_270c3179-ccdc-4e09-b695-9f80b2a32f91",
               "spanish": "nombre",
               "callout": null,
               "acceptedAnswers": [
@@ -553,7 +553,7 @@
               ]
             },
             {
-              "id": "lang_c52285d7-3fc5-4aa9-b893-26b2cc855ba9",
+              "id": "lang_ec41d119-2741-4d6f-8291-d2baa8e7923f",
               "spanish": "es",
               "callout": null,
               "acceptedAnswers": [
@@ -563,7 +563,7 @@
           ]
         },
         {
-          "id": "block_66a36e13-83be-4c16-9690-268e22ca4bdd",
+          "id": "block_e7966629-a70e-4517-bd50-91eca31c2fb3",
           "type": "explanation",
           "contentMarkdown": "Esta vez el inglés va igual que el español, palabra por palabra.\n\nNo siempre es así, pero hoy sí.",
           "image": {
@@ -572,12 +572,12 @@
           }
         },
         {
-          "id": "block_d9a42e5b-796b-4421-b2ca-abe1a6eaf5d4",
+          "id": "block_394299e2-af4c-4c73-831c-c23bebaecb0b",
           "type": "explanation",
           "contentMarkdown": "[[en:What is your name?]]"
         },
         {
-          "id": "block_40deeb05-79d2-492c-8063-36fbbc7c0709",
+          "id": "block_c7236818-dcbf-4bf9-aa62-fee707717568",
           "type": "sentence",
           "promptLabel": "",
           "promptText": "Responde en voz alta mientras escribes. Nadie te está oyendo.",
@@ -585,7 +585,7 @@
           "answerFeedback": null,
           "languageBlocks": [
             {
-              "id": "lang_5723c2ba-bc10-431d-a6ae-b3c057ea382d",
+              "id": "lang_8c9ca905-dc61-41b6-bf9f-8889c8d09201",
               "spanish": "Mi nombre",
               "callout": "Empieza con MAYÚSCULA.",
               "acceptedAnswers": [
@@ -593,7 +593,7 @@
               ]
             },
             {
-              "id": "lang_566612ac-2eab-4b9f-9e1b-5e65c2cfe1da",
+              "id": "lang_aa1d511a-dc85-4708-b0c9-5bf5fd1ea3b4",
               "spanish": "es",
               "callout": null,
               "acceptedAnswers": [
@@ -601,9 +601,9 @@
               ]
             },
             {
-              "id": "lang_070836b2-e2da-4c44-9d7d-515e73538a04",
-              "spanish": "tu nombre",
-              "callout": null,
+              "id": "lang_bc9bfa88-c238-4eda-9f1e-41e6228e52ce",
+              "spanish": "…",
+              "callout": "Escribe tu nombre.",
               "acceptedAnswers": [],
               "capture": {
                 "key": "name",
@@ -613,7 +613,7 @@
           ]
         },
         {
-          "id": "block_cb0887ba-ea52-402d-805b-363a401bf345",
+          "id": "block_222d472f-c128-48da-860c-3a812c848445",
           "type": "explanation",
           "contentMarkdown": "[[en:Hi, {name}!]]\n\nMucho gusto. Ya te presentaste en inglés.[[audio: Y lo dijiste en voz alta, ¿cierto?]]"
         }
@@ -624,34 +624,34 @@
       "name": "What is your name?",
       "concepts": [
         {
-          "id": "lesson_concept_c3f59afd-53c9-4802-9a39-afe22c0c48b2",
+          "id": "lesson_concept_2602198a-f895-4f9d-a2fa-6145e6aeab1a",
           "conceptId": null,
           "label": "qué"
         },
         {
-          "id": "lesson_concept_bfdfe612-86f8-4f5f-9a75-6534a0347176",
+          "id": "lesson_concept_9724d853-96b0-4429-8c0c-325d89e1d4ed",
           "conceptId": null,
           "label": "tu"
         },
         {
-          "id": "lesson_concept_36c360fa-e99f-4693-b387-96b9f8940b5b",
+          "id": "lesson_concept_dc4c8af4-f1a7-4de1-ab3e-07d8eb5f2917",
           "conceptId": null,
           "label": "nombre"
         }
       ],
       "blocks": [
         {
-          "id": "block_ff022ef8-0a2f-4ae8-ba02-28720f44304f",
+          "id": "block_070819d3-5356-4c5a-a0bf-1ed86dfaeaba",
           "type": "explanation",
           "contentMarkdown": "Ahora te toca preguntar a ti, {name}."
         },
         {
-          "id": "block_863e4102-bb7b-4ce9-add0-749feb742585",
+          "id": "block_00c08449-ca3b-4213-968a-c8777ae6ede8",
           "type": "explanation",
           "contentMarkdown": "En español preguntamos *cuál*. En inglés, para el nombre se usa [[en:what]], pronunciado *uat*."
         },
         {
-          "id": "block_64ca8232-be3b-473d-a2bc-ed89efec3ac1",
+          "id": "block_1ed2d2b3-3936-4d22-8e12-769a05d4d428",
           "type": "sentence",
           "promptLabel": "",
           "promptText": "",
@@ -659,7 +659,7 @@
           "answerFeedback": null,
           "languageBlocks": [
             {
-              "id": "lang_90b83cfb-56f4-4499-bc8c-16699b79a87b",
+              "id": "lang_a83cf60c-85ca-42e5-bc97-a9b5f0b6cf80",
               "spanish": "cuál",
               "callout": null,
               "acceptedAnswers": [
@@ -669,12 +669,12 @@
           ]
         },
         {
-          "id": "block_3b2347e3-1e34-4fc0-b912-8c3db491bbb9",
+          "id": "block_959c9a0a-3c5c-4aa5-b50b-b91ced9ad5a5",
           "type": "explanation",
           "contentMarkdown": "[[es:tu]] es [[en:your]], pronunciado *yor*."
         },
         {
-          "id": "block_569b2c84-70ab-4e01-848e-55e992248425",
+          "id": "block_e55fcc2c-e81a-4d10-988d-99b72bd1bb27",
           "type": "sentence",
           "promptLabel": "",
           "promptText": "",
@@ -682,7 +682,7 @@
           "answerFeedback": null,
           "languageBlocks": [
             {
-              "id": "lang_b50bf5c8-276e-413e-a5a6-0332132cfbfb",
+              "id": "lang_544ac8a7-be7b-46b7-a9ce-45a5dfa672e7",
               "spanish": "tu",
               "callout": null,
               "acceptedAnswers": [
@@ -692,7 +692,7 @@
           ]
         },
         {
-          "id": "block_b4adef7b-c904-4136-90e7-415acc58882f",
+          "id": "block_c349663e-793d-453d-b018-53f97963adf8",
           "type": "sentence",
           "promptLabel": "",
           "promptText": "No los confundas.",
@@ -700,7 +700,7 @@
           "answerFeedback": null,
           "languageBlocks": [
             {
-              "id": "lang_47011c96-4c9a-4707-a151-41708e506dee",
+              "id": "lang_e684d1ce-0425-4829-8c79-bcac5d9ec2fa",
               "spanish": "mi",
               "callout": null,
               "acceptedAnswers": [
@@ -708,7 +708,7 @@
               ]
             },
             {
-              "id": "lang_b8c30203-b395-46e4-ab82-4210519d5ff9",
+              "id": "lang_44de78ff-0686-4626-96e4-a5115046b989",
               "spanish": "tu",
               "callout": null,
               "acceptedAnswers": [
@@ -718,7 +718,7 @@
           ]
         },
         {
-          "id": "block_13f7d415-4fd7-4d30-82b4-ddbfb06f9462",
+          "id": "block_3c9b39a5-dbe4-4e38-9e1c-8e00dafb948f",
           "type": "explanation",
           "contentMarkdown": "En inglés la pregunta lleva un solo signo, al final.\n\nEn el celular está en el teclado de símbolos.",
           "image": {
@@ -727,7 +727,7 @@
           }
         },
         {
-          "id": "block_63634006-194a-4320-95c1-347b1f643bc7",
+          "id": "block_fa60dbb1-7571-4917-ae51-bc15d4ca6116",
           "type": "sentence",
           "promptLabel": "",
           "promptText": "Una pregunta completa. Dila en voz alta.",
@@ -735,7 +735,7 @@
           "answerFeedback": null,
           "languageBlocks": [
             {
-              "id": "lang_b1f7dda9-cbe2-4759-b837-303e1767a5c9",
+              "id": "lang_1d5f4b46-6501-433f-b9bb-f8b2728b88e5",
               "spanish": "¿Cuál",
               "callout": "Empieza con MAYÚSCULA.",
               "acceptedAnswers": [
@@ -743,7 +743,7 @@
               ]
             },
             {
-              "id": "lang_68d66184-25f6-4f7f-b38b-2c24516a3355",
+              "id": "lang_d3093814-39b8-40e6-a7d1-63942b40646d",
               "spanish": "es",
               "callout": null,
               "acceptedAnswers": [
@@ -751,7 +751,7 @@
               ]
             },
             {
-              "id": "lang_53230f9f-4619-473e-bdd4-682976eeee2f",
+              "id": "lang_d0f16616-4308-4c26-bf3f-c1a590436fd7",
               "spanish": "tu nombre?",
               "callout": "Termina con el signo: name?",
               "acceptedAnswers": [
@@ -761,7 +761,7 @@
           ]
         },
         {
-          "id": "block_7fd50761-0960-4932-883e-752d436b44e7",
+          "id": "block_7ba0d583-a179-4ce0-905b-daebd5833d2e",
           "type": "sentence",
           "promptLabel": "",
           "promptText": "Y ahora la conversación entera.",
@@ -769,7 +769,7 @@
           "answerFeedback": null,
           "languageBlocks": [
             {
-              "id": "lang_658bfc92-c10b-452c-9843-c1634dfba800",
+              "id": "lang_f2193c59-9939-42ec-8626-0b88581130a8",
               "spanish": "Hola.",
               "callout": null,
               "acceptedAnswers": [
@@ -778,7 +778,7 @@
               ]
             },
             {
-              "id": "lang_8aacb065-4e42-4f08-95b3-fd0e2d493611",
+              "id": "lang_973335b7-e642-4af7-860e-e16d74d27063",
               "spanish": "¿Cuál es",
               "callout": null,
               "acceptedAnswers": [
@@ -786,7 +786,7 @@
               ]
             },
             {
-              "id": "lang_ddc80108-3b14-46d8-bfb9-22b93f584095",
+              "id": "lang_d4bab749-04bc-4bda-911d-e4b5a0894cb9",
               "spanish": "tu nombre?",
               "callout": null,
               "acceptedAnswers": [
@@ -796,17 +796,17 @@
           ]
         },
         {
-          "id": "block_1548a3a9-a270-4816-8203-1cf4b4ae60b7",
+          "id": "block_bade0ae6-8828-4a1a-b319-b16d5ae179e1",
           "type": "explanation",
           "contentMarkdown": "Las lecciones van en orden por una razón: cada una usa lo de la anterior.\n\nAunque algo te parezca fácil, no te saltes ninguna."
         },
         {
-          "id": "block_0eee9f20-10da-4a0c-886c-39f591ac46ac",
+          "id": "block_ce576b45-58dc-4421-906c-b82d645781ae",
           "type": "explanation",
           "contentMarkdown": "Eres de las primeras personas en probar esto, {name}.\n\nSi algo no se entiende, se ve raro o te gustó, toca **Comentar**. Lo leo yo mismo."
         },
         {
-          "id": "block_310ee9e1-d656-4433-a145-7b4eefb6d525",
+          "id": "block_d9a04201-3cb7-4882-8aea-9033c350ac1f",
           "type": "explanation",
           "contentMarkdown": "Listo, {name}. Ya sabes cómo funciona.\n\nAhora sí: tu primera lección."
         }

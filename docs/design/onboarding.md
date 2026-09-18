@@ -288,10 +288,14 @@ with progress and onboarding.
 - Because there is nothing to match, it does **not** complete per keystroke:
   it completes when the learner **confirms** it — Enter, Tab, or leaving the
   field. Confirming is also when the value is stored.
-- The stored value loses trailing `.,!?`, keeps the learner's own
-  capitalisation, and gets its first letter upper-cased only if they typed it
-  all lowercase ("james" → "James", "mcDonald" left alone). What the slide
-  then displays is the value plus the piece's `suffix`.
+- The stored value loses trailing `.,!?`, and keeps the learner's own
+  capitalisation if they typed ANY uppercase letter themselves ("mcDonald"
+  left alone). If they typed the whole thing lowercase, every word gets its
+  first letter capitalised (split on spaces and hyphens; naming particles
+  "de", "del", "la", "las", "los", "y", "da", "dos", "van", "von" stay
+  lowercase unless they're the first word): "maría josé" → "María José",
+  "juan de la cruz" → "Juan de la Cruz", "ana-maría" → "Ana-María". What the
+  slide then displays is the value plus the piece's `suffix`.
 - Replay: if the variable already exists the field opens prefilled and the
   learner only confirms it.
 - "Recuérdame" (renamed from "Pista", 2026-09-18) on a capture piece puts the piece's own hint in the bubble, or

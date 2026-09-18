@@ -1,8 +1,8 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 300" role="img" aria-label="Hello con mayúscula inicial y punto final">
-  <defs><marker id="a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="#7d24d3"/></marker></defs>
-  <text x="360" y="190" text-anchor="middle" font-family="Geist, Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif" font-size="104" font-weight="700" fill="#123eb2"><tspan fill="#7d24d3">H</tspan>ello<tspan fill="#7d24d3">.</tspan></text>
-  <text x="60" y="58" font-family="Geist, Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif" font-size="24" font-weight="600" letter-spacing="2" fill="#503975">MAYÚSCULA</text>
-  <path d="M140 72 C 150 110, 175 125, 205 128" fill="none" stroke="#7d24d3" stroke-width="4" stroke-linecap="round" marker-end="url(#a)"/>
-  <text x="570" y="276" font-family="Geist, Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif" font-size="24" font-weight="600" letter-spacing="2" fill="#503975">PUNTO</text>
-  <path d="M600 248 C 598 218, 575 200, 540 192" fill="none" stroke="#7d24d3" stroke-width="4" stroke-linecap="round" marker-end="url(#a)"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 190" role="img" aria-label="Hello con mayúscula inicial y punto final">
+  <defs><marker id="a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10z" fill="#7d24d3"/></marker></defs>
+  <text x="180" y="122" text-anchor="middle" font-family="Geist, Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif" font-size="76" font-weight="700" fill="#123eb2"><tspan fill="#7d24d3">H</tspan>ello<tspan fill="#7d24d3">.</tspan></text>
+  <text x="8" y="26" font-family="Geist, Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif" font-size="16" font-weight="700" letter-spacing="1.2" fill="#503975">MAYÚSCULA</text>
+  <path d="M40 36 C 42 58, 52 70, 68 76" fill="none" stroke="#7d24d3" stroke-width="3" stroke-linecap="round" marker-end="url(#a)"/>
+  <text x="352" y="180" text-anchor="end" font-family="Geist, Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif" font-size="16" font-weight="700" letter-spacing="1.2" fill="#503975">PUNTO</text>
+  <path d="M322 160 C 322 142, 314 132, 300 126" fill="none" stroke="#7d24d3" stroke-width="3" stroke-linecap="round" marker-end="url(#a)"/>
 </svg>
