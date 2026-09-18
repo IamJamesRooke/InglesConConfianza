@@ -216,9 +216,25 @@
    2026-09-18): a sentence that fits on one line at the current width centres
    the eyebrow, instruction and card on one shared axis — mirroring the
    explanation card's own fit-vs-wrap rule in practice-explanation.css. A
-   sentence that wraps keeps the ordinary left-aligned, full-width column. */
+   sentence that wraps keeps the ordinary left-aligned, full-width column.
+   `align-items: flex-start`, not `center` (bug found 2026-09-18 fixing the
+   answer-slot width bug above): below 1024, `.stage-column` and
+   `.stage-speaker` are the two items of the shared single-track grid
+   described above, and the grid's own `justify-content: center` already
+   centres that ONE track on the page — centring the card a second time
+   *within* its own column only matches the speaker's left edge by
+   coincidence, when the card happens to be the track's widest child (the
+   overwhelmingly common case). Once the answer slot stopped being padded
+   out by an `<input>`'s oversized intrinsic width (the fix above), a
+   short single-piece answer's card can be genuinely narrower than the
+   speaker row beside/under it, and centring the card inside a track sized
+   to the WIDER speaker row pulled the card off the speaker's left edge —
+   exactly the invariant this rule exists to guarantee. `flex-start` keeps
+   both children flush on the track's own left edge (still centred as a
+   *pair* on the page by the grid's `justify-content: center`), and is a
+   no-op in the common case where the card already fills the track. */
 .stage-column[data-wraps="false"] {
-  align-items: center;
+  align-items: flex-start;
   text-align: center;
 }
 .stage-eyebrow p {

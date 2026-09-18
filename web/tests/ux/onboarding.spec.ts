@@ -101,6 +101,16 @@ test.describe("onboarding gate and flow", () => {
     await expect(page.getByText("Hola, bienvenido a Inglés con Confianza.")).toBeVisible();
   });
 
+  test("(a2) the gate is a real server redirect (307), not a streamed shell", async ({
+    page,
+    request,
+  }) => {
+    await seed(request);
+    const response = await page.request.get("/", { maxRedirects: 0 });
+    expect(response.status()).toBe(307);
+    expect(response.headers()["location"]).toBe("/bienvenida");
+  });
+
   test("(b) finishing onboarding lesson 1 opens lesson 2 directly, no completion screen, progress advances", async ({
     page,
     request,

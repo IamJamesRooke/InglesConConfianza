@@ -310,6 +310,22 @@ export function SentenceStageCard({
                         autoCorrect="off"
                         spellCheck={false}
                         lang={languageBlock.capture ? undefined : "en"}
+                        // The input shares its CSS-grid cell with the
+                        // invisible measure spans that size the slot (see
+                        // .stage-en-slot in practice-stage.css) — but a
+                        // plain <input> has its own intrinsic width (the
+                        // HTML default `size` of 20 characters), and that
+                        // default competes in the grid's auto-sizing pass
+                        // like any other child. At the sentence stage's
+                        // hero font size that default alone is wider than
+                        // most real answers, so a short answer's slot was
+                        // sized to the input's arbitrary UA default instead
+                        // of the measured text (bug: "the slot for a short
+                        // answer is much wider than the answer"). `size={1}`
+                        // shrinks that default contribution to effectively
+                        // nothing, leaving the measure spans as the only
+                        // thing that sets the track's width, as intended.
+                        size={1}
                         className="stage-en stage-en-input"
                       />
                     </span>

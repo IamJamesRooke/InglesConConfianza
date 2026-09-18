@@ -230,7 +230,11 @@ progress), the completion screen (same file, no footer to clear), and home
 footer also has its own "Comentar" link, which opens the same sheet
 instance via an imperative handle (`FeedbackSheetHandle`) rather than
 duplicating it. Both former "¿Algo que corregir?" and "¿Qué te pareció?"
-text-link triggers are gone. The "¿Quién eres?" field is prefilled from
+text-link triggers are gone. The sheet's current copy: title "¿Qué nos
+quieres contar?", help line "Un problema, una idea o algo que te gustó.
+Cada comentario mejora las lecciones.", an optional Algo falla / Una idea /
+Me gustó chip row, a textarea (placeholder "Escribe aquí…"), and "¿Quién
+eres? (opcional)". The "¿Quién eres?" field is prefilled from
 `localStorage icc.feedback.who` every time the sheet opens (not just on
 page load) and saved back on every keystroke, not only on submit. The pill
 fades out while the sheet is open

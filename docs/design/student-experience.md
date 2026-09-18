@@ -719,9 +719,14 @@ as home. Below 768px it collapses to a 48px round icon-only button
 (`aria-label="Comentar"`), 16px from the corner. While the sheet itself is
 open the pill fades out (150ms, instant under `prefers-reduced-motion`) —
 it used to sit visually under the sheet's Cancel button. The sheet's own
-copy didn't change ("¿Algo que corregir o mejorar?" already read that way);
-one new line was added under the title: "Dime qué viste y qué esperabas.
-Cada comentario mejora la lección." The "¿Quién eres?" field now saves to
+copy didn't change at this point ("¿Algo que corregir o mejorar?" already
+read that way); one new line was added under the title: "Dime qué viste y
+qué esperabas. Cada comentario mejora la lección." (Superseded later: the
+title is now "¿Qué nos quieres contar?", with an optional Algo falla / Una
+idea / Me gustó chip row and the help line "Un problema, una idea o algo
+que te gustó. Cada comentario mejora las lecciones." — current copy lives
+in `web/src/components/learner/feedback-sheet.tsx`.) The "¿Quién eres?"
+field now saves to
 `localStorage` on every keystroke (not just on submit) and is re-read every
 time the sheet opens, so a name typed once actually persists across
 sessions — the field had been observed empty on a later visit despite
