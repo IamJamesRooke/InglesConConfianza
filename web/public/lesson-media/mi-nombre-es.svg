@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 280" role="img" aria-label="mi es my, nombre es name, es es is: palabra por palabra">
+  <defs><marker id="a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="#7d24d3"/></marker></defs>
+  <g font-family="Geist, Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif" font-size="60" font-weight="700" text-anchor="middle">
+    <g fill="#bb061e"><text x="140" y="80">mi</text><text x="360" y="80">nombre</text><text x="590" y="80">es</text></g>
+    <g fill="#123eb2"><text x="140" y="245">my</text><text x="360" y="245">name</text><text x="590" y="245">is</text></g>
+  </g>
+  <g stroke="#7d24d3" stroke-width="4" stroke-linecap="round" marker-end="url(#a)"><path d="M140 108V176"/><path d="M360 108V176"/><path d="M590 108V176"/></g>
+</svg>

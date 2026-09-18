@@ -52,30 +52,71 @@ can be added later with the same piece and a different key.
 
 Still a workaround: no "Entiendo" checkbox, so the pre-alpha notice is a plain slide.
 
+## Third draft (2026-09-18, evening): written for a Colombian beginner to low-intermediate
+
+Owner: "think from the perspective of a Colombian Spanish speaker… What will make them
+stay? What will make them leave?" The reasoning behind this version:
+
+**Who they are.** Years of English at school, maybe an academy or an app, and still "entiendo
+pero no hablo". They feel *pena* speaking, believe they are "malos para el inglés", and have
+been sold to before (contracts, registrations, gamified apps that never got them talking).
+Most will open this on a phone.
+
+**What makes them stay.** A win in the first half minute. Being treated as an adult. A promise
+aimed at their real pain (speaking, not studying). Proof that mistakes cost nothing. Seeing
+early that the method is different: one word, use it, build a sentence. Being called by their
+name. A teacher who is a person ("lo leo yo mismo"). For the low-intermediate learner: one
+sentence they *think* they know and do not ("I want you to come here"), so they see there is
+something here for them too.
+
+**What makes them leave.** Reading before doing. Being asked for an account or an e-mail (so
+the notice says we do not). Feeling stupid: the app rejects "hello" without its full stop and
+says nothing, so the rule is taught with a diagram, the phone trick for typing a full stop is
+given, and Recuérdame is practised on purpose with a wrong answer so they see it marks the
+error. Being told a phone is second best (it now says the phone works fine). Childishness,
+hype, and Spanish from Spain.
+
+**Voice.** *Tú*, warm and direct, neutral Latin American with a light Colombian touch where it
+is natural ("te provoca", "¿cierto?", "listo", "celular", "computador"). Nothing forced.
+
+**Images.** Four diagrams drawn for this, in the owner's Excalidraw spirit and the app's
+colours (Spanish red, English blue, purple for what is being pointed at), stored in
+`web/public/lesson-media/`. No stock photos: generic photos read as advertising. The one photo
+worth adding is the owner's own face on the first slide — "Llevo más de 14 años…" lands harder
+with a person attached. Left for the owner.
+
 ## Lesson 1
 
 ```script
 # Hello.
 @ hola
-Llevo más de 14 años haciendo una sola cosa: llevar a personas desde cero hasta conversar en inglés.[[audio: Y eso es lo que vamos a hacer aquí, paso a paso.]]
+Aquí no vienes a estudiar inglés. Vienes a **hablarlo**.
+Llevo más de 14 años llevando a personas desde cero hasta conversar. Este es mi método.
 
+Empecemos por lo más fácil, para que veas cómo funciona.
 [[es:hola]] es [[en:hello]], pronunciado *jelóu*.
 
-? Escribe la respuesta en inglés. Con un teclado es más cómodo.
+? Escribe en inglés. En el celular funciona bien; con computador es más cómodo.
 > hola / hello | hi
 
-En una hora vas a decir [[en:I want you to come here]].
-Muchos, después de años de clases, todavía no lo dicen bien.[[audio: Lo traducen palabra por palabra del español, y suena raro.]]
+Así es todo el curso: aprendes una palabra, la usas, y seguimos.
+Aquí nadie pierde puntos ni vidas.
 
-Si no recuerdas una palabra, presiona **Recuérdame**. Aquí nadie pierde puntos.
+Si algo se te olvida, toca **Recuérdame**. Para eso está.
 
-? Prueba el botón Recuérdame, solo para verlo.
+? Pruébalo: escribe helo, con un error, y toca Recuérdame.
 > hola / hello | hi
 
+[[img: frase-mayuscula-punto.svg | Hello con mayúscula inicial y punto final]]
 Una frase empieza con mayúscula y termina con punto.
+En el celular, dos toques a la barra espaciadora ponen el punto.
 
 ? Tu primera frase.
 > Hola. / Hello. | Hi. (MAYÚSCULA al inicio y PUNTO al final.)
+
+[[img: quiero-que-vengas.svg | quiero que vengas se dice I want you to come: el que no se traduce]]
+¿Ya sabes algo de inglés? Mejor. Pronto vas a decir [[en:I want you to come here]].
+Si ahí te provoca meter un *that*, tranquilo: aquí se te quita.[[audio: Le pasa a casi todo el mundo.]]
 ```
 
 ## Lesson 2
@@ -83,7 +124,8 @@ Una frase empieza con mayúscula y termina con punto.
 ```script
 # My name is ...
 @ mi, nombre, ser
-Por cierto: esta es una versión de prueba. Tu progreso se guarda solo en este navegador. Si borras sus datos, se pierde.
+Una cosa antes de seguir: esta es una versión de prueba.
+No te pedimos cuenta ni correo. Tu progreso se guarda solo en este celular o computador.
 
 Ahora te voy a hacer una pregunta: [[en:What is your name?]][[audio: Significa: ¿cuál es tu nombre?]]
 Para responder necesitas tres palabras.
@@ -92,7 +134,7 @@ Para responder necesitas tres palabras.
 
 > mi / my
 
-[[es:nombre]] es [[en:name]], pronunciado *neim*. Una sola sílaba.
+[[es:nombre]] es [[en:name]], pronunciado *neim*. Una sola sílaba: no digas *na-me*.
 
 > nombre / name
 
@@ -105,15 +147,19 @@ Para responder necesitas tres palabras.
 | nombre / name
 | es / is
 
+[[img: mi-nombre-es.svg | mi es my, nombre es name, es es is: palabra por palabra]]
+Esta vez el inglés va igual que el español, palabra por palabra.
+No siempre es así, pero hoy sí.
+
 [[en:What is your name?]]
 
-? Responde en voz alta mientras escribes, y termina con tu nombre.
+? Responde en voz alta mientras escribes. Nadie te está oyendo.
 > Mi nombre / My name (Empieza con MAYÚSCULA.)
 > es / is
 > ? tu nombre / {name}.
 
 [[en:Hi, {name}!]]
-Mucho gusto.[[audio: Ya te presentaste en inglés.]]
+Mucho gusto. Ya te presentaste en inglés.[[audio: Y lo dijiste en voz alta, ¿cierto?]]
 ```
 
 ## Lesson 3
@@ -121,9 +167,9 @@ Mucho gusto.[[audio: Ya te presentaste en inglés.]]
 ```script
 # What is your name?
 @ qué, tu, nombre
-Ahora te toca preguntar a ti, {name|amigo}.
+Ahora te toca preguntar a ti, {name}.
 
-[[es:qué]] o [[es:cuál]] es [[en:what]], pronunciado *uat*.
+En español preguntamos *cuál*. En inglés, para el nombre se usa [[en:what]], pronunciado *uat*.
 
 > cuál / what
 
@@ -131,10 +177,13 @@ Ahora te toca preguntar a ti, {name|amigo}.
 
 > tu / your
 
+? No los confundas.
 > mi / my
 > tu / your
 
-En inglés la pregunta solo lleva un signo, al final.
+[[img: pregunta-un-signo.svg | En español la pregunta lleva dos signos; en inglés, uno solo al final]]
+En inglés la pregunta lleva un solo signo, al final.
+En el celular está en el teclado de símbolos.
 
 ? Una pregunta completa. Dila en voz alta.
 > ¿Cuál / What (Empieza con MAYÚSCULA.)
@@ -146,11 +195,14 @@ En inglés la pregunta solo lleva un signo, al final.
 > ¿Cuál es / What is
 > tu nombre? / your name?
 
-Las lecciones van en orden por una razón. Aunque algo te parezca fácil, no te saltes ninguna.
+Las lecciones van en orden por una razón: cada una usa lo de la anterior.
+Aunque algo te parezca fácil, no te saltes ninguna.
 
-Eres de las primeras personas en probar esto, {name|amigo}. Si algo no se entiende o se ve mal, presiona **Comentar**.[[audio: Cada comentario me ayuda muchísimo.]]
+Eres de las primeras personas en probar esto, {name}.
+Si algo no se entiende, se ve raro o te gustó, toca **Comentar**. Lo leo yo mismo.
 
-Listo. Ya sabes cómo funciona. Ahora sí: tu primera lección.
+Listo, {name}. Ya sabes cómo funciona.
+Ahora sí: tu primera lección.
 ```
 
 ## Curriculum gaps noticed (not fixed — curation is the owner's)
