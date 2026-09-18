@@ -214,10 +214,10 @@
   --t-eyebrow: clamp(11px, 10.56px + 0.112vw, 12px);
 
   /* Learner canvas tint (docs/design/learner-direction.md, "Colour",
-     2026-09-18 owner correction) — see the `[data-canvas]` rules below for
-     how these are used and their contrast against the ink/border tokens. */
-  --canvas-tint: oklch(0.93 0.04 300);
-  --canvas-tint-strong: oklch(0.89 0.06 300);
+     2026-09-18 owner correction, decided 2026-09-18 as "strong") — see the
+     `.learner-theme` rule below for how this is used and its contrast
+     against the ink/border tokens. */
+  --canvas-tint: oklch(0.89 0.06 300);
 }
 
 @layer base {
@@ -287,78 +287,41 @@
 /* Learner canvas (docs/design/learner-direction.md, "Colour" — owner
    correction 2026-09-18: the page was reading as near-white behind an
    also-white card, so the card never stood out; the page must be visibly
-   darker/tinted than the card, not a dark theme). Default is "tint": a
-   real, visible lavender page with a soft LIGHTER glow behind the stage, so
-   the white card sits in a pool of light against the tint. The card itself
-   is untouched (white, purple-tinted `--shadow-card`, lavender `--border`
+   darker/tinted than the card, not a dark theme; decided 2026-09-18 as
+   "strong", the final canvas — no more variants to compare). A real,
+   visible lavender page with a soft LIGHTER glow behind the stage, so the
+   white card sits in a pool of light against the tint. The card itself is
+   untouched (white, purple-tinted `--shadow-card`, lavender `--border`
    hairline — see `.learner-theme` above) — the separation comes from
-   white-on-tint, not from styling the card differently.
-   `--canvas-tint`/`--canvas-tint-strong` are oklch tints at hue 300 (the
-   same hue as every other purple token here), not literals borrowed from
-   elsewhere. Contrast, computed with the same OKLCH -> sRGB conversion used
-   elsewhere in this file (not eyeballed): the learner-theme `--ink-muted`
-   (#503975, used by the instruction line and the speaker label) is 7.74:1
-   on `--canvas-tint` and 6.80:1 on `--canvas-tint-strong` — both clear AA
-   with room to spare. `--brand-primary` (the primary button's fill) is
-   5.52:1 on `--canvas-tint` and 4.85:1 on `--canvas-tint-strong` against
-   its own background, on top of the button's shadow and its white text, so
-   it still reads as a distinct, elevated action on both.
-   TEMPORARY: driven by a `data-canvas` attribute on `<html>` (default
-   "tint", see layout.tsx's CanvasVariantSwitch), never persisted, scoped to
-   `.learner-theme` so it can never touch the admin canvas. Two
-   comparison-only variants sit behind `?canvas=` for the owner to judge
-   against the default: `strong` (one step darker/more saturated) and
-   `white` (the old near-white "glow" page, kept only for comparison).
-   Delete this whole block, `strong`/`white`, and CanvasVariantSwitch once
-   the owner has judged them. `--canvas-tint`/`--canvas-tint-strong`
-   themselves live with the rest of the tokens in the `:root` block above. */
-html[data-canvas="tint"] .learner-theme.lesson-session,
-html[data-canvas="tint"] .learner-theme.course-home {
+   white-on-tint, not from styling the card differently. `--canvas-tint` is
+   an oklch tint at hue 300 (the same hue as every other purple token here),
+   not a literal borrowed from elsewhere. Contrast, computed with the same
+   OKLCH -> sRGB conversion used elsewhere in this file (not eyeballed): the
+   learner-theme `--ink-muted` (#503975, used by the instruction line and
+   the speaker label) is 6.80:1 on `--canvas-tint` — clears AA with room to
+   spare. `--brand-primary` (the primary button's fill) is 4.85:1 on
+   `--canvas-tint` against its own background, on top of the button's
+   shadow and its white text, so it still reads as a distinct, elevated
+   action. Scoped to `.learner-theme` so it can never touch the admin
+   canvas; learner home (`.course-home`) shares the same canvas as a
+   lesson. */
+.learner-theme.lesson-session,
+.learner-theme.course-home {
   --background: var(--canvas-tint);
   background:
     radial-gradient(
       ellipse 1500px 980px at 50% 26% in oklab,
-      color-mix(in oklch, white 55%, var(--canvas-tint)),
+      color-mix(in oklch, white 45%, var(--canvas-tint)),
       var(--canvas-tint) 72%
     ),
     var(--canvas-tint);
 }
-/* "strong": one clear step darker/more saturated than the default, same
-   lighter-glow-behind-the-stage shape. */
-html[data-canvas="strong"] .learner-theme.lesson-session,
-html[data-canvas="strong"] .learner-theme.course-home {
-  --background: var(--canvas-tint-strong);
-  background:
-    radial-gradient(
-      ellipse 1500px 980px at 50% 26% in oklab,
-      color-mix(in oklch, white 45%, var(--canvas-tint-strong)),
-      var(--canvas-tint-strong) 72%
-    ),
-    var(--canvas-tint-strong);
-}
-/* "white" (comparison only): the old near-white page with a saturated
-   purple glow — the page itself stays almost white, so on this variant the
-   card does NOT visibly separate from the canvas (this is exactly the
-   complaint the "tint" default fixes; kept only so the owner can see the
-   difference side by side). */
-html[data-canvas="white"] .learner-theme.lesson-session,
-html[data-canvas="white"] .learner-theme.course-home {
-  --background: #ffffff;
-  background:
-    radial-gradient(
-      ellipse 1500px 980px at 50% 26% in oklab,
-      color-mix(in oklch, var(--brand-primary) 20%, transparent),
-      color-mix(in oklch, var(--brand-primary) 8%, transparent) 45%,
-      transparent 78%
-    ),
-    #ffffff;
-}
 /* The Recuérdame ghost button (`.stage-hint-button`, practice-stage.css)
-   has no fill at rest, which dissolves into a tinted page — give it a
-   white fill on both tinted variants so it stays a distinct control (the
-   "white" comparison variant is already a white page, so it's left as a
-   true ghost button there). */
-html[data-canvas="tint"] .stage-hint-button,
-html[data-canvas="strong"] .stage-hint-button {
+   has no fill at rest, which would otherwise dissolve into the tinted
+   page — a white fill keeps it a distinct control. The primary purple
+   button and the purple "Comentar" pill are unaffected by any of this
+   (their own saturated fill already separates them from the tint at a
+   glance) — only the hairline ghost button needed help. */
+.learner-theme .stage-hint-button {
   background: var(--surface-writing);
 }

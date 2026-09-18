@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { Geist } from "next/font/google";
-import { CanvasVariantSwitch } from "@/components/learner/canvas-variant-switch";
 import { SiteHeader } from "@/components/site-header";
 import "./globals.css";
 // Imported here rather than @import'd from globals.css so the dev server tracks
@@ -46,21 +45,8 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html
-      lang="es"
-      // TEMPORARY (docs/design/learner-direction.md "Colour", 2026-09-18):
-      // default canvas variant — a visibly tinted lavender page so the
-      // white stage card reads as a lit surface, not a same-colour page.
-      // CanvasVariantSwitch overrides it from `?canvas=strong|white` for
-      // two comparison-only variants (a stronger tint, and the old
-      // near-white "glow" page) the owner can judge against this default.
-      // Delete this attribute and CanvasVariantSwitch once the owner has
-      // judged them.
-      data-canvas="tint"
-      className={`${geist.variable} h-full antialiased`}
-    >
+    <html lang="es" className={`${geist.variable} h-full antialiased`}>
       <body className="flex min-h-full flex-col">
-        <CanvasVariantSwitch />
         <SiteHeader />
         {children}
       </body>

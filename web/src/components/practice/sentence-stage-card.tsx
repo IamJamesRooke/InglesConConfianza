@@ -1,14 +1,10 @@
 "use client";
 import { Info } from "lucide-react";
-import type { CSSProperties } from "react";
 import { Fragment } from "react";
 import { InstructionAudio } from "@/components/practice/instruction-audio";
 import { PracticeMarkdown } from "@/components/practice/practice-markdown";
 import { HintButton, SpeakerChip } from "@/components/practice/speaker-chip";
-import {
-  blankChars,
-  useSentencePractice,
-} from "@/components/practice/use-sentence-practice";
+import { useSentencePractice } from "@/components/practice/use-sentence-practice";
 import type { SentenceBlock } from "@/lib/lesson-builder/types";
 import type { Speaker } from "@/lib/learner/speech";
 import { pieceEnglishSource } from "@/lib/lesson-builder/utils";
@@ -199,6 +195,21 @@ export function SentenceStageCard({
                 // input carrying its field-sizing caret reserve. Clicking or
                 // tabbing into it swaps it back to an input (below) so the
                 // learner can still fix it.
+                // The slot's width is MEASURED, not estimated (bug 1, docs/
+                // design/learner-direction.md "The answer slot"): every
+                // accepted answer gets an invisible span stacked in the
+                // same CSS-grid cell as the real input/done span
+                // (.stage-en-slot in practice-stage.css), and grid
+                // auto-sizing takes the widest of all of them, rendered in
+                // the input's own font — so the box can never be narrower
+                // than what it has to hold, at any size, without guessing a
+                // per-character average. A capture piece has no accepted
+                // answer to measure against, so its own live typed value is
+                // what it measures (the slot's CSS floors it at ~10ch and
+                // lets it grow from there).
+                const measureSpans = languageBlock.capture
+                  ? [answers[testableIndex] ?? ""]
+                  : languageBlock.acceptedAnswers;
                 if (isCorrect && !isEditing) {
                   const canonical =
                     matchedAnswers[testableIndex] ??
@@ -208,31 +219,45 @@ export function SentenceStageCard({
                     <Fragment key={languageBlock.id}>
                       {index > 0 ? " " : null}
                       <span
-                        className="stage-en stage-en-done"
-                        data-piece-index={testableIndex}
-                        data-state="done"
-                        role="button"
-                        tabIndex={0}
-                        onClick={() => {
-                          setFocusedBlockIndex(testableIndex);
-                          window.setTimeout(
-                            () => inputRefs.current[testableIndex]?.focus(),
-                            0,
-                          );
-                        }}
-                        onKeyDown={(event) => {
-                          if (event.key !== "Enter" && event.key !== " ")
-                            return;
-                          event.preventDefault();
-                          setFocusedBlockIndex(testableIndex);
-                          window.setTimeout(
-                            () => inputRefs.current[testableIndex]?.focus(),
-                            0,
-                          );
-                        }}
-                        aria-label={`Editar traducción de ${languageBlock.spanish || `bloque ${testableIndex + 1}`}`}
+                        className="stage-en-slot"
+                        data-capture={languageBlock.capture ? "true" : undefined}
                       >
-                        {canonical}
+                        {measureSpans.map((text, measureIndex) => (
+                          <span
+                            key={measureIndex}
+                            className="stage-en-slot-measure"
+                            aria-hidden="true"
+                          >
+                            {text}
+                          </span>
+                        ))}
+                        <span
+                          className="stage-en stage-en-done"
+                          data-piece-index={testableIndex}
+                          data-state="done"
+                          role="button"
+                          tabIndex={0}
+                          onClick={() => {
+                            setFocusedBlockIndex(testableIndex);
+                            window.setTimeout(
+                              () => inputRefs.current[testableIndex]?.focus(),
+                              0,
+                            );
+                          }}
+                          onKeyDown={(event) => {
+                            if (event.key !== "Enter" && event.key !== " ")
+                              return;
+                            event.preventDefault();
+                            setFocusedBlockIndex(testableIndex);
+                            window.setTimeout(
+                              () => inputRefs.current[testableIndex]?.focus(),
+                              0,
+                            );
+                          }}
+                          aria-label={`Editar traducción de ${languageBlock.spanish || `bloque ${testableIndex + 1}`}`}
+                        >
+                          {canonical}
+                        </span>
                       </span>
                     </Fragment>
                   );
@@ -240,45 +265,54 @@ export function SentenceStageCard({
                 return (
                   <Fragment key={languageBlock.id}>
                     {index > 0 ? " " : null}
-                    <input
-                      ref={(element) => {
-                        inputRefs.current[testableIndex] = element;
-                      }}
-                      type="text"
-                      data-practice-answer
-                      data-piece-index={testableIndex}
+                    <span
+                      className="stage-en-slot"
                       data-capture={languageBlock.capture ? "true" : undefined}
-                      data-state={isCorrect ? "done" : "blank"}
-                      autoFocus={testableIndex === 0}
-                      value={answers[testableIndex] ?? ""}
-                      onChange={(event) =>
-                        updateAnswer(event.target.value, testableIndex)
-                      }
-                      onFocus={() => setFocusedBlockIndex(testableIndex)}
-                      onBlur={() => {
-                        // A capture piece completes on confirmation, and
-                        // leaving the field counts as one (see
-                        // use-sentence-practice.ts).
-                        confirmCaptureOnBlur(testableIndex);
-                        setFocusedBlockIndex((current) =>
-                          current === testableIndex ? null : current,
-                        );
-                      }}
-                      onKeyDown={(event) => onAnswerKeyDown(event, testableIndex)}
-                      aria-label={`Traducción de ${languageBlock.spanish || `bloque ${testableIndex + 1}`}`}
-                      autoComplete={languageBlock.capture ? "given-name" : "off"}
-                      maxLength={languageBlock.capture ? 40 : undefined}
-                      autoCapitalize={languageBlock.capture ? "words" : "off"}
-                      autoCorrect="off"
-                      spellCheck={false}
-                      lang={languageBlock.capture ? undefined : "en"}
-                      className="stage-en stage-en-input"
-                      style={
-                        {
-                          "--blank-chars": blankChars(languageBlock),
-                        } as CSSProperties
-                      }
-                    />
+                    >
+                      {measureSpans.map((text, measureIndex) => (
+                        <span
+                          key={measureIndex}
+                          className="stage-en-slot-measure"
+                          aria-hidden="true"
+                        >
+                          {text}
+                        </span>
+                      ))}
+                      <input
+                        ref={(element) => {
+                          inputRefs.current[testableIndex] = element;
+                        }}
+                        type="text"
+                        data-practice-answer
+                        data-piece-index={testableIndex}
+                        data-capture={languageBlock.capture ? "true" : undefined}
+                        data-state={isCorrect ? "done" : "blank"}
+                        autoFocus={testableIndex === 0}
+                        value={answers[testableIndex] ?? ""}
+                        onChange={(event) =>
+                          updateAnswer(event.target.value, testableIndex)
+                        }
+                        onFocus={() => setFocusedBlockIndex(testableIndex)}
+                        onBlur={() => {
+                          // A capture piece completes on confirmation, and
+                          // leaving the field counts as one (see
+                          // use-sentence-practice.ts).
+                          confirmCaptureOnBlur(testableIndex);
+                          setFocusedBlockIndex((current) =>
+                            current === testableIndex ? null : current,
+                          );
+                        }}
+                        onKeyDown={(event) => onAnswerKeyDown(event, testableIndex)}
+                        aria-label={`Traducción de ${languageBlock.spanish || `bloque ${testableIndex + 1}`}`}
+                        autoComplete={languageBlock.capture ? "given-name" : "off"}
+                        maxLength={languageBlock.capture ? 40 : undefined}
+                        autoCapitalize={languageBlock.capture ? "words" : "off"}
+                        autoCorrect="off"
+                        spellCheck={false}
+                        lang={languageBlock.capture ? undefined : "en"}
+                        className="stage-en stage-en-input"
+                      />
+                    </span>
                   </Fragment>
                 );
               })}

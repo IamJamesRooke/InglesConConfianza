@@ -137,8 +137,12 @@
    the real input is overlaid on top. Ordinary sentence/single-answer blanks
    size the input itself directly (field-sizing: content, below) and don't
    render this element at all. */
+.answer-field-sizer-stack {
+  display: grid;
+}
 .answer-field-sizer {
   display: block;
+  grid-area: 1 / 1;
   visibility: hidden;
   overflow: hidden;
   max-width: 26rem;

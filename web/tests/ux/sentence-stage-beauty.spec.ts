@@ -36,6 +36,31 @@ const oneLineLesson = {
   ],
 };
 
+const somethingLesson = {
+  id: "lesson_ux_stage_something",
+  name: "Algo",
+  concepts: [],
+  blocks: [
+    {
+      id: "b1",
+      type: "sentence" as const,
+      layout: "sentence" as const,
+      promptLabel: "",
+      promptText: "Escribe la respuesta en inglés.",
+      helperText: "",
+      answerFeedback: null,
+      languageBlocks: [
+        {
+          id: "p1",
+          spanish: "algo",
+          callout: null,
+          acceptedAnswers: ["something"],
+        },
+      ],
+    },
+  ],
+};
+
 const wrappingLesson = {
   id: "lesson_ux_stage_wrap",
   name: "Frase larga",
@@ -189,6 +214,91 @@ test("Recuérdame's diff marks exactly the missing letter, and picks the closest
   await expect(bubble).not.toContainText("hello");
 });
 
+test("bug 1: the answer slot is measured to fit its own answer at hero size, on phone too", async ({
+  page,
+  request,
+}) => {
+  await seed(request, somethingLesson);
+  await page.setViewportSize({ width: 930, height: 900 });
+  await page.goto(`/practice?lesson=${somethingLesson.id}`);
+
+  const input = page.locator(".stage-en-input").first();
+  await expect(input).toHaveAttribute("data-piece-index", "0");
+  await input.pressSequentially("somethin");
+  const measured930 = await input.evaluate((el: HTMLInputElement) => ({
+    scrollWidth: el.scrollWidth,
+    clientWidth: el.clientWidth,
+    scrollLeft: el.scrollLeft,
+  }));
+  expect(measured930.scrollWidth).toBeLessThanOrEqual(measured930.clientWidth);
+  expect(measured930.scrollLeft).toBe(0);
+
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.goto(`/practice?lesson=${somethingLesson.id}`);
+  const input390 = page.locator(".stage-en-input").first();
+  await input390.pressSequentially("somethin");
+  const measured390 = await input390.evaluate((el: HTMLInputElement) => ({
+    scrollWidth: el.scrollWidth,
+    clientWidth: el.clientWidth,
+    scrollLeft: el.scrollLeft,
+  }));
+  expect(measured390.scrollWidth).toBeLessThanOrEqual(measured390.clientWidth);
+  expect(measured390.scrollLeft).toBe(0);
+});
+
+test("bug 2: Recuérdame's diff stays live as the learner keeps typing", async ({
+  page,
+  request,
+}) => {
+  await seed(request, somethingLesson);
+  await page.setViewportSize({ width: 930, height: 900 });
+  await page.goto(`/practice?lesson=${somethingLesson.id}`);
+
+  const input = page.locator(".stage-en-input").first();
+  const bubble = page.locator(".speaker-chip-bubble");
+  const hint = page.getByRole("button", { name: "Recuérdame" });
+
+  // Reproduces the owner's screenshot exactly: type "somethin", then press
+  // Recuérdame — "g" is the only missing letter.
+  await input.pressSequentially("somethin");
+  await hint.click();
+  await expect(bubble).toContainText("something");
+  await expect(bubble.locator(".answer-diff-fix")).toHaveText("g");
+
+  // Back off to "someth" and press again: "ing" is missing.
+  await input.fill("someth");
+  await hint.click();
+  await expect(bubble.locator(".answer-diff-fix")).toHaveText("ing");
+
+  // Now keep typing WITHOUT pressing again — the diff must stay live and
+  // shrink, not clear (the bug: it used to vanish/freeze on the very next
+  // keystroke).
+  await input.pressSequentially("in");
+  await expect(bubble.locator(".answer-diff-fix")).toHaveText("g");
+});
+
+test("fix 3: the reminder bubble hugs its own text below 1024, not the full card width", async ({
+  page,
+  request,
+}) => {
+  await seed(request, somethingLesson);
+  await page.setViewportSize({ width: 930, height: 900 });
+  await page.goto(`/practice?lesson=${somethingLesson.id}`);
+
+  const hint = page.getByRole("button", { name: "Recuérdame" });
+  await hint.click();
+  const bubble = page.locator(".speaker-chip-bubble");
+  const stageCard = page.locator(".stage-card");
+  const bubbleBox = await bubble.boundingBox();
+  const cardBox = await stageCard.boundingBox();
+  expect(bubbleBox).not.toBeNull();
+  expect(cardBox).not.toBeNull();
+  // Hugs its text — well short of the card's full width.
+  expect(bubbleBox!.width).toBeLessThan(cardBox!.width * 0.6);
+  // Left edge still on the card's own left edge.
+  expect(Math.abs(bubbleBox!.x - cardBox!.x)).toBeLessThanOrEqual(2);
+});
+
 test("a wrapping sentence keeps the ordinary 720-wide, left-aligned card", async ({
   page,
   request,
@@ -234,4 +344,88 @@ test("the primary button is full width only below 640px, centred and capped from
   const viewport = page.viewportSize()!;
   const centre = wideBox!.x + wideBox!.width / 2;
   expect(Math.abs(centre - viewport.width / 2)).toBeLessThan(4);
+});
+
+for (const width of [1440, 1880]) {
+  test(`two-actor one-line card is centred on the PAGE axis at ${width}px, not the {speaker + card} group`, async ({
+    page,
+    request,
+  }) => {
+    // Owner screenshot at ~1880px: the two-actor row used to stretch
+    // `.stage-column` to fill the row, which centred the SPANISH line on
+    // that stretched column's own axis while the narrower, un-stretched
+    // ENGLISH answer slot sat at the stretched column's left edge — two
+    // axes for one card — and let the card itself run past 720px. Below
+    // 1024 is unaffected; this is the 1280px+ two-actor composition only.
+    await seed(request, oneLineLesson);
+    await page.setViewportSize({ width, height: 1000 });
+    await page.goto(`/practice?lesson=${oneLineLesson.id}`);
+
+    const explanationCard = page.locator(".lesson-explanation");
+    const explanationBox = await explanationCard.boundingBox();
+    await page.getByRole("button", { name: /Vamos a practicar/ }).click();
+
+    const card = page.locator(".stage-card");
+    const cardBox = await card.boundingBox();
+    const speaker = page.locator(".stage-speaker");
+    const speakerBox = await speaker.boundingBox();
+    const esBox = await page.locator(".stage-line-es").boundingBox();
+    const enBox = await page.locator(".stage-line-en").boundingBox();
+
+    const viewportCentre = width / 2;
+    const cardCentre = cardBox!.x + cardBox!.width / 2;
+
+    // The card sits on the page's own centre line — same axis as the
+    // explanation card — independent of the speaker column's width.
+    expect(Math.abs(cardCentre - viewportCentre)).toBeLessThanOrEqual(2);
+    expect(
+      Math.abs(explanationBox!.x + explanationBox!.width / 2 - cardCentre),
+    ).toBeLessThanOrEqual(2);
+    // Never wider than 720, however much room the viewport has to spare.
+    expect(cardBox!.width).toBeLessThanOrEqual(720);
+    // Both lines share the card's own centre (two axes -> one).
+    expect(Math.abs(esBox!.x + esBox!.width / 2 - cardCentre)).toBeLessThanOrEqual(2);
+    expect(Math.abs(enBox!.x + enBox!.width / 2 - cardCentre)).toBeLessThanOrEqual(2);
+    // The speaker column hangs to the left, outside the axis, 32px from
+    // the card's own left edge.
+    expect(
+      Math.abs(cardBox!.x - (speakerBox!.x + speakerBox!.width) - 32),
+    ).toBeLessThanOrEqual(2);
+
+    // Completing the piece must not move either line off that axis, or
+    // the button out from under the card.
+    const input = page.locator(".stage-en-input").first();
+    await input.fill("hello");
+    await page.waitForTimeout(300);
+    const cardBox2 = await card.boundingBox();
+    const cardCentre2 = cardBox2!.x + cardBox2!.width / 2;
+    const enDoneBox = await page.locator(".stage-en-done").boundingBox();
+    expect(
+      Math.abs(enDoneBox!.x + enDoneBox!.width / 2 - cardCentre2),
+    ).toBeLessThanOrEqual(2);
+    const button = page.getByRole("button", { name: /Terminar/ });
+    const buttonBox = await button.boundingBox();
+    expect(
+      Math.abs(buttonBox!.x + buttonBox!.width / 2 - cardCentre2),
+    ).toBeLessThanOrEqual(2);
+  });
+}
+
+test("the two-actor squeeze (1024-1279): a one-line card falls back to the stacked layout, never overlapping the speaker", async ({
+  page,
+  request,
+}) => {
+  await seed(request, oneLineLesson);
+  await page.setViewportSize({ width: 1100, height: 900 });
+  await page.goto(`/practice?lesson=${oneLineLesson.id}`);
+  await page.getByRole("button", { name: /Vamos a practicar/ }).click();
+
+  const cardBox = await page.locator(".stage-card").boundingBox();
+  const speakerBox = await page.locator(".stage-speaker").boundingBox();
+  expect(cardBox).not.toBeNull();
+  expect(speakerBox).not.toBeNull();
+  // The speaker row sits entirely below the card (stacked), never beside
+  // it overlapping — bottom of the card is at or above the top of the
+  // speaker row.
+  expect(speakerBox!.y).toBeGreaterThanOrEqual(cardBox!.y + cardBox!.height - 1);
 });

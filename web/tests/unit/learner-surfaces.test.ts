@@ -341,9 +341,14 @@ test("the L2b stage card renders both sentence lines, one inline input per teste
   // Two tested pieces get inline inputs; the given piece is static text.
   assert.equal((html.match(/<input/g) ?? []).length, 2);
   assert.match(html, /stage-en given/);
-  // Pending blanks are sized from their answer, and there is no success
-  // check anywhere on the card.
-  assert.match(html, /--blank-chars:6/);
+  // Pending blanks are sized from a MEASURED span holding the accepted
+  // answer, in the input's own font — not an estimated character count
+  // (bug 1, docs/design/learner-direction.md, "The answer slot") — and
+  // there is no success check anywhere on the card.
+  assert.match(
+    html,
+    /<span class="stage-en-slot-measure" aria-hidden="true">I want<\/span>/,
+  );
   assert.doesNotMatch(html, /sentence-success/);
   // The authored instruction is a quiet line above the card.
   assert.match(html, /stage-instruction/);
@@ -419,22 +424,21 @@ test("a finished LAST stage piece (no next input to advance focus to) still rend
   assert.doesNotMatch(html, /<input/);
 });
 
-test("the finished-piece span and its transient 'done' input both drop width constraints in CSS (no clipping)", () => {
+test("the finished-piece span and its transient 'done' input both fill the same measured slot (no clipping)", () => {
+  // Bug 1 fix: the slot's width now comes from `.stage-en-slot`'s grid
+  // track (sized by the hidden `.stage-en-slot-measure` spans), so the
+  // finished span and the "re-editing a done piece" input both just take
+  // `width: 100%` of that fixed track — never a narrower estimate a long
+  // typed answer could overflow.
   const css = readFileSync(
     new URL("../../src/styles/practice-stage.css", import.meta.url),
     "utf8",
   );
   const doneSpanBlock = css.match(/\.stage-en-done\s*\{([^}]*)\}/)?.[1] ?? "";
-  assert.match(doneSpanBlock, /width:\s*auto/);
+  assert.match(doneSpanBlock, /width:\s*100%/);
   assert.doesNotMatch(doneSpanBlock, /overflow:\s*hidden/);
-  const maxWidthValues = [...doneSpanBlock.matchAll(/max-width:\s*([^;]+);/g)].map(
-    (matched) => matched[1],
-  );
-  assert.ok(maxWidthValues.every((value) => value === "none"));
-  const doneInputBlock =
-    css.match(/\.stage-en-input\[data-state="done"\]\s*\{([^}]*)\}/)?.[1] ??
-    "";
-  assert.match(doneInputBlock, /width:\s*auto/);
+  const slotBlock = css.match(/\.stage-en-slot\s*\{([^}]*)\}/)?.[1] ?? "";
+  assert.match(slotBlock, /max-width:\s*100%/);
 });
 
 test("the vocabulary table on the stage uses the two-actor composition, not a centred card with the speaker below-left", () => {

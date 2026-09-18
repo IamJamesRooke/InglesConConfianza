@@ -70,15 +70,6 @@ export function answerMinChars(
   return isSingleLanguageBlock ? Math.max(withSlack, 13) : withSlack;
 }
 
-/** Width of an unanswered blank: one character cell per character of the
- * expected answer, never narrower than 3ch (so a one-letter answer still
- * reads as a blank to fill, not a speck). */
-export function blankChars(languageBlock: LanguageBlock): number {
-  if (languageBlock.capture) return CAPTURE_BLANK_CHARS;
-  const expected = languageBlock.acceptedAnswers[0]?.trim() ?? "";
-  return Math.max(3, expected.length);
-}
-
 /** The bubble text "Recuérdame" shows on a capture piece: there is no answer to
  * reveal, so it is the authored hint, or a generic nudge. No audio — a clip
  * cannot say the learner's own word (docs/design/speech.md "Variables"). */
@@ -379,17 +370,29 @@ export function useSentencePractice({
   }
 
   function updateAnswer(answer: string, languageBlockIndex: number) {
-    if (hintedBlockIndex === languageBlockIndex) {
-      clearHelpTimer();
-      setHintedBlockIndex(null);
-      setHintText(null);
-      setHintDiff(null);
-    }
     const nextAnswers = [...answers];
     nextAnswers[languageBlockIndex] = answer;
     setAnswers(nextAnswers);
     onAnswersChange?.(nextAnswers);
     const languageBlock = testableBlocks[languageBlockIndex];
+    // Recuérdame's diff is LIVE while its reminder is showing (docs/design/
+    // learner-direction.md, "Help", 2026-09-18): every keystroke on the
+    // hinted piece recomputes the diff against the answer FROZEN at the
+    // moment the button was pressed (hintText) — so the bubble's word never
+    // flips between accepted alternatives mid-typing, but the marked
+    // letters shrink to match what's still missing. Previously this branch
+    // cleared the hint outright on the very next keystroke, which is why a
+    // reminder opened mid-word could end up showing the plain answer with
+    // nothing marked by the time the learner finished typing. A capture
+    // piece has no answer to diff (see captureHintText) — its hint text
+    // just stays up.
+    if (
+      hintedBlockIndex === languageBlockIndex &&
+      hintText !== null &&
+      !languageBlock.capture
+    ) {
+      setHintDiff(diffAgainstAnswer(answer, hintText));
+    }
     if (languageBlock.capture) {
       // Typing never completes a capture piece (there is no answer to match
       // against, so every keystroke would "match") — editing a confirmed one
@@ -405,6 +408,15 @@ export function useSentencePractice({
     const isCorrect = isAnswerAccepted(answer, languageBlock.acceptedAnswers);
     const wasCorrect = correctAnswers[languageBlockIndex];
     if (isCorrect && !wasCorrect) {
+      // The reminder is moot once the answer is right — hand the bubble
+      // back to ordinary "last thing said" behaviour immediately rather
+      // than waiting out whatever's left of the hint's 4s window.
+      if (hintedBlockIndex === languageBlockIndex) {
+        clearHelpTimer();
+        setHintedBlockIndex(null);
+        setHintText(null);
+        setHintDiff(null);
+      }
       const pieceEnglish = languageBlock.acceptedAnswers[0]?.trim();
       if (pieceEnglish) {
         // The bubble keeps showing this text after it finishes speaking

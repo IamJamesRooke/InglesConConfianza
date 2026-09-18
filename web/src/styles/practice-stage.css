@@ -284,11 +284,23 @@
    min-width were set at all. Below 400px (where 360 + the 20px gutters
    either side would overflow) the composition switches to a plain
    stretched flex column instead (see above), and this rule is overridden
-   back to a true `100%` there. */
+   back to a true `100%` there. The `max-width` has the identical
+   percentage problem and gets the identical fix — bug 1's measured answer
+   slot (`.stage-en-slot`) made a short accepted answer's real width bigger
+   than the old ch-estimate ever produced, which was enough to expose it:
+   with `min(100%, 720px)`, the same indefinite-percentage rule drops the
+   ENTIRE max-width during the grid's max-content measurement of
+   `.stage-column` (not just the ignored 100% term), so the card's
+   contribution to the shared track came back unclamped and wider than the
+   speaker row's own content — 22px wider than the 720px track on each
+   side, in one measured case — even though the card itself still rendered
+   at a clamped 720px. Both children of that grid must agree on the same
+   number for the track and the rendered box to have the same left edge, so
+   this is a plain `720px`, not a `min()`. */
 .stage-card[data-wraps="false"] {
   width: fit-content;
   min-width: 360px;
-  max-width: min(100%, 720px);
+  max-width: 720px;
 }
 @media (max-width: 399.98px) {
   .stage-card[data-wraps="false"] {
@@ -362,18 +374,62 @@
   color: var(--foreground);
   font-weight: 600;
 }
-/* Pending-blank width tracks word width, not a full character cell per
-   glyph (0.62ch), floored at 3ch so a one-letter answer still reads as a
-   blank — this is what lets a long sentence wrap phrase-by-phrase on a
-   phone instead of one blank per line. Focus widens it by 1ch of caret
-   room, same formula. */
-.stage-en-input {
-  display: inline-block;
-  field-sizing: content;
-  width: max(3ch, calc(var(--blank-chars, 3) * 0.62ch));
-  min-width: max(3ch, calc(var(--blank-chars, 3) * 0.62ch));
+/* Bug 1 fix ("the answer slot is too narrow for its own answer"): the old
+   width formula (var(--blank-chars) * 0.62ch, a guessed per-character
+   average) undershoots bold proportional text at --t-hero, so a typed
+   answer could overflow and clip its own first letter. The slot's width is
+   now MEASURED, not estimated: `.stage-en-slot` is a CSS-grid stack (every
+   direct child shares grid-area 1/1) holding one invisible
+   `.stage-en-slot-measure` span per accepted answer, rendered in the exact
+   same font/weight/size as the input, plus the real input or finished
+   span. Grid auto-sizing takes the widest of all stacked children's
+   intrinsic (max-content) widths, so the track is always at least as wide
+   as the widest accepted answer actually rendered in that font — it cannot
+   drift from it the way a ch-based guess can. `max-width: 100%` keeps the
+   slot from ever exceeding the card, letting an answer that's simply too
+   long to fit wrap inside the (hidden) measure span instead — the whole
+   POINT is that the input's box (bounded the same way) never has to
+   scroll/clip for anything that DOES fit. This is SSR-safe: no JS
+   measurement, just layout. */
+.stage-en-slot {
+  position: relative;
+  display: inline-grid;
   max-width: 100%;
-  padding: 0 1px;
+  vertical-align: baseline;
+}
+.stage-en-slot > * {
+  grid-area: 1 / 1;
+  min-width: 0;
+}
+/* A capture piece has no answer to size against — the learner types their
+   own word — so it keeps a sensible fixed floor (~10ch) and grows from
+   there as the measure span (below, fed the live typed value) gets wider. */
+.stage-en-slot[data-capture="true"] {
+  min-width: 10ch;
+}
+.stage-en-slot-measure {
+  visibility: hidden;
+  overflow-wrap: anywhere;
+  white-space: normal;
+  padding: 1px 6px;
+  color: transparent;
+  font: inherit;
+  font-weight: 700;
+  pointer-events: none;
+  user-select: none;
+}
+/* A little slack after the last letter so the caret has somewhere to sit
+   even when the field is exactly full. */
+.stage-en-slot-measure::after {
+  content: "\00a0";
+}
+/* Pending-blank width now comes entirely from the slot's own measured
+   track (above); the input just fills it. */
+.stage-en-input {
+  display: block;
+  width: 100%;
+  min-width: 0;
+  padding: 1px 6px;
   border: 0;
   /* A form control's own UA line-height doesn't match the surrounding
      prose's 1.35 (direction, "Sentence slide") — on a line that WRAPS, that
@@ -395,17 +451,15 @@
   transition:
     border-color 160ms,
     background 160ms,
-    border-radius 160ms,
-    padding 160ms;
+    border-radius 160ms;
 }
 /* ACTIVE (direction, "The answer slot"): a rounded, filled slot rather than
    just a coloured underline — visible from first paint since the first
-   piece autofocuses. Text stays left-aligned inside it; the slot's own
-   width still tracks the answer's width plus this padding. */
+   piece autofocuses. Text stays left-aligned inside it; the box itself
+   never resizes on focus (that's the slot's job, above), so there is
+   nothing here but colour/shape. */
 .stage-en-input:focus {
   outline: none;
-  min-width: max(3ch, calc(var(--blank-chars, 3) * 0.62ch + 1ch));
-  padding: 1px 6px;
   border-bottom-color: var(--lesson-hl-en);
   border-radius: 8px;
   background: var(--surface-subtle);
@@ -415,15 +469,16 @@
    the finished word is normally the .stage-en-done span below): same look
    as done, still an input while it's being retyped. */
 .stage-en-input[data-state="done"] {
-  width: auto;
-  min-width: 0;
   border-bottom-color: transparent;
   background: transparent;
 }
-/* Finished piece: a plain word in the text flow, not an input — no caret
-   reserve, so it sits at ordinary inter-word spacing. Same font metrics as
-   the input it replaces (font: inherit, padding 0) so there is no layout
-   jump on the swap either way. Focusable so Tab still reaches it to edit. */
+/* Finished piece: a plain word standing in the same measured slot the
+   input occupied (bug 1: "line width must not change as pieces complete" —
+   the slot's grid track is sized by the measure spans alone, so filling it
+   with either the input or this span never moves anything else on the
+   line). Same font metrics and padding as the input it replaces so there
+   is no jump on the swap either way. Focusable so Tab still reaches it to
+   edit. */
 /* Direction ("Motion budget"): the word settling — a 150ms ease-out fade
    from a tinted field to plain purple text — is the only success signal,
    replacing any check glyph. */
@@ -436,12 +491,10 @@
   }
 }
 .stage-en-done {
-  display: inline;
-  width: auto;
-  max-width: none;
-  overflow: visible;
-  white-space: normal;
-  padding: 0;
+  display: block;
+  width: 100%;
+  overflow-wrap: anywhere;
+  padding: 1px 6px;
   border: 0;
   border-radius: 3px;
   background: transparent;
@@ -541,9 +594,34 @@
     flex-wrap: wrap;
     row-gap: 8px;
   }
+  /* Fix 3 ("bubble hugs its text"): the bubble must sit on its own line
+     under the portrait+label row (never beside it, whatever room is left)
+     WITHOUT stretching to that line's full width — a plain `flex-basis:
+     100%` on the bubble itself would force the break but also become its
+     resolved width, which is exactly the "empty text field" look this
+     fixes. A generated flex item ordered between the row and the bubble is
+     the standard flex line-break: it exists only to consume the rest of
+     the row's line, so the bubble (ordered after it, `flex: 0 0 auto`)
+     starts a new line and then sizes to `width: fit-content` from the base
+     `.speaker-chip-bubble` rule, capped by that rule's own `max-width:
+     100%` (of this row, i.e. effectively the card's width). Scoped off
+     `.speakerless`, which has no portrait+label row to break away from,
+     and gated on `:has(.speaker-chip-bubble)` — with no bubble rendered
+     yet (nothing spoken, no hint shown), this generated item must not
+     exist at all: even at `width: 0` it still contributes its `gap` to
+     the row's own max-content size, which is what an ancestor grid track
+     uses to keep the speaker row's left edge on the card's own left edge
+     (docs/design/learner-direction.md, "Alignment rule") — an extra gap
+     there was enough to throw that off by several pixels. */
+  .speaker-chip.stage:not(.speakerless):has(.speaker-chip-bubble)::after {
+    content: "";
+    order: 1;
+    flex-basis: 100%;
+    width: 0;
+  }
   .speaker-chip.stage .speaker-chip-bubble {
-    flex: 1 0 100%;
-    max-width: 100%;
+    order: 2;
+    flex: 0 0 auto;
   }
   .speaker-chip.stage .speaker-chip-bubble::before {
     top: -5px;
@@ -640,6 +718,150 @@
   }
   .lesson-controls .learner-button.stage-duplicated {
     display: none;
+  }
+}
+
+/* Two-actor "one-line" fix (owner screenshot at ~1880px, 2026-09-18): the
+   generic two-actor row above puts the speaker in a 200px column and lets
+   `.stage-column` grow (`flex: 1 1 auto`) to fill whatever's left of the
+   row — for a one-line sentence, whose card is only ever fit-content up to
+   720px (see `.stage-card[data-wraps="false"]`), that stretched column is
+   what centred the Spanish line (`.stage-column[data-wraps="false"]
+   {align-items:center}`) while leaving the shorter, narrower ENGLISH
+   line's slot sitting at the stretched column's own left edge — two
+   different axes for the two lines of the same card. It also let the card
+   run far wider than 720px on a very wide screen, and put the whole
+   {speaker + card} GROUP on the page's centre line rather than the card
+   alone, both of which the direction now calls out explicitly. Below
+   1024px is untouched; a WRAPPING sentence at any width is untouched (it
+   never had this problem — its card already fills the column, so there
+   was only one axis to begin with). */
+@media (min-width: 1024px) and (max-width: 1279.98px) {
+  /* Between 1024 and 1280 there isn't reliably enough room beside a 720px
+     card for a hanging speaker column without risking overlap (the
+     numbers only work out at 1280+, see that block below) — so a one-line
+     sentence falls back to the same "speaker row under the card"
+     composition wrap mode already uses below 1024. This never overlaps
+     and never pushes the card off its own axis, at the cost of the finer
+     "shrink the column first" step the direction describes — a
+     conscious simplification, noted here rather than silently dropped. */
+  .stage-composition[data-wraps="false"] {
+    display: grid;
+    grid-template-columns: max-content;
+    justify-content: center;
+    flex-direction: column;
+    gap: 18px;
+  }
+  .stage-composition[data-wraps="false"] .stage-column {
+    order: 1;
+    flex: initial;
+    max-width: none;
+  }
+  .stage-composition[data-wraps="false"] .stage-speaker {
+    order: 2;
+    flex: initial;
+    flex-direction: row;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+    padding-top: 0;
+  }
+  .stage-composition[data-wraps="false"] .speaker-chip.stage {
+    flex: none;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    row-gap: 8px;
+    gap: 10px;
+  }
+  .stage-composition[data-wraps="false"] .speaker-chip.stage .speaker-chip-avatar {
+    width: 48px;
+    height: 48px;
+  }
+  .stage-composition[data-wraps="false"] .speaker-chip.stage .speaker-chip-label-row {
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+  }
+  .stage-composition[data-wraps="false"]
+    .speaker-chip.stage:not(.speakerless):has(.speaker-chip-bubble)::after {
+    content: "";
+    order: 1;
+    flex-basis: 100%;
+    width: 0;
+  }
+  .stage-composition[data-wraps="false"] .speaker-chip.stage .speaker-chip-bubble {
+    order: 2;
+    flex: 0 0 auto;
+    max-width: 100%;
+  }
+  .stage-composition[data-wraps="false"] .speaker-chip.stage .speaker-chip-bubble::before {
+    top: -5px;
+    left: 16px;
+    right: auto;
+    border: 0;
+    border-top: 1px solid var(--border);
+    border-left: 1px solid var(--border);
+  }
+}
+/* 1280px+: the numbers work out (a 720px card plus a comfortably-sized
+   hanging speaker column both fit beside each other with room to spare),
+   so a one-line sentence gets its own composition — a 3-column grid whose
+   OUTER two tracks are equal (`1fr`), so the fixed-width middle track
+   (the card, `max-content` up to its own 720px cap) sits on the exact
+   centre of `.sentence-stage`'s own box, REGARDLESS of the speaker
+   column's width — the same axis the explanation card and the primary
+   button already share (both centred the plain way, in a column with
+   equal margins). The speaker takes no part in that centring: it's placed
+   in the LEFT track and pushed to its own end (`justify-self`/
+   `justify-content: flex-end`), right-aligned toward the card with an
+   exact 32px gap (the grid's own `column-gap`); the empty right track is
+   deliberate — it exists only so the left one is forced to match its
+   width. `.sentence-stage` itself needs a real, definite width for `1fr`
+   to have anything to distribute (its default here is shrink-to-fit,
+   which would leave both fr tracks at zero) without simply filling
+   whatever the viewport allows, hence the explicit cap. */
+@media (min-width: 1280px) {
+  .sentence-stage:has(.stage-composition[data-wraps="false"]) {
+    width: 100%;
+    max-width: 1200px;
+  }
+  .stage-composition[data-wraps="false"] {
+    display: grid;
+    grid-template-columns: 1fr max-content 1fr;
+    align-items: start;
+    column-gap: 32px;
+  }
+  .stage-composition[data-wraps="false"] .stage-column {
+    grid-column: 2;
+    flex: initial;
+    max-width: 720px;
+  }
+  .stage-composition[data-wraps="false"] .stage-speaker {
+    grid-column: 1;
+    order: initial;
+    width: auto;
+    justify-self: end;
+    justify-content: flex-end;
+    padding-top: 8px;
+  }
+  .stage-composition[data-wraps="false"] .speaker-chip.stage {
+    align-items: flex-end;
+  }
+  .stage-composition[data-wraps="false"] .speaker-chip.stage .speaker-chip-label-row {
+    align-items: flex-end;
+  }
+  .stage-composition[data-wraps="false"] .speaker-chip.stage .speaker-chip-bubble {
+    max-width: 240px;
+  }
+  /* Tail on the bubble's own right edge, pointing at the card — same as
+     the generic 1024+ row (right-aligned content, card to the right). */
+  .stage-composition[data-wraps="false"] .speaker-chip.stage .speaker-chip-bubble::before {
+    left: auto;
+    right: -5px;
+    border: 0;
+    border-right: 1px solid var(--border);
+    border-top: 1px solid var(--border);
   }
 }
 

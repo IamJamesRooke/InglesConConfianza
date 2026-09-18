@@ -133,12 +133,27 @@ export function SentencePracticeCard({
                     }
                   >
                     {isVocabulary && (
-                      <span className="answer-field-sizer" aria-hidden="true">
-                        {(languageBlock.spanish.trim().length >=
-                        (languageBlock.acceptedAnswers[0]?.trim().length ?? 0)
-                          ? languageBlock.spanish
-                          : languageBlock.acceptedAnswers[0]
-                        )?.trim() || languageBlock.spanish}
+                      // Bug 1 fix (docs/design/learner-direction.md, "The
+                      // answer slot"): stack one hidden measure span per
+                      // candidate — the Spanish word and EVERY accepted
+                      // answer, not just the first — so the row's real,
+                      // rendered width/height is the widest/tallest of all
+                      // of them rather than a guess from string length
+                      // alone. The stack itself (not each span) is what
+                      // establishes .answer-field's box, so it needs the
+                      // grid area="1/1" per span (see practice-table.css).
+                      <span className="answer-field-sizer-stack">
+                        {[languageBlock.spanish, ...languageBlock.acceptedAnswers]
+                          .filter((text) => text?.trim())
+                          .map((text, measureIndex) => (
+                            <span
+                              key={measureIndex}
+                              className="answer-field-sizer"
+                              aria-hidden="true"
+                            >
+                              {text.trim()}
+                            </span>
+                          ))}
                       </span>
                     )}
                     <input

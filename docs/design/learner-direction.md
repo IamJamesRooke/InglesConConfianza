@@ -82,32 +82,25 @@ for the home grid.
 - **Canvas** (owner correction, 2026-09-18: the page was reading as near-white
   behind an also-white card, so the card never visibly separated from the page —
   "the pill for the learning surface" needs the page clearly darker than itself.
-  Not a dark theme). The learner canvas — lesson and home alike — is now a real,
-  visible lavender tint (`--canvas-tint`, `oklch(0.93 0.04 300)`) with a soft
-  LIGHTER glow behind the stage, so the white card sits in a pool of light
-  against the tint. The card itself is untouched: white, the purple-tinted
-  `--shadow-card`, the lavender `--border` hairline — the separation comes from
-  white-on-tint, not from styling the card differently. Contrast (OKLCH → sRGB,
-  computed not eyeballed): the learner-theme `--ink-muted` used by the
-  instruction line and the speaker label is 7.74:1 on the default tint; the
-  primary button's `--brand-primary` fill is 5.52:1 on it, plus its own shadow
-  and white text, so it still reads as a distinct, elevated action. The
-  Recuérdame ghost button gets a white fill on the tinted canvas so it doesn't
-  dissolve into it; the bubble stays white either way; the answer slot's tint
-  inside the white card is unchanged.
-  Two comparison-only variants sit behind a `data-canvas` attribute on `<html>`
-  (`CanvasVariantSwitch`, `?canvas=` query param) for the owner to judge against
-  this default — **delete this switch and the `[data-canvas]` rules in
-  `globals.css` once judged**:
-  1. `strong` (experiment, owner to judge) — one clear step darker/more
-     saturated (`--canvas-tint-strong`, `oklch(0.89 0.06 300)`), same
-     lighter-glow-behind-the-stage shape. `--ink-muted` is 6.80:1 on it.
-  2. `white` (comparison only, owner to judge) — the old near-white page with a
-     saturated purple glow, kept only so the owner can see, side by side, the
-     "no separation" problem the tinted default fixes.
-  Admin never changes; the canvas is scoped to `.learner-theme` only. The three
-  earlier candidates (`glow`/`bare`/`lavender`) are gone — `glow` became this
-  tinted default, `bare` and the old `lavender` were deleted outright.
+  Not a dark theme; decided 2026-09-18 as `strong` — the final canvas, no more
+  variants). The learner canvas — lesson and home alike — is a real, visible
+  lavender tint (`--canvas-tint`, `oklch(0.89 0.06 300)`) with a soft LIGHTER
+  glow behind the stage, so the white card sits in a pool of light against the
+  tint. The card itself is untouched: white, the purple-tinted `--shadow-card`,
+  the lavender `--border` hairline — the separation comes from white-on-tint,
+  not from styling the card differently. Contrast (OKLCH → sRGB, computed not
+  eyeballed): the learner-theme `--ink-muted` used by the instruction line and
+  the speaker label is 6.80:1 on the tint; the primary button's
+  `--brand-primary` fill is 4.85:1 on it, plus its own shadow and white text,
+  so it still reads as a distinct, elevated action, as does the purple
+  "Comentar" pill. The Recuérdame ghost button gets a white fill on the tinted
+  canvas so it doesn't dissolve into it; the bubble stays white either way; the
+  answer slot's tint inside the white card is unchanged.
+  Admin never changes; the canvas is scoped to `.learner-theme` only (both
+  `.lesson-session` and `.course-home`). Every earlier candidate — `glow`/
+  `bare`/`lavender`, then the `tint`/`strong`/`white` comparison variants
+  behind a `data-canvas` attribute and `CanvasVariantSwitch` — is gone; there
+  is exactly one canvas now, with no `[data-canvas]` selectors anywhere.
 
 ## HOME — "your next sentence"
 
@@ -193,21 +186,48 @@ and the one action.
      sentence like "hola" has nothing left to point at), pieces still to come
      sit at 60% of the same red, a `given` piece is plain ink. Line 2 is Union
      Jack blue 600–700 as it fills in. **The answer slot** (revised
-     2026-09-18): a PENDING blank is a plain lavender hairline underline, no
-     fill — exactly one tinted thing on the stage says where to type. The
-     ACTIVE blank is a rounded 8px slot filled with `--surface-subtle`, a 2px
-     `--lesson-hl-en` bottom border and a blue caret, text left-aligned inside
-     it, width = the answer's width plus padding (min ~3ch); visible from
-     first paint (autofocus unchanged). COMPLETE fades the tint 150ms
-     ease-out to bold blue text, as before. Capture pieces use the same slot.
-     Nothing else in the card — no hint icon (see **Help** below).
+     2026-09-18, then fixed 2026-09-18 for real — bug 1): a PENDING blank is
+     a plain lavender hairline underline, no fill — exactly one tinted thing
+     on the stage says where to type. The ACTIVE blank is a rounded 8px slot
+     filled with `--surface-subtle`, a 2px `--lesson-hl-en` bottom border and
+     a blue caret, text left-aligned inside it. COMPLETE fades the tint
+     150ms ease-out to bold blue text, as before. Capture pieces use the
+     same slot. Nothing else in the card — no hint icon (see **Help**
+     below). The slot's WIDTH is measured, never estimated: a ch-based
+     guess (`blank-chars * 0.62ch`) undershot bold proportional text at
+     `--t-hero`, clipping a typed answer's first letter against the input's
+     own edge. `.stage-en-slot` is a CSS-grid stack — every direct child
+     shares `grid-area: 1 / 1` — holding one invisible
+     `.stage-en-slot-measure` span per accepted answer (all of them, so
+     whichever one is actually widest in that font wins, not just the
+     first), rendered in the input's own font/weight/size plus its padding
+     and a trailing `\00a0` of caret slack, alongside the real input or the
+     finished `.stage-en-done` span. Grid auto-sizing takes the widest of
+     all stacked children, so the box can never be narrower than what it
+     has to hold, at hero or sentence size, on the stage or in a vocabulary
+     row (`.answer-field-sizer`, same technique) — and it never drifts from
+     the font the way an arithmetic estimate can. `max-width: 100%` keeps
+     the slot from ever exceeding the card; an answer too long to fit wraps
+     inside the (hidden) measure span instead of pushing the card wider,
+     and the finished span sits in that same fixed-width box so the line's
+     width never moves when a piece completes. A capture piece has no
+     answer to measure against, so its floor is a fixed ~10ch and its
+     measure span is fed the learner's own live typed value, growing with
+     it up to the card's width. (A `max-width: min(100%, 720px)` on the
+     card's own fit-content rule had the identical bug the min-width fix
+     above already named — a percentage term makes the whole function
+     indefinite during the grid's max-content measurement pass, so the
+     clamp silently dropped out of that ONE pass — and a wider measured
+     slot was what finally made the card's unclamped contribution exceed
+     the speaker row's, breaking their shared left edge below 1024; fixed
+     the same way, with a plain `720px`.)
    - **Speaker**: the two-actor composition starts at **1024px** (owner, 2026-09-17 —
      it briefly started at 768, where a portrait beside a box read as a portrait
      stuck in the corner): a 200px column to the left of the card with a 64px round
-     portrait, flag + label beneath, bubble pointing at the card, 24px to the card,
-     the card capped at 720 and the whole group centred with equal air either side
-     (the one action is centred under the group, not under the card); below 1024 it
-     is a row under the card with a 48px portrait. No bubble until the
+     portrait, flag + label beneath, bubble pointing at the card, 24px to the card;
+     below 1024 it is a row under the card with a 48px portrait. This governs a
+     WRAPPING sentence at 1024+ unchanged. No bubble until the
+     first words; then it keeps the last thing said. Bubble white, hairline,
      first words; then it keeps the last thing said. Bubble white, hairline,
      12px radius; an ordinary "last thing said" bubble is `--t-body` (2026-09-18
      — was `--t-ui`, a size too close to the reminder below to read as a
@@ -218,7 +238,58 @@ and the one action.
      gap, tail pointing up at the row above; max-width is the row's own
      width (effectively the card's width), so a long reminder wraps inside
      it instead of overflowing. At 1024+ it's unchanged: in the 200px
-     speaker column, max-width 200px, wrapping.
+     speaker column, max-width 200px, wrapping. **Fix 3, 2026-09-18: the
+     bubble hugs its own text below 1024** — it had been stretching to the
+     full row width (`flex: 1 0 100%`), reading like an empty text field
+     rather than a speech bubble. It's `width: fit-content` (from the base
+     `.speaker-chip-bubble` rule) up to that same max-width, still forced
+     onto its own line under the portrait+label row (never beside it,
+     whatever room is left) by a generated flex item ordered between the
+     row and the bubble — the standard flex line-break trick, since a plain
+     `flex-basis: 100%` on the bubble itself would force the break but also
+     become its resolved width, which was the bug. That generated item only
+     exists once there's a bubble to break away from
+     (`:has(.speaker-chip-bubble)`) — otherwise, even at zero width, it
+     still adds its own `gap` to the row's intrinsic size and throws off
+     the shared left-edge alignment above. Applies to an ordinary "last
+     thing said" bubble the same as a reminder — they're the same element.
+     **A one-line sentence at 1024+ is its own composition** (owner
+     screenshot at ~1880px, 2026-09-18): the generic two-actor row above
+     stretches `.stage-column` to fill whatever's left of the row
+     (`flex: 1 1 auto`), which — for a fit-content, ≤720px one-line card —
+     centred the Spanish line on that STRETCHED column's own axis while the
+     narrower English answer slot sat at the stretched column's own left
+     edge: two different axes for the two lines of the same card, and a
+     {speaker + card} GROUP centred on the page rather than the card alone.
+     Fixed by splitting on width, scoped to `[data-wraps="false"]` only (a
+     wrapping sentence already had one axis and is untouched):
+     - **1280px and up**, where a 720px card and a comfortably-sized
+       speaker column both reliably fit side by side: a 3-column grid
+       whose OUTER two tracks are equal (`1fr`), so the fixed middle track
+       (the card, `max-content` up to 720px) sits exactly on
+       `.sentence-stage`'s own centre — the same axis the explanation card
+       and the primary button already share — regardless of the speaker
+       column's own width. The speaker takes no part in that centring: it
+       lives in the left track, pushed to its own end and right-aligned
+       toward the card with an exact 32px gap (portrait, then flag+label,
+       then Recuérdame, then the bubble, all right-aligned; bubble tail on
+       its right edge, max-width 240px, wrapping); the empty right track
+       exists only to keep the left one the same width. `.sentence-stage`
+       itself gets a real, definite max-width (1200px) here so the `1fr`
+       tracks have real space to distribute rather than collapsing to
+       nothing.
+     - **1024–1279px**: there isn't reliably enough room beside a 720px
+       card for a hanging column without risking overlap, so a one-line
+       sentence falls back to the SAME "speaker row under the card"
+       stacked composition used below 1024 — this never overlaps and never
+       pushes the card off axis, at the cost of the finer "shrink the
+       column first, then fall back" step, a simplification made and
+       named rather than silently dropped.
+     Completing the piece (the finished `.stage-en-done` span filling the
+     same measured slot, per bug 1 above) and the primary button
+     (`.stage-continue`, centred under the whole composition, which at
+     1280+ means under the CARD specifically since the composition's own
+     centre now IS the card's centre) both stay on that same axis.
    - **Vocabulary table**: same card, rows of Spanish (sentence size, flag red bold)
      → inline field whose answer is Union Jack blue bold, the row being answered
      marked by an underline under its Spanish prompt, hairline between rows. Every row's field is the same width, focused or not, and
@@ -265,7 +336,23 @@ and the one action.
      `src/lib/learner/answer-diff.ts` (`closestAcceptedAnswer`,
      `diffAgainstAnswer`); the bubble's accessible name stays the plain
      answer, with a visually-hidden "Revisa: …" sentence naming the fixes
-     for screen readers.
+     for screen readers. **The diff is LIVE while the reminder is showing**
+     (bug 2, 2026-09-18 — it used to clear outright on the very next
+     keystroke, which is why a reminder opened mid-word could end up
+     showing the plain answer with nothing marked by the time the learner
+     finished typing): the closest alternative is chosen once, at the
+     moment Recuérdame is pressed, and stays fixed for that reminder — it
+     never flips between alternatives while the learner keeps typing — but
+     every keystroke on the hinted piece recomputes `diffAgainstAnswer`
+     against that same frozen answer and the field's CURRENT value, so the
+     marked letters shrink as the learner catches up (press with "someth"
+     typed → "ing" marked; type "in" → only "g" marked) and empty-field
+     presses behave the same way in reverse (nothing typed → the plain
+     answer, unmarked; as they type, the already-typed prefix goes quiet
+     and the remainder stays marked). The reminder is dropped the instant
+     the piece turns correct, handing the bubble back to the ordinary "last
+     thing said" behaviour rather than waiting out whatever's left of the
+     4s window.
 3. **The action**: a single primary button, 56px tall, purple, white text, 8px
    radius: "Continuar →" / "Vamos a practicar →" / "Terminar lección →". Full width
    only below 640px (the phone thumb zone); from 640px up it is centred under the
