@@ -68,6 +68,7 @@ the owner's say-so.
 - [ ] Instruction lines spoken: the narrator (es-US male) reads a sentence/table slide's instruction ("Veamos la diferencia.") on slide open, replay on the line, generated like the other clips (owner 2026-09-17)
 - [ ] Audio generation from the builder (Listen generates if missing; module "Generate audio"); manifest fetched fresh (was force-cache → new clips invisible)
 - [ ] Marks in small caps (owner chose B 2026-09-17): Geist `font-variant-caps: small-caps`, weight 600 (not 700), +0.05em tracking, on explanation marks, the sentence stage's Spanish line and assembled English, the vocabulary table, and the builder document — screenshot before commit
+- [ ] Spelled tokens as keycaps (owner 2026-09-17): a visible `T-H-I-N-G` renders each letter as a keycap (learner renderer + a builder editor decoration), reusing the HUD keycap style; no new font
 - [ ] Onboarding (below)
 - [x] Admin guard (env secret on `/admin` + `/api/admin`), deploy shape: static learner site
       with lessons + audio bundled + one feedback function on Vercel; admin local only;
