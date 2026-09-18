@@ -3,7 +3,7 @@ import test from "node:test";
 
 import { explanationToSsml } from "../../src/lib/learner/explanation-ssml";
 
-const NARRATOR_OPEN = '<speak><voice name="es-US-Neural2-A"><prosody rate="88%">';
+const NARRATOR_OPEN = '<speak><voice name="es-US-Neural2-B"><prosody rate="88%">';
 const NARRATOR_CLOSE = "</prosody></voice></speak>";
 
 function englishVoice(content: string): string {

@@ -126,13 +126,13 @@ voice (`en-US-Neural2-D`) for the whole explanation, Spanish included, on the th
 that a gringo accent on the Spanish was fine. On listening, the owner found this "too
 gringo" and the cadence too fast. Replaced with two voices switched inline via Google
 Cloud TTS's SSML `<voice name="…">` element — **verified against the live REST API**
-(a real synthesize call with `<voice name="es-US-Neural2-A">…</voice><voice
+(a real synthesize call with `<voice name="es-US-Neural2-B">…</voice><voice
 name="en-US-Neural2-D">…</voice>` inside one `<speak>` returned 200 with a
 multi-second, two-accent clip), so this uses **voice switching within one request**,
 not the separate-requests-concatenated-as-MPEG-frames fallback:
 
-- **Narrator** (plain text, Spanish marks, paragraph/hard breaks): `es-US-Neural2-A`
-  (Latin American Spanish, female) at `<prosody rate="88%">`. Wraps the entire
+- **Narrator** (plain text, Spanish marks, paragraph/hard breaks): `es-US-Neural2-B`
+  (Latin American Spanish, male) at `<prosody rate="88%">`. Wraps the entire
   `<speak>` body.
 - **English marks**: `en-US-Neural2-D` (the USA speaker used elsewhere in the app) at
   `<prosody rate="85%">` (see taught-word emphasis below), nested inside the narrator's
@@ -177,7 +177,7 @@ bridge are read plainly, exactly like today.
 **SSML rules** (`explanationToSsml(markdown): string` in
 `src/lib/learner/explanation-ssml.ts`, a pure string builder — no network call):
 
-- The whole document is wrapped in `<speak><voice name="es-US-Neural2-A"><prosody
+- The whole document is wrapped in `<speak><voice name="es-US-Neural2-B"><prosody
   rate="88%">…</prosody></voice></speak>` (the narrator).
 - Plain, unmarked text is emitted as-is (escaped), read by the narrator.
 - A Spanish (`es`) mark gets the taught-word wrapping: `<break time="150ms"/><emphasis

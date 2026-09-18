@@ -8,7 +8,7 @@
 // <speak> document is supported, so this does NOT fall back to synthesising
 // separate requests and concatenating MPEG frames):
 //   - Narrator (plain text, Spanish marks, and paragraph/hard breaks):
-//     es-US-Neural2-A (Latin American Spanish, female) at <prosody
+//     es-US-Neural2-B (Latin American Spanish, male) at <prosody
 //     rate="88%">. Replaces the single American-accented voice that used to
 //     read the Spanish too — an explicit owner correction, see
 //     docs/design/speech.md.
@@ -32,7 +32,7 @@
 // builder: no network call, no file I/O — scripts/generate-audio.ts sends
 // the result to Google TTS, src/lib/learner/speech.ts resolves the clip URL.
 
-const NARRATOR_VOICE = "es-US-Neural2-A";
+const NARRATOR_VOICE = "es-US-Neural2-B";
 const NARRATOR_RATE = "88%";
 const SPANISH_MARK_RATE = "82%";
 const ENGLISH_VOICE = "en-US-Neural2-D";
