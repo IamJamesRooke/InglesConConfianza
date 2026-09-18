@@ -28,6 +28,28 @@ const nextConfig: NextConfig = {
   ...(process.env.UX_CHECK_DIST_DIR
     ? { distDir: process.env.UX_CHECK_DIST_DIR }
     : {}),
+  // Baseline security headers (pre-deploy review, docs/engineering/deploy.md)
+  // on every route. No Content-Security-Policy yet — this app relies on
+  // Next's own inline styles and Google Fonts, so a CSP needs `self` plus
+  // `fonts.googleapis.com`/`fonts.gstatic.com` and `'unsafe-inline'` (or a
+  // nonce plumbed through Next's style injection) before it can be added
+  // without breaking the app; left for a follow-up.
+  async headers() {
+    return [
+      {
+        source: "/:path*",
+        headers: [
+          { key: "X-Content-Type-Options", value: "nosniff" },
+          { key: "Referrer-Policy", value: "strict-origin-when-cross-origin" },
+          { key: "X-Frame-Options", value: "DENY" },
+          {
+            key: "Permissions-Policy",
+            value: "camera=(), microphone=(), geolocation=()",
+          },
+        ],
+      },
+    ];
+  },
 };
 
 export default nextConfig;

@@ -33,15 +33,36 @@ at the hosting layer, or a future change exposes the admin routes by
 mistake. It is not the primary control; not deploying admin publicly is.
 
 - Unset `ADMIN_SECRET` (the default, including all local dev): the guard is
-  off, `/admin/*` and `/api/admin/*` behave exactly as before.
+  off, `/admin/*` and `/api/admin/*` behave exactly as before — **except**
+  in production (see "Production safety net" below).
 - Set `ADMIN_SECRET`: every request to `/admin/*` or `/api/admin/*` must
   carry a cookie `icc_admin` equal to the secret. `/admin/*` without the
   cookie renders a minimal, English, Spanish-chrome-free login page
   ("Admin access — enter the secret") that posts to `/api/admin-login`;
   `/api/admin/*` without the cookie returns a 401 JSON body — no HTML,
   since these are called by `fetch` from admin UI, not navigated to.
+  `/api/admin-login` itself is rate-limited (10 attempts/minute per IP,
+  429 past that) as brute-force friction on the secret.
 
 Generate a secret with `npm run admin:secret` and paste it into `.env`.
+
+### Production safety net: unset `ADMIN_SECRET` in production disables admin
+
+An unset `ADMIN_SECRET` normally means "guard off" — fine for local dev,
+where reaching `/admin` at all requires deliberately running the app. But if
+the admin routes were ever accidentally reachable on a **production**
+deploy (`NODE_ENV === "production"`) with no secret configured, "guard off"
+would mean "wide open to the internet" — the opposite of "belt and braces".
+
+So the decision is inverted for that one combination: when
+`NODE_ENV === "production"` and `ADMIN_SECRET` is unset, `proxy.ts` returns
+a bare 404 for every `/admin/*` and `/api/admin/*` request instead of
+`NextResponse.next()` — admin is disabled outright, not merely unguarded.
+Setting `ADMIN_SECRET` in that same production environment re-enables it,
+guarded as usual. The decision itself is a small pure function,
+`isAdminDisabledInProduction` in `web/src/lib/admin/admin-disabled.ts`,
+unit-tested in `web/tests/unit/admin-disabled.test.ts` so the logic doesn't
+depend on the Edge runtime to verify.
 
 ### Mechanism: Next.js 16 `proxy` (not `middleware`)
 
@@ -92,3 +113,18 @@ issues the cookie in the first place.
    `prisma generate` first via `prebuild`). No special static-export flags —
    this app is not statically exported, so `proxy` (and therefore the admin
    guard) applies to every deploy target Vercel builds from this repo.
+
+## Baseline security headers
+
+`web/next.config.ts`'s `headers()` adds these to every route:
+`X-Content-Type-Options: nosniff`, `Referrer-Policy:
+strict-origin-when-cross-origin`, `X-Frame-Options: DENY`,
+`Permissions-Policy: camera=(), microphone=(), geolocation=()`.
+
+No `Content-Security-Policy` yet. A CSP for this app would need at least
+`default-src 'self'`, `font-src fonts.gstatic.com`, `style-src 'self'
+fonts.googleapis.com 'unsafe-inline'` (Next injects inline `<style>` tags for
+its own runtime CSS unless a nonce is plumbed through), and `connect-src
+'self'` (the learner app makes no cross-origin fetches at runtime; the admin
+Lesson Builder only calls its own `/api/admin/*` routes). Left for a
+follow-up rather than added speculatively.

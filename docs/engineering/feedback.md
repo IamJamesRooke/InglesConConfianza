@@ -42,8 +42,28 @@ This is still the core of the payload — see "Rich payload (2026-09-17)"
 below for every field added since (the old `slideText` string field was
 replaced by the structured `slide` object described there).
 
-The route rate-limits lightly in memory (10 requests/minute per IP) and
-never logs the `message` body to the console, in any environment.
+The route rate-limits lightly in memory (10 requests/minute per IP, evicting
+stale IP entries once the map grows past 1000 keys so a flood of spoofed
+`X-Forwarded-For` values can't grow it unbounded) and never logs the
+`message` body to the console, in any environment. It also rejects the
+request body outright above 32KB (checked against `Content-Length` and
+again against the actual body, before `JSON.parse`), and every free-text
+field accepted by `validateFeedbackPayload` is length-capped (`message`
+1-2000, `who` ≤80, short identifiers like `lessonId`/`moduleId`/`slideId`
+≤500, longer/URL-shaped fields like `page`/`userAgent` ≤2000, `slide` ≤8KB
+serialized) so the endpoint can't be used to pad storage.
+
+### Privacy note
+
+This endpoint is the one place learner data leaves the device — everything
+else (progress, streaks, mute/speaker preference) lives in `localStorage`
+only. A submitted feedback record includes the note itself plus incidental
+device/context fields the browser supplies automatically:
+`userAgent`, `viewport` (`{ w, h }`), `navigator.language`, and whether the
+last interaction was `touch` or `mouse`. These are collected only when the
+learner presses "Enviar" on the feedback sheet — never in the background —
+and only to help triage a report (e.g. "broken on mobile Safari"), not for
+tracking. `who` is optional and free text (no account system, no email).
 
 ### Two backends
 

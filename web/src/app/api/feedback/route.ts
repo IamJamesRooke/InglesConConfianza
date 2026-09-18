@@ -17,6 +17,11 @@ const RATE_LIMIT_MAX = 10;
 // single-instance deployment (direction: this is a light guard against
 // accidental floods, not abuse-hardening).
 const requestLog = new Map<string, number[]>();
+const RATE_LIMIT_MAX_KEYS = 1000;
+
+// Reject oversized bodies before JSON.parse — a public, unauthenticated
+// endpoint should not let a caller force large allocations/writes.
+const MAX_BODY_BYTES = 32 * 1024;
 
 function clientKey(request: NextRequest): string {
   const forwardedFor = request.headers.get("x-forwarded-for");
@@ -26,6 +31,15 @@ function clientKey(request: NextRequest): string {
 
 function isRateLimited(key: string): boolean {
   const now = Date.now();
+  // Evict stale keys once the map grows large, so a flood of spoofed
+  // X-Forwarded-For values can't grow this unbounded.
+  if (requestLog.size > RATE_LIMIT_MAX_KEYS) {
+    for (const [mapKey, timestamps] of requestLog) {
+      const recent = timestamps.filter((t) => now - t < RATE_LIMIT_WINDOW_MS);
+      if (recent.length === 0) requestLog.delete(mapKey);
+      else requestLog.set(mapKey, recent);
+    }
+  }
   const recent = (requestLog.get(key) ?? []).filter(
     (timestamp) => now - timestamp < RATE_LIMIT_WINDOW_MS,
   );
@@ -44,9 +58,25 @@ export async function POST(request: NextRequest) {
     );
   }
 
+  const contentLengthHeader = request.headers.get("content-length");
+  if (contentLengthHeader && Number(contentLengthHeader) > MAX_BODY_BYTES) {
+    return NextResponse.json({ error: "Request body too large." }, { status: 413 });
+  }
+
+  let rawBody: string;
+  try {
+    rawBody = await request.text();
+  } catch {
+    return NextResponse.json({ error: "Invalid JSON body." }, { status: 400 });
+  }
+  // Content-Length can be absent/spoofed; re-check the actual body.
+  if (Buffer.byteLength(rawBody, "utf8") > MAX_BODY_BYTES) {
+    return NextResponse.json({ error: "Request body too large." }, { status: 413 });
+  }
+
   let body: unknown;
   try {
-    body = await request.json();
+    body = JSON.parse(rawBody);
   } catch {
     return NextResponse.json({ error: "Invalid JSON body." }, { status: 400 });
   }

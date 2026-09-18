@@ -58,9 +58,17 @@ const MESSAGE_MIN = 1;
 const MESSAGE_MAX = 2000;
 const WHO_MAX = 80;
 const SLIDE_JSON_MAX_BYTES = 8 * 1024;
+// Every other free-text field is best-effort (coerced, never rejected —
+// see the doc comment below), but each is still capped so a malicious
+// caller can't use them to pad storage: short identifiers get a tight cap,
+// free-text/URL-shaped fields get a looser one.
+const SHORT_STRING_MAX = 500;
+const LONG_STRING_MAX = 2000;
 
-function asNullableString(value: unknown): string | null {
-  return typeof value === "string" && value.trim() ? value : null;
+function asNullableString(value: unknown, maxLength: number = SHORT_STRING_MAX): string | null {
+  if (typeof value !== "string") return null;
+  const trimmed = value.trim();
+  return trimmed ? trimmed.slice(0, maxLength) : null;
 }
 
 function asNullableNumber(value: unknown): number | null {
@@ -155,7 +163,7 @@ export function validateFeedbackPayload(body: unknown): FeedbackValidationResult
 
   const slideKind =
     typeof record.slideKind === "string" && record.slideKind.trim()
-      ? record.slideKind.trim()
+      ? record.slideKind.trim().slice(0, SHORT_STRING_MAX)
       : "unknown";
 
   const at =
@@ -172,11 +180,12 @@ export function validateFeedbackPayload(body: unknown): FeedbackValidationResult
       slideCount: asNullableNumber(record.slideCount),
       slideKind,
       slideId: asNullableString(record.slideId),
-      page: typeof record.page === "string" ? record.page : "",
+      page:
+        typeof record.page === "string" ? record.page.slice(0, LONG_STRING_MAX) : "",
       at,
       appVersion:
         typeof record.appVersion === "string" && record.appVersion
-          ? record.appVersion
+          ? record.appVersion.slice(0, SHORT_STRING_MAX)
           : "dev",
       slide,
       answers: asAnswers(record.answers),
@@ -186,7 +195,10 @@ export function validateFeedbackPayload(body: unknown): FeedbackValidationResult
       speakerId: asNullableString(record.speakerId),
       progress: asProgress(record.progress),
       viewport: asViewport(record.viewport),
-      userAgent: typeof record.userAgent === "string" ? record.userAgent : "",
+      userAgent:
+        typeof record.userAgent === "string"
+          ? record.userAgent.slice(0, LONG_STRING_MAX)
+          : "",
       language: asNullableString(record.language),
       pointer: asPointer(record.pointer),
       who: whoRaw || null,

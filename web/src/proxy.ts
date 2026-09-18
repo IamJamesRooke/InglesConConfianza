@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
 
+import { isAdminDisabledInProduction } from "@/lib/admin/admin-disabled";
 import { timingSafeEqualStrings } from "@/lib/admin/secret-compare";
 
 // Belt-and-braces admin guard (docs/backlog.md "Admin guard",
@@ -75,12 +76,27 @@ function loginPageHtml(nextPath: string): string {
 }
 
 export function proxy(request: NextRequest) {
+  const { pathname } = request.nextUrl;
+
+  // Production safety net: an unset ADMIN_SECRET in production means the
+  // belt-and-braces guard below is off too, so admin would be wide open if
+  // it were ever reachable. Disable it outright instead — 404, not a login
+  // page, so its existence isn't even signalled. See
+  // docs/engineering/deploy.md.
+  if (
+    isAdminDisabledInProduction({
+      NODE_ENV: process.env.NODE_ENV,
+      ADMIN_SECRET: process.env.ADMIN_SECRET,
+    })
+  ) {
+    return new NextResponse(null, { status: 404 });
+  }
+
   const secret = process.env.ADMIN_SECRET;
   if (!secret) {
     return NextResponse.next();
   }
 
-  const { pathname } = request.nextUrl;
   const cookieValue = request.cookies.get(COOKIE_NAME)?.value ?? "";
   const authorized = timingSafeEqualStrings(cookieValue, secret);
 
