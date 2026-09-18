@@ -76,7 +76,10 @@ the owner's say-so.
       with lessons + audio bundled + one feedback function on Vercel; admin local only;
       README + `.env.example`
 - [ ] Full gate (with permission) → final polish (2026-09-18) → deploy on **Vercel** (recommended over Netlify 2026-09-17: first-party Next.js 16 support, free tier; docs/engineering/deploy.md already describes it) → friends
-- [ ] Feedback storage: parked (owner 2026-09-17) — plan agreed in principle: Postgres table + /admin/feedback page + Neon free tier; decide Neon vs GitHub Issues before building
+- [x] Feedback storage: DECIDED (owner 2026-09-18) — GitHub issues in the PRIVATE repo `IamJamesRooke/InglesConConfianza-feedback` (the project repo is public, so never there). Repo and labels created: `nuevo`, `problema`, `idea`, `elogio`, `sin clasificar`, `pregunta`, `decidido-arreglar`, `decidido-no`. No database, no admin page.
+- [ ] Feedback to issues (Sonnet, after the capture piece lands): three chips in the Comentar sheet ("Algo falla" / "Una idea" / "Me gustó"); `/api/feedback` creates an issue with the full context and labels when `FEEDBACK_GITHUB_TOKEN` + `FEEDBACK_GITHUB_REPO` are set; per-visitor limit + trap field; Vercel log as fallback; local jsonl unchanged; leave room for an attach-screenshot button (deferred until a comment cannot be reproduced; images would be committed to `capturas/` in the same repo). Everything arrives OPEN, praise included.
+- [ ] Triage routine + `docs/what-works.md` (Codex/Luna, docs only): list open issues, cluster by lesson and slide, propose fix / won't-fix / question, owner decides; praise is closed only after its conclusion is recorded in what-works.
+- [ ] Before friends: owner creates a fine-grained token (that repo only, Issues write) and pastes it into Vercel himself; rehearsal = one comment of each kind from a phone, then a first triage.
 - [x] Admin consistency pass (shared card/button recipes, tokens) · README · design research + direction + mockups (`docs/design/learner-direction.md`)
 
 ### Onboarding (thinking only, 2026-09-17 — not started)

@@ -40,18 +40,17 @@
 8. **`[[audio:…]]` keeps slides terse and the voice warm.** A few slides say a little more
    than they show.
 
-## Workarounds for features not built yet
+## Second draft (2026-09-18, later): the name conversation
 
-- No "Entiendo" checkbox yet: the pre-alpha notice is a plain slide. When the acknowledge
-  option exists, switch it on for that slide; the text does not change.
-- No name capture yet: the name is a *given* piece ("..."). The learner types the sentence
-  and says their own name aloud. When capture exists, a capture slide can precede it.
+The owner's idea replaces the first draft's lessons 2 and 3: the app asks "What is your
+name?", the learner answers "My name is James", and the app greets them by name. The name
+is a **capture piece** (`> ? tu nombre / {name}.`): the last piece of an ordinary sentence,
+which accepts whatever the learner types and stores it as `name`. `{name}` then works in any
+text. The voice cannot say a captured name (clips are pre-generated), so "Hi, {name}!"
+shows the name and speaks "Hi!". The "I'm" lesson is dropped; a favourite-colour capture
+can be added later with the same piece and a different key.
 
-## Precondition
-
-Lesson 3 tests "I'm". The matcher currently rejects the curly apostrophe that phone
-keyboards insert, so **lesson 3 must not go live before that fix lands** — in a flow with no
-close button it would trap every iPhone user. "I am" is also accepted as a safety net.
+Still a workaround: no "Entiendo" checkbox, so the pre-alpha notice is a plain slide.
 
 ## Lesson 1
 
@@ -82,9 +81,12 @@ Una frase empieza con mayúscula y termina con punto.
 ## Lesson 2
 
 ```script
-# Hello, my name is ...
+# My name is ...
 @ mi, nombre, ser
 Por cierto: esta es una versión de prueba. Tu progreso se guarda solo en este navegador. Si borras sus datos, se pierde.
+
+Ahora te voy a hacer una pregunta: [[en:What is your name?]][[audio: Significa: ¿cuál es tu nombre?]]
+Para responder necesitas tres palabras.
 
 [[es:mi]] es [[en:my]], pronunciado *mai*.
 
@@ -92,9 +94,6 @@ Por cierto: esta es una versión de prueba. Tu progreso se guarda solo en este n
 
 [[es:nombre]] es [[en:name]], pronunciado *neim*. Una sola sílaba.
 
-> nombre / name
-
-> mi / my
 > nombre / name
 
 [[es:es]] se dice [[en:is]].
@@ -106,37 +105,55 @@ Por cierto: esta es una versión de prueba. Tu progreso se guarda solo en este n
 | nombre / name
 | es / is
 
-Después de [[en:Hello]] va una coma.
+[[en:What is your name?]]
 
-? Dilo en voz alta mientras escribes, y termina con tu nombre.
-> Hola, / Hello, | Hi, (No olvides la COMA.)
-> mi nombre / my name
+? Responde en voz alta mientras escribes, y termina con tu nombre.
+> Mi nombre / My name (Empieza con MAYÚSCULA.)
 > es / is
-> = ... / ...
+> ? tu nombre / {name}.
+
+[[en:Hi, {name}!]]
+Mucho gusto.[[audio: Ya te presentaste en inglés.]]
 ```
 
 ## Lesson 3
 
 ```script
-# Hello, I'm ...
-@ ser
-[[es:soy]] es [[en:I'm]], pronunciado *aim*. Lleva apóstrofo.
+# What is your name?
+@ qué, tu, nombre
+Ahora te toca preguntar a ti, {name|amigo}.
 
-> soy / I'm | I am (Con APÓSTROFO: I'm.)
+[[es:qué]] o [[es:cuál]] es [[en:what]], pronunciado *uat*.
 
-? Dilo en voz alta, con tu nombre.
-> Hola, / Hello, | Hi,
-> soy / I'm | I am
-> = ... / ...
+> cuál / what
+
+[[es:tu]] es [[en:your]], pronunciado *yor*.
+
+> tu / your
+
+> mi / my
+> tu / your
+
+En inglés la pregunta solo lleva un signo, al final.
+
+? Una pregunta completa. Dila en voz alta.
+> ¿Cuál / What (Empieza con MAYÚSCULA.)
+> es / is
+> tu nombre? / your name? (Termina con el signo: name?)
+
+? Y ahora la conversación entera.
+> Hola. / Hello. | Hi.
+> ¿Cuál es / What is
+> tu nombre? / your name?
 
 Las lecciones van en orden por una razón. Aunque algo te parezca fácil, no te saltes ninguna.
 
-Eres de las primeras personas en probar esto. Si algo no se entiende o se ve mal, presiona **Comentar**.[[audio: Cada comentario me ayuda muchísimo.]]
+Eres de las primeras personas en probar esto, {name|amigo}. Si algo no se entiende o se ve mal, presiona **Comentar**.[[audio: Cada comentario me ayuda muchísimo.]]
 
 Listo. Ya sabes cómo funciona. Ahora sí: tu primera lección.
 ```
 
 ## Curriculum gaps noticed (not fixed — curation is the owner's)
 
-No row exists for **hola → hello** or for **nombre → name**. Both are carried as unlinked
+No row was found for **hola → hello** or for **nombre → name**; *qué/cuál → what* and *tu → your* were not checked (Postgres was down). Both are carried as unlinked
 Covers labels until they exist. Logged in `docs/backlog.md`.
