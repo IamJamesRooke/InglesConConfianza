@@ -71,7 +71,10 @@ function escapeXml(text: string): string {
 // spelling stands apart from the narration around it. The lookbehind/ahead
 // keep it to whole tokens, so ordinary hyphenated words ("e-mail") are
 // untouched. See docs/design/speech.md "Audio-only marks".
-const SPELLED_TOKEN = /(?<![A-Za-z-])[A-Za-z](?:-[A-Za-z])+(?![A-Za-z-])/gu;
+// Exported so the learner renderer (practice-markdown.tsx, keycaps) and the
+// builder's decoration plugin (explanation-spelled-token.ts) match this SSML
+// pass letter-for-letter instead of drifting apart with their own copies.
+export const SPELLED_TOKEN = /(?<![A-Za-z-])[A-Za-z](?:-[A-Za-z])+(?![A-Za-z-])/gu;
 
 /** Escapes `text`, lifting any spelled-out token into a `<say-as>` spelling
  * with a beat either side — WITHOUT switching voice. `<say-as

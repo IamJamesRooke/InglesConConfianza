@@ -28,8 +28,9 @@ import {
   type PMDoc,
 } from "@/lib/lesson-builder/explanation-markdown";
 import { baseExplanationExtensions } from "@/lib/lesson-builder/explanation-schema";
+import { ExplanationSpelledToken } from "@/lib/lesson-builder/explanation-spelled-token";
 
-const extensions = [...baseExplanationExtensions, ExplanationAutoMark];
+const extensions = [...baseExplanationExtensions, ExplanationAutoMark, ExplanationSpelledToken];
 
 // Paste, in three cases:
 //

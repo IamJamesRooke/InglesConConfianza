@@ -498,7 +498,15 @@ test("help is the speaker's quiet Pista button — no lightbulb, no amber hint b
   }
 });
 
-test("English marks are bold like Spanish marks, never italic", () => {
+// Owner, 2026-09-17: superseded to weight 600 (small caps read as heavier
+// than 700 at that letterform) for explanation marks specifically — see
+// docs/design/learner-direction.md's "Small caps" note and the 2026-09-17
+// owner correction scoping small caps + 600 to explanation marks only. The
+// sentence stage and vocabulary table (sentence-presentation.css,
+// practice-responsive-overrides.css's .stage-en-input/.answer-input/etc.)
+// were reverted back to their original heavier weights and are covered
+// separately, not by this test.
+test("English explanation marks are bold like Spanish marks, never italic", () => {
   for (const file of [
     "../../src/styles/practice-responsive-overrides.css",
     "../../src/styles/lesson-builder/explanation-editor.css",
@@ -508,7 +516,7 @@ test("English marks are bold like Spanish marks, never italic", () => {
       .split(/\}/)
       .filter((rule) => /mark(\.english|\[data-language="en"\])/.test(rule))
       .join("\n");
-    assert.match(englishMark, /font-weight:\s*700/);
+    assert.match(englishMark, /font-weight:\s*600/);
     assert.doesNotMatch(englishMark, /font-style:\s*italic/);
   }
 });

@@ -466,3 +466,69 @@ test("a sentence slide's instruction line requests its narrator clip on open", a
   );
   expect(cleanup.ok()).toBeTruthy();
 });
+
+// Spelled tokens as keycaps (owner, 2026-09-17; docs/design/speech.md
+// "Audio-only marks"): a visible `T-H-I-N-G` (not inside an `[[audio:…]]`
+// run) renders as one keycap per letter for the learner.
+const spelledTokenLesson = {
+  id: "lesson_ux_spelled_token",
+  name: "UX spelled token",
+  concepts: [],
+  blocks: [
+    {
+      id: "block_ux_spelled_token",
+      type: "explanation" as const,
+      contentMarkdown: "Se dice T-H-I-N-G para referirse a una cosa.",
+    },
+  ],
+};
+
+test("a visible spelled token renders as one kbd per letter for the learner", async ({
+  page,
+  request,
+}) => {
+  const courseResponse = await request.get("/api/admin/lesson-builder/lessons");
+  const course = (await courseResponse.json()) as {
+    modules: Array<{ id: string }>;
+  };
+  const response = await request.put(
+    `/api/admin/lesson-builder/lessons/${spelledTokenLesson.id}`,
+    { data: { lesson: spelledTokenLesson, moduleId: course.modules[0].id } },
+  );
+  expect(response.ok()).toBeTruthy();
+
+  await page.route("**/audio/manifest.json", (route) =>
+    route.fulfill({ status: 404, body: "not found" }),
+  );
+
+  await page.goto(`/practice?lesson=${spelledTokenLesson.id}`);
+
+  const explanation = page.locator(".lesson-explanation");
+  await expect(explanation).toBeVisible();
+  await expect(explanation.locator("kbd")).toHaveCount(5);
+
+  const cleanup = await request.delete(
+    `/api/admin/lesson-builder/lessons/${spelledTokenLesson.id}`,
+  );
+  expect(cleanup.ok()).toBeTruthy();
+});
+
+// Cost-bug check (owner report: merely rendering the builder in a Playwright
+// run once auto-generated real Google TTS clips): loading the builder must
+// never POST /api/admin/audio/generate on its own — only an explicit click
+// on a "Listen"/"Generate audio" button does (lesson-document.tsx's
+// ExplanationListenButton, lesson-library.tsx's GenerateModuleAudioButton).
+test("loading the builder never POSTs audio/generate on its own", async ({ page }) => {
+  let postCount = 0;
+  await page.route("**/api/admin/audio/generate", (route) => {
+    if (route.request().method() === "POST") postCount += 1;
+    route.continue();
+  });
+
+  await page.goto("/admin/lesson-builder");
+  await expect(page.getByText(/All changes saved|Loading/)).toBeVisible();
+  // Give any stray mount-time effect a moment to fire before asserting none did.
+  await page.waitForTimeout(500);
+
+  expect(postCount).toBe(0);
+});

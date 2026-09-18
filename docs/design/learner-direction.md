@@ -42,11 +42,16 @@ for the home grid.
   (`--lesson-hl-es`) and bold; every English answer is Union Jack blue
   (`--lesson-hl-en`) and bold. That holds for marks inside explanations, the
   sentence stage's two lines, and the vocabulary table.
-- Taught language reads in small caps (owner, 2026-09-17, weight 600 not 700 —
-  too heavy): every surface above sets `font-variant-caps: small-caps;
-  font-weight: 600; letter-spacing: 0.05em;` alongside its colour, sizes
-  unchanged; the completion sentence and the home promise sentence aren't
-  marks and are exempt.
+- Small caps at weight 600 are scoped to explanation marks only (owner
+  correction, 2026-09-17: the earlier version of this note put small caps
+  everywhere and was wrong): `practice-markdown-content mark[data-language]`
+  sets `font-variant-caps: small-caps; font-weight: 600; letter-spacing:
+  0.05em;` alongside its colour. The sentence stage's two lines (`.stage-es`,
+  `.stage-en-input`, `.stage-en-done`) and the vocabulary table
+  (`.answer-source`, `.answer-input`, the completed-answer text) stay normal
+  case at their original weights (Spanish 700, English 600–700 depending on
+  surface) — see docs/design/lesson-builder.md for the matching builder-side
+  scoping.
 - Saturated purple is chrome and action only: the hero gradient, the status strip,
   the one CTA, the progress fill, the focus ring. Nowhere in the language itself.
 - No success glyph anywhere in practice — the colour settling and the speaker are

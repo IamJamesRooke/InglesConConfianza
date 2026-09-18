@@ -56,18 +56,14 @@
 }
 .lesson-document-sentence.resting .lesson-sentence-composed[lang="es"] {
   color: var(--lesson-hl-es);
-  font-variant-caps: small-caps;
-  font-weight: 600;
+  font-weight: 700;
   font-size: 17px;
-  letter-spacing: 0.05em;
 }
 .lesson-document-sentence.resting .lesson-sentence-composed[lang="en"] {
   color: var(--lesson-hl-en);
   font-style: normal;
-  font-variant-caps: small-caps;
   font-weight: 600;
   font-size: 17px;
-  letter-spacing: 0.05em;
 }
 /* E8 "given" piece at rest: a subtle dotted underline — shown to the
    student, never tested, so it must read as calmer than an actual answer. */
@@ -110,18 +106,14 @@
    Spanish red, English blue, no italics (owner, 2026-09-17). */
 .lesson-sentence-presentation-row span[lang="es"] {
   color: var(--lesson-hl-es);
-  font-variant-caps: small-caps;
   font-weight: 600;
   font-size: 17px;
-  letter-spacing: 0.05em;
 }
 .lesson-sentence-presentation-row span[lang="en"] {
   color: var(--lesson-hl-en);
   font-style: normal;
-  font-variant-caps: small-caps;
   font-weight: 600;
   font-size: 15px;
-  letter-spacing: 0.05em;
 }
 /* A row's authored hint reuses the read-only pill sentence pairs use at
    rest — it lands in the row's own third subgrid column, at the end of the

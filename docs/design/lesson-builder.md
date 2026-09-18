@@ -500,10 +500,12 @@ proposal doc's aspirations.
   Editing fields, explanation marks, and the active vocab-table row keep the
   same always-on red/blue ink from the bullet above — one palette everywhere,
   matching docs/design/learner-direction.md's "Colour, by role".
-- **Small caps, weight 600** (owner, 2026-09-17, supersedes the 700s above):
-  every language-ink surface — explanation marks, resting sentence pairs,
-  vocabulary rows — now also carries `font-variant-caps: small-caps;
-  font-weight: 600; letter-spacing: 0.05em;`, sizes unchanged.
+- **Small caps, weight 600 — explanation marks only** (owner correction,
+  2026-09-17: an earlier pass put this on resting sentence pairs and
+  vocabulary rows too and was wrong): only `.lesson-document-explanation
+  mark[data-language]` carries `font-variant-caps: small-caps; font-weight:
+  600; letter-spacing: 0.05em;`. Resting sentence pairs and vocabulary rows
+  in sentence-presentation.css keep their original weights (700s above).
 - **Hint input shown only on demand**: an empty hint no longer renders
   under every active pair. The input (`.lesson-document-hint-pill-input`)
   renders only when the pair already has a stored hint (`piece.callout !==

@@ -331,6 +331,36 @@
   font-style: normal;
   letter-spacing: 0.05em;
 }
+/* Spelled-out tokens as keycaps (owner, 2026-09-17; docs/design/speech.md
+   "Audio-only marks" — `T-H-I-N-G` spelled letter by letter). `em`-sized
+   (0.85em of the inherited font-size, which is `--t-ui` on most practice
+   surfaces) rather than a fixed px, so it scales with whatever block it
+   lands in — unlike editing-hud.css's fixed-size kbd. No explicit text
+   colour: a keycap inherits ink from its paragraph at rest, and the mark's
+   own red/blue when the token sits inside an `[[es:]]`/`[[en:]]` mark —
+   matching, not fighting, the surrounding text. */
+.spelled {
+  display: inline-flex;
+  gap: 2px;
+}
+.spelled kbd {
+  display: inline-flex;
+  min-width: 1.6em;
+  height: 1.6em;
+  align-items: center;
+  justify-content: center;
+  padding: 0 0.15em;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: var(--card);
+  box-shadow: inset 0 -2px 0 var(--border);
+  font-family: ui-monospace, monospace;
+  font-size: 0.85em;
+  font-weight: inherit;
+  font-variant-numeric: tabular-nums;
+  line-height: 1;
+  text-transform: uppercase;
+}
 /* Pronunciation bridge (docs/design/speech.md "Explanation voice track"):
    a quiet respelling after the word, inside the mark — not bold/coloured
    like the word itself, not uppercase, no letter-spacing. */
@@ -442,9 +472,7 @@
   margin-bottom: 5px;
   color: var(--lesson-hl-es);
   font-size: clamp(1.25rem, 1.05rem + 0.5vw, 1.5rem);
-  font-variant-caps: small-caps;
-  font-weight: 600;
-  letter-spacing: 0.05em;
+  font-weight: 700;
   line-height: 1.3;
 }
 .single-answer .answer-source {
@@ -502,9 +530,7 @@
   color: var(--lesson-hl-en);
   background: var(--surface-writing);
   font-size: 24px;
-  font-variant-caps: small-caps;
   font-weight: 600;
-  letter-spacing: 0.05em;
 }
 .lesson-session .answer-input {
   position: absolute;
@@ -1046,9 +1072,7 @@
      and bold here too, not ink. */
   color: var(--lesson-hl-es);
   font-size: var(--practice-prompt-size);
-  font-variant-caps: small-caps;
-  font-weight: 600;
-  letter-spacing: 0.05em;
+  font-weight: 700;
   line-height: 1.35;
   overflow-wrap: anywhere;
 }
@@ -1098,9 +1122,7 @@
      word (owner, 2026-09-17). */
   color: var(--lesson-hl-en);
   font-size: var(--practice-prompt-size);
-  font-variant-caps: small-caps;
-  font-weight: 600;
-  letter-spacing: 0.05em;
+  font-weight: 650;
   line-height: 1.35;
   overflow-wrap: anywhere;
 }
@@ -1247,9 +1269,7 @@
    chrome and the one action. */
 .stage-es {
   color: var(--lesson-hl-es);
-  font-variant-caps: small-caps;
-  font-weight: 600;
-  letter-spacing: 0.05em;
+  font-weight: 700;
   transition: opacity 160ms;
 }
 .stage-es[data-state="pending"] {
@@ -1299,9 +1319,7 @@
   background: transparent;
   color: var(--lesson-hl-en);
   font: inherit;
-  font-variant-caps: small-caps;
-  font-weight: 600;
-  letter-spacing: 0.05em;
+  font-weight: 700;
   vertical-align: baseline;
   transition:
     border-color 160ms,
@@ -1351,9 +1369,7 @@
   background: transparent;
   color: var(--lesson-hl-en);
   font: inherit;
-  font-variant-caps: small-caps;
   font-weight: 600;
-  letter-spacing: 0.05em;
   cursor: text;
   animation: stage-word-settle 150ms ease-out both;
 }

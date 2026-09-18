@@ -1,6 +1,7 @@
 import type { ReactNode } from "react";
 
 import { stripAudioOnly } from "@/lib/lesson-builder/explanation-markdown";
+import { SPELLED_TOKEN } from "@/lib/learner/explanation-ssml";
 import {
   normalizeLessonMarkdown,
   parseLessonMarkdown,
@@ -8,6 +9,33 @@ import {
 
 const inlineMarkdownPattern =
   /(\[\[(?:es|en):[^\]]+\]\]|\\?<kbd>[^<]+?\\?<\/kbd>|==[^=]+==|\*\*[^*]+?\*\*|__[^_]+?__|\*[^*\s][^*]*\*|_[^_\s][^_]*_)/gu;
+
+// A spelled-out token (`T-H-I-N-G`, docs/design/speech.md "Audio-only
+// marks") inside otherwise-plain text: split on it (capturing, so the
+// matches survive the split at odd indices) and render each letter as its
+// own keycap. Reused from the SSML builder's own pattern so the two never
+// drift apart.
+const spelledTokenSplitPattern = new RegExp(`(${SPELLED_TOKEN.source})`, "gu");
+
+function renderTextWithSpelledTokens(text: string, keyPrefix: string): ReactNode[] {
+  if (!text.includes("-")) return [text];
+  const pieces = text.split(spelledTokenSplitPattern);
+  if (pieces.length === 1) return [text];
+  return pieces.map((piece, pieceIndex) => {
+    if (!piece) return null;
+    // Odd indices are the captured spelled-token matches; even indices are
+    // the plain text between them (standard `String.split` with a single
+    // capturing group).
+    if (pieceIndex % 2 === 0) return piece;
+    return (
+      <span key={`${keyPrefix}-spelled-${pieceIndex}`} className="spelled">
+        {piece.split("-").map((letter, letterIndex) => (
+          <kbd key={`${keyPrefix}-spelled-${pieceIndex}-${letterIndex}`}>{letter}</kbd>
+        ))}
+      </span>
+    );
+  });
+}
 
 export type PracticeMarkdownVariant =
   | "explanation"
@@ -214,7 +242,7 @@ function renderInlineMarkdown(text: string) {
       return;
     }
 
-    nodes.push(part);
+    nodes.push(...renderTextWithSpelledTokens(part, `${part}-${partIndex}`));
   });
 
   return nodes;
