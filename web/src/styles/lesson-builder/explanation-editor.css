@@ -101,14 +101,18 @@
   padding: 0;
   background: transparent;
   color: var(--lesson-hl-es);
-  font-weight: 700;
+  font-variant-caps: small-caps;
+  font-weight: 600;
+  letter-spacing: 0.05em;
 }
 .lesson-document-explanation mark[data-language="en"] {
   padding: 0;
   background: transparent;
   color: var(--lesson-hl-en);
-  font-weight: 700;
+  font-variant-caps: small-caps;
+  font-weight: 600;
   font-style: normal;
+  letter-spacing: 0.05em;
 }
 /* Same type scale as the sentence/vocabulary fields (14px / 1.45) — this
    used to force 16px/1.65, so an explanation slide and the sentence slide

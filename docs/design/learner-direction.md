@@ -42,6 +42,11 @@ for the home grid.
   (`--lesson-hl-es`) and bold; every English answer is Union Jack blue
   (`--lesson-hl-en`) and bold. That holds for marks inside explanations, the
   sentence stage's two lines, and the vocabulary table.
+- Taught language reads in small caps (owner, 2026-09-17, weight 600 not 700 —
+  too heavy): every surface above sets `font-variant-caps: small-caps;
+  font-weight: 600; letter-spacing: 0.05em;` alongside its colour, sizes
+  unchanged; the completion sentence and the home promise sentence aren't
+  marks and are exempt.
 - Saturated purple is chrome and action only: the hero gradient, the status strip,
   the one CTA, the progress fill, the focus ring. Nowhere in the language itself.
 - No success glyph anywhere in practice — the colour settling and the speaker are

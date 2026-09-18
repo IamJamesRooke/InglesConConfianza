@@ -317,15 +317,19 @@
 .practice-markdown-content mark.spanish,
 .practice-markdown-content mark[data-language="es"] {
   color: var(--lesson-hl-es);
-  font-weight: 700;
+  font-variant-caps: small-caps;
+  font-weight: 600;
+  letter-spacing: 0.05em;
 }
 .learner-theme mark.english,
 .learner-theme mark[data-language="en"],
 .practice-markdown-content mark.english,
 .practice-markdown-content mark[data-language="en"] {
   color: var(--lesson-hl-en);
-  font-weight: 700;
+  font-variant-caps: small-caps;
+  font-weight: 600;
   font-style: normal;
+  letter-spacing: 0.05em;
 }
 /* Pronunciation bridge (docs/design/speech.md "Explanation voice track"):
    a quiet respelling after the word, inside the mark — not bold/coloured
@@ -438,7 +442,9 @@
   margin-bottom: 5px;
   color: var(--lesson-hl-es);
   font-size: clamp(1.25rem, 1.05rem + 0.5vw, 1.5rem);
-  font-weight: 700;
+  font-variant-caps: small-caps;
+  font-weight: 600;
+  letter-spacing: 0.05em;
   line-height: 1.3;
 }
 .single-answer .answer-source {
@@ -496,7 +502,9 @@
   color: var(--lesson-hl-en);
   background: var(--surface-writing);
   font-size: 24px;
+  font-variant-caps: small-caps;
   font-weight: 600;
+  letter-spacing: 0.05em;
 }
 .lesson-session .answer-input {
   position: absolute;
@@ -1038,7 +1046,9 @@
      and bold here too, not ink. */
   color: var(--lesson-hl-es);
   font-size: var(--practice-prompt-size);
-  font-weight: 700;
+  font-variant-caps: small-caps;
+  font-weight: 600;
+  letter-spacing: 0.05em;
   line-height: 1.35;
   overflow-wrap: anywhere;
 }
@@ -1088,7 +1098,9 @@
      word (owner, 2026-09-17). */
   color: var(--lesson-hl-en);
   font-size: var(--practice-prompt-size);
-  font-weight: 650;
+  font-variant-caps: small-caps;
+  font-weight: 600;
+  letter-spacing: 0.05em;
   line-height: 1.35;
   overflow-wrap: anywhere;
 }
@@ -1235,7 +1247,9 @@
    chrome and the one action. */
 .stage-es {
   color: var(--lesson-hl-es);
-  font-weight: 700;
+  font-variant-caps: small-caps;
+  font-weight: 600;
+  letter-spacing: 0.05em;
   transition: opacity 160ms;
 }
 .stage-es[data-state="pending"] {
@@ -1285,7 +1299,9 @@
   background: transparent;
   color: var(--lesson-hl-en);
   font: inherit;
-  font-weight: 700;
+  font-variant-caps: small-caps;
+  font-weight: 600;
+  letter-spacing: 0.05em;
   vertical-align: baseline;
   transition:
     border-color 160ms,
@@ -1335,7 +1351,9 @@
   background: transparent;
   color: var(--lesson-hl-en);
   font: inherit;
+  font-variant-caps: small-caps;
   font-weight: 600;
+  letter-spacing: 0.05em;
   cursor: text;
   animation: stage-word-settle 150ms ease-out both;
 }
