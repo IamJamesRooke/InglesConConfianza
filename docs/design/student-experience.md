@@ -783,3 +783,33 @@ typing the one correct piece and pressing Alt+H once, submits with
 `viewport` on the captured request body. Screenshots:
 `/tmp/claude-1000/feedback-pill-1280.png` (practice slide, pill visible)
 and `/tmp/claude-1000/footer-1280.png` (home site footer).
+
+**2026-09-18 — the reminder's diff is back, now inside the bubble.** The
+diff bar removed in `e2c2ee97` (when the hint moved into the speaker's
+bubble) is reinstated as marks on the bubble's own text rather than a
+separate bar: pressing "Recuérdame" (Alt+H) with something already typed
+picks whichever accepted alternative is closest to it by edit distance —
+normalized the same way the matcher is (case and curly apostrophes/quotes
+forgiven), so "hii" points at "hi", not "hello" — and shows that answer
+with the characters the learner got wrong or missed emphasised (`--lesson-
+hl-en`, weight 700, underlined — never colour alone, never red, never a
+strike-through) and the rest at the bubble's own quiet ink. Punctuation is
+marked like any other character (typing "hello" for "Hello." visibly marks
+the "."). Typing too far from any accepted answer for the diff to be
+useful (under ~40% of the answer's characters lining up) falls back to the
+plain, unmarked answer, same as nothing typed. A capture piece still has
+no answer to diff. Pure core in `src/lib/learner/answer-diff.ts`
+(`closestAcceptedAnswer`, `diffAgainstAnswer` — LCS diff computed on
+normalized forms, mapped back onto the answer's canonical spelling so the
+marks land on the real characters); wired through `useSentencePractice`'s
+new `hintDiff` and rendered by `SpeakerChip`'s `BubbleContent`, which also
+adds a visually-hidden "Revisa: …" sentence naming just the fixes for
+screen readers (the bubble's own `aria-label`/live text stays the plain
+answer). Verified with `npm run test:unit` (547/547 — 16 new pure-diff
+cases plus one updated and one new CSS/markup assertion in
+`learner-surfaces.test.ts`), `npx tsc --noEmit`, `npm run lint` (incl. CSS
+lint, no new findings), `npm run lint:dead` (no new findings), and
+`tests/ux/sentence-stage-beauty.spec.ts` extended with a case
+(`UX_CHECK_PORT=3254`): typing "helo" and pressing Recuérdame marks
+exactly the missing "l", and typing "hii" against `hello|hi` shows "hi".
+Screenshot: `/tmp/claude-1000/reminder-diff-390.png`.

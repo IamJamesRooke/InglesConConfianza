@@ -11,8 +11,11 @@ import { spokenTextWithoutVariables } from "@/lib/learner/variables";
 // straight one (or vice versa). Both the learner's typed answer and the
 // stored accepted answer go through normalizeAnswer, so folding both sides
 // to the same straight characters here makes matching direction-agnostic.
-const APOSTROPHE_LOOKALIKES = /[’‘ʼ´`′]/g;
-const DOUBLE_QUOTE_LOOKALIKES = /[“”]/g;
+// Exported so lib/learner/answer-diff.ts can fold a single character the
+// same way when building a diff that must stay index-aligned with the
+// answer's original spelling (normalizeAnswer's trim/collapse would not).
+export const APOSTROPHE_LOOKALIKES = /[’‘ʼ´`′]/g;
+export const DOUBLE_QUOTE_LOOKALIKES = /[“”]/g;
 
 export function normalizeAnswer(answer: string) {
   return answer

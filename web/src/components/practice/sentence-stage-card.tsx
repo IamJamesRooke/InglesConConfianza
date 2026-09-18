@@ -67,6 +67,7 @@ export function SentenceStageCard({
     confirmCaptureOnBlur,
     speaker,
     speakingText,
+    hintDiff,
   } = useSentencePractice({
     sentence,
     initialAnswers,
@@ -118,6 +119,7 @@ export function SentenceStageCard({
             key={sentence.id}
             speaker={speaker}
             speakingText={speakingText}
+            diffSegments={hintDiff}
             variant="stage"
             action={hintButtonNode}
           />

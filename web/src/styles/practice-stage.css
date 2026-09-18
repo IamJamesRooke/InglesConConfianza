@@ -83,6 +83,25 @@
 .speaker-chip-bubble-placeholder {
   opacity: 0.6;
 }
+/* Recuérdame diff (docs/design/learner-direction.md, "Help"): the part of
+   the answer the learner already had right sits quiet at the bubble's own
+   muted ink; the part they got wrong or missed is emphasised by weight +
+   underline, never colour alone (no red — red means Spanish) — a 2px
+   underline under blue, weight 700. `min-width` keeps a missing space or
+   punctuation mark visible instead of collapsing to nothing. */
+.answer-diff-same {
+  color: var(--muted-foreground);
+}
+.answer-diff-fix {
+  color: var(--lesson-hl-en);
+  font-weight: 700;
+  text-decoration: underline;
+  text-decoration-color: var(--lesson-hl-en);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 2px;
+  display: inline-block;
+  min-width: 0.5em;
+}
 @media (max-width: 760px) {
   .speaker-chip-avatar {
     width: 32px;

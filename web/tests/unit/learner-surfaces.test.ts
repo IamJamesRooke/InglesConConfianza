@@ -468,12 +468,18 @@ test("the vocabulary table on the stage uses the two-actor composition, not a ce
 
 test("help is the speaker's quiet Recuérdame button — no lightbulb, no amber hint bar anywhere on the learner side", () => {
   const css = readPracticeStyles();
-  // The lightbulb toggles and the old hint field/diff are gone (owner,
-  // 2026-09-17 — hints are spoken by the speaker and shown in its bubble).
+  // The lightbulb toggles and the old standalone hint field/diff BAR are
+  // gone (owner, 2026-09-17 — hints are spoken by the speaker and shown in
+  // its bubble). The diff itself came back on 2026-09-18, owner: "make sure
+  // the reminder has diff highlighting" — but inside the bubble, as
+  // `.answer-diff-same`/`.answer-diff-fix` (see the test below), never as
+  // its own bar or field state.
   for (const gone of [
     ".stage-hint-toggle",
     ".answer-hint-toggle",
-    ".answer-diff",
+    ".answer-diff-label",
+    ".answer-diff-insert",
+    ".answer-diff-delete",
     ".answer-input.showing-hint",
     '.stage-en-input[data-state="hint"]',
   ])
@@ -504,9 +510,34 @@ test("help is the speaker's quiet Recuérdame button — no lightbulb, no amber 
   );
   for (const source of [stageCard, tableCard]) {
     assert.equal(source.includes("Lightbulb"), false);
+    // Neither card renders the diff itself — it lives inside SpeakerChip's
+    // bubble (speaker-chip.tsx), fed a `diffSegments` prop from
+    // useSentencePractice's `hintDiff`.
     assert.equal(source.includes("answer-diff"), false);
     assert.match(source, /HintButton/);
+    assert.match(source, /diffSegments=\{hintDiff\}/);
   }
+});
+
+test("Recuérdame's diff marks fixes by weight + underline, never colour alone — no red, no strike-through", () => {
+  const css = readPracticeStyles();
+  const sameBlock = css.match(/\.answer-diff-same\s*\{([^}]*)\}/)?.[1] ?? "";
+  const fixBlock = css.match(/\.answer-diff-fix\s*\{([^}]*)\}/)?.[1] ?? "";
+  assert.match(sameBlock, /color:\s*var\(--muted-foreground\)/);
+  assert.match(fixBlock, /color:\s*var\(--lesson-hl-en\)/);
+  assert.match(fixBlock, /font-weight:\s*700/);
+  assert.match(fixBlock, /text-decoration:\s*underline/);
+  assert.doesNotMatch(fixBlock, /--lesson-hl-es/);
+  assert.doesNotMatch(fixBlock, /line-through/);
+
+  const speakerChip = readFileSync(
+    new URL("../../src/components/practice/speaker-chip.tsx", import.meta.url),
+    "utf8",
+  );
+  // The bubble's accessible text stays the plain answer; a visually-hidden
+  // "Revisa: …" sentence is the only extra a screen reader gets.
+  assert.match(speakerChip, /sr-only/);
+  assert.match(speakerChip, /Revisa:/);
 });
 
 // Owner, 2026-09-17: superseded to weight 600 (small caps read as heavier

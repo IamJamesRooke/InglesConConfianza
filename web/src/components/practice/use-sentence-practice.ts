@@ -10,6 +10,11 @@ import {
   matchedAcceptedAnswer,
   sentenceEnglishText,
 } from "@/lib/lesson-builder/utils";
+import {
+  closestAcceptedAnswer,
+  diffAgainstAnswer,
+  type AnswerDiffSegment,
+} from "@/lib/learner/answer-diff";
 import { useLearnerVariables } from "@/lib/learner/use-learner-variables";
 import {
   isAcceptableCaptureValue,
@@ -160,6 +165,12 @@ export function useSentencePractice({
   // amber hint bar are gone; the speaker is the hint).
   const [spokenText, setSpokenText] = useState<string | null>(null);
   const [hintText, setHintText] = useState<string | null>(null);
+  // The hint's answer split into same/fix segments against what the learner
+  // had typed (docs/design/learner-direction.md, "Help") — null for a
+  // capture piece (no answer to diff) or once the hint's 4s window ends, so
+  // it never leaks into the plain `spokenText` bubble. See
+  // lib/learner/answer-diff.ts for the pure diff itself.
+  const [hintDiff, setHintDiff] = useState<AnswerDiffSegment[] | null>(null);
   const speakingText = hintText ?? spokenText;
   const spokeCompleteRef = useRef(false);
   // Tracks the in-flight speech promise for whichever piece most recently
@@ -303,20 +314,28 @@ export function useSentencePractice({
   function showHelp(languageBlockIndex: number) {
     const block = testableBlocks[languageBlockIndex];
     // A capture piece has no answer to reveal: the bubble carries the
-    // authored hint (or a generic nudge) and says nothing out loud.
+    // authored hint (or a generic nudge) and says nothing out loud, and
+    // there is nothing to diff. Otherwise, the answer shown is whichever
+    // accepted alternative is closest to what the learner already typed
+    // (closestAcceptedAnswer) — the PRIMARY one when nothing's typed — and
+    // it is shown with the characters they got wrong or missed marked
+    // (diffAgainstAnswer), computed against that same typed text.
     const isCapture = Boolean(block?.capture);
+    const typed = answers[languageBlockIndex] ?? "";
     const answer = isCapture
       ? captureHintText(block)
-      : block?.acceptedAnswers[0]?.trim();
+      : closestAcceptedAnswer(typed, block?.acceptedAnswers ?? []).trim();
     if (!answer) return;
     clearHelpTimer();
     setHintedBlockIndex(languageBlockIndex);
     setHintText(answer);
+    setHintDiff(isCapture ? null : diffAgainstAnswer(typed, answer));
     if (!isCapture) void speak(answer, speaker);
     setHintsUsedCount((count) => count + 1);
     helpTimerRef.current = window.setTimeout(() => {
       setHintedBlockIndex(null);
       setHintText(null);
+      setHintDiff(null);
       helpTimerRef.current = null;
     }, 4000);
   }
@@ -364,6 +383,7 @@ export function useSentencePractice({
       clearHelpTimer();
       setHintedBlockIndex(null);
       setHintText(null);
+      setHintDiff(null);
     }
     const nextAnswers = [...answers];
     nextAnswers[languageBlockIndex] = answer;
@@ -495,5 +515,6 @@ export function useSentencePractice({
     updateAnswer,
     speaker,
     speakingText,
+    hintDiff,
   };
 }

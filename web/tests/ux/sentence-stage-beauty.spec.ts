@@ -133,6 +133,35 @@ test("a one-line sentence gets a fit-content card sharing the explanation card's
   await expect(page.locator(".speaker-chip-bubble")).toContainText(/hello|hi/i);
 });
 
+test("Recuérdame's diff marks exactly the missing letter, and picks the closest alternative", async ({
+  page,
+  request,
+}) => {
+  // docs/design/learner-direction.md, "Help" (2026-09-18: the reminder's
+  // diff is back, inside the bubble) — reuses the one-line fixture, whose
+  // piece accepts "hello" or "hi".
+  await seed(request, oneLineLesson);
+  await page.goto(`/practice?lesson=${oneLineLesson.id}`);
+  await page.getByRole("button", { name: /Vamos a practicar/ }).click();
+
+  const input = page.locator(".stage-en-input").first();
+  const bubble = page.locator(".speaker-chip-bubble");
+  const hint = page.getByRole("button", { name: "Recuérdame" });
+
+  await input.fill("helo");
+  await hint.click();
+  await expect(bubble).toContainText("hello");
+  // Exactly one marked character — the missing "l" — not the whole word.
+  await expect(bubble.locator(".answer-diff-fix")).toHaveCount(1);
+  await expect(bubble.locator(".answer-diff-fix")).toHaveText("l");
+
+  await input.fill("hii");
+  await hint.click();
+  // Closest to "hii" is "hi", not the primary "hello".
+  await expect(bubble).toContainText("hi");
+  await expect(bubble).not.toContainText("hello");
+});
+
 test("a wrapping sentence keeps the ordinary 720-wide, left-aligned card", async ({
   page,
   request,

@@ -198,6 +198,26 @@ and the one action.
      speaker say it for ~4s, then the bubble goes back to what it was showing. The
      field is never filled in; no penalty, no limit; `Alt+H` does the same. With no
      speaker on the device, the bubble shows the text without audio.
+     **The reminder shows where the mistake was** (2026-09-18 — the diff bar
+     removed in `e2c2ee97` is back, now marked on the bubble's own text
+     instead of a separate bar): with nothing typed (or only whitespace),
+     the bubble shows the plain PRIMARY accepted answer, as above. With
+     something typed, it shows whichever accepted alternative is closest to
+     it by edit distance on the normalized forms (case and curly
+     apostrophes/quotes forgiven, same as the matcher) — so "hii" is
+     reminded of "hi", not "hello" — in its stored canonical spelling, with
+     the characters the learner got wrong or missed marked: `--lesson-hl-en`
+     blue, weight 700, with its own 2px underline (emphasis by weight +
+     underline, not colour alone — no red, that means Spanish; no
+     strike-through; no glyphs), the rest at the bubble's own quiet ink.
+     Punctuation is marked like any other character. Typing far enough from
+     every accepted answer that the diff would be noise (under ~40% of the
+     answer's characters lining up) falls back to the plain answer,
+     unmarked. A capture piece has no answer to diff. Pure logic in
+     `src/lib/learner/answer-diff.ts` (`closestAcceptedAnswer`,
+     `diffAgainstAnswer`); the bubble's accessible name stays the plain
+     answer, with a visually-hidden "Revisa: …" sentence naming the fixes
+     for screen readers.
 3. **The action**: a single primary button, 56px tall, purple, white text, 8px
    radius: "Continuar →" / "Vamos a practicar →" / "Terminar lección →". Full width
    only below 640px (the phone thumb zone); from 640px up it is centred under the

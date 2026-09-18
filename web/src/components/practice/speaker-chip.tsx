@@ -3,7 +3,46 @@
 import type { ReactNode } from "react";
 import { useState } from "react";
 
+import type { AnswerDiffSegment } from "@/lib/learner/answer-diff";
 import type { Speaker } from "@/lib/learner/speech";
+
+/**
+ * Renders the bubble's text, marking up the "fix" segments of a Recuérdame
+ * diff (docs/design/learner-direction.md, "Help") when there is one — the
+ * plain-answer case (no diff, or a capture-piece hint) just renders the
+ * text as before. The bubble's own `aria-label`/live text stays the plain
+ * answer either way (the visible spans' text content IS that same answer,
+ * just wrapped); a visually-hidden "Revisa: …" sentence is added only when
+ * there's something to fix, naming just the missed/wrong parts for a
+ * screen-reader user who can't see the underline.
+ */
+function BubbleContent({
+  text,
+  diffSegments,
+}: {
+  text: string;
+  diffSegments?: AnswerDiffSegment[] | null;
+}) {
+  const fixes = diffSegments?.filter((segment) => segment.status === "fix");
+  if (!diffSegments || !fixes?.length) return <>{text}</>;
+  return (
+    <>
+      {diffSegments.map((segment, index) => (
+        <span
+          key={index}
+          className={
+            segment.status === "fix" ? "answer-diff-fix" : "answer-diff-same"
+          }
+        >
+          {segment.text}
+        </span>
+      ))}
+      <span className="sr-only">
+        Revisa: {fixes.map((segment) => segment.text).join(" ")}
+      </span>
+    </>
+  );
+}
 
 /**
  * Cartoon avatar + accent label/flag + a speech bubble. Persistent for the
@@ -30,11 +69,16 @@ export function SpeakerChip({
   speakingText,
   variant = "inline",
   action,
+  diffSegments,
 }: {
   speaker: Speaker | null;
   speakingText: string | null;
   variant?: "inline" | "stage";
   action?: ReactNode;
+  // The Recuérdame diff for the current hint (docs/design/learner-direction.md,
+  // "Help") — only set while `speakingText` is that hint's answer, never for
+  // the "last thing spoken" text. Undefined/null renders `speakingText` plain.
+  diffSegments?: AnswerDiffSegment[] | null;
 }) {
   // No speaker on this device (no clips, no voices): a hint still has to be
   // readable, so its text shows in a plain bubble with no avatar and no audio
@@ -47,7 +91,7 @@ export function SpeakerChip({
       <div className={`speaker-chip ${variant === "stage" ? "stage" : ""} speakerless`}>
         <div className="speaker-chip-body">
           <div className="speaker-chip-bubble" role="status" aria-live="polite">
-            {speakingText}
+            <BubbleContent text={speakingText} diffSegments={diffSegments} />
           </div>
         </div>
       </div>
@@ -59,6 +103,7 @@ export function SpeakerChip({
       speakingText={speakingText}
       variant={variant}
       action={action}
+      diffSegments={diffSegments}
     />
   );
 }
@@ -74,11 +119,13 @@ function SpeakerAvatarChip({
   speakingText,
   variant,
   action,
+  diffSegments,
 }: {
   speaker: Speaker;
   speakingText: string | null;
   variant: "inline" | "stage";
   action?: ReactNode;
+  diffSegments?: AnswerDiffSegment[] | null;
 }) {
   const [candidateIndex, setCandidateIndex] = useState(0);
   const size = variant === "stage" ? 72 : 40;
@@ -114,7 +161,7 @@ function SpeakerAvatarChip({
         </div>
         {speakingText ? (
           <div className="speaker-chip-bubble" role="status" aria-live="polite">
-            {speakingText}
+            <BubbleContent text={speakingText} diffSegments={diffSegments} />
           </div>
         ) : null}
       </div>
