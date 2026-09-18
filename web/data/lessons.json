@@ -2,6 +2,20 @@
   "version": 2,
   "modules": [
     {
+      "id": "module_40e37dc2-9603-462c-9202-8b6bb67b9e37",
+      "name": "Onboarding",
+      "kind": "onboarding",
+      "lessonIds": [
+        "lesson_a35026f8-a89a-4d95-8faa-a4669ed548b3",
+        "lesson_ca609af8-31d5-44e0-83f9-b9b4f9d933c8",
+        "lesson_fee5afba-c6d5-4341-a71a-0e2dedeba276"
+      ],
+      "syllabus": {
+        "main": [],
+        "review": []
+      }
+    },
+    {
       "id": "module_6d5cead0-46c8-4b4d-b1ae-4d2e76b01c7d",
       "name": "Confianza I",
       "description": "This is a description of the course.",
@@ -286,27 +300,492 @@
     {
       "id": "module_381e1ecb-431a-4a34-bf52-1cdfeb28e013",
       "name": "Confianza II",
-      "access": "free",
+      "status": "draft",
       "lessonIds": [],
       "syllabus": {
         "main": [],
         "review": []
-      },
-      "status": "draft"
+      }
     },
     {
       "id": "module_300e6c91-2b5d-403c-a487-68fd5ce9b133",
       "name": "Confianza III",
-      "access": "free",
+      "status": "draft",
       "lessonIds": [],
       "syllabus": {
         "main": [],
         "review": []
-      },
-      "status": "draft"
+      }
     }
   ],
   "lessons": [
+    {
+      "id": "lesson_a35026f8-a89a-4d95-8faa-a4669ed548b3",
+      "name": "Hello.",
+      "concepts": [
+        {
+          "id": "lesson_concept_de2e4adf-7be3-4900-8349-a0b8b5647360",
+          "conceptId": null,
+          "label": "hola"
+        }
+      ],
+      "blocks": [
+        {
+          "id": "block_c996b313-a111-4899-87a2-a922796af489",
+          "type": "explanation",
+          "contentMarkdown": "Llevo más de 14 años haciendo una sola cosa: llevar a personas desde cero hasta conversar en inglés.[[audio: Y eso es lo que vamos a hacer aquí, paso a paso.]]"
+        },
+        {
+          "id": "block_6f678431-72ef-41b0-8e8c-4b6dedeadd48",
+          "type": "explanation",
+          "contentMarkdown": "[[es:hola]] es [[en:hello]], pronunciado *jelóu*."
+        },
+        {
+          "id": "block_c4a0d20d-c5e0-4ce9-9a93-deed4fbb15cf",
+          "type": "sentence",
+          "promptLabel": "",
+          "promptText": "Escribe la respuesta en inglés. Con un teclado es más cómodo.",
+          "helperText": "",
+          "answerFeedback": null,
+          "languageBlocks": [
+            {
+              "id": "lang_cf67e92b-1e47-4a7a-84a9-f0d86bd00305",
+              "spanish": "hola",
+              "callout": null,
+              "acceptedAnswers": [
+                "hello",
+                "hi"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "block_672b674c-bbd7-428d-bbb6-69227c2e671c",
+          "type": "explanation",
+          "contentMarkdown": "En una hora vas a decir [[en:I want you to come here]].\n\nMuchos, después de años de clases, todavía no lo dicen bien.[[audio: Lo traducen palabra por palabra del español, y suena raro.]]"
+        },
+        {
+          "id": "block_4824d5e6-c8f6-47cc-8fc1-81835ccc9d3a",
+          "type": "explanation",
+          "contentMarkdown": "Si no recuerdas una palabra, presiona **Recuérdame**. Aquí nadie pierde puntos."
+        },
+        {
+          "id": "block_add8578c-44b4-40e0-93f0-c4444ceab766",
+          "type": "sentence",
+          "promptLabel": "",
+          "promptText": "Prueba el botón Recuérdame,",
+          "helperText": "",
+          "answerFeedback": null,
+          "languageBlocks": [
+            {
+              "id": "lang_d598773d-e855-43e1-b1a2-59076101a855",
+              "spanish": "hola",
+              "callout": null,
+              "acceptedAnswers": [
+                "hello",
+                "hi"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "block_353daa40-bc01-48ac-a994-16b5dfa7ac76",
+          "type": "explanation",
+          "contentMarkdown": "Una frase empieza con mayúscula y termina con punto."
+        },
+        {
+          "id": "block_93f10edf-8a26-4156-a3f6-d5b0edc57440",
+          "type": "sentence",
+          "promptLabel": "",
+          "promptText": "Tu primera frase.",
+          "helperText": "",
+          "answerFeedback": null,
+          "languageBlocks": [
+            {
+              "id": "lang_804415fb-8cb5-4afe-8c8e-51044d6a25d3",
+              "spanish": "Hola.",
+              "callout": "al final.",
+              "acceptedAnswers": [
+                "Hello.",
+                "Hi."
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "lesson_ca609af8-31d5-44e0-83f9-b9b4f9d933c8",
+      "name": "My name is ...",
+      "concepts": [
+        {
+          "id": "lesson_concept_6cff272f-4fe6-4571-bcaa-ed5a50b84e16",
+          "conceptId": null,
+          "label": "mi"
+        },
+        {
+          "id": "lesson_concept_79e2897f-4734-4491-9d3f-18bb948862ad",
+          "conceptId": null,
+          "label": "nombre"
+        },
+        {
+          "id": "lesson_concept_6b5055a5-2de7-471f-ac36-088c662746d4",
+          "conceptId": null,
+          "label": "ser"
+        }
+      ],
+      "blocks": [
+        {
+          "id": "block_7810c801-debe-45ce-84cf-c2392a9526d5",
+          "type": "explanation",
+          "contentMarkdown": "Por cierto: esta es una versión de prueba. Tu progreso se guarda solo en este navegador. Si borras sus datos, se pierde."
+        },
+        {
+          "id": "block_26c11ea3-db70-4e69-a391-9ce04cc6eddf",
+          "type": "explanation",
+          "contentMarkdown": "Ahora te voy a hacer una pregunta: [[en:What is your name?]][[audio: Significa: ¿cuál es tu nombre?]]\n\nPara responder necesitas tres palabras."
+        },
+        {
+          "id": "block_cc3238e7-c4c3-4e16-b79d-acaf16e446f9",
+          "type": "explanation",
+          "contentMarkdown": "[[es:mi]] es [[en:my]], pronunciado *mai*."
+        },
+        {
+          "id": "block_4a4f2b69-86e1-49fc-825b-e94bb00b6b26",
+          "type": "sentence",
+          "promptLabel": "",
+          "promptText": "",
+          "helperText": "",
+          "answerFeedback": null,
+          "languageBlocks": [
+            {
+              "id": "lang_2a710c94-d3cf-4037-ab4e-c25b0a8bf777",
+              "spanish": "mi",
+              "callout": null,
+              "acceptedAnswers": [
+                "my"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "block_ec1fc58e-f906-400e-98b5-e0bbef5b6663",
+          "type": "explanation",
+          "contentMarkdown": "[[es:nombre]] es [[en:name]], pronunciado *neim*. Una sola sílaba."
+        },
+        {
+          "id": "block_d686e1f8-576a-461a-94c7-88a71d1b4bbf",
+          "type": "sentence",
+          "promptLabel": "",
+          "promptText": "",
+          "helperText": "",
+          "answerFeedback": null,
+          "languageBlocks": [
+            {
+              "id": "lang_d99018be-68f6-4ebf-9e56-487569179ed8",
+              "spanish": "nombre",
+              "callout": null,
+              "acceptedAnswers": [
+                "name"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "block_26b4fbef-b270-4db5-a7c8-ee30a1294215",
+          "type": "explanation",
+          "contentMarkdown": "[[es:es]] se dice [[en:is]]."
+        },
+        {
+          "id": "block_18e0c8b8-6e13-4167-bcbe-c60abb25c9f2",
+          "type": "sentence",
+          "promptLabel": "",
+          "promptText": "",
+          "helperText": "",
+          "answerFeedback": null,
+          "languageBlocks": [
+            {
+              "id": "lang_54a04394-d733-4879-a413-0ef651d134c4",
+              "spanish": "es",
+              "callout": null,
+              "acceptedAnswers": [
+                "is"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "block_2a2ef242-0400-4d3f-85c3-6d61e12e8b6f",
+          "type": "sentence",
+          "layout": "vocabulary_table",
+          "promptLabel": "",
+          "promptText": "Repasemos.",
+          "helperText": "",
+          "answerFeedback": null,
+          "languageBlocks": [
+            {
+              "id": "lang_8ae8ae3b-383c-423a-a90c-3eb71e139c7d",
+              "spanish": "mi",
+              "callout": null,
+              "acceptedAnswers": [
+                "my"
+              ]
+            },
+            {
+              "id": "lang_dbaecf04-43c6-4f64-8fd2-2607cd1e3989",
+              "spanish": "nombre",
+              "callout": null,
+              "acceptedAnswers": [
+                "name"
+              ]
+            },
+            {
+              "id": "lang_08d214d3-c99f-4d14-8ffe-c855a4816885",
+              "spanish": "es",
+              "callout": null,
+              "acceptedAnswers": [
+                "is"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "block_01f10918-3c71-4363-b070-9b5331700720",
+          "type": "explanation",
+          "contentMarkdown": "[[en:What is your name?]]"
+        },
+        {
+          "id": "block_0f858fbd-4398-4d30-82d5-91cf89b9cdeb",
+          "type": "sentence",
+          "promptLabel": "",
+          "promptText": "Responde en voz alta mientras escribes, y termina con tu nombre.",
+          "helperText": "",
+          "answerFeedback": null,
+          "languageBlocks": [
+            {
+              "id": "lang_6b87122a-eb5a-4879-a7d9-1b2b42f47777",
+              "spanish": "Mi nombre",
+              "callout": "Empieza con MAYÚSCULA.",
+              "acceptedAnswers": [
+                "My name"
+              ]
+            },
+            {
+              "id": "lang_8fa54c5e-3f28-4b78-a636-9bfeff0bcdcd",
+              "spanish": "es",
+              "callout": null,
+              "acceptedAnswers": [
+                "is"
+              ]
+            },
+            {
+              "id": "lang_5ca4455f-fc45-4ccd-856f-6b51d1abcecc",
+              "spanish": "tu nombre",
+              "callout": null,
+              "acceptedAnswers": [],
+              "capture": {
+                "key": "name",
+                "suffix": "."
+              }
+            }
+          ]
+        },
+        {
+          "id": "block_14729070-24aa-4424-9d43-6a34ac80c8b7",
+          "type": "explanation",
+          "contentMarkdown": "[[en:Hi, {name}!]]\n\nMucho gusto.[[audio: Ya te presentaste en inglés.]]"
+        }
+      ]
+    },
+    {
+      "id": "lesson_fee5afba-c6d5-4341-a71a-0e2dedeba276",
+      "name": "What is your name?",
+      "concepts": [
+        {
+          "id": "lesson_concept_708bb268-a813-429b-b636-a1be4bc57a9b",
+          "conceptId": null,
+          "label": "qué"
+        },
+        {
+          "id": "lesson_concept_4f987484-8f84-42a3-b215-8e136ad7dfc9",
+          "conceptId": null,
+          "label": "tu"
+        },
+        {
+          "id": "lesson_concept_f0a39297-a17b-46ea-818f-809d485e7b48",
+          "conceptId": null,
+          "label": "nombre"
+        }
+      ],
+      "blocks": [
+        {
+          "id": "block_e2c0aed7-7dc3-4567-b6d6-551a690891ec",
+          "type": "explanation",
+          "contentMarkdown": "Ahora te toca preguntar a ti, {name|amigo}."
+        },
+        {
+          "id": "block_a9f4c35f-52a7-41c8-99b1-dccfd22f3305",
+          "type": "explanation",
+          "contentMarkdown": "[[es:qué]] o [[es:cuál]] es [[en:what]], pronunciado *uat*."
+        },
+        {
+          "id": "block_07ca867a-cf2a-4e9c-82b1-9955db9ca994",
+          "type": "sentence",
+          "promptLabel": "",
+          "promptText": "",
+          "helperText": "",
+          "answerFeedback": null,
+          "languageBlocks": [
+            {
+              "id": "lang_e69647e7-bf10-4408-ada6-5bfedfbdb7c0",
+              "spanish": "cuál",
+              "callout": null,
+              "acceptedAnswers": [
+                "what"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "block_724a3835-62f3-4ad5-89f0-766d6b7930a4",
+          "type": "explanation",
+          "contentMarkdown": "[[es:tu]] es [[en:your]], pronunciado *yor*."
+        },
+        {
+          "id": "block_11efe342-3283-429e-b835-6eaef85663e9",
+          "type": "sentence",
+          "promptLabel": "",
+          "promptText": "",
+          "helperText": "",
+          "answerFeedback": null,
+          "languageBlocks": [
+            {
+              "id": "lang_87fabff7-7a0f-4094-a3d0-472d01d21d68",
+              "spanish": "tu",
+              "callout": null,
+              "acceptedAnswers": [
+                "your"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "block_0de3399d-1214-4bb9-8169-92b3e72e3f52",
+          "type": "sentence",
+          "promptLabel": "",
+          "promptText": "",
+          "helperText": "",
+          "answerFeedback": null,
+          "languageBlocks": [
+            {
+              "id": "lang_e7435e9a-d7f2-4201-80b4-eca00464a56a",
+              "spanish": "mi",
+              "callout": null,
+              "acceptedAnswers": [
+                "my"
+              ]
+            },
+            {
+              "id": "lang_2882ab20-20a0-4e64-b51b-f58ded35cbcd",
+              "spanish": "tu",
+              "callout": null,
+              "acceptedAnswers": [
+                "your"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "block_d71ea9c9-1aa2-470d-948a-a0ba74eea0d3",
+          "type": "explanation",
+          "contentMarkdown": "En inglés la pregunta so"
+        },
+        {
+          "id": "block_6057fd6f-9dad-4198-9eb5-ea883ead914c",
+          "type": "sentence",
+          "promptLabel": "",
+          "promptText": "Una pregunta completa.",
+          "helperText": "",
+          "answerFeedback": null,
+          "languageBlocks": [
+            {
+              "id": "lang_c176acd6-3c63-4b6c-8e0d-b88187d9f000",
+              "spanish": "¿Cuál",
+              "callout": "Empieza con MAYÚSCULA.",
+              "acceptedAnswers": [
+                "What"
+              ]
+            },
+            {
+              "id": "lang_e86d31a3-580f-42ce-a91f-6b0eff33e8a9",
+              "spanish": "es",
+              "callout": null,
+              "acceptedAnswers": [
+                "is"
+              ]
+            },
+            {
+              "id": "lang_f5c02b70-3787-456d-bc23-5e0b9d56dc7c",
+              "spanish": "tu nombre?",
+              "callout": "Termina con el signo: name?",
+              "acceptedAnswers": [
+                "your name?"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "block_93e578fc-d07e-413a-ac79-53fa921cebbf",
+          "type": "sentence",
+          "promptLabel": "",
+          "promptText": "Y ahora la conversación entera.",
+          "helperText": "",
+          "answerFeedback": null,
+          "languageBlocks": [
+            {
+              "id": "lang_75208d58-329b-4119-aff9-fdd0d6d1bc96",
+              "spanish": "Hola.",
+              "callout": null,
+              "acceptedAnswers": [
+                "Hello.",
+                "Hi."
+              ]
+            },
+            {
+              "id": "lang_2f4bf069-1b80-4d72-882a-815277e8c03d",
+              "spanish": "¿Cuál es",
+              "callout": null,
+              "acceptedAnswers": [
+                "What is"
+              ]
+            },
+            {
+              "id": "lang_334591c7-77f2-4d66-93fa-c691d064b40f",
+              "spanish": "tu nombre?",
+              "callout": null,
+              "acceptedAnswers": [
+                "your name"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "block_e60bf726-d808-4b56-9651-960e459ae6c2",
+          "type": "explanation",
+          "contentMarkdown": "Las lecciones van en ord te parezca fácil, no tesaltes ninguna."
+        },
+        {
+          "id": "block_5dd76f50-224a-4cf1-9f1c-66699231ae64",
+          "type": "explanation",
+          "contentMarkdown": "Eres de las primeras personas en probar esto, {name|amigo}. Si algo no se entiende o se ve mal, prCada comentario me ayudamuchísimo.]]"
+        },
+        {
+          "id": "block_faa0ee6c-d6df-4993-ac55-fe9bd24d0596",
+          "type": "explanation",
+          "contentMarkdown": "Listo. Ya sabes cómo funciona. Ahora sí: tu primera lección."
+        }
+      ]
+    },
     {
       "id": "lesson_37a043bb-5f8b-4c82-835b-6c7b3c2b9170",
       "name": "I want to do something.",
@@ -351,7 +830,7 @@
         {
           "id": "block_df100756-0392-441f-824a-16dbe859013e",
           "type": "explanation",
-          "contentMarkdown": "[[es:cosa]] es [[en:thing]]"
+          "contentMarkdown": "[[es:Cosa]] es [[en:thing]]... T-H-I-N-G ... [[en:thing]]."
         },
         {
           "id": "block_1b1f3412-c397-4b08-8a4d-b3ce20be2aa8",
@@ -374,7 +853,7 @@
         {
           "id": "block_6cf4d6fa-65b9-40db-8eb6-739ba5adf0bc",
           "type": "explanation",
-          "contentMarkdown": "[[es:algún]] o [[es:alguna]] es [[en:some]]"
+          "contentMarkdown": "[[es:Algún]] o [[es:alguna]] es [[en:some]]."
         },
         {
           "id": "block_22769602-a952-4366-b233-673b1e131176",
@@ -386,7 +865,7 @@
           "languageBlocks": [
             {
               "id": "lang_804c63ef-0b21-41e0-85a7-2c4317006a12",
-              "spanish": "algún / alguna",
+              "spanish": "alguna",
               "callout": null,
               "acceptedAnswers": [
                 "some"
