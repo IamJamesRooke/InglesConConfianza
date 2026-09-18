@@ -515,7 +515,13 @@ function LessonSession({
       onClick={advance}
     >
       {stepIndex === totalSteps - 1
-        ? "Terminar lección"
+        ? onboarding
+          ? onboardingIsLast
+            ? onboarding.replay
+              ? "Volver al inicio"
+              : "Empezar el curso"
+            : "Continuar"
+          : "Terminar lección"
         : block?.type === "explanation" &&
             lesson.blocks[stepIndex + 1]?.type === "sentence"
           ? "Vamos a practicar"

@@ -79,7 +79,9 @@ async function seed(
 
 async function finishCurrentOnboardingSlide(page: import("@playwright/test").Page) {
   await page
-    .locator('button:has-text("Terminar lección"):visible, button:has-text("Continuar"):visible')
+    .locator(
+      'button:has-text("Terminar lección"):visible, button:has-text("Continuar"):visible, button:has-text("Empezar el curso"):visible, button:has-text("Volver al inicio"):visible',
+    )
     .first()
     .click();
 }
@@ -124,6 +126,11 @@ test.describe("onboarding gate and flow", () => {
     await page.goto("/bienvenida");
     await finishCurrentOnboardingSlide(page); // lesson 1 -> lesson 2
     await expect(page.getByText("Aprenderás inglés paso a paso.")).toBeVisible();
+    // Last slide of the LAST onboarding lesson: "Empezar el curso", not the
+    // regular course "Terminar lección" (there's no completion screen here).
+    await expect(
+      page.locator('button:has-text("Empezar el curso"):visible'),
+    ).toBeVisible();
     await finishCurrentOnboardingSlide(page); // lesson 2 -> home
 
     await expect(page).toHaveURL(/\/$/);

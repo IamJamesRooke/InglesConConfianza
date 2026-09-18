@@ -208,7 +208,11 @@ A long sentence used to wrap into ragged rows of labelled boxes. It is now
 side-by-side comparison via **`/practice?lesson=…&layout=grid`** and is what
 vocabulary tables use. Both cards share `useSentencePractice`, so answer
 matching (`isAnswerAccepted`, unchanged), hints, Tab/Enter progression and
-the speech sequencing are literally the same code in both.
+the speech sequencing are literally the same code in both. (2026-09-18:
+`normalizeAnswer` also folds curly/phone-keyboard apostrophes and quotes to
+their straight forms before comparing, so a typed "I’m" (curly, from an
+iOS/Android keyboard) matches a stored "I'm" and vice versa — see
+`web/src/lib/lesson-builder/utils.ts`.)
 
 **The card.** Line 1 is the Spanish sentence as prose: the piece being typed
 is bold `--lesson-hl-es`, finished pieces settle to regular-weight ink,

@@ -192,6 +192,12 @@ capture slide, no `{name}`, no media — those stay phases 2–4, not built).
     No completion screen ever renders between or after onboarding lessons.
   - No close button unless replay; Escape is a no-op unless replay (the
     keydown handler returns before `close()`).
+  - The advance button's last-slide label is onboarding-aware
+    (`lesson-selector.tsx`'s `advanceButton`): "Continuar" on the last slide
+    of a lesson that isn't the last onboarding lesson (lessons chain with no
+    completion screen, so "Terminar lección" would be wrong there);
+    "Empezar el curso" on the last slide of the last onboarding lesson, or
+    "Volver al inicio" in replay mode. Outside onboarding, unchanged.
   - The reconcile rule (localStorage says done, cookie lost) lives in
     `LessonSelector`'s lazy `useState` initializer (computes the resume
     lesson id, `null` when window is undefined during SSR) plus one

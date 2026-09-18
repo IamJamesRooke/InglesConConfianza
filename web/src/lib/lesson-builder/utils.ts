@@ -4,8 +4,22 @@ import type {
   SentenceBlock,
 } from "@/lib/lesson-builder/types";
 
+// Phone keyboards (iOS/Android) insert "smart" typographic punctuation —
+// curly apostrophes/quotes, primes, acute/grave accents used as apostrophe
+// substitutes — where a teacher authoring on a desktop keyboard typed a
+// straight one (or vice versa). Both the learner's typed answer and the
+// stored accepted answer go through normalizeAnswer, so folding both sides
+// to the same straight characters here makes matching direction-agnostic.
+const APOSTROPHE_LOOKALIKES = /[’‘ʼ´`′]/g;
+const DOUBLE_QUOTE_LOOKALIKES = /[“”]/g;
+
 export function normalizeAnswer(answer: string) {
-  return answer.trim().replace(/\s+/g, " ").toLowerCase();
+  return answer
+    .trim()
+    .replace(/\s+/g, " ")
+    .replace(APOSTROPHE_LOOKALIKES, "'")
+    .replace(DOUBLE_QUOTE_LOOKALIKES, '"')
+    .toLowerCase();
 }
 
 // Some legacy lesson content stores multiple accepted alternates joined as a
