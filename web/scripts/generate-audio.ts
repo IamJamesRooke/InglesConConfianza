@@ -35,11 +35,15 @@ const VOICES: Record<SpeakerId, { languageCode: string; name: string }> = {
 
 const SPEAKING_RATE = 0.95;
 
-// The explanation voice track: ONE American voice reads the whole
-// explanation (Spanish included — a gringo accent is fine, owner decision).
-// See docs/design/speech.md "Explanation voice track" and
-// src/lib/learner/explanation-ssml.ts, which builds the SSML this sends.
-const EXPLANATION_VOICE = { languageCode: "en-US", name: "en-US-Neural2-D" };
+// The explanation voice track: TWO voices switched inline via SSML
+// <voice name="…"> — a Latin American Spanish narrator (es-US-Neural2-A) for
+// the explanation prose and Spanish marks, and en-US-Neural2-D for English
+// marks — built by explanationToSsml() below. The top-level `voice` field
+// here is the request's required default; every part of the body is wrapped
+// in its own <voice> element by explanationToSsml, so this default is never
+// actually read from. See docs/design/speech.md "Explanation voice track"
+// and src/lib/learner/explanation-ssml.ts, which builds the SSML this sends.
+const EXPLANATION_VOICE = { languageCode: "es-US", name: "es-US-Neural2-A" };
 const EXPLANATIONS_DIR = path.join(AUDIO_DIR, "explanations");
 
 function sha1(text: string): string {
@@ -128,6 +132,10 @@ async function synthesize(
 }
 
 async function synthesizeSsml(ssml: string, apiKey: string): Promise<Buffer> {
+  // No top-level speakingRate here — every voice in explanationToSsml's SSML
+  // already carries its own explicit <prosody rate="…">, so an additional
+  // multiplier here would silently compound with those and drift from the
+  // documented rates (88%/82%/85%).
   const response = await fetch(
     `https://texttospeech.googleapis.com/v1/text:synthesize?key=${apiKey}`,
     {
@@ -136,7 +144,7 @@ async function synthesizeSsml(ssml: string, apiKey: string): Promise<Buffer> {
       body: JSON.stringify({
         input: { ssml },
         voice: EXPLANATION_VOICE,
-        audioConfig: { audioEncoding: "MP3", speakingRate: SPEAKING_RATE },
+        audioConfig: { audioEncoding: "MP3" },
       }),
     },
   );

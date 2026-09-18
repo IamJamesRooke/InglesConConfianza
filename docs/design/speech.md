@@ -120,10 +120,42 @@ Generated clips are deploy assets and stay committed (small; not gitignored).
 > built too — see "Playback" below and `docs/design/student-experience.md`
 > "Explanation audio" for the learner-facing writeup.
 
-Explanations are read too, but by a single narrator rather than the per-slide speaker
-roster: ONE American voice (`en-US-Neural2-D`, en-US) reads the whole explanation
-block, Spanish included — a gringo accent on the Spanish is fine, an explicit owner
-call, not a bug to fix later.
+Explanations are read too, but by their own two-voice track rather than the per-slide
+speaker roster. **Owner correction 2026-09-17**: the original build used ONE American
+voice (`en-US-Neural2-D`) for the whole explanation, Spanish included, on the theory
+that a gringo accent on the Spanish was fine. On listening, the owner found this "too
+gringo" and the cadence too fast. Replaced with two voices switched inline via Google
+Cloud TTS's SSML `<voice name="…">` element — **verified against the live REST API**
+(a real synthesize call with `<voice name="es-US-Neural2-A">…</voice><voice
+name="en-US-Neural2-D">…</voice>` inside one `<speak>` returned 200 with a
+multi-second, two-accent clip), so this uses **voice switching within one request**,
+not the separate-requests-concatenated-as-MPEG-frames fallback:
+
+- **Narrator** (plain text, Spanish marks, paragraph/hard breaks): `es-US-Neural2-A`
+  (Latin American Spanish, female) at `<prosody rate="88%">`. Wraps the entire
+  `<speak>` body.
+- **English marks**: `en-US-Neural2-D` (the USA speaker used elsewhere in the app) at
+  `<prosody rate="85%">` (see taught-word emphasis below), nested inside the narrator's
+  `<voice>` — SSML voices nest, so control reverts to the narrator once the nested
+  `<voice>` closes.
+
+**Owner addition, same day**: taught words — both the Spanish mark and the English
+mark — get extra emphasis and pause so they stand out ("COSA … es … thing."):
+
+- Every `es` mark (no voice switch, still the narrator voice): `<break
+  time="150ms"/><emphasis level="moderate"><prosody
+  rate="82%">cosa</prosody></emphasis><break time="350ms"/>`.
+- Every `en` mark: `<break time="300ms"/>` then the English voice with `<emphasis
+  level="moderate"><prosody rate="85%">thing</prosody></emphasis>` then `<break
+  time="300ms"/>`. A bridged mark (below) keeps its existing word + pause +
+  syllable-chunk rendering inside that same emphasis/prosody wrapping.
+- Plain, unmarked text between them is read at the narrator's base 88%.
+
+Sample — `[[es:cosa]] es [[en:thing]]` — produces:
+
+```
+<speak><voice name="es-US-Neural2-A"><prosody rate="88%"><break time="150ms"/><emphasis level="moderate"><prosody rate="82%">cosa</prosody></emphasis><break time="350ms"/> es <voice name="en-US-Neural2-D"><break time="300ms"/><emphasis level="moderate"><prosody rate="85%">thing</prosody></emphasis><break time="300ms"/></voice></prosody></voice></speak>
+```
 
 **Pronunciation-bridge notation** — an `[[en:…]]` mark may additionally carry a
 respelling for the voice track: `[[en:different|DIFF-rent]]`. The `|bridge` suffix is
@@ -145,32 +177,44 @@ bridge are read plainly, exactly like today.
 **SSML rules** (`explanationToSsml(markdown): string` in
 `src/lib/learner/explanation-ssml.ts`, a pure string builder — no network call):
 
-- Plain text and Spanish-marked text are emitted as-is (escaped).
-- An English mark with no bridge is emitted as plain escaped text too — same as
-  unmarked.
-- An English mark WITH a bridge becomes: the word, `<break time="350ms"/>`, then each
+- The whole document is wrapped in `<speak><voice name="es-US-Neural2-A"><prosody
+  rate="88%">…</prosody></voice></speak>` (the narrator).
+- Plain, unmarked text is emitted as-is (escaped), read by the narrator.
+- A Spanish (`es`) mark gets the taught-word wrapping: `<break time="150ms"/><emphasis
+  level="moderate"><prosody rate="82%">…</prosody></emphasis><break time="350ms"/>` —
+  still the narrator voice, no `<voice>` switch.
+- An English (`en`) mark — with or without a bridge — is nested in its own `<voice
+  name="en-US-Neural2-D">`, itself wrapped `<break time="300ms"/><emphasis
+  level="moderate"><prosody rate="85%">…</prosody></emphasis><break time="300ms"/>`.
+  Without a bridge, the mark's text is the emphasised content directly. WITH a bridge,
+  the emphasised content is: the word, `<break time="350ms"/>`, then each
   hyphen-separated chunk of the bridge joined by `<break time="200ms"/>`. A chunk
-  written in ALL CAPS (the stressed syllable) is wrapped in
-  `<emphasis level="strong">` and, like every chunk, lowercased first — most TTS
-  voices spell an all-caps chunk out letter-by-letter rather than saying it, so the
-  emphasis tag (not the casing) is what actually carries the stress.
+  written in ALL CAPS (the stressed syllable) is additionally wrapped in `<emphasis
+  level="strong">` and, like every chunk, lowercased first — most TTS voices spell an
+  all-caps chunk out letter-by-letter rather than saying it, so the emphasis tag (not
+  the casing) is what actually carries the stress.
 - Bold/italic marks carry no spoken meaning and are ignored.
-- A paragraph break becomes `<break time="500ms"/>`; a hard line break inside one
-  paragraph becomes a smaller `<break time="200ms"/>`.
+- A paragraph break becomes `<break time="600ms"/>`; a hard line break inside one
+  paragraph becomes a smaller `<break time="200ms"/>` (both read by the narrator, no
+  voice switch).
 - `&`, `<`, `>`, `"`, `'` are XML-escaped.
-- The whole thing is wrapped in `<speak>…</speak>`.
 
 **Generator**: `scripts/generate-audio.ts` also collects every lesson's explanation
 blocks (`ExplanationBlock.contentMarkdown`, deduplicated by exact markdown source,
-blank ones skipped), builds each one's SSML, and calls Google TTS
-(`input: { ssml }`, voice `en-US-Neural2-D`, MP3, rate 0.95) into
+blank ones skipped), builds each one's SSML, and calls Google TTS (`input: { ssml }`,
+top-level `voice: es-US-Neural2-A` as the request's required default — every part of
+the body is wrapped in its own `<voice>` by `explanationToSsml`, so this default is
+never actually read from — MP3, **no top-level `speakingRate`**: the SSML's own
+`<prosody rate="…">` on every voice already sets the rate explicitly, and a
+top-level multiplier would silently compound with those) into
 `public/audio/explanations/<sha1(markdown)>.mp3` — keyed by the **markdown source**,
-not the spoken text (unlike the per-speaker clips, which are keyed by spoken text).
-Only generates when the file is missing. The manifest gained an `explanations` map,
-`{ "<sha1>": true }`, alongside the existing per-speaker map — old manifests without
-that key still parse fine (no explanation clips, nothing else affected). Dry run
-(no `GOOGLE_TTS_API_KEY`) reports what it would generate for explanations exactly like
-it already does for speaker clips.
+not the spoken text (unlike the per-speaker clips, which are keyed by spoken text, and
+still use `speakingRate: 0.95` with no per-segment prosody). Only generates when the
+file is missing. The manifest gained an `explanations` map, `{ "<sha1>": true }`,
+alongside the existing per-speaker map — old manifests without that key still parse
+fine (no explanation clips, nothing else affected). Dry run (no `GOOGLE_TTS_API_KEY`)
+reports what it would generate for explanations exactly like it already does for
+speaker clips.
 
 `src/lib/learner/speech.ts` gained `explanationClipUrl(markdown): Promise<string|null>`
 — manifest-aware, resolves `/audio/explanations/<sha1>.mp3` when listed, else `null`.
@@ -208,6 +252,7 @@ shows a "Generate audio first (npm run audio:generate)" tooltip and stays disabl
 
 ## Not in scope now
 
-Recording, cloud voices, per-piece speaker changes, speed control, and Spanish speech
-(for the per-slide speakers and for explanations — the narrator reads Spanish text
-with a gringo accent on purpose, per the owner call above), and pronunciation scoring.
+Recording, per-piece speaker changes, speed control, and Spanish speech for the
+per-slide speakers (unlike explanations, which do speak Spanish now, via the
+`es-US-Neural2-A` narrator — see "Explanation voice track" above), and pronunciation
+scoring.

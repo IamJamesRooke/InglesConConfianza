@@ -3,11 +3,40 @@
 // implements, and src/lib/lesson-builder/explanation-markdown.ts for the
 // `[[en:word|BRIDGE]]` pronunciation-bridge notation this reads.
 //
-// ONE voice reads the whole explanation (en-US-Neural2-D, a gringo accent on
-// the Spanish is an explicit owner decision — see docs/design/speech.md).
+// TWO voices, switched inline with Google Cloud TTS's SSML <voice name="…">
+// element (verified against the live REST API — voice switching within one
+// <speak> document is supported, so this does NOT fall back to synthesising
+// separate requests and concatenating MPEG frames):
+//   - Narrator (plain text, Spanish marks, and paragraph/hard breaks):
+//     es-US-Neural2-A (Latin American Spanish, female) at <prosody
+//     rate="88%">. Replaces the single American-accented voice that used to
+//     read the Spanish too — an explicit owner correction, see
+//     docs/design/speech.md.
+//   - English marks (with or without a pronunciation bridge): en-US-Neural2-D,
+//     wrapped with <break time="300ms"/> before and after so the language
+//     switch reads as a deliberate teaching beat rather than an accent slip.
+//
+// Owner addition 2026-09-17: the taught words themselves — both the Spanish
+// mark and the English mark — get extra emphasis and pause ("COSA … es …
+// thing.") so they stand out from the surrounding narration:
+//   - Every `es` mark (no voice switch, still the narrator voice):
+//     `<break time="150ms"/><emphasis level="moderate"><prosody
+//     rate="82%">cosa</prosody></emphasis><break time="350ms"/>`.
+//   - Every `en` mark: `<break time="300ms"/>` then the English voice with
+//     `<emphasis level="moderate"><prosody rate="85%">thing</prosody></emphasis>`
+//     then `<break time="300ms"/>` — a bridged mark keeps its existing word +
+//     pause + syllable-chunk rendering inside that same emphasis/prosody
+//     wrapping.
+//   - Plain (unmarked) text between them is read at the narrator's 88%.
 // Bold/italic carry no spoken meaning and are ignored. This is a pure string
 // builder: no network call, no file I/O — scripts/generate-audio.ts sends
 // the result to Google TTS, src/lib/learner/speech.ts resolves the clip URL.
+
+const NARRATOR_VOICE = "es-US-Neural2-A";
+const NARRATOR_RATE = "88%";
+const SPANISH_MARK_RATE = "82%";
+const ENGLISH_VOICE = "en-US-Neural2-D";
+const ENGLISH_MARK_RATE = "85%";
 
 import {
   parseExplanation,
@@ -49,6 +78,24 @@ function bridgeSsml(word: string, bridge: string): string {
   return [escapeXml(word), '<break time="350ms"/>', spoken.join('<break time="200ms"/>')].join("");
 }
 
+// A taught word is emphasised and given breathing room around it, whichever
+// voice it's read in: `<break/><emphasis level="moderate"><prosody
+// rate="…">content</prosody></emphasis><break/>`.
+function emphasisedSsml(content: string, rate: string, breakBefore: string, breakAfter: string): string {
+  return (
+    `<break time="${breakBefore}"/>` +
+    `<emphasis level="moderate"><prosody rate="${rate}">${content}</prosody></emphasis>` +
+    `<break time="${breakAfter}"/>`
+  );
+}
+
+// Wraps one English-marked run in the English voice, itself carrying the
+// taught-word emphasis. Nested inside the outer narrator <voice> element —
+// SSML voices nest, so control reverts to the narrator once this closes.
+function englishVoiceSsml(content: string): string {
+  return `<voice name="${ENGLISH_VOICE}">${emphasisedSsml(content, ENGLISH_MARK_RATE, "300ms", "300ms")}</voice>`;
+}
+
 function inlineToSsml(nodes: PMInline[]): string {
   let out = "";
   for (const node of nodes) {
@@ -60,12 +107,24 @@ function inlineToSsml(nodes: PMInline[]): string {
       continue;
     }
     const lang = langMark(node.marks);
-    if (lang?.attrs.language === "en" && lang.attrs.bridge !== undefined) {
-      out += bridgeSsml(node.text, lang.attrs.bridge);
+    if (lang?.attrs.language === "en") {
+      // A bridge keeps its word + pause + syllable-chunk rendering; either
+      // way the run is spoken in the English voice, with the taught-word
+      // emphasis wrapping the whole thing.
+      const content =
+        lang.attrs.bridge !== undefined
+          ? bridgeSsml(node.text, lang.attrs.bridge)
+          : escapeXml(node.text);
+      out += englishVoiceSsml(content);
       continue;
     }
-    // Plain text, a Spanish mark, or an English mark without a bridge are
-    // all read plainly — same escaped text either way.
+    if (lang?.attrs.language === "es") {
+      // A taught Spanish word: same emphasis treatment, no voice switch —
+      // it's already the narrator's voice.
+      out += emphasisedSsml(escapeXml(node.text), SPANISH_MARK_RATE, "150ms", "350ms");
+      continue;
+    }
+    // Plain, unmarked text is read by the narrator voice at its base rate.
     out += escapeXml(node.text);
   }
   return out;
@@ -75,13 +134,19 @@ function docToSsml(doc: PMDoc): string {
   const paragraphs = doc.content
     .map((paragraph) => inlineToSsml(paragraph.content ?? []))
     .filter((paragraph) => paragraph.length > 0);
-  return paragraphs.join('<break time="500ms"/>');
+  return paragraphs.join('<break time="600ms"/>');
 }
 
 /**
  * Builds the `<speak>…</speak>` SSML document for one explanation block's
- * markdown, ready to send as Google TTS's `input.ssml`.
+ * markdown, ready to send as Google TTS's `input.ssml`. The whole document is
+ * read by the narrator voice, with English-marked runs switching briefly into
+ * the English voice (see the file header for both voices/rates).
  */
 export function explanationToSsml(markdown: string): string {
-  return `<speak>${docToSsml(parseExplanation(markdown))}</speak>`;
+  const body = docToSsml(parseExplanation(markdown));
+  return (
+    `<speak><voice name="${NARRATOR_VOICE}"><prosody rate="${NARRATOR_RATE}">` +
+    `${body}</prosody></voice></speak>`
+  );
 }
