@@ -49,6 +49,7 @@ import {
   isOnboardingComplete,
   reconcileOnboardedCookie,
 } from "@/lib/learner/onboarding";
+import { useVariableText } from "@/lib/learner/use-learner-variables";
 import type { LessonBlock } from "@/lib/lesson-builder/types";
 import {
   isAnswerAccepted,
@@ -230,6 +231,10 @@ function LessonSession({
   const complete = stepIndex >= totalSteps;
   const block = lesson.blocks[stepIndex];
   const outcome = complete ? lessonOutcome(lesson.blocks) : null;
+  // The final sentence can carry a `{key}` token from a capture piece —
+  // substituted for reading only; `speakSentence` is handed the authored
+  // text, which the speech layer strips tokens from itself.
+  const substitute = useVariableText();
   // Feedback context (docs/engineering/feedback.md): everything the sheet
   // needs to triage a note without asking — where the learner is, what the
   // slide shows, and what they'd typed on it. Assembled fresh on every
@@ -606,10 +611,12 @@ function LessonSession({
                   <div className="completion-final-row">
                     <p
                       className="completion-sentence-en"
-                      data-size={completionSentenceSize(outcome.english)}
+                      data-size={completionSentenceSize(
+                        substitute(outcome.english),
+                      )}
                       lang="en"
                     >
-                      {outcome.english}
+                      {substitute(outcome.english)}
                     </p>
                     <button
                       type="button"
@@ -624,7 +631,7 @@ function LessonSession({
                     </button>
                   </div>
                   <p className="completion-sentence-es" lang="es">
-                    {outcome.spanish}
+                    {substitute(outcome.spanish)}
                   </p>
                   <p className="completion-tagline">
                     Esto ya lo puedes decir.
@@ -637,13 +644,14 @@ function LessonSession({
                   <div className="completion-next-card">
                     <p className="learner-eyebrow completion-eyebrow">Siguiente</p>
                     <p className="completion-next-en" lang="en">
-                      {nextLessonOutcome?.english ||
+                      {substitute(nextLessonOutcome?.english ?? "") ||
                         nextLesson.name ||
                         `Lección ${nextLesson.lessonNumber}`}
                     </p>
                     {(nextLessonOutcome?.spanish || nextLesson.previewText) && (
                       <p className="completion-next-es" lang="es">
-                        {nextLessonOutcome?.spanish || nextLesson.previewText}
+                        {substitute(nextLessonOutcome?.spanish ?? "") ||
+                          nextLesson.previewText}
                       </p>
                     )}
                   </div>
@@ -653,10 +661,10 @@ function LessonSession({
                     {moduleOutcomes.map((item) => (
                       <div className="completion-module-item" key={item.id}>
                         <p className="completion-module-en" lang="en">
-                          {item.english}
+                          {substitute(item.english)}
                         </p>
                         <p className="completion-module-es" lang="es">
-                          {item.spanish}
+                          {substitute(item.spanish)}
                         </p>
                       </div>
                     ))}

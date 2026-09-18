@@ -3,6 +3,7 @@ import type {
   LessonConcept,
   SentenceBlock,
 } from "@/lib/lesson-builder/types";
+import { spokenTextWithoutVariables } from "@/lib/learner/variables";
 
 // Phone keyboards (iOS/Android) insert "smart" typographic punctuation —
 // curly apostrophes/quotes, primes, acute/grave accents used as apostrophe
@@ -59,6 +60,39 @@ export function isAnswerAccepted(
   return matchedAcceptedAnswer(answer, acceptedAnswers) !== null;
 }
 
+/** A capture piece (types.ts): asks the learner for something about
+ * themselves and stores it, instead of testing a fixed English answer. It is
+ * never matched, never validated for a missing answer, and never generates a
+ * clip. */
+function isCapturePiece(languageBlock: {
+  capture?: { key: string; suffix?: string };
+}): boolean {
+  return Boolean(languageBlock.capture?.key);
+}
+
+/** What a capture piece displays once the learner has answered: their stored
+ * value plus the piece's literal suffix ("James" + "." → "James."). */
+export function captureDisplayText(
+  languageBlock: { capture?: { key: string; suffix?: string } },
+  value: string,
+): string {
+  if (!value) return "";
+  return `${value}${languageBlock.capture?.suffix ?? ""}`;
+}
+
+/** The English a piece contributes to a composed sentence, as authored: its
+ * first accepted answer, or — for a capture piece, which has none — the
+ * `{key}` token plus its literal suffix, so the sentence still reads as a
+ * sentence and the learner-side substitution can fill in their own value. */
+export function pieceEnglishSource(languageBlock: {
+  acceptedAnswers: string[];
+  capture?: { key: string; suffix?: string };
+}): string {
+  if (languageBlock.capture)
+    return `{${languageBlock.capture.key}}${languageBlock.capture.suffix ?? ""}`;
+  return languageBlock.acceptedAnswers[0]?.trim() ?? "";
+}
+
 /** A language block is "real" only if it has a Spanish prompt or at least one
  * non-blank accepted answer — a dangling fully-blank block is authoring debris,
  * not a question, and should not render or count toward completion. */
@@ -75,13 +109,29 @@ export function isMeaningfulLanguageBlock(languageBlock: {
 /** The full English sentence a set of language blocks spell out together —
  * each meaningful block's first accepted answer, joined with spaces. Shared
  * by the learner speech feature (speaks the full sentence on completion)
- * and scripts/generate-audio.ts (collects text to synthesize). */
+ * and scripts/generate-audio.ts (collects text to synthesize).
+ *
+ * This is the SPOKEN form, so it is also the clip key: a capture piece
+ * contributes nothing (a pre-generated clip cannot say the learner's name)
+ * and any `{key}` token inside an ordinary answer is removed and tidied
+ * (spokenTextWithoutVariables). "My name is <capture>" therefore both
+ * generates and plays the clip for "My name is". When that leaves nothing at
+ * all the caller's own `if (full)` guard skips the clip; when it leaves a
+ * single word the clip is identical to that piece's own clip and dedupes
+ * away in the generator's Set, so there is nothing extra to special-case. */
 export function sentenceEnglishText(
-  languageBlocks: Array<{ spanish: string; acceptedAnswers: string[] }>,
+  languageBlocks: Array<{
+    spanish: string;
+    acceptedAnswers: string[];
+    capture?: { key: string; suffix?: string };
+  }>,
 ): string {
   return languageBlocks
     .filter(isMeaningfulLanguageBlock)
-    .map((block) => block.acceptedAnswers[0]?.trim() ?? "")
+    .filter((block) => !isCapturePiece(block))
+    .map((block) =>
+      spokenTextWithoutVariables(block.acceptedAnswers[0]?.trim() ?? ""),
+    )
     .filter(Boolean)
     .join(" ")
     .replace(/\s+/g, " ")
@@ -160,6 +210,9 @@ export function normalizeLessons(lessons: Lesson[]) {
             callout: languageBlock.callout,
             acceptedAnswers: [...languageBlock.acceptedAnswers],
             ...(languageBlock.given ? { given: true as const } : {}),
+            ...(languageBlock.capture
+              ? { capture: { ...languageBlock.capture } }
+              : {}),
           })),
         ),
       };
@@ -193,6 +246,9 @@ export function getSentenceValidationIssueCount(sentence: SentenceBlock) {
 
   return sentence.languageBlocks.reduce((issueCount, languageBlock) => {
     const spanishIssueCount = languageBlock.spanish.trim() ? 0 : 1;
+    // A capture piece has no fixed English answer by design — the learner
+    // supplies it — so "Primary English answer is required" never applies.
+    if (isCapturePiece(languageBlock)) return issueCount + spanishIssueCount;
     const answerIssueCount = languageBlock.acceptedAnswers.reduce(
       (answerIssues, _, answerIndex) =>
         answerIssues +

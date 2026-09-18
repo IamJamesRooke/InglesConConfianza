@@ -4,11 +4,19 @@ import type { KeyboardEvent as ReactKeyboardEvent } from "react";
 import { useCallback, useEffect, useRef, useState } from "react";
 import type { LanguageBlock, SentenceBlock } from "@/lib/lesson-builder/types";
 import {
+  captureDisplayText,
   isAnswerAccepted,
   isMeaningfulLanguageBlock,
   matchedAcceptedAnswer,
   sentenceEnglishText,
 } from "@/lib/lesson-builder/utils";
+import { useLearnerVariables } from "@/lib/learner/use-learner-variables";
+import {
+  isAcceptableCaptureValue,
+  normalizeCaptureValue,
+  setLearnerVariable,
+  substituteVariables,
+} from "@/lib/learner/variables";
 import {
   availableSpeakers,
   pickSpeaker,
@@ -36,10 +44,19 @@ import {
 // the longest accepted answer (or the Spanish prompt, if that's longer)
 // plus 2ch of slack. Single-blank cards read wider (bigger type), so they
 // get a slightly taller floor to match the previous fixed 12rem look.
+// A capture piece has no expected answer to size a blank from — the learner
+// types their own word — so both size helpers below fall back to a
+// name-shaped default rather than the 3ch floor an empty answer would give.
+const CAPTURE_BLANK_CHARS = 12;
+
 export function answerMinChars(
   languageBlock: LanguageBlock,
   isSingleLanguageBlock: boolean,
 ): number {
+  if (languageBlock.capture)
+    return isSingleLanguageBlock
+      ? Math.max(CAPTURE_BLANK_CHARS, 13)
+      : CAPTURE_BLANK_CHARS;
   const longest = Math.max(
     languageBlock.spanish.trim().length,
     ...languageBlock.acceptedAnswers.map((answer) => answer.trim().length),
@@ -52,8 +69,16 @@ export function answerMinChars(
  * expected answer, never narrower than 3ch (so a one-letter answer still
  * reads as a blank to fill, not a speck). */
 export function blankChars(languageBlock: LanguageBlock): number {
+  if (languageBlock.capture) return CAPTURE_BLANK_CHARS;
   const expected = languageBlock.acceptedAnswers[0]?.trim() ?? "";
   return Math.max(3, expected.length);
+}
+
+/** The bubble text "Pista" shows on a capture piece: there is no answer to
+ * reveal, so it is the authored hint, or a generic nudge. No audio — a clip
+ * cannot say the learner's own word (docs/design/speech.md "Variables"). */
+function captureHintText(languageBlock: LanguageBlock): string {
+  return languageBlock.callout?.trim() || "Escribe tu respuesta.";
 }
 
 export function useSentencePractice({
@@ -77,9 +102,22 @@ export function useSentencePractice({
   // Dangling fully-blank language blocks are authoring debris, not real
   // questions — drop them before anything derives indices, progression, or
   // rendering from this list. See isMeaningfulLanguageBlock.
-  const languageBlocks = sentence.languageBlocks.filter(
+  const authoredBlocks = sentence.languageBlocks.filter(
     isMeaningfulLanguageBlock,
   );
+  // `{key}` tokens are resolved at RENDER/MATCH time only — never written
+  // back into lesson data (docs/design/onboarding.md "The capture piece").
+  // Everything downstream (display, matching, the hint) reads this
+  // substituted view; the authored blocks stay available for speech, whose
+  // clips are keyed off the token-free text instead.
+  const variables = useLearnerVariables();
+  const languageBlocks = authoredBlocks.map((languageBlock) => ({
+    ...languageBlock,
+    spanish: substituteVariables(languageBlock.spanish, variables),
+    acceptedAnswers: languageBlock.acceptedAnswers.map((answer) =>
+      substituteVariables(answer, variables),
+    ),
+  }));
   // E8 "given" pieces (shown, not tested) are rendered inline by the cards
   // but never drive answer state, progression, or completion — every index
   // below (answers, correctAnswers, inputRefs, help/focus) is scoped to
@@ -91,8 +129,23 @@ export function useSentencePractice({
     testableBlocks.map((languageBlock, index) => [languageBlock.id, index]),
   );
   const [answers, setAnswers] = useState<string[]>(() =>
-    testableBlocks.map((_, index) => initialAnswers?.[index] ?? ""),
+    testableBlocks.map(
+      (languageBlock, index) =>
+        initialAnswers?.[index] ??
+        // Replay: the learner already told us their name, so the capture
+        // field opens prefilled and they only have to confirm it.
+        (languageBlock.capture
+          ? (variables[languageBlock.capture.key] ?? "")
+          : ""),
+    ),
   );
+  // A capture piece can't be "wrong", so it can't be completed by matching:
+  // it completes when the learner confirms it (Enter, Tab, or leaving the
+  // field), which is also when the value is stored. Keyed by piece id so a
+  // re-render that reorders nothing still lines up.
+  const [confirmedCaptures, setConfirmedCaptures] = useState<
+    Record<string, true>
+  >({});
   const [hintedBlockIndex, setHintedBlockIndex] = useState<number | null>(null);
   const [hintsUsedCount, setHintsUsedCount] = useState(0);
   const [focusedBlockIndex, setFocusedBlockIndex] = useState<number | null>(
@@ -134,20 +187,27 @@ export function useSentencePractice({
   }, [hintsUsedCount]);
   const correctAnswers = testableBlocks.map(
     (languageBlock, languageBlockIndex) =>
-      isAnswerAccepted(
-        answers[languageBlockIndex] ?? "",
-        languageBlock.acceptedAnswers,
-      ),
+      languageBlock.capture
+        ? confirmedCaptures[languageBlock.id] === true
+        : isAnswerAccepted(
+            answers[languageBlockIndex] ?? "",
+            languageBlock.acceptedAnswers,
+          ),
   );
   // The accepted answer each correct piece actually matched — its canonical
   // spelling/casing, not the learner's raw typing. A finished piece displays
   // this, never `answers[i]` directly (see docs/design/student-experience.md,
   // "L2b — the sentence stage").
   const matchedAnswers = testableBlocks.map((languageBlock, languageBlockIndex) =>
-    matchedAcceptedAnswer(
-      answers[languageBlockIndex] ?? "",
-      languageBlock.acceptedAnswers,
-    ),
+    languageBlock.capture
+      ? captureDisplayText(
+          languageBlock,
+          normalizeCaptureValue(answers[languageBlockIndex] ?? ""),
+        )
+      : matchedAcceptedAnswer(
+          answers[languageBlockIndex] ?? "",
+          languageBlock.acceptedAnswers,
+        ),
   );
   // No penalty: asking for help never holds the slide back (methodology,
   // "Questions and answers"). The learner still has to type the answer — the
@@ -168,7 +228,10 @@ export function useSentencePractice({
       sentence.layout !== "vocabulary_table"
     ) {
       spokeCompleteRef.current = true;
-      const full = sentenceEnglishText(languageBlocks);
+      // The AUTHORED blocks, not the substituted ones: sentenceEnglishText
+      // drops capture pieces and `{key}` tokens, which is exactly the text
+      // the generator recorded a clip for.
+      const full = sentenceEnglishText(authoredBlocks);
       if (full) {
         let cancelled = false;
         // Wait for the last piece to finish (or be interrupted), pause
@@ -238,18 +301,62 @@ export function useSentencePractice({
    * bubble still shows the text — there is just no audio.
    */
   function showHelp(languageBlockIndex: number) {
-    const answer = testableBlocks[languageBlockIndex]?.acceptedAnswers[0]?.trim();
+    const block = testableBlocks[languageBlockIndex];
+    // A capture piece has no answer to reveal: the bubble carries the
+    // authored hint (or a generic nudge) and says nothing out loud.
+    const isCapture = Boolean(block?.capture);
+    const answer = isCapture
+      ? captureHintText(block)
+      : block?.acceptedAnswers[0]?.trim();
     if (!answer) return;
     clearHelpTimer();
     setHintedBlockIndex(languageBlockIndex);
     setHintText(answer);
-    void speak(answer, speaker);
+    if (!isCapture) void speak(answer, speaker);
     setHintsUsedCount((count) => count + 1);
     helpTimerRef.current = window.setTimeout(() => {
       setHintedBlockIndex(null);
       setHintText(null);
       helpTimerRef.current = null;
     }, 4000);
+  }
+
+  function focusAfter(languageBlockIndex: number) {
+    if (languageBlockIndex < testableBlocks.length - 1)
+      window.setTimeout(
+        () => inputRefs.current[languageBlockIndex + 1]?.focus(),
+        0,
+      );
+    else
+      window.setTimeout(() => inputRefs.current[languageBlockIndex]?.blur(), 0);
+  }
+
+  /**
+   * Confirms a capture piece: stores what the learner typed under the
+   * piece's key (trailing punctuation stripped, their own capitalisation
+   * kept, a first letter upper-cased only if they typed all lowercase) and
+   * marks the piece done. Anything non-empty of 1–40 characters is accepted
+   * — there is nothing to be wrong about. Returns false when there is
+   * nothing usable yet, so the caller can show the hint instead.
+   */
+  function confirmCapture(languageBlockIndex: number): boolean {
+    const languageBlock = testableBlocks[languageBlockIndex];
+    if (!languageBlock?.capture) return false;
+    const raw = answers[languageBlockIndex] ?? "";
+    if (!isAcceptableCaptureValue(raw)) return false;
+    const value = normalizeCaptureValue(raw);
+    if (!value) return false;
+    setLearnerVariable(languageBlock.capture.key, value);
+    if (raw !== value) {
+      const nextAnswers = [...answers];
+      nextAnswers[languageBlockIndex] = value;
+      setAnswers(nextAnswers);
+      onAnswersChange?.(nextAnswers);
+    }
+    setConfirmedCaptures((current) =>
+      current[languageBlock.id] ? current : { ...current, [languageBlock.id]: true },
+    );
+    return true;
   }
 
   function updateAnswer(answer: string, languageBlockIndex: number) {
@@ -263,6 +370,18 @@ export function useSentencePractice({
     setAnswers(nextAnswers);
     onAnswersChange?.(nextAnswers);
     const languageBlock = testableBlocks[languageBlockIndex];
+    if (languageBlock.capture) {
+      // Typing never completes a capture piece (there is no answer to match
+      // against, so every keystroke would "match") — editing a confirmed one
+      // sends it back to unconfirmed until the learner confirms again.
+      setConfirmedCaptures((current) => {
+        if (!current[languageBlock.id]) return current;
+        const next = { ...current };
+        delete next[languageBlock.id];
+        return next;
+      });
+      return;
+    }
     const isCorrect = isAnswerAccepted(answer, languageBlock.acceptedAnswers);
     const wasCorrect = correctAnswers[languageBlockIndex];
     if (isCorrect && !wasCorrect) {
@@ -301,11 +420,32 @@ export function useSentencePractice({
   // reveal itself unmounts the very hint-toggle button focus was about to
   // land on, and the learner could Tab straight past an unanswered blank.
   // Shift+Tab stays unrestricted. Shared by both card layouts.
+  /** Leaving a capture field is a confirmation too — a learner who types
+   * their name and clicks Continue shouldn't have to press Enter first. */
+  function confirmCaptureOnBlur(languageBlockIndex: number) {
+    if (!testableBlocks[languageBlockIndex]?.capture) return;
+    confirmCapture(languageBlockIndex);
+  }
+
   function onAnswerKeyDown(
     event: ReactKeyboardEvent<HTMLInputElement>,
     languageBlockIndex: number,
   ) {
     if (event.nativeEvent.isComposing) return;
+    const captureBlock = testableBlocks[languageBlockIndex]?.capture;
+    if (
+      captureBlock &&
+      (event.key === "Enter" || event.key === "Tab") &&
+      !event.ctrlKey &&
+      !event.metaKey &&
+      !event.altKey &&
+      !event.shiftKey
+    ) {
+      event.preventDefault();
+      if (confirmCapture(languageBlockIndex)) focusAfter(languageBlockIndex);
+      else showHelp(languageBlockIndex);
+      return;
+    }
     if (event.altKey && event.key.toLowerCase() === "h") {
       event.preventDefault();
       if (
@@ -338,6 +478,7 @@ export function useSentencePractice({
 
   return {
     onAnswerKeyDown,
+    confirmCaptureOnBlur,
     languageBlocks,
     testableBlocks,
     testableIndexById,

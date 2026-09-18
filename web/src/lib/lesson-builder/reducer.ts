@@ -155,6 +155,19 @@ export type LessonsAction =
       languageBlockId: string;
     }
   | {
+      type: "TOGGLE_CAPTURE";
+      lessonId: string;
+      sentenceBlockId: string;
+      languageBlockId: string;
+    }
+  | {
+      type: "UPDATE_CAPTURE";
+      lessonId: string;
+      sentenceBlockId: string;
+      languageBlockId: string;
+      patch: { key?: string; suffix?: string };
+    }
+  | {
       type: "EXTEND_LAST_SENTENCE";
       lessonId: string;
       afterBlockId: string | null;
@@ -348,6 +361,21 @@ export function lessonsReducer(
         action.lessonId,
         action.sentenceBlockId,
         action.languageBlockId,
+      );
+    case "TOGGLE_CAPTURE":
+      return mutations.toggleCapture(
+        lessons,
+        action.lessonId,
+        action.sentenceBlockId,
+        action.languageBlockId,
+      );
+    case "UPDATE_CAPTURE":
+      return mutations.updateCapture(
+        lessons,
+        action.lessonId,
+        action.sentenceBlockId,
+        action.languageBlockId,
+        action.patch,
       );
     case "EXTEND_LAST_SENTENCE":
       return mutations.extendLastSentence(

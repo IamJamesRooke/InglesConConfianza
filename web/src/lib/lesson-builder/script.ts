@@ -131,6 +131,12 @@ function copyPiecesForExtend(pieces: LanguageBlock[]): LanguageBlock[] {
         ? piece.acceptedAnswers.map(stripTerminalPunctuation)
         : [...piece.acceptedAnswers],
       ...(piece.given ? { given: true as const } : {}),
+      // Parity with mutations.ts's extendLastSentence: the copied piece
+      // that is no longer last loses its literal suffix, exactly as it
+      // loses its terminal punctuation.
+      ...(piece.capture
+        ? { capture: isLast ? { key: piece.capture.key } : { ...piece.capture } }
+        : {}),
     };
   });
 }
@@ -148,10 +154,15 @@ type PendingSlide = {
 };
 type Pending = PendingExplanation | PendingSlide | null;
 
+// A capture piece's English side: `{key}` plus optional literal suffix
+// ("{name}." → key "name", suffix "."). See docs/design/lesson-script-grammar.md.
+const CAPTURE_RE = /^\{([a-z][a-z0-9_]*)\}(.*)$/;
+
 function parsePiece(
   content: string,
   lineNo: number,
   isGiven: boolean,
+  isCapture: boolean,
   errors: ScriptError[],
 ): LanguageBlock | null {
   const slashIndex = findUnescaped(content, "/");
@@ -164,6 +175,24 @@ function parsePiece(
   if (!spanish) {
     errors.push({ line: lineNo, message: "Spanish side is empty." });
     return null;
+  }
+  if (isCapture) {
+    const captureMatch = englishText.match(CAPTURE_RE);
+    if (!captureMatch) {
+      errors.push({
+        line: lineNo,
+        message: "Capture piece's English side must be a {key} token, e.g. {name}.",
+      });
+      return null;
+    }
+    const suffix = unescapeText(captureMatch[2].trim());
+    return {
+      id: createId("lang"),
+      spanish,
+      callout: hint,
+      acceptedAnswers: [],
+      capture: { key: captureMatch[1], ...(suffix ? { suffix } : {}) },
+    };
   }
   const acceptedAnswers = splitUnescaped(englishText, "|")
     .map((part) => unescapeText(part.trim()))
@@ -181,7 +210,7 @@ function parsePiece(
   };
 }
 
-const PAIR_RE = /^>\s+(?:(\+)\s+)?(?:(=)\s+)?(.*)$/;
+const PAIR_RE = /^>\s+(?:(\+)\s+)?(?:(=)\s+)?(?:(\?)\s+)?(.*)$/;
 const ROW_RE = /^\|\s+(.*)$/;
 const TITLE_RE = /^#\s+(.*)$/;
 const INSTRUCTION_RE = /^\?\s*(.*)$/;
@@ -286,7 +315,13 @@ export function parseScript(text: string): ParseScriptResult {
         };
         pendingInstruction = null;
       }
-      const piece = parsePiece(pairMatch[3], lineNo, Boolean(pairMatch[2]), errors);
+      const piece = parsePiece(
+        pairMatch[4],
+        lineNo,
+        Boolean(pairMatch[2]),
+        Boolean(pairMatch[3]),
+        errors,
+      );
       if (piece) current.pieces.push(piece);
       continue;
     }
@@ -303,7 +338,7 @@ export function parseScript(text: string): ParseScriptResult {
         };
         pendingInstruction = null;
       }
-      const piece = parsePiece(rowMatch[1], lineNo, false, errors);
+      const piece = parsePiece(rowMatch[1], lineNo, false, false, errors);
       if (piece) current.pieces.push(piece);
       continue;
     }
@@ -328,9 +363,11 @@ export function parseScript(text: string): ParseScriptResult {
 // -----------------------------------------------------------------------
 
 function printPiece(prefix: ">" | "|", piece: LanguageBlock): string {
-  const marker = piece.given ? "= " : "";
+  const marker = piece.capture ? "? " : piece.given ? "= " : "";
   const spanish = escapeText(piece.spanish);
-  const english = piece.acceptedAnswers.map(escapeText).join(" | ");
+  const english = piece.capture
+    ? `{${piece.capture.key}}${escapeText(piece.capture.suffix ?? "")}`
+    : piece.acceptedAnswers.map(escapeText).join(" | ");
   const hint = piece.callout ? ` (${escapeText(piece.callout)})` : "";
   return `${prefix} ${marker}${spanish} / ${english}${hint}`;
 }

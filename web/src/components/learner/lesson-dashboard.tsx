@@ -24,6 +24,8 @@ import {
   subscribeToProgress,
 } from "@/lib/learner/progress";
 import { resetOnboarding } from "@/lib/learner/onboarding";
+import { useVariableText } from "@/lib/learner/use-learner-variables";
+import { clearLearnerVariables } from "@/lib/learner/variables";
 
 // The onboarding module is filtered out before it ever reaches this
 // component (src/app/page.tsx) — every module here is an ordinary course
@@ -52,6 +54,9 @@ export function LessonDashboard({
   hasPublishedOnboarding?: boolean;
 }) {
   const feedbackSheetRef = useRef<FeedbackSheetHandle>(null);
+  // The promise card reads a lesson's final sentence, which may carry a
+  // `{key}` token from a capture piece — substituted for display only.
+  const substitute = useVariableText();
   const progress = useSyncExternalStore(
     subscribeToProgress,
     readProgress,
@@ -139,10 +144,10 @@ export function LessonDashboard({
                 Vas a poder decir
               </p>
               <p className="hero-promise-en" lang="en">
-                {nextLesson.outcomeEnglish || "I can speak English."}
+                {substitute(nextLesson.outcomeEnglish || "I can speak English.")}
               </p>
               <p className="hero-promise-es" lang="es">
-                {nextLesson.previewText || "Puedo hablar inglés."}
+                {substitute(nextLesson.previewText || "Puedo hablar inglés.")}
               </p>
             </div>
             <Link
@@ -212,6 +217,9 @@ export function LessonDashboard({
         onResetAll={() => {
           resetLessonProgress(lessons.map((lesson) => lesson.id));
           resetOnboarding();
+          // "Reiniciar todo" forgets the learner's name too — a tester
+          // replaying onboarding is asked for it again.
+          clearLearnerVariables();
         }}
       />
       <FeedbackSheet

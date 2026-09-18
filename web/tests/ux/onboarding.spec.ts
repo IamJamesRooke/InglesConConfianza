@@ -174,6 +174,91 @@ test.describe("onboarding gate and flow", () => {
     await expect(page).toHaveURL(/\/bienvenida$/);
   });
 
+  // (h) The capture piece (docs/design/onboarding.md "The capture piece"):
+  // one onboarding lesson that asks for the learner's name and then greets
+  // them with it on the next slide.
+  test("(h) a capture piece stores the name and the next slide greets them with it", async ({
+    page,
+    request,
+  }) => {
+    const captureFile = {
+      version: 2 as const,
+      modules: [
+        {
+          id: "m_onboarding",
+          name: "Onboarding",
+          kind: "onboarding" as const,
+          status: "published" as const,
+          lessonIds: ["lesson_ob_capture"],
+        },
+        { id: "m_course", name: "Confianza I", lessonIds: [courseLesson1.id] },
+      ],
+      lessons: [
+        {
+          id: "lesson_ob_capture",
+          name: "Tu nombre",
+          concepts: [],
+          blocks: [
+            {
+              id: "block_capture",
+              type: "sentence" as const,
+              promptLabel: "",
+              promptText: "Escribe tu nombre.",
+              helperText: "",
+              answerFeedback: null,
+              languageBlocks: [
+                {
+                  id: "lang_my_name_is",
+                  spanish: "Mi nombre es",
+                  callout: null,
+                  acceptedAnswers: ["My name is"],
+                },
+                {
+                  id: "lang_capture",
+                  spanish: "tu nombre",
+                  callout: null,
+                  acceptedAnswers: [],
+                  capture: { key: "name", suffix: "." },
+                },
+              ],
+            },
+            {
+              id: "block_greeting",
+              type: "explanation" as const,
+              contentMarkdown: "Hi, {name}!",
+            },
+          ],
+        },
+        courseLesson1,
+      ],
+    };
+    const seeded = await request.put("/api/admin/lesson-builder/import-export", {
+      data: captureFile,
+    });
+    expect(seeded.ok()).toBeTruthy();
+
+    await page.goto("/bienvenida");
+    const fields = page.locator("input[data-practice-answer]");
+    await fields.nth(0).fill("My name is");
+    const captureField = page.locator('input[data-capture="true"]');
+    await expect(captureField).toBeVisible();
+    await captureField.fill("james");
+    await captureField.press("Enter");
+
+    // Stored with a capital and shown with the piece's own full stop.
+    await expect(page.getByText("James.", { exact: false })).toBeVisible();
+    await finishCurrentOnboardingSlide(page);
+
+    await expect(page.getByText("Hi, James!")).toBeVisible();
+    expect(
+      await page.evaluate(() => localStorage.getItem("icc.learner.v1")),
+    ).toContain("James");
+
+    // And it survives a reload.
+    await page.reload();
+    await expect(page.getByText("Hi, James!")).toBeVisible();
+  });
+
   test("(f) drafting the onboarding module turns the gate off", async ({ page, request }) => {
     await seed(request, "draft");
     await page.goto("/");

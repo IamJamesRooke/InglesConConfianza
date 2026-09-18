@@ -1,6 +1,7 @@
 "use client";
 
 import type { SentenceBlock } from "@/lib/lesson-builder/types";
+import { pieceEnglishSource } from "@/lib/lesson-builder/utils";
 
 type Piece = SentenceBlock["languageBlocks"][number];
 
@@ -20,7 +21,8 @@ function composeSentenceParts(
   >((parts, piece) => {
     const text = language === "spanish"
       ? piece.spanish.trim()
-      : (piece.acceptedAnswers[0] ?? "").trim();
+      // A capture piece shows as its `{key}` chip — see sentence-editor.tsx.
+      : pieceEnglishSource(piece);
     if (!text) return parts;
     const previous = parts.at(-1)?.text ?? "";
     parts.push({
@@ -56,7 +58,7 @@ function VocabularyTablePresentation({ block }: { block: SentenceBlock }) {
             return (
               <div className="lesson-sentence-presentation-row" role="row" key={piece.id}>
                 <span lang="es">{spanish}</span>
-                <span lang="en">{piece.acceptedAnswers[0]?.trim() ?? ""}</span>
+                <span lang="en">{pieceEnglishSource(piece)}</span>
                 {piece.callout?.trim() && (
                   <span className="lesson-document-hint-pill" aria-label={`Hint for ${spanish}`}>
                     {piece.callout}

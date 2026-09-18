@@ -24,6 +24,7 @@ export const HUD_LABELS: Partial<Record<Chord, string>> = {
   "Ctrl+Alt+Enter": "next slide",
   "Ctrl+Alt+Shift+Enter": "extend sentence",
   "Ctrl+Alt+G": "given",
+  "Ctrl+Alt+K": "capture",
   "Ctrl+Alt+ArrowUp": "move up",
   "Ctrl+Alt+ArrowDown": "move down",
   "Ctrl+Alt+Backspace": "delete pair",

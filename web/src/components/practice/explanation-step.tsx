@@ -7,6 +7,7 @@ import { PracticeMarkdown } from "@/components/practice/practice-markdown";
 import { hasActivatedAudio, markAudioActivated } from "@/lib/learner/audio-activation";
 import { explanationWraps } from "@/lib/learner/presentation";
 import { explanationClipUrl, isMuted, subscribeMuted } from "@/lib/learner/speech";
+import { useVariableText } from "@/lib/learner/use-learner-variables";
 
 /**
  * An explanation slide. A single short line reads well centred and gets the
@@ -43,7 +44,14 @@ export function ExplanationStep({
   markdown: string;
   isFirstSlide?: boolean;
 }) {
-  const wraps = explanationWraps(markdown);
+  // `markdown` stays the AUTHORED text everywhere it matters: the clip is
+  // keyed off it (explanationClipUrl strips the `{key}` tokens itself, the
+  // same way the generator does) and nothing is ever written back. Only what
+  // the learner reads is substituted. docs/design/onboarding.md "The capture
+  // piece".
+  const substitute = useVariableText();
+  const shownMarkdown = substitute(markdown);
+  const wraps = explanationWraps(shownMarkdown);
   const [clipUrl, setClipUrl] = useState<string | null>(null);
   const [playing, setPlaying] = useState(false);
   const [needsTap, setNeedsTap] = useState(false);
@@ -152,7 +160,7 @@ export function ExplanationStep({
           )}
         </button>
       )}
-      <PracticeMarkdown markdown={markdown} />
+      <PracticeMarkdown markdown={shownMarkdown} />
     </div>
   );
 }

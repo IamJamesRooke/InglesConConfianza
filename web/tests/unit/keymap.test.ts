@@ -83,6 +83,8 @@ function fakeActions(overrides: Partial<LessonBuilderActions> = {}): LessonBuild
     addPiece: record("addPiece", () => "new-piece"),
     deletePiece: record("deletePiece"),
     toggleGiven: record("toggleGiven"),
+    toggleCapture: record("toggleCapture"),
+    updateCapture: record("updateCapture"),
     addBlock: record("addBlock", () => ({ blockId: "new-block" })),
     extendLastSentence: record("extendLastSentence", () => ({
       blockId: "new-extend-block",

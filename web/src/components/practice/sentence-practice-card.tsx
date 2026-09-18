@@ -45,6 +45,7 @@ export function SentencePracticeCard({
     showHelp,
     updateAnswer,
     onAnswerKeyDown,
+    confirmCaptureOnBlur,
     speaker,
     speakingText,
   } = useSentencePractice({
@@ -164,6 +165,9 @@ export function SentencePracticeCard({
                           )
                         )
                           return;
+                        // A capture piece completes on confirmation, and
+                        // leaving the field counts as one.
+                        confirmCaptureOnBlur(languageBlockIndex);
                         setFocusedBlockIndex((current) =>
                           current === languageBlockIndex ? null : current,
                         );

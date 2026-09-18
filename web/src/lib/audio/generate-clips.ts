@@ -25,6 +25,7 @@ import {
 } from "@/lib/lesson-builder/utils";
 import type { SpeakerId } from "@/lib/learner/speech";
 import { explanationToSsml } from "@/lib/learner/explanation-ssml";
+import { spokenTextWithoutVariables } from "@/lib/learner/variables";
 
 const AUDIO_DIR = path.join(process.cwd(), "public", "audio");
 const MANIFEST_PATH = path.join(AUDIO_DIR, "manifest.json");
@@ -121,7 +122,11 @@ function collectTexts(lessons: Lesson[]): Set<string> {
       );
       for (const languageBlock of languageBlocks as LanguageBlock[]) {
         if (languageBlock.given) continue;
-        const answer = languageBlock.acceptedAnswers[0]?.trim();
+        // A capture piece is the learner's own word — nothing to pre-record.
+        if (languageBlock.capture) continue;
+        const answer = spokenTextWithoutVariables(
+          languageBlock.acceptedAnswers[0]?.trim() ?? "",
+        );
         if (answer) texts.add(answer);
       }
       if (sentence.layout !== "vocabulary_table") {
@@ -142,8 +147,16 @@ function collectExplanations(lessons: Lesson[]): Set<string> {
   for (const lesson of lessons) {
     for (const block of lesson.blocks) {
       if (block.type !== "explanation") continue;
-      const markdown = (block as ExplanationBlock).contentMarkdown?.trim();
-      if (markdown) markdowns.add((block as ExplanationBlock).contentMarkdown);
+      // A clip cannot say a variable, so an explanation carrying a `{key}`
+      // token is recorded with the tokens removed and the leftover spacing
+      // tidied — "Hi, {name}!" speaks "Hi!". Playback hashes the same
+      // string through the same helper (explanation-step.tsx), which is what
+      // keeps the two sides on the same key. docs/design/speech.md
+      // "Variables".
+      const source = spokenTextWithoutVariables(
+        (block as ExplanationBlock).contentMarkdown ?? "",
+      );
+      if (source.trim()) markdowns.add(source);
     }
   }
   return markdowns;
@@ -158,7 +171,9 @@ function collectInstructions(lessons: Lesson[]): Set<string> {
   for (const lesson of lessons) {
     for (const block of lesson.blocks) {
       if (block.type !== "sentence") continue;
-      const text = (block as SentenceBlock).promptText?.trim();
+      const text = spokenTextWithoutVariables(
+        (block as SentenceBlock).promptText?.trim() ?? "",
+      ).trim();
       if (text) instructions.add(text);
     }
   }

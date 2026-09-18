@@ -53,6 +53,16 @@ export type LanguageBlock = {
   // number the sentence needs but the lesson isn't teaching. Absent (or
   // false) means tested, the default for every existing lesson file.
   given?: true;
+  // A "capture" piece asks the learner for something about themselves — the
+  // last piece of "My name is ___" — and stores what they type under `key`
+  // (localStorage `icc.learner.v1`), for later lessons to speak back with a
+  // `{key}` token. It has a Spanish prompt like any other piece but NO fixed
+  // English answer: `acceptedAnswers` is empty and nothing is matched, so it
+  // can never be wrong. `suffix` is literal text appended after the stored
+  // value when the piece is displayed — the full stop in "My name is James."
+  // — so the learner doesn't have to type punctuation.
+  // See docs/design/onboarding.md "The capture piece".
+  capture?: { key: string; suffix?: string };
 };
 
 export type LessonBlock = ExplanationBlock | SentenceBlock;

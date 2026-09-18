@@ -187,6 +187,13 @@ export function useBuilderActions(params: {
     [dispatch],
   );
 
+  const toggleCapture = useCallback(
+    (lessonId: string, sentenceBlockId: string, languageBlockId: string) => {
+      dispatch({ type: "TOGGLE_CAPTURE", lessonId, sentenceBlockId, languageBlockId });
+    },
+    [dispatch],
+  );
+
   const extendLastSentence = useCallback(
     (lessonId: string, afterBlockId: string | null) => {
       const blockId = createId("block");
@@ -405,6 +412,15 @@ export function useBuilderActions(params: {
       addPiece,
       deletePiece,
       toggleGiven,
+      toggleCapture,
+      updateCapture: (lessonId, sentenceBlockId, languageBlockId, patch) =>
+        dispatch({
+          type: "UPDATE_CAPTURE",
+          lessonId,
+          sentenceBlockId,
+          languageBlockId,
+          patch,
+        }),
       addBlock,
       extendLastSentence,
       deleteBlock,
@@ -447,6 +463,7 @@ export function useBuilderActions(params: {
       addPiece,
       deletePiece,
       toggleGiven,
+      toggleCapture,
       addBlock,
       extendLastSentence,
       deleteBlock,

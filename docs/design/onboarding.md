@@ -73,7 +73,7 @@ slide* wherever that is enough, and as a new slide type only where it is not.
 | need (from the backlog notes) | proposal | new slide type? |
 |---|---|---|
 | Pre-alpha / localStorage warning with "Entiendo" | `acknowledge?: { label }` **option on an explanation slide**: a checkbox; Continue stays disabled until ticked; remembered per slide on the device | no |
-| "Hola, mi nombre es …" | a **capture slide**: Spanish prompt, one field, a storage key (`name`), text or email input, required or not. Stored in `localStorage icc.learner.v1` | **yes** — it is a different interaction from translating |
+| "Hola, mi nombre es …" | a **capture piece** — an option on an ordinary sentence piece, not a slide of its own. See "The capture piece" below (built 2026-09-18; this supersedes the capture-*slide* proposal) | **no** |
 | Use the name later | a `{name}` token usable in explanation text and in sentence pieces, substituted on the learner side, shown as a chip in the builder. `{name|amigo}` gives a fallback when empty | no |
 | A picture or an intro video | `media?: { kind: "image" \| "youtube", … }` **option on an explanation slide**. Images are committed under `web/public/lesson-media/` like the audio. YouTube stores only the video id and loads on click from the no-cookie domain, so no third party is contacted until the learner presses play | no |
 | "Customizable HTML" | **recommend against** — see below | — |
@@ -115,9 +115,9 @@ Each phase ships alone and is useful alone. Nothing later is built until it is n
    lessons. *Sonnet; behaviour lane (unit tests + one spec).* Escalate to Opus only if the
    no-flash server redirect fights Next.js 16's proxy.
 2. **Acknowledge option** on explanation slides. *Sonnet.*
-3. **Capture slide + `{name}` variable** + feedback-name prefill + generator skip. This is
-   the judgement-heavy seam (markdown dialect, editor schema, answer matching, audio).
-   *Opus.*
+3. **Capture piece + `{name}` variable** + feedback-name prefill + audio token-stripping.
+   This is the judgement-heavy seam (markdown dialect, editor schema, answer matching,
+   audio). *Opus.* — **built 2026-09-18, see "The capture piece" below.**
 4. **Media option** — image first, YouTube second — only once there is an actual image or
    video to show. *Sonnet.*
 
@@ -238,5 +238,92 @@ capture slide, no `{name}`, no media — those stay phases 2–4, not built).
 from the spec above).
 
 **Not built** (phase 1 scope, deliberately): the acknowledge option, the
-capture slide + `{name}` variable, and the media option — all phases 2–4,
+capture piece + `{name}` variable, and the media option — all phases 2–4,
 built only when the owner reaches for them (§3/§5 above are unchanged).
+
+## The capture piece — built 2026-09-18 (phase 3)
+
+**This replaces the "capture slide" of §3.** There is no new slide kind: the
+learner builds "My name is ___" on an ordinary sentence slide and the last
+piece is where they type their own name. A capture piece is a normal piece
+with one extra field; everything else on the slide is unchanged.
+
+### Data model
+`LanguageBlock.capture?: { key: string; suffix?: string }`
+(`web/src/lib/lesson-builder/types.ts`). `key` matches `[a-z][a-z0-9_]*`.
+A capture piece has a Spanish prompt like any other ("tu nombre") and NO
+fixed English answer — its `acceptedAnswers` is empty, which `isLanguageBlock`
+(`lesson-file.ts`) has always allowed, so old data stays valid and nothing
+migrates. `suffix` is literal text shown after the stored value, so
+"My name is James." keeps its full stop without the learner typing one.
+
+### Learner store — `web/src/lib/learner/variables.ts`
+`localStorage icc.learner.v1 = { [key]: string }`, try/catch-wrapped
+throughout, modelled on `onboarding.ts`. `getLearnerVariable`,
+`setLearnerVariable`, `readLearnerVariables`, `clearLearnerVariables`,
+`subscribeLearnerVariables`, plus the pure token helpers
+`substituteVariables(text, vars)` and `spokenTextWithoutVariables(text)`.
+`{key}` and `{key|fallback}`; with neither a value nor a fallback the token
+renders as nothing and the leftover spacing/punctuation is tidied ("Hi,
+{name}!" → "Hi!", "My name is {name}." → "My name is."). React binds to it
+through `use-learner-variables.ts`'s `useLearnerVariables()` /
+`useVariableText()`, built on `useSyncExternalStore` — the server snapshot is
+`{}` (so no hydration mismatch and no setState-in-effect) and the real
+snapshot arrives right after mount. "Reiniciar todo" clears variables along
+with progress and onboarding.
+
+### Learner behaviour
+- The capture field is the same inline field as any other piece. It accepts
+  any non-empty trimmed input of 1–40 characters and can never be wrong.
+- Because there is nothing to match, it does **not** complete per keystroke:
+  it completes when the learner **confirms** it — Enter, Tab, or leaving the
+  field. Confirming is also when the value is stored.
+- The stored value loses trailing `.,!?`, keeps the learner's own
+  capitalisation, and gets its first letter upper-cased only if they typed it
+  all lowercase ("james" → "James", "mcDonald" left alone). What the slide
+  then displays is the value plus the piece's `suffix`.
+- Replay: if the variable already exists the field opens prefilled and the
+  learner only confirms it.
+- "Pista" on a capture piece puts the piece's own hint in the bubble, or
+  "Escribe tu respuesta." if it has none, and says nothing out loud.
+- `{key}` tokens are substituted at render/match time — never written back
+  into lesson data — in explanation text, instruction/eyebrow text, sentence
+  piece Spanish and English (an ordinary piece whose English holds `{name}`
+  is matched against the substituted text by the normal matcher), the
+  completion/final sentence, and the home's promise card.
+- The feedback sheet's "¿Quién eres?" prefills from variable `name` when its
+  own remembered value is empty.
+
+### Audio
+A pre-generated clip cannot say a variable, so **nothing spoken ever contains
+one**: both the generator (`generate-clips.ts`) and playback
+(`speech.ts`'s `clipUrlFor`/`explanationClipUrl`/`instructionClipUrl`/`speak`)
+run their text through the one helper `spokenTextWithoutVariables` before
+hashing it — "Hi, {name}!" is generated and played as "Hi!". A capture piece
+has no clip of its own, and a full-sentence clip is built from the sentence
+without it ("My name is <capture>" → "My name is"); if that leaves nothing the
+existing `if (full)` guard skips the clip, and if it leaves a single word the
+clip is identical to that piece's own and dedupes away. Parity is unit-tested
+(`tests/unit/learner-variables.test.ts`).
+
+### Builder
+- `Ctrl+Alt+K` in a Spanish/English field toggles capture, mirroring
+  `Ctrl+Alt+G` for "given" (same command shape, same two scopes, a HUD label
+  and a Shortcuts entry). A capture piece shows a `capture` tag and, on its
+  English side, a non-editable `{name}` chip plus two small fields: the key
+  (default `name`) and the optional suffix.
+- Tokens inside explanation text stay **plain `{name}` text** in the rich
+  editor. Turning them into a chip would mean a new ProseMirror mark/node
+  plus its own serializer round-trip in `explanation-markdown.ts` — not
+  cheap with the existing mark machinery, and the plain text reads fine.
+- Script grammar: `> ? tu nombre / {name}` (and `> ? tu nombre / {name}.`
+  for a suffix), round-tripped by `parseScript`/`printScript`. See
+  `docs/design/lesson-script-grammar.md`.
+- The builder's resting presentation and its learner preview both render a
+  capture piece as its `{key}` token; neither crashes on one.
+
+### Tests
+`web/tests/unit/learner-variables.test.ts` (store, substitution + tidy rules,
+capture-value rules, lesson-file validation, script round-trip, clip-key
+parity, matcher with a `{name}` piece) and case (h) of
+`web/tests/ux/onboarding.spec.ts`.

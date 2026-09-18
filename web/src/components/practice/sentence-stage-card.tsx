@@ -11,6 +11,7 @@ import {
 } from "@/components/practice/use-sentence-practice";
 import type { SentenceBlock } from "@/lib/lesson-builder/types";
 import type { Speaker } from "@/lib/learner/speech";
+import { useVariableText } from "@/lib/learner/use-learner-variables";
 
 /**
  * L2b: the sentence slide as one sentence being assembled, not a grid of
@@ -61,6 +62,7 @@ export function SentenceStageCard({
     showHelp,
     updateAnswer,
     onAnswerKeyDown,
+    confirmCaptureOnBlur,
     speaker,
     speakingText,
   } = useSentencePractice({
@@ -74,6 +76,10 @@ export function SentenceStageCard({
   // The piece the learner is on: whatever is focused, else the first one
   // still unanswered. Drives line 1's highlight and which answer the
   // speaker's "Pista" says out loud.
+  // The instruction and eyebrow are authored text like any other, so they
+  // take `{key}` tokens too; the spoken clip below keeps the AUTHORED text,
+  // which instructionClipUrl strips tokens from itself.
+  const substitute = useVariableText();
   const firstUnanswered = correctAnswers.findIndex((correct) => !correct);
   const activeIndex =
     focusedBlockIndex !== null ? focusedBlockIndex : firstUnanswered;
@@ -106,14 +112,17 @@ export function SentenceStageCard({
           {sentence.promptLabel.trim() && (
             <div className="stage-eyebrow">
               <PracticeMarkdown
-                markdown={sentence.promptLabel}
+                markdown={substitute(sentence.promptLabel)}
                 variant="eyebrow"
               />
             </div>
           )}
           {sentence.promptText?.trim() && (
             <div className="stage-instruction">
-              <PracticeMarkdown markdown={sentence.promptText} variant="prompt" />
+              <PracticeMarkdown
+                markdown={substitute(sentence.promptText)}
+                variant="prompt"
+              />
               <InstructionAudio text={sentence.promptText} />
             </div>
           )}
@@ -211,6 +220,7 @@ export function SentenceStageCard({
                       type="text"
                       data-practice-answer
                       data-piece-index={testableIndex}
+                      data-capture={languageBlock.capture ? "true" : undefined}
                       data-state={isCorrect ? "done" : "blank"}
                       autoFocus={testableIndex === 0}
                       value={answers[testableIndex] ?? ""}
@@ -218,18 +228,23 @@ export function SentenceStageCard({
                         updateAnswer(event.target.value, testableIndex)
                       }
                       onFocus={() => setFocusedBlockIndex(testableIndex)}
-                      onBlur={() =>
+                      onBlur={() => {
+                        // A capture piece completes on confirmation, and
+                        // leaving the field counts as one (see
+                        // use-sentence-practice.ts).
+                        confirmCaptureOnBlur(testableIndex);
                         setFocusedBlockIndex((current) =>
                           current === testableIndex ? null : current,
-                        )
-                      }
+                        );
+                      }}
                       onKeyDown={(event) => onAnswerKeyDown(event, testableIndex)}
                       aria-label={`Traducción de ${languageBlock.spanish || `bloque ${testableIndex + 1}`}`}
-                      autoComplete="off"
-                      autoCapitalize="off"
+                      autoComplete={languageBlock.capture ? "given-name" : "off"}
+                      maxLength={languageBlock.capture ? 40 : undefined}
+                      autoCapitalize={languageBlock.capture ? "words" : "off"}
                       autoCorrect="off"
                       spellCheck={false}
-                      lang="en"
+                      lang={languageBlock.capture ? undefined : "en"}
                       className="stage-en stage-en-input"
                       style={
                         {

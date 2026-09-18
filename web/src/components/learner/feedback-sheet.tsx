@@ -10,6 +10,7 @@ import {
   useState,
 } from "react";
 import { isMuted } from "@/lib/learner/speech";
+import { getLearnerVariable } from "@/lib/learner/variables";
 
 // Per-slide feedback (docs/backlog.md "Per-slide feedback",
 // docs/design/learner-direction.md, docs/engineering/feedback.md). One
@@ -78,10 +79,15 @@ export type FeedbackSheetHandle = { open: () => void };
 
 function readStoredWho(): string {
   try {
-    return window.localStorage.getItem(WHO_STORAGE_KEY) ?? "";
+    const remembered = window.localStorage.getItem(WHO_STORAGE_KEY);
+    if (remembered) return remembered;
   } catch {
-    return "";
+    // Blocked storage — fall through to the captured name below.
   }
+  // Nothing remembered here yet, but onboarding may already have asked for
+  // the learner's name (docs/design/onboarding.md "The capture piece") —
+  // prefill from that rather than making them type it twice.
+  return getLearnerVariable("name") ?? "";
 }
 
 function storeWho(value: string) {

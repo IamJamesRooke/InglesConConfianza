@@ -88,6 +88,13 @@ export type LessonBuilderActions = {
   addPiece: (lessonId: string, blockId: string) => string;
   deletePiece: (lessonId: string, blockId: string, pieceId: string) => void;
   toggleGiven: (lessonId: string, blockId: string, pieceId: string) => void;
+  toggleCapture: (lessonId: string, blockId: string, pieceId: string) => void;
+  updateCapture: (
+    lessonId: string,
+    blockId: string,
+    pieceId: string,
+    patch: { key?: string; suffix?: string },
+  ) => void;
   addBlock: (
     lessonId: string,
     type: DocumentBlockType,

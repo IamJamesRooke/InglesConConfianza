@@ -229,6 +229,16 @@ export function KeyboardHelpDialog({ onClose }: { onClose: () => void }) {
                 student, never tested
               </dd>
             </div>
+            <div>
+              <dt>
+                <kbd>Ctrl</kbd> <kbd>Alt</kbd> <kbd>K</kbd>
+              </dt>
+              <dd>
+                On a sentence pair: make it a &quot;capture&quot; — the student
+                types their own answer and it is stored as{" "}
+                <code>{"{name}"}</code> for later slides
+              </dd>
+            </div>
           </dl>
         </section>
       </div>

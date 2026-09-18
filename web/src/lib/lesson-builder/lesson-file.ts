@@ -7,6 +7,7 @@ import type {
   LessonModule,
 } from "@/lib/lesson-builder/types";
 import { createId } from "@/lib/lesson-builder/utils";
+import { isLearnerVariableKey } from "@/lib/learner/variables";
 
 // Pure validation, migration, and the ordering invariant for data/lessons.json.
 // No fs — lesson-store.ts wraps this with reads/writes. Unit-tested in
@@ -20,6 +21,18 @@ function isStringOrNull(value: unknown): value is string | null {
   return typeof value === "string" || value === null;
 }
 
+// A capture piece's `capture` object: a valid key, an optional literal
+// suffix. Absent on every piece written before the feature existed, which is
+// why this is only checked when the field is present at all.
+function isCaptureConfig(value: unknown): boolean {
+  return (
+    isRecord(value) &&
+    typeof value.key === "string" &&
+    isLearnerVariableKey(value.key) &&
+    (value.suffix === undefined || typeof value.suffix === "string")
+  );
+}
+
 function isLanguageBlock(value: unknown) {
   return (
     isRecord(value) &&
@@ -27,7 +40,10 @@ function isLanguageBlock(value: unknown) {
     typeof value.spanish === "string" &&
     isStringOrNull(value.callout) &&
     Array.isArray(value.acceptedAnswers) &&
-    value.acceptedAnswers.every((answer) => typeof answer === "string")
+    // A capture piece has no fixed English answer, so an empty
+    // `acceptedAnswers` is valid — it always was, and stays that way.
+    value.acceptedAnswers.every((answer) => typeof answer === "string") &&
+    (value.capture === undefined || isCaptureConfig(value.capture))
   );
 }
 
@@ -245,6 +261,7 @@ function normalizeLessonForFile(lesson: Lesson): Lesson {
           callout: languageBlock.callout,
           acceptedAnswers: [...languageBlock.acceptedAnswers],
           ...(languageBlock.given ? { given: true as const } : {}),
+          ...(languageBlock.capture ? { capture: { ...languageBlock.capture } } : {}),
         })),
       };
     }),

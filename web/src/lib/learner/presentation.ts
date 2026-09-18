@@ -1,5 +1,8 @@
 import type { LessonBlock } from "../lesson-builder/types";
-import { isMeaningfulLanguageBlock } from "../lesson-builder/utils";
+import {
+  isMeaningfulLanguageBlock,
+  pieceEnglishSource,
+} from "../lesson-builder/utils";
 
 /**
  * Curriculum notation brackets an optional/implied word — `[the] day`,
@@ -23,9 +26,10 @@ export function lessonOutcome(blocks: LessonBlock[]) {
   );
   return {
     spanish: languageBlocks.map((block) => block.spanish.trim()).join(" "),
-    english: languageBlocks
-      .map((block) => block.acceptedAnswers[0]?.trim() ?? "")
-      .join(" "),
+    // A capture piece contributes its `{key}` token here — the promise card
+    // and the completion screen substitute it at render time, so the
+    // learner reads "My name is James." and nothing is stored back.
+    english: languageBlocks.map(pieceEnglishSource).join(" "),
   };
 }
 

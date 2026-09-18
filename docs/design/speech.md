@@ -358,6 +358,35 @@ T-H-I-N-G, thing."
   control at all. The pieces themselves are still spoken as they are
   answered, by the slide's own speaker.
 
+## Variables
+
+A pre-generated clip cannot say the learner's own name, so **nothing spoken
+ever contains a variable**. Every text that goes to audio — a piece answer, a
+full sentence, an explanation, an instruction line — is passed through
+`spokenTextWithoutVariables` (`src/lib/learner/variables.ts`) first: every
+`{key}` / `{key|fallback}` token is removed (the fallback too) and the
+leftover spacing/punctuation tidied, so "Hi, {name}!" is recorded and played
+as "Hi!" and "My name is {name}." as "My name is."
+
+The rule is enforced in exactly one place per side, and both sides call the
+same helper, which is what keeps the sha1 clip keys identical:
+
+- **Generation** — `collectTexts`/`collectExplanations`/`collectInstructions`
+  in `src/lib/audio/generate-clips.ts`.
+- **Playback** — `clipUrlFor`, `explanationClipUrl`, `instructionClipUrl` and
+  `speak()` in `src/lib/learner/speech.ts`, so the browser-synthesis fallback
+  says the same thing the clip would have.
+
+A **capture piece** (docs/design/onboarding.md "The capture piece") has no
+clip of its own, and `sentenceEnglishText` drops it from the full-sentence
+clip: "My name is <capture>" generates and plays "My name is". If that leaves
+nothing at all the caller's existing `if (full)` guard skips the clip; if it
+leaves a single word, the clip is the same one that piece already has and
+dedupes away in the generator's Set. Hint audio is likewise silent on a
+capture piece — the bubble shows the hint text and says nothing. Parity
+between the two sides is unit-tested in
+`web/tests/unit/learner-variables.test.ts`.
+
 ## Not in scope now
 
 Recording, per-piece speaker changes, speed control, and Spanish speech for the

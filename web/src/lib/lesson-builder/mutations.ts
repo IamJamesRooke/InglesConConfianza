@@ -503,6 +503,16 @@ export function extendLastSentence(
               ? piece.acceptedAnswers.map(stripTerminalPunctuation)
               : [...piece.acceptedAnswers],
             ...(piece.given ? { given: true as const } : {}),
+            // A capture piece keeps its key when the sentence is extended;
+            // its suffix follows the terminal-punctuation rule above and is
+            // dropped from the piece that is no longer last.
+            ...(piece.capture
+              ? {
+                  capture: isLastPiece
+                    ? { key: piece.capture.key }
+                    : { ...piece.capture },
+                }
+              : {}),
           };
         })
       : [];
@@ -579,6 +589,68 @@ export function toggleGiven(
       const rest: LanguageBlock = { ...languageBlock };
       delete rest.given;
       return rest;
+    },
+  );
+}
+
+/**
+ * Turns a piece into a capture piece (asks the learner for something about
+ * themselves, stores it under `key`) and back again. Toggling it ON clears
+ * the accepted answers — a capture piece has no fixed English answer — and
+ * toggling it OFF leaves the piece answerless for the teacher to fill in,
+ * which is exactly what a brand-new pair looks like. Mirrors `toggleGiven`.
+ */
+export function toggleCapture(
+  lessons: Lesson[],
+  lessonId: string,
+  sentenceBlockId: string,
+  languageBlockId: string,
+  defaultKey = "name",
+): Lesson[] {
+  return mapLanguageBlock(
+    lessons,
+    lessonId,
+    sentenceBlockId,
+    languageBlockId,
+    (languageBlock) => {
+      if (!languageBlock.capture) {
+        const rest: LanguageBlock = {
+          ...languageBlock,
+          acceptedAnswers: [],
+          capture: { key: defaultKey },
+        };
+        delete rest.given;
+        return rest;
+      }
+      const rest: LanguageBlock = { ...languageBlock };
+      delete rest.capture;
+      return rest;
+    },
+  );
+}
+
+/** Edits a capture piece's stored key or literal suffix. A blank suffix is
+ * removed rather than stored as "". No-op on a piece that isn't a capture. */
+export function updateCapture(
+  lessons: Lesson[],
+  lessonId: string,
+  sentenceBlockId: string,
+  languageBlockId: string,
+  patch: { key?: string; suffix?: string },
+): Lesson[] {
+  return mapLanguageBlock(
+    lessons,
+    lessonId,
+    sentenceBlockId,
+    languageBlockId,
+    (languageBlock) => {
+      if (!languageBlock.capture) return languageBlock;
+      const key = patch.key ?? languageBlock.capture.key;
+      const suffix = (patch.suffix ?? languageBlock.capture.suffix ?? "").trim();
+      return {
+        ...languageBlock,
+        capture: { key, ...(suffix ? { suffix } : {}) },
+      };
     },
   );
 }

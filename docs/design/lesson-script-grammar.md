@@ -12,12 +12,20 @@ unchanged; the script is a second, lossless view of it.
 | `text` (no prefix) | Explanation paragraph. Consecutive plain lines = paragraphs of ONE explanation slide; a blank line ends the slide. Inline marks use the existing dialect (`[[es:…]]`, `[[en:…]]`, `**b**`, `*i*`); unmarked `X es Y` lines are auto-marked on parse by the E1 rule. An `en` mark may additionally carry a pronunciation bridge for the explanation voice track: `[[en:different\|DIFF-rent]]` — the `\|BRIDGE` suffix (an ALL-CAPS chunk marks the stressed syllable) is data for the generated audio, not visible text; the learner sees it shown small after the word (see `docs/design/speech.md` "Explanation voice track"). A run may also be marked audio-only, `[[audio:…]]` — text the narrator says and the learner never sees, e.g. `[[es:cosa]] es [[en:thing]][[audio:, T-H-I-N-G, [[en:thing]]]]` (see `docs/design/speech.md` "Audio-only marks"); it nests language marks and passes through the script unchanged. Same notation in script mode as in the builder's WYSIWYG editor. |
 | `> es / en` | One practice pair. Consecutive `>` lines = one sentence slide. `en` may hold alternatives separated by ` \| ` (pipe, since `/` is the pair separator). A trailing ` (hint)` in parentheses at the end of the line = the pair's hint. |
 | `> = es / en` | A **given** piece (shown, not tested) — E8. |
+| `> ? es / {key}` | A **capture** piece: the learner types their own answer and it is stored under `key` (`[a-z][a-z0-9_]*`), for later slides to use as a `{key}` token. The English side must be exactly a `{key}` token, optionally followed by literal text which becomes the piece's `suffix` — `> ? tu nombre / {name}.` displays "James." without the learner typing the full stop. A capture piece has no accepted answers and can never be wrong. The trailing ` (hint)` works as usual. Markers combine in the order `+`, `=`, `?`. See `docs/design/onboarding.md` "The capture piece". |
 | `> + es / en` | **Extend**: this sentence slide = a copy of the previous sentence slide's pieces + this pair; terminal punctuation moves from the old last piece to the new one. Further `> +` lines in the same slide append more pieces. A `>` line immediately after a `> +` block continues the same slide. — E3b |
 | `\| es / en` | One vocabulary row. Consecutive `\|` lines = one table slide. Same ` (hint)` and ` \| ` rules. |
 | `? text` | Instruction for the practice slide that follows (`promptText`). Must be directly followed by `>` or `\|` lines. |
 | `# Title` (first line only) | Lesson title. |
 | `@ concept, concept` | "Covers" concepts (labels; matched to curriculum ids by exact label on parse, freehand otherwise). Optional; auto-Covers (E5) fills it when absent. |
 | `//` … | Comment, ignored, not round-tripped. |
+
+`{key}` / `{key|fallback}` tokens may also appear inside ordinary explanation text and
+ordinary pair text; they are plain characters to this grammar (no escape, nothing special
+on parse) and are substituted on the learner side only.
+
+`?` only introduces an instruction line at the START of a line; after `> ` it is the
+capture marker, so the two never collide.
 
 Escapes: `\/`, `\|`, `\(` for literal characters inside pair text. Leading/trailing
 whitespace on each side of `/` is trimmed. Empty `es` or `en` is an error (line

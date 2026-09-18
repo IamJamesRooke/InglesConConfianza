@@ -73,6 +73,23 @@ export function toggleGivenCommand(ctx: CommandContext): boolean {
   return true;
 }
 
+// Ctrl+Alt+K in a spanish/english field turns the pair into a capture piece
+// (the learner types their own answer and the app stores it — see
+// docs/design/onboarding.md "The capture piece") and back. Same shape and
+// same two scopes as toggleGivenCommand; `K` for "keep".
+export function toggleCaptureCommand(ctx: CommandContext): boolean {
+  if (
+    ctx.selection.kind !== "field" ||
+    (ctx.selection.field !== "spanish" && ctx.selection.field !== "english") ||
+    !ctx.selection.pieceId
+  ) {
+    return false;
+  }
+  const { lessonId, blockId, pieceId } = ctx.selection;
+  ctx.actions.toggleCapture(lessonId, blockId, pieceId);
+  return true;
+}
+
 export function spanishAdvance(direction: "tab" | "shiftTab"): Command {
   return (ctx) => {
     if (ctx.selection.kind !== "field" || ctx.selection.field !== "spanish" || !ctx.selection.pieceId) {

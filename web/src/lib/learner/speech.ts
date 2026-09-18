@@ -6,6 +6,8 @@
 // paths must resolve silently — speech is a nice-to-have, never a thrown
 // error that breaks practice.
 
+import { spokenTextWithoutVariables } from "@/lib/learner/variables";
+
 export type SpeakerId = "us-man" | "uk-woman";
 
 export type Speaker = {
@@ -359,7 +361,7 @@ export async function clipUrlFor(
 ): Promise<string | null> {
   const manifest = await loadManifest();
   if (!manifest) return null;
-  const hash = await sha1(text.trim());
+  const hash = await sha1(spokenTextWithoutVariables(text.trim()).trim());
   const speakers = manifest[hash];
   if (!speakers?.includes(speaker)) return null;
   return `/audio/${speaker}/${hash}.mp3`;
@@ -377,7 +379,7 @@ export async function clipUrlFor(
 export async function explanationClipUrl(markdown: string): Promise<string | null> {
   const manifest = await loadManifest();
   if (!manifest?.explanations) return null;
-  const hash = await sha1(markdown);
+  const hash = await sha1(spokenTextWithoutVariables(markdown));
   if (!manifest.explanations[hash]) return null;
   return `/audio/explanations/${hash}.mp3`;
 }
@@ -392,7 +394,7 @@ export async function explanationClipUrl(markdown: string): Promise<string | nul
  * instruction lines".
  */
 export async function instructionClipUrl(text: string): Promise<string | null> {
-  const trimmed = text.trim();
+  const trimmed = spokenTextWithoutVariables(text.trim()).trim();
   if (!trimmed) return null;
   const manifest = await loadManifest();
   if (!manifest?.instructions) return null;
@@ -482,7 +484,12 @@ export async function speak(
   speaker: Speaker | null,
   callbacks?: SpeakCallbacks,
 ): Promise<void> {
-  const trimmed = text.trim();
+  // A variable is never spoken: neither a pre-generated clip nor the browser
+  // voice says the learner's own name back to them, so every speech path
+  // drops `{key}` tokens and tidies what is left (docs/design/speech.md
+  // "Variables"). Doing it here means the clip lookup and the synthesis
+  // fallback below are always reading the same string.
+  const trimmed = spokenTextWithoutVariables(text.trim()).trim();
   if (!trimmed || isMuted()) return;
   stopSpeaking();
   try {

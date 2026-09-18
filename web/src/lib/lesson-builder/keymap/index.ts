@@ -22,6 +22,7 @@ import {
   requestHint,
   spanishAdvance,
   toggleGivenCommand,
+  toggleCaptureCommand,
 } from "./pair";
 import {
   type Chord,
@@ -87,6 +88,7 @@ export const KEYMAP: Record<Scope, Partial<Record<Chord, Command>>> = {
     "Alt+ArrowDown": requestHint("spanish"),
     "Ctrl+Alt+Backspace": deletePairCommand,
     "Ctrl+Alt+G": toggleGivenCommand,
+    "Ctrl+Alt+K": toggleCaptureCommand,
   },
   english: {
     Tab: englishAdvance("tab"),
@@ -95,6 +97,7 @@ export const KEYMAP: Record<Scope, Partial<Record<Chord, Command>>> = {
     "Alt+ArrowDown": requestHint("english"),
     "Ctrl+Alt+Backspace": deletePairCommand,
     "Ctrl+Alt+G": toggleGivenCommand,
+    "Ctrl+Alt+K": toggleCaptureCommand,
   },
   hint: {
     Enter: leaveHint,

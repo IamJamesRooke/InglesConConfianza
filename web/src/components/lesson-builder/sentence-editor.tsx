@@ -50,7 +50,11 @@ export function SentenceEditor(props: Props) {
     ? (englishDraft[lastPiece.id] ?? lastPiece.acceptedAnswers[0] ?? "")
     : "";
   const lastPieceComplete =
-    !lastPiece || (Boolean(lastPiece.spanish.trim()) && Boolean(lastPieceEnglish.trim()));
+    !lastPiece ||
+    // A capture piece is complete as soon as it has a Spanish prompt: its
+    // English side is the learner's own answer, not something to type here.
+    (Boolean(lastPiece.spanish.trim()) &&
+      (Boolean(lastPiece.capture) || Boolean(lastPieceEnglish.trim())));
 
   function pieceLabel(piece: Piece, index = block.languageBlocks.indexOf(piece)) {
     return piece.spanish.trim() || `${isTable ? "row" : "pair"} ${index + 1}`;
@@ -167,19 +171,60 @@ export function SentenceEditor(props: Props) {
                     />
                   </div>
                   <div className="lesson-document-language-field" data-language="en">
-                    <textarea
-                      rows={1}
-                      data-field="english"
-                      value={englishDraft[piece.id] ?? formatAnswerEntry(piece.acceptedAnswers)}
-                      onFocus={() => selectField("english", piece.id)}
-                      onChange={(event) =>
-                        setEnglishDraft((prev) => ({ ...prev, [piece.id]: event.target.value }))
-                      }
-                      onBlur={(event) => commitEnglishDraft(piece, event.currentTarget.value)}
-                      placeholder="Write in English"
-                      lang="en"
-                      aria-label={`${isTable ? "Row" : "Sentence piece"} ${index + 1} English. Separate alternatives with a slash, or use a backslash before one to type it literally.`}
-                    />
+                    {piece.capture ? (
+                      // A capture piece has no fixed English answer — the
+                      // learner types their own — so the English side is a
+                      // read-only `{key}` chip plus the two things a teacher
+                      // can actually set: the key and an optional literal
+                      // suffix ("." so "My name is James." keeps its full
+                      // stop). Ctrl+Alt+K toggles the whole thing.
+                      <div className="lesson-document-capture">
+                        <span className="lesson-document-capture-chip" lang="en">
+                          {`{${piece.capture.key}}`}
+                        </span>
+                        <input
+                          type="text"
+                          className="lesson-document-capture-key"
+                          data-field="english"
+                          value={piece.capture.key}
+                          onFocus={() => selectField("english", piece.id)}
+                          onChange={(event) =>
+                            actions.updateCapture(lessonId, block.id, piece.id, {
+                              key: event.target.value.trim(),
+                            })
+                          }
+                          placeholder="name"
+                          aria-label={`Capture key for ${pieceLabel(piece, index)}`}
+                        />
+                        <input
+                          type="text"
+                          className="lesson-document-capture-suffix"
+                          value={piece.capture.suffix ?? ""}
+                          onFocus={() => selectField("english", piece.id)}
+                          onChange={(event) =>
+                            actions.updateCapture(lessonId, block.id, piece.id, {
+                              suffix: event.target.value,
+                            })
+                          }
+                          placeholder="."
+                          aria-label={`Capture suffix for ${pieceLabel(piece, index)}`}
+                        />
+                      </div>
+                    ) : (
+                      <textarea
+                        rows={1}
+                        data-field="english"
+                        value={englishDraft[piece.id] ?? formatAnswerEntry(piece.acceptedAnswers)}
+                        onFocus={() => selectField("english", piece.id)}
+                        onChange={(event) =>
+                          setEnglishDraft((prev) => ({ ...prev, [piece.id]: event.target.value }))
+                        }
+                        onBlur={(event) => commitEnglishDraft(piece, event.currentTarget.value)}
+                        placeholder="Write in English"
+                        lang="en"
+                        aria-label={`${isTable ? "Row" : "Sentence piece"} ${index + 1} English. Separate alternatives with a slash, or use a backslash before one to type it literally.`}
+                      />
+                    )}
                   </div>
                 </div>
                 <button
@@ -198,6 +243,14 @@ export function SentenceEditor(props: Props) {
                     title="Shown to the student, not tested"
                   >
                     given
+                  </span>
+                )}
+                {piece.capture && (
+                  <span
+                    className="lesson-document-given-tag"
+                    title="The student types their own answer; it is stored and reused as a {key} token"
+                  >
+                    capture
                   </span>
                 )}
                 {piece.callout !== null || hintOpen ? (
