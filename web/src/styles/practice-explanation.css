@@ -1,0 +1,224 @@
+/* --- Explanation: one centered card, comfortable measure, big friendly type ---
+   L2a: one shared card width/padding/shadow across every slide type (see
+   .sentence-practice and .answer-grid in practice-table.css, and .stage-card
+   in practice-stage.css, which now match). */
+.lesson-explanation {
+  position: relative;
+  width: 100%;
+  max-width: var(--practice-column);
+  padding: 32px;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  background: var(--card);
+  box-shadow: var(--shadow-card);
+  text-align: center;
+  /* Representative learner surface for the shared semantic theme (see the
+     merged-in rule this used to be, below): keep the canvas neutral and let
+     the dark primary navigation carry the hierarchy — this file's own share
+     of the rule that also touches .answer-grid (practice-table.css). */
+  background: var(--surface-writing);
+}
+/* Replay control (docs/design/speech.md "Explanation voice track"): sits
+   top-right INSIDE the card's own padding, a 40px hit area around the 24px
+   glyph. Only rendered when a generated clip exists for this explanation. */
+.lesson-explanation-replay {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border: 0;
+  border-radius: 999px;
+  color: var(--primary);
+  background: none;
+  transition: background 180ms;
+}
+.lesson-explanation-replay:hover {
+  background: var(--muted);
+}
+.lesson-explanation-replay:focus-visible {
+  outline: 3px solid color-mix(in oklch, var(--primary) 32%, transparent);
+  outline-offset: 1px;
+}
+/* A subtle pulsing ring while the clip plays — motion budget, ease-out,
+   never a bounce. */
+@keyframes lesson-explanation-replay-pulse {
+  0% {
+    box-shadow: 0 0 0 0 color-mix(in oklch, var(--primary) 35%, transparent);
+  }
+  100% {
+    box-shadow: 0 0 0 8px color-mix(in oklch, var(--primary) 0%, transparent);
+  }
+}
+.lesson-explanation-replay.playing {
+  animation: lesson-explanation-replay-pulse 1200ms ease-out infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+  .lesson-explanation-replay.playing {
+    animation: none;
+  }
+}
+/* Expanded "Escuchar" cue: shown when an auto-play was refused by the
+   browser's autoplay policy (no user activation yet on a directly opened or
+   reloaded lesson page), and once on the first explanation slide of a
+   lesson regardless, so the control never looks dead. Pressing it plays and
+   collapses it back to the icon-only circle. */
+.lesson-explanation-replay--cue {
+  top: 8px;
+  right: 8px;
+  width: auto;
+  height: 36px;
+  gap: 8px;
+  padding: 0 12px;
+  border-radius: 8px;
+  color: var(--primary);
+  background: var(--surface-subtle);
+  font: 600 var(--t-ui) / 1 inherit;
+}
+.lesson-explanation-replay-label {
+  white-space: nowrap;
+}
+@keyframes lesson-explanation-replay-icon-pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+.lesson-explanation-replay--cue .lesson-explanation-replay-icon {
+  animation: lesson-explanation-replay-icon-pulse 2s ease-in-out infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+  .lesson-explanation-replay--cue .lesson-explanation-replay-icon {
+    animation: none;
+  }
+}
+.lesson-explanation :is(p, li) {
+  color: var(--foreground);
+  font-size: var(--practice-explanation-size);
+  line-height: 1.5;
+  font-weight: 500;
+}
+.lesson-explanation :is(h1, h2, h3) {
+  color: var(--foreground);
+  font-size: clamp(1.5rem, 1.2rem + 1.2vw, 1.9rem);
+  line-height: 1.25;
+  font-weight: 700;
+}
+.lesson-explanation strong {
+  font-weight: 700;
+}
+/* Single-line explanations read fine centered; once a paragraph wraps to a
+   second line, ragged centered edges are harder to read, so it switches to
+   left-aligned (owner spec: "left-aligned when it wraps beyond one line").
+   Toggled by ExplanationStep, which measures the rendered text. */
+.lesson-explanation[data-wraps="true"] {
+  text-align: left;
+}
+/* PracticeMarkdown puts `text-center` on its own wrapper for the explanation
+   variant, which used to win over the inherited alignment above — so a
+   wrapped explanation stayed centred even when data-wraps was "true". */
+.lesson-explanation[data-wraps="true"] .practice-markdown-content,
+.lesson-explanation[data-wraps="true"] :is(h1, h2, h3, p, li) {
+  text-align: left;
+}
+
+/* Bilingual highlight: language is told by colour alone, no underline and no
+   italics (owner, 2026-09-17 — a Spanish mark is bold `--lesson-hl-es`, an
+   English mark is bold `--lesson-hl-en`, same weight).
+   Matches both the learner canvas and any PracticeMarkdown preview
+   (e.g. the lesson builder), which renders outside .learner-theme. */
+.learner-theme mark,
+.practice-markdown-content mark {
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  color: inherit;
+  background: none;
+}
+.learner-theme mark.spanish,
+.learner-theme mark[data-language="es"],
+.practice-markdown-content mark.spanish,
+.practice-markdown-content mark[data-language="es"] {
+  color: var(--lesson-hl-es);
+  font-variant-caps: small-caps;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+}
+.learner-theme mark.english,
+.learner-theme mark[data-language="en"],
+.practice-markdown-content mark.english,
+.practice-markdown-content mark[data-language="en"] {
+  color: var(--lesson-hl-en);
+  font-variant-caps: small-caps;
+  font-weight: 600;
+  font-style: normal;
+  letter-spacing: 0.05em;
+}
+/* Spelled-out tokens as keycaps (owner, 2026-09-17; docs/design/speech.md
+   "Audio-only marks" — `T-H-I-N-G` spelled letter by letter). `em`-sized
+   (0.85em of the inherited font-size, which is `--t-ui` on most practice
+   surfaces) rather than a fixed px, so it scales with whatever block it
+   lands in — unlike editing-hud.css's fixed-size kbd. No explicit text
+   colour: a keycap inherits ink from its paragraph at rest, and the mark's
+   own red/blue when the token sits inside an `[[es:]]`/`[[en:]]` mark —
+   matching, not fighting, the surrounding text. */
+.spelled {
+  display: inline-flex;
+  gap: 2px;
+}
+.spelled kbd {
+  display: inline-flex;
+  min-width: 1.6em;
+  height: 1.6em;
+  align-items: center;
+  justify-content: center;
+  padding: 0 0.15em;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: var(--card);
+  box-shadow: inset 0 -2px 0 var(--border);
+  font-family: ui-monospace, monospace;
+  font-size: 0.85em;
+  font-weight: inherit;
+  font-variant-numeric: tabular-nums;
+  line-height: 1;
+  text-transform: uppercase;
+}
+/* Pronunciation bridge (docs/design/speech.md "Explanation voice track"):
+   a quiet respelling after the word, inside the mark — not bold/coloured
+   like the word itself, not uppercase, no letter-spacing. */
+.practice-language-bridge {
+  color: var(--ink-muted);
+  font-size: var(--t-eyebrow);
+  font-weight: 500;
+  text-transform: none;
+  letter-spacing: normal;
+}
+
+/* One card recipe (direction, "Cards"): 32px padding desktop, 24px phone —
+   this file's own share of the rule also touching .answer-grid
+   (practice-table.css) and .stage-card (practice-stage.css). */
+@media (max-width: 760px) {
+  .lesson-explanation {
+    padding: 24px;
+  }
+}
+
+/* Explanations (owner, 2026-09-17): a single line is a card that fits its
+   own text, centred on the stage, at --t-sentence; anything that wraps is a
+   720-wide left-aligned card at the larger body size. ExplanationStep
+   decides which, from the authored text. */
+.lesson-explanation[data-wraps="false"] {
+  width: fit-content;
+  max-width: min(100%, 720px);
+  margin-inline: auto;
+}
+.lesson-explanation[data-wraps="false"] :is(p, li) {
+  font-size: var(--practice-explanation-single-size);
+}

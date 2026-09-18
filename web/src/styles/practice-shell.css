@@ -1,0 +1,473 @@
+/* Practice: one clear thought, one clear action, one shared success state. */
+/* .lesson-session / .lesson-topbar / .learner-icon-button / .lesson-stage:
+   the full shell, folded in from learner-foundations-home.css (structural
+   properties) and this file's own later "theme" section (color
+   properties) — those were three separate declarations of the same
+   selectors relying on import/file order to pick a winner. Each selector
+   below is now declared exactly once, holding the values that previously
+   won the cascade. */
+/* L2a type scale + shared column width — sizing tokens only, no colour
+   literals (those stay in globals.css per the CSS lint). Phone override
+   lives in this file's existing <=760px media block, below. */
+.lesson-session {
+  --radius: 1rem;
+  /* Direction (docs/design/learner-direction.md, "Stage column"): the card
+     is at most 720px wide (owner, 2026-09-17), full width of the stage's own
+     20px phone gutter below. One column width for every slide type —
+     explanation, sentence, table. */
+  --practice-column: 720px;
+  /* Multi-line explanations read at a larger body than the rest of the UI
+     (owner, 2026-09-17). */
+  --practice-explanation-size: clamp(20px, 2vw, 26px);
+  --practice-prompt-size: var(--t-sentence);
+  /* A single-line explanation steps up to --t-sentence (see
+     [data-wraps="false"] below). */
+  --practice-explanation-single-size: var(--t-sentence);
+  --practice-label-size: var(--t-ui);
+  --practice-eyebrow-size: var(--t-eyebrow);
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  display: flex;
+  flex-direction: column;
+  height: 100dvh;
+  outline: none;
+  color: var(--foreground);
+  background: var(--background);
+  font-family: var(--font-sans);
+}
+/* L2a: a thin, quiet header — no lesson title, no "n / N" counter, no
+   halo/shadow underneath it. Just the close control and a real progress
+   bar running along its bottom edge. 48px tall, 56px from 1024px up. */
+.lesson-topbar {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
+  width: 100%;
+  height: 48px;
+  /* One side gutter at every width above the small phone (owner screenshot,
+     2026-09-17: at ~910 the 12px gutter read as the mute icon being clipped
+     against the edge). 12px comes back below 480, where 20px would crowd
+     the bar. */
+  padding-inline: 20px;
+  background: var(--primary);
+  border: 0;
+  box-shadow: none;
+  color: var(--primary-foreground);
+}
+@media (min-width: 1024px) {
+  .lesson-topbar {
+    height: 56px;
+  }
+}
+.learner-icon-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  flex-shrink: 0;
+  color: var(--muted-foreground);
+  border: 0;
+  border-radius: var(--radius-lg);
+  background: none;
+  transition: background 180ms;
+}
+.learner-icon-button:hover {
+  color: var(--foreground);
+  background: var(--muted);
+}
+/* The header's close button: icon only, no box, a 40px hit area centered
+   in the 48/56px bar, white on the purple header. */
+.lesson-topbar .learner-icon-button {
+  width: 40px;
+  height: 40px;
+  border-radius: 999px;
+  color: var(--primary-foreground);
+}
+.lesson-topbar .lesson-mute-toggle {
+  margin-left: auto;
+}
+.lesson-topbar .learner-icon-button:hover {
+  color: var(--primary-foreground);
+  background: color-mix(in oklch, var(--primary-foreground) 18%, transparent);
+}
+.lesson-topbar .lesson-top-progress {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 4px;
+  border-radius: 0;
+  color: var(--primary-foreground);
+  background: color-mix(in oklch, var(--primary-foreground) 25%, transparent);
+}
+.lesson-session .lesson-top-progress::-webkit-progress-bar {
+  background: color-mix(in oklch, var(--primary-foreground) 25%, transparent);
+}
+.lesson-session .lesson-top-progress::-webkit-progress-value {
+  background: var(--primary-foreground);
+  transition: width 240ms;
+}
+.lesson-session .lesson-top-progress::-moz-progress-bar {
+  background: var(--primary-foreground);
+}
+/* Canvas: one rule for every slide type, no per-type offset. A short slide's
+   content block sits at ~40% of the viewport height (owner, 2026-09-17); the
+   spacer that puts it there is allowed to shrink, but never past 64px, so a
+   tall slide starts near the top instead of pushing its last rows off the
+   bottom. 20px side gutter at any width (direction: "Stage column"), and a
+   bottom gutter deeper than the footer so the last row of a vocabulary table
+   is never hidden behind it (footer min-height 88px + 24px). */
+.lesson-stage {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 64px 20px 112px;
+}
+/* Auto margins, not a fixed offset: free space is shared between the two,
+   and the deeper bottom padding biases the block to ~40% of the viewport
+   rather than dead centre. When the slide is taller than the canvas the auto
+   margins collapse to nothing, so it starts at the 64px padding and scrolls
+   — a long vocabulary table never begins below the fold. */
+.lesson-stage > :first-child {
+  margin-top: auto;
+}
+.lesson-stage > :last-child {
+  margin-bottom: auto;
+}
+/* Completion (direction, COMPLETION): the stack starts near the top of the
+   canvas, not at the ~40% offset every other slide uses — there's no single
+   card to centre, just a top-to-bottom read. */
+.lesson-stage.lesson-stage-complete > :first-child {
+  margin-top: 0;
+}
+/* Direction ("Motion budget"): slide change is a 240ms cross-fade with an
+   8px rise — scoped to lesson slides only (globals.css's own `.learner-enter`
+   at 420ms/10px stays the shared default for the rest of the app, e.g. the
+   learner home). */
+@keyframes lesson-slide-enter {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.lesson-session .learner-enter {
+  animation: lesson-slide-enter 240ms ease-out both;
+}
+/* The lesson name, shown only on the first slide's canvas and on
+   completion — nowhere else (see item 2, header no longer carries it). */
+.practice-lesson-eyebrow {
+  margin-bottom: 14px;
+  color: var(--ink-muted);
+  font-size: var(--practice-eyebrow-size);
+  font-weight: 750;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+/* L2a footer: transparent over the canvas at all times — success never
+   recolours it. When there's no available action (a sentence slide before
+   it's answered) the right-hand button is removed from flow entirely, so
+   there is never a visible empty bar. */
+.lesson-controls {
+  position: relative;
+  flex-shrink: 0;
+  padding: 16px 32px;
+  min-height: 88px;
+  background: transparent;
+  box-shadow: none;
+}
+/* The one action, centred under the stage (direction, "The action"). Back
+   is positioned against the footer itself, not this row. */
+.lesson-controls-inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  margin: auto;
+  max-width: 1100px;
+}
+/* Back is a quiet icon 24px from the left edge, vertically centred with the
+   primary button — not in the button's grid row, where it drifted inward
+   with the centred column and landed on top of the dev badge (owner,
+   2026-09-17). */
+.lesson-controls .previous-step {
+  position: absolute;
+  left: 24px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+/* An empty status line must not grow, or add a gap, and shove the one action
+   off centre. */
+.lesson-feedback:empty {
+  display: none;
+}
+.lesson-feedback {
+  flex: 0 0 auto;
+  display: flex;
+  gap: 9px;
+  align-items: center;
+  color: var(--success-foreground);
+  font-size: 18px;
+  font-weight: 750;
+}
+/* Direction ("The action"): one primary button, 56px tall, 8px radius,
+   --t-ui text at weight 600 — not the lesson-builder's own --radius-lg
+   scale (1rem+), and not the previous fixed 20px/700 size. */
+.lesson-controls .learner-button {
+  min-width: 220px;
+  min-height: 56px;
+  border-radius: 8px;
+  font-size: var(--t-ui);
+  font-weight: 600;
+}
+/* No available action yet (sentence slide, unanswered) — the button leaves
+   the flow entirely rather than reserving an empty slot, so the transparent
+   footer shows nothing on the right (never an empty bar). */
+.lesson-controls .learner-button.awaiting-answer {
+  display: none;
+}
+/* Direction ("Motion budget"): the one action fades and rises 4px into
+   place, 200ms, whenever it appears — including the footer button's
+   display:none -> flex toggle from .awaiting-answer, and stage-continue's
+   mount once the sentence completes. */
+@keyframes button-appear {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* Direction ("Motion budget"): the completion sentence reveals with its own
+   300ms fade + rise — distinct from the 240ms slide cross-fade the
+   `.lesson-celebration` wrapper itself gets via `.learner-enter`. */
+@keyframes completion-sentence-reveal {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.completion-sentence-group {
+  animation: completion-sentence-reveal 300ms ease-out both;
+}
+.lesson-session .learner-button.primary {
+  color: var(--primary-foreground);
+  background: var(--primary);
+  box-shadow: 0 3px 0 color-mix(in oklch, var(--primary) 72%, black);
+  animation: button-appear 200ms ease-out both;
+}
+.lesson-session .learner-button:disabled {
+  color: var(--muted-foreground);
+  background: var(--muted);
+  box-shadow: none;
+  opacity: 0.65;
+}
+@keyframes learner-pop {
+  from {
+    opacity: 0;
+    transform: scale(0.72);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@media (max-width: 1000px) {
+  .course-curriculum {
+    grid-template-columns: 240px minmax(0, 1fr);
+    gap: 28px;
+  }
+}
+@media (max-width: 880px) {
+  .course-feature {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 28px;
+    padding: 40px;
+  }
+}
+@media (max-width: 760px) {
+  .lesson-session {
+    /* .lesson-stage's own 20px side padding (one rule, all widths) is the
+       phone gutter — the column itself just fills the rest of the width.
+       --practice-prompt-size stays var(--t-sentence): the fluid scale
+       already reaches its phone value below, no fixed override needed. */
+    --practice-column: 100%;
+  }
+  .course-container {
+    width: calc(100% - 40px);
+  }
+  .learner-header-inner {
+    min-height: 72px;
+  }
+  .course-feature {
+    padding: 32px 24px;
+  }
+  .course-curriculum {
+    display: block;
+    padding-block: 28px;
+  }
+  .course-journey {
+    padding-block: 40px;
+  }
+  .module-navigation {
+    margin-bottom: 28px;
+  }
+  .module-tabs {
+    display: flex;
+    gap: 8px;
+    overflow-x: auto;
+    padding: 4px 4px 12px;
+    margin-inline: -4px;
+    scroll-snap-type: x proximity;
+  }
+  .module-tab {
+    flex: 0 0 230px;
+    scroll-snap-align: start;
+    padding: 12px;
+    border-color: var(--border);
+  }
+  .module-tab-copy strong {
+    font-size: 12px;
+  }
+  .module-arrow {
+    display: none;
+  }
+  .module-heading h2 {
+    font-size: 21px;
+  }
+  .module-progress {
+    margin-top: 16px;
+  }
+  /* Status strip stays 48px on a phone (direction, "LESSON" item 1): only
+     the side gutter changes here. The old `padding: 16px 20px 20px` was a
+     leftover from the pre-L2a header — inside a fixed 48px bar it left a
+     12px content box, so the 40px icon buttons hung out of the strip and
+     their glyphs sat 2px above centre. */
+  .lesson-topbar {
+    gap: 14px;
+  }
+  .lesson-controls {
+    padding: 14px 20px max(14px, env(safe-area-inset-bottom));
+  }
+  /* Direction ("The action"): phone gets the footer thumb zone — the one
+     primary button full width minus the 20px gutters, with a quiet back
+     icon pinned bottom-left instead of sharing the button's row. */
+  .lesson-controls-inner {
+    position: relative;
+    display: block;
+    min-height: 56px;
+  }
+  .lesson-controls .previous-step {
+    left: 20px;
+  }
+  .lesson-feedback {
+    display: none;
+  }
+  .lesson-controls .learner-button {
+    display: flex;
+    width: 100%;
+    min-width: 0;
+  }
+  .lesson-position {
+    font-size: 11px;
+  }
+}
+@media (max-width: 480px) {
+  .course-feature {
+    padding: 28px 20px;
+  }
+  .lesson-row-layout > a,
+  .lesson-row-content {
+    padding: 16px 12px;
+    gap: 10px;
+  }
+  .lesson-copy strong {
+    font-size: 14px;
+  }
+  .lesson-copy > span {
+    font-size: 12px;
+  }
+  .lesson-number {
+    width: 22px;
+  }
+  .lesson-action {
+    width: 30px;
+    height: 30px;
+  }
+  .lesson-meta .lesson-state {
+    margin-left: 5px;
+  }
+  .lesson-topbar {
+    gap: 12px;
+    padding-inline: 12px;
+  }
+  .lesson-position {
+    display: none;
+  }
+  .lesson-controls .learner-button svg {
+    width: 16px;
+  }
+  .site-footer-copyright {
+    font-size: 10px;
+  }
+}
+
+.lesson-session .learner-button.primary:hover {
+  background: var(--brand-primary-hover);
+}
+
+/* Completion ("you said that" — docs/design/learner-direction.md,
+   COMPLETION): a quiet stack on the canvas, not a card. Full rule set lives
+   in practice-completion.css; this file keeps only what needs the
+   `.lesson-session` type-scale tokens and its `.learner-button`/motion
+   plumbing. */
+.lesson-session .lesson-celebration {
+  width: 100%;
+  max-width: 720px;
+  margin-inline: auto;
+}
+.lesson-session .completion-cta {
+  width: 100%;
+}
+/* Direction: full-width only on phone (<768) — at desktop it's centred at
+   its natural width under the stack (owner screenshot, 2026-09-17: it was
+   stretching edge to edge at 950px). */
+@media (min-width: 768px) {
+  .lesson-session .completion-cta {
+    align-self: center;
+    width: auto;
+    min-width: 240px;
+  }
+}
+
+/* Direction ("Motion budget"): reduced motion keeps opacity only, collapsed
+   to an imperceptible 1ms — not a hard `none`, which would make elements
+   (the finished word, the appearing button) pop with no transition at all. */
+@media (prefers-reduced-motion: reduce) {
+  .learner-theme *,
+  .learner-theme *::before,
+  .learner-theme *::after {
+    animation-duration: 1ms !important;
+    animation-delay: 0ms !important;
+    transition-duration: 1ms !important;
+    scroll-behavior: auto !important;
+  }
+}

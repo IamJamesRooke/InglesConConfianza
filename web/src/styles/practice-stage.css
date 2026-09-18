@@ -1,0 +1,506 @@
+/* Speech: speaker chip + bubble sit left-aligned under the card, 12px below
+   it, persistent for the whole slide (rendered as soon as a speaker is
+   picked, never unmounted for state changes within the slide). See
+   docs/design/speech.md. Used both by the plain grid sentence card
+   (practice-table.css's `?layout=grid` fallback) and by the two-actor
+   sentence stage below. */
+.speaker-chip {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-top: 12px;
+  max-width: 100%;
+}
+/* Circular mask so a square portrait PNG crops cleanly (object-position:
+   center top favours the face over the shoulders/chest of a bust-style
+   crop); the ring + soft shadow read the same whether the source is a
+   photographic portrait or the hand-drawn SVG placeholder. */
+.speaker-chip-avatar {
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  border-radius: 999px;
+  object-fit: cover;
+  object-position: center top;
+  box-shadow:
+    0 0 0 2px var(--card),
+    var(--shadow-sm);
+}
+.speaker-chip-body {
+  display: grid;
+  gap: 4px;
+  min-width: 0;
+}
+.speaker-chip-label {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--muted-foreground);
+}
+/* A real speech bubble: white, hairline border, small tail towards the
+   avatar, 12px radius. Always visible on a sentence/table slide — a quiet
+   "…" before anything's spoken, the spoken text while speaking, and it
+   keeps showing that text afterward (never clears). */
+.speaker-chip-bubble {
+  position: relative;
+  min-height: 1.4em;
+  width: fit-content;
+  max-width: 100%;
+  padding: 8px 12px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--card);
+  box-shadow: var(--shadow-sm);
+  color: var(--foreground);
+  font-size: var(--t-ui);
+  line-height: 1.35;
+  overflow-wrap: anywhere;
+}
+.speaker-chip-bubble::before {
+  content: "";
+  position: absolute;
+  top: 12px;
+  left: -5px;
+  width: 9px;
+  height: 9px;
+  border-left: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  background: var(--card);
+  transform: rotate(45deg);
+}
+.speaker-chip-bubble-placeholder {
+  opacity: 0.6;
+}
+@media (max-width: 760px) {
+  .speaker-chip-avatar {
+    width: 32px;
+    height: 32px;
+  }
+  .speaker-chip-bubble {
+    white-space: normal;
+  }
+}
+
+/* One card recipe (direction, "Cards"): 32px padding desktop, 24px phone —
+   this file's own share of the rule also touching .lesson-explanation
+   (practice-explanation.css) and .answer-grid (practice-table.css). */
+@media (max-width: 760px) {
+  .stage-card {
+    padding: 24px;
+  }
+}
+
+/* ===================================================================== */
+/* The sentence slide as a sentence being assembled, and the two-actor    */
+/* stage it sits in. The older grid card in practice-table.css is still   */
+/* rendered for vocabulary tables. See docs/design/learner-direction.md,  */
+/* "LESSON".                                                              */
+/* ===================================================================== */
+
+.sentence-stage {
+  width: 100%;
+  max-width: var(--practice-column);
+}
+.stage-composition {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+/* Below 1024: the card comes first and the speaker is a row under it — the
+   portrait, its bubble, and "Pista" at the end of the row (owner,
+   2026-09-17: at ~980 the two-actor column read as "a portrait stuck in the
+   corner next to a box"). */
+.stage-speaker {
+  order: 2;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+}
+.stage-column {
+  order: 1;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+.stage-eyebrow p {
+  margin-bottom: 6px;
+  color: var(--muted-foreground);
+  font-size: var(--practice-eyebrow-size);
+  font-weight: 750;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+/* The authored instruction ("Un reto más grande.") is a quiet line above the
+   card, not a second headline. */
+/* The replay control sits at the END of the instruction line, so the line
+   reads as one thing that can be heard rather than a line with a widget
+   above it (docs/design/speech.md "Spoken instruction lines"). Baseline
+   alignment keeps the 20px glyph sitting on the text's own line. */
+.stage-instruction {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 6px;
+}
+
+/* Direction ("Sentence slide"): the instruction is a muted body line above
+   the card, not a label-sized caption. */
+.stage-instruction :is(p, h1, h2, h3) {
+  margin-bottom: 10px;
+  color: var(--ink-muted);
+  font-size: var(--t-body);
+  font-weight: 500;
+  line-height: 1.55;
+  text-align: left;
+}
+.stage-card {
+  padding: 32px;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  background: var(--surface-writing);
+  box-shadow: var(--shadow-card);
+}
+/* Both lines are prose that wraps, at --t-sentence / line-height 1.35
+   (direction, "Sentence slide"). */
+.stage-line {
+  margin: 0;
+  font-size: var(--practice-prompt-size);
+  line-height: 1.35;
+  font-weight: 600;
+}
+.stage-line-en {
+  margin-top: 12px;
+}
+/* Line 1: the Spanish sentence. Owner rule, 2026-09-17 — in practice colour
+   IS language: everything the learner is translating is flag red and bold,
+   whatever its state. The piece being typed is marked by a 2px red underline
+   instead of a colour switch; pieces still to come are the same red at 60%;
+   a `given` piece (shown, never tested) is plain ink. Purple is left to
+   chrome and the one action. */
+.stage-es {
+  color: var(--lesson-hl-es);
+  font-weight: 700;
+  transition: opacity 160ms;
+}
+.stage-es[data-state="pending"] {
+  opacity: 0.6;
+}
+.stage-es[data-state="done"] {
+  opacity: 1;
+}
+.stage-es[data-state="given"] {
+  color: var(--foreground);
+  font-weight: 500;
+}
+.stage-es[data-state="active"] {
+  opacity: 1;
+  border-bottom: 2px solid var(--lesson-hl-es);
+}
+/* Line 2: the English sentence being built. Every piece is an input all
+   along — a blank underline until it's answered, the finished word after —
+   so clicking a blank or a finished word just focuses it, and Tab/Enter
+   progression is unchanged. The input and the word share font metrics, so
+   turning correct never moves the text. */
+.stage-en {
+  font-size: var(--practice-prompt-size);
+  line-height: 1.35;
+}
+.stage-en.given {
+  color: var(--foreground);
+  font-weight: 600;
+}
+/* Pending-blank width tracks word width, not a full character cell per
+   glyph (0.62ch), floored at 3ch so a one-letter answer still reads as a
+   blank — this is what lets a long sentence wrap phrase-by-phrase on a
+   phone instead of one blank per line. Focus widens it by 1ch of caret
+   room, same formula. */
+.stage-en-input {
+  display: inline-block;
+  field-sizing: content;
+  width: max(3ch, calc(var(--blank-chars, 3) * 0.62ch));
+  min-width: max(3ch, calc(var(--blank-chars, 3) * 0.62ch));
+  max-width: 100%;
+  padding: 0 1px;
+  border: 0;
+  /* An empty blank is a neutral hairline; what the learner types is
+     English, so it is Union Jack blue (owner, 2026-09-17). */
+  border-bottom: 2px solid var(--border);
+  border-radius: 0;
+  background: transparent;
+  color: var(--lesson-hl-en);
+  font: inherit;
+  font-weight: 700;
+  vertical-align: baseline;
+  transition:
+    border-color 160ms,
+    background 160ms;
+}
+.stage-en-input:focus {
+  /* The underline and tint are the focus indicator — one ring, no outline
+     stacked on top of a border. */
+  outline: none;
+  min-width: max(3ch, calc(var(--blank-chars, 3) * 0.62ch + 1ch));
+  border-bottom-color: var(--lesson-hl-en);
+  background: color-mix(in oklch, var(--lesson-hl-en) 8%, transparent);
+}
+/* A piece re-focused for editing after already being correct (rare —
+   the finished word is normally the .stage-en-done span below): same look
+   as done, still an input while it's being retyped. */
+.stage-en-input[data-state="done"] {
+  width: auto;
+  min-width: 0;
+  border-bottom-color: transparent;
+  background: transparent;
+}
+/* Finished piece: a plain word in the text flow, not an input — no caret
+   reserve, so it sits at ordinary inter-word spacing. Same font metrics as
+   the input it replaces (font: inherit, padding 0) so there is no layout
+   jump on the swap either way. Focusable so Tab still reaches it to edit. */
+/* Direction ("Motion budget"): the word settling — a 150ms ease-out fade
+   from a tinted field to plain purple text — is the only success signal,
+   replacing any check glyph. */
+@keyframes stage-word-settle {
+  from {
+    background: color-mix(in oklch, var(--lesson-hl-en) 18%, transparent);
+  }
+  to {
+    background: transparent;
+  }
+}
+.stage-en-done {
+  display: inline;
+  width: auto;
+  max-width: none;
+  overflow: visible;
+  white-space: normal;
+  padding: 0;
+  border: 0;
+  border-radius: 3px;
+  background: transparent;
+  color: var(--lesson-hl-en);
+  font: inherit;
+  font-weight: 600;
+  cursor: text;
+  animation: stage-word-settle 150ms ease-out both;
+}
+.stage-en-done:hover,
+.stage-en-done:focus-visible {
+  outline: none;
+  background: color-mix(in oklch, var(--lesson-hl-en) 8%, transparent);
+}
+.stage-notes {
+  display: grid;
+  gap: 6px;
+  margin-top: 10px;
+}
+/* Help lives on the speaker (owner, 2026-09-17): a quiet text button under
+   the flag/label — no lightbulb, no amber field. Using it puts the answer in
+   the bubble and has the speaker say it; `Alt+H` in a field does the same. */
+/* It has to look pressable (owner, 2026-09-17): a small ghost button, not a
+   line of text. At the end of the speaker row below 1024; under the
+   flag/label in the speaker column above it. */
+.stage-hint-button {
+  flex: none;
+  margin-left: auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 28px;
+  padding-inline: 12px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: none;
+  color: var(--foreground);
+  font: inherit;
+  font-size: var(--t-eyebrow);
+  font-weight: 650;
+  text-transform: none;
+  letter-spacing: 0;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: background 180ms;
+}
+.stage-hint-button:hover:not(:disabled) {
+  background: var(--surface-subtle);
+}
+@media (prefers-reduced-motion: reduce) {
+  .stage-hint-button {
+    transition: none;
+  }
+}
+.stage-hint-button:focus-visible {
+  outline: 3px solid color-mix(in oklch, var(--primary) 38%, transparent);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+.stage-hint-button:disabled {
+  opacity: 0.45;
+  cursor: default;
+}
+/* No speaker available on this device: the hint still shows, as a bubble on
+   its own (see SpeakerChip). */
+.speaker-chip.speakerless .speaker-chip-bubble::before {
+  display: none;
+}
+/* Speech: the speaker is one of two actors on the stage — a bigger avatar
+   with its flag/label under it, and a bubble pointing right, at the card.
+   No bubble at rest (the component renders it only once something has been
+   spoken). */
+.speaker-chip.stage {
+  flex: 1 1 auto;
+  min-width: 0;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+  margin-top: 0;
+}
+.speaker-chip.stage .speaker-chip-avatar {
+  width: 48px;
+  height: 48px;
+}
+.speaker-chip.stage .speaker-chip-bubble {
+  font-size: var(--t-ui);
+}
+.stage-continue {
+  display: none;
+  justify-content: center;
+  margin-top: 28px;
+}
+.stage-continue .learner-button {
+  min-width: 220px;
+  min-height: 56px;
+  border-radius: 8px;
+  font-size: var(--t-ui);
+  font-weight: 600;
+}
+
+/* Two actors from 1024px up (owner, 2026-09-17 — it first started at 768,
+   where the portrait-beside-a-box read as a stranded corner portrait; below
+   1024 the speaker is a row under the card instead). A 200px speaker column,
+   a 64px portrait, 24px to the card, and the whole group centred on the
+   stage with equal air either side. */
+@media (min-width: 1024px) {
+  .sentence-stage {
+    max-width: calc(720px + 200px + 24px);
+    margin-inline: auto;
+  }
+  .stage-column {
+    max-width: 720px;
+  }
+  /* Two actors: the speaker on the left, the card on the right. */
+  .stage-composition {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 24px;
+  }
+  .stage-speaker {
+    order: 0;
+    flex: 0 0 auto;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    width: 200px;
+    padding-top: 8px;
+  }
+  .speaker-chip.stage {
+    flex: none;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+  /* Back under the flag/label, not pushed to the end of a row. */
+  .stage-hint-button {
+    margin-left: 0;
+    margin-top: 2px;
+  }
+  .stage-column {
+    flex: 1 1 auto;
+    min-width: 0;
+  }
+  .speaker-chip.stage .speaker-chip-avatar {
+    width: 64px;
+    height: 64px;
+  }
+  .speaker-chip.stage .speaker-chip-bubble {
+    max-width: 200px;
+  }
+  /* Tail on the right edge, pointing at the card. */
+  .speaker-chip.stage .speaker-chip-bubble::before {
+    left: auto;
+    right: -5px;
+    border: 0;
+    border-right: 1px solid var(--border);
+    border-top: 1px solid var(--border);
+  }
+  /* The primary action appears under the composition; the footer copy is
+     hidden at this width, so only one instance is visible. */
+  .stage-continue {
+    display: flex;
+  }
+  .lesson-controls .learner-button.stage-duplicated {
+    display: none;
+  }
+}
+
+/* Spoken instruction line (docs/design/speech.md "Spoken instruction
+   lines"): the narrator reads the slide's direction on open, and this
+   replays it. Same visual language as the explanation slide's "Escuchar"
+   control, one size down (20px glyph, 28px hit area) because it sits inline
+   beside a body line rather than in a card's corner. Only rendered when a
+   generated clip exists for this line. */
+.instruction-replay {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: none;
+  gap: 6px;
+  width: 28px;
+  height: 28px;
+  margin-bottom: 10px;
+  padding: 0;
+  border: 0;
+  border-radius: 999px;
+  color: var(--primary);
+  background: none;
+  transition: background 180ms;
+}
+.instruction-replay:hover {
+  background: var(--muted);
+}
+.instruction-replay:focus-visible {
+  outline: 3px solid color-mix(in oklch, var(--primary) 32%, transparent);
+  outline-offset: 1px;
+}
+@keyframes instruction-replay-pulse {
+  0% {
+    box-shadow: 0 0 0 0 color-mix(in oklch, var(--primary) 35%, transparent);
+  }
+  100% {
+    box-shadow: 0 0 0 6px color-mix(in oklch, var(--primary) 0%, transparent);
+  }
+}
+.instruction-replay.playing {
+  animation: instruction-replay-pulse 1200ms ease-out infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+  .instruction-replay.playing {
+    animation: none;
+  }
+}
+/* Expanded cue, shown only when the browser actually refused the auto-play
+   (a directly opened or reloaded lesson page with no user activation yet),
+   so the control never looks dead. */
+.instruction-replay--cue {
+  width: auto;
+  padding: 0 10px;
+  border-radius: 999px;
+  background: color-mix(in oklch, var(--primary) 10%, transparent);
+}
+.instruction-replay-label {
+  font-size: var(--t-eyebrow);
+  font-weight: 650;
+  letter-spacing: 0.02em;
+}

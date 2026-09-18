@@ -22,7 +22,10 @@ import "../styles/lesson-builder/keyboard-help.css";
 import "../styles/lesson-builder/editing-hud.css";
 import "../styles/lesson-builder/print.css";
 import "../styles/practice-completion.css";
-import "../styles/practice-responsive-overrides.css";
+import "../styles/practice-shell.css";
+import "../styles/practice-explanation.css";
+import "../styles/practice-table.css";
+import "../styles/practice-stage.css";
 import "../styles/feedback-sheet.css";
 import "../styles/site-footer.css";
 

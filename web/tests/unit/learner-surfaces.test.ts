@@ -19,6 +19,26 @@ import {
   normalizeAnswer,
 } from "../../src/lib/lesson-builder/utils";
 
+// The old practice-responsive-overrides.css was split by concern (see
+// docs/engineering/code-map.md's Styling row): shell (status strip,
+// footer/action, session frame, motion), explanation (card, marks, bridge,
+// keycaps, replay), table (sentence grid card + vocabulary table), stage
+// (sentence stage, speaker chip/bubble, hint button, instruction audio).
+// Tests below read the specific file that now holds a given rule, and any
+// test asserting a selector is ABSENT scans all four, so the split can't
+// silently narrow what it's checking.
+const PRACTICE_STYLE_FILES = [
+  "../../src/styles/practice-shell.css",
+  "../../src/styles/practice-explanation.css",
+  "../../src/styles/practice-table.css",
+  "../../src/styles/practice-stage.css",
+];
+function readPracticeStyles(): string {
+  return PRACTICE_STYLE_FILES.map((file) =>
+    readFileSync(new URL(file, import.meta.url), "utf8"),
+  ).join("\n");
+}
+
 const lesson = {
   id: "hello",
   lessonNumber: 1,
@@ -401,10 +421,7 @@ test("a finished LAST stage piece (no next input to advance focus to) still rend
 
 test("the finished-piece span and its transient 'done' input both drop width constraints in CSS (no clipping)", () => {
   const css = readFileSync(
-    new URL(
-      "../../src/styles/practice-responsive-overrides.css",
-      import.meta.url,
-    ),
+    new URL("../../src/styles/practice-stage.css", import.meta.url),
     "utf8",
   );
   const doneSpanBlock = css.match(/\.stage-en-done\s*\{([^}]*)\}/)?.[1] ?? "";
@@ -450,13 +467,7 @@ test("the vocabulary table on the stage uses the two-actor composition, not a ce
 });
 
 test("help is the speaker's quiet Pista button — no lightbulb, no amber hint bar anywhere on the learner side", () => {
-  const css = readFileSync(
-    new URL(
-      "../../src/styles/practice-responsive-overrides.css",
-      import.meta.url,
-    ),
-    "utf8",
-  );
+  const css = readPracticeStyles();
   // The lightbulb toggles and the old hint field/diff are gone (owner,
   // 2026-09-17 — hints are spoken by the speaker and shown in its bubble).
   for (const gone of [
@@ -503,12 +514,12 @@ test("help is the speaker's quiet Pista button — no lightbulb, no amber hint b
 // docs/design/learner-direction.md's "Small caps" note and the 2026-09-17
 // owner correction scoping small caps + 600 to explanation marks only. The
 // sentence stage and vocabulary table (sentence-presentation.css,
-// practice-responsive-overrides.css's .stage-en-input/.answer-input/etc.)
-// were reverted back to their original heavier weights and are covered
-// separately, not by this test.
+// practice-stage.css's .stage-en-input, practice-table.css's .answer-input,
+// etc.) were reverted back to their original heavier weights and are
+// covered separately, not by this test.
 test("English explanation marks are bold like Spanish marks, never italic", () => {
   for (const file of [
-    "../../src/styles/practice-responsive-overrides.css",
+    "../../src/styles/practice-explanation.css",
     "../../src/styles/lesson-builder/explanation-editor.css",
   ]) {
     const css = readFileSync(new URL(file, import.meta.url), "utf8");
