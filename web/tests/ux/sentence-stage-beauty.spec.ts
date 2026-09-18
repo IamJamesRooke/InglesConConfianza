@@ -110,6 +110,27 @@ test("a one-line sentence gets a fit-content card sharing the explanation card's
   const stageCentre = stageBox!.x + stageBox!.width / 2;
   expect(Math.abs(explanationCentre - stageCentre)).toBeLessThan(2);
 
+  // Direction ("One-line card min width"): a calm landscape box for a short
+  // sentence like "hola", not a tall portrait one that just hugs the word.
+  expect(stageBox!.width).toBeGreaterThanOrEqual(359);
+
+  // The speaker cluster (portrait + flag/label + Recuérdame) sits INSIDE
+  // the card's own left/right edges, its own left edge exactly on the
+  // card's left edge (1px tolerance) — not sticking out to the left of it.
+  const avatar = page.locator(".speaker-chip.stage .speaker-chip-avatar").first();
+  const avatarBox = await avatar.boundingBox();
+  expect(avatarBox).not.toBeNull();
+  expect(Math.abs(avatarBox!.x - stageBox!.x)).toBeLessThanOrEqual(1);
+  const labelRow = page
+    .locator(".speaker-chip.stage .speaker-chip-label-row")
+    .first();
+  const labelRowBox = await labelRow.boundingBox();
+  expect(labelRowBox).not.toBeNull();
+  expect(labelRowBox!.x).toBeGreaterThanOrEqual(stageBox!.x - 1);
+  expect(labelRowBox!.x + labelRowBox!.width).toBeLessThanOrEqual(
+    stageBox!.x + stageBox!.width + 1,
+  );
+
   // A one-piece sentence has nothing left to point at — no red underline on
   // the active Spanish piece.
   const spanishLine = page.locator(".stage-line-es");
@@ -154,6 +175,12 @@ test("Recuérdame's diff marks exactly the missing letter, and picks the closest
   // Exactly one marked character — the missing "l" — not the whole word.
   await expect(bubble.locator(".answer-diff-fix")).toHaveCount(1);
   await expect(bubble.locator(".answer-diff-fix")).toHaveText("l");
+  // A marked LETTER never gets the `--thin` min-width modifier — that's
+  // reserved for a fix segment that's entirely whitespace/punctuation, or
+  // it opens a visible gap around the letter ("hel l o").
+  await expect(bubble.locator(".answer-diff-fix--thin")).toHaveCount(0);
+  // The reminder is the payload — it renders at the larger --t-section size.
+  await expect(bubble).toHaveClass(/speaker-chip-bubble--reminder/);
 
   await input.fill("hii");
   await hint.click();

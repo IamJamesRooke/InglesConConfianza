@@ -69,7 +69,7 @@ test("the floating feedback pill opens the sheet on a sentence slide and submits
   await expect(pill).not.toBeVisible();
 
   await sheet
-    .getByPlaceholder("Cuéntame qué está mal o qué mejorarías.")
+    .getByPlaceholder("Escribe aquí…")
     .fill("El texto de este paso está mal escrito.");
   await sheet.getByRole("button", { name: "Enviar" }).click();
 
@@ -132,7 +132,7 @@ test("choosing a kind chip sends it, and the honeypot stays empty for a real lea
   await expect(praiseChip).toHaveAttribute("aria-checked", "true");
 
   await sheet
-    .getByPlaceholder("Cuéntame qué está mal o qué mejorarías.")
+    .getByPlaceholder("Escribe aquí…")
     .fill("¡Me encantó esta lección!");
   await sheet.getByRole("button", { name: "Enviar" }).click();
 

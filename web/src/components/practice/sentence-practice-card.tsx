@@ -49,6 +49,7 @@ export function SentencePracticeCard({
     speaker,
     speakingText,
     hintDiff,
+    isHint,
   } = useSentencePractice({
     sentence,
     initialAnswers,
@@ -211,6 +212,7 @@ export function SentencePracticeCard({
               speaker={speaker}
               speakingText={speakingText}
               diffSegments={hintDiff}
+              isReminder={isHint}
             />
           )}
         </>
@@ -244,6 +246,7 @@ export function SentencePracticeCard({
               speaker={speaker}
               speakingText={speakingText}
               diffSegments={hintDiff}
+              isReminder={isHint}
               variant="stage"
               action={hintButtonNode}
             />

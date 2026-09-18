@@ -68,6 +68,7 @@ export function SentenceStageCard({
     speaker,
     speakingText,
     hintDiff,
+    isHint,
   } = useSentencePractice({
     sentence,
     initialAnswers,
@@ -120,6 +121,7 @@ export function SentenceStageCard({
             speaker={speaker}
             speakingText={speakingText}
             diffSegments={hintDiff}
+            isReminder={isHint}
             variant="stage"
             action={hintButtonNode}
           />

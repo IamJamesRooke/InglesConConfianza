@@ -286,11 +286,11 @@ export const FeedbackSheet = forwardRef<FeedbackSheetHandle, {
             ) : (
               <>
                 <h2 id="feedback-sheet-title" className="feedback-sheet-title">
-                  ¿Algo que corregir o mejorar?
+                  ¿Qué nos quieres contar?
                 </h2>
                 <p id="feedback-sheet-help" className="feedback-sheet-help">
-                  Dime qué viste y qué esperabas. Cada comentario mejora la
-                  lección.
+                  Un problema, una idea o algo que te gustó. Cada comentario
+                  mejora las lecciones.
                 </p>
                 <div
                   className="feedback-sheet-kind"
@@ -335,7 +335,7 @@ export const FeedbackSheet = forwardRef<FeedbackSheetHandle, {
                 <textarea
                   ref={textareaRef}
                   className="feedback-sheet-textarea"
-                  placeholder="Cuéntame qué está mal o qué mejorarías."
+                  placeholder="Escribe aquí…"
                   value={message}
                   maxLength={2000}
                   onChange={(event) => setMessage(event.target.value)}

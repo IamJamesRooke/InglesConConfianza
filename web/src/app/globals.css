@@ -212,6 +212,12 @@
   --t-body: clamp(19px, 17.69px + 0.337vw, 22px);
   --t-ui: clamp(16px, 15.56px + 0.112vw, 17px);
   --t-eyebrow: clamp(11px, 10.56px + 0.112vw, 12px);
+
+  /* Learner canvas tint (docs/design/learner-direction.md, "Colour",
+     2026-09-18 owner correction) — see the `[data-canvas]` rules below for
+     how these are used and their contrast against the ink/border tokens. */
+  --canvas-tint: oklch(0.93 0.04 300);
+  --canvas-tint-strong: oklch(0.89 0.06 300);
 }
 
 @layer base {
@@ -278,48 +284,81 @@
     0 1px 2px oklch(0.32 0.1 300 / 0.09), 0 1px 3px oklch(0.32 0.1 300 / 0.08);
 }
 
-/* Learner canvas — three switchable variants for the owner to pick from
-   screenshots (docs/design/learner-direction.md, "Colour"). TEMPORARY:
-   driven by a `data-canvas` attribute on `<html>` (default "glow", see
-   layout.tsx's CanvasVariantSwitch — delete both once the owner has
-   picked), never persisted, and scoped to `.learner-theme` so it can never
-   touch the admin canvas. */
-html[data-canvas="glow"] .learner-theme.lesson-session,
-html[data-canvas="glow"] .learner-theme.course-home,
-html[data-canvas="bare"] .learner-theme.lesson-session,
-html[data-canvas="bare"] .learner-theme.course-home {
+/* Learner canvas (docs/design/learner-direction.md, "Colour" — owner
+   correction 2026-09-18: the page was reading as near-white behind an
+   also-white card, so the card never stood out; the page must be visibly
+   darker/tinted than the card, not a dark theme). Default is "tint": a
+   real, visible lavender page with a soft LIGHTER glow behind the stage, so
+   the white card sits in a pool of light against the tint. The card itself
+   is untouched (white, purple-tinted `--shadow-card`, lavender `--border`
+   hairline — see `.learner-theme` above) — the separation comes from
+   white-on-tint, not from styling the card differently.
+   `--canvas-tint`/`--canvas-tint-strong` are oklch tints at hue 300 (the
+   same hue as every other purple token here), not literals borrowed from
+   elsewhere. Contrast, computed with the same OKLCH -> sRGB conversion used
+   elsewhere in this file (not eyeballed): the learner-theme `--ink-muted`
+   (#503975, used by the instruction line and the speaker label) is 7.74:1
+   on `--canvas-tint` and 6.80:1 on `--canvas-tint-strong` — both clear AA
+   with room to spare. `--brand-primary` (the primary button's fill) is
+   5.52:1 on `--canvas-tint` and 4.85:1 on `--canvas-tint-strong` against
+   its own background, on top of the button's shadow and its white text, so
+   it still reads as a distinct, elevated action on both.
+   TEMPORARY: driven by a `data-canvas` attribute on `<html>` (default
+   "tint", see layout.tsx's CanvasVariantSwitch), never persisted, scoped to
+   `.learner-theme` so it can never touch the admin canvas. Two
+   comparison-only variants sit behind `?canvas=` for the owner to judge
+   against the default: `strong` (one step darker/more saturated) and
+   `white` (the old near-white "glow" page, kept only for comparison).
+   Delete this whole block, `strong`/`white`, and CanvasVariantSwitch once
+   the owner has judged them. `--canvas-tint`/`--canvas-tint-strong`
+   themselves live with the rest of the tokens in the `:root` block above. */
+html[data-canvas="tint"] .learner-theme.lesson-session,
+html[data-canvas="tint"] .learner-theme.course-home {
+  --background: var(--canvas-tint);
+  background:
+    radial-gradient(
+      ellipse 1500px 980px at 50% 26% in oklab,
+      color-mix(in oklch, white 55%, var(--canvas-tint)),
+      var(--canvas-tint) 72%
+    ),
+    var(--canvas-tint);
+}
+/* "strong": one clear step darker/more saturated than the default, same
+   lighter-glow-behind-the-stage shape. */
+html[data-canvas="strong"] .learner-theme.lesson-session,
+html[data-canvas="strong"] .learner-theme.course-home {
+  --background: var(--canvas-tint-strong);
+  background:
+    radial-gradient(
+      ellipse 1500px 980px at 50% 26% in oklab,
+      color-mix(in oklch, white 45%, var(--canvas-tint-strong)),
+      var(--canvas-tint-strong) 72%
+    ),
+    var(--canvas-tint-strong);
+}
+/* "white" (comparison only): the old near-white page with a saturated
+   purple glow — the page itself stays almost white, so on this variant the
+   card does NOT visibly separate from the canvas (this is exactly the
+   complaint the "tint" default fixes; kept only so the owner can see the
+   difference side by side). */
+html[data-canvas="white"] .learner-theme.lesson-session,
+html[data-canvas="white"] .learner-theme.course-home {
   --background: #ffffff;
   background:
     radial-gradient(
-      ellipse 1100px 760px at 50% 30%,
-      color-mix(in oklch, var(--brand-primary) 14%, transparent),
-      transparent 70%
+      ellipse 1500px 980px at 50% 26% in oklab,
+      color-mix(in oklch, var(--brand-primary) 20%, transparent),
+      color-mix(in oklch, var(--brand-primary) 8%, transparent) 45%,
+      transparent 78%
     ),
     #ffffff;
 }
-/* "bare": pure white, no glow at all — the plainest of the three. */
-html[data-canvas="bare"] .learner-theme.lesson-session,
-html[data-canvas="bare"] .learner-theme.course-home {
-  background: #ffffff;
-}
-/* "bare": the sentence card itself disappears — the word and its slot float
-   directly on the canvas. Explanation slides keep their (very light) card,
-   unaffected. */
-html[data-canvas="bare"] .stage-card {
-  border: 0;
-  background: none;
-  box-shadow: none;
-}
-/* "lavender": a clearly visible lavender canvas, fading to white toward the
-   bottom, white card (unchanged). More saturated than --canvas-warm (which
-   stays the quiet default used elsewhere) so the three variants read as
-   genuinely different, not three shades of the same near-white. */
-html[data-canvas="lavender"] .learner-theme.lesson-session,
-html[data-canvas="lavender"] .learner-theme.course-home {
-  --background: oklch(0.93 0.05 300);
-  background: linear-gradient(
-    to bottom,
-    oklch(0.93 0.05 300),
-    #ffffff 640px
-  );
+/* The Recuérdame ghost button (`.stage-hint-button`, practice-stage.css)
+   has no fill at rest, which dissolves into a tinted page — give it a
+   white fill on both tinted variants so it stays a distinct control (the
+   "white" comparison variant is already a white page, so it's left as a
+   true ghost button there). */
+html[data-canvas="tint"] .stage-hint-button,
+html[data-canvas="strong"] .stage-hint-button {
+  background: var(--surface-writing);
 }

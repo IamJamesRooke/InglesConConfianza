@@ -48,12 +48,15 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="es"
-      // TEMPORARY (docs/design/learner-direction.md "Colour", owner to
-      // pick, 2026-09-18): default canvas variant; CanvasVariantSwitch
-      // overrides it from `?canvas=bare|lavender` for comparison
-      // screenshots. Delete this attribute and CanvasVariantSwitch once
-      // the owner has picked.
-      data-canvas="glow"
+      // TEMPORARY (docs/design/learner-direction.md "Colour", 2026-09-18):
+      // default canvas variant — a visibly tinted lavender page so the
+      // white stage card reads as a lit surface, not a same-colour page.
+      // CanvasVariantSwitch overrides it from `?canvas=strong|white` for
+      // two comparison-only variants (a stronger tint, and the old
+      // near-white "glow" page) the owner can judge against this default.
+      // Delete this attribute and CanvasVariantSwitch once the owner has
+      // judged them.
+      data-canvas="tint"
       className={`${geist.variable} h-full antialiased`}
     >
       <body className="flex min-h-full flex-col">

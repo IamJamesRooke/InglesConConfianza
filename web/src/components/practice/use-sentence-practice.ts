@@ -516,5 +516,11 @@ export function useSentencePractice({
     speaker,
     speakingText,
     hintDiff,
+    // Whether the bubble is currently showing a Recuérdame reminder rather
+    // than the last thing spoken as part of the sentence (docs/design/
+    // learner-direction.md, "Reminder bubble is the payload") — drives the
+    // bubble's larger --t-section size, independent of whether a diff was
+    // computed (a capture piece's hint has no diff but is still a reminder).
+    isHint: hintText !== null,
   };
 }

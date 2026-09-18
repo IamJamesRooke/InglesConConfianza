@@ -64,9 +64,19 @@
   background: var(--card);
   box-shadow: var(--shadow-sm);
   color: var(--foreground);
-  font-size: var(--t-ui);
+  /* Direction ("Reminder bubble is the payload", 2026-09-18): an ordinary
+     "last thing said" bubble is --t-body — one step up from the old --t-ui
+     so the pair (ordinary vs. reminder, below) doesn't jump too far apart. */
+  font-size: var(--t-body);
   line-height: 1.35;
   overflow-wrap: anywhere;
+}
+/* The reminder IS the payload — it renders at --t-section (roughly the same
+   step up from --t-body as --t-body is from --t-ui), clearly bigger than an
+   ordinary spoken bubble. Compound selector so it beats the base rule
+   regardless of source order. */
+.speaker-chip-bubble.speaker-chip-bubble--reminder {
+  font-size: var(--t-section);
 }
 .speaker-chip-bubble::before {
   content: "";
@@ -84,11 +94,18 @@
   opacity: 0.6;
 }
 /* Recuérdame diff (docs/design/learner-direction.md, "Help"): the part of
-   the answer the learner already had right sits quiet at the bubble's own
-   muted ink; the part they got wrong or missed is emphasised by weight +
-   underline, never colour alone (no red — red means Spanish) — a 2px
-   underline under blue, weight 700. `min-width` keeps a missing space or
-   punctuation mark visible instead of collapsing to nothing. */
+   the answer the learner already had right sits quiet — full ink at roughly
+   70% strength via the existing `--muted-foreground` token (which is
+   `--ink-muted`, already overridden inside `.learner-theme` for exactly
+   this "quiet but never faint" purpose) — 9.60:1 on the bubble's white
+   background, clearing AA 4.5:1 with plenty to spare; the part they got
+   wrong or missed is emphasised by weight + underline, never colour alone
+   (no red — red means Spanish) — a 2px underline under blue, weight 700,
+   which itself is 8.91:1 on white. `--muted-foreground` reads distinctly
+   quieter than the bold underlined blue despite the close raw ratio,
+   because it carries neither the weight nor the underline. `min-width`
+   keeps a missing space or punctuation mark visible instead of collapsing
+   to nothing (see `--thin` below). */
 .answer-diff-same {
   color: var(--muted-foreground);
 }
@@ -99,6 +116,14 @@
   text-decoration-color: var(--lesson-hl-en);
   text-decoration-thickness: 2px;
   text-underline-offset: 2px;
+}
+/* `min-width` only belongs on a fix segment that is ENTIRELY whitespace or
+   punctuation — a missing space/apostrophe/etc would otherwise collapse to
+   nothing and be invisible. Applying it unconditionally opened a visible
+   gap around a marked LETTER too (e.g. "hel l o" for a missing "l"), so the
+   component now sets this modifier class itself only for that case, rather
+   than CSS guessing from the segment's rendered width. */
+.answer-diff-fix--thin {
   display: inline-block;
   min-width: 0.5em;
 }
@@ -146,6 +171,26 @@
     grid-template-columns: max-content;
     justify-content: center;
     gap: 18px;
+  }
+}
+/* Below the phone width the 360px min-width fits with its 20px gutters
+   either side (360 + 40 = 400): the grid above sizes its one track to each
+   child's max-content contribution, which cannot resolve a PERCENTAGE
+   min/max-width (the "100%" half of `min(360px, 100%)`, see the card's own
+   rule below) — a percentage is indefinite in that intrinsic-sizing pass,
+   so it's ignored there rather than clamping anything, and the min-width
+   silently failed to apply at all before this max-width: 399.98px override
+   was added (this is the fix for "the min-width did not apply"). Below
+   400px the composition instead falls back to an ordinary stretched flex
+   column: no intrinsic max-content sizing, so the card's plain 100% width
+   (see below) resolves against the real available space, giving the "or
+   full width minus gutters on phones" half of the direction's rule, and
+   both children's left edges trivially match (each is just 100% of the
+   same stretched container). */
+@media (max-width: 399.98px) {
+  .stage-composition[data-wraps="false"] {
+    display: flex;
+    flex-direction: column;
   }
 }
 /* Below 1024: the card comes first and the speaker is a row under it — the
@@ -227,9 +272,29 @@
   background: var(--surface-writing);
   box-shadow: var(--shadow-card);
 }
+/* Direction, "Sentence slide": fit-content is min 360px so a short sentence
+   ("hola") gets a calm landscape card rather than a tall portrait box that
+   just hugs one short word. This min-width was already named in the
+   direction doc but had never actually been written into this rule — that
+   alone is why the card kept rendering at ~235px. A plain `360px`, not
+   `min(360px, 100%)`: the composition above sizes its grid track to this
+   card's own max-content contribution, and a PERCENTAGE min-width can't
+   resolve in that intrinsic pass (it's indefinite there, so it's ignored
+   rather than clamping) — `min(360px, 100%)` silently behaved as if no
+   min-width were set at all. Below 400px (where 360 + the 20px gutters
+   either side would overflow) the composition switches to a plain
+   stretched flex column instead (see above), and this rule is overridden
+   back to a true `100%` there. */
 .stage-card[data-wraps="false"] {
   width: fit-content;
+  min-width: 360px;
   max-width: min(100%, 720px);
+}
+@media (max-width: 399.98px) {
+  .stage-card[data-wraps="false"] {
+    width: 100%;
+    min-width: 0;
+  }
 }
 @media (min-width: 761px) {
   .stage-card {
@@ -310,6 +375,12 @@
   max-width: 100%;
   padding: 0 1px;
   border: 0;
+  /* A form control's own UA line-height doesn't match the surrounding
+     prose's 1.35 (direction, "Sentence slide") — on a line that WRAPS, that
+     mismatch showed up as extra air under the pending blank on its new
+     line, since the wrapped line's box grew to fit the input's own taller
+     line-height instead of matching the English line's rhythm. */
+  line-height: inherit;
   /* PENDING (direction, "The answer slot"): a plain lavender hairline
      underline, no fill — exactly one tinted thing on the stage (the ACTIVE
      slot below) says where to type. */
@@ -455,8 +526,32 @@
   width: 48px;
   height: 48px;
 }
-.speaker-chip.stage .speaker-chip-bubble {
-  font-size: var(--t-ui);
+/* Direction ("Bubble position", below 1024): the bubble is now a sibling of
+   the avatar+label row (not nested inside it, see speaker-chip.tsx), so a
+   plain flex-wrap puts it on its own full-width line under that row —
+   `flex-basis: 100%` forces the wrap — with its left edge equal to the
+   row's own left edge (which is the card's left edge, per the alignment
+   rule above) rather than indented past the avatar. Tail flips from
+   pointing left (at the avatar) to pointing up (still toward the
+   portrait+label row it now sits under). Scoped below 1024 only — the
+   1024px block further down switches `.speaker-chip.stage` to a column,
+   where the bubble already falls into place as an ordinary stacked child. */
+@media (max-width: 1023.98px) {
+  .speaker-chip.stage {
+    flex-wrap: wrap;
+    row-gap: 8px;
+  }
+  .speaker-chip.stage .speaker-chip-bubble {
+    flex: 1 0 100%;
+    max-width: 100%;
+  }
+  .speaker-chip.stage .speaker-chip-bubble::before {
+    top: -5px;
+    left: 16px;
+    border: 0;
+    border-top: 1px solid var(--border);
+    border-left: 1px solid var(--border);
+  }
 }
 .stage-continue {
   display: none;

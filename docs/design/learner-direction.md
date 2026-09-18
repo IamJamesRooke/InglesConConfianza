@@ -7,8 +7,13 @@
 >
 > 2026-09-18 (sentence-stage beauty pass): the sentence slide's alignment, answer slot,
 > short-sentence sizing, "Recuérdame" placement (renamed from "Pista"), and colour are
-> revised below — see each section's own note. The learner canvas now has three
-> switchable variants (temporary, owner to pick from screenshots).
+> revised below — see each section's own note.
+>
+> 2026-09-18 (beauty-pass fixes, same day): the one-line card's 360px min-width now
+> actually applies (it had only ever been named in this doc, never written into the
+> CSS); the Recuérdame reminder is now visibly bigger than an ordinary spoken bubble
+> and sits on its own line below 1024; and the learner canvas is a real tinted
+> lavender page by default, not a near-white one — see "Canvas" below.
 
 ## The idea in one line
 
@@ -74,18 +79,35 @@ for the home grid.
   (hue 300), matching `--shadow-card`, which was already purple-tinted. Ratios
   computed with an OKLCH → sRGB conversion (WCAG relative-luminance formula),
   not eyeballed.
-- **Canvas variants** (temporary, owner to pick from screenshots): the learner
-  canvas is one token set with three switchable looks, chosen by a `data-canvas`
-  attribute on `<html>` (`CanvasVariantSwitch`, `?canvas=` query param — default
-  `glow`). Delete the switch and the `[data-canvas]` rules in `globals.css` once
-  the owner has picked.
-  1. `glow` — pure white page; a wide, very soft radial lavender glow behind the
-     stage, fading to nothing; purple-tinted card shadow; lavender card hairline.
-  2. `bare` — pure white, no glow; the sentence card itself disappears (word and
-     slot float on the canvas); explanation slides keep their light card.
-  3. `lavender` — a clearly visible lavender canvas, fading to white toward the
-     bottom; white card, unchanged.
-  The learner home uses the same canvas variant as the lesson.
+- **Canvas** (owner correction, 2026-09-18: the page was reading as near-white
+  behind an also-white card, so the card never visibly separated from the page —
+  "the pill for the learning surface" needs the page clearly darker than itself.
+  Not a dark theme). The learner canvas — lesson and home alike — is now a real,
+  visible lavender tint (`--canvas-tint`, `oklch(0.93 0.04 300)`) with a soft
+  LIGHTER glow behind the stage, so the white card sits in a pool of light
+  against the tint. The card itself is untouched: white, the purple-tinted
+  `--shadow-card`, the lavender `--border` hairline — the separation comes from
+  white-on-tint, not from styling the card differently. Contrast (OKLCH → sRGB,
+  computed not eyeballed): the learner-theme `--ink-muted` used by the
+  instruction line and the speaker label is 7.74:1 on the default tint; the
+  primary button's `--brand-primary` fill is 5.52:1 on it, plus its own shadow
+  and white text, so it still reads as a distinct, elevated action. The
+  Recuérdame ghost button gets a white fill on the tinted canvas so it doesn't
+  dissolve into it; the bubble stays white either way; the answer slot's tint
+  inside the white card is unchanged.
+  Two comparison-only variants sit behind a `data-canvas` attribute on `<html>`
+  (`CanvasVariantSwitch`, `?canvas=` query param) for the owner to judge against
+  this default — **delete this switch and the `[data-canvas]` rules in
+  `globals.css` once judged**:
+  1. `strong` (experiment, owner to judge) — one clear step darker/more
+     saturated (`--canvas-tint-strong`, `oklch(0.89 0.06 300)`), same
+     lighter-glow-behind-the-stage shape. `--ink-muted` is 6.80:1 on it.
+  2. `white` (comparison only, owner to judge) — the old near-white page with a
+     saturated purple glow, kept only so the owner can see, side by side, the
+     "no separation" problem the tinted default fixes.
+  Admin never changes; the canvas is scoped to `.learner-theme` only. The three
+  earlier candidates (`glow`/`bare`/`lavender`) are gone — `glow` became this
+  tinted default, `bare` and the old `lavender` were deleted outright.
 
 ## HOME — "your next sentence"
 
@@ -141,8 +163,15 @@ and the one action.
      wrap the same deterministic, text-length way `explanationWraps` does
      (`sentenceWraps`, `docs/…/presentation.ts`) — no DOM measurement, no
      flicker on first paint, no jump as pieces fill in (a blank's width already
-     tracks its answer's width). **Fits one line**: the card is `fit-content`
-     (min 360px, or full width minus gutters on phones), centred on the same
+     tracks its answer's width). **Fits one line**: the card is `fit-content`,
+     min 360px (a plain `360px`, not `min(360px, 100%)` — that percentage form
+     is what had silently failed to apply, 2026-09-18: the composition sizes
+     its grid track to the card's own max-content contribution, and a
+     percentage min-width can't resolve in that intrinsic pass, so it was
+     ignored there instead of clamping anything), or full width minus gutters
+     below 400px (where the composition falls back from the intrinsic grid to
+     a plain stretched flex column, and the card's min-width is overridden to
+     `0` with `width: 100%`), centred on the same
      axis as a one-line explanation card; the eyebrow, instruction and card
      share that one centre axis, and below 1024 the speaker cluster's left
      edge equals the card's own left edge (a single-track CSS grid sized to
@@ -179,7 +208,17 @@ and the one action.
      the card capped at 720 and the whole group centred with equal air either side
      (the one action is centred under the group, not under the card); below 1024 it
      is a row under the card with a 48px portrait. No bubble until the
-     first words; then it keeps the last thing said. Bubble at UI-label size, white, hairline, 12px radius.
+     first words; then it keeps the last thing said. Bubble white, hairline,
+     12px radius; an ordinary "last thing said" bubble is `--t-body` (2026-09-18
+     — was `--t-ui`, a size too close to the reminder below to read as a
+     matched pair); the Recuérdame reminder is `--t-section`, since it's the
+     payload the learner actually has to read (see **Help** below). Below
+     1024 the bubble is now a full line under the portrait+label row (not
+     beside the portrait), its own left edge on the card's left edge, 8px
+     gap, tail pointing up at the row above; max-width is the row's own
+     width (effectively the card's width), so a long reminder wraps inside
+     it instead of overflowing. At 1024+ it's unchanged: in the 200px
+     speaker column, max-width 200px, wrapping.
    - **Vocabulary table**: same card, rows of Spanish (sentence size, flag red bold)
      → inline field whose answer is Union Jack blue bold, the row being answered
      marked by an underline under its Spanish prompt, hairline between rows. Every row's field is the same width, focused or not, and
@@ -209,7 +248,16 @@ and the one action.
      the characters the learner got wrong or missed marked: `--lesson-hl-en`
      blue, weight 700, with its own 2px underline (emphasis by weight +
      underline, not colour alone — no red, that means Spanish; no
-     strike-through; no glyphs), the rest at the bubble's own quiet ink.
+     strike-through; no glyphs), the rest quiet at `--muted-foreground`
+     (`--ink-muted`, already the "quiet but never faint" token — 9.60:1 on
+     the bubble's white background, clearing AA with room to spare; it reads
+     distinctly quieter than the bold underlined blue despite the close raw
+     ratio, since it carries neither the weight nor the underline). The
+     underline's `min-width` (so a missing space/punctuation mark stays
+     visible instead of collapsing to nothing) is a modifier class,
+     `answer-diff-fix--thin`, set by the component only when a fix segment
+     is entirely whitespace/punctuation — applying it to a marked LETTER
+     opened a visible gap around it (e.g. "hel l o" for a missing "l").
      Punctuation is marked like any other character. Typing far enough from
      every accepted answer that the diff would be noise (under ~40% of the
      answer's characters lining up) falls back to the plain answer,
