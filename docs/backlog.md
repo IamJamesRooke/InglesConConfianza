@@ -79,6 +79,8 @@ the owner's say-so.
 
 ### Onboarding (thinking only, 2026-09-17 — not started)
 
+> **Mechanism proposal (2026-09-18): `docs/design/onboarding.md`** — onboarding as a module of `kind: "onboarding"` authored in the builder, a first-visit gate at `/bienvenida`, and new capabilities added as options on existing slides (acknowledge, media) plus one new capture slide with a `{name}` variable. Awaiting four owner decisions; nothing built. The notes below remain the source for *content*.
+
 A module of kind `onboarding` before Confianza I, run once, all learner text in Spanish (tú).
 
 1. **"Antes de empezar"** — a *notice* slide: pre-alpha; progress lives only in this
